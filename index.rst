@@ -15,7 +15,7 @@ To learn more about *using* AppImages, please read the User Guide. If you are in
 .. toctree::
    introduction/index
    user-guide/index
-   developer-guide/index
+   packaging-guide/index
    :maxdepth: 2
    :caption: Contents:
 
