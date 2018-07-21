@@ -1,4 +1,4 @@
-Developer Guide
+Packaging Guide
 ===============
 
 .. toctree::
