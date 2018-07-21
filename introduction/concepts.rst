@@ -41,3 +41,14 @@ The list of libraries that can resp. have to be excluded, the so-called :ref:`ex
 .. _libgl-excludelist: https://github.com/AppImage/AppImages/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist#L38-L41
 .. _harfbuzz-freetype-excludelist: https://github.com/AppImage/AppImages/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist#L98-L102
 
+
+.. _appimage-specification:
+
+AppImage Specification
+----------------------
+
+The term *AppImage* does not refer to some software project, but is actually a standard specified in the `AppImage specification`_. Its reference implementation is called :ref:`AppImageKit`.
+
+Being designed as a standard with a reference implementation allows users to implement their own tools to build AppImages.
+
+.. _AppImage specification: https://github.com/AppImage/AppImageSpec
