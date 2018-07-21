@@ -1,6 +1,8 @@
 Welcome to AppImage documentation!
 ==================================================
 
+Willkommen • Welcome • 欢迎 • Bienvenue • Benvenuto • Bienvenido • ようこそ • Mabuhay • Välkommen • أهلا وسهلا • Добро пожаловать • Merhaba • Bonvenon • 歡迎光臨
+
 In this documentation, all aspects of the AppImage project shall be explained, to have a single unified source of information.
 
 This document is currently work in progress. Contributions welcome!
