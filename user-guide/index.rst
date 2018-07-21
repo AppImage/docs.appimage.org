@@ -22,25 +22,25 @@ An AppImage is a downloadable file for Linux that contains an application and ev
 
 
 |question| How do I run an AppImage?
--------------------------
+------------------------------------
 
 Make it executable and double-click it.
 
 
 |question| How can I integrate AppImages with the system?
-----------------------------------------------
+---------------------------------------------------------
 
 Using the optional appimaged daemon, you can easily integrate AppImages with the system. The daemon puts AppImages into the menus, registers MIME types, icons, all on the fly. You can download it from this repository. But it is entirely optional.
 
 
 |question| Where can I download AppImages?
--------------------------------
+------------------------------------------
 
 See the "repository" of upstream-generated AppImages.
 
 
 |question| Where do I store my AppImages?
-------------------------------
+-----------------------------------------
 
 If you don't want to leave them in :code:`$HOME/Downloads`, then :code:`$HOME/Applications` is a good choice. Many third-party tools (especially the ones managing desktop integration) use this location, too. Other options involve :code:`$HOME/.local/bin` and :code:`$HOME/bin`, which are useful mainly for CLI tools.
 
@@ -52,7 +52,7 @@ Besides, every other location works, e.g., a USB thumbdrive, a network location,
 
 
 |question| Where can I request AppImages?
-------------------------------
+-----------------------------------------
 
 If there is no AppImage of your favorite application available, please request it from the author(s) of the application, e.g., as a feature request in the issue tracker of the application.
 
@@ -60,7 +60,7 @@ For example, if you would like to see an AppImage of Mozilla Firefox, then pleas
 
 
 |question| Where do I get support?
------------------------
+----------------------------------
 
 Please visit the `Discourse forum`_. You can log in using your existing Google or GitHub account, or alternatively register a local account with your email address.
 
