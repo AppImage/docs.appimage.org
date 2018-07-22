@@ -11,7 +11,7 @@ There are different ways to create AppImages:
 
 ## 1. Use the Open Build Service
 
-This option is recommended for open source projects because it allows you to leverage the existing Open Build Service infrastructure, security and license compliance processes. See https://github.com/probonopd/AppImageKit/wiki/Using-Open-Build-Service for how to use this.
+This option is recommended for open source projects because it allows you to leverage the existing Open Build Service infrastructure, security and license compliance processes. See [Using Open Build Service to generate AppImages](obs.md) for how to use this.
 
 ## 2. Convert existing binary packages using pkg2appimage
 
