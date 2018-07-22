@@ -13,9 +13,9 @@ There are different ways to create AppImages:
 
 This option is recommended for open source projects because it allows you to leverage the existing Open Build Service infrastructure, security and license compliance processes. See https://github.com/probonopd/AppImageKit/wiki/Using-Open-Build-Service for how to use this.
 
-## 2. Convert existing binary packages
+## 2. Convert existing binary packages using pkg2appimage
 
-This option might be the easiest if you already have up-to-date packages in place, ideally a ppa for trusty or earlier or a debian repository for oldstable. In this case, you can write a small `.yml` recipe and in many cases are done with the package to AppImage conversion. [The pkg2appimage script](https://raw.githubusercontent.com/probonopd/AppImages/master/pkg2appimage) can run .yml recipes. [See examples](https://github.com/probonopd/AppImages/tree/master/recipes).
+This option might be the easiest if you already have up-to-date packages in place, ideally a ppa for trusty or earlier or a debian repository for oldstable. In this case, you can write a small `.yml` recipe and in many cases are done with the package to AppImage conversion. See [pkg2appimage](pkg2appimage.md).
 
 ## 3. Bundle your Travis CI builds as AppImages
 
