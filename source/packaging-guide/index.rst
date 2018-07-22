@@ -10,6 +10,7 @@ This chapter shows application developers how to produce AppImages, how to make 
    pkg2appimage
    manual
    signatures
+   updates
    :caption: Contents:
    
    
