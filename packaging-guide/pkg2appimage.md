@@ -249,8 +249,7 @@ script:
 
 In the `ingredients` section, an archive is downloaded and unpacked. Then, in the `script` section, the main executable is copied into place inside the AppDir.
 
-
-### The script section needs to copy icon and `.desktop` file in place
+#### The script section needs to copy icon and `.desktop` file in place
 
 Since an AppImage may contain more than one executable binary (e.g. helper binaries launched by the main executable) and also may contain multiple `.desktop` files, a clear entry point into the AppImage is required. For this reason, there is the convention that there should be exactly one `$ID.desktop` file and corresponding icon file in the top-level directory of the AppDir.
 
