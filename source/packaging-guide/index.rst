@@ -12,6 +12,7 @@ This chapter shows application developers how to produce AppImages, how to make 
    manual
    signatures
    updates
+   appstream
    testing
    distributing
    :caption: Contents:
