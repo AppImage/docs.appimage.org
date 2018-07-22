@@ -10,6 +10,7 @@ The most obvious place to advertise your AppImage is to prominently featured on 
 ## Social Media
 
 Also be sure to advertise your new AppImage on social media, for example on Twitter, blogs, etc.
+Be sure to use the `#AppImage` hashtag for additional discoverability.
 
 ## AppImageHub
 
