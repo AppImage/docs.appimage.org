@@ -9,6 +9,15 @@ AppImageHub is a crowd-sourced directory of available, automatically tested AppI
 that 3rd party app stores and software centers can use. 
 Given an URL to an AppImage, it inspects the AppImage and puts it into a community-maintained catalog.
 
+App stores and software centers can consume the metadata collected by this project. See [AppImage ecosystem](https://github.com/AppImage/AppImageKit/wiki/Ecosystem).
+
+Projects already using this data include
+* Nitrux, NX Software Center: https://github.com/nomad-desktop/nx-software-center
+* https://github.com/simoniz0r/spm
+* https://github.com/sillasleal/appcenter
+* https://github.com/lliurex/lliurex-store
+* Please contact us if you are using this data so that we can list your project here
+
 The idea is that all the metadata travels inside the AppImage, so besides adding an URL to this repository
 no additional information is asked, since it comes with the AppImage itself.
 
