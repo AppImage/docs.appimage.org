@@ -9,7 +9,7 @@ This chapter shows application developers how to produce AppImages, how to make 
    obs
    pkg2appimage
    manual
-   signing
+   signatures
    :caption: Contents:
    
    
