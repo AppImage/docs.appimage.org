@@ -31,4 +31,4 @@ This option might be the easiest if you have an Electron-based application. In t
 
 ## 6. Manually create an AppDir
 
-Create an AppDir manually, then turn it into an AppImage. Start out with the example below, then check the examples on bundling certain applications or type of applications as AppImages from the right-hand side **"Pages"** menu.
+Create an AppDir manually, then turn it into an AppImage. See [Manually creating an AppDir](manual.md). Please note that this method should only be your last resort, as the other methods are much more convenient in most cases. Manually creating an AppDir is explained mainly to illustrate how things work under the hood. 
