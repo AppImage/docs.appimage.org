@@ -36,9 +36,9 @@ uljTQr3nOBaqNyUgU3y4Tbd+36cwggSaTpGAzlhgNoalIwB1ltFSdPeRPe4Q3Qc=
 
 NOTE: Please note that while this displays the signature, it does not validate the signature. In other words, this does not tell you whether the signature is valid or not, or whether the file has been tampered with or not. To validate the signature, an external tool (which is not part of AppImage that needs to be validated) needs to be used.
 
-# Validating the signature
+## Validating the signature
 
-To validate a signature of an an AppImage and to determine whether an AppImage has been compromised, an external tool needs to be used. There is a very simple tool called `validate` that can do this. However, signature validation can also be integrated into higher level software such as the optional `appimaged` demon and/or `AppImageUpdate`.
+To validate a signature of an an AppImage and to determine whether an AppImage has been compromised, an external tool needs to be used. There is a very simple tool called `validate` that can do this. 
 
 ```
 chmod a+x ./validate
@@ -48,4 +48,6 @@ gpg: Signature made Sun 25 Sep 2016 10:41:24 PM CEST using RSA key ID 86C3DFDD
 gpg: Good signature from "Testkey" [ultimate]
 ```
 
-TODO: It may be desirable to integrate validate functionality into tools such as `appimagetool`, the optional `appimaged` demon and/or `AppImageUpdate`.
+Signature validation can also be integrated into higher level software such as the optional `appimaged` demon and/or `AppImageUpdate`. For example the `appimaged` daemon may decide to run applications without a valid signature in a confined sandbox in the future, if the system is set up accordingly.
+
+TODO: It may be desirable to integrate validate functionality into `libappimage` and into tools like  `appimagetool`, the optional `appimaged` demon and/or `AppImageUpdate`.
