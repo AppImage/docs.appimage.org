@@ -27,7 +27,7 @@ Please see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#update-
 
 ## Making AppImages self-updateable
 
-Once you have made your AppImage updateable via external tools as described above, you may optionally go one step further and bundle everything that is required to update an AppImage inside the AppImage itself, so that the user can get updates without needing anything besides the AppImage itself. This is conceptually similar to how the Sparkle Framework works on macOS.
+Once you have made your AppImage updateable via external tools as described above, you may optionally go one step further and bundle everything that is required to update an AppImage inside the AppImage itself, so that the user can get updates without needing anything besides the AppImage itself. This is conceptually similar to how the [Sparkle Framework](https://sparkle-project.org/) works on macOS.
 
 ### Via AppImageUpdate built into the AppImage
 
