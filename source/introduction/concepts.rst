@@ -48,7 +48,7 @@ The list of libraries that can resp. have to be excluded, the so-called :ref:`ex
 
 .. _appimage-specification:
 
-AppImage Specification
+AppImage specification
 ----------------------
 
 The term *AppImage* does not refer to some software project, but is actually a standard specified in the `AppImage specification`_. Its reference implementation is called :ref:`AppImageKit`.
@@ -56,3 +56,10 @@ The term *AppImage* does not refer to some software project, but is actually a s
 Being designed as a standard with a reference implementation allows users to implement their own tools to build AppImages.
 
 .. _AppImage specification: https://github.com/AppImage/AppImageSpec
+
+AppDir specification
+----------------------
+
+The term *AppDir* refers to an _application directory_. The format was first defined by the ROX Filer.
+
+.. ROX AppDir specification: http://rox.sourceforge.net/desktop/AppDirs.html
