@@ -1,4 +1,4 @@
-# Using Open Build Service to generate AppImages
+# Using the Open Build Service
 
 ### What is Open Build Service
 
