@@ -32,6 +32,8 @@ See the "repository" of upstream-generated AppImages.
 |question| Where do I store my AppImages?
 -----------------------------------------
 
+An important point about the AppImage format is that you can store AppImage files wherever you want. This includes your home directory, your downloads directory, a dedicated applications directory, a USB thumb drive, a CD-ROM or DVD, or even a network file share. No matter where you keep your AppImages, you are still able to run them. This is very similar to how applications work on macOS. Unlike with traditional Linux packages, you do not need to install AppImages or put them into some special location in order for them to work.
+
 If you don't want to leave them in :code:`$HOME/Downloads`, then :code:`$HOME/Applications` is a good choice. Many third-party tools (especially the ones managing desktop integration) use this location, too. Other options involve :code:`$HOME/.local/bin` and :code:`$HOME/bin`, which are useful mainly for CLI tools.
 
 **On CentOS/RHEL and Fedora:** When you login, the script :code:`$HOME/.bash_profile` is executed and this script adds :code:`$HOME/.local/bin:$HOME/bin` to your path.
