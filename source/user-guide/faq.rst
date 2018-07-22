@@ -1,0 +1,63 @@
+.. _faq:
+
+Frequently Asked Questions
+==========================
+
+The most common questions are answered directly here to save you from having to read the entire user guide.
+
+|question| What is an AppImage?
+--------------------
+
+An AppImage is a downloadable file for Linux that contains an application and everything the application needs to run (e.g., libraries, icons, fonts, translations, etc.) that cannot be reasonably expected to be part of each target system.
+
+
+|question| How do I run an AppImage?
+------------------------------------
+
+Make it executable and double-click it.
+
+
+|question| How can I integrate AppImages with the system?
+---------------------------------------------------------
+
+Using the optional appimaged daemon, you can easily integrate AppImages with the system. The daemon puts AppImages into the menus, registers MIME types, icons, all on the fly. You can download it from this repository. But it is entirely optional.
+
+
+|question| Where can I download AppImages?
+------------------------------------------
+
+See the "repository" of upstream-generated AppImages.
+
+
+|question| Where do I store my AppImages?
+-----------------------------------------
+
+If you don't want to leave them in :code:`$HOME/Downloads`, then :code:`$HOME/Applications` is a good choice. Many third-party tools (especially the ones managing desktop integration) use this location, too. Other options involve :code:`$HOME/.local/bin` and :code:`$HOME/bin`, which are useful mainly for CLI tools.
+
+**On CentOS/RHEL and Fedora:** When you login, the script :code:`$HOME/.bash_profile` is executed and this script adds :code:`$HOME/.local/bin:$HOME/bin` to your path.
+
+**On Ubuntu:** When you login, the script :code:`$HOME/.profile` is executed and this script adds :code:`"$HOME/bin:$HOME/.local/bin"` to your path.
+
+Besides, every other location works, e.g., a USB thumbdrive, a network location, or a CD-ROM, but then the AppImages won't be on your path, which means that you cannot simply type their name into a terminal but have to use the full path.
+
+
+|question| Where can I request AppImages?
+-----------------------------------------
+
+If there is no AppImage of your favorite application available, please request it from the author(s) of the application, e.g., as a feature request in the issue tracker of the application.
+
+For example, if you would like to see an AppImage of Mozilla Firefox, then please leave a comment at https://bugzilla.mozilla.org/show_bug.cgi?id=1249971. The more people request an AppImage from the upstream authors, the more likely is that an AppImage will be provided.
+
+
+|question| Where do I get support?
+----------------------------------
+
+Please visit the `Discourse forum`_. You can log in using your existing Google or GitHub account, or alternatively register a local account with your email address.
+
+If you want to interact directly with the developers, please join the IRC chat #AppImage on Freenode (webchat_). Please beware that it might take a few minutes/hours until someone will check the chat and might be able to help you, so don't give up too quickly, and leave e.g., the tab open in the background if you can. You can also try at other times again. You are encouraged to read `this article`_ before joining the IRC chat.
+
+.. _Discourse forum: https://discourse.appimage.org/
+.. _webchat: https://webchat.freenode.net/?channels=appimage
+.. _this article: https://workaround.org/getting-help-on-irc/
+
+.. |question| image:: /_static/img/question.png
