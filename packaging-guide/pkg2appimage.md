@@ -1,4 +1,16 @@
-# About `.yml` files
+# pkg2appimage
+
+There are [multiple ways](https://github.com/probonopd/AppImageKit/wiki/Creating-AppImages) to generate AppImages. If you already have existing binaries (either in archive or `.deb` format or a ppa) then the recommended way to convert these to an AppImage is to write a [.yml description file](https://github.com/AppImage/AppImages/tree/master/recipes) and run it with [pkg2appimage](https://github.com/AppImage/AppImages/tree/master/pkg2appimage):
+
+To build an AppImage from a `.yml` description file:
+
+```
+bash -ex ./pkg2appimage recipes/XXX.yml
+```
+
+`.yml` description files tell pkg2appimage where to get the ingredients from, and how to convert them to an AppImage (besides the general steps already included in pkg2appimage). Study some [examples](https://github.com/AppImage/AppImages/tree/master/recipes) to see how it works.
+
+## `.yml` files
 
 The easiest way to build an AppImage is to write a `.yml` file. We developed a rather simple format that allows developers to write a `app.yml` file that describes how to build an AppImage for `app`, being able to reuse pre-built binaries, e.g. from Debian packages, both to save time for creating and building an AppImage.
 
