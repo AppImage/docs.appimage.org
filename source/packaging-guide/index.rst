@@ -7,6 +7,7 @@ Packaging Guide
    obs
    pkg2appimage
    manual
+   signing
    :caption: Contents:
    
    
