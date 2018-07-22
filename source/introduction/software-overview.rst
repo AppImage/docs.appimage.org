@@ -77,6 +77,8 @@ AppImageUpdate lets you update AppImages in a decentral way using information em
 .. _AppImageUpdate: https://github.com/AppImage/AppImageUpdate
 
 
+.. _appimaged:
+
 appimaged
 ^^^^^^^^^
 
