@@ -1,5 +1,5 @@
-Run an AppImage
-===============
+Running an AppImage
+===================
 
 This page shows how a user can run AppImages, on their favorite distribution using the desktop environment tools or via the terminal. Also, it explains the concept of desktop integration, and presents tools that can be used for this purpose.
 
@@ -46,10 +46,10 @@ Translated versions are available in a `post in the AppImage forum <https://disc
 
 .. _desktop-integration:
 
-Desktop integration
--------------------
+Integrating AppImages into the desktop
+--------------------------------------
 
-AppImages are standalone bundles, and do not need to be *installed*. However, everyday users want their AppImages to be available like distribution provided applications. This primarily involves being able to launch desktop applications from their desktop environments' launchers. This concept is called *desktop integration*.
+AppImages are standalone bundles, and do not need to be *installed*. However, some users may want their AppImages to be available like distribution provided applications. This primarily involves being able to launch desktop applications from their desktop environments' launchers. This concept is called *desktop integration*.
 
 appimaged
 *********
