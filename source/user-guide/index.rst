@@ -6,6 +6,7 @@ This chapter shows users what AppImages are from a user perspective, how they ca
 .. toctree::
    faq
    run-appimage
+   portable-mode
    mac
    :caption: Contents:
    :maxdepth: 2
