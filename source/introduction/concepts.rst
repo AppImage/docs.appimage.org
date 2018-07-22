@@ -62,4 +62,4 @@ AppDir specification
 
 The term *AppDir* refers to an application directory. The format was first defined by the ROX Filer.
 
-.. ROX AppDir specification: http://rox.sourceforge.net/desktop/AppDirs.html
+.. _ROX AppDir specification: http://rox.sourceforge.net/desktop/AppDirs.html
