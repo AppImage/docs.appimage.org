@@ -44,7 +44,8 @@ In some cases, though, when an existing application must not be altered (e.g., w
 
 Using :code:`AppRun` is not a guarantee that an application will run, and the user must provide all the resources an application could need manually (or by using external tools) before creating the AppImage with :ref:`appimagetool`. :code:`AppRun` force-changes the current working directory, and therefore applications can not detect where the AppImage was called originally. This may be especially annoying for CLI tools, but can also be a problem for GUI applications expecting paths via parameters.
 
-:code:`AppRun` is legacy technology, and should be avoided if possible. Tools like :ref:`linuxdeploy` deploy applications in a different way, and deprecated its usage. This doesn't mean there's no cases in which :code:`AppRun` might be useful, but it's got several limitations a user must be aware of before using it.
+.. note::
+   :code:`AppRun` is legacy technology, and should be avoided if possible. Tools like :ref:`linuxdeploy` deploy applications in a different way, and deprecated its usage. This doesn't mean there's no cases in which :code:`AppRun` might be useful, but it's got several limitations a user must be aware of before using it.
 
 
 Helpers
