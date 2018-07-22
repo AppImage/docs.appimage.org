@@ -10,8 +10,7 @@ Software Overview
 AppImage project
 ****************
 
-
-.. _AppImageKit:
+.. _sec-appimagekit:
 
 AppImageKit
 -----------
