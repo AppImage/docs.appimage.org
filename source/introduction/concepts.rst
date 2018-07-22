@@ -17,6 +17,8 @@ AppImages are simple to understand. Every AppImage is a regular file, and every 
 Do not depend on system-provided resources
 ------------------------------------------
 
+The author of an AppImage needs to decide for which target systems (Linux distributions) they want to offer the AppImage.  Then, the author needs to bundle any dependencies that cannot reasonably be assumed to come with every target system (Linux distributions) in its default installation in a recent enough version.
+
 To be able to run on any Linux distribution, an AppImage should bundle all the resources it needs during the runtime. The most common resources are the actual binaries, shared library dependencies, icons and other graphics and of course one or more desktop files for desktop integration.
 
 This doesn't mean an AppImage must not use resources provided by the system, like for example specific libraries (e.g., graphics libraries), user interface themes or the like. However, an AppImage should not have any hard dependencies, and should provide a good user experience even if those resources are not available. This is the only way to ensure the AppImage's compatibility with as many distributions as possible.
@@ -27,7 +29,9 @@ This doesn't mean an AppImage must not use resources provided by the system, lik
 Build on old systems, run on newer systems
 ------------------------------------------
 
-AppImages are supposed to be built on the oldest possible system, allowing them to run on newer system. This allows the exclusion of certain "base libraries", which can be expected to be present on all major desktop Linux distributions, reducing the overhead of :ref:`one app = one file <one-app-one-file-principle>`. These dependencies are mostly shared libraries and involve low level libraries like :code:`libc.so.6` (the GNU C library, the C language standard library the majority of all Linux distributions use), but also common libraries like zlib_ or the GLib_ libraries are normally present.
+It is considered best practice to develop and compile the application on the oldest still-supported Linux distribution that we can assume users to still use. For example, the oldest still-supported LTS release of Ubuntu is a good choice to develop applications against and build applications on.
+
+Applications should be built on the oldest possible system, allowing them to run on newer system. This allows the exclusion of certain "base libraries", which can be expected to be present on all major desktop Linux distributions, reducing the overhead of :ref:`one app = one file <one-app-one-file-principle>`. These dependencies are mostly shared libraries and involve low level libraries like :code:`libc.so.6` (the GNU C library, the C language standard library the majority of all Linux distributions use), but also common libraries like zlib_ or the GLib_ libraries are normally present.
 
 It may seem contradictory to :ref:`the previous section <no-external-dependencies>` to rely on distribution provided resources. This is a trade-off between trying to reduce redundancies while at the same time being as self-contained as possible.
 
