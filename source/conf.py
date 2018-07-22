@@ -99,7 +99,7 @@ html_context = {
     "display_github": True,
     "github_user": "AppImage",
     "github_repo": "docs.appimage.org",
-    "github_version": "master/"
+    "github_version": "master/source/"
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
