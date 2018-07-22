@@ -35,6 +35,22 @@ You can bundle `AppImageUpdate` itself inside the AppImage of your application. 
 
 ### By using `libappimageupdate`
 
+#### Recommended user experience
+
+One advantage of the AppImage format is that it gives full control to application authors over the end user experience. Hence, using AppImage and AppImageUpdate, application authors can implement almost any of the schemes outlined above. In order to maintain a consistent and positive user experience with AppImages and AppImageUpdate, we recommend application authors to follow the following __Golden Rules__:
+
+* Never download updates without the user's explicit consent, be it in the form of per-update consent, or, optionally, opt-in consent for automatic updates. Thanks for not killing users' mobile data plans by downloading stuff without asking
+* Respect global flags for __"do not check for new versions"__ and __"do not attempt to update". The user may be running a central updating daemon that manages updates for the whole system, in which case any and all attempts to update the application from within itself should be skipped. __We need to define those flags, 1) for per-system and 2) per-user configuration and 3) ENV__ (similar to how the old `desktopintegration` script was set up not to interfere with `appimaged`) 
+* Do not bother the user with updates directly as the first thing when the application is launched. When opening an application for the first time, users should see something meaningful to give a positive impression and show immediately what the application is all about (after all, we are automatically taking a screenshot of what your application shows directly after it has been launched for AppImageHub)
+* Ask the user for permission before doing version checks. Many open source users value privacy highly and don't appreciate the "phone home" aspect of forced version checks, which effectively are a form of tracking
+
+![Real-world example](https://github.com/AppImage/appimage.github.io/blob/ef13aae415fae3c8f52b1326585b4b5df1b94de8/database/SonicVisualiser/screenshot.png?raw=true)
+
+* The update should ideally be nicely integrated into the GUI of your application, using whatever GUI toolkit you are using. We are interested in getting libraries for popular GUI toolkits like Qt, Gkt+ 2 and 3, WxWidgets, etc. - so if you implement this, please share with the world
+* During the update process, your application should remain fully usable (this works because the original file is not changed by the update process; instead a new file with the new version is placed next to the original one)
+* Releases should always update to releases, nightlies always to nightlies, etc. ("channels")
+* Whenever the application encounters issues (e.g., a crash reporter comes up) it could ask the user to check for updates, and accept bug reports only if no newer version is available in the channel
+
 #### Building and linking libappimageupdate
 
 *This guide assumes you are using Git and CMake to build your project.*
