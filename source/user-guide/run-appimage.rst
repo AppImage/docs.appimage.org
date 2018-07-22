@@ -63,7 +63,15 @@ appimaged
 AppImageLauncher
 ****************
 
-`AppImageLauncher <https://github.com/TheAssassin/AppImageLauncher>`_ is a helper application for Linux distributions serving as a kind of "entry point" for running and integrating AppImages. It makes a user's system AppImage-ready™.
+AppImageLauncher_ is a helper application for Linux distributions serving as a kind of "entry point" for running and integrating AppImages. It makes a user's system AppImage-ready™.
+
+AppImageLauncher must be installed into the system to be able to integrate into the system properly. It uses technologies that are independent from any desktop environment features, and therefore should be able to run on most distributions.
+
+After install AppImageLauncher, you can simply double-click AppImages in file managers, browsers etc. You will be prompted whether to integrate the AppImage, or run it just once. When you choose to integrate your AppImage, the file will be moved into the directory :code:`~/Applications`. This helps reducing the mess of AppImages on your filesystem and prevents you from having to search for the actual AppImage file if you want to e.g., remove it.
+
+To provide a complete solution for managing AppImages on the system, AppImageLauncher furthermore provides solutions for updating and removing AppImages from the system. These functions can be found in the context menus of the entries in the desktop's launcher.
+
+.. _AppImageLauncher: https://github.com/TheAssassin/AppImageLauncher
 
 .. seealso::
    More information about AppImageLauncher can be found in :ref:`sec-appimagelauncher`.
