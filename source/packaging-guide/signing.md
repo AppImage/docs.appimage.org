@@ -8,11 +8,22 @@ The AppImages specification allows the AppImage file to carry a digital signatur
 
 While it would be possible to embed signatures manually, the easiest way to produce a digitally signed AppImage is to use the `appimagetool` command line tool. The internally uses `gpg` or `gpg2` if it is installed and configured on the system.
 
+
+Especially, a key for signing must be prepared before AppImages can be signed. If the machine on which the AppImage is being generated does not have a valid signing key yet, a new one can be generated using
+
+```
+gpg2 --full-gen-key
+```
+
+Please refer to the `gpg` or `gpg2` documentation for additional information. You should take additional care to backup your private and public keys in a secure location. 
+
+Once you're signing keys have been set up, you can sign AppImages at AppImage creation time using
+
 ```
 ./appimagetool-x86_64.AppImage some.AppDir --sign
 ```
 
-will sign the AppImage with `gpg[2]`.
+This will sign the AppImage with `gpg[2]` and will put the signature into the AppImage.
 
 ## Reading the signature
 
