@@ -101,6 +101,8 @@ linuxdeploy is the successor of :ref:`linuxdeployqt`, and can be used in all pro
 .. _linuxdeploy: https://github.com/linuxdeploy/linuxdeploy
 
 
+.. _sec-appimagelauncher:
+
 AppImageLauncher
 ----------------
 
