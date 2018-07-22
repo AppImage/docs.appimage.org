@@ -114,6 +114,8 @@ Quoting the README:
     
     -- https://github.com/TheAssassin/AppImageLauncher/blob/master/README.md
 
+AppImageLauncher doesn't provide any kind of "app store" software, but integrates into system-provided launchers' context menus. It provides tools for updating (based on :ref:`AppImageUpdate`) and removing AppImages.
+
 .. _AppImageLauncher: https://github.com/TheAssassin/AppImageLauncher
 
 
