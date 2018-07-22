@@ -14,3 +14,17 @@ Upstream packaging has a lot of advantages:  first and foremost, it allows the a
 ## Disadvantages
 
 However, upstream packaging also has disadvantages:  most prominently, there is no curator who assesses the quality and integrity of the application. Hence, the end user has to trust the application author when running an application that has been distributed directly by the original application author.
+
+## If upstream packaging is not possible
+
+In some cases, the original application author or application team may not be interested in providing an official AppImage. In this case you have the following options: For open source projects, you can often make and send a pull request, and for closed source applications you can create a yml recipe that can be used to convert the existing Linux binaries into an AppImage using pkg2appimage.
+
+### Open source projects
+
+For open source projects, you can often make and send a pull request (GitHub) or merge request (GitLab) that generates an AppImage as part of the project's build pipeline. Most open source projects will gladly accept such pull requests, especially if you indicate that you are willing to maintain the AppImage generation going forward.
+
+Many pen source projects already use continuous integration on systems such as Travis CI, GitLab CI, Jenkins, or the [Open Build Service](obs.md). If a project already uses one of those services, it is most beneficial to generate the AppImage on that service.
+
+### Closed source applications
+
+For closed source applications you can create a yml recipe that can be used to convert the existing Linux binaries into an AppImage using [`pkg2appimage`](pkg2appimage.md).
