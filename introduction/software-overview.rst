@@ -84,13 +84,13 @@ appimaged
 
 
 Third-party tools
------------------
+*****************
 
-This section showcases third-party tools that can be used to create and handle AppImage files.
+This section showcases a couple of third-party tools that can be used to create and handle AppImage files.
 
 
 linuxdeploy
-^^^^^^^^^^^
+-----------
 
 linuxdeploy_ is a simple to use tool that can be used to create AppDirs and AppImages. It has been developed in 2018, and describes itself as an "AppDir creation and maintenance tool".
 
@@ -100,7 +100,7 @@ linuxdeploy is the successor of :ref:`linuxdeployqt`, and can be used in all pro
 
 
 AppImageLauncher
-^^^^^^^^^^^^^^^^
+----------------
 
 AppImageLauncher_ is a helper application for Linux distributions serving as a kind of "entry point" for running and integrating AppImages.
 
@@ -120,14 +120,14 @@ AppImageLauncher doesn't provide any kind of "app store" software, but integrate
 
 
 Nomad Software Center
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 .. todo::
    describe app store
 
 
 linuxdeployqt
-^^^^^^^^^^^^^
+-------------
 
 .. todo::
    describe linuxdeployqt
