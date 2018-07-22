@@ -10,6 +10,7 @@ AppImage is designed to be a standalone standard, implemented in a so-called ref
 .. toctree::
    motivation
    concepts
+   software-overview
    :caption: Contents:
 
 
