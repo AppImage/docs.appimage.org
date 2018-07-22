@@ -6,7 +6,7 @@ Frequently Asked Questions
 The most common questions are answered directly here to save you from having to read the entire user guide.
 
 |question| What is an AppImage?
---------------------
+-------------------------------
 
 An AppImage is a downloadable file for Linux that contains an application and everything the application needs to run (e.g., libraries, icons, fonts, translations, etc.) that cannot be reasonably expected to be part of each target system.
 
