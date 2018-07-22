@@ -5,6 +5,7 @@ Packaging Guide
    ways
    obs
    pkg2appimage
+   manual
    :caption: Contents:
    
    
