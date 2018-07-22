@@ -15,6 +15,6 @@ AppImage is designed to be a standalone standard, implemented in a so-called ref
 
 
 
-.. _AppImageKit: https://github.com/AppImage/AppImageKit.
+.. _AppImageKit: https://github.com/AppImage/AppImageKit
 
 
