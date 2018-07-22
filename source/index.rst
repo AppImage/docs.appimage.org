@@ -5,7 +5,8 @@ Willkommen • Welcome • 欢迎 • Bienvenue • Benvenuto • Bienvenido •
 
 In this documentation, all aspects of the AppImage project shall be explained, to have a single unified source of information.
 
-This document is currently work in progress. Contributions welcome!
+.. note::
+   This document is currently work in progress. Contributions welcome!
 
 If you're new to AppImage, please read the Introduction. It describes the ideas behind AppImage, shows the motivation, explains why you as a user and/or developer should be interested in AppImages. Also, it explains the core concepts of AppImage's design.
 
