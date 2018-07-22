@@ -7,13 +7,31 @@ AppImages can be updated
 
 ## Making AppImages updateable via external tools
 
+To make an AppImage updatable, you need to embed information that describes where to check for updates and how into the AppImage. Unlike other Linux distribution methods, the information where to look for updates is not contained in separate repository description files such as `sources.list` that need to be managed by the user, but is directly embedded inside the AppImage by the author of the respective AppImage. This has the advantage that the update information always travels alongside the application, so that the end user does not have to do anything special in order to be able to check for updates.
 
+### Using appimagetool
+
+Use `appimagetool -u` to embed update information (as specified in the AppImageSpec).
+
+```
+appimagetool videocapture.AppDir/usr/share/applications/*.desktop -u "zsync|https://lyrion.ch/opensource/repositories/videocapture/uv/videocapture.AppImage.zsync"
+```
+
+The string `zsync|https://lyrion.ch/opensource/repositories/videocapture/uv/videocapture.AppImage.zsync` is called the _update information_.
+
+Please see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#update-information for a description of allowable types of update information.
+
+### Using linuxdeployqt
+
+`linuxdeployqt` uses `appimagetool` internally. If it recognizes that it is running on Travis CI, then it automatically generates the matching update information.
 
 ## Making AppImages self-updateable
 
 Once you have made your AppImage updateable via external tools as described above, you may optionally go one step further and bundle everything that is required to update an AppImage inside the AppImage itself, so that the user can get updates without needing anything besides the AppImage itself. This is conceptually similar to how the Sparkle Framework works on macOS.
 
-### Via an updater tool built into the AppImage
+### Via AppImageUpdate built into the AppImage
+
+You can bundle `AppImageUpdate` itself inside the AppImage of your application. In order to have the bundled AppImageUpdate update your running AppImage when the user invokes some command in your applcation (e.g., an "Update..." menu) in your GUI, simply have your application invoke `AppImageUpdate $APPIMAGE`. If `AppImageUpdate` is bundled inside the AppImage and is on the `$PATH`, this will work.
 
 ### By using `libappimageupdate`
 
