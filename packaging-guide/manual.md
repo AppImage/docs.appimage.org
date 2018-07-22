@@ -1,4 +1,4 @@
-## Manually creating an AppDir
+# Manually creating an AppDir
 
 Create an AppDir manually, then turn it into an AppImage. Start out with the example below, then check the examples on bundling certain applications or type of applications as AppImages from the right-hand side **"Pages"** menu.
 
