@@ -28,3 +28,5 @@ Many pen source projects already use continuous integration on systems such as T
 ### Closed source applications
 
 For closed source applications you can create a yml recipe that can be used to convert the existing Linux binaries into an AppImage using [`pkg2appimage`](pkg2appimage.md).
+
+Note that you may not be allowed to redistribute the AppImage of the application. In this case, you can distribute `.yml` recipes that end users can use to produce their own AppImages of the application easily. This applies to applications such as Google Chrome, Spotify, Skype, and others.
