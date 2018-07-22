@@ -5,9 +5,7 @@ AppimageKit is designed with “upstream packaging” in mind. This means that w
 
 In this regard, if image is very similar to an `.exe` file on Windows or a `.dmg` file on the Mac. These files are normally prepared by the original application authors rather than by third parties. This ensures that the software works exactly the way the original application author has envisioned it to work. It also means that the application author does not have to follow arbitrary rules set by Linux distributions.
 
-.. note::
-
-   Before you package an application as an AppImage, ask yourself whether you are either the application author or a member of the application team. If not, it is most likely better to ask the original author of the application or the application team to provide an official AppImage.
+NOTE: Before you package an application as an AppImage, ask yourself whether you are either the application author or a member of the application team. If not, it is most likely better to ask the original author of the application or the application team to provide an official AppImage.
 
 ## Advantages
 
@@ -19,7 +17,7 @@ However, upstream packaging also has disadvantages:  most prominently, there is 
 
 ## If upstream packaging is not possible
 
-In some cases, the original application author or application team may not be interested in providing an official AppImage. In this case you have the following options: For open source projects, you can often make and send a pull request, and for closed source applications you can create a yml recipe that can be used to convert the existing Linux binaries into an AppImage using pkg2appimage.
+In some cases, the original application author or application team may not be interested in providing an official AppImage. In this case you have the following options: For open source projects, you can often make and send a pull request, and for closed source applications you can create a yml recipe that can be used to convert the existing Linux binaries into an AppImage using `pkg2appimage`.
 
 ### Open source projects
 
