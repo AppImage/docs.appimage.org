@@ -1,5 +1,16 @@
 # Making your AppImages discoverable
 
+Now that you have produced your AppImage, you want users to be able to easily find it.
+To get users, you need to make your AppImage known to the world.
+
+## Application website
+
+The most obvious place to advertise your AppImage is to prominently featured on your application’s download page.
+
+## Social Media
+
+Also be sure to advertise your new AppImage on social media, for example on Twitter, blogs, etc.
+
 ## AppImageHub
 
 You may want to add your AppImage to [AppImageHub](https://appimage.github.io/apps/), 
@@ -18,10 +29,7 @@ Projects already using this data include
 * https://github.com/lliurex/lliurex-store
 * Please contact us if you are using this data so that we can list your project here
 
-The idea is that all the metadata travels inside the AppImage, so besides adding an URL to this repository
-no additional information is asked, since it comes with the AppImage itself.
-
-Create a new file at https://github.com/AppImage/AppImageHub/new/master/data and send a pull request.
+To get your AppImage included, create a new file at https://github.com/AppImage/AppImageHub/new/master/data and send a pull request.
 
 The file should contain one line with a link to the GitHub repository that hosts AppImages on its Releases page.
 
