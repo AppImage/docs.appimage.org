@@ -9,6 +9,7 @@ This chapter shows application developers how to produce AppImages, how to make 
    ways
    obs
    pkg2appimage
+   travis
    manual
    signatures
    updates
