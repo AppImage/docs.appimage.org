@@ -74,6 +74,6 @@ To provide a complete solution for managing AppImages on the system, AppImageLau
 .. _AppImageLauncher: https://github.com/TheAssassin/AppImageLauncher
 
 .. seealso::
-   More information about AppImageLauncher can be found in :ref:`sec-appimagelauncher`.
+   More information about AppImageLauncher can be found in :ref:`ref-appimagelauncher`.
 
 

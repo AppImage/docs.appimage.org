@@ -10,7 +10,7 @@ Software Overview
 AppImage project
 ****************
 
-.. _sec-appimagekit:
+.. _ref-appimagekit:
 
 AppImageKit
 -----------
@@ -101,7 +101,7 @@ linuxdeploy is the successor of :ref:`linuxdeployqt`, and can be used in all pro
 .. _linuxdeploy: https://github.com/linuxdeploy/linuxdeploy
 
 
-.. _sec-appimagelauncher:
+.. _ref-appimagelauncher:
 
 AppImageLauncher
 ----------------
