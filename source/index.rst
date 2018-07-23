@@ -17,7 +17,7 @@ In this documentation, all aspects of the AppImage project shall be explained, t
    .. centered::
       |wip|
    .. centered::
-      **This document is currently work in progress. Contributions welcome!**
+      **This document is currently work in progress.** `Contributions welcome! <https://github.com/AppImage/docs.appimage.org>`_
 
 .. |wip| image:: /_static/img/wip.jpg
 
