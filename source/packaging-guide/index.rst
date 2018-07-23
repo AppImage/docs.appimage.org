@@ -17,5 +17,4 @@ This chapter shows application developers how to produce AppImages, how to make 
    testing
    distributing
    :caption: Contents:
-   
-   
+   :maxdepth: 2
