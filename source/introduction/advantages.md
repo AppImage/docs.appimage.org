@@ -28,7 +28,9 @@ If a third party (the distribution’s “maintainer”) packages the applicatio
 
 Some application offers do not want their applications to be distributed randomly, but be in full control over who downloads what and when. For example and application author may want users to fill in a survey before downloading the application. Also, the author may want to count the number of downloads.  In other cases still, the application author may want to ask for a donation or even her required payment before the user can download the application through services such as Gumroad, PayPal, or Patreon. In the traditional Linux distribution model, this is not possible.
 
-Providing an AppImage solves these kinds of issues, Since the application author is in full control over the application distribution and the user experience connected to it. 
+Providing an AppImage solves these kinds of issues, Since the application author is in full control over the application distribution and the user experience connected to it.
+
+Some applications require certain versions of dependencies in order to function properly. For example, an application may run only on a certain version of the Qt framework and may run into unexpected issues if another version is used. In the traditional Linux distribution model, an application has to use whatever version of a library the Linux distribution happens to provide, whereas with AppImage, the application author can exactly decide which version of a dependency should be used by the application. 
 
 ## Advantages for software testers
 
