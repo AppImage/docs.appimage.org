@@ -1,6 +1,6 @@
-#AppImage advantages
+# AppImage advantages
 
-This chapter compares AppImage with traditional application packaging formats on Linux and explains the advantages of the AppImage format. You can skip this page if you are ready no why AppImages are useful. 
+This chapter compares AppImage with traditional application packaging formats on Linux and explains the advantages of the AppImage format. You can skip this chapter if you already know why AppImages are useful. 
 
 Traditionally, applications have been installed on Linux systems by using the package manager that comes with the Linux distribution. However, this model does not scale well for long-tail applications, applications that are only used by a few users, or in cases where users want to use the very latest applications immediately after they are published by their developers. It also is very cumbersome for application developers that want to reach a large audience quickly. 
 
