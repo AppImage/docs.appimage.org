@@ -66,7 +66,7 @@ Calculates the MD5 digest used for desktop integration purposes for a given AppI
 
 
 AppImageUpdate
-^^^^^^^^^^^^^^
+--------------
 
 AppImageUpdate lets you update AppImages in a decentral way using information embedded in the AppImage itself.
 
@@ -79,7 +79,7 @@ AppImageUpdate lets you update AppImages in a decentral way using information em
 .. _appimaged:
 
 appimaged
-^^^^^^^^^
+---------
 
 .. todo::
    describe legacy software
