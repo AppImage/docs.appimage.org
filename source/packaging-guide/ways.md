@@ -4,7 +4,7 @@ There are different ways to create AppImages:
 
 1. Use Open Build Service (OBS)
 1. Convert existing binary packages (.deb, .rpm, ...)
-1. Use Travis CI
+1. Bundling your Travis CI builds as AppImages
 1. Run `linuxdeployqt` on your Qt application
 1. Using `electron-builder` for Electron-based apps
 1. Create an AppDir manually
