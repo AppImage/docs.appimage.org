@@ -32,11 +32,3 @@ To learn more about *using* AppImages, please read the User Guide. If you are in
    packaging-guide/index
    :maxdepth: 2
    :caption: Contents:
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
