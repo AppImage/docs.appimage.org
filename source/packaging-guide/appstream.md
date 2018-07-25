@@ -12,6 +12,6 @@ More information: https://www.freedesktop.org/software/appstream/docs/chap-Quick
 
 An easy way to generate an AppStream metainfo file is to use the online generator at http://output.jsbin.com/qoqukof.
 
-# Embedding AppStream metadata
+## Embedding AppStream metadata
 
 Once you have generated a suitable AppStream metainfo file, place it into `usr/share/metainfo/myapp.appdata.xml` in your AppDir, and generate an AppImage from it. It is generally a good idea to check AppStream metainfo files for errors using the `appstreamcli` and/or `appstream-util` command line tools. `appimagetool` will automatically attempt to validate the AppStream metainfo file if `appstreamcli` and/or `appstream-util` are available on the `$PATH`.
