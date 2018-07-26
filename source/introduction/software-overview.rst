@@ -18,11 +18,15 @@ AppImageKit
 `AppImageKit <https://github.com/AppImage/AppImageKit>`_ is the reference implementation of the :ref:`AppImage specification <appimage-specification>`. It is split up into several components, which are described in this subsection.
 
 
+.. _ref-runtime:
+
 runtime
 ^^^^^^^
 
 The runtime provides the "executable header" of every AppImage. When executing an AppImage, the runtime within the AppImage is run, which mounts the embedded filesystem image read-only in a temporary location, and launches the payload application within there. After the payload application exited, the runtime unmounts the squashfs image and cleans up the temporary resources (such as, the temporary mountpoint directory).
 
+
+.. _ref-appimagetool:
 
 appimagetool
 ^^^^^^^^^^^^
