@@ -64,7 +64,7 @@ To mount an AppImage temporarily, you have two options. The easiest way to do so
 The AppImage is unmounted when the application called in the example is interrupted (e.g., by pressing :kbd:`Ctrl+C`, closing the terminal etc.).
 
 .. note::
-   This is only available for type 2 AppImages. Type 1 AppImages do not provide any self-mounting mechanism.
+   This is only available for type 2 AppImages. Type 1 AppImages do not provide any self-mounting mechanism. To mount type 1 AppImages, use `mount -o loop`.
 
 This method is to be preferable, as other methods have some major disadvantages explained below.
 
