@@ -15,8 +15,6 @@ In this documentation, all aspects of the AppImage project shall be explained, t
 
 .. note::
    .. centered::
-      |wip|
-   .. centered::
       **This document is currently work in progress.** `Contributions welcome! <https://github.com/AppImage/docs.appimage.org>`_
       
 If you are new to AppImage, please read the introduction. It describes the ideas behind AppImage, shows the motivation, explains why you as a user and/or developer should be interested in AppImages. Also, it explains the core concepts of AppImage's design.
