@@ -21,7 +21,7 @@ Since an AppImage is mounted at a different location in the filesystem every tim
 
 ### Open source applications
 
-Wherever possible you should change the Source Code of the application in order not to use absolute paths. There are several ways to do this. They canonical way on Linux is to resolve `proc/self/exe` to get the path to the main executable and construct a relative path from there.
+Wherever possible you should change the Source Code of the application in order not to use absolute paths. There are several ways to do this. They canonical way on Linux is to resolve `proc/self/exe` to get the path to the main executable and construct a relative path from there. As a result, it should work both in normal installations and in relocatable installations such as AppImages.
 
 There are libraries which make this easier, for example [BinReloc](https://github.com/limbahq/binreloc). Also see [Resourceful](https://github.com/drbenmorgan/Resourceful), a project to study of cross-platform techniques for building applications and libraries that use resource files (e.g. icons, configuration, data).
 
@@ -30,8 +30,6 @@ Some application frameworks such as Qt have this functionality built-in, for exa
 __NOTE:__ __DO NOT USE__ [`QStringList QStandardPaths::standardLocations(QStandardPaths::AppDataLocation);`](http://doc.qt.io/qt-5/qstandardpaths.html). According to the [Qt documentation](http://doc.qt.io/qt-5/qstandardpaths.html), this resolves to `"~/.local/share/<APPNAME>", "/usr/local/share/<APPNAME>", "/usr/share/<APPNAME>"` but clearly `/usr` is not where these things are located in an AppImage.
 
 ### Closed source applications with compiled-in absolute paths
-
-As a result, it should work both in normal installations and in relocatable installations such as AppImages.
 
 In case it is not possible to change the source code of the application, for example because it is a closed source application, you could binary patch the executable.  The trick is to search for `/usr`  in the binary and replace it by the same length string `././`  which means “here”.  This can be done by using the following command: `find usr/ -type f -executable -exec sed -i -e "s|/usr|././|g" {} \;`. This command is also available as part of the bash function collection at https://github.com/AppImage/AppImages/blob/9249a99e653272416c8ee8f42cecdde12573ba3e/functions.sh#L79. For the binary-patched application to work, you need to change to the `usr/` directory inside the application directory before you launch the application.
 
