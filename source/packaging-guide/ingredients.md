@@ -9,9 +9,10 @@ What goes into the AppImage is called the “payload”, or the “ingredients�
 Producing the payload requires some thought, as you want your AppImage to run on as many targets systems as possible.
 
 For an AppImage to run on most systems, the following conditions need to be met:
+ 1. Binaries must not use compiled-in absolute paths (and if they do, they need to be binary-patched)
  1. The AppImage needs to include all libraries and other dependencies that are not part of all of the base systems that the AppImage is intended to run on.
- 2. The binaries contained in the AppImage need to be compiled on a system not newer than the oldest base system that the AppImage is intended to run on.
- 3. The AppImage should actually be tested on the base systems that it is intended to run on.
+ 1. The binaries contained in the AppImage need to be compiled on a system not newer than the oldest base system that the AppImage is intended to run on.
+ 1. The AppImage should actually be tested on the base systems that it is intended to run on.
 
 
 ## Binaries must not use compiled-in absolute paths
