@@ -18,16 +18,17 @@ For an AppImage to run on most systems, the following conditions need to be met:
 
 Since an AppImage is mounted at a different location in the filesystem every time it is run, it is crucial not to use compiled in absolute paths. For example, if the application accesses a resource such as an image, it should do so from a location relative to the main executable. Unfortunately, many applications have absolute paths compiled in (`$PREFIX`, most commonly `/usr`) at compile time.
 
-There are several ways around this. They canonical way on Linux is to resolve `proc/self/exe` to get the path to the main executable and construct a relative path from there.
+### Open source applications
+
+Wherever possible you should change the Source Code of the application in order not to use absolute paths. There are several ways to do this. They canonical way on Linux is to resolve `proc/self/exe` to get the path to the main executable and construct a relative path from there.
 
 There are libraries which make this easier, for example [BinReloc](https://github.com/limbahq/binreloc). Also see [Resourceful](https://github.com/drbenmorgan/Resourceful), a project to study of cross-platform techniques for building applications and libraries that use resource files (e.g. icons, configuration, data).
 
-Some application frameworks such as Qt have this functionality built-in, for example in [`QString QCoreApplication::applicationDirPath()`](http://doc.qt.io/qt-5/qcoreapplication.html#applicationDirPath), and construct a _relative_ path to `../share/kaidan/images/` from there.
-
-For an example, see:
-https://github.com/KaidanIM/Kaidan/commit/da38011b55a1aa5d17764647ecd699deb4be437f
+Some application frameworks such as Qt have this functionality built-in, for example in [`QString QCoreApplication::applicationDirPath()`](http://doc.qt.io/qt-5/qcoreapplication.html#applicationDirPath), and construct a _relative_ path to `../share/kaidan/images/` from there. For an example, see https://github.com/KaidanIM/Kaidan/commit/da38011b55a1aa5d17764647ecd699deb4be437f.
 
 __NOTE:__ __DO NOT USE__ [`QStringList QStandardPaths::standardLocations(QStandardPaths::AppDataLocation);`](http://doc.qt.io/qt-5/qstandardpaths.html). According to the [Qt documentation](http://doc.qt.io/qt-5/qstandardpaths.html), this resolves to `"~/.local/share/<APPNAME>", "/usr/local/share/<APPNAME>", "/usr/share/<APPNAME>"` but clearly `/usr` is not where these things are located in an AppImage.
+
+### Closed source applications with compiled-in absolute paths
 
 As a result, it should work both in normal installations and in relocatable installations such as AppImages.
 
