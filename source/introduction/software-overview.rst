@@ -74,10 +74,11 @@ AppImageUpdate
 
 AppImageUpdate lets you update AppImages in a decentral way using information embedded in the AppImage itself.
 
-.. todo::
-   add more details
+The project consists of two tools: :code:`appimageupdatetool`, a full-featured CLI tool for updating AppImages and dealing with `update information`_, and :code:`AppImageUpdate, a user interface for updating AppImages written in Qt.
 
 .. _AppImageUpdate: https://github.com/AppImage/AppImageUpdate
+
+.. _update information: https://github.com/AppImage/AppImageSpec/blob/master/draft.md#update-information
 
 
 .. _appimaged:
