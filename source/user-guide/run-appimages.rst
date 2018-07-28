@@ -64,18 +64,29 @@ To mount an AppImage temporarily, you have two options. The easiest way to do so
 The AppImage is unmounted when the application called in the example is interrupted (e.g., by pressing :kbd:`Ctrl+C`, closing the terminal etc.).
 
 .. note::
-   This is only available for type 2 AppImages. Type 1 AppImages do not provide any self-mounting mechanism.
+   This is only available for type 2 AppImages. Type 1 AppImages do not provide any self-mounting mechanism. To mount type 1 AppImages, use ``mount -o loop``.
 
 This method is to be preferable, as other methods have some major disadvantages explained below.
 
-Another way to mount AppImages is to use the normal ``mount`` command toolchain of your Linux distribution. Mounting and unmounting devices, files, images and also AppImages requires root permissions. Also, you need to provide a mountpoint. Please see the following example::
+Another way to mount AppImages is to use the normal ``mount`` command toolchain of your Linux distribution. Mounting and unmounting devices, files, images and also AppImages requires root permissions. Also, you need to provide a mountpoint. Please see the following example:
+
+For type 1 AppImages::
 
     > mkdir mountpoint
     > sudo mount my.AppImage mountpoint/
     # you can now inspect the contents
     > sudo umount mountpoint/
 
-This method works with both type 2 and the older type 1 AppImages.
+For type 2 AppImages::
+
+    > mkdir mountpoint
+    > my.AppImage --appimage-offset
+    > 123456
+    > sudo mount my.AppImage mountpoint/ -o offset=123456
+    # you can now inspect the contents
+    > sudo umount mountpoint/
+    
+Note that the number `123456` is just an example here, you will likely see another number.
 
 .. warning::
    AppImages mounted using this method are not unmounted automatically. Please do not forget to call ``umount`` the AppImage as soon as you don't need it mounted any more.
