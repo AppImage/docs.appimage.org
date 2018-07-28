@@ -16,6 +16,8 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+import os
+
 
 # -- Project information -----------------------------------------------------
 
@@ -95,11 +97,26 @@ html_theme_options = {
     "includehidden": True,
 }
 
+# try to fetch current Git commit ID from the environment
+commit = os.environ.get("TRAVIS_COMMIT", os.environ.get("GIT_COMMIT", None))
+
+# if this is not possible for some reason, try to fetch it via the git command
+if not commit:
+    import subprocess
+    try:
+        commit = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"]).decode().split()[0]
+    except subprocess.CalledProcessError:
+        commit = "<not available>"
+
+# make sure to use short commit
+commit = commit[:7]
+
 html_context = {
     "display_github": True,
     "github_user": "AppImage",
     "github_repo": "docs.appimage.org",
-    "github_version": "master/source/"
+    "github_version": "master/source/",
+    "commit": commit,
 }
 
 html_favicon = "_static/favicon.ico"
