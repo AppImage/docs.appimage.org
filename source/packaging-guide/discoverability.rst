@@ -12,7 +12,7 @@ Application website
 The most obvious place to advertise your AppImage is to prominently featured on your application’s download page.
 
 
-.. _ref-social-media:
+.. _ref-discoverability-social-media:
 
 Social Media
 ------------

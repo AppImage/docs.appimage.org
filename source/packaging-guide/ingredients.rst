@@ -45,7 +45,7 @@ For an example, see:
 .. _see documentation: http://doc.qt.io/qt-5/qcoreapplication.html#applicationDirPath
 
 
-.. _closed-source-apps-abs-paths:
+.. _ref-closed-source-apps-abs-paths:
 
 Closed source applications with compiled-in absolute paths
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

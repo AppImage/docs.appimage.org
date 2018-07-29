@@ -13,7 +13,7 @@ More information:
 	https://www.freedesktop.org/software/appstream/docs/chap-Quickstart.html#sect-Quickstart-DesktopApps.
 
 
-.. _ref-using-appstrean-generator:
+.. _ref-using-appstream-generator:
 
 Using AppStrean generator
 -------------------------
