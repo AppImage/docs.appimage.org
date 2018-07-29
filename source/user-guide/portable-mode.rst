@@ -18,6 +18,8 @@ Example
 
 Imagine you want to use the Leafpad text editor, but carry its settings around with the executable. You can do the following:
 
+.. Tell Pygments to use 'shell' syntax, otherwise it defaults to 'pyhton'
+.. See http://www.sphinx-doc.org/en/1.4.9/markup/code.html#directive-code-block for more infos
 .. code-block:: shell
 
 	# Download Leafpad AppImage and make it executable
