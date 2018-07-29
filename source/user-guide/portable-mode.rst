@@ -21,18 +21,18 @@ Imagine you want to use the Leafpad text editor, but carry its settings around w
 .. code-block:: shell
 
 	# Download Leafpad AppImage and make it executable
-	wget -c "https://bintray.com/probono/AppImages/download_file?file_path=Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage" -O Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage
-	chmod a+x Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage
+	$ wget -c "https://bintray.com/probono/AppImages/download_file?file_path=Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage" -O Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage
+	$ chmod a+x Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage
 
 	# Create a directory with the same name as the AppImage plus the ".config" extension
 	# in the same directory as the AppImage
-	mkdir Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage.config
+	$ mkdir Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage.config
 
 	# Run Leafpad, change some setting (e.g., change the default font size) then close Leafpad
-	./Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage
+	$ ./Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage
 
 	# Now, check where the settings were written:
-	linux@linux:~> find Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage.config
+	$ find Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage.config
 	(...)
 	Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage.config/leafpad/leafpadrc
 
