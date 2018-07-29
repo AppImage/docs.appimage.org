@@ -45,11 +45,19 @@ Hello world
 
 On the https://build.opensuse.org/ homepage, click on "New Image".
 
-.. image:: https://user-images.githubusercontent.com/2480569/26893574-00534da0-4bbc-11e7-82b2-24646c3d6ff0.png
+.. Old image is available here:
+	https://user-images.githubusercontent.com/2480569/26893574-00534da0-4bbc-11e7-82b2-24646c3d6ff0.png
+
+.. image:: /_static/img/packaging-guide/obs-new-image.png 
+	:alt:
 
 Then select AppImage, and click "Create Appliance".
 
-.. image:: https://user-images.githubusercontent.com/2480569/26893577-00aac72e-4bbc-11e7-8fbf-457b3be82e19.png
+.. Old image is available here:
+	https://user-images.githubusercontent.com/2480569/26893577-00aac72e-4bbc-11e7-8fbf-457b3be82e19.png
+
+.. image:: /_static/img/packaging-guide/obs-create-appliance.png
+ 	:alt: Select AppImage template, name your appliance, and press the "Create Appliance" button
 
 Done! An AppImage of Leafpad, a simple text editor, will be built. You can use this template as a starting point to customize for other applications.
 
