@@ -13,7 +13,7 @@ For an AppImage to run on most systems, the following conditions need to be met:
 #. The AppImage should actually be tested on the base systems that it is intended to run on.
 
 
-.. _binaries-not-use-compiled-in-abs-paths:
+.. _ref-binaries-no-abs-paths:
 
 Binaries must not use compiled-in absolute paths
 ------------------------------------------------
@@ -21,7 +21,7 @@ Binaries must not use compiled-in absolute paths
 Since an AppImage is mounted at a different location in the filesystem every time it is run, it is crucial not to use compiled in absolute paths. For example, if the application accesses a resource such as an image, it should do so from a location relative to the main executable. Unfortunately, many applications have absolute paths compiled in (:code:`$PREFIX`, most commonly :code:`/usr`) at compile time.
 
 
-.. _open-source-applications:
+.. _ref-open-source-applications:
 
 Open source applications
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -45,7 +45,7 @@ For an example, see:
 .. _see documentation: http://doc.qt.io/qt-5/qcoreapplication.html#applicationDirPath
 
 
-.. _closed-source-apps-with-compiled-in-abs-paths:
+.. _closed-source-apps-abs-paths:
 
 Closed source applications with compiled-in absolute paths
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -61,7 +61,7 @@ This command is also available as part of the bash function collection at `AppIm
 .. _AppImage/AppImages/functions.sh\#L79: https://github.com/AppImage/AppImages/blob/9249a99e653272416c8ee8f42cecdde12573ba3e/functions.sh#L79
 
 
-.. _binaries-compiled-on-old-system:
+.. _ref-binaries-compiled-on-old-system:
 
 Binaries compiled on old enough base system
 -------------------------------------------
@@ -91,13 +91,16 @@ https://lintian.debian.org/tags/embedded-library.html
 .. _devtools-2: http://people.centos.org/tru/devtools-2/
 
 
-.. _libstdc++.so.6:
+.. _ref-libstdc++.so.6:
 
 libstdc++.so.6
 --------------
 
 .. note::
 	**As a general rule of thumb, please use no libstdc++.so.6 newer than the one that comes with the oldest distribution that you still want to support, i.e., the oldest still-supported LTS version** (at the time of this writing, Ubuntu 14.04).
+
+
+.. _ref-appimagekit-checkrt:
 
 AppImageKit-checkrt
 ^^^^^^^^^^^^^^^^^^^

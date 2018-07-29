@@ -4,7 +4,7 @@ Making your AppImages discoverable
 Now that you have produced your AppImage, you want users to be able to easily find it. To get users, you need to make your AppImage known to the world.
 
 
-.. _application-website:
+.. _ref-application-website:
 
 Application website
 -------------------
@@ -12,7 +12,7 @@ Application website
 The most obvious place to advertise your AppImage is to prominently featured on your application’s download page.
 
 
-.. _social-media:
+.. _ref-social-media:
 
 Social Media
 ------------
@@ -20,7 +20,7 @@ Social Media
 Also be sure to advertise your new AppImage on social media, for example on Twitter, blogs, etc. Be sure to use the :code:`#AppImage` hashtag for additional discoverability.
 
 
-.. _appimagehub:
+.. _ref-appimagehub:
 
 AppImageHub
 -----------
@@ -65,7 +65,7 @@ As a format, AppImage is designed in a way that does not impose restrictions on 
 .. _AppStream metainfo file: https://people.freedesktop.org/~hughsient/appdata/
 
 
-.. _future-catalogs:
+.. _ref-future-catalogs:
 
 Future catalogs
 ---------------

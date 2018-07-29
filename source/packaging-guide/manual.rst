@@ -4,7 +4,7 @@ Manually creating an AppDir
 Create an AppDir manually, then turn it into an AppImage. Start out with the example below, then check the examples on bundling certain applications or type of applications as AppImages from the right-hand side **"Pages"** menu.
 
 
-.. _creating-an-appdir-manually:
+.. _ref-creating-an-appdir-manually:
 
 Creating an AppDir manually
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -25,7 +25,7 @@ The :code:`AppRun` file can be a script or executable. It sets up required envir
 Of course you can leave out the library if your app does not need one, or if all libraries your app needs are already contained in every base operating system you are targeting.
 
 
-.. _no-hard-coded-paths:
+.. _ref-no-hard-coded-paths:
 
 No hard-coded paths
 ^^^^^^^^^^^^^^^^^^^

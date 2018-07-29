@@ -13,7 +13,7 @@ More information:
 	https://www.freedesktop.org/software/appstream/docs/chap-Quickstart.html#sect-Quickstart-DesktopApps.
 
 
-.. _using-appstrean-generator:
+.. _ref-using-appstrean-generator:
 
 Using AppStrean generator
 -------------------------
@@ -21,7 +21,7 @@ Using AppStrean generator
 An easy way to generate an AppStream metainfo file is to use the online generator at http://output.jsbin.com/qoqukof.
 
 
-.. _embedding-appstream-metadata:
+.. _ref-embedding-appstream-metadata:
 
 Embedding AppStream metadata
 ----------------------------
