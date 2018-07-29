@@ -47,4 +47,4 @@ Successful application projects run a lot of tests. Whereas some tests may be au
 
 The LibreOffice_ project, for example, uses AppImages to test new application versions.
 
-.. _LibreOffice: https://https://www.libreoffice.org/download/appimage/
+.. _LibreOffice: https://www.libreoffice.org/download/appimage/
