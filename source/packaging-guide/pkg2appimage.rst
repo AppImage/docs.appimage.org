@@ -78,10 +78,11 @@ Keys that enable ability to relocate
 Optional. Either :code:`binpatch: true` or :code:`union: true`. These keys enable workarounds that make it possible to run applications from different, changing places in the filesystem (i.e., make them relocateable) that are not made for this. For example, some applications contain hardcoded paths to a compile-time :code:`$PREFIX` such as :code:`/usr`. This is generally discouraged, and application authors are asked to use paths relative to the main executable instead. Libraries like *binreloc* exist to make this easier. Since many applications are not relocateable yet, there are workarounds which can be used by one of these keys:
 
 * :code:`binpatch: true`  indicates that binaries in the AppImage should be patched to replace the string :code:`/usr` by the string :code:`././`,  an :code:`AppRun` file should be put inside the AppImage that does a :code:`chdir()` to the :code:`usr/` directory of inside AppDir before executing the payload application. The net effect is this that applications can find their resources in the  :code:`usr/` directory inside the AppImage as long as they do not internally use :code:`chdir()` operations themselves.
-* :code:`union: true` indicates that an `AppRun` file should be put inside the AppImage that tries to create the impression of a union filesystem, effectively creating the impression to the payload application that the contents of the AppImage are overlayed over :code:`/`. This can be achieved, e.g., using :code:`LD_PRELOAD` and a library that redirects filesystem calls. This works as long as the payload application is a dynamically linked binary.
+* :code:`union: true` indicates that an :code:`AppRun` file should be put inside the AppImage that tries to create the impression of a union filesystem, effectively creating the impression to the payload application that the contents of the AppImage are overlayed over :code:`/`. This can be achieved, e.g., using :code:`LD_PRELOAD` and a library that redirects filesystem calls. This works as long as the payload application is a dynamically linked binary.
 
 
-### Ingredients section
+Ingredients section
+^^^^^^^^^^^^^^^^^^^
 
 Describes how to acquire the binary ingredients that go into the AppImage. Binary ingredients can be archives like :code:`.zip` files, packages like :code:`.deb` files or APT repositories like Debian package archives or PPAs.
 
@@ -124,7 +125,7 @@ The following example ingredients section describes how to get the latest versio
       - deb http://download.opensuse.org/repositories/isv:/KDAB/xUbuntu_14.04/ /
 
 
-The :code:`dist` section inside the :code:`ingredients` section defines which Debian distribution should be used as a base. The :code:`sources` section inside the `ingredients` section describes the repositories from which the package should be pulled. The entries are in the same format as lines in a debian :code:`sources.list` file. Note that the :code:`http://download.opensuse.org/repositories/isv:/KDAB/xUbuntu_14.04` repository needs the :code:`http://archive.ubuntu.com/ubuntu/` repository so that the dependencies can be resolved.
+The :code:`dist` section inside the :code:`ingredients` section defines which Debian distribution should be used as a base. The :code:`sources` section inside the :code:`ingredients` section describes the repositories from which the package should be pulled. The entries are in the same format as lines in a debian :code:`sources.list` file. Note that the :code:`http://download.opensuse.org/repositories/isv:/KDAB/xUbuntu_14.04` repository needs the :code:`http://archive.ubuntu.com/ubuntu/` repository so that the dependencies can be resolved.
 
 .. note::
 
@@ -153,7 +154,8 @@ The :code:`ppas` section inside the :code:`ingredients` section lets you specify
 	In the future, similar shortcuts for other types of personal repositories, such as projects on openSUSE build service, could also be included in the :code:`.yml` file definition. Proposals for this are welcome if the proposer also implements support for this in the `pkg2appimage`_ script.
 
 
-#### Using local deb files
+Using local deb files
+#####################
 
 This allows the use of local deb files (rather than downloading the deb ingredients)
 
@@ -216,7 +218,7 @@ In this example, excluding :code:`qemu` means that the qemu package and all of i
 Pretending certain versions of dependencies being installed
 ###########################################################
 
-The dependency information in some packages may result in the package manager to refuse the application to be installed if some **exact** versions of dependencies are not present in the system. In this case, it may be necessary pretend the **exact** version of a dependency to be installed on the target system by using the `pretend` key in the :code:`ingredients` section:
+The dependency information in some packages may result in the package manager to refuse the application to be installed if some **exact** versions of dependencies are not present in the system. In this case, it may be necessary pretend the **exact** version of a dependency to be installed on the target system by using the :code:`pretend` key in the :code:`ingredients` section:
 
 .. code-block:: yaml
 
@@ -333,6 +335,7 @@ Unfortunately, many applications don't include a :code:`$ID.desktop` file. If it
 
 
 .. note::
+
 	The optional :code:`desktopintegration` script assumes that the name of the application specified in the :code:`app:` key matches the name of the :code:`$ID.desktop` file and the corresponding main executable (case-sensitive). For example, if :code:`app: myapp` is set, it expects :code:`usr/bin/myapp`and :code:`usr/share/applications/myapp.desktop`. For this reason, if you want to use the optional :code:`desktopintegration` script, you may rearrange the AppDir. The following example illustrates this:
 
     .. code-block:: yaml
