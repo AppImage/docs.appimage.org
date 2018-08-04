@@ -16,7 +16,6 @@ The easiest way to build an AppImage is to write a `.yml` file. We developed a r
 
 This document provides an introduction to the `.yml` files' purpose, their structure and a few examples describing how to use all the advanced features.
 
-
 ## Purpose of `.yml` files
 
 `.yml` is the file extension commonly used for _YAML_ (_Yet Another Markup Language_, nowadays also serves as an abbreviation for _YAML Ain’t Markup Language_).
@@ -26,8 +25,6 @@ YAML's approach to describing data is to combine associative lists (known as `di
 The `.yml` files are used by [`pkg2appimage`](https://github.com/AppImage/AppImages/blob/master/pkg2appimage) which is used in the _AppImages_ project to convert binary _ingredients_ into AppImages for demonstration purposes. Their primary objective is to make it very simple to convert pre-existing binaries into the AppImage format. If you can build your software from source, you may generate AppImages directly as part of your build workflow; in this case you may not need a `.yml` file (but a Travis CI `.travis.yml` and/or a `Makefile`, etc.).
 
 The `.yml` file format is not part of the AppImage standard, which just describes the AppImage container format and is agnostic as to how the payload inside an AppImage gets generated. Neither it is part of AppImageKit, because AppImageKit is only concerned with taking a pre-existing _AppDir_ and converting that into an AppImage. Such an AppDir is created from the instructions stored in the `.yml` files, and converted to an AppImage using _AppImageKit_.
-
-
 
 ## General anatomy of `.yml` files
 
@@ -290,3 +287,49 @@ script:
   - mv usr/bin/FBReader usr/bin/fbreader
   - cp usr/share/pixmaps/FBReader.png fbreader.png
 ```
+
+## Converting Python applications packaged with pip
+
+Let's say you have already packaged your Python application using `pip`. in this case, you can use the `pkg2appimage` tool to generate an AppImage. In the following example, we will convert a Python 3 application using `pip3`.
+
+The following recipe will convert a Python 3 PyQt application using `virtualenv` and `pip3`:
+
+```
+app: mu.codewith.editor
+
+ingredients:
+  dist: trusty
+  sources: 
+    - deb http://us.archive.ubuntu.com/ubuntu/ trusty trusty-updates trusty-security main universe
+    - deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates main universe
+    - deb http://us.archive.ubuntu.com/ubuntu/ trusty-security main universe
+  packages:
+    - python3.4-venv
+  script:
+    -  wget -c https://raw.githubusercontent.com/mu-editor/mu/master/conf/mu.codewith.editor.png
+    -  wget -c https://raw.githubusercontent.com/mu-editor/mu/master/conf/mu.appdata.xml
+
+script:
+  - cp ../mu.codewith.editor.png ./usr/share/icons/hicolor/256x256/
+  - cp ../mu.codewith.editor.png .
+  - mkdir -p usr/share/metainfo/ ; cp ../mu.appdata.xml usr/share/metainfo/
+  - virtualenv --python=python3 usr
+  - ./usr/bin/pip3 install mu-editor
+  - cat > usr/share/applications/mu.codewith.editor.desktop <<\EOF
+  - [Desktop Entry]
+  - Type=Application
+  - Name=Mu
+  - Comment=A Python editor for beginner programmers
+  - Icon=mu.codewith.editor
+  - Exec=python3 bin/mu-editor %F
+  - Terminal=false
+  - Categories=Application;Development;
+  - Keywords=Python;Editor;microbit;micro:bit;
+  - StartupWMClass=mu
+  - MimeType=text/x-python3;text/x-python3;
+  - EOF
+  - cp usr/share/applications/mu.codewith.editor.desktop .
+  - usr/bin/pip3 freeze | grep "mu-editor" | cut -d "=" -f 3 >> ../VERSION
+```
+
+Source: https://github.com/AppImage/AppImages/blob/9249a99e653272416c8ee8f42cecdde12573ba3e/recipes/Mu.yml
