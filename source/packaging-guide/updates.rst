@@ -20,12 +20,12 @@ Use :code:`appimagetool -u` to embed update information (as specified in the App
 
 .. code-clock:: shell
 
-	appimagetool videocapture.AppDir/usr/share/applications/*.desktop -u "zsync|https://lyrion.ch/opensource/repositories/videocapture/uv/videocapture.AppImage.zsync"
+    appimagetool videocapture.AppDir/usr/share/applications/*.desktop -u "zsync|https://lyrion.ch/opensource/repositories/videocapture/uv/videocapture.AppImage.zsync"
 
 
 The string
 
-	::`zsync|https://lyrion.ch/opensource/repositories/videocapture/uv/videocapture.AppImage.zsync`
+    ::`zsync|https://lyrion.ch/opensource/repositories/videocapture/uv/videocapture.AppImage.zsync`
 
 is called the *update information*.
 
@@ -74,8 +74,8 @@ One advantage of the AppImage format is that it gives full control to applicatio
 .. Old image can be found here: https://github.com/AppImage/appimage.github.io/blob/ef13aae415fae3c8f52b1326585b4b5df1b94de8/database/SonicVisualiser/screenshot.png
 
 .. image:: /_static/img/packaging-guide/updates-realworld-example.png
-	:alt: SonicVisualiser GUI asking for network access permission
-	:width: 80%
+    :alt: SonicVisualiser GUI asking for network access permission
+    :width: 80%
 
 * The update should ideally be nicely integrated into the GUI of your application, using whatever GUI toolkit you are using. We are interested in getting libraries for popular GUI toolkits like Qt, Gkt+ 2 and 3, WxWidgets, etc. - so if you implement this, please share with the world
 * During the update process, your application should remain fully usable (this works because the original file is not changed by the update process; instead a new file with the new version is placed next to the original one)
@@ -92,28 +92,28 @@ There's two options how to add libappimageupdate to your project: Either you use
 
 The guide assumes the following directory layout::
 
-	/                       # repository root
-	    lib/                # external libraries
-	        ...             # other libraries that might be used
-	        CMakeLists.txt  # manages the dependencies for CMake
-	    src/                # source files
-	        CMakeLists.txt  # defines the binaries to build
-	        main.cpp        # main application
-	    CMakeLists.txt      # top level CMake configuration
+    /                       # repository root
+        lib/                # external libraries
+            ...             # other libraries that might be used
+            CMakeLists.txt  # manages the dependencies for CMake
+        src/                # source files
+            CMakeLists.txt  # defines the binaries to build
+            main.cpp        # main application
+        CMakeLists.txt      # top level CMake configuration
 
 
 First of all, add the AppImageUpdate repository as a submodule.
 
 .. code-block:: shell
 
-	$ git submodule add https://github.com/AppImage/AppImageUpdate lib/AppImageUpdate
+    $ git submodule add https://github.com/AppImage/AppImageUpdate lib/AppImageUpdate
 
 
 You will have to initialize your submodule. AppImageUpdate pulls in some dependencies as well. Therefore, anyone using your repository will have to run the following command after cloning (unless they called :code:`git clone --recursive`):
 
 .. code-block:: shell
 
-	$ git submodule update --init --recursive
+    $ git submodule update --init --recursive
 
 
 Please refer to the `Git book <https://git-scm.com/book/en/v2/Git-Tools-Submodules>`_ for more information about submodules and how they work, how to update them etc.
@@ -122,7 +122,7 @@ Next, instruct CMake that you want to use the library. Add :code:`add_subdirecto
 
 .. note::
 
-	You need to call :code:`add_subdirectory(lib)` within the top-level :code:`CMakeLists.txt` near the top before defining executables etc. to make this work. Furthermore, somewhere below, CMakeLists.txt needs to include the :code:`src` directory. Like with the :code:`lib` directory, there should be a :code:`add_subdirectory(src)` call.
+    You need to call :code:`add_subdirectory(lib)` within the top-level :code:`CMakeLists.txt` near the top before defining executables etc. to make this work. Furthermore, somewhere below, CMakeLists.txt needs to include the :code:`src` directory. Like with the :code:`lib` directory, there should be a :code:`add_subdirectory(src)` call.
 
 
 Now instruct CMake to link your libraries and/or executables to libappimageupdate. AppImageUpdate's CMake build infrastructure defines a target :code:`libappimageupdate`.
@@ -131,7 +131,7 @@ Open :code:`src/CMakeLists.txt`, find your :code:`add_library/add_executable` ca
 
 .. code-block:: cmake
 
-	target_link_libraries(mytarget PRIVATE libappimageupdate)
+    target_link_libraries(mytarget PRIVATE libappimageupdate)
 
 
 Now everything should be up and running! Congratulations!
@@ -154,10 +154,10 @@ Basic usage:
 
 .. code-block:: cpp
 
-	using namespace appimage::update;
-	using namespace std;
+    using namespace appimage::update;
+    using namespace std;
 
-	Updater updater("test.AppImage");
+    Updater updater("test.AppImage");
 
 
 Now, you can use the :code:`updater` object to perform operations. The API is built on the principle of *pervasive error handling*, i.e., all operations that might fail in any way provide error handling. In libappimageupdate, this is implemented by making such methods become boolean, and accept a reference to the result type which is set in case of success. The method returns either :code:`true`, which means the operation succeeded, or :code:`false` otherwise.
@@ -166,16 +166,16 @@ See this easy example for an update check:
 
 .. code-block:: cpp
 
-	// check for update
-	bool updateAvailable;
+    // check for update
+    bool updateAvailable;
 
-	if (!updater.checkForChanges(updateAvailable)) {
-		// return error state
-		return 1;
-	}
+    if (!updater.checkForChanges(updateAvailable)) {
+        // return error state
+        return 1;
+    }
 
-	if (updateAvailable) {
-		// perform update ...
+    if (updateAvailable) {
+        // perform update ...
 
 
 This is faster and less verbose than an exception based workflow, however, you can't see what caused the update check to fail.
@@ -184,7 +184,7 @@ This can be found out using the built in status message system. Every :code:`Upd
 
 .. note::
 
-	Beware that this is a totally optional system, and it might not necessarily improve the user experience to show those messages. It is recommended to show them only in case of errors to help debugging. There is also no guarantee on the order of these messages.
+    Beware that this is a totally optional system, and it might not necessarily improve the user experience to show those messages. It is recommended to show them only in case of errors to help debugging. There is also no guarantee on the order of these messages.
 
 
 All messages are preserved, so if they are not fetched, they might stack up. However, that shouldn't be a problem really. Just make sure to clean up (:code:`delete`) your :code:`Updater` objects as soon as you don't need them any more.
@@ -192,27 +192,27 @@ All messages are preserved, so if they are not fetched, they might stack up. How
 Let's rewrite the update check code from above, with advanced error handling:
 
 .. code-block:: cpp
-	// check for update
-	bool updateAvailable;
+    // check for update
+    bool updateAvailable;
 
-	if (!updater.checkForChanges(updateAvailable)) {
-	    // log status messages before exiting
+    if (!updater.checkForChanges(updateAvailable)) {
+        // log status messages before exiting
 
-	    // nextStatusMessage will return true as long as there are status messages
-	    // by calling it in a loop as follows, all available messages will be fetched
-	    string nextMessage;
-	    while (updater.nextStatusMessage(nextMessage)) {
-	        // imagine log() to do something meaningful
-	        log(nextMessage);
-	    }
+        // nextStatusMessage will return true as long as there are status messages
+        // by calling it in a loop as follows, all available messages will be fetched
+        string nextMessage;
+        while (updater.nextStatusMessage(nextMessage)) {
+            // imagine log() to do something meaningful
+            log(nextMessage);
+        }
 
-	    // return error state
-	    return 1;
-	}
+        // return error state
+        return 1;
+    }
 
-	if (updateAvailable) {
-	    // perform update ...
-	}
+    if (updateAvailable) {
+        // perform update ...
+    }
 
 
 Now, in case the update check fails, the messages are logged.
@@ -223,51 +223,51 @@ Talking about updater states, the state is modified by running an update. As men
 
 .. note::
 
-	**Important**: Before actually performing an upgrade, it is recommended to check for updates first. The update check only performs reading IO, but a pointless update will create an entirely new file, even if it copies all the data from its predecessor.
+    **Important**: Before actually performing an upgrade, it is recommended to check for updates first. The update check only performs reading IO, but a pointless update will create an entirely new file, even if it copies all the data from its predecessor.
 
 
 Here's some code how to run an update, and log progress and status messages until the update has finished:
 
 .. code-block:: cpp
-	updater.start()
+    updater.start()
 
-	// isDone() returns true as soon as the update has finished
-	// error handling is performed later
-	while (!updater.isDone()) {
-	    // sleep for e.g., 100ms, to prevent 100% CPU usage
-	    this_thread::sleep_for(chrono::milliseconds(100));
+    // isDone() returns true as soon as the update has finished
+    // error handling is performed later
+    while (!updater.isDone()) {
+        // sleep for e.g., 100ms, to prevent 100% CPU usage
+        this_thread::sleep_for(chrono::milliseconds(100));
 
-	    double progress;
-	    // as with all methods, check for error
-	    if (!updater.progress(progress)) {
-	        log("Call to progress() failed");
-	        // return error state
-	        return 1;
-	    }
+        double progress;
+        // as with all methods, check for error
+        if (!updater.progress(progress)) {
+            log("Call to progress() failed");
+            // return error state
+            return 1;
+        }
 
-	    // progress() returns a double between 0 and 1
-	    // you might have to scale its return value accordingly
-	    // this assumes that the progress bar expects a percentage
-	    updateProgressBar(progress * 100);
+        // progress() returns a double between 0 and 1
+        // you might have to scale its return value accordingly
+        // this assumes that the progress bar expects a percentage
+        updateProgressBar(progress * 100);
 
-	    // fetch all status messages
-	    // this is basically the same as before
-	    string nextMessage;
-	    while (updater.nextStatusMessage(nextMessage)) {
-	        log(nextMessage);
-	    }
-	}
+        // fetch all status messages
+        // this is basically the same as before
+        string nextMessage;
+        while (updater.nextStatusMessage(nextMessage)) {
+            log(nextMessage);
+        }
+    }
 
 
 As you will have noticed, this code will just run until the update is done. However, there is no way to verify that the update actually worked. Therefore, you need to check for errors in the next step:
 
 .. code-block:: cpp
 
-	if (updater.hasError()) {
-	    log("Error occurred. See previous messages for details.");
-	    // return error state
-	    return 1;
-	}
+    if (updater.hasError()) {
+        log("Error occurred. See previous messages for details.");
+        // return error state
+        return 1;
+    }
 
 
 As the background work has finished, and :code:`hasError()` itself doesn't log any messages, all messages from the status message queue are displayed already, hence the note about checking the previous messages. It was mentioned previously that logging all messages might not be good for the user experience, so you could as well move the little loop fetching the messages to this error handler, and show a modal dialog containing all the messages issued during the update process. But this is up to you.
@@ -278,38 +278,39 @@ This behavior implies the need for a method to actually fetch the path to this n
 
 .. code-block:: cpp
 
-	ostringstream oss;
+    ostringstream oss;
 
-	string pathToUpdatedFile;
+    string pathToUpdatedFile;
 
-	// this method shouldn't fail at this point(1) any more
-	// but it's better to check for its return value to make sure everything's alright
-	// (1) when calling this before or while the update is running, the new path is not
-	// available, causing this method to return false, but we're past those points already
-	if (!updater.pathToNewFile(pathToUpdatedFile))
+    // this method shouldn't fail at this point(1) any more
+    // but it's better to check for its return value to make sure everything's alright
+    // (1) when calling this before or while the update is running, the new path is not
+    // available, causing this method to return false, but we're past those points already
+    if (!updater.pathToNewFile(pathToUpdatedFile))
 
-	oss << "Path to updated AppImage: " << pathToUpdatedFile;
-	log(oss.str());
+    oss << "Path to updated AppImage: " << pathToUpdatedFile;
+    log(oss.str());
 
 
 .. note::
 
-	The updater takes care of putting the new file in the same directory as the previous one.
+    The updater takes care of putting the new file in the same directory as the previous one.
 
 
 As you might not be interested in this feature, and probably don't trust on remote filenames and choose your own ones when "installing" (well, downloading) AppImages to make it easier to find them again, you can override this feature. You can instantiate the :code:`Updater` object with an optional flag:
 
 .. code-block:: cpp
-	// constructor signature as of 2017/11/14:
-	// Updater::Updater(std::string path, bool overwrite = false);
 
-	Updater updater("my.AppImage", true);
+    // constructor signature as of 2017/11/14:
+    // Updater::Updater(std::string path, bool overwrite = false);
+
+    Updater updater("my.AppImage", true);
 
 
 Now, the updater will perform the update and move the new file to the original file's location after successfully verifying the file integrity (and, as soon as it is implemented, validating the file's signature, see `the related issue on GitHub <https://github.com/AppImage/AppImageUpdate/issues/16>`_).
 
 .. note::
 
-	**Important**: The updater will never overwrite a file before all validation mechanisms report success.
+    **Important**: The updater will never overwrite a file before all validation mechanisms report success.
 
 ZSync2 based methods will furthermore always keep the old file as a backup. If the :code:`overwrite` flag is :code:`true`, the current file will be moved to :code:`my.AppImage.zs-old`. If it is `false`, the old file will remain untouched. Furthermore, if there is a file with the new filename, that file will be backed up with the :code:`.zs-old` suffix. This behavior is not ideal, the standalone UI has error handling code specific to this problem. This behavior is going to be subject of a GitHub issue soon. It is recommended to watch the discussion before implementing any code dealing with backups. Thad said, it is probably safe to check whether a :code:`.zs-old` file is created when using :code:`overwrite = true`, and delete it.

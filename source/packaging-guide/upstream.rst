@@ -9,7 +9,7 @@ In this regard, if image is very similar to an :code:`.exe` file on Windows or a
 
 .. note::
 
-	Before you package an application as an AppImage, ask yourself whether you are either the application author or a member of the application team. If not, it is most likely better to ask the original author of the application or the application team to provide an official AppImage.
+    Before you package an application as an AppImage, ask yourself whether you are either the application author or a member of the application team. If not, it is most likely better to ask the original author of the application or the application team to provide an official AppImage.
 
 
 Advantages

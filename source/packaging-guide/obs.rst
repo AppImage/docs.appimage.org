@@ -46,18 +46,18 @@ Hello world
 On the https://build.opensuse.org/ homepage, click on "New Image".
 
 .. Old image is available here:
-	https://user-images.githubusercontent.com/2480569/26893574-00534da0-4bbc-11e7-82b2-24646c3d6ff0.png
+    https://user-images.githubusercontent.com/2480569/26893574-00534da0-4bbc-11e7-82b2-24646c3d6ff0.png
 
 .. image:: /_static/img/packaging-guide/obs-new-image.png
-	:alt: "New Image" icon
+    :alt: "New Image" icon
 
 Then select AppImage, and click "Create Appliance".
 
 .. Old image is available here:
-	https://user-images.githubusercontent.com/2480569/26893577-00aac72e-4bbc-11e7-8fbf-457b3be82e19.png
+    https://user-images.githubusercontent.com/2480569/26893577-00aac72e-4bbc-11e7-8fbf-457b3be82e19.png
 
 .. image:: /_static/img/packaging-guide/obs-create-appliance.png
-	:alt: Radio button: "Select template" (AppImage), input field: "Name your appliance", submit button: "Create Appliance"
+    :alt: Radio button: "Select template" (AppImage), input field: "Name your appliance", submit button: "Create Appliance"
 
 Done! An AppImage of Leafpad, a simple text editor, will be built. You can use this template as a starting point to customize for other applications.
 
@@ -76,31 +76,31 @@ You need to tell OBS that for all source code packages in your home project you 
 
 .. code-block:: xml
 
-	<project name="home:probono">
-	  <title>probono</title>
-	  <description/>
-	  <person userid="probono" role="maintainer"/>
-	  <publish>
-	    <enable/>
-  	  </publish>
-	  <repository name="AppImage.arm">
-	    <path project="home:probono" repository="openSUSE_13.1"/>
-	    <path project="OBS:AppImage" repository="AppImage.arm"/>
-	    <arch>armv7l</arch>
-	    <arch>aarch64</arch>
-	  </repository>
-	  <repository name="AppImage">
-	    <path project="home:probono" repository="openSUSE_13.1"/>
-	    <path project="OBS:AppImage" repository="AppImage"/>
-	    <arch>x86_64</arch>
-	    <arch>i586</arch>
-	  </repository>
-	</project>
+    <project name="home:probono">
+      <title>probono</title>
+      <description/>
+      <person userid="probono" role="maintainer"/>
+      <publish>
+        <enable/>
+        </publish>
+      <repository name="AppImage.arm">
+        <path project="home:probono" repository="openSUSE_13.1"/>
+        <path project="OBS:AppImage" repository="AppImage.arm"/>
+        <arch>armv7l</arch>
+        <arch>aarch64</arch>
+      </repository>
+      <repository name="AppImage">
+        <path project="home:probono" repository="openSUSE_13.1"/>
+        <path project="OBS:AppImage" repository="AppImage"/>
+        <arch>x86_64</arch>
+        <arch>i586</arch>
+      </repository>
+    </project>
 
 
 .. note::
 
-	The :code:`AppImage.arm` repository is used for the ARM architectures for now. This will possibly change in the future.
+    The :code:`AppImage.arm` repository is used for the ARM architectures for now. This will possibly change in the future.
 
 
 Be sure to just insert the :code:`<repository>` tags into your existing file. For AppImage, we need to select one of the build targets that is built in your obs project. In the example above, please make sure to replace :code:`home:probono` with the actual name of the obs project where :code:`appimage.yml` should look for its resources - this can be the current project, and even RPMs created by the same package work as resources for AppImage.
@@ -121,17 +121,17 @@ URLs for the supported source control management systems (git, svn, cvs, hg, bzr
 
 .. todo::
 
-	**not yet implemented**
-	URLs to files get handled via the download_files source service. It is handy to provide single files to the build.
+    **not yet implemented**
+    URLs to files get handled via the download_files source service. It is handy to provide single files to the build.
 
 
 Scripts can be executed in the form of the script hooks of the :code:`appimage.yml` file.
 
 .. note::
 
-	:code:`Recipe` files are **not** supported, anything they can do can be done inside the :code:`script` sections of :code:`appimage.yml`.
+    :code:`Recipe` files are **not** supported, anything they can do can be done inside the :code:`script` sections of :code:`appimage.yml`.
 
-	.. note:: It is optional to either
+    .. note:: It is optional to either
 
 
 * create the AppImage root via packages by using the ingredients section. This is useful especially for larger software, because it avoid the need of a recompilation and just repackages the content of binary packages.
@@ -161,17 +161,17 @@ This :code:`APPIMAGE_NAME` application will get package into an :code:`.AppImage
 
 ::
 
-	app: APPIMAGE_NAME
-	binpatch: true
+    app: APPIMAGE_NAME
+    binpatch: true
 
-	ingredients:
-	  packages:
-	    - RPM_PACKAGE_NAME
+    ingredients:
+      packages:
+        - RPM_PACKAGE_NAME
 
-	script:
-	  - cd $BUILD_APPDIR/
-	  - cp $BUILD_APPDIR/usr/share/applications/NAME.desktop $BUILD_APPDIR
-	  - cp $BUILD_APPDIR/usr/share/pixmaps/NAME.png $BUILD_APPDIR
+    script:
+      - cd $BUILD_APPDIR/
+      - cp $BUILD_APPDIR/usr/share/applications/NAME.desktop $BUILD_APPDIR
+      - cp $BUILD_APPDIR/usr/share/pixmaps/NAME.png $BUILD_APPDIR
 
 
 .. |question| image:: /_static/img/question.png
@@ -182,38 +182,38 @@ Simple example building from source
 
 ::
 
-	app: QtQuickApp
+    app: QtQuickApp
 
-	build:
-	  packages:
-	    - linuxdeployqt
-	    - pkgconfig(Qt5Quick)
-	  git:
-	    - https://github.com/probonopd/QtQuickApp.git
+    build:
+      packages:
+        - linuxdeployqt
+        - pkgconfig(Qt5Quick)
+      git:
+        - https://github.com/probonopd/QtQuickApp.git
 
-	script:
-	  - cd $BUILD_SOURCE_DIR/QtQuickApp*
-	  - qmake-qt5 PREFIX=/usr
-	  - make INSTALL_ROOT=$BUILD_APPDIR install
-	  - unset QTDIR; unset QT_PLUGIN_PATH ; unset LD_LIBRARY_PATH
-	  - linuxdeployqt $BUILD_APPDIR/usr/share/applications/*.desktop -qmldir=$BUILD_SOURCE_DIR/ -bundle-non-qt-libs -verbose=2
-	  - linuxdeployqt $BUILD_APPDIR/usr/share/applications/*.desktop -qmldir=$BUILD_SOURCE_DIR/ -bundle-non-qt-libs -verbose=2
+    script:
+      - cd $BUILD_SOURCE_DIR/QtQuickApp*
+      - qmake-qt5 PREFIX=/usr
+      - make INSTALL_ROOT=$BUILD_APPDIR install
+      - unset QTDIR; unset QT_PLUGIN_PATH ; unset LD_LIBRARY_PATH
+      - linuxdeployqt $BUILD_APPDIR/usr/share/applications/*.desktop -qmldir=$BUILD_SOURCE_DIR/ -bundle-non-qt-libs -verbose=2
+      - linuxdeployqt $BUILD_APPDIR/usr/share/applications/*.desktop -qmldir=$BUILD_SOURCE_DIR/ -bundle-non-qt-libs -verbose=2
 
 
 We have to also upload a file called :code:`_service` containing
 
 .. code-block:: xml
 
-	<services>
-	  <service name="appimage"/>
-	</services>
+    <services>
+      <service name="appimage"/>
+    </services>
 
 
 When trying this on a private OBS instance, please make sure to have :code:`obs-service-appimage` installed. This can be done e.g. on a Leap 42.1 machine with::
 
-	zypper addrepo http://download.opensuse.org/repositories/openSUSE:Tools/openSUSE_42.1/openSUSE:Tools.repo
-	zypper ref
-	zypper in obs-service-appimage
+    zypper addrepo http://download.opensuse.org/repositories/openSUSE:Tools/openSUSE_42.1/openSUSE:Tools.repo
+    zypper ref
+    zypper in obs-service-appimage
 
 
 Options inside of the build section
@@ -223,15 +223,15 @@ you can add multiple items in the sections.
 
 ::
 
-	build:
-	  packages:
-	     - [SINGLE BINARY PACKAGE NAME]
+    build:
+      packages:
+         - [SINGLE BINARY PACKAGE NAME]
 
-	  git:   # can be also svn, cvs, hg, bzr
-	     - [URL TO SCM REPOSITORY]
+      git:   # can be also svn, cvs, hg, bzr
+         - [URL TO SCM REPOSITORY]
 
-	  files:
-	     - [URL TO A RESOURCE]
+      files:
+         - [URL TO A RESOURCE]
 
 
 Inspecting the results
@@ -266,15 +266,15 @@ A token needs to be generated, this can be done using the :code:`osc` OBS comman
 
 .. code-block:: shell
 
-	sudo apt update && sudo apt install osc # or your package manager's equivalent
-	osc token --create
+    sudo apt update && sudo apt install osc # or your package manager's equivalent
+    osc token --create
 
 
 If you have already generated a token in the past, you can show it with
 
 .. code-block:: shell
 
-	osc token
+    osc token
 
 
 On the GitHub project page, click on "Settings", then click on "Integrations & services", then click on "Add service", enter "Obs" and select it. For example, for the `QtQuickApp`_ project go to https://github.com/probonopd/QtQuickApp/settings/installations, and corresponding to https://build.opensuse.org/package/show/home:probono/QtQuickApp entered :code:`home:probono` for the project and :code:`QtQuickApp` for in the Package field, as well as the token generated above in the "Token" field. Please note that you need to supply your own username and project name instead of the one in the example above.

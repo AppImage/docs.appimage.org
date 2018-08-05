@@ -10,12 +10,12 @@ Some types of applications can best be converted into application directories us
 
 .. todo::
 
-	Document the functions in :code:`functions.sh` that are for public consumption based on comments in the file.
+    Document the functions in :code:`functions.sh` that are for public consumption based on comments in the file.
 
 
 .. note::
 
-	For most types of applications, especially those compiled with compilers such as :code:`gcc` or :code:`g++` using a tool like :code:`linuxdeployqt` is much easier than doing this in a bash script because it automates much of the process.
+    For most types of applications, especially those compiled with compilers such as :code:`gcc` or :code:`g++` using a tool like :code:`linuxdeployqt` is much easier than doing this in a bash script because it automates much of the process.
 
 
 Producing an application directory using the `linuxdeployqt` tool
@@ -31,7 +31,7 @@ Once an Appimage has been generated, you want to upload it to GitHub Releases. F
 
 .. note::
 
-	It is best practice to upload binaries (such as AppImages) to GitHub Releases rather than committing them into the repository itself.
+    It is best practice to upload binaries (such as AppImages) to GitHub Releases rather than committing them into the repository itself.
 
 
 Super simple uploading of continuous builds (each push) to GitHub Releases. If this is not the easiest way to upload continuous builds to GitHub Releases, then it is a bug.
@@ -73,9 +73,9 @@ One possible use case for this is to set up continuous builds for feature or tes
 
 .. code-block:: shell
 
-	if [ ! -z $TRAVIS_BRANCH ] && [ "$TRAVIS_BRANCH" != "master" ] ; then
-		export UPLOADTOOL_SUFFIX=$TRAVIS_BRANCH
-	fi
+    if [ ! -z $TRAVIS_BRANCH ] && [ "$TRAVIS_BRANCH" != "master" ] ; then
+        export UPLOADTOOL_SUFFIX=$TRAVIS_BRANCH
+    fi
 
 
 This will create builds tagged with :code:`continuous` for pushes/merges to :code:`master` and with :code:`continuous-<branch-name>` for pushes / merges to other branches.

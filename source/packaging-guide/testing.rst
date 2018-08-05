@@ -19,4 +19,4 @@ You can use ISOs of Live CDs, loop-mount them, chroot into them, and run the App
 
 .. code-block:: shell
 
-	$ sudo ./testappimage /path/to/elementary-0.2-20110926.iso ./AppImageAssistant.AppImage
+    $ sudo ./testappimage /path/to/elementary-0.2-20110926.iso ./AppImageAssistant.AppImage

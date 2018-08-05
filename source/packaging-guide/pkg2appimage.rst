@@ -7,7 +7,7 @@ To build an AppImage from a :code:`.yml` description file:
 
 .. code-block:: shell
 
-	bash -ex ./pkg2appimage recipes/XXX.yml
+    bash -ex ./pkg2appimage recipes/XXX.yml
 
 
 :code:`.yml` description files tell pkg2appimage where to get the ingredients from, and how to convert them to an AppImage (besides the general steps already included in pkg2appimage). Study some `examples <yml-example-file>`_ to see how it works.
@@ -88,7 +88,7 @@ Describes how to acquire the binary ingredients that go into the AppImage. Binar
 
 .. note::
 
-	In the future, source ingredients could also be included in the :code:`.yml` file definition. Source ingredients could include tarballs and Git repositories. It would probably be advantageous if we could share the definition with other formats like snapcraft's :code:`.yaml` files. Proposals for this are welcome.
+    In the future, source ingredients could also be included in the :code:`.yml` file definition. Source ingredients could include tarballs and Git repositories. It would probably be advantageous if we could share the definition with other formats like snapcraft's :code:`.yaml` files. Proposals for this are welcome.
 
 
 :code:`.yml` files are supposed not to hardcode version numbers, but determine the latest version at runtime. If the  :code:`.yml` files describes the released version, it should determine the latest released version at runtime. If the  :code:`.yml` files describes the development version, it might reference the latest nightly or continuous build instead.
@@ -129,7 +129,7 @@ The :code:`dist` section inside the :code:`ingredients` section defines which De
 
 .. note::
 
-	In the future, other types of packages like :code:`.rpm` could also be included in the :code:`.yml` file definition. Proposals for this are welcome if the proposer also implements support for this in the `pkg2appimage`_ script.
+    In the future, other types of packages like :code:`.rpm` could also be included in the :code:`.yml` file definition. Proposals for this are welcome if the proposer also implements support for this in the `pkg2appimage`_ script.
 
 
 Using ingredients from an Ubuntu PPA
@@ -151,7 +151,7 @@ The :code:`ppas` section inside the :code:`ingredients` section lets you specify
 
 .. note::
 
-	In the future, similar shortcuts for other types of personal repositories, such as projects on openSUSE build service, could also be included in the :code:`.yml` file definition. Proposals for this are welcome if the proposer also implements support for this in the `pkg2appimage`_ script.
+    In the future, similar shortcuts for other types of personal repositories, such as projects on openSUSE build service, could also be included in the :code:`.yml` file definition. Proposals for this are welcome if the proposer also implements support for this in the `pkg2appimage`_ script.
 
 
 Using local deb files
@@ -186,7 +186,7 @@ And for all files in a directory (like local repository). Note that the end of t
 
 .. note::
 
-	this is for personal use, if you use your recipe it will NOT work on another computer if the debs files are not in the specified directory
+    this is for personal use, if you use your recipe it will NOT work on another computer if the debs files are not in the specified directory
 
 
 Excluding certain packages
@@ -336,7 +336,7 @@ Unfortunately, many applications don't include a :code:`$ID.desktop` file. If it
 
 .. note::
 
-	The optional :code:`desktopintegration` script assumes that the name of the application specified in the :code:`app:` key matches the name of the :code:`$ID.desktop` file and the corresponding main executable (case-sensitive). For example, if :code:`app: myapp` is set, it expects :code:`usr/bin/myapp`and :code:`usr/share/applications/myapp.desktop`. For this reason, if you want to use the optional :code:`desktopintegration` script, you may rearrange the AppDir. The following example illustrates this:
+    The optional :code:`desktopintegration` script assumes that the name of the application specified in the :code:`app:` key matches the name of the :code:`$ID.desktop` file and the corresponding main executable (case-sensitive). For example, if :code:`app: myapp` is set, it expects :code:`usr/bin/myapp`and :code:`usr/share/applications/myapp.desktop`. For this reason, if you want to use the optional :code:`desktopintegration` script, you may rearrange the AppDir. The following example illustrates this:
 
     .. code-block:: yaml
 

@@ -15,7 +15,7 @@ Especially, a key for signing must be prepared before AppImages can be signed. I
 
 .. code-block:: shell
 
-	$ gpg2 --full-gen-key
+    $ gpg2 --full-gen-key
 
 
 Please refer to the :code:`gpg` or :code:`gpg2` documentation for additional information. You should take additional care to backup your private and public keys in a secure location.
@@ -24,7 +24,7 @@ Once you're signing keys have been set up, you can sign AppImages at AppImage cr
 
 .. code-block:: shell
 
-	$ ./appimagetool-x86_64.AppImage some.AppDir --sign
+    $ ./appimagetool-x86_64.AppImage some.AppDir --sign
 
 
 This will sign the AppImage with :code:`gpg[2]` and will put the signature into the AppImage.
@@ -37,24 +37,24 @@ You can display the digital signature that is embedded in AppImage by running th
 
 .. code-block:: shell
 
-	$ ./XChat_IRC-x86_64.AppImage --appimage-signature
+    $ ./XChat_IRC-x86_64.AppImage --appimage-signature
 
-	-----BEGIN PGP SIGNATURE-----
-	Version: GnuPG v2
+    -----BEGIN PGP SIGNATURE-----
+    Version: GnuPG v2
 
-	iQEcBAABCAAGBQJX6CN9AAoJENBdKWeGw9/dsvoH/RgEggMiNTwgyA4io2Dyy1j1
-	6U3CQST9HVmh9PjeFKZCgFCZbHvpFz9mzhLTPlOAbczBnSmmbgqROINaLW+1tqEx
-	stOy67D3Z1cySzRTOhSkjiUOP5unmZL6QTNPxRHmuRkyihv7YfAlkrogXQlYbZ1h
-	Ilt6jU1b97GSPox/EE3Z002iZGJYQ3FfjAlp9o947goY5koA5KYqyzTCvEjhTk/L
-	wz1mFcjEkzHt9CaHZfrZCE3QVSBTq071wzsHCFHaJswPhA6iI0psCnFY56PPResi
-	uljTQr3nOBaqNyUgU3y4Tbd+36cwggSaTpGAzlhgNoalIwB1ltFSdPeRPe4Q3Qc=
-	=MR0w
-	-----END PGP SIGNATURE-----
+    iQEcBAABCAAGBQJX6CN9AAoJENBdKWeGw9/dsvoH/RgEggMiNTwgyA4io2Dyy1j1
+    6U3CQST9HVmh9PjeFKZCgFCZbHvpFz9mzhLTPlOAbczBnSmmbgqROINaLW+1tqEx
+    stOy67D3Z1cySzRTOhSkjiUOP5unmZL6QTNPxRHmuRkyihv7YfAlkrogXQlYbZ1h
+    Ilt6jU1b97GSPox/EE3Z002iZGJYQ3FfjAlp9o947goY5koA5KYqyzTCvEjhTk/L
+    wz1mFcjEkzHt9CaHZfrZCE3QVSBTq071wzsHCFHaJswPhA6iI0psCnFY56PPResi
+    uljTQr3nOBaqNyUgU3y4Tbd+36cwggSaTpGAzlhgNoalIwB1ltFSdPeRPe4Q3Qc=
+    =MR0w
+    -----END PGP SIGNATURE-----
 
 
 .. note::
 
-	Please note that while this displays the signature, it does not validate the signature. In other words, this does not tell you whether the signature is valid or not, or whether the file has been tampered with or not. To validate the signature, an external tool (which is not part of AppImage that needs to be validated) needs to be used.
+    Please note that while this displays the signature, it does not validate the signature. In other words, this does not tell you whether the signature is valid or not, or whether the file has been tampered with or not. To validate the signature, an external tool (which is not part of AppImage that needs to be validated) needs to be used.
 
 
 Validating the signature
@@ -64,15 +64,15 @@ To validate a signature of an an AppImage and to determine whether an AppImage h
 
 .. code-block:: shell
 
-	$ chmod a+x ./validate
-	$ ./validate ./XChat_IRC-x86_64.AppImage
+    $ chmod a+x ./validate
+    $ ./validate ./XChat_IRC-x86_64.AppImage
 
-	gpg: Signature made Sun 25 Sep 2016 10:41:24 PM CEST using RSA key ID 86C3DFDD
-	gpg: Good signature from "Testkey" [ultimate]
+    gpg: Signature made Sun 25 Sep 2016 10:41:24 PM CEST using RSA key ID 86C3DFDD
+    gpg: Good signature from "Testkey" [ultimate]
 
 
 Signature validation can also be integrated into higher level software such as the optional :code:`appimaged` demon and/or :code:`AppImageUpdate`. For example the :code:`appimaged` daemon may decide to run applications without a valid signature in a confined sandbox in the future, if the system is set up accordingly.
 
 .. todo::
 
-	It may be desirable to integrate validate functionality into :code:`libappimage` and into tools like :code:`appimagetool`, the optional :code:`appimaged` demon and/or :code:`AppImageUpdate`.
+    It may be desirable to integrate validate functionality into :code:`libappimage` and into tools like :code:`appimagetool`, the optional :code:`appimaged` demon and/or :code:`AppImageUpdate`.
