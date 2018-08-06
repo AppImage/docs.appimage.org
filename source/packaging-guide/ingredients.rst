@@ -36,8 +36,9 @@ For an example, see:
 	https://github.com/KaidanIM/Kaidan/commit/da38011b55a1aa5d17764647ecd699deb4be437f
 
 .. warning::
-	**DO NOT USE** :code:`QStringList QStandardPaths::standardLocations(QStandardPaths::AppDataLocation)`
-	According to the `Qt documentation`_, this resolves to :code:`"~/.local/share/<APPNAME>", "/usr/local/share/<APPNAME>", "/usr/share/<APPNAME>"` but clearly :code:`/usr` is not where these things are located in an AppImage.
+	:code:`QStandardPaths::standardLocations(QStandardPaths::AppDataLocation)` **does not work reliably.**
+
+	According to the `Qt documentation`_, this resolves to :code:`~/.local/share/<APPNAME>`, :code:`/usr/local/share/<APPNAME>`, :code:`/usr/share/<APPNAME>`, but clearly :code:`/usr` is not where these things are located in an AppImage.
 
 .. _BinReloc: https://github.com/limbahq/binreloc
 .. _Resourceful: https://github.com/drbenmorgan/Resourceful
