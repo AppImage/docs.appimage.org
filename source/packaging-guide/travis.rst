@@ -65,7 +65,7 @@ Environment variables
 
 :code:`upload.sh` normally only creates one stream of continuous releases for the latest commits that are pushed into (or merged into) the repository.
 
-It's possible to use :code:`upload.sh` in a more complex manner by setting the environment variable :code:`UPLOADTOOL_SUFFIX`. If this variable is set to the name of the current tag, then :code:`upload.sh` will upload a release to the repository (basically reproducing the :cdoe:`deploy:` feature in :code:`.travis.yml`).
+It's possible to use :code:`upload.sh` in a more complex manner by setting the environment variable :code:`UPLOADTOOL_SUFFIX`. If this variable is set to the name of the current tag, then :code:`upload.sh` will upload a release to the repository (basically reproducing the :code:`deploy:` feature in :code:`.travis.yml`).
 
 If :code:`UPLOADTOOL_SUFFIX` is set to a different text, then this text is used as suffix for the :code:`continuous` tag that is created for continuous releases. This way, a project can customize what releases are being created.
 
