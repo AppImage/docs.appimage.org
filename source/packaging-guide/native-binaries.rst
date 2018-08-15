@@ -35,7 +35,7 @@ CMake
 CMake provides an additional parameter to configure where the files are installed when running ``make install`` called |destdir|. If |destdir| is specified, CMake will "install" the files into the given directory instead of the filesystem root (:code:`/`).
 
 .. note::
-   By default, CMake sets an internal variable called |cmake-install-prefix| to a path other than `/usr` to prevent users calling e.g., code:`sudo make install` from damaging their system. The variable must explicitly be set to ``/usr`` therefore.
+   By default, CMake sets an internal variable called |cmake-install-prefix| to a path other than ``/usr`` to prevent users calling e.g., code:`sudo make install` from damaging their system. The variable must explicitly be set to ``/usr`` therefore.
 
 .. |destdir| replace:: :code:`DESTDIR`
 .. |cmake-install-prefix| replace:: :code:`CMAKE_INSTALL_PREFIX`
