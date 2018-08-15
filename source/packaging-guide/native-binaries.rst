@@ -16,7 +16,7 @@ Packaging from source
 Building applications from source and packaging them as AppImages is the most common scenario. In this section, it is described how apps that were built from source can be packaged into AppDirs, from which AppImages are being generated.
 
 
-.. _make-install-workflow:
+.. _ref-make-install-workflow:
 
 Using the build system to build the basic AppDir
 ++++++++++++++++++++++++++++++++++++++++++++++++
@@ -96,11 +96,14 @@ Now, you have a new directory ``AppDir`` which ideally contains all the binaries
 Using linuxdeploy for building AppImages
 ++++++++++++++++++++++++++++++++++++++++
 
-Now that we have the basic AppDir, we can use linuxdeploy to start bundling dependencies into it and make it a real AppDir.
+Now that we have the basic AppDir, we need to bundle dependencies into it to make the AppDir self-contained in preparation to make an AppImage from it. The following guide shows how linuxdeploy_ is used for this purpose.
 
 linuxdeploy describes itself as an `"AppDir maintenance tool" <https://github.com/linuxdeploy/linuxdeploy/blob/master/README.md>`_. Its primary focus is on AppDirs, and it uses plugins to create output formats such as AppImages.
 
-The following section describes how it can be used to deploy dependencies of applications into an AppDir that was created using the methods described in the :ref:`previous section <make-install-workflow>`, and shows how this AppDir can eventually be packaged as an AppImage.
+The following section describes how it can be used to deploy dependencies of applications into an AppDir that was created using the methods described in the :ref:`previous section <ref-make-install-workflow>`, and shows how this AppDir can eventually be packaged as an AppImage.
+
+.. note::
+   Please see :ref:`ref-linuxdeploy` for more information on how to use linuxdeploy.
 
 
 Bundling resources into the AppDir
@@ -122,7 +125,7 @@ After downloading the AppImage, you have to make it executable, as usual. Then, 
 The :code:`--init-appdir` parameter creates some basic directory structure that isn't necessarily required, but might be handy when adding resources manually to the AppImage. It can also create empty AppDirs.
 
 .. note::
-   linuxdeploy supports an iterative workflow, i.e., you run it, and it will start to bundle resources. If there is a problem, it will show a detailed error message, and exit with an error code. You can then fix the issue, and call it again to try again.
+   linuxdeploy supports an iterative workflow, i.e., you run it, and it will start to bundle resources. If there is a problem, it will show a detailed error message, and exit with an error code. You can then fix the issue, and call it again to try again. See :ref:`ref-linuxdeploy-iterative-workflow` for more information.
 
 If your application has installed itself properly, it should have installed a desktop file and an icon as well. The desktop file is used for :ref:`AppImage desktop integration <ref-desktop-integration>`, and since desktop files require icons, an icon is always required, too.
 
@@ -139,106 +142,25 @@ Example:
 
 You can bundle additional resources such as icon files, executable and desktop files using the respective flags described in the ``--help`` text or on linuxdeploy's `homepage <https://github.com/linuxdeploy/linuxdeploy>`_.
 
+.. note::
+   Desktop file and icon are used for so-called :ref:`desktop integration <desktop-integration>`. If your build system didn't install such files into the right location, you can have linuxdeploy put your own files into the right places. Please see :ref:`linuxdeploy-bundle-desktop-files-icons` for more information.
 
-Plugin system
-'''''''''''''
 
-linuxdeploy provides a flexible packaging system for both bundling additional resources that cannot be discovered automatically by linuxdeploy (i.e., plugins loaded during runtime using ``dlopen()``, icon themes, etc.), and to convert the AppDir into an output format such as AppImage.
+.. _ref-package-existing-binaries:
 
-Plugins are automatically recognized by linuxdeploy. They are executable files (scripts, native binaries, etc.), which must be in one of the following locations:
+Packaging existing binaries (or: manually packaging everything)
+---------------------------------------------------------------
 
-  - in case the linuxdeploy AppImage is used: next to the AppImage
-  - next to the linuxdeploy binary
-  - in any of the directories in ``$PATH``
+Packaging existing binaries is very simple as well. As the existing binaries don't provide facilities to :ref:`create a basic AppDir with the build system <ref-make-install-workflow>`, you have to package everything into the right place manually.
 
-Therefore, when downloading additional plugins, just put them into one of these locations, and linuxdeploy can use them.
+Luckily, linuxdeploy supports such a workflow as well. It provides functionalities to automatically put the most common resources an application might use (such as binaries, libraries, desktop files and icons) into the right places without having the user to create any sort of structure or know where to put files. This is described in :ref:`linuxdeploy-package-manually`.
 
-Plugins are standalone executable files. This means they must be made executable by the user before they can be used by linuxdeploy. On the other hand, this also allows for calling plugins manually.
+.. note::
+   Many applications require more resources during runtime than just the binaries and libraries. Often, they require graphics for drawing a UI, or other files that are normally in a "known good location" on the system. These resources should be bundled into the AppImage as well to make sure the AppImage is as standalone as possible. However, linuxdeploy cannot know which files to bundle.
 
-The plugin system works by calling external executables, hence the only communication linuxdeploy can perform with plugins is via CLI parameters (communication via the ``stdin``/``stdout`` pipes would be a lot more complex to implement for both linuxdeploy and the plugin). Therefore, to influence plugin behavior, plugins may implement environment variables that the user can set *before* calling linuxdeploy. Examples how this works are shown in the following sections.
-
-You can use the ``--list-plugins`` flag to see what plugins are visible to linuxdeploy. This can come in handy when debugging plugin related issues. It lists the name of the plugin (i.e., what linuxdeploy refers to them as), the full path and the API level they implement.
+   Please consult the applications' documentation (e.g., homepage or man pages) to see what kinds of resources must be put into the AppImage. This can involve some trial-and-error, as you need to :ref:`test your AppImages on different systems <ref-testing-appimages>` to find possible errors.
 
 .. warning::
-   Some plugins might be bundled in the linuxdeploy AppImage already for convenience. They're likely out of date, but should be stable. In case there are any issues or you need to use a newer version, please download the latest version of the respective plugin, and put it next to the linuxdeploy AppImage. linuxdeploy prefers plugins next to the AppImage over bundled ones.
+   In order to be packaged as AppImages, applications must load the resources relative to their main binary, and not from a hardcoded path (usually ``/usr/...``). This is called :ref:`relocatability <ref-relocatablility>`.
 
-.. note::
-   More information on plugins can be found in the `plugin specification`_.
-
-.. _plugin specification: https://github.com/linuxdeploy/linuxdeploy/wiki/Plugin-system
-
-
-Using input plugins
-*******************
-
-Input plugins can simply be switched on using the ``--plugin`` flag. For example:
-
-.. code:: bash
-
-   > ./linuxdeploy-x86_64.AppImage --appdir AppDir <...> --plugin qt
-
-This causes linuxdeploy to call a plugin called ``qt``, if available.
-
-.. note::
-   An (incomplete) list of plugins can be found in the `linuxdeploy README`_ and in the `linuxdeploy wiki`_.
-
-.. _linuxdeploy README: https://github.com/linuxdeploy/linuxdeploy/blob/master/README.md
-.. _linuxdeploy wiki: https://github.com/linuxdeploy/linuxdeploy/wiki/
-
-
-.. _linuxdeploy-input-plugins-environment-variables:
-
-Using environment variables to change plugins' behavior
-#######################################################
-
-As mentioned previously, some plugins implement additional optional or mandatory parameters in the form of environment variables. These environment variables must be set *before* calling linuxdeploy.
-
-For example:
-
-.. code:: bash
-
-   # set the environment variable
-   > export FOOBAR_VAR=example
-
-   # call linuxdeploy with the respective plugin enabled
-   > ./linuxdeploy-x86_64.AppImage --appdir AppDir <...> --plugin foobar
-
-Please refer to the plugins' documentation to find a list of supported environment variables. If you can't find any, there's probably none.
-
-.. todo::
-
-   Document existing input plugins' environment variables
-
-
-Creating output files
-*********************
-
-Similar to the input plugins, output plugins are enabled through a command line parameter. To avoid any possible confusion, a second parameter is used: ``--output``.
-
-Example:
-
-.. code:: bash
-
-   > ./linuxdeploy-x86_64.AppImage <...> --output appimage
-
-Most users are interested in generating AppImages, therefore the AppImage plugin is bundled in the official linuxdeploy AppImage.
-
-
-Using environment variables to change plugins' behavior
-#######################################################
-
-Users can use environment variables to :ref:`change input plugins' behavior <linuxdeploy-input-plugins-environment-variables>` or enable additional features. Output plugins use the same method to provide similar functionality. Just set an environment variable *before* calling linuxdeploy with the respective plugin enabled. For example:
-
-.. code:: bash
-
-   # set environment variable to embed update information in an AppImage
-   > export UPDATE_INFORMATION="zsync|https://foo.bar/myappimage-latest.AppImage.zsync"
-
-   # call linuxdeploy with the AppImage plugin enabled
-   > ./linuxdeploy-x86_64.AppImage --appdir AppDir <...> --output appimage
-
-
-.. todo::
-
-   Document environment variables of existing output plugins
-
+   If your app doesn't load resources from the AppImage, but e.g., shows errors it couldn't find resources, it is most likely not relocatable. In this case, you must ask the author of the application to make it relocatable. Many modern frameworks such as Qt even provide functionality to implement this easily. In some cases, there's also flags you can specify when building from source to make applications relocatable.
