@@ -102,7 +102,7 @@ linuxdeploy describes itself as an `"AppDir maintenance tool" <https://github.co
 
 The following section describes how it can be used to deploy dependencies of applications into an AppDir that was created using the methods described in the :ref:`previous section <ref-make-install-workflow>`, and shows how this AppDir can eventually be packaged as an AppImage.
 
-.. note::
+.. seealso::
    Please see :ref:`ref-linuxdeploy` for more information on how to use linuxdeploy.
 
 
@@ -164,3 +164,49 @@ Luckily, linuxdeploy supports such a workflow as well. It provides functionaliti
    In order to be packaged as AppImages, applications must load the resources relative to their main binary, and not from a hardcoded path (usually ``/usr/...``). This is called :ref:`relocatability <ref-relocatablility>`.
 
    If your app doesn't load resources from the AppImage, but e.g., shows errors it couldn't find resources, it is most likely not relocatable. In this case, you must ask the author of the application to make it relocatable. Many modern frameworks such as Qt even provide functionality to implement this easily. In some cases, there's also flags you can specify when building from source to make applications relocatable.
+
+
+Bundling additional resources using linuxdeploy plugins
+-------------------------------------------------------
+
+As mentioned previously, linuxdeploy provides a plugin system. So-called "input" plugins can be used to bundle additional resources, such as Qt plugins, translations, etc.
+
+Please see :ref:`linuxdeploy-input-plugins` for more information.
+
+
+.. _linuxdeploy-plugin-appimage-user-guide:
+
+Build AppImages from AppDir using linuxdeploy
+---------------------------------------------
+
+As mentioned previously, linuxdeploy uses plugins to create actual output files from AppDirs. For AppImages, there's `linuxdeploy-plugin-appimage <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`_.
+
+To create AppImages, just add ``--output appimage`` to your linuxdeploy call to enable the plugin. An AppImage will be created using :ref:`ref-appimagetool`.
+
+Minimal example:
+
+.. code-block:: bash
+
+   > ./linuxdeploy-x86_64.AppImage --appdir AppDir --output appimage
+
+As most plugins, linuxdeploy-plugin-appimage provides some environment variables to enable additional functionality, such as:
+
+``SIGN=1``
+   Sign AppImage. See :ref:`ref-signing-appimages` for more information.
+
+``UPDATE_INFORMATION=zsync|...``
+   Add update information to the AppImage, and generate a ``.zsync`` file.
+
+.. seealso::
+   More information on the environment variables can be found in the `README <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage/blob/master/README.md>`_, including a complete (and up to date) list of supported environment variables.
+
+
+Examples
+--------
+
+In this section, some examples how linuxdeploy can be used are shown.
+
+
+.. literalinclude:: examples/bundle-qtquickapp.sh
+   :language: bash
+   :linenos:

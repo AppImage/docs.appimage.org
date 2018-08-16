@@ -82,6 +82,8 @@ You can use the ``--list-plugins`` flag to see what plugins are visible to linux
 .. _plugin specification: https://github.com/linuxdeploy/linuxdeploy/wiki/Plugin-system
 
 
+.. _linuxdeploy-input-plugins:
+
 Using input plugins
 '''''''''''''''''''
 
@@ -135,7 +137,7 @@ Example:
 
    > ./linuxdeploy-x86_64.AppImage <...> --output appimage
 
-Most users are interested in generating AppImages, therefore the AppImage plugin is bundled in the official linuxdeploy AppImage.
+Most users are interested in generating AppImages, therefore the AppImage plugin is bundled in the official linuxdeploy AppImage. Please see the :ref:`plugin's user guide <linuxdeploy-plugin-appimage-user-guide>` for more information.
 
 
 Using environment variables to change plugins' behavior
