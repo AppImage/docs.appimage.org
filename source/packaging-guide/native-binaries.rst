@@ -134,7 +134,7 @@ Example:
 .. code:: bash
 
    # get linuxdeploy's AppImage
-   > wget https://github.com/linuxdeploy/linuxdeploy/releases/downloads/continuous/linuxdeploy-x86_64.AppImage
+   > wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
    > chmod +x linuxdeploy-x86_64.AppImage
 
    # run linuxdeploy and generate an AppImage
