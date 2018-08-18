@@ -42,7 +42,7 @@ CMake provides an additional parameter to configure where the files are installe
 
 Here's an example how to use this method:
 
-.. code:: bash
+.. code-block:: bash
 
    # fetch sources (you could as well use a tarball etc.)
    > git clone https://github.com/my/app.git
@@ -75,7 +75,7 @@ Qt's qmake_ also provides a variable to change the "target" of :code:`make insta
 
 Preparing a basic application is very simple, as the following example illustrates:
 
-.. code:: bash
+.. code-block:: bash
 
    # get the source code
    > git clone https://github.com/probonopd/QtQuickApp.git
@@ -118,7 +118,7 @@ Start by downloading linuxdeploy. The recommended way to get it is to use the Ap
 
 After downloading the AppImage, you have to make it executable, as usual. Then, you can first run linuxdeploy on your AppDir:
 
-.. code:: bash
+.. code-block:: bash
 
    > ./linuxdeploy-x86_64.AppImage --appdir AppDir --init-appdir
 
@@ -131,7 +131,7 @@ If your application has installed itself properly, it should have installed a de
 
 Example:
 
-.. code:: bash
+.. code-block:: bash
 
    # get linuxdeploy's AppImage
    > wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
