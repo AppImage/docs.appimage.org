@@ -17,6 +17,7 @@ The following texts were mostly imported from our wiki. They might contain usefu
    appstream
    testing
    distributing
+   discoverability
    :caption: Contents
    :maxdepth: 2
 
