@@ -1,5 +1,9 @@
 .. custom 404 error page -- must be set up to be shown for all 404 errors in the webserver's configuration
 
+.. image:: /_static/img/appimage-grayscale.svg
+   :align: center
+   :width: 200px
+
 404: Not found
 ==============
 
