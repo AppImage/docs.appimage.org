@@ -206,7 +206,8 @@ Examples
 
 In this section, some examples how linuxdeploy can be used are shown.
 
-
 .. literalinclude:: examples/bundle-qtquickapp.sh
+   :caption: Example Qt application bundling, using manual strategy
+   :name: bundle-qtquickapp
    :language: bash
    :linenos:
