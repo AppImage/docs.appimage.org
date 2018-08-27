@@ -1,0 +1,11 @@
+.. custom 404 error page -- must be set up to be shown for all 404 errors in the webserver's configuration
+
+404: Not found
+==============
+
+The resource you requested could not be found.
+
+.. note::
+   As this documentation is still work in progress, the content might have been moved. Please use the search function or the table of contents to find its new location.
+
+:ref:`Back to home page <home>`
