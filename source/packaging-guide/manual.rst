@@ -1,3 +1,5 @@
+.. _ref-manual:
+
 Manually creating an AppDir
 ===========================
 

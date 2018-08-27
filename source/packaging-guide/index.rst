@@ -5,8 +5,10 @@ This chapter shows application developers how to produce AppImages, how to make 
 
 .. toctree::
    introduction
-   native-binaries
-   linuxdeploy-user-guide
+   overview
+   from-source/index
+   hosted-services/index
+   manual
    other-resources/index
    :caption: Contents:
    :maxdepth: 2

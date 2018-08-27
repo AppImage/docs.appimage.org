@@ -1,8 +1,7 @@
+.. _ref-obs:
+
 Using the Open Build Service
 ============================
-
-What is Open Build Service
---------------------------
 
 `Open Build Service <http://openbuildservice.org/>`_ is a generic system to build and distribute packages from sources in an automatic, consistent and reproducible way. It allows you to build software for various package formats and distributions. Now it can also build AppImages that run on a variety of distributions.
 

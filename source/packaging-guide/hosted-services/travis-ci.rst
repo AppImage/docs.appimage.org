@@ -1,3 +1,5 @@
+.. _ref-travis-ci:
+
 Bundling your Travis CI builds as AppImages
 ===========================================
 
