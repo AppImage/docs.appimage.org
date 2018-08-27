@@ -24,7 +24,7 @@ chmod +x linuxdeploy*.AppImage
 
 # QtQuickApp doesn't support "make install", therefore we'll show the manual packaging approach in this example
 # initialize AppDir, bundle shared libraries, add desktop file and icon, use Qt plugin to bundle additional resources, and build AppImage, all in one command
-./linuxdeploy-x86_64.AppImage --appdir AppDir --init-appdir -e QtQuickApp -i ../qtquickapp.png -d ../qtquickapp.desktop --plugin qt --output appimage
+./linuxdeploy-x86_64.AppImage --appdir AppDir -e QtQuickApp -i ../qtquickapp.png -d ../qtquickapp.desktop --plugin qt --output appimage
 
 # move built AppImage to original working directory
 mv QtQuickApp*.AppImage ../../

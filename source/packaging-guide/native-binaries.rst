@@ -120,9 +120,9 @@ After downloading the AppImage, you have to make it executable, as usual. Then, 
 
 .. code-block:: bash
 
-   > ./linuxdeploy-x86_64.AppImage --appdir AppDir --init-appdir
+   > ./linuxdeploy-x86_64.AppImage --appdir AppDir
 
-The :code:`--init-appdir` parameter creates some basic directory structure that isn't necessarily required, but might be handy when adding resources manually to the AppImage. It can also create empty AppDirs.
+This creates :code:`AppDir` if it doesn't exist yet. Inside :code:`AppDir` some basic directory structure is created that isn't necessarily required, but might be handy when adding resources manually to the AppImage.
 
 .. note::
    linuxdeploy supports an iterative workflow, i.e., you run it, and it will start to bundle resources. If there is a problem, it will show a detailed error message, and exit with an error code. You can then fix the issue, and call it again to try again. See :ref:`ref-linuxdeploy-iterative-workflow` for more information.
