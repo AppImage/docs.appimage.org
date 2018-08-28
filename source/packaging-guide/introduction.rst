@@ -1,5 +1,5 @@
-Introduction to Packaging AppImages
-===================================
+Introduction to Packaging
+=========================
 
 So you decided to make an AppImage or two? Great! Or did you just come here to get some insights into how AppImages can be built? Let's have a look.
 
