@@ -1,7 +1,7 @@
 .. _ref-manual:
 
-Manually creating an AppDir
-===========================
+Manual packaging
+================
 
 Create an AppDir manually, then turn it into an AppImage. Start out with the example below, then check the examples on bundling certain applications or type of applications as AppImages from the right-hand side **"Pages"** menu.
 
@@ -82,7 +82,11 @@ myapp.desktop should contain (as a minimum):
 
 Be sure to pick one of the `Registered Categories`_, and be sure that your desktop file passes validation by using :code:`desktop-file-validate your.desktop`. If you are not deploying an application with a graphical user interface (GUI) but a command line tool (for the terminal), make sure to add :code:`Terminal=true`.
 
-Then, run :code:`appimagetool` on the AppDir in order to turn it into an AppImage. You can get it from this repository's `Releases`_ page (it comes as an AppImage itself; yes, we eat our own dogfood).
+
+Creating an AppImage from the AppDir
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To create an AppImage, run :code:`appimagetool` on the AppDir in order to turn it into an AppImage. You can get it from this repository's `Releases`_ page (it comes as an AppImage itself; yes, we eat our own dogfood).
 
 .. _Registered Categories: https://standards.freedesktop.org/menu-spec/latest/apa.html
 .. _Releases: https://github.com/probonopd/AppImageKit/releases
