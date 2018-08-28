@@ -54,9 +54,9 @@ Being designed as a standard with a reference implementation allows users to imp
 
 .. _AppImage specification: https://github.com/AppImage/AppImageSpec
 
-AppDir specification
-----------------------
+AppDirs
+-------
 
-The term *AppDir* refers to an application directory. The format was first defined by the ROX Filer.
+The term *AppDir* refers to an application directory. These directories are the "source" of AppImages. When :ref:`appimagetool` builds an AppImage, it creates a read-only image of such a directory, prepends the :ref:`runtime`, and marks the file executable.
 
-.. _ROX AppDir specification: http://rox.sourceforge.net/desktop/AppDirs.html
+The AppDir format is described in the :ref:`appdir-specification`.
