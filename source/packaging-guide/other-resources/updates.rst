@@ -26,11 +26,13 @@ Use :code:`appimagetool -u` to embed update information (as specified in the App
 
 The string
 
-    ::`zsync|https://lyrion.ch/opensource/repositories/videocapture/uv/videocapture.AppImage.zsync`
+.. code-block:: text
+
+   zsync|https://lyrion.ch/opensource/repositories/videocapture/uv/videocapture.AppImage.zsync
 
 is called the *update information*.
 
-Please see https://github.com/AppImage/AppImageSpec/blob/master/draft.md\#update-information for a description of allowable types of update information.
+Please see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#update-information for a description of allowable types of update information.
 
 
 Using linuxdeployqt
