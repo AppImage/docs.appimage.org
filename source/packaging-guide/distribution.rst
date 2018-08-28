@@ -1,21 +1,37 @@
+.. _ref-distribution:
+
 Distributing AppImages
 ======================
+
+There are several ways to distribute AppImages to users. Most likely, AppImages are distributed from their creator to the users.
+
+The following section contains some details on how AppImages are commonly distributed.
+
 
 .. _ref-hosting-appimages:
 
 Hosting AppImages
 -----------------
 
-You can host AppImage  files on every web host you like. However, for automatic updates to work properly, it is required that the web server supports HTTP range requests. Most web hosts support this, as the same technology is used for navigating an MP3 files, for example.
+Most commonly, AppImage creators host the files on a standard webserver. This is the easiest and most accessible way.
 
 We recommend that you put the AppImage for Linux on your project's download page alongside the dmg for macOS and the exe for Windows, like so:
 
-.. image:: https://user-images.githubusercontent.com/2480569/35162112-287bff54-fd3a-11e7-8893-139638af600c.png
+.. image:: /_static/img/packaging-guide/release-page-screenshot.png
 	:width: 80%
 	:align: center
 	:alt: Download page overview, showing Windows, MacOS, Linux and Source code downloads
 
-For open source projects, we recommend that you publish your AppImage in addition on `GitHub Releases`_.
+For open source projects, if your project is located on GitHub, we recommend that you publish your AppImage in addition on `GitHub Releases`_.
+
+.. note::
+   For :ref:`AppImageUpdate` to work properly, it is required that the web server supports HTTP range requests. Most web hosts support this, as the same technology is used for navigating an MP3 files, for example.
+
+   Some hosted services are known not to support range requests right now. These involve:
+
+      - `Gitlab releases <https://gitlab.com>`_
+
+   If you use such a service and wish to use :ref:`AppImageUpdate` with it, please ask the providers to enable range requests.
 
 .. _GitHub Releases: https://help.github.com/articles/creating-releases/
 

@@ -6,10 +6,12 @@ This chapter shows application developers how to produce AppImages, how to make 
 .. toctree::
    introduction
    overview
+   ingredients
    from-source/index
    converting-existing-binary-packages
    hosted-services/index
    manual
+   distribution
    other-resources/index
    :caption: Contents:
    :maxdepth: 2
