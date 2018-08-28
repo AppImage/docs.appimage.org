@@ -58,7 +58,7 @@ In contrary to the rules in the previous section, the ones introduced in this se
 ``usr`` subdirectory
 ''''''''''''''''''''
 
-Analog to the FHS, most AppDirs, especially the ones created by the official tools such as :ref:`linuxdeploy <ref-linuxdeploy> `, contain a ``usr`` directory.
+Analog to the FHS, most AppDirs, especially the ones created by the official tools such as :ref:`linuxdeploy <ref-linuxdeploy>`, contain a ``usr`` directory.
 
 ``usr`` originally abbreviated *unix system resources*. According to the FHS, it contains shared, read-only data, which perfectly suits AppImage's needs, as AppImages are read-only, too.
 
