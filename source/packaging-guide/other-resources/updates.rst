@@ -1,10 +1,11 @@
 Making AppImages updateable
 ===========================
 
-AppImages can be updated
-* Via external tools (e.g., :code:`AppImageUpdate` or the :code:`appimageupdatetool` command line tool)
-* Via an updater tool built into the AppImage itself
-* By consuming :code:`libappimageupdate` functionality inside the payload application
+AppImages can be updated:
+
+  * Via external tools (e.g., :code:`AppImageUpdate` or the :code:`appimageupdatetool` command line tool)
+  * Via an updater tool built into the AppImage itself
+  * By consuming :code:`libappimageupdate` functionality inside the payload application
 
 
 Making AppImages updateable via external tools
@@ -18,7 +19,7 @@ Using appimagetool
 
 Use :code:`appimagetool -u` to embed update information (as specified in the AppImageSpec).
 
-.. code-clock:: shell
+.. code-block:: shell
 
     appimagetool videocapture.AppDir/usr/share/applications/*.desktop -u "zsync|https://lyrion.ch/opensource/repositories/videocapture/uv/videocapture.AppImage.zsync"
 
@@ -192,6 +193,7 @@ All messages are preserved, so if they are not fetched, they might stack up. How
 Let's rewrite the update check code from above, with advanced error handling:
 
 .. code-block:: cpp
+
     // check for update
     bool updateAvailable;
 
@@ -229,6 +231,7 @@ Talking about updater states, the state is modified by running an update. As men
 Here's some code how to run an update, and log progress and status messages until the update has finished:
 
 .. code-block:: cpp
+
     updater.start()
 
     // isDone() returns true as soon as the update has finished
