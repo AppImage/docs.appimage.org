@@ -1,9 +1,15 @@
-Converting existing binary packages using pkg2appimage
-======================================================
+Converting existing binary packages
+===================================
 
-There are `multiple ways <https://github.com/AppImage/AppImageKit/wiki/Creating-AppImages>`_ to generate AppImages. If you already have existing binaries (either in archive or :code:`.deb` format or a ppa) then the recommended way to convert these to an AppImage is to write a `.yml description file <yml-example-file>`_ and run it with `pkg2appimage`_:
+In some cases, it is possible to convert existing binary packages to AppImages. This section introduces tools for this purpose.
 
-To build an AppImage from a :code:`.yml` description file:
+
+pkg2appimage
+************
+
+If you already have existing binaries (either in archive or :code:`.deb` format or a ppa) then the recommended way to convert these to an AppImage is to write a `.yml description file <yml-example-file>`_ and run it with `pkg2appimage`_.
+
+To build an AppImage from a :code:`.yml` description file, simply run:
 
 .. code-block:: shell
 
@@ -15,17 +21,26 @@ To build an AppImage from a :code:`.yml` description file:
 .. _pkg2appimage: https://github.com/AppImage/AppImages/blob/master/pkg2appimage
 .. _yml-example-file: https://github.com/AppImage/AppImages/tree/master/recipes
 
+.. warning::
+   pkg2appimage suffers from a few notable issues:
 
-`.yml` files
-------------
+     - It is likely to add lots of bloat to the final AppImage. As it simply extracts the contents of packages, there is no check whether any of these resources are actually used by the application or not. You are recommended to check final AppImages, and add ``rm`` commands to your recipes to remove unused data.
+     - pkg2appimage uses distribution packages downloaded using the package managers, however, the packages are not authenticated, as most security functionality has been deactivated. This is a major security issue. pkg2appimage is therefore recommended for personal use only. Upstream authors should consider :ref:`packaging from source <ref-from-source>`.
+
+   .. seealso::
+      See `this GitHub issue <https://github.com/AppImage/AppImages/issues/197>`_ for more information on the security issue.
+
+
+``.yml`` files
+--------------
 
 The easiest way to build an AppImage is to write a :code:`.yml` file. We developed a rather simple format that allows developers to write a :code:`app.yml` file that describes how to build an AppImage for :code:`app`, being able to reuse pre-built binaries, e.g. from Debian packages, both to save time for creating and building an AppImage.
 
 This document provides an introduction to the :code:`.yml` files' purpose, their structure and a few examples describing how to use all the advanced features.
 
 
-Purpose of `.yml` files
------------------------
+Purpose of ``.yml`` files
+-------------------------
 
 :code:`.yml` is the file extension commonly used for *YAML* (*Yet Another Markup Language*, nowadays also serves as an abbreviation for *YAML Ain’t Markup Language*).
 
@@ -36,8 +51,8 @@ The :code:`.yml` files are used by `pkg2appimage`_ which is used in the *AppImag
 The :code:`.yml` file format is not part of the AppImage standard, which just describes the AppImage container format and is agnostic as to how the payload inside an AppImage gets generated. Neither it is part of AppImageKit, because AppImageKit is only concerned with taking a pre-existing *AppDir* and converting that into an AppImage. Such an AppDir is created from the instructions stored in the :code:`.yml` files, and converted to an AppImage using *AppImageKit*.
 
 
-General anatomy of :code:`.yml` files
--------------------------------------
+General anatomy of ``.yml`` files
+---------------------------------
 
 The general format of :code:`.yml` files is as follows:
 
@@ -66,8 +81,8 @@ Note that the sections may contain sub-sections. For example, the ingredients se
 Overall section
 ^^^^^^^^^^^^^^^
 
-`app` key
-#########
+``app`` key
+###########
 
 Mandatory. Contains the name of the application. If the :code:`.yml` file uses ingredients from packages (e.g., :code:`.deb`), then the name must match the package name of the main executable.
 

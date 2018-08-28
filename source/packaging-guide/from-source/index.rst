@@ -1,3 +1,5 @@
+.. _ref-from-source:
+
 Packaging from source
 =====================
 
