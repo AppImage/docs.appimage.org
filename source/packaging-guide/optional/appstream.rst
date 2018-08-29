@@ -1,5 +1,7 @@
-Shipping AppStream metadata
-===========================
+.. _ref-appstream:
+
+AppStream metadata
+==================
 
 AppStream is a cross-distro effort for providing metadata for software in the (Linux) ecosystem.
 It provides a convenient way to get information about not installed software,
@@ -9,19 +11,15 @@ Desktop environments, file managers, AppImage catalogs, software centers, and ap
 
 So if you would like your applicatoin to show a nice screenshot in app centers, you should add an AppStream metainfo file to your AppImage. AppStream is a format that exists independently of AppImage and can be used in conjunction with other packaging formats as well. Many open source applications already come with AppStream metainfo files by default.
 
-More information:
-	https://www.freedesktop.org/software/appstream/docs/chap-Quickstart.html#sect-Quickstart-DesktopApps.
+.. seealso::
+    More information on AppStream can be found on the `FreeDesktop.org pages <https://www.freedesktop.org/software/appstream/docs/chap-Quickstart.html#sect-Quickstart-DesktopApps>`_.
 
-
-.. _ref-using-appstream-generator:
 
 Using AppStrean generator
 -------------------------
 
 An easy way to generate an AppStream metainfo file is to use the online generator at http://output.jsbin.com/qoqukof.
 
-
-.. _ref-embedding-appstream-metadata:
 
 Embedding AppStream metadata
 ----------------------------

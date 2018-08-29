@@ -1,3 +1,5 @@
+.. _ref-updates:
+
 Making AppImages updateable
 ===========================
 

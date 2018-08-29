@@ -9,6 +9,7 @@ This chapter shows application developers how to produce AppImages, how to make 
    ingredients
    from-source/index
    converting-binary-packages/index
+   optional/index
    hosted-services/index
    manual
    distribution
