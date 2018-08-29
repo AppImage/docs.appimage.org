@@ -134,7 +134,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'AppImagedoc'
+htmlhelp_basename = 'AppImage'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -183,7 +183,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'AppImage', 'AppImage Documentation',
-     author, 'AppImage', 'One line description of project.',
+     author, 'AppImage', 'Central documentation of the AppImage project.',
      'Miscellaneous'),
 ]
 
