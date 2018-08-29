@@ -1,5 +1,5 @@
-Upstream packaging
-==================
+A word on upstream packaging
+============================
 
 The AppImage ecosystem is built around the notion of "upstream packaging". With AppImage, typically the application author is who packages and distributes the application. This is different from the traditional Linux distribution model, where the application author and the application packager (also called the maintainer) are often different persons.
 
@@ -27,7 +27,7 @@ However, upstream packaging also has disadvantages:  most prominently, there is 
 If upstream packaging is not possible
 -------------------------------------
 
-In some cases, the original application author or application team may not be interested in providing an official AppImage. In this case you have the following options: For open source projects, you can often make and send a pull request, and for closed source applications you can create a yml recipe that can be used to convert the existing Linux binaries into an AppImage using :code:`pkg2appimage`.
+In some cases, the original application author or application team may not be interested in providing an official AppImage. In this case you have the following options: For open source projects, you can often make and send a pull request, and for closed source applications you can create a yml recipe that can be used to convert the existing Linux binaries into an AppImage using :ref:`pkg2appimage <ref-pkg2appimage>`.
 
 
 Open source projects
@@ -41,6 +41,6 @@ Many open source projects already use continuous integration on systems such as 
 Closed source applications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For closed source applications you can create a yml recipe that can be used to convert the existing Linux binaries into an AppImage using `pkg2appimage <pkg2appimage.html>`_).
+For closed source applications you can create a yml recipe that can be used to convert the existing Linux binaries into an AppImage using :ref:`pkg2appimage <ref-pkg2appimage>`).
 
 Note that you may not be allowed to redistribute the AppImage of the application. In this case, you can distribute :code:`.yml` recipes that end users can use to produce their own AppImages of the application easily. This applies to applications such as Google Chrome, Spotify, Skype, and others.
