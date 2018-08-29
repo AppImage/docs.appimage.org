@@ -8,7 +8,7 @@ This chapter shows application developers how to produce AppImages, how to make 
    overview
    ingredients
    from-source/index
-   converting-existing-binary-packages
+   converting-binary-packages/index
    hosted-services/index
    manual
    distribution

@@ -1,11 +1,5 @@
-Converting existing binary packages
-===================================
-
-In some cases, it is possible to convert existing binary packages to AppImages. This section introduces tools for this purpose.
-
-
 pkg2appimage
-************
+============
 
 If you already have existing binaries (either in archive or :code:`.deb` format or a ppa) then the recommended way to convert these to an AppImage is to write a `.yml description file <yml-example-file>`_ and run it with `pkg2appimage`_.
 
