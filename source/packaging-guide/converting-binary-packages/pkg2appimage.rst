@@ -1,3 +1,5 @@
+.. _ref-pkg2appimage:
+
 pkg2appimage
 ============
 

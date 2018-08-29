@@ -3,7 +3,8 @@ Testing your AppImage
 
 Testing your AppImage is a very important step inproducing an AppImage. Since AppImage files are supposed to run on a variety of Linux distributions, it is important to test your AppImage on a wide variety of distributions.
 
-**Test your AppImage** on all base operating systems you are targeting.
+.. centered::
+   **Test your AppImage on all base operating systems you are targeting!**
 
 This is an important step which you should not skip. Subtle differences in distributions make this a must. While it is possible in most cases to create AppImages that run on various distributions, this does not come automatically, but requires careful hand-tuning.
 
@@ -19,4 +20,5 @@ You can use ISOs of Live CDs, loop-mount them, chroot into them, and run the App
 
 .. code-block:: shell
 
-    $ sudo ./testappimage /path/to/elementary-0.2-20110926.iso ./AppImageAssistant.AppImage
+   $ wget https://raw.githubusercontent.com/AppImage/AppImageKit/appimagetool/master/testappimage
+   $ sudo bash testappimage /path/to/elementary-0.2-20110926.iso AppImageAssistant.AppImage

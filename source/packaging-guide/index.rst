@@ -12,6 +12,7 @@ This chapter shows application developers how to produce AppImages, how to make 
    optional/index
    hosted-services/index
    manual
+   testing
    distribution
    other-resources/index
    :caption: Contents:
