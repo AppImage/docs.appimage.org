@@ -15,7 +15,7 @@ So if you would like your applicatoin to show a nice screenshot in app centers, 
     More information on AppStream can be found on the `FreeDesktop.org pages <https://www.freedesktop.org/software/appstream/docs/chap-Quickstart.html#sect-Quickstart-DesktopApps>`_.
 
 
-Using AppStrean generator
+Using AppStream generator
 -------------------------
 
 An easy way to generate an AppStream metainfo file is to use the online generator at http://output.jsbin.com/qoqukof.
