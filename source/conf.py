@@ -89,6 +89,9 @@ html_theme_options = {
     "display_version": True,
     "sticky_navigation": True,
     "includehidden": True,
+    "collapse_navigation": True,
+    "titles_only": True,
+    "prev_next_buttons_location": "both",
 }
 
 # try to fetch current Git commit ID from the environment
