@@ -140,8 +140,8 @@ Example:
    > wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
    > chmod +x linuxdeploy-x86_64.AppImage
 
-   # run linuxdeploy and generate an AppImage
-   > ./linuxdeploy-x86_64.AppImage --appdir AppDir --init-appdir
+   # run linuxdeploy and generate an AppDir
+   > ./linuxdeploy-x86_64.AppImage --appdir AppDir
 
 You can bundle additional resources such as icon files, executable and desktop files using the respective flags described in the ``--help`` text or on linuxdeploy's `homepage <https://github.com/linuxdeploy/linuxdeploy>`_.
 
