@@ -15,9 +15,15 @@ Consider the following user stories:
 
    "I as a user want to take my favorite applications with me on a portable disk together with my data, allowing me to use any Linux computer to work with my files."
 
-All these use cases can be accomplished by using AppImages.
+   "I am in a corporate or university environment and want to simply run some specific software, but lack permissions to 'install' applications."
 
-AppImages provide a easy and unified user experience, have a large user base and eco system, and there's a lot of tools that improve the users' user experience.
+All these use cases can be accomplished by using AppImages. They're a trade-off between a simple user experience and resulting file size. The unique user experience guarantees that even less tech-savvy people can get started without any major issues. AppImage is primarily a user-focused way of bundling software.
+
+As AppImage has been around for a while, a lot of useful, optional features have been developed, ranging from :ref:`efficient updates <ref-appimageupdate>` over so-called :ref:`desktop integration <ref-desktop-integration>` to :ref:`software catalogs <ref-appimagehub>`. None of these are required for the basic experience, though. AppImages are designed to :ref:`be run in three steps at most <ref-download-make-executable-run>`.
+
+An important advantage is that AppImage is designed from ground to run without super user permissions. Almost all major distributions are compatible with AppImages, without requiring the user to make modifications to the base system. AppImages ship with their own runtime, and don't require external resources if packaged properly. Students in university labs for instance can simply put an AppImage on a USB disk and use it normally, on any machine.
+
+To sum up: AppImages provide a easy and unified user experience, have a large user base and eco system, and there's a lot of tools that improve the users' user experience.
 
 
 Why would I as a developer want to make and distribute AppImages?
