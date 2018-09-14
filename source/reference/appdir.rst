@@ -79,7 +79,7 @@ The directory contains applications, (shared) libraries, desktop files, icons et
    ``icons``
       Directory containing so-called `icon themes`_. Contains at least one, but often a set of icons for the main application. The icons are referred to by the root desktop file, which means the :ref:`same constraints <root-icon>` apply.
       Example path: ``<root>/usr/share/icons/<theme>/<resolution>/apps/myapp.<ext>``, e.g., ``<root>/usr/share/icons/hicolor/256x256/apps/myapp.png``
-      Icon themes placed in this directory are copied to the system during so-called :ref:`desktop integration <desktop-integration>`.
+      Icon themes placed in this directory are copied to the system during so-called :ref:`desktop integration <ref-desktop-integration>`.
 
 .. _icon themes: https://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html
 

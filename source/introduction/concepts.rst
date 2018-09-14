@@ -9,7 +9,7 @@ The AppImage development follows a few easy to understand core principles and co
 One app = one file
 -------------------
 
-AppImages are simple to understand. Every AppImage is a regular file, and every AppImage contains exactly one app with all its dependencies. Once the AppImage is :ref:`made executable <download-make-executable-run>`, a user can just run it, either by double clicking it in their desktop environment's file manager, by running it from the console etc.
+AppImages are simple to understand. Every AppImage is a regular file, and every AppImage contains exactly one app with all its dependencies. Once the AppImage is :ref:`made executable <ref-download-make-executable-run>`, a user can just run it, either by double clicking it in their desktop environment's file manager, by running it from the console etc.
 
 
 .. _no-external-dependencies:

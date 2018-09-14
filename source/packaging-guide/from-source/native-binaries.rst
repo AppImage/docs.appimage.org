@@ -146,7 +146,7 @@ Example:
 You can bundle additional resources such as icon files, executable and desktop files using the respective flags described in the ``--help`` text or on linuxdeploy's `homepage <https://github.com/linuxdeploy/linuxdeploy>`_.
 
 .. note::
-   Desktop file and icon are used for so-called :ref:`desktop integration <desktop-integration>`. If your build system didn't install such files into the right location, you can have linuxdeploy put your own files into the right places. Please see :ref:`linuxdeploy-bundle-desktop-files-icons` for more information.
+   Desktop file and icon are used for so-called :ref:`desktop integration <ref-desktop-integration>`. If your build system didn't install such files into the right location, you can have linuxdeploy put your own files into the right places. Please see :ref:`linuxdeploy-bundle-desktop-files-icons` for more information.
 
 
 .. _ref-package-existing-binaries:
