@@ -14,6 +14,5 @@ This chapter shows application developers how to produce AppImages, how to make 
    manual
    testing
    distribution
-   other-resources/index
    :caption: Contents:
    :maxdepth: 2
