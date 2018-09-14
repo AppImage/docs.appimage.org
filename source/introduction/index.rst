@@ -5,7 +5,7 @@ AppImage provides a way for upstream developers to provide "native" binaries for
 
 AppImage is designed to be a standalone standard, implemented in a so-called reference implementation provided in AppImageKit_.
 
-
+The following section provides an overview of the AppImage idea, the motives behind AppImage, and explains the basic concepts. Furthermore, there's an overview over the currently existing software, and some words on upstream packaging.
 
 .. toctree::
    motivation
@@ -15,8 +15,4 @@ AppImage is designed to be a standalone standard, implemented in a so-called ref
    upstream
    :caption: Contents:
 
-
-
 .. _AppImageKit: https://github.com/AppImage/AppImageKit
-
-
