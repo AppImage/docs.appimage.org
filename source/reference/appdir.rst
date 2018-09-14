@@ -24,7 +24,7 @@ As the name intends, AppDirs are normal directories with some special contents:
 ``AppRun``
    A file (executable, script, etc.) or symlink, serving as the "entry point" for a specific application. It is located in the root directory that makes up an AppDir, so it can be used to calculate paths relative to the (later mounted) AppDir.
 
-.. _.DirIcon:
+.. _ref-diricon:
 ``.DirIcon``
    Symlink to an icon, normally located in the root directory. Can be used by e.g., thumbnailers, to display application icons rather than a generic filetype symbol.
 
@@ -35,7 +35,7 @@ These two entries have been re-used from `ROX Filer`_'s specification. `ROX File
 
 .. _root-icon:
 ``myapp.<icon ext>`` (e.g., ``myapp.png``, ``myapp.svg``)
-   Application's icon in the best available quality, ideally a vector graphic. Can be a symlink to subdirectories such as ``usr/share/icons/hicolor/...``. In most cases, :ref:`.DirIcon` is a symlink to this file. The filename must be equal to what is set in the ``Icon=`` entry in the desktop file. It is recommended by AppImage and also the XDG icon specifications to use a lower-case filename which is equal to the desktop file's name.
+   Application's icon in the best available quality, ideally a vector graphic. Can be a symlink to subdirectories such as ``usr/share/icons/hicolor/...``. In most cases, :ref:`ref-diricon` is a symlink to this file. The filename must be equal to what is set in the ``Icon=`` entry in the desktop file. It is recommended by AppImage and also the XDG icon specifications to use a lower-case filename which is equal to the desktop file's name.
 
    .. note::
       The ``Icon=`` entry |should not| contain the file extension, the actual file's filename however |should| carry the extension.
