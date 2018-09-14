@@ -1,15 +1,24 @@
 Concepts
 ========
 
-The AppImage development follows a few easy to understand core principles and concepts that keep it simple to use for developers and users. In this section, the most prominent concepts are explained.
+The AppImage development follows a few easy-to-understand core principles and concepts that keep it simple to use for developers and users. In this section, the most prominent concepts are explained.
 
 
 .. _one-app-one-file-principle:
 
 One app = one file
--------------------
+------------------
 
 AppImages are simple to understand. Every AppImage is a regular file, and every AppImage contains exactly one app with all its dependencies. Once the AppImage is :ref:`made executable <ref-download-make-executable-run>`, a user can just run it, either by double clicking it in their desktop environment's file manager, by running it from the console etc.
+
+.. _ref-opinion-reusable-frameworks:
+.. note::
+
+   On a regular basis, `users ask <https://github.com/AppImage/AppImageKit/issues/848>`_ about implementing support for some sort of "reusable/shared frameworks". These frameworks are supposed to contain bundles of libraries which are needed by more than one AppImage, and hence could save some disk space. For management, they suggest complex automagic systems that will automatically fetch the "frameworks" from the Internet if they're not available, or some complicated, mostly manual methods how to users could bundle frameworks together with the AppImages on portable disks like USB sticks.
+
+   These may be good ideas for some people, and even if they worked perfectly fine, they'd break with our most important concept: :ref:`one app = one file <one-app-one-file-principle>`. AppImages are so simple to understand *because* every application is a single file. There's no complexity in this approach, even grandma could understand it. And after all, disk space is cheap nowadays, right?
+
+   If you prefer this approach or absolutely need it, please check out alternative approaches. AppImage will never implement such a feature.
 
 
 .. _no-external-dependencies:
