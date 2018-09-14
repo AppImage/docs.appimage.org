@@ -11,6 +11,7 @@ AppImage project
 ****************
 
 .. _ref-appimagekit:
+
 AppImageKit
 -----------
 
@@ -18,6 +19,7 @@ AppImageKit
 
 
 .. _ref-runtime:
+
 runtime
 ^^^^^^^
 
@@ -25,6 +27,7 @@ The runtime provides the "executable header" of every AppImage. When executing a
 
 
 .. _ref-appimagetool:
+
 appimagetool
 ^^^^^^^^^^^^
 
@@ -67,6 +70,7 @@ Calculates the MD5 digest used for desktop integration purposes for a given AppI
 
 
 .. _ref-appimageupdate:
+
 AppImageUpdate
 --------------
 
@@ -79,6 +83,7 @@ The project consists of two tools: :code:`appimageupdatetool`, a full-featured C
 
 
 .. _appimaged:
+
 appimaged
 ---------
 
