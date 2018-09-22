@@ -3,12 +3,14 @@
 Software Overview
 =================
 
-.. todo::
-   - list deprecated components
+The following section presents an overview over software produced by or strongly related to the AppImage project, involving tools for making or managing AppImages. Some projects are not officially AppImage projects, however, they're maintained mostly by AppImage core contributors.
 
 
 AppImage project
 ****************
+
+The AppImage project consists of several software projects with different roles. The following section provides an overview.
+
 
 .. _ref-appimagekit:
 
@@ -31,7 +33,7 @@ The runtime provides the "executable header" of every AppImage. When executing a
 appimagetool
 ^^^^^^^^^^^^
 
-appimagetool is the easiest way to create AppImages from existing directories on the system, the so-called :ref:`AppDir`s. It creates the AppImage by embedding the runtime, and creating and appending the filesystem image.
+appimagetool is the easiest way to create AppImages from existing directories on the system, the so-called :ref:`AppDirs <ref-appdir>`. It creates the AppImage by embedding the runtime, and creating and appending the filesystem image.
 
 appimagetool implements all optional features, like for instance :ref:`update information <update-information>`, :ref:`signing <signing>`, and some linting options to make sure the information in the AppImage is valid (for instance, it can validate :ref:`AppStream files <appstream-support>`).
 

@@ -1,3 +1,4 @@
 sphinx>=1.7.0
 sphinx_rtd_theme
 -e git+https://github.com/GaretJax/sphinx-autobuild#egg=sphinx-autobuild
+sphinx_git

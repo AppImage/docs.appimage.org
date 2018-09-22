@@ -1,5 +1,5 @@
-.. _appdir-specification:
-.. _appdir:
+.. _ref-appdir-specification:
+.. TODO: create page on AppDir concept and move label there
 .. _ref-appdir:
 
 AppDir specification
