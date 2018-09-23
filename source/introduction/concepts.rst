@@ -68,4 +68,4 @@ AppDirs
 
 The term *AppDir* refers to an application directory. These directories are the "source" of AppImages. When :ref:`appimagetool` builds an AppImage, it creates a read-only image of such a directory, prepends the :ref:`runtime`, and marks the file executable.
 
-The AppDir format is described in the :ref:`appdir-specification`.
+The AppDir format is described in the :ref:`appdir-description`.
