@@ -1,8 +1,8 @@
-.. _appdir-specification:
+.. _appdir-description:
 .. _appdir:
 .. _ref-appdir:
 
-AppDir specification
+AppDir description
 ====================
 
 This page describes the *AppDir* format. AppDirs are the "source" of AppImages. When building an AppImage, a filesystem image is built from such a directory, to which a runtime is prepended.
