@@ -37,6 +37,14 @@ is called the *update information*.
 Please see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#update-information for a description of allowable types of update information.
 
 
+Using linuxdeploy
+^^^^^^^^^^^^^^^^^
+
+:ref:`linuxdeploy's <ref-linuxdeploy>` `AppImage plugin <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`_ supports an environment variable ``$UPDATE_INFORMATION`` (or short ``$UPD_INFO``) that can be used to set the update information manually.
+
+Please see `the README <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage#optional-variables>`_ for details.
+
+
 Using linuxdeployqt
 ^^^^^^^^^^^^^^^^^^^
 
