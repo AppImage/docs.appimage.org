@@ -7,5 +7,11 @@ users and developers).
 
 View it at https://docs.appimage.org/.
 
+
+Build
+-----
+
 This is a `Sphinx <https://sphinx-doc.org>`_ project, and can be built like
 any other Sphinx project (e.g., using :code:`make html`)
+
+For less experienced users of Sphinx/Python/virtualenv etc., a convenience script that sets up a local isolated Sphinx environment is included. It's a transparent wrapper for the :code:`Makefile`, and can be used as a drop-in replacement :code:`./make.sh html`.
