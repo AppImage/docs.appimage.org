@@ -1,3 +1,5 @@
+.. _ref-packaging-guide:
+
 Packaging Guide
 ===============
 
