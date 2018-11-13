@@ -87,8 +87,13 @@ The project consists of two tools: :code:`appimageupdatetool`, a full-featured C
 appimaged
 ---------
 
-.. todo::
-   describe legacy software
+`appimaged <https://github.com/AppImage/appimaged>`_ is a daemon that monitors a predefined set of directories on the system, looking for AppImages. It automatically integrates all AppImages it can find during an initial search, and then live watches for new AppImage (or AppImages that were removed) and (de)integrates these immediately.
+
+It is shipped in a few native distribution package formats as well as as AppImage.
+
+.. warning::
+
+   One of the monitored directories is `~/Downloads`. If the directory is very large, appimaged usually needs quite long to visit all files. It is likely to slow down the system (specifically, the filesystem).
 
 
 Third-party tools
@@ -102,9 +107,13 @@ linuxdeploy
 
 linuxdeploy_ is a simple to use tool that can be used to create AppDirs and AppImages. It has been developed in 2018, and describes itself as an "AppDir creation and maintenance tool".
 
-linuxdeploy is the successor of :ref:`linuxdeployqt`, and can be used in all projects that use :ref:`linuxdeployqt` at the moment.
+linuxdeploy is the successor of :ref:`linuxdeployqt`, and can be used in all projects that use :ref:`linuxdeployqt`. The list of plugins is continually growing, providing solutions for bundling frameworks such as `Qt <https://github.com/linuxdeploy/linuxdeploy-plugin-qt_`_ as well as complete environments for non-native programming languages such as `Python <https://github.com/linuxdeploy/linuxdeploy-plugin-conda`_.
 
 .. _linuxdeploy: https://github.com/linuxdeploy/linuxdeploy
+
+.. seealso::
+
+   There's a guide on :ref:`native binary packaging <ref-packaging-native-binaries>` and a general :ref:`linuxdeploy user guide <ref-linuxdeploy>` in the :ref:`packaging-guide`.
 
 
 .. _ref-appimagelauncher:
