@@ -1,3 +1,5 @@
+.. _ref-packaging-native-binaries:
+
 Packaging native binaries
 =========================
 
