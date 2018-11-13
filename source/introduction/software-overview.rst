@@ -113,7 +113,7 @@ linuxdeploy is the successor of :ref:`linuxdeployqt`, and can be used in all pro
 
 .. seealso::
 
-   There's a guide on :ref:`native binary packaging <ref-packaging-native-binaries>` and a general :ref:`linuxdeploy user guide <ref-linuxdeploy>` in the :ref:`packaging-guide`.
+   There's a guide on :ref:`native binary packaging <ref-packaging-native-binaries>` and a general :ref:`linuxdeploy user guide <ref-linuxdeploy>` in the :ref:`ref-packaging-guide`.
 
 
 .. _ref-appimagelauncher:
