@@ -50,7 +50,7 @@ Here's an example how to use this method:
 .. code-block:: bash
 
    # fetch sources (you could as well use a tarball etc.)
-   > git clone https://github.com/my/app.git
+   > git clone https://github.com/linuxdeploy/QtQuickApp.git
    > cd app
 
    # build out of source
@@ -59,10 +59,10 @@ Here's an example how to use this method:
 
    # configure build system
    # the flags below are the bare minimum that is needed, the app might define additional variables that might have to be set
-   > cmake -DCMAKE_INSTALL_PREFIX=/usr
+   > cmake .. -DCMAKE_INSTALL_PREFIX=/usr
 
    # build the application on all CPU cores
-   > make install -j$(nproc)
+   > make -j$(nproc)
 
    # now "install" resources into future AppDir
    > make install DESTDIR=AppDir
@@ -83,11 +83,13 @@ Preparing a basic application is very simple, as the following example illustrat
 .. code-block:: bash
 
    # get the source code
-   > git clone https://github.com/probonopd/QtQuickApp.git
+   > git clone https://github.com/linuxdeploy/QtQuickApp.git
    > cd QtQuickApp
 
-   # run qmake to prepare the Makefile
-   > qmake .
+   # create out-of-source build dir and run qmake to prepare the Makefile
+   > mkdir build
+   > cd build
+   > qmake ..
 
    # build the application on all CPU cores
    > make -j$(nproc)
@@ -211,8 +213,54 @@ Examples
 
 In this section, some examples how linuxdeploy can be used are shown.
 
-.. literalinclude:: examples/bundle-qtquickapp.sh
-   :caption: Example Qt application bundling, using manual strategy
+QtQuickApp
+++++++++++
+
+This section contains a few example scripts that showcase how AppImages can be built for `QtQuickApp <https://github.com/linuxdeploy/QtQuickApp>`_, a basic demonstration app based on QtQuick, using some QML internally. It can be built using both CMake and qmake. We use it to show some example scripts how AppImages can be built for it, using the methods introduced in this guide.
+
+
+Using qmake and ``make install``
+''''''''''''''''''''''''''''''''
+
+The following script might be used to create AppImages for QtQuickApp, using qmake and ``make install`` strategy.
+
+.. literalinclude:: examples/bundle-qtquickapp-with-qmake.sh
    :name: bundle-qtquickapp
+   :caption: :code:`travis/build-with-qmake.sh`
    :language: bash
    :linenos:
+
+.. note::
+   We're using a separate bash script that runs in an isolated, temporary directory to prevent modifications to the existing source code or the system.
+
+   Many examples "hack" those instructions directly into their CI configuration, e.g., ``.travis.yml``. This approach has many problems, most notably that it's impossible to test those scripts locally. By extracting the whole process into a script, it becomes quite simple to test the build script locally as well as run it in the CI system.
+
+   An example :code:`.travis.yml` is included in a later section, showing how the script can be run on Travis CI. It's quite generic, you should be able to copy it without having to make too many modifications.
+
+
+Using CMake and ``make install``
+''''''''''''''''''''''''''''''''
+
+The following script might be used to create AppImages for QtQuickApp, using qmake and ``make install`` strategy. It is effectively the same script as the ``qmake`` one, but uses CMake instead of qmake to build the binaries and install the data into the AppDir.
+
+.. literalinclude:: examples/bundle-qtquickapp-with-cmake.sh
+   :name: bundle-qtquickapp
+   :caption: :code:`travis/build-with-qmake.sh`
+   :language: bash
+   :linenos:
+
+
+Integrate build scripts into CI systems
+'''''''''''''''''''''''''''''''''''''''
+
+Travis CI
+*********
+
+The scripts introduced in the previous subsections will move the files back into the directory where they're called. Therefore, the :code:`.travis.yml` and especially the :code:`script` file can be kept delightfully short:
+
+.. literalinclude:: examples/.travis.yml
+   :name: bundle-qtquickapp
+   :caption: :code:`.travis.yml`
+   :language: yaml
+   :linenos:
+

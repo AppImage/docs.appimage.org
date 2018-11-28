@@ -1,0 +1,25 @@
+language: cpp
+# needed for installing packages with apt
+sudo: required
+
+# we use the Qt PPAs to have some more recent Qt versions that are compatible with Ubuntu trusty
+before_install:
+  - sudo add-apt-repository ppa:beineri/opt-qt-5.10.1-trusty -y
+  - sudo apt-get update
+
+# install Qt from the PPA, and set up environment so that calls to Qt tools end up in the new Qt installation
+install:
+  - sudo apt-get -y install qt510base qt510declarative
+  - . /opt/qt*/bin/qt*-env.sh
+
+# use CMake based build script shown in previous section
+script:
+  - bash travis/build-with-cmake.sh
+
+# OPTIONAL: uploading binaries using uploadtool
+# see https://github.com/probonopd/uploadtool for more information
+
+branches:
+  except:
+    - # Do not build tags that we create when we upload to GitHub Releases
+    - /^(?i:continuous)/
