@@ -264,3 +264,8 @@ The scripts introduced in the previous subsections will move the files back into
    :language: yaml
    :linenos:
 
+
+.. seealso::
+
+   Please see the :ref:`ref-travis-ci` section in the :ref:`ref-hosted-services` section for more information on Travis CI. It also contains a guide on :ref:`uploadtool <ref-uploadtool>`.
+
