@@ -43,12 +43,12 @@ For example, to test an AppImage package on Ubuntu 18.04, the steps to be follow
 The `run.sh` script will build the corresponding Docker container, determine the IP address of the host system, and run the container with convenient parameters. The host `HOME` folder is mapped to the `/shared` folder in the running container, and the X server is forwarded to the host system so that graphical applications can be correctly executed.
 
 The following Linux distributions are supported out-of-the-box:
-- Ubuntu 14.04, 16.04 and 18.04
-- CentOS 6 and 7
-- Fedora 26 and 27
-- Debian stable and testing
-- Manjaro (Arch Linux derivative)
-- Sabayon (Gentoo Linux derivative)
+* Ubuntu 14.04, 16.04 and 18.04
+* CentOS 6 and 7
+* Fedora 26 and 27
+* Debian stable and testing
+* Manjaro (Arch Linux derivative)
+* Sabayon (Gentoo Linux derivative)
 
 Other distributions can be added by writing an appropriate Dockerfile.
 
