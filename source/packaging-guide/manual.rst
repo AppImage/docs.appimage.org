@@ -94,9 +94,10 @@ To create an AppImage, run :code:`appimagetool` on the AppDir in order to turn i
 Bundling GTK libraries
 ^^^^^^^^^^^^^^^^^^^^^^
 
-The following steps allow bubdling the GTK libraries and configuration files in a relocatable way, without the need to patch the files and replace hard-coded paths. The full set of bundling commands, in the form of a bash script, can be found [here](https://github.com/aferrero2707/appimage-helper-scripts/blob/master/bundle-gtk2.sh). They assume the existence of an :code:`APPDIR` environment variable that poits to the root folder of the AppImage bundle.
+The following steps allow bundling the GTK libraries and configuration files in a relocatable way, without the need to patch the files and replace hard-coded paths. The full set of bundling commands, in the form of a bash script, can be found `here <https://github.com/aferrero2707/appimage-helper-scripts/blob/master/bundle-gtk2.sh>`. They assume the existence of an :code:`APPDIR` environment variable that poits to the root folder of the AppImage bundle.
 
-1. GDK-Pixbuf modules and cache file:
+GDK-Pixbuf modules and cache file
+"""""""""""""""""""""""""""""""""
 
 .. code-block:: shell
 
@@ -111,7 +112,8 @@ The following steps allow bubdling the GTK libraries and configuration files in 
 
 The hard-coded paths in the cache file are removed by the :code:`sed` command. At run time, the :code:`$APPDIR/usr/ib/gdk-pixbuf-2.0/loaders` folder has to be added to the :code:`LD_LIBRARY_PATH` environment variable, so that the bundled GDK-Pixbuf loaders can be correctly found by the linker.
 
-2. Glib schemas:
+GLib schemas
+""""""""""""
 
 .. code-block:: shell
 
@@ -121,7 +123,8 @@ The hard-coded paths in the cache file are removed by the :code:`sed` command. A
    cd "$APPDIR/usr/share/glib-2.0/schemas/"
    glib-compile-schemas .
 
-3. Theme engines:
+Theme engines
+"""""""""""""
 
 .. code-block:: shell
 
@@ -130,7 +133,8 @@ The hard-coded paths in the cache file are removed by the :code:`sed` command. A
    GTK_BINARY_VERSION=$(pkg-config --variable=gtk_binary_version gtk+-2.0)
    cp -a "${GTK_LIBDIR}/gtk-2.0/${GTK_BINARY_VERSION}"/* "$APPDIR/usr/lib/gtk-2.0"
 
-4. RSVG library:
+RSVG library
+""""""""""""
 This library is not automatically picked, because it is a dependency of the GDK-Pixbuf loaders and not of the global GTK libraries.
 
 .. code-block:: shell
@@ -145,7 +149,8 @@ This library is not automatically picked, because it is a dependency of the GDK-
 	cp -a "${RSVG_LIBDIR}"/librsvg*.so* "$APPDIR/usr/lib"
    fi
 
-5. Run-time environment variables:
+Run-time environment variables
+""""""""""""""""""""""""""""""
 The following environment variables need to be set when running the AppImage:
 
 .. code-block:: shell
