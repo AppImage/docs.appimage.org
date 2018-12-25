@@ -29,7 +29,7 @@ Using the Docker-based appimage-testsuite
 
 In addition to Live CD ISOs, it is possible to use Docker containers to test an AppImage package on a large variety of Linux distributions. This approach works for virtually any Linux distribution for which a base Docker container is available. For each of the supported distributions, there is a corresponding DockerFile that allows to build a container with a minimal set of dependencies needed to run an AppImage package.
 
-Currently, only type2 AppImages that support the `--appimage-extract` option are supported.
+Currently, only type2 AppImages that provide the ``--appimage-extract`` option are supported.
 
 For example, to test an AppImage package on Ubuntu 18.04, the steps to be followed are:
 
@@ -40,7 +40,7 @@ For example, to test an AppImage package on Ubuntu 18.04, the steps to be follow
    $ ./run.sh PATH_TO_APPIMAGE/package.AppImage ubuntu-18.04
    # /aitest/aitest.sh
 
-The `run.sh` script will build the corresponding Docker container, determine the IP address of the host system, and run the container with convenient parameters. The host `HOME` folder is mapped to the `/shared` folder in the running container, and the X server is forwarded to the host system so that graphical applications can be correctly executed.
+The ``run.sh`` script will build the corresponding Docker container, determine the IP address of the host system, and run the container with convenient parameters. The host ``HOME`` folder is mapped to the ``/shared`` folder in the running container, and the X server is forwarded to the host system so that graphical applications can be correctly executed.
 
 The following Linux distributions are supported out-of-the-box:
 
@@ -53,7 +53,7 @@ The following Linux distributions are supported out-of-the-box:
 
 Other distributions can be added by writing an appropriate Dockerfile.
 
-Users might need to modify the `run.sh` script and change the line used to guess the host IP address:
+Users might need to modify the ``run.sh`` script and change the line used to guess the host IP address:
 
 .. code-block:: shell
 
