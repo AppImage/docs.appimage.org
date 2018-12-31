@@ -43,6 +43,12 @@ Complying with licenses
 
 Even under open source licenses, distributing and/or using code in source or binary form may create certain legal obligations, such as the distribution of the corresponding source code and build instructions for GPL licensed binaries, and displaying copyright statements and disclaimers. As the author of an application which you are distributing as an AppImage, you are responsible to obey all licenses for any third-party dependencies that you include in your AppImage, and ensure that their licenses and source code are made available, where required, together with the release binaries. AppImageKit itself is released under the permissive MIT license.
 
+.. _ref-no-linux-in-appimage-filename:
+
+Do not put "Linux" into the Appimage file name
+----------------------------------------------
+
+Please **DO NOT** put "linux" into the file name of an AppImage. It is abundantly clear that an :code:`.exe` is for Windows, a :code:`.dmg` is for the Mac and that :code:`.AppImage` is for Linux. No need to duplicate.
 
 .. _ref-no-appimages-in-archives:
 
