@@ -28,9 +28,9 @@ Do not depend on system-provided resources
 
 The author of an AppImage needs to decide for which target systems (Linux distributions) they want to offer the AppImage.  Then, the author needs to bundle any dependencies that cannot reasonably be assumed to come with every target system (Linux distributions) in its default installation in a recent enough version.
 
-To be able to run on any Linux distribution, an AppImage should bundle all the resources it needs during the runtime. The most common resources are the actual binaries, shared library dependencies, icons and other graphics and of course one or more desktop files for desktop integration.
+To be able to run on any Linux distribution, an AppImage should bundle all the resources it needs at runtime that cannot be reasonably expected to be "there" in the default installation of all still-supported target syystems (Linux distributions). The most common resources are the actual binaries, shared library dependencies, icons and other graphics and of course one or more desktop files for desktop integration.
 
-This doesn't mean an AppImage must not use resources provided by the system, like for example specific libraries (e.g., graphics libraries), user interface themes or the like. However, an AppImage should not have any hard dependencies, and should provide a good user experience even if those resources are not available. This is the only way to ensure the AppImage's compatibility with as many distributions as possible.
+This doesn't mean an AppImage must not use resources provided by the system, like for example basic libraries that can be assumed to be part of every target system (e.g., the C standard library or graphics libraries), user interface themes or the like. See the  `excludelist <https://github.com/AppImage/pkg2appimage/blob/master/excludelist>`_ for a list of the libraries we consider to currently be part of each still-supported target system (distribution).
 
 
 .. _build-on-old-systems:
