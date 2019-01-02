@@ -80,7 +80,7 @@ If you run into errors like this::
 
 	failed to initialize: /lib/tls/i686/cmov/libc.so.6: version `GLIBC_2.11' not found
 
-then the binary is compiled on a newer system than the one you are trying to run it on. You should use a binary that has been compiled on an older system. Unfortunately, the complication is that distributions usually compile the latest versions of applications only on the latest systems, which means that you will have a hard time finding binaries of bleeding-edge softwares that run on older systems. A way around this is to compile dependencies yourself on a not too recent base system, and/or to use LibcWrapGenerator_ or glibc_version_header_.
+then the binary is compiled on a newer system than the one you are trying to run it on. You should use a binary that has been compiled on an older system. Unfortunately, the complication is that distributions usually compile the latest versions of applications only on the latest systems, which means that you will have a hard time finding binaries of bleeding-edge softwares that run on older systems. A way around this is to compile dependencies yourself on a not too recent base system, and/or to use LibcWrapGenerator_ or glibc_version_header_ or bingcc_.
 
 When producing AppImages for the Subsurface project, I have had very good results by using **CentOS 6**. This distribution is not too recent (current major CentOS version minus 1) while there are still the most recent Qt and modern compilers for it in the EPEL_ and devtools-2_ (the community equvalent of the Red Hat Developer Toolset 2) repositories. When using it for compilation, I found the resulting binaries to run on a wide variety of systems, including **debian oldstable** (wheezy).
 
@@ -92,6 +92,7 @@ You could also consider to link some exotic libraries statically. Yes, even Debi
 https://lintian.debian.org/tags/embedded-library.html
 
 .. _LibcWrapGenerator: https://github.com/probonopd/AppImageKit/tree/master/LibcWrapGenerator
+-- _bingcc: https://github.com/sulix/bingcc
 .. _glibc_version_header: https://github.com/wheybags/glibc_version_header
 .. _EPEL: https://fedoraproject.org/wiki/EPEL
 .. _devtools-2: http://people.centos.org/tru/devtools-2/
