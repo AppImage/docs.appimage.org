@@ -22,3 +22,39 @@ You can use ISOs of Live CDs, loop-mount them, chroot into them, and run the App
 
    $ wget https://raw.githubusercontent.com/AppImage/AppImageKit/appimagetool/master/testappimage
    $ sudo bash testappimage /path/to/elementary-0.2-20110926.iso AppImageAssistant.AppImage
+
+
+Using the Docker-based appimage-testsuite
+-----------------------------------------
+
+In addition to Live CD ISOs, it is possible to use Docker containers to test an AppImage package on a large variety of Linux distributions. This approach works for virtually any Linux distribution for which a base Docker container is available. For each of the supported distributions, there is a corresponding DockerFile that allows to build a container with a minimal set of dependencies needed to run an AppImage package.
+
+Currently, only type2 AppImages that provide the ``--appimage-extract`` option are supported.
+
+For example, to test an AppImage package on Ubuntu 18.04, the steps to be followed are:
+
+.. code-block:: shell
+
+   $ git clone https://github.com/aferrero2707/appimage-testsuite.git
+   $ cd appimage-testsuite
+   $ ./run.sh PATH_TO_APPIMAGE/package.AppImage ubuntu-18.04
+   # /aitest/aitest.sh
+
+The ``run.sh`` script will build the corresponding Docker container, determine the IP address of the host system, and run the container with convenient parameters. The host ``HOME`` folder is mapped to the ``/shared`` folder in the running container, and the X server is forwarded to the host system so that graphical applications can be correctly executed.
+
+The following Linux distributions are supported out-of-the-box:
+
+* Ubuntu 14.04, 16.04 and 18.04
+* CentOS 6 and 7
+* Fedora 26 and 27
+* Debian stable and testing
+* Manjaro (Arch Linux derivative)
+* Sabayon (Gentoo Linux derivative)
+
+Other distributions can be added by writing an appropriate Dockerfile.
+
+Users might need to modify the ``run.sh`` script and change the line used to guess the host IP address:
+
+.. code-block:: shell
+
+   IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
