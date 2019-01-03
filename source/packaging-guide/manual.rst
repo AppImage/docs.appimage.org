@@ -94,7 +94,7 @@ To create an AppImage, run :code:`appimagetool` on the AppDir in order to turn i
 Bundling GTK libraries
 ^^^^^^^^^^^^^^^^^^^^^^
 
-The following steps allow bundling the GTK libraries and configuration files in a relocatable way, without the need to patch the files and replace hard-coded paths. The full set of bundling commands, in the form of a bash script, can be found `here <https://github.com/aferrero2707/appimage-helper-scripts/blob/master/bundle-gtk2.sh>`. They assume the existence of an :code:`APPDIR` environment variable that poits to the root folder of the AppImage bundle.
+The following steps allow bundling the GTK libraries and configuration files in a relocatable way, without the need to patch the files and replace hard-coded paths. The full set of bundling commands, in the form of a bash script, can be found `here <https://github.com/aferrero2707/appimage-helper-scripts/blob/master/bundle-gtk2.sh>`_. They assume the existence of an :code:`APPDIR` environment variable that poits to the root folder of the AppImage bundle.
 
 GDK-Pixbuf modules and cache file
 """""""""""""""""""""""""""""""""
