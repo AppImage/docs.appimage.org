@@ -102,6 +102,8 @@ Alternatively, a link to the AppImage. Nothing else.
 
 Then send a pull request. Travis CI will instantly perform an automated review of the AppImage, and in case it succeeds, you will see a green result in your pull request. If you get a red result, check the log of the Travis CI build, and fix it.
 
+Once an application is added to AppImageHub, it is not updated automatically anymore unless its input file changes. In case you need to get your entry on AppImageHub updated (e.g., you provided new meta information in your latest AppImage release), you need to submit another pull request. At the bottom of your AppImageHub page, you will find a link named "Edit the input for this page" with which you can do this. If the URL has stayed the same, adding or removing a "#" character in a new line will trigger an update. Remember that AppImageHub does not keep track of versions, so it is not necessary to do this just because you released a new version of your application.
+
 As a format, AppImage is designed in a way that does not impose restrictions on the person generating AppImages. Basically you are free to put inside an AppImage whatever you want. For AppImageHub, however, additional rules apply. AppImages submitted to AppImage hub undergo automatic and possibly additional manual review.
 
 * Must be downloadable from an URL. Our testing system fetches the AppImage using :code:`wget`. Currently we cannot get AppImages from locations behind authentication and/or cookie-protected locations. For commercial applications we recommend to have a generally downloadable demo/trial version. Please contact us if you would like to add your commercial AppImage to the directory and it is not available for general download
