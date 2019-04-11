@@ -245,7 +245,7 @@ The following script might be used to create AppImages for QtQuickApp, using qma
 
 .. literalinclude:: examples/bundle-qtquickapp-with-cmake.sh
    :name: bundle-qtquickapp
-   :caption: :code:`travis/build-with-qmake.sh`
+   :caption: :code:`travis/build-with-cmake.sh`
    :language: bash
    :linenos:
 
