@@ -78,7 +78,7 @@ myapp.desktop should contain (as a minimum):
 	Exec=myapp
 	Icon=myapp
 	Type=Application
-	Categories=Utilities;
+	Categories=Utility;
 
 Be sure to pick one of the `Registered Categories`_, and be sure that your desktop file passes validation by using :code:`desktop-file-validate your.desktop`. If you are not deploying an application with a graphical user interface (GUI) but a command line tool (for the terminal), make sure to add :code:`Terminal=true`.
 
