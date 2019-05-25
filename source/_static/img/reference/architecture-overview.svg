@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="725.22644"
+   height="248.03003"
+   viewBox="0 0 191.88283 65.624611"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="appimage-architecture.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3555">
+      <stop
+         id="stop3553"
+         offset="0"
+         style="stop-color:#ffffe6;stop-opacity:0" />
+      <stop
+         id="stop3551"
+         offset="1"
+         style="stop-color:#ffb380;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3545">
+      <stop
+         style="stop-color:#aade87;stop-opacity:1;"
+         offset="0"
+         id="stop3541" />
+      <stop
+         style="stop-color:#aade87;stop-opacity:0;"
+         offset="1"
+         id="stop3543" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3111"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#ff7f2a;stop-opacity:1;"
+         offset="0"
+         id="stop3109" />
+    </linearGradient>
+    <linearGradient
+       x1="959"
+       y1="428"
+       x2="-44"
+       y2="251"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="pad"
+       id="linearGradient1200">
+      <stop
+         style="stop-opacity:1;stop-color:#fbfbfb"
+         offset="0"
+         id="stop1654" />
+      <stop
+         style="stop-opacity:1;stop-color:#a6aaa9"
+         offset="1"
+         id="stop1656" />
+    </linearGradient>
+    <clipPath
+       id="clipPath831"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         style="clip-rule:evenodd"
+         inkscape:connector-curvature="0"
+         id="path829"
+         d="M 0,0 H 1920 V 1080 H 0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath843"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         inkscape:connector-curvature="0"
+         id="path841"
+         d="M 204.9,607.1 H 965 V 707.2 H 204.9 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath871"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         inkscape:connector-curvature="0"
+         id="path869"
+         d="M 204.9,182.9 H 965 V 578.7 H 204.9 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath986"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         style="clip-rule:evenodd"
+         inkscape:connector-curvature="0"
+         id="path984"
+         d="M 0,0 H 1920 V 1080 H 0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath998"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         inkscape:connector-curvature="0"
+         id="path996"
+         d="M 204.9,607.1 H 965 V 707.2 H 204.9 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath1026"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         inkscape:connector-curvature="0"
+         id="path1024"
+         d="M 204.9,182.9 H 965 V 578.7 H 204.9 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath1168"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         style="clip-rule:evenodd"
+         inkscape:connector-curvature="0"
+         id="path1166"
+         d="M 0,0 H 1920 V 1080 H 0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath1184"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         style="clip-rule:evenodd"
+         inkscape:connector-curvature="0"
+         id="path1182"
+         d="m 964.7,574.8 112.1,261 h 800.4 V 157.7 H 1055.1 L 964,188 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath1194"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         inkscape:connector-curvature="0"
+         id="path1192"
+         d="M 0,0 H 913.2 V 678.2 H 0 Z" />
+    </clipPath>
+    <linearGradient
+       id="linearGradient1200-8"
+       spreadMethod="pad"
+       gradientUnits="userSpaceOnUse"
+       y2="251"
+       x2="-44"
+       y1="428"
+       x1="959">
+      <stop
+         id="stop1196"
+         offset="0"
+         style="stop-opacity:1;stop-color:#fbfbfb" />
+      <stop
+         id="stop1198"
+         offset="1"
+         style="stop-opacity:1;stop-color:#a6aaa9" />
+    </linearGradient>
+    <clipPath
+       id="clipPath1212"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         style="clip-rule:evenodd"
+         inkscape:connector-curvature="0"
+         id="path1210"
+         d="M 0,0 H 1920 V 1080 H 0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath1232"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         inkscape:connector-curvature="0"
+         id="path1230"
+         d="M 204.9,607.1 H 965 V 707.2 H 204.9 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath1258"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         inkscape:connector-curvature="0"
+         id="path1256"
+         d="M 204.9,182.9 H 965 V 578.7 H 204.9 Z" />
+    </clipPath>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3545"
+       id="linearGradient3549"
+       x1="124.83547"
+       y1="80.378052"
+       x2="213.54836"
+       y2="80.378052"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3555"
+       id="linearGradient3557"
+       x1="-12.142731"
+       y1="54.150295"
+       x2="74.967758"
+       y2="54.150295"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="325.45779"
+     inkscape:cy="-7.5488254"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g3589"
+     showgrid="false"
+     showguides="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1029"
+     inkscape:window-x="1920"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     units="px" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-9.6383926,-34.269136)">
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3224"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:25px;font-family:Montserrat;-inkscape-font-specification:Montserrat;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="scale(0.26458333)"><flowRegion
+         id="flowRegion3226"><rect
+           id="rect3228"
+           width="3.0304577"
+           height="91.923882"
+           x="408.10162"
+           y="26.504173" /></flowRegion><flowPara
+         id="flowPara3230"></flowPara></flowRoot>    <g
+       id="g3573">
+      <rect
+         y="34.798302"
+         x="70.420494"
+         height="64.566277"
+         width="58.419872"
+         id="rect1570"
+         style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#828282;stroke-width:1.05833328;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+      <g
+         id="g1617">
+        <rect
+           style="opacity:1;fill:#ff7f2a;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.11619694;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+           id="rect1572"
+           width="50"
+           height="9.9378872"
+           x="74.835464"
+           y="52.66674" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458302px;font-family:Montserrat;-inkscape-font-specification:Montserrat;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="82.993622"
+           y="59.361824"
+           id="text1578"><tspan
+             sodipodi:role="line"
+             id="tspan1576"
+             x="82.993622"
+             y="59.361824"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93888903px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;stroke-width:0.26458332px">EXECUTABLE</tspan></text>
+      </g>
+      <g
+         id="g1612">
+        <rect
+           style="opacity:1;fill:#71c837;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.15727673;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+           id="rect1574"
+           width="50"
+           height="30.303442"
+           x="74.835472"
+           y="64.721298" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93888903px;line-height:6.61458349px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="99.858894"
+           y="78.214508"
+           id="text1578-9"><tspan
+             sodipodi:role="line"
+             id="tspan1576-7"
+             x="99.858894"
+             y="78.214508"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93888903px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;stroke-width:0.26458332px">SQUASHFS</tspan><tspan
+             sodipodi:role="line"
+             x="99.858894"
+             y="84.998634"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93888903px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;stroke-width:0.26458332px"
+             id="tspan1598">IMAGE</tspan></text>
+      </g>
+      <text
+         id="text1621"
+         y="45.729042"
+         x="86.795296"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458302px;font-family:Montserrat;-inkscape-font-specification:Montserrat;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888903px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke:none;stroke-width:0.26458332px;stroke-opacity:1"
+           y="45.729042"
+           x="86.795296"
+           id="tspan1619"
+           sodipodi:role="line">AppImage</tspan></text>
+    </g>
+    <g
+       id="g3589">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3535"
+         d="M 74.835463,52.666741 63.499999,42.811012 H 9.6383926 V 65.489581 H 63.499999 l 11.335464,-2.884953 z"
+         style="fill:url(#linearGradient3557);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         id="text3139"
+         y="49.00074"
+         x="12.154937"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458302px;font-family:Montserrat;-inkscape-font-specification:Montserrat;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:0px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332px"
+           y="49.00074"
+           x="12.154937"
+           id="tspan3137"
+           sodipodi:role="line">Binary, mounts image</tspan><tspan
+           id="tspan3141"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:0px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332px"
+           y="55.615322"
+           x="12.154937"
+           sodipodi:role="line">with FUSE and runs the</tspan><tspan
+           id="tspan3143"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;line-height:0px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332px"
+           y="62.229908"
+           x="12.154937"
+           sodipodi:role="line">app inside</tspan></text>
+    </g>
+    <g
+       id="g3582">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3539"
+         d="m 124.83547,64.721297 10.67018,-2.651212 h 66.01557 V 98.68601 h -66.01557 l -10.67018,-3.66127 z"
+         style="fill:url(#linearGradient3549);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         id="text3185"
+         y="68.48455"
+         x="139.77121"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458302px;font-family:Montserrat;-inkscape-font-specification:Montserrat;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan3189"
+           style="font-size:4.23333311px;line-height:0px;letter-spacing:0px;stroke-width:0.26458332px"
+           y="68.48455"
+           x="139.77121"
+           sodipodi:role="line">Read-only image containing</tspan><tspan
+           id="tspan3222"
+           style="font-size:4.23333311px;line-height:0px;letter-spacing:0px;stroke-width:0.26458332px"
+           y="75.099136"
+           x="139.77121"
+           sodipodi:role="line">the app's binaries, data,</tspan><tspan
+           id="tspan3191"
+           style="font-size:4.23333311px;line-height:0px;letter-spacing:0px;stroke-width:0.26458332px"
+           y="81.713715"
+           x="139.77121"
+           sodipodi:role="line">basically everything that is</tspan><tspan
+           id="tspan3193"
+           style="font-size:4.23333311px;line-height:0px;letter-spacing:0px;stroke-width:0.26458332px"
+           y="88.3283"
+           x="139.77121"
+           sodipodi:role="line">needed except for the very</tspan><tspan
+           id="tspan3187"
+           style="font-size:4.23333311px;line-height:0px;letter-spacing:0px;stroke-width:0.26458332px"
+           y="94.942886"
+           x="139.77121"
+           sodipodi:role="line">low level system libraries</tspan></text>
+    </g>
+  </g>
+</svg>
