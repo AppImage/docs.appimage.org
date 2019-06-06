@@ -15,5 +15,6 @@ This chapter shows application developers how to produce AppImages, how to make 
    manual
    testing
    distribution
+   environment-variables
    :caption: Contents:
    :maxdepth: 2
