@@ -1,4 +1,4 @@
-.. ref: env_vars
+.. _ref-env_vars
 
 Environment variables
 =====================
@@ -40,3 +40,19 @@ The type 2 AppImage runtime makes a few environment variables available for use 
 |                  | directory.                                                                                       |
 |                  |                                                                                                  |
 +------------------+--------------------------------------------------------------------------------------------------+
+
+.. note::
+
+   :code:`APPIMAGE` and :code:`ARGV0` have very different use cases.
+
+   :code:`APPIMAGE` shall be used every time the full path of the AppImage is needed, e.g., if you need to touch the
+   AppImage file, for example when you want to update it or read some meta information.
+
+   :code:`ARGV0` provides information how the AppImage was called. When you call an AppImage through a symlink for
+   instance, you can get the path to this symlink through :code:`ARGV0`, while :code:`APPIMAGE` would contain the
+   absolute path to the file behind that symlink.
+
+   Scenarios where :code:`ARGV0` is really useful involve so-called multi-binary AppImages, where the filename
+   in :code:`ARGV0` defines which program is called inside the AppImage. This concept is also known from
+   single-binary tools like `BusyBox <https://en.wikipedia.org/wiki/BusyBox>`_, and can be implemented in a custom
+   :code:`AppRun` script (see :ref:`Architecture <ref-architecture>` for more information).
