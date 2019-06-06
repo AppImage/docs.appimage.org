@@ -12,10 +12,24 @@ Depending on the type of the AppImage, the runtimes offer different feature sets
 Type 1 AppImage runtime
 -----------------------
 
-Type 1 is the deprecated/outdated AppImage type that is only in legacy support mode.
+.. note::
 
-.. todo::
-   Check whether there are any environment variables and document them here
+   Type 1 is the deprecated/outdated AppImage type that is only in legacy support mode. It is not recommended to make
+   new type 1 AppImages. We strongly recommend you to use :code:`appimagetool` to make type 2 AppImages.
+
++------------------+--------------------------------------------------------------------------------------------------+
+| Variable name    | Contents                                                                                         |
+|                  |                                                                                                  |
++==================+==================================================================================================+
+| :code:`APPIMAGE` | (Absolute) path to AppImage file (with symlinks resolved)                                        |
+|                  |                                                                                                  |
++------------------+--------------------------------------------------------------------------------------------------+
+| :code:`APPDIR`   | Path of mountpoint of the SquashFS image contained in the AppImage                               |
+|                  |                                                                                                  |
++------------------+--------------------------------------------------------------------------------------------------+
+| :code:`OWD`      | Path to working directory at the time the AppImage is called                                     |
+|                  |                                                                                                  |
++------------------+--------------------------------------------------------------------------------------------------+
 
 
 
