@@ -43,7 +43,7 @@ linuxdeploy provides different flags to bundle different kinds of resources. Onl
    Bundle a desktop file into the AppDir. These are required for desktop integration, and there must always be at least one of them in the AppDir. Please see :ref:`creating-desktop-file` for a guide how they can be created, and for best practices related to AppImages.
 
 ``--icon``/``-i``
-   Bundle icon file. Supported are all formats which the `Icon Theme Specification <https://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html>`_ lists. linuxdeploy will automatically calculate the right output path, which depends on file format and resolution. You can specify multiple icons for multiple resolutions in the form of ``<resolution>/<app_name>.<ext>``. If you have all the files in the same directory, e.g., like ``*<resolution>*.<ext>``, you can specify the optional ``--app-name``/``-n`` parameter, and have linuxdeploy change the filename to the provided value when it copies the files into the AppDir.
+   Bundle icon file. Supported are all formats which the `Icon Theme Specification <https://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html>`_ lists. linuxdeploy will automatically calculate the right output path, which depends on file format and resolution. You can specify multiple icons for multiple resolutions in the form of ``<resolution>/<app_name>.<ext>``.
 
 .. |rpath-comment| replace:: Set up everything so that other libraries, executables etc. use this one instead of a system one.
 
