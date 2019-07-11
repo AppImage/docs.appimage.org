@@ -23,7 +23,7 @@ Advantages for system administrators
 
 System administrators in corporate, educational or institutional settings usually need to support a large number of desktop systems, where they either need to lock down the system so that users cannot make changes such as application installations, or need to find a way to leave the base system supportable while users can run applications on top.
 
-AppImages provide an elegant solution here: Since the core operating system is not changed through the installation of applications, the system stays pristine and supportable no matter what kind of applications end users run on the system. Users are happy because they can run their favourite applications without having to ask a system administrator to install them. System administrators are happy because they have less work.
+AppImages provide an elegant solution here: Since the core operating system is not changed through the installation of applications, the system stays pristine and supportable no matter what kind of applications end users run on the system. Users are happy because they can run their favorite applications without having to ask a system administrator to install them. System administrators are happy because they have less work.
 
 
 Advantages for application authors

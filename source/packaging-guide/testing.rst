@@ -1,7 +1,7 @@
 Testing your AppImage
 =====================
 
-Testing your AppImage is a very important step inproducing an AppImage. Since AppImage files are supposed to run on a variety of Linux distributions, it is important to test your AppImage on a wide variety of distributions.
+Testing your AppImage is a very important step in producing an AppImage. Since AppImage files are supposed to run on a variety of Linux distributions, it is important to test your AppImage on a wide variety of distributions.
 
 .. centered::
    **Test your AppImage on all base operating systems you are targeting!**
