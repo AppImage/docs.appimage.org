@@ -23,7 +23,7 @@ AppImageKit
 runtime
 ^^^^^^^
 
-The runtime provides the "executable header" of every AppImage. When executing an AppImage, the runtime within the AppImage is run, which mounts the embedded filesystem image read-only in a temporary location, and launches the payload application within there. After the payload application exited, the runtime unmounts the squashfs image and cleans up the temporary resources (such as, the temporary mountpoint directory).
+The runtime provides the "executable header" of every AppImage. When executing an AppImage, the runtime within the AppImage is run, which mounts the embedded file system image read-only in a temporary location, and launches the payload application within there. After the payload application exited, the runtime unmounts the squashfs image and cleans up the temporary resources (such as, the temporary mountpoint directory).
 
 
 .. _ref-appimagetool:
@@ -74,7 +74,7 @@ Calculates the MD5 digest used for desktop integration purposes for a given AppI
 AppImageUpdate
 --------------
 
-AppImageUpdate_ lets you update AppImages in a decentral way using information embedded in the AppImage itself.
+AppImageUpdate_ lets you update AppImages in a decentralized way using information embedded in the AppImage itself.
 
 The project consists of two tools: :code:`appimageupdatetool`, a full-featured CLI tool for updating AppImages and dealing with `update information`_, and :code:`AppImageUpdate`, a user interface for updating AppImages written in Qt.
 

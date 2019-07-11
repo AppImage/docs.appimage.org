@@ -13,7 +13,7 @@ The following section contains some details on how AppImages are commonly distri
 Hosting AppImages
 -----------------
 
-Most commonly, AppImage creators host the files on a standard webserver. This is the easiest and most accessible way.
+Most commonly, AppImage creators host the files on a standard web server. This is the easiest and most accessible way.
 
 We recommend that you put the AppImage for Linux on your project's download page alongside the dmg for macOS and the exe for Windows, like so:
 
@@ -125,7 +125,7 @@ As a format, AppImage is designed in a way that does not impose restrictions on 
 Future catalogs
 '''''''''''''''
 
-In the future, we may want to use decentral peer-to-peer databases for the catalog of AppImages.
+In the future, we may want to use decentralized peer-to-peer databases for the catalog of AppImages.
 
 We are currently investigating technologies such as IPFS and would be happy to win contributors in this area.
 

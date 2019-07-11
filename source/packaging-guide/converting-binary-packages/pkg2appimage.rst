@@ -62,7 +62,7 @@ The general format of :code:`.yml` files is as follows:
     the binary ingredients used for the AppImage)
 
   script:
-    (instuctions on how to convert these ingredients to an AppImage)
+    (instructions on how to convert these ingredients to an AppImage)
 
 
 As you can see, the :code:`.yml` file consists of three sections:
@@ -71,7 +71,7 @@ As you can see, the :code:`.yml` file consists of three sections:
 2. The **ingredients section** (describing from where to get the binary ingredients used for the AppImage)
 3. The **script section** (describing how to convert these ingredients to an AppImage)
 
-Note that the sections may contain sub-sections. For example, the ingredients section can also have a script section containing instuctions on how to determine the most recent version of the ingredients and how to download them.
+Note that the sections may contain sub-sections. For example, the ingredients section can also have a script section containing instructions on how to determine the most recent version of the ingredients and how to download them.
 
 
 Overall section
@@ -86,10 +86,10 @@ Mandatory. Contains the name of the application. If the :code:`.yml` file uses i
 Keys that enable ability to relocate
 ####################################
 
-Optional. Either :code:`binpatch: true` or :code:`union: true`. These keys enable workarounds that make it possible to run applications from different, changing places in the filesystem (i.e., make them relocateable) that are not made for this. For example, some applications contain hardcoded paths to a compile-time :code:`$PREFIX` such as :code:`/usr`. This is generally discouraged, and application authors are asked to use paths relative to the main executable instead. Libraries like *binreloc* exist to make this easier. Since many applications are not relocateable yet, there are workarounds which can be used by one of these keys:
+Optional. Either :code:`binpatch: true` or :code:`union: true`. These keys enable workarounds that make it possible to run applications from different, changing places in the file system (i.e., make them relocateable) that are not made for this. For example, some applications contain hardcoded paths to a compile-time :code:`$PREFIX` such as :code:`/usr`. This is generally discouraged, and application authors are asked to use paths relative to the main executable instead. Libraries like *binreloc* exist to make this easier. Since many applications are not relocateable yet, there are workarounds which can be used by one of these keys:
 
 * :code:`binpatch: true`  indicates that binaries in the AppImage should be patched to replace the string :code:`/usr` by the string :code:`././`,  an :code:`AppRun` file should be put inside the AppImage that does a :code:`chdir()` to the :code:`usr/` directory of inside AppDir before executing the payload application. The net effect is this that applications can find their resources in the  :code:`usr/` directory inside the AppImage as long as they do not internally use :code:`chdir()` operations themselves.
-* :code:`union: true` indicates that an :code:`AppRun` file should be put inside the AppImage that tries to create the impression of a union filesystem, effectively creating the impression to the payload application that the contents of the AppImage are overlayed over :code:`/`. This can be achieved, e.g., using :code:`LD_PRELOAD` and a library that redirects filesystem calls. This works as long as the payload application is a dynamically linked binary.
+* :code:`union: true` indicates that an :code:`AppRun` file should be put inside the AppImage that tries to create the impression of a union file system, effectively creating the impression to the payload application that the contents of the AppImage are overlayed over :code:`/`. This can be achieved, e.g., using :code:`LD_PRELOAD` and a library that redirects file system calls. This works as long as the payload application is a dynamically linked binary.
 
 
 Ingredients section
@@ -146,7 +146,7 @@ The :code:`dist` section inside the :code:`ingredients` section defines which De
 Using ingredients from an Ubuntu PPA
 ####################################
 
-This is a special case of a Debian repository. PPAs can be uniquely identified with the pattern :code:`onwer/name` and can, for brevity, be specified like this:
+This is a special case of a Debian repository. PPAs can be uniquely identified with the pattern :code:`owner/name` and can, for brevity, be specified like this:
 
 .. code-block:: yaml
 
@@ -273,10 +273,10 @@ Script section
 The :code:`script` section may contain arbitrary shell commands that are required to translate the binary ingredients to an :code:`AppDir` suitable for generating an AppImage.
 
 
-The script section needs to copy ingedients into place
+The script section needs to copy ingredients into place
 ######################################################
 
-If :code:`.deb` packages, Debian repositories or PPAs have been specified in the :code:`ingredients` section, then their dependencies are resolved automatically (taking a blacklist of packages that are assumed to be present on all target systems in a recent enough version into account, such as glibc) and the packages are extracted into an AppDir. The shell commands contained in the :code:`script` section are executed inside the root directory of this AppDir. However, some packages place things in non-standard locations, i.e. the main executable is outside of :code:`usr/bin`. In these cases, the commands contained in the :code:`script` section should normalize the filesystem structure. Sometimes it is also necessary to edit further files to reflect the changed file location. The following example illustrates this:
+If :code:`.deb` packages, Debian repositories or PPAs have been specified in the :code:`ingredients` section, then their dependencies are resolved automatically (taking a blacklist of packages that are assumed to be present on all target systems in a recent enough version into account, such as glibc) and the packages are extracted into an AppDir. The shell commands contained in the :code:`script` section are executed inside the root directory of this AppDir. However, some packages place things in non-standard locations, i.e. the main executable is outside of :code:`usr/bin`. In these cases, the commands contained in the :code:`script` section should normalize the file system structure. Sometimes it is also necessary to edit further files to reflect the changed file location. The following example illustrates this:
 
 .. code-block:: yaml
 
