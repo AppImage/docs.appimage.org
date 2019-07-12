@@ -48,6 +48,9 @@ The type 2 AppImage runtime makes a few environment variables available for use 
 | :code:`APPDIR`   | Path of mountpoint of the SquashFS image contained in the AppImage                               |
 |                  |                                                                                                  |
 +------------------+--------------------------------------------------------------------------------------------------+
+| :code:`OWD`      | Path to working directory at the time the AppImage is called                                     |
+|                  |                                                                                                  |
++------------------+--------------------------------------------------------------------------------------------------+
 | :code:`ARGV0`    | Name/path used to execute the script. This corresponds to the value you'd normally receive via   |
 |                  | the :code:`argv` argument passed to your :code:`main` method.                                    |
 |                  | Usually contains the filename or path to the AppImage, relative to the current working           |
