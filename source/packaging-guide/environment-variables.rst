@@ -24,7 +24,7 @@ Type 1 AppImage runtime
 | :code:`APPIMAGE` | (Absolute) path to AppImage file (with symlinks resolved)                                        |
 |                  |                                                                                                  |
 +------------------+--------------------------------------------------------------------------------------------------+
-| :code:`APPDIR`   | Path of mountpoint of the SquashFS image contained in the AppImage                               |
+| :code:`APPDIR`   | Path of mountpoint of the ISO9660 image contained in the AppImage                                |
 |                  |                                                                                                  |
 +------------------+--------------------------------------------------------------------------------------------------+
 | :code:`OWD`      | Path to working directory at the time the AppImage is called                                     |
