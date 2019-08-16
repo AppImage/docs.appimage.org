@@ -132,9 +132,9 @@ linuxdeployqt_ is a simple Qt-based command line tool that can be used to create
 linuxdeploy
 -----------
 
-linuxdeploy_ is a flexible, plugins-based to use tool that can be used to create AppDirs and AppImages. It has been developed in 2018, and describes itself as an "AppDir creation and maintenance tool".
+linuxdeploy_ is a simple yet flexible, plugins-based to use tool that can be used to create AppDirs and AppImages. It has been developed in 2018, and describes itself as an "AppDir creation and maintenance tool".
 
-linuxdeploy may eventually become the successor of :ref:`linuxdeployqt`, and can be used in all projects that use :ref:`linuxdeployqt`. The list of plugins is continually growing, providing solutions for bundling frameworks such as `Qt <https://github.com/linuxdeploy/linuxdeploy-plugin-qt>`_ as well as complete environments for non-native programming languages such as `Python <https://github.com/linuxdeploy/linuxdeploy-plugin-conda>`_.
+linuxdeploy is planned to succeed of :ref:`linuxdeployqt`, and can be used in all projects that use :ref:`linuxdeployqt`. The list of plugins is continually growing, providing solutions for bundling frameworks such as `Qt <https://github.com/linuxdeploy/linuxdeploy-plugin-qt>`_ as well as complete environments for non-native programming languages such as `Python <https://github.com/linuxdeploy/linuxdeploy-plugin-conda>`_.
 
 .. _linuxdeploy: https://github.com/linuxdeploy/linuxdeploy
 
