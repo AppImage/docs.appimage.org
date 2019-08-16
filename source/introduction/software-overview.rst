@@ -25,6 +25,8 @@ runtime
 
 The runtime provides the "executable header" of every AppImage. When executing an AppImage, the runtime within the AppImage is run, which mounts the embedded file system image read-only in a temporary location, and launches the payload application within there. After the payload application exited, the runtime unmounts the squashfs image and cleans up the temporary resources (such as, the temporary mountpoint directory).
 
+**Download:** There is usually no reason to download this manually, but if you still want to, you can get it from https://github.com/AppImage/AppImageKit/releases/continuous. Keep in mind that on its own it does nothing, it needs to be combined with a filesystem image to form a valid AppImage, usually by using appimagetool which comes with its own copy of the runtime.
+
 
 .. _ref-appimagetool:
 
@@ -35,6 +37,7 @@ appimagetool is the easiest way to create AppImages from existing directories on
 
 appimagetool implements all optional features, like for instance :ref:`update information <update-information>`, :ref:`signing <signing>`, and some linting options to make sure the information in the AppImage is valid (for instance, it can validate :ref:`AppStream files <appstream-support>`).
 
+**Download:** You can get it as an AppImage from https://github.com/AppImage/AppImageKit/releases/continuous. 
 
 AppRun
 ^^^^^^
@@ -50,6 +53,8 @@ Using :code:`AppRun` is not a guarantee that an application will run, and the pa
 .. note::
    :code:`AppRun` is legacy technology, and should be avoided if possible. Tools like :ref:`linuxdeploy` deploy applications in a different way, and deprecated its usage. This doesn't mean there's no cases in which :code:`AppRun` might be useful, but it's got several limitations a user must be aware of before using it.
 
+**Download:** There is usually no reason to download this manually, but if you still want to, you can get it from https://github.com/AppImage/AppImageKit/releases/continuous.
+
 
 Helpers
 ^^^^^^^
@@ -62,12 +67,19 @@ validate
 
 :code:`validate` can validate the PGP signatures inside AppImages.
 
+Normally there is no need to use this directly, this is mainly for debugging for AppImage developers.
+
+**Download:** Currently this needs to be build from source. The source is in https://github.com/AppImage/AppImageKit/. In the future it may become bundled with or its functionality may become integrated into appimagetool.
+
 
 digest-md5
 ##########
 
 Calculates the MD5 digest used for desktop integration purposes for a given AppImage. This digest depends on the path, not on the contents.
 
+Normally there is no need to use this directly, this is mainly for debugging for AppImage developers.
+
+**Download:** Currently this needs to be build from source. The source is in https://github.com/AppImage/AppImageKit/. In the future it may become bundled with or its functionality may become integrated into appimagetool.
 
 .. _ref-appimageupdate:
 
@@ -81,6 +93,7 @@ The project consists of two tools: :code:`appimageupdatetool`, a full-featured C
 .. _AppImageUpdate: https://github.com/AppImage/AppImageUpdate
 .. _update information: https://github.com/AppImage/AppImageSpec/blob/master/draft.md\#update-information
 
+**Download:** You can get it as an AppImage from https://github.com/AppImage/AppImageUpdate/releases/continuous. 
 
 .. _appimaged:
 
@@ -95,19 +108,33 @@ It is shipped in a few native distribution package formats as well as as AppImag
 
    One of the monitored directories is ``~/Downloads``. If the directory is very large, appimaged usually needs quite long to visit all files. It is likely to slow down the system (specifically, the filesystem).
 
+**Download:** You can get it as an AppImage from https://github.com/AppImage/appimaged/releases/continuous. 
 
 Third-party tools
 *****************
 
 This section showcases a couple of third-party tools that can be used to create and handle AppImage files.
 
+linuxdeployqt
+-------------
+
+linuxdeployqt_ is a simple Qt-based command line tool that can be used to create AppDirs and AppImages. It is based on the similar macdeployqt tool that comes with Qt. It can be used to produce AppDirs and AppImages for C, C++, and Qt/QML applications, as well as applications written in other compiled languages.
+
+.. _linuxdeployqt: https://github.com/probonopd/linuxdeployqt
+
+.. seealso::
+
+   There is a copy-and-paste example for how to use it on Travis CI at https://github.com/probonopd/linuxdeployqt#using-linuxdeployqt-with-travis-ci.
+
+**Download:** You can get it as an AppImage from https://github.com/probonopd/linuxdeployqt/releases/tag/continuous. 
+
 
 linuxdeploy
 -----------
 
-linuxdeploy_ is a simple to use tool that can be used to create AppDirs and AppImages. It has been developed in 2018, and describes itself as an "AppDir creation and maintenance tool".
+linuxdeploy_ is a flexible, plugins-based to use tool that can be used to create AppDirs and AppImages. It has been developed in 2018, and describes itself as an "AppDir creation and maintenance tool".
 
-linuxdeploy is the successor of :ref:`linuxdeployqt`, and can be used in all projects that use :ref:`linuxdeployqt`. The list of plugins is continually growing, providing solutions for bundling frameworks such as `Qt <https://github.com/linuxdeploy/linuxdeploy-plugin-qt>`_ as well as complete environments for non-native programming languages such as `Python <https://github.com/linuxdeploy/linuxdeploy-plugin-conda>`_.
+linuxdeploy may eventually become the successor of :ref:`linuxdeployqt`, and can be used in all projects that use :ref:`linuxdeployqt`. The list of plugins is continually growing, providing solutions for bundling frameworks such as `Qt <https://github.com/linuxdeploy/linuxdeploy-plugin-qt>`_ as well as complete environments for non-native programming languages such as `Python <https://github.com/linuxdeploy/linuxdeploy-plugin-conda>`_.
 
 .. _linuxdeploy: https://github.com/linuxdeploy/linuxdeploy
 
@@ -115,6 +142,7 @@ linuxdeploy is the successor of :ref:`linuxdeployqt`, and can be used in all pro
 
    There's a guide on :ref:`native binary packaging <ref-packaging-native-binaries>` and a general :ref:`linuxdeploy user guide <ref-linuxdeploy>` in the :ref:`ref-packaging-guide`.
 
+**Download:** You can get it as an AppImage from https://github.com/linuxdeploy/linuxdeploy/releases/continuous. 
 
 .. _ref-appimagelauncher:
 
@@ -137,20 +165,16 @@ AppImageLauncher doesn't provide any kind of "app store" software, but integrate
 
 .. _AppImageLauncher: https://github.com/TheAssassin/AppImageLauncher
 
-
-Nomad Software Center
----------------------
-
-.. todo::
-   describe app store
+**Download:** You can get AppImageLauncher-Lite as an AppImage and the full version as a deb from https://github.com/TheAssassin/AppImageLauncher/releases/continuous. 
 
 
-linuxdeployqt
--------------
+NX Software Center
+------------------
 
-.. todo::
-   describe linuxdeployqt
+A portable Software Center for portable applications thanks to AppImage.
 
+
+**Download:** You can get NX Software Center as part of Nitrux OS from https://nxos.org/. There are currently no recent continuous standalone AppImage builds available.
 
 .. todo::
    Describe the rest of the third-party tools
