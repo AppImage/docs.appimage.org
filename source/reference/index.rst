@@ -11,5 +11,6 @@ The following section contains reference documents like standards, etc.
    specification
    best-practices
    appdir
+   desktop-integration
    :maxdepth: 2
    :caption: Contents:
