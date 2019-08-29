@@ -35,7 +35,7 @@ X-AppImage-Arch
 
     **Examples:** :code:`x86_64`, :code:`i386`
 
-:ref:`appimagetool` and :ref:`libappimage` currently makes use mostly of :code:`X-AppImage-Version`.
+:ref:`appimagetool` and :ref:`libappimage` currently make use mostly of :code:`X-AppImage-Version`.
 
 .. seealso::
 
