@@ -57,11 +57,10 @@ The list of libraries that can resp. have to be excluded, the so-called :ref:`ex
 AppImage specification
 ----------------------
 
-The term *AppImage* does not refer to some software project, but is actually a standard specified in the `AppImage specification`_. Its reference implementation is called :ref:`ref-appimagekit`.
+The term *AppImage* does not refer to some software project, but is actually a standard specified in the :ref:`AppImage specification <ref-appimage-specification>`. Its reference implementation is called :ref:`ref-appimagekit`.
 
-Being designed as a standard with a reference implementation allows users to implement their own tools to build AppImages.
+Being designed as a standard with a reference implementation allows users to implement their own tools to build AppImages, and helps maintaining compatibility between different tools and components.
 
-.. _AppImage specification: https://github.com/AppImage/AppImageSpec
 
 AppDirs
 -------
