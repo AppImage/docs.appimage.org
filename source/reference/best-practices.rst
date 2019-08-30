@@ -47,8 +47,8 @@ For an example, see:
 
 .. _BinReloc: https://github.com/limbahq/binreloc
 .. _Resourceful: https://github.com/drbenmorgan/Resourceful
-.. _Qt documentation: http://doc.qt.io/qt-5/qstandardpaths.html
-.. _see documentation: http://doc.qt.io/qt-5/qcoreapplication.html#applicationDirPath
+.. _Qt documentation: https://doc.qt.io/qt-5/qstandardpaths.html
+.. _see documentation: https://doc.qt.io/qt-5/qcoreapplication.html#applicationDirPath
 
 
 .. _ref-closed-source-apps-abs-paths:
@@ -62,9 +62,9 @@ The trick is to search for :code:`/usr` in the binary and replace it by the same
 
 	find usr/ -type f -executable -exec sed -i -e "s|/usr|././|g" {} \;
 
-This command is also available as part of the bash function collection at `AppImage/AppImages/functions.sh#L79`_. For the binary-patched application to work, you need to change to the :code:`usr/` directory inside the application directory before you launch the application.
+This command is also available as part of the bash function collection at `AppImage/pkg2appimage/functions.sh#L79`_. For the binary-patched application to work, you need to change to the :code:`usr/` directory inside the application directory before you launch the application.
 
-.. _AppImage/AppImages/functions.sh\#L79: https://github.com/AppImage/AppImages/blob/9249a99e653272416c8ee8f42cecdde12573ba3e/functions.sh#L79
+.. _AppImage/pkg2appimage/functions.sh\#L79: https://github.com/AppImage/pkg2appimage/blob/9249a99e653272416c8ee8f42cecdde12573ba3e/functions.sh#L79
 
 
 .. _ref-binaries-compiled-on-old-system:
@@ -84,14 +84,14 @@ then the binary is compiled on a newer system than the one you are trying to run
 
 When producing AppImages for the Subsurface project, I have had very good results by using **CentOS 6**. This distribution is not too recent (current major CentOS version minus 1) while there are still the most recent Qt and modern compilers for it in the EPEL_ and devtools-2_ (the community equivalent of the Red Hat Developer Toolset 2) repositories. When using it for compilation, I found the resulting binaries to run on a wide variety of systems, including **debian oldstable** (wheezy).
 
-Be sure to check https://github.com/probonopd/AppImages, this is how I build and host my AppImages and the build systems to produce them in the cloud using travis-ci, docker, docker-hub, and bintray. Especially check the recipes for Subsurface and Scribus.
+Be sure to check https://github.com/AppImage/pkg2appimage, this is how I build and host my AppImages and the build systems to produce them in the cloud using travis-ci, docker, docker-hub, and bintray. Especially check the recipes for Subsurface and Scribus.
 
-See https://github.com/probonopd/AppImageKit/wiki/Docker-Hub-Travis-CI-Workflow for a description on how to set up a workflow involving your GitHub repository, Docker Hub, and Travis CI for a fully automated continuous build workflow.
+See https://github.com/AppImage/AppImageKit/wiki/Docker-Hub-Travis-CI-Workflow for a description on how to set up a workflow involving your GitHub repository, Docker Hub, and Travis CI for a fully automated continuous build workflow.
 
 You could also consider to link some exotic libraries statically. Yes, even Debian does that:
 https://lintian.debian.org/tags/embedded-library.html
 
-.. _LibcWrapGenerator: https://github.com/probonopd/AppImageKit/tree/master/LibcWrapGenerator
+.. _LibcWrapGenerator: https://github.com/AppImage/AppImageKit/tree/stable/v1.0/LibcWrapGenerator
 -- _bingcc: https://github.com/sulix/bingcc
 .. _glibc_version_header: https://github.com/wheybags/glibc_version_header
 .. _EPEL: https://fedoraproject.org/wiki/EPEL

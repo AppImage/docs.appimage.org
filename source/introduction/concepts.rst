@@ -44,7 +44,7 @@ Applications should be built on the oldest possible system, allowing them to run
 
 It may seem contradictory to :ref:`the previous section <no-external-dependencies>` to rely on distribution provided resources. This is a trade-off between trying to reduce redundancies while at the same time being as self-contained as possible.
 
-In some cases, including the libraries might even break the AppImage on the target system. Those libraries involve, among others, hardware dependent libraries such as graphics card drivers provided libraries (e.g., :code:`libGL.so.1`, (`source <https://github.com/AppImage/AppImages/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\#L38-L41>`_)), or libraries that are build and linked differently on different distributions (e.g., :code:`libharfbuzz.so.0` and :code:`libfreetype.so.6` (`source <https://github.com/AppImage/AppImages/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\#L98-L102>`_).
+In some cases, including the libraries might even break the AppImage on the target system. Those libraries involve, among others, hardware dependent libraries such as graphics card drivers provided libraries (e.g., :code:`libGL.so.1`, (`source <https://github.com/AppImage/pkg2appimage/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\#L38-L41>`_)), or libraries that are build and linked differently on different distributions (e.g., :code:`libharfbuzz.so.0` and :code:`libfreetype.so.6` (`source <https://github.com/AppImage/pkg2appimage/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\#L98-L102>`_).
 
 The list of libraries that can resp. have to be excluded, the so-called :ref:`excludelist <excludelist>`, is carefully curated by the AppImage team, and is regularly updated.
 

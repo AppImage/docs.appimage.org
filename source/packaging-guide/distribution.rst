@@ -33,7 +33,7 @@ For open source projects, if your project is located on GitHub, we recommend tha
 
    If you use such a service and wish to use :ref:`AppImageUpdate` with it, please ask the providers to enable range requests.
 
-.. _GitHub Releases: https://help.github.com/articles/creating-releases/
+.. _GitHub Releases: https://help.github.com/en/articles/creating-releases/
 
 
 .. _ref-complying-with-licenses:
@@ -57,7 +57,7 @@ Do not put AppImages into other archives
 
 Please **DO NOT** put an AppImage into another archive like a :code:`.zip` or :code:`.tar.gz`.
 
-While it may be tempting to avoid users having to set permission, this breaks desktop integration with the optional :code:`appimaged` daemon, among other things. Besides, the beauty of the AppImage format is that you never need to unpack anything. Furthermore, packing an AppImage into some form of archive prevents the AppImage from being added to the central catalog of available AppImages at https://github.com/AppImage/AppImageHub.
+While it may be tempting to avoid users having to set permission, this breaks desktop integration with the optional :code:`appimaged` daemon, among other things. Besides, the beauty of the AppImage format is that you never need to unpack anything. Furthermore, packing an AppImage into some form of archive prevents the AppImage from being added to the central catalog of available AppImages at https://github.com/AppImage/appimage.github.io.
 
 
 Making your AppImages discoverable
@@ -88,7 +88,7 @@ App stores and software centers can consume the metadata collected by this proje
 
 Projects already using this data include:
 
-	* Nitrux, NX Software Center: https://github.com/nomad-desktop/nx-software-center
+	* Nitrux, NX Software Center: https://github.com/Nitrux/nx-software-center
 	* https://github.com/simoniz0r/spm
 	* https://github.com/sillasleal/appcenter
 	* https://github.com/lliurex/lliurex-store
@@ -118,7 +118,7 @@ As a format, AppImage is designed in a way that does not impose restrictions on 
 
 .. _AppImage ecosystem: https://github.com/AppImage/AppImageKit/wiki/Ecosystem
 .. _oldest still-supported Ubuntu LTS release: https://www.ubuntu.com/info/release-end-of-life
-.. _appdir-lint.sh: https://github.com/AppImage/AppImages/blob/master/appdir-lint.sh
+.. _appdir-lint.sh: https://github.com/AppImage/pkg2appimage/blob/master/appdir-lint.sh
 .. _AppStream metainfo file: https://people.freedesktop.org/~hughsient/appdata/
 
 

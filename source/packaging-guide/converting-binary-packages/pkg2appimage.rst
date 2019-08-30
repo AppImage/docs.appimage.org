@@ -14,8 +14,8 @@ To build an AppImage from a :code:`.yml` description file, simply run:
 
 :code:`.yml` description files tell pkg2appimage where to get the ingredients from, and how to convert them to an AppImage (besides the general steps already included in pkg2appimage). Study some `examples <yml-example-file>`_ to see how it works.
 
-.. _pkg2appimage: https://github.com/AppImage/AppImages/blob/master/pkg2appimage
-.. _yml-example-file: https://github.com/AppImage/AppImages/tree/master/recipes
+.. _pkg2appimage: https://github.com/AppImage/pkg2appimage/blob/master/pkg2appimage
+.. _yml-example-file: https://github.com/AppImage/pkg2appimage/tree/master/recipes
 
 .. warning::
    pkg2appimage suffers from a few notable issues:
@@ -24,7 +24,7 @@ To build an AppImage from a :code:`.yml` description file, simply run:
      - pkg2appimage uses distribution packages downloaded using the package managers, however, the packages are not authenticated, as most security functionality has been deactivated. This is a major security issue. pkg2appimage is therefore recommended for personal use only. Upstream authors should consider :ref:`packaging from source <ref-from-source>`.
 
    .. seealso::
-      See `this GitHub issue <https://github.com/AppImage/AppImages/issues/197>`_ for more information on the security issue.
+      See `this GitHub issue <https://github.com/AppImage/pkg2appimage/issues/197>`_ for more information on the security issue.
 
 
 ``.yml`` files
@@ -405,4 +405,4 @@ The following recipe will convert a Python 3 PyQt application using :code:`virtu
 
 
 Source:
-	https://github.com/AppImage/AppImages/blob/9249a99e653272416c8ee8f42cecdde12573ba3e/recipes/Mu.yml
+	https://github.com/AppImage/pkg2appimage/blob/9249a99e653272416c8ee8f42cecdde12573ba3e/recipes/Mu.yml

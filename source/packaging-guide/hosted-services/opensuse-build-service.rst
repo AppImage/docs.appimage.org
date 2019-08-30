@@ -3,7 +3,7 @@
 Using the Open Build Service
 ============================
 
-`Open Build Service <http://openbuildservice.org/>`_ is a generic system to build and distribute packages from sources in an automatic, consistent and reproducible way. It allows you to build software for various package formats and distributions. Now it can also build AppImages that run on a variety of distributions.
+`Open Build Service <https://openbuildservice.org/>`_ is a generic system to build and distribute packages from sources in an automatic, consistent and reproducible way. It allows you to build software for various package formats and distributions. Now it can also build AppImages that run on a variety of distributions.
 
 The `openSUSE Build Service`_ is the public instance of the Open Build Service (OBS). This infrastructure can can be used for free by open source projects. However, you are not limited to it - you can set up your own Open Build Service instance if you like.
 
@@ -244,15 +244,13 @@ Working examples
 
 Feel free to put yours here, too.
 
-* https://build.opensuse.org/package/binaries/home:probono/QtQuickApp?repository=AppImage
-* https://build.opensuse.org/package/binaries/home:probono/DSRemote?repository=AppImage
-* https://build.opensuse.org/package/binaries/home:probono/Qactus?repository=AppImage
-* https://build.opensuse.org/package/binaries/home:probono/leafpad?repository=AppImage
+* https://build.opensuse.org/package/show/home:probono/QtQuickApp?repository=AppImage
+* https://build.opensuse.org/package/show/home:probono/DSRemote?repository=AppImage
+* https://build.opensuse.org/package/show/home:probono/Qactus?repository=AppImage
+* https://build.opensuse.org/package/show/home:probono/leafpad?repository=AppImage
 * https://github.com/olav-st/screencloud/blob/master/deploy/linux/appimage.yml
 * https://build.opensuse.org/package/view_file/home:pbek:QOwnNotes/desktop/appimage.yml?expand=1
-* https://build.opensuse.org/package/view_file/home:olav-st:branches:OBS:AppImage:Templates/ScreenCloud/appimage.yml?expand=1
 * https://build.opensuse.org/package/view_file/home:pbartfai/LDView/_service:extract_file:appimage.yml?expand=1
-* https://build.opensuse.org/package/view_file/home:lachs0r:mandelbulber2/mandelbulber2/appimage.yml?expand=1
 * https://build.opensuse.org/package/view_file/home:lachs0r:taisei/taisei/appimage.yml?expand=1
 
 
@@ -276,7 +274,7 @@ If you have already generated a token in the past, you can show it with
     osc token
 
 
-On the GitHub project page, click on "Settings", then click on "Integrations & services", then click on "Add service", enter "Obs" and select it. For example, for the `QtQuickApp`_ project go to https://github.com/probonopd/QtQuickApp/settings/installations, and corresponding to https://build.opensuse.org/package/show/home:probono/QtQuickApp entered :code:`home:probono` for the project and :code:`QtQuickApp` for in the Package field, as well as the token generated above in the "Token" field. Please note that you need to supply your own username and project name instead of the one in the example above.
+On the GitHub project page, click on "Settings", then click on "Integrations & services", then click on "Add service", enter "Obs" and select it. For example, for the `QtQuickApp`_ project go to :code:`https://github.com/probonopd/QtQuickApp/settings/installations`, and corresponding to https://build.opensuse.org/package/show/home:probono/QtQuickApp entered :code:`home:probono` for the project and :code:`QtQuickApp` for in the Package field, as well as the token generated above in the "Token" field. Please note that you need to supply your own username and project name instead of the one in the example above.
 
 Now, whenever you do a :code:`git push` to my `QtQuickApp`_ project, OBS will build it for me.
 

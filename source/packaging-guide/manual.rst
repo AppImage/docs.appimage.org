@@ -38,7 +38,7 @@ Your binary, myapp, must not contain any hardcoded paths that would prevent it f
 
 	strings MyApp.AppDir/usr/bin/myapp | grep /usr
 
-Should this return something, then you need to modify your app programmatically (e.g., by using relative paths, using `binreloc <https://github.com/ximion/binreloc>`_, or using :code:`QString QCoreApplication::applicationDirPath()`).
+Should this return something, then you need to modify your app programmatically (e.g., by using relative paths, using `binreloc <https://github.com/limbahq/binreloc>`_, or using :code:`QString QCoreApplication::applicationDirPath()`).
 
 If you prefer not to change the source code of your app and/or would not like to recompile your app, you can also patch the binary, for example using the command
 
@@ -89,7 +89,7 @@ Creating an AppImage from the AppDir
 To create an AppImage, run :code:`appimagetool` on the AppDir in order to turn it into an AppImage. You can get it from this repository's `Releases`_ page (it comes as an AppImage itself; yes, we eat our own dogfood).
 
 .. _Registered Categories: https://standards.freedesktop.org/menu-spec/latest/apa.html
-.. _Releases: https://github.com/probonopd/AppImageKit/releases
+.. _Releases: https://github.com/AppImage/AppImageKit/releases
 
 Bundling GTK libraries
 ^^^^^^^^^^^^^^^^^^^^^^

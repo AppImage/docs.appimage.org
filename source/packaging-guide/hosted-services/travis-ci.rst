@@ -8,7 +8,7 @@ Services such as Travis CI make it easy to build software automatically whenever
 Producing an application directory using bash scripts
 -----------------------------------------------------
 
-Some types of applications can best be converted into application directories using custom bash script. However, to facilitate this, there is a collection of convenience functions in https://github.com/AppImage/AppImages/blob/master/functions.sh which can use in your own scripts.
+Some types of applications can best be converted into application directories using custom bash script. However, to facilitate this, there is a collection of convenience functions in https://github.com/AppImage/pkg2appimage/blob/master/functions.sh which can use in your own scripts.
 
 .. todo::
 
