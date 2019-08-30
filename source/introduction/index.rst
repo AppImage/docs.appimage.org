@@ -8,6 +8,7 @@ AppImage is the format, and AppImageKit_ provides a reference implementation.
 The following section provides an overview of the AppImage idea, the motives behind AppImage, and explains the basic concepts. Furthermore, there's an overview over the currently existing software, and some words on upstream packaging.
 
 .. toctree::
+   quickstart
    motivation
    advantages
    concepts
