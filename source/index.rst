@@ -10,9 +10,13 @@
 Welcome to the AppImage documentation
 =====================================
 
-Willkommen • Welcome • 欢迎 • Bienvenue • Benvenuto • Bienvenido • ようこそ • Mabuhay • Välkommen • أهلا وسهلا • Добро пожаловать • Merhaba • Bonvenon • 歡迎光臨
+.. centered:: Willkommen • Welcome • 欢迎 • Bienvenue • Benvenuto • Bienvenido • ようこそ • Mabuhay • Välkommen • أهلا وسهلا • Добро пожаловать • Merhaba • Bonvenon • 歡迎光臨
 
 ------------------
+
+.. seealso::
+
+   .. centered:: **First-time users, heads up!** Check out our :ref:`ref-quickstart` chapter!
 
 In this documentation, all aspects of the AppImage project shall be explained, to have a single unified source of information.
 
