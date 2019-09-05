@@ -107,7 +107,7 @@ Once an application is added to AppImageHub, it is not updated automatically any
 As a format, AppImage is designed in a way that does not impose restrictions on the person generating AppImages. Basically you are free to put inside an AppImage whatever you want. For AppImageHub, however, additional rules apply. AppImages submitted to AppImage hub undergo automatic and possibly additional manual review.
 
 * Must be downloadable from an URL. Our testing system fetches the AppImage using :code:`wget`. Currently we cannot get AppImages from locations behind authentication and/or cookie-protected locations. For commercial applications we recommend to have a generally downloadable demo/trial version. Please contact us if you would like to add your commercial AppImage to the directory and it is not available for general download
-* Must run on the `oldest still-supported Ubuntu LTS release`_ (currently Ubuntu 14.04) without the installation of additional packages. Targeting the oldest still-supported LTS is to ensure that the AppImage will run not only on the very latest, but also on older target systems, such as enterprise distributions (not limited to Ubuntu)
+* Must run on the `oldest still-supported Ubuntu LTS release`_ (16.04 as of 2019, for up to date information see https://en.wikipedia.org/wiki/Ubuntu#Releases) without the installation of additional packages. Targeting the oldest still-supported LTS is to ensure that the AppImage will run not only on the very latest, but also on older target systems, such as enterprise distributions (not limited to Ubuntu)
 * Must execute in our Travis CI based testing environment
 * Must pass `appdir-lint.sh`_
 * Must have a desktop file that passes :code:`desktop-file-validate`
