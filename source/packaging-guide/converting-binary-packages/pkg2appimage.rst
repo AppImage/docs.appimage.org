@@ -130,10 +130,10 @@ The following example ingredients section describes how to get the latest versio
 .. code-block:: yaml
 
   ingredients:
-    dist: trusty
+    dist: xenial
     sources:
-      - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
-      - deb http://download.opensuse.org/repositories/isv:/KDAB/xUbuntu_14.04/ /
+      - deb http://archive.ubuntu.com/ubuntu/ xenial main universe
+      - deb http://download.opensuse.org/repositories/isv:/KDAB/xUbuntu_16.04/ /
 
 
 The :code:`dist` section inside the :code:`ingredients` section defines which Debian distribution should be used as a base. The :code:`sources` section inside the :code:`ingredients` section describes the repositories from which the package should be pulled. The entries are in the same format as lines in a debian :code:`sources.list` file. Note that the :code:`http://download.opensuse.org/repositories/isv:/KDAB/xUbuntu_14.04` repository needs the :code:`http://archive.ubuntu.com/ubuntu/` repository so that the dependencies can be resolved.
@@ -151,9 +151,9 @@ This is a special case of a Debian repository. PPAs can be uniquely identified w
 .. code-block:: yaml
 
   ingredients:
-    dist: trusty
+    dist: xenial
     sources:
-      - deb http://us.archive.ubuntu.com/ubuntu/ trusty main universe
+      - deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe
     ppas:
       - geany-dev/ppa
 
@@ -173,7 +173,7 @@ This allows the use of local deb files (rather than downloading the deb ingredie
 .. code-block:: yaml
 
   ingredients:
-    dist: trusty
+    dist: xenial
     sources:
       - deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe
     debs:
