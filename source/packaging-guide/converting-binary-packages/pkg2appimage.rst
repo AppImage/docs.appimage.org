@@ -208,12 +208,12 @@ Some packages declare dependencies that are not necessarily required to run the 
 .. code-block:: yaml
 
   ingredients:
-    dist: trusty
+    dist: xenial
     packages:
       - multisystem
       - gksu
     sources:
-      - deb http://us.archive.ubuntu.com/ubuntu/ trusty main universe
+      - deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe
       - deb http://liveusb.info/multisystem/depot all main
     exclude:
       - qemu
@@ -234,9 +234,9 @@ The dependency information in some packages may result in the package manager to
 .. code-block:: yaml
 
   ingredients:
-    dist: trusty
+    dist: xenial
     sources:
-      - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
+      - deb http://archive.ubuntu.com/ubuntu/ xenial main universe
     ppas:
       - otto-kesselgulasch/gimp-edge
     pretend:
