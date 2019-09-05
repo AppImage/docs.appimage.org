@@ -51,7 +51,7 @@ With electron-builder, making AppImages is as simple as defining ``AppImage`` as
 Converting existing binary packages
 -----------------------------------
 
-This option might be the easiest if you already have up-to-date packages in place, ideally a PPA for trusty or earlier or a debian repository for oldstable. In this case, you can write a small :code:`.yml` recipe and in many cases are done with the package to AppImage conversion. See :ref:`convert-existing-binary-packages` for more information.
+This option might be the easiest if you already have up-to-date packages in place, ideally a PPA for the oldest still-supported Ubuntu LTS release (xenial as of 2019, see https://en.wikipedia.org/wiki/Ubuntu#Releases for up to date information) or earlier or a debian repository for oldstable. In this case, you can write a small :code:`.yml` recipe and in many cases are done with the package to AppImage conversion. See :ref:`convert-existing-binary-packages` for more information.
 
 
 .. _sec-using-obs:
