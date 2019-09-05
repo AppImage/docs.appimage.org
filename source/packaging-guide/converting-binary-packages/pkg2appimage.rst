@@ -136,7 +136,7 @@ The following example ingredients section describes how to get the latest versio
       - deb http://download.opensuse.org/repositories/isv:/KDAB/xUbuntu_16.04/ /
 
 
-The :code:`dist` section inside the :code:`ingredients` section defines which Debian distribution should be used as a base. The :code:`sources` section inside the :code:`ingredients` section describes the repositories from which the package should be pulled. The entries are in the same format as lines in a debian :code:`sources.list` file. Note that the :code:`http://download.opensuse.org/repositories/isv:/KDAB/xUbuntu_14.04` repository needs the :code:`http://archive.ubuntu.com/ubuntu/` repository so that the dependencies can be resolved.
+The :code:`dist` section inside the :code:`ingredients` section defines which Debian distribution should be used as a base. The :code:`sources` section inside the :code:`ingredients` section describes the repositories from which the package should be pulled. The entries are in the same format as lines in a debian :code:`sources.list` file. Note that the :code:`http://download.opensuse.org/repositories/isv:/KDAB/xUbuntu_16.04` repository needs the :code:`http://archive.ubuntu.com/ubuntu/` repository so that the dependencies can be resolved.
 
 .. note::
 
@@ -371,11 +371,11 @@ The following recipe will convert a Python 3 PyQt application using :code:`virtu
 
     app: mu.codewith.editor
     ingredients:
-      dist: trusty
+      dist: xenial
       sources:
-        - deb http://us.archive.ubuntu.com/ubuntu/ trusty trusty-updates trusty-security main universe
-        - deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates main universe
-        - deb http://us.archive.ubuntu.com/ubuntu/ trusty-security main universe
+        - deb http://us.archive.ubuntu.com/ubuntu/ xenial xenial-updates xenial-security main universe
+        - deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates main universe
+        - deb http://us.archive.ubuntu.com/ubuntu/ xenial-security main universe
       packages:
         - python3.4-venv
       script:
