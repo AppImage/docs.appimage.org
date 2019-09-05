@@ -281,9 +281,9 @@ If :code:`.deb` packages, Debian repositories or PPAs have been specified in the
 .. code-block:: yaml
 
   ingredients:
-    dist: trusty
+    dist: xenial
     sources:
-      - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
+      - deb http://archive.ubuntu.com/ubuntu/ xenial main universe
 
     script:
       - DLD=$(wget -q "https://github.com/feross/webtorrent-desktop/releases/" -O - | grep _amd64.deb | head -n 1 | cut -d '"' -f 2)
