@@ -21,5 +21,5 @@ The runtime continues by calling the AppDir's "entrypoint" :ref:`AppRun <ref-app
 
 .. _shebang: https://en.wikipedia.org/wiki/Shebang_(Unix)
 
-The contents of an AppDir are completely user-specified, although there are tools that help with packaging. For more information, see the :ref:packaging guide <ref-packaging-guide>`.
+The contents of an AppDir are completely user-specified, although there are tools that help with packaging. For more information, see the :ref:`packaging guide <ref-packaging-guide>`.
 
