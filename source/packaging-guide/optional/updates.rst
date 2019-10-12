@@ -19,7 +19,7 @@ To make an AppImage updateable, you need to embed information that describes whe
 Using appimagetool
 ^^^^^^^^^^^^^^^^^^
 
-Use :code:`appimagetool -u` to embed update information (as specified in the AppImageSpec).
+Use :code:`appimagetool -u` to embed update information (as specified in the AppImageSpec) and generate the corresponding :code:`.zsync` file you can upload to the place mentioned in the update information.
 
 .. code-block:: shell
 
