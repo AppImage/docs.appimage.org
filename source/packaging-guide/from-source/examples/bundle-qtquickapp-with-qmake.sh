@@ -11,7 +11,7 @@ else
     TEMP_BASE=/tmp
 fi
 
-BUILD_DIR=$(mktemp -d -p "$TEMP_BASE" AppImageLauncher-build-XXXXXX)
+BUILD_DIR=$(mktemp -d -p "$TEMP_BASE" appimage-build-XXXXXX)
 
 # make sure to clean up build dir, even if errors occur
 cleanup () {
