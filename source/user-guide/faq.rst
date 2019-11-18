@@ -5,6 +5,12 @@ Frequently Asked Questions
 
 The most common questions are answered directly here to save you from having to read the entire user guide.
 
+
+.. contents:: Contents
+   :local:
+   :depth: 1
+
+
 |question| What is an AppImage?
 -------------------------------
 

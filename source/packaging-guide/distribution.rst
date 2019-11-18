@@ -8,6 +8,11 @@ There are several ways to distribute AppImages to users. Most likely, AppImages 
 The following section contains some details on how AppImages are commonly distributed.
 
 
+.. contents:: Contents
+   :local:
+   :depth: 1
+
+
 .. _ref-hosting-appimages:
 
 Hosting AppImages

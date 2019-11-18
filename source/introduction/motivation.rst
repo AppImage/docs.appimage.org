@@ -4,6 +4,11 @@ Motivation
 There's two different points of view when looking at AppImages: the user's and the developer's. The following section explains both of them.
 
 
+.. contents:: Contents
+   :local:
+   :depth: 1
+
+
 Why would I as a user want to use AppImages?
 ----------------------------------------------------------------------------------------
 

@@ -6,6 +6,11 @@ Quickstart
 This page contains information for users new to AppImage, and want to get started.
 
 
+.. contents:: Contents
+   :local:
+   :depth: 1
+
+
 .. _ref-how-to-run-appimage:
 
 How to run an AppImage

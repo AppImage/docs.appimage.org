@@ -4,6 +4,11 @@ Concepts
 The AppImage development follows a few easy-to-understand core principles and concepts that keep it simple to use for developers and users. In this section, the most prominent concepts are explained.
 
 
+.. contents:: Contents
+   :local:
+   :depth: 1
+
+
 .. _one-app-one-file-principle:
 
 One app = one file

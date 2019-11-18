@@ -1,8 +1,14 @@
 .. _ref-architecture:
+
 Architecture
 ============
 
 AppImage follows a very simple architecture, which is explained in this section.
+
+
+.. contents:: Contents
+   :local:
+   :depth: 1
 
 
 Overview

@@ -5,6 +5,12 @@ Bundling your Travis CI builds as AppImages
 
 Services such as Travis CI make it easy to build software automatically whenever a new commit is pushed to the source code repository. How you turn your build products into an AppImage depends on how your application is built. Generally there are two main methods, namely :ref:`producing an application directory <ref-manual>`, and using :ref:`tools to automate the process <ref-packaging-from-source>`.
 
+
+.. contents:: Contents
+   :local:
+   :depth: 1
+
+
 Producing an application directory using bash scripts
 -----------------------------------------------------
 

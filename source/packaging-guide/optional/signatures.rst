@@ -6,6 +6,11 @@ AppImages can be digitally signed by the person that has produced the AppImage. 
 The AppImages specification allows the AppImage file to carry a digital signature built into the AppImages. This means that the signature does not need to be an external file, but can be carried inside the AppImage itself, similar to how signatures work for traditional Linux packages (such as :code:`.deb` or :code:`.rpm` files).
 
 
+.. contents:: Contents
+   :local:
+   :depth: 1
+
+
 Embedding a signature inside an AppImage
 ----------------------------------------
 

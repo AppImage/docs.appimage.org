@@ -10,6 +10,11 @@ AppImages can be updated:
   * By consuming :code:`libappimageupdate` functionality inside the payload application
 
 
+.. contents:: Contents
+   :local:
+   :depth: 2
+
+
 Making AppImages updateable via external tools
 ----------------------------------------------
 

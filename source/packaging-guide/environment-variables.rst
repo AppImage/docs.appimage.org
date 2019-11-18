@@ -9,6 +9,11 @@ during runtime, e.g., to recognize whether it's currently run from an AppImage, 
 Depending on the type of the AppImage, the runtimes offer different feature sets.
 
 
+.. contents:: Contents
+   :local:
+   :depth: 1
+
+
 Type 1 AppImage runtime
 -----------------------
 

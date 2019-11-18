@@ -3,8 +3,10 @@ Overview
 
 There are different ways to create AppImages. The following section gives you an overview of which ways are available, their advantages and disadvantages, and where to find more information.
 
-.. contents::
+
+.. contents:: Contents
    :local:
+   :depth: 1
 
 
 .. _sec-from-source:

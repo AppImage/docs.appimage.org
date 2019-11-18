@@ -10,6 +10,11 @@ The `openSUSE Build Service`_ is the public instance of the Open Build Service (
 .. _openSUSE Build Service: https://build.opensuse.org/
 
 
+.. contents:: Contents
+   :local:
+   :depth: 1
+
+
 Differences to other methods of building AppImages
 --------------------------------------------------
 

@@ -10,6 +10,11 @@ The AppImage project maintains a work-in-progress specification on the AppImage 
 Being designed as a standard with a reference implementation allows users to implement their own tools to build AppImages, and helps maintaining compatibility between different tools and components.
 
 
+.. contents:: Contents
+   :local:
+   :depth: 1
+
+
 Development
 -----------
 

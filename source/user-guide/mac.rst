@@ -3,7 +3,7 @@ AppImage for macOS switchers
 
 .. image:: https://user-images.githubusercontent.com/2480569/29998412-7f0f9416-902a-11e7-9d5f-472649e1af34.png
 
-This chapter compares the AppImage terms to its macOS equivalents. It
+This page compares the AppImage terms to its macOS equivalents. It
 should help macOS to Linux switchers to "get" AppImage concepts quickly.
 
 +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+

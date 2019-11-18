@@ -13,6 +13,11 @@ To ensure that the AppImage runs on the intended base systems, it should be thor
 Using Live CDs has the advantage that unlike installed systems, you always have a system that is in a factory-fresh condition that can be easily reproduced. Most developers just test their software on their main working systems, which tend to be heavily customized through the installation of additional packages. By testing on Live CDs, you can be sure that end users will get the best experience possible.
 
 
+.. contents:: Contents
+   :local:
+   :depth: 1
+
+
 Using testappimage
 ------------------
 

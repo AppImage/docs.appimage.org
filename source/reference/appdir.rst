@@ -8,6 +8,11 @@ AppDir specification
 This page describes the *AppDir* format. AppDirs are the "source" of AppImages. When building an AppImage, a file system image is built from such a directory, to which a runtime is prepended.
 
 
+.. contents:: Contents
+   :local:
+   :depth: 1
+
+
 History
 -------
 

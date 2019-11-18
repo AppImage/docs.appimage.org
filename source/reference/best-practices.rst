@@ -4,6 +4,11 @@ Best practices
 This section contains some best practices and recommendations how to generally design and write software so that it can be easily put into AppImages.
 
 
+.. contents:: Contents
+   :local:
+   :depth: 2
+
+
 General Recommendations
 '''''''''''''''''''''''
 

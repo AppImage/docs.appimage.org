@@ -7,6 +7,11 @@ Software Overview
    - list deprecated components
 
 
+.. contents:: Contents
+   :local:
+   :depth: 2
+
+
 AppImage project
 ****************
 

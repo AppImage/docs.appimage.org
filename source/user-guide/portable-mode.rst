@@ -1,6 +1,17 @@
 Using portable mode
 ===================
 
+This page describes a mode some newer AppImages (i.e., built in 2017 or later) provide, the *portable mode*. This mode allows for bundling an application's data next to the application's AppImage.
+
+
+.. contents:: Contents
+   :local:
+   :depth: 1
+
+
+Introduction
+------------
+
 Sometimes it can be useful for data of an application to travel along with the application, for example to put the application on a USB stick that can be used with different computers. In the windows world, this concept is known as “portable applications”.
 
 Normally the application contained inside an AppImage will store its configuration files wherever it always stores them (most frequently somewhere inside :code:`$HOME`). In other words, the fact that an application is contained inside an AppImage normally does not change where the application stores its data.

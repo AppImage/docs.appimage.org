@@ -6,6 +6,11 @@ This chapter compares AppImage with traditional application packaging formats on
 Traditionally, applications have been installed on Linux systems by using the package manager that comes with the Linux distribution. However, this model does not scale well for long-tail applications, applications that are only used by a few users, or in cases where users want to use the very latest applications immediately after they are published by their developers. It also is very cumbersome for application developers that want to reach a large audience quickly.
 
 
+.. contents:: Contents
+   :local:
+   :depth: 1
+
+
 Advantages for users
 --------------------
 

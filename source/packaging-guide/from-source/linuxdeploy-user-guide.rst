@@ -14,6 +14,12 @@ linuxdeploy is capable of packaging dependencies of resources in an existing App
 linuxdeploy describes itself as an `"AppDir maintenance tool" <https://github.com/linuxdeploy/linuxdeploy/blob/master/README.md>`_. Its primary focus is on AppDirs, and it uses plugins to create output formats such as AppImages.
 
 
+.. contents:: Contents
+   :local:
+   :depth: 1
+
+
+
 Packaging dependencies of files in an existing AppDir
 +++++++++++++++++++++++++++++++++++++++++++++++++++++
 

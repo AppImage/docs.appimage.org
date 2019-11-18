@@ -4,6 +4,11 @@ Desktop integration
 This section discusses how we integrate AppImages into the Linux desktops, what technologies are involved and what customizations and additions we implemented to adapt them to work for AppImages.
 
 
+.. contents:: Contents
+   :local:
+   :depth: 2
+
+
 Desktop files
 -------------
 

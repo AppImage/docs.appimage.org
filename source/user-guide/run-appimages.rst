@@ -3,7 +3,14 @@ Running AppImages
 
 This page shows how a user can run AppImages, on their favorite distribution using the desktop environment tools or via the terminal. Also, it explains the concept of desktop integration, and presents tools that can be used for this purpose.
 
+
+.. contents:: Contents
+   :local:
+   :depth: 2
+
+
 .. _ref-download-make-executable-run:
+
 Download, make executable, run
 ------------------------------
 

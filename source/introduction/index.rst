@@ -15,5 +15,6 @@ The following section provides an overview of the AppImage idea, the motives beh
    software-overview
    upstream
    :caption: Contents:
+   :maxdepth: 2
 
 .. _AppImageKit: https://github.com/AppImage/AppImageKit

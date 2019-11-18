@@ -5,6 +5,16 @@ pkg2appimage
 
 If you already have existing binaries (either in archive or :code:`.deb` format or a ppa) then the recommended way to convert these to an AppImage is to write a `.yml description file <yml-example-file>`_ and run it with `pkg2appimage`_.
 
+
+.. contents:: Contents
+   :local:
+   :depth: 1
+
+
+Introduction
+------------
+
+
 To build an AppImage from a :code:`.yml` description file, simply run:
 
 .. code-block:: shell
