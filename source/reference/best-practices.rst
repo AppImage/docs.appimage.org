@@ -102,6 +102,10 @@ https://lintian.debian.org/tags/embedded-library.html
 .. _EPEL: https://fedoraproject.org/wiki/EPEL
 .. _devtools-2: http://people.centos.org/tru/devtools-2/
 
+.. seealso::
+
+   This concept is also described in :ref:`build-on-old-systems`.
+
 
 .. _ref-libstdc++.so.6:
 
