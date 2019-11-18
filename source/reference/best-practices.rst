@@ -97,7 +97,7 @@ You could also consider to link some exotic libraries statically. Yes, even Debi
 https://lintian.debian.org/tags/embedded-library.html
 
 .. _LibcWrapGenerator: https://github.com/AppImage/AppImageKit/tree/stable/v1.0/LibcWrapGenerator
--- _bingcc: https://github.com/sulix/bingcc
+.. _bingcc: https://github.com/sulix/bingcc
 .. _glibc_version_header: https://github.com/wheybags/glibc_version_header
 .. _EPEL: https://fedoraproject.org/wiki/EPEL
 .. _devtools-2: http://people.centos.org/tru/devtools-2/
