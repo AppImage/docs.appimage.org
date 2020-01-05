@@ -299,7 +299,7 @@ If :code:`.deb` packages, Debian repositories or PPAs have been specified in the
       - DLD=$(wget -q "https://github.com/feross/webtorrent-desktop/releases/" -O - | grep _amd64.deb | head -n 1 | cut -d '"' -f 2)
       - wget -c "https://github.com/$DLD"
 
-    script:
+  script:
     - mv opt/webtorrent-desktop/* usr/bin/
     - sed -i -e 's|/opt/webtorrent-desktop/||g' webtorrent-desktop.desktop
 
@@ -315,7 +315,7 @@ If other types of binary ingredients have been specified, then the shell command
       - wget -c "https://telegram.org/dl/desktop/linux" --trust-server-names
       - tar xf tsetup.*.tar.xz
 
-    script:
+  script:
     - cp ../Telegram/Telegram ./usr/bin/telegram-desktop
 
 
@@ -391,27 +391,27 @@ The following recipe will convert a Python 3 PyQt application using :code:`virtu
       script:
         -  wget -c https://raw.githubusercontent.com/mu-editor/mu/master/conf/mu.codewith.editor.png
         -  wget -c https://raw.githubusercontent.com/mu-editor/mu/master/conf/mu.appdata.xml
-      script:
-        - cp ../mu.codewith.editor.png ./usr/share/icons/hicolor/256x256/
-        - cp ../mu.codewith.editor.png .
-        - mkdir -p usr/share/metainfo/ ; cp ../mu.appdata.xml usr/share/metainfo/
-        - virtualenv --python=python3 usr
-        - ./usr/bin/pip3 install mu-editor
-        - cat > usr/share/applications/mu.codewith.editor.desktop <<\EOF
-        - [Desktop Entry]
-        - Type=Application
-        - Name=Mu
-        - Comment=A Python editor for beginner programmers
-        - Icon=mu.codewith.editor
-        - Exec=python3 bin/mu-editor %F
-        - Terminal=false
-        - Categories=Application;Development;
-        - Keywords=Python;Editor;microbit;micro:bit;
-        - StartupWMClass=mu
-        - MimeType=text/x-python3;text/x-python3;
-        - EOF
-        - cp usr/share/applications/mu.codewith.editor.desktop .
-        - usr/bin/pip3 freeze | grep "mu-editor" | cut -d "=" -f 3 >> ../VERSION
+    script:
+      - cp ../mu.codewith.editor.png ./usr/share/icons/hicolor/256x256/
+      - cp ../mu.codewith.editor.png .
+      - mkdir -p usr/share/metainfo/ ; cp ../mu.appdata.xml usr/share/metainfo/
+      - virtualenv --python=python3 usr
+      - ./usr/bin/pip3 install mu-editor
+      - cat > usr/share/applications/mu.codewith.editor.desktop <<\EOF
+      - [Desktop Entry]
+      - Type=Application
+      - Name=Mu
+      - Comment=A Python editor for beginner programmers
+      - Icon=mu.codewith.editor
+      - Exec=python3 bin/mu-editor %F
+      - Terminal=false
+      - Categories=Application;Development;
+      - Keywords=Python;Editor;microbit;micro:bit;
+      - StartupWMClass=mu
+      - MimeType=text/x-python3;text/x-python3;
+      - EOF
+      - cp usr/share/applications/mu.codewith.editor.desktop .
+      - usr/bin/pip3 freeze | grep "mu-editor" | cut -d "=" -f 3 >> ../VERSION
 
 
 Source:
