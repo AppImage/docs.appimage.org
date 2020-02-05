@@ -3,7 +3,7 @@
 pkg2appimage
 ============
 
-If you already have existing binaries (either in archive or :code:`.deb` format or a ppa) then the recommended way to convert these to an AppImage is to write a `.yml description file <yml-example-file>`_ and run it with `pkg2appimage`_.
+If you already have existing binaries (either in archive or :code:`.deb` format or a ppa) then the recommended way to convert these to an AppImage is to write a `.yml description file <https://github.com/AppImage/pkg2appimage/tree/master/recipes>`_ and run it with `pkg2appimage`_.
 
 
 .. contents:: Contents
@@ -22,10 +22,9 @@ To build an AppImage from a :code:`.yml` description file, simply run:
     bash -ex ./pkg2appimage recipes/XXX.yml
 
 
-:code:`.yml` description files tell pkg2appimage where to get the ingredients from, and how to convert them to an AppImage (besides the general steps already included in pkg2appimage). Study some `examples <yml-example-file>`_ to see how it works.
+:code:`.yml` description files tell pkg2appimage where to get the ingredients from, and how to convert them to an AppImage (besides the general steps already included in pkg2appimage). Study some `examples <https://github.com/AppImage/pkg2appimage/tree/master/recipes>`_ to see how it works.
 
 .. _pkg2appimage: https://github.com/AppImage/pkg2appimage/blob/master/pkg2appimage
-.. _yml-example-file: https://github.com/AppImage/pkg2appimage/tree/master/recipes
 
 .. warning::
    pkg2appimage suffers from a few notable issues:
