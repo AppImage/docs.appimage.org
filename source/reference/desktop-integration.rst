@@ -47,5 +47,5 @@ X-AppImage-Arch
    The following discussions in issue trackers contain some background information:
 
      * `AppImageKit#59 <https://github.com/AppImage/AppImageKit/issues/59>`_
-     * `AppImageKit#662<https://github.com/AppImage/AppImageKit/issues/662>`_
+     * `AppImageKit#662 <https://github.com/AppImage/AppImageKit/issues/662>`_
 
