@@ -31,7 +31,7 @@ As the name intends, AppDirs are normal directories with some special contents. 
 
 .. _ref-diricon:
 ``.DirIcon``
-   PNG icon located in the root directory. Can be used by e.g., thumbnailers, to display application icons rather than a generic filetype symbol. Should be in one of the standard image sizes, e.g., 128,x128 or 256x256 pixels.
+   PNG icon located in the root directory. Can be used by e.g., thumbnailers, to display application icons rather than a generic filetype symbol. Should be in one of the standard image sizes, e.g., 128x128 or 256x256 pixels.
 
 These two entries have been re-used from `ROX Filer`_'s specification. `ROX Filer`_ actually specifies additional (but optional) entries, however, AppImage doesn't use these. Instead, the following ones have been introduced:
 
