@@ -24,14 +24,14 @@ The AppDir format has first been described by `ROX Filer`_, and has since been e
 General description
 -------------------
 
-As the name intends, AppDirs are normal directories with some special contents:
+As the name intends, AppDirs are normal directories with some special contents. The AppDir format is coming from ROX Filer  http://rox.sourceforge.net/desktop/AppDirs.html:
 
 ``AppRun``
    A file (executable, script, etc.) or symlink, serving as the "entry point" for a specific application. It is located in the root directory that makes up an AppDir, so it can be used to calculate paths relative to the (later mounted) AppDir.
 
 .. _ref-diricon:
 ``.DirIcon``
-   Symlink to an icon, normally located in the root directory. Can be used by e.g., thumbnailers, to display application icons rather than a generic filetype symbol.
+   PNG icon located in the root directory. Can be used by e.g., thumbnailers, to display application icons rather than a generic filetype symbol. Should be in one of the standard image sizes, e.g., 128,x128 or 256x256 pixels.
 
 These two entries have been re-used from `ROX Filer`_'s specification. `ROX Filer`_ actually specifies additional (but optional) entries, however, AppImage doesn't use these. Instead, the following ones have been introduced:
 
