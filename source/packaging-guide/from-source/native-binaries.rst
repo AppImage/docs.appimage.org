@@ -53,7 +53,7 @@ Here's an example how to use this method:
 
    # fetch sources (you could as well use a tarball etc.)
    > git clone https://github.com/linuxdeploy/QtQuickApp.git
-   > cd app
+   > cd QtQuickApp
 
    # build out of source
    > mkdir build
