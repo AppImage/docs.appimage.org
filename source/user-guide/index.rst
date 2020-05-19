@@ -8,5 +8,6 @@ This chapter shows users what AppImages are from a user perspective, how they ca
    run-appimages
    portable-mode
    mac
+   troubleshooting
    :caption: Contents:
    :maxdepth: 2
