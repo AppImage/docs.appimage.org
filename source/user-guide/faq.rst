@@ -60,12 +60,7 @@ For example, if you would like to see an AppImage of Mozilla Firefox, then pleas
 |question| Where do I get support?
 ----------------------------------
 
-Please visit the `Discourse forum`_. You can log in using your existing Google or GitHub account, or alternatively register a local account with your email address.
+Please refer to the :ref:`contact page <ref-contact>`.
 
-If you want to interact directly with the developers, please join the IRC chat #AppImage on Freenode (webchat_). Please beware that it might take a few minutes/hours until someone will check the chat and might be able to help you, so don't give up too quickly, and leave e.g., the tab open in the background if you can. You can also try at other times again. You are encouraged to read `this article`_ before joining the IRC chat.
-
-.. _Discourse forum: https://discourse.appimage.org/
-.. _webchat: https://webchat.freenode.net/?channels=appimage
-.. _this article: https://workaround.org/getting-help-on-irc/
 
 .. |question| image:: /_static/img/question.png

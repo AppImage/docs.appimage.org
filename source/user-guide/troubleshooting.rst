@@ -3,7 +3,7 @@
 Troubleshooting
 ===============
 
-This page covers some of the most common problems with AppImages users might face, and provides solutions and links to external references. This page is not considered to be exhaustive. For additional help, please consider asking in our `Discourse forum <https://discourse.appimage.org>`_ or join our IRC channel `#appimage <irc://chat.freenode.net/appimage>`_ on `Freenode <https://freenode.net>`_ (`webchat <https://webchat.freenode.net/?channels=appimage>`_).
+This page covers some of the most common problems with AppImages users might face, and provides solutions and links to external references. This page is not considered to be exhaustive. For additional help, please see the :ref:`Contact page <ref-contact>`.
 
 .. note::
 
