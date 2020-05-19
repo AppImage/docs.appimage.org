@@ -1,4 +1,4 @@
-.. _ug-troubleshooting:
+.. _ref-ug-troubleshooting:
 
 Troubleshooting
 ===============

@@ -127,4 +127,4 @@ To provide a complete solution for managing AppImages on the system, AppImageLau
 Troubleshooting
 ---------------
 
-Please refer to our :ref:`Troubleshooting page <ug-troubleshooting>`.
+Please refer to our :ref:`Troubleshooting page <ref-ug-troubleshooting>`.
