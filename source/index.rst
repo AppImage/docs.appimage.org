@@ -33,5 +33,6 @@ To learn more about *using* AppImages, please read the User Guide. If you are in
    user-guide/index
    packaging-guide/index
    reference/index
+   contact
    :maxdepth: 2
    :caption: Contents:
