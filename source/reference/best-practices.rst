@@ -36,19 +36,21 @@ Since an AppImage is mounted at a different location in the filesystem every tim
 Open source applications
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Wherever possible you should change the Source Code of the application in order not to use absolute paths. There are several ways to do this. They canonical way on Linux is to resolve `proc/self/exe` to get the path to the main executable and construct a relative path from there. As a result, it should work both in normal installations and in relocatable installations such as AppImages.
+Wherever possible you should change the Source Code of the application in order not to use absolute paths. There are several ways to do this. They canonical way on Linux is to resolve ``proc/self/exe`` to get the path to the main executable and construct a relative path from there. As a result, it should work both in normal installations and in relocatable installations such as AppImages.
 
 There are libraries which make this easier, for example `BinReloc`_. Also see `Resourceful`_, a project to study of cross-platform techniques for building applications and libraries that use resource files (e.g. icons, configuration, data).
 
 Some application frameworks such as Qt have this functionality built-in, for example in :code:`QString QCoreApplication::applicationDirPath()` (`see documentation`_), and construct a *relative* path to :code:`../share/kaidan/images/` from there.
 
-For an example, see:
-	https://github.com/KaidanIM/Kaidan/commit/da38011b55a1aa5d17764647ecd699deb4be437f
+.. seealso::
+
+   For an example, see: https://github.com/KaidanIM/Kaidan/commit/da38011b55a1aa5d17764647ecd699deb4be437f
 
 .. warning::
-	:code:`QStandardPaths::standardLocations(QStandardPaths::AppDataLocation)` **does not work reliably.**
-
-	According to the `Qt documentation`_, this resolves to :code:`~/.local/share/<APPNAME>`, :code:`/usr/local/share/<APPNAME>`, :code:`/usr/share/<APPNAME>`, but clearly :code:`/usr` is not where these things are located in an AppImage.
+   
+   :code:`QStandardPaths::standardLocations(QStandardPaths::AppDataLocation)` **does not work reliably.**
+   
+   According to the `Qt documentation`_, this resolves to :code:`~/.local/share/<APPNAME>`, :code:`/usr/local/share/<APPNAME>`, :code:`/usr/share/<APPNAME>`, but clearly :code:`/usr` is not where these things are located in an AppImage.
 
 .. _BinReloc: https://github.com/limbahq/binreloc
 .. _Resourceful: https://github.com/drbenmorgan/Resourceful
