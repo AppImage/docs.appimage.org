@@ -109,7 +109,7 @@ Now, add yourself to the related group in order to authorize yourself for using 
 I have issues with Electron-based AppImages and their sandboxing
 ****************************************************
 
-AppImages based on `Electron <https://www.electron.build/>`_ require the kernel to be configured in a certain way to allow for its sandboxing to work as intended (specifically, the kernel needs to be allowed to provide "unprivileged namespaces"). Many distributions come with this configured out of the box (like `Ubuntu <https://ubuntu.com>` for instance), but some do not (for example `Debian <https://debian.org>`).
+AppImages based on `Electron <https://www.electron.build/>`_ require the kernel to be configured in a certain way to allow for its sandboxing to work as intended (specifically, the kernel needs to be allowed to provide "unprivileged namespaces"). Many distributions come with this configured out of the box (like `Ubuntu <https://ubuntu.com>`_ for instance), but some do not (for example `Debian <https://debian.org>`_).
 
 .. warning::
 
