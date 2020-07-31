@@ -64,6 +64,18 @@ This option is recommended for open source projects because it allows you to lev
 
 More information on using OBS for making AppImages can be found in :ref:`ref-obs`.
 
+.. _sec-using-appimage-builder:
+Using appimage-builder
+----------------------
+
+appimage-builder is a novel tool for creating AppImages. It uses the system package manager to resolve the
+application dependencies and creates a complete bundle. It can be used to pack almost any kinds of applications
+including those made using: C/C++, Python, and Java.
+
+This tool removes the limitations of requiring an *old system* to compile the binaries. It can be used to
+pack an application from sources or to turn an existing Debian package into an AppImage.
+
+For more information about appimage-builder please visit: https://appimage-builder.readthedocs.io
 
 .. _sec-create-appdir-manually:
 Manually creating an AppDir
