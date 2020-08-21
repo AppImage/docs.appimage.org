@@ -36,7 +36,7 @@ Since an AppImage is mounted at a different location in the filesystem every tim
 Open source applications
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Wherever possible you should change the Source Code of the application in order not to use absolute paths. There are several ways to do this. They canonical way on Linux is to resolve ``proc/self/exe`` to get the path to the main executable and construct a relative path from there. As a result, it should work both in normal installations and in relocatable installations such as AppImages.
+Wherever possible you should change the Source Code of the application in order not to use absolute paths. There are several ways to do this. The canonical way on Linux is to resolve ``proc/self/exe`` to get the path to the main executable and construct a relative path from there. As a result, it should work both in normal installations and in relocatable installations such as AppImages.
 
 There are libraries which make this easier, for example `BinReloc`_. Also see `Resourceful`_, a project to study of cross-platform techniques for building applications and libraries that use resource files (e.g. icons, configuration, data).
 
