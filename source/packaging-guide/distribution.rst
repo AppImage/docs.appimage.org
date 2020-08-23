@@ -78,10 +78,12 @@ The most obvious place to advertise your AppImage is to prominently featured on 
 
 You can use a "Download as an AppImage" banner alongside other similar buttons:
 
-![Download as an AppImage](https://raw.githubusercontent.com/KhushrajRathod/KhushrajRathod/master/download-appimage.svg)
+.. image:: /_static/img/download-appimage-banner.svg
+    :alt: Download as an AppImage
 
 Link this banner directly to the latest version of your AppImage, or to a download page containing the link to the latest version of your AppImage.
 
+Banner by `Khushraj Rathod <https://github.com/KhushrajRathod/>`_
 
 Social Media
 ''''''''''''
