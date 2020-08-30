@@ -76,6 +76,17 @@ Application website
 
 The most obvious place to advertise your AppImage is to prominently featured on your application’s download page.
 
+'Download as an AppImage' banner
+''''''''''''''''''''''''''''''''
+
+You can use a "Download as an AppImage" banner alongside other similar buttons:
+
+.. image:: /_static/img/download-appimage-banner.svg
+    :alt: Download as an AppImage
+
+Link this banner directly to the latest version of your AppImage, or to a download page containing the link to the latest version of your AppImage.
+
+Banner by `Khushraj Rathod <https://github.com/KhushrajRathod/>`_ under the `CC0 license <https://creativecommons.org/share-your-work/public-domain/cc0/>`_
 
 Social Media
 ''''''''''''
