@@ -25,7 +25,7 @@ You can use ISOs of Live CDs, loop-mount them, chroot into them, and run the App
 
 .. code-block:: shell
 
-   $ wget https://raw.githubusercontent.com/AppImage/AppImageKit/appimagetool/master/testappimage
+   $ wget https://raw.githubusercontent.com/AppImage/AppImageKit/master/testappimage
    $ sudo bash testappimage /path/to/elementary-0.2-20110926.iso AppImageAssistant.AppImage
 
 
