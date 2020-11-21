@@ -137,3 +137,105 @@ On Arch Linux, FUSE should work already. A common issue, however, is that the ``
    # fish shell:
    sudo chmod u+s (which fusermount)
 
+
+.. _ref-fuse-fallback:
+
+Fallback (if FUSE can't be made working)
+----------------------------------------
+
+If you do not want to (or cannot) set up FUSE, there are fallback solutions. Depending on the AppImage type, you can either mount the AppImage, or extract it and run the contents.
+
+
+.. _ref-extract-and-run-type-2:
+
+Extract and run type 2 AppImages
+********************************
+
+Most AppImages nowadays are type 2 AppImages. The easiest way to run such an AppImage, if FUSE is not available, is to extract it and then run its contents.
+
+.. warning::
+   Extracting an AppImage to run its contents is pretty expensive. It should only be done if you have no other options left.
+
+
+The AppImage runtime has a built-in feature we call "extract-and-run". It extracts the AppImage, runs the contents, waits until the app closes, and then cleans up the files again:
+
+.. code-block:: shell
+
+   # using a parameter
+   ./my.AppImage --appimage-extract-and-run [...]
+
+   # using an environment variable (which is usually forwarded to AppImage child processes, too)
+   # note that this was implemented a while after we introduced the parameter
+   # for older AppImages, you might have to use the parameter nevertheless
+   export APPIMAGE_EXTRACT_AND_RUN=1
+   ./my.AppImage [...]
+
+   # optionally, you can disable the cleanup if you need to run the AppImage more than once
+   export APPIMAGE_EXTRACT_AND_RUN=1
+   env NO_CLEANUP=1 ./my.AppImage
+
+In case you have a very old AppImage (i.e., it uses a runtime from the time before "extract-and-run" was implemented), you can extract the AppImage manually:
+
+.. code-block:: shell
+
+   ./my.AppImage --appimage-extract
+   # the contents are extracted into the directory "squashfs-root" in the current working directory
+   # you can now run the "AppRun" entry point
+   squashfs-root/AppRun [...]
+   # optionally, you can clean up the directory again
+   rm -r squashfs-root/
+
+
+Mount or extract type 1 AppImages
+*********************************
+
+If the process described in the :ref:`previous section <ref-extract-and-run-type-2>` does not work, you likely have a type 1 AppImage.
+
+Type 1 AppImages are regular ISO9660 files. They can therefore be *loop-mounted*. Note that you need ``root`` permissions to do so.
+
+.. code-block:: shell
+
+   sudo mount -o loop my.AppImage /mnt
+   # now, you can run the contents
+   /mnt/AppRun
+   # when you're done, you can unmount the AppImage again
+   sudo unmount /mnt
+
+You can alternatively extract the AppImage, either using `AppImageExtract <https://github.com/AppImage/AppImageKit/releases/tag/6>`_ or using an extraction tool which supports ISO9660 images (e.g., ``bsdtar``):
+
+.. code-block:: shell
+
+   # install bsdtar
+   sudo apt install libarchive-tools
+   # create target directory
+   mkdir AppDir
+   # extract the contents into the new directory
+   cd AppDir
+   bsdtar xfp .../my.AppImage
+   # now, you can run the entry point
+   ./AppRun
+
+
+FUSE and Docker
+---------------
+
+Most Docker installations do not permit the use FUSE inside containers for security reasons. Instead, you can extract and run AppImages as described in the :ref:`previous section <ref-fuse-fallback>`.
+
+.. warning::
+
+   There's a lot of advice on the internet that follows the scheme, "just add the arguments ``--cap-add SYS_ADMIN --cap-add MKNOD --device /dev/fuse:mrw`` and it will work". It is, however, insecure to do so. There's a reason why Docker doesn't support FUSE by default.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
