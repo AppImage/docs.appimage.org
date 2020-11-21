@@ -45,6 +45,7 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.ifconfig',
     'sphinx.ext.githubpages',
+    'sphinxext.rediraffe',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -192,6 +193,10 @@ texinfo_documents = [
 
 
 # -- Extension configuration -------------------------------------------------
+
+rediraffe_redirects = {
+    "user-guide/troubleshooting.rst": "user-guide/troubleshooting/index.rst",
+}
 
 # -- Options for intersphinx extension ---------------------------------------
 

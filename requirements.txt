@@ -1,5 +1,7 @@
 wheel
-sphinx>=1.7.0
+sphinx>=3.3.0
 sphinx_rtd_theme
 sphinx-autobuild
 sphinx_git
+#sphinx-reredirects
+sphinxext-rediraffe
