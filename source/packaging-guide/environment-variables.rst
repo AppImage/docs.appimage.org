@@ -1,4 +1,4 @@
-.. _ref-env_vars
+.. _ref-env_vars:
 
 Environment variables
 =====================

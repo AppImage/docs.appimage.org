@@ -1,5 +1,6 @@
 .. _ref-appdir-specification:
 .. TODO: create page on AppDir concept and move label there
+
 .. _ref-appdir:
 
 AppDir specification
@@ -30,6 +31,7 @@ As the name intends, AppDirs are normal directories with some special contents. 
    A file (executable, script, etc.) or symlink, serving as the "entry point" for a specific application. It is located in the root directory that makes up an AppDir, so it can be used to calculate paths relative to the (later mounted) AppDir.
 
 .. _ref-diricon:
+
 ``.DirIcon``
    PNG icon located in the root directory. Can be used by e.g., thumbnailers, to display application icons rather than a generic filetype symbol. Should be in one of the standard image sizes, e.g., 128x128 or 256x256 pixels.
 
@@ -39,6 +41,7 @@ These two entries have been re-used from `ROX Filer`_'s specification. `ROX File
    A desktop file located in the root directory, describing the payload application. As AppImage is following the principle :ref:`one app = one file <one-app-one-file-principle>`, one desktop file is enough to describe the entire AppImage. There |must not| be more than one desktop file in the root directory. The name of the file doesn't matter, as long as it carries the ``.desktop`` extension. Can be a symlink to subdirectories such as ``usr/share/applications/...``
 
 .. _root-icon:
+
 ``myapp.<icon ext>`` (e.g., ``myapp.png``, ``myapp.svg``)
    Application's icon in the best available quality, ideally a vector graphic. Can be a symlink to subdirectories such as ``usr/share/icons/hicolor/...``. In most cases, :ref:`ref-diricon` is a symlink to this file. The filename must be equal to what is set in the ``Icon=`` entry in the desktop file. It is recommended by AppImage and also the XDG icon specifications to use a lower-case filename which is equal to the desktop file's name.
 

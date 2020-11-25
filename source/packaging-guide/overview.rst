@@ -10,6 +10,7 @@ There are different ways to create AppImages. The following section gives you an
 
 
 .. _sec-from-source:
+
 Packaging from source
 ---------------------
 
@@ -21,6 +22,7 @@ The process of packaging from source can and should be automated. CI systems lik
 
 
 .. _sec-travis-ci:
+
 Automated continuous builds on Travis CI
 ****************************************
 
@@ -33,6 +35,7 @@ More information on using Travis CI for making AppImages can be found in :ref:`r
 
 
 .. _sec-electron-builder:
+
 Using electron-builder
 **********************
 
@@ -50,6 +53,7 @@ With electron-builder, making AppImages is as simple as defining ``AppImage`` as
 
 
 .. _sec-convert-packages:
+
 Converting existing binary packages
 -----------------------------------
 
@@ -57,6 +61,7 @@ This option might be the easiest if you already have up-to-date packages in plac
 
 
 .. _sec-using-obs:
+
 Using the Open Build Service
 ----------------------------
 
@@ -64,7 +69,9 @@ This option is recommended for open source projects because it allows you to lev
 
 More information on using OBS for making AppImages can be found in :ref:`ref-obs`.
 
+
 .. _sec-using-appimage-builder:
+
 Using appimage-builder
 ----------------------
 
@@ -77,7 +84,9 @@ pack an application from sources or to turn an existing Debian package into an A
 
 For more information about appimage-builder please visit: https://appimage-builder.readthedocs.io
 
+
 .. _sec-create-appdir-manually:
+
 Manually creating an AppDir
 ---------------------------
 

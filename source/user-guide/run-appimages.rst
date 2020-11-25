@@ -93,6 +93,7 @@ Type 1 AppImages require the deprecated tool AppImageExtract_ to extract the con
 
 
 .. _ref-desktop-integration:
+
 Integrating AppImages into the desktop
 --------------------------------------
 
