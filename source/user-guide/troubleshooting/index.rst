@@ -8,7 +8,7 @@ the most common issues you can have when using AppImages.
 
 .. note::
 
-   If you as a user think there are errors within this section or you would like to have some additional problems covered, please do not hesitate to `create an issue <https://github.com/AppImage/docs.appimage.org/issues/new>`_ on `GitHub <https://github.com/AppImage/docs.appimage.org>`_ (or ideally send a pull request right away). We're always open for feedback!
+   If you as a user think there are errors within this section or you would like to have some additional problems covered, please do not hesitate to `create an issue <https://github.com/AppImage/docs.appimage.org/issues/new>`__ on `GitHub <https://github.com/AppImage/docs.appimage.org>`__ (or ideally send a pull request right away). We're always open for feedback!
 
 This page is not considered to be exhaustive. For additional help, please see the :ref:`Contact page <ref-contact>`.
 

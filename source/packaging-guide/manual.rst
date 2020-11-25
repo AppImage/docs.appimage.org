@@ -43,7 +43,7 @@ Your binary, myapp, must not contain any hardcoded paths that would prevent it f
 
 	strings MyApp.AppDir/usr/bin/myapp | grep /usr
 
-Should this return something, then you need to modify your app programmatically (e.g., by using relative paths, using `binreloc <https://github.com/limbahq/binreloc>`_, or using :code:`QString QCoreApplication::applicationDirPath()`).
+Should this return something, then you need to modify your app programmatically (e.g., by using relative paths, using `binreloc <https://github.com/limbahq/binreloc>`__, or using :code:`QString QCoreApplication::applicationDirPath()`).
 
 If you prefer not to change the source code of your app and/or would not like to recompile your app, you can also patch the binary, for example using the command
 
@@ -99,7 +99,7 @@ To create an AppImage, run :code:`appimagetool` on the AppDir in order to turn i
 Bundling GTK libraries
 ^^^^^^^^^^^^^^^^^^^^^^
 
-The following steps allow bundling the GTK libraries and configuration files in a relocatable way, without the need to patch the files and replace hard-coded paths. The full set of bundling commands, in the form of a bash script, can be found `here <https://github.com/aferrero2707/appimage-helper-scripts/blob/master/bundle-gtk2.sh>`_. They assume the existence of an :code:`APPDIR` environment variable that points to the root folder of the AppImage bundle.
+The following steps allow bundling the GTK libraries and configuration files in a relocatable way, without the need to patch the files and replace hard-coded paths. The full set of bundling commands, in the form of a bash script, can be found `here <https://github.com/aferrero2707/appimage-helper-scripts/blob/master/bundle-gtk2.sh>`__. They assume the existence of an :code:`APPDIR` environment variable that points to the root folder of the AppImage bundle.
 
 GDK-Pixbuf modules and cache file
 """""""""""""""""""""""""""""""""

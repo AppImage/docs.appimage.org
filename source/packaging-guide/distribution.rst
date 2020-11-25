@@ -86,7 +86,7 @@ You can use a "Download as an AppImage" banner alongside other similar buttons:
 
 Link this banner directly to the latest version of your AppImage, or to a download page containing the link to the latest version of your AppImage.
 
-Banner by `Khushraj Rathod <https://github.com/KhushrajRathod/>`_ under the `CC0 license <https://creativecommons.org/share-your-work/public-domain/cc0/>`_
+Banner by `Khushraj Rathod <https://github.com/KhushrajRathod/>`__ under the `CC0 license <https://creativecommons.org/share-your-work/public-domain/cc0/>`_
 
 Social Media
 ''''''''''''
@@ -98,7 +98,7 @@ Also be sure to advertise your new AppImage on social media, for example on Twit
 AppImageHub
 '''''''''''
 
-You may want to add your AppImage to `AppImageHub <https://appimage.github.io/apps/>`_, a crowd-sourced directory of available, automatically tested AppImages with data that 3rd party app stores and software centers can use. Given an URL to an AppImage, it inspects the AppImage and puts it into a community-maintained catalog.
+You may want to add your AppImage to `AppImageHub <https://appimage.github.io/apps/>`__, a crowd-sourced directory of available, automatically tested AppImages with data that 3rd party app stores and software centers can use. Given an URL to an AppImage, it inspects the AppImage and puts it into a community-maintained catalog.
 
 App stores and software centers can consume the metadata collected by this project. See `AppImage ecosystem`_.
 

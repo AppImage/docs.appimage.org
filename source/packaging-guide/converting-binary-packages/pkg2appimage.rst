@@ -3,7 +3,7 @@
 pkg2appimage
 ============
 
-If you already have existing binaries (either in archive or :code:`.deb` format or a ppa) then the recommended way to convert these to an AppImage is to write a `.yml description file <https://github.com/AppImage/pkg2appimage/tree/master/recipes>`_ and run it with `pkg2appimage`_.
+If you already have existing binaries (either in archive or :code:`.deb` format or a ppa) then the recommended way to convert these to an AppImage is to write a `.yml description file <https://github.com/AppImage/pkg2appimage/tree/master/recipes>`__ and run it with `pkg2appimage`_.
 
 
 .. contents:: Contents
@@ -22,7 +22,7 @@ To build an AppImage from a :code:`.yml` description file, simply run:
     bash -ex ./pkg2appimage recipes/XXX.yml
 
 
-:code:`.yml` description files tell pkg2appimage where to get the ingredients from, and how to convert them to an AppImage (besides the general steps already included in pkg2appimage). Study some `examples <https://github.com/AppImage/pkg2appimage/tree/master/recipes>`_ to see how it works.
+:code:`.yml` description files tell pkg2appimage where to get the ingredients from, and how to convert them to an AppImage (besides the general steps already included in pkg2appimage). Study some `examples <https://github.com/AppImage/pkg2appimage/tree/master/recipes>`__ to see how it works.
 
 .. _pkg2appimage: https://github.com/AppImage/pkg2appimage/blob/master/pkg2appimage
 
@@ -33,7 +33,7 @@ To build an AppImage from a :code:`.yml` description file, simply run:
      - pkg2appimage uses distribution packages downloaded using the package managers, however, the packages are not authenticated, as most security functionality has been deactivated. This is a major security issue. pkg2appimage is therefore recommended for personal use only. Upstream authors should consider :ref:`packaging from source <ref-from-source>`.
 
    .. seealso::
-      See `this GitHub issue <https://github.com/AppImage/pkg2appimage/issues/197>`_ for more information on the security issue.
+      See `this GitHub issue <https://github.com/AppImage/pkg2appimage/issues/197>`__ for more information on the security issue.
 
 
 ``.yml`` files

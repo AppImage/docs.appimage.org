@@ -29,7 +29,7 @@ This option might be the easiest if you already have continuous builds on Travis
 More information on using Travis CI for making AppImages can be found in :ref:`ref-travis-ci`.
 
 .. seealso::
-   There are a lot of examples on GitHub that can be found using the `GitHub search <https://github.com/search?utf8=%E2%9C%93&q=%22Package+the+binaries+built+on+Travis-CI+as+an+AppImage%22&type=Code&ref=searchresults>`_.
+   There are a lot of examples on GitHub that can be found using the `GitHub search <https://github.com/search?utf8=%E2%9C%93&q=%22Package+the+binaries+built+on+Travis-CI+as+an+AppImage%22&type=Code&ref=searchresults>`__.
 
 
 .. _sec-electron-builder:
@@ -41,9 +41,9 @@ For `Electron`_ based applications, a tool called electron-builder_ can be used 
 With electron-builder, making AppImages is as simple as defining ``AppImage`` as a target for Linux (default in the latest version of electron-builder). This should yield usable results for most applications.
 
 .. seealso::
-   More information can be found in the `documentation on AppImage <https://www.electron.build/configuration/appimage.html>`_ and `the documentation on distributable formats <https://www.electron.build/index.html#pack-only-in-a-distributable-format>`_ in the `electron-builder manual <https://www.electron.build>`_.
+   More information can be found in the `documentation on AppImage <https://www.electron.build/configuration/appimage.html>`__ and `the documentation on distributable formats <https://www.electron.build/index.html#pack-only-in-a-distributable-format>`__ in the `electron-builder manual <https://www.electron.build>`__.
 
-   There are a lot of examples on GitHub that can be found using the `GitHub search <https://github.com/search?utf8=%E2%9C%93&q=electron-builder+linux+target+appimage&type=Code&ref=searchresults>`_.
+   There are a lot of examples on GitHub that can be found using the `GitHub search <https://github.com/search?utf8=%E2%9C%93&q=electron-builder+linux+target+appimage&type=Code&ref=searchresults>`__.
 
 .. _Electron: https://electronjs.org/
 .. _electron-builder: https://www.electron.build/

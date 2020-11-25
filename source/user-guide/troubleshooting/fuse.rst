@@ -111,7 +111,7 @@ On Clear Linux OS, FUSE _should_ be enabled by default. However, if you see the 
 
 .. seealso::
 
-   This bug was also reported on `reported on GitHub <https://github.com/clearlinux/distribution/issues/273>`_.
+   This bug was also reported on `reported on GitHub <https://github.com/clearlinux/distribution/issues/273>`__.
 
 
 Setting up FUSE on Chromium OS, Chrome OS, Crostini or other derivatives
@@ -201,7 +201,7 @@ Type 1 AppImages are regular ISO9660 files. They can therefore be *loop-mounted*
    # when you're done, you can unmount the AppImage again
    sudo unmount /mnt
 
-You can alternatively extract the AppImage, either using `AppImageExtract <https://github.com/AppImage/AppImageKit/releases/tag/6>`_ or using an extraction tool which supports ISO9660 images (e.g., ``bsdtar``):
+You can alternatively extract the AppImage, either using `AppImageExtract <https://github.com/AppImage/AppImageKit/releases/tag/6>`__ or using an extraction tool which supports ISO9660 images (e.g., ``bsdtar``):
 
 .. code-block:: shell
 

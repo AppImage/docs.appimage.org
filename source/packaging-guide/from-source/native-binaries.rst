@@ -9,7 +9,7 @@ The AppImage team provides tools that simplify the packaging process significant
 
 .. _linuxdeploy: https://github.com/linuxdeploy/linuxdeploy
 
-linuxdeploy is an AppDir maintenance tool. Its primary focus is on AppDirs, AppImage is just one possible output format. It features a plugin system for greater flexibility in use. Plugins can either bundle additional resources for e.g., frameworks such as `Qt <https://github.com/linuxdeploy/linuxdeploy-plugin-qt>`_, but are also used to provide output generators, e.g., for `AppImages <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`_.
+linuxdeploy is an AppDir maintenance tool. Its primary focus is on AppDirs, AppImage is just one possible output format. It features a plugin system for greater flexibility in use. Plugins can either bundle additional resources for e.g., frameworks such as `Qt <https://github.com/linuxdeploy/linuxdeploy-plugin-qt>`__, but are also used to provide output generators, e.g., for `AppImages <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`__.
 
 
 .. contents:: Contents
@@ -107,7 +107,7 @@ Using linuxdeploy for building AppImages
 
 Now that we have the basic AppDir, we need to bundle dependencies into it to make the AppDir self-contained in preparation to make an AppImage from it. The following guide shows how linuxdeploy_ is used for this purpose.
 
-linuxdeploy describes itself as an `"AppDir maintenance tool" <https://github.com/linuxdeploy/linuxdeploy/blob/master/README.md>`_. Its primary focus is on AppDirs, and it uses plugins to create output formats such as AppImages.
+linuxdeploy describes itself as an `"AppDir maintenance tool" <https://github.com/linuxdeploy/linuxdeploy/blob/master/README.md>`__. Its primary focus is on AppDirs, and it uses plugins to create output formats such as AppImages.
 
 The following section describes how it can be used to deploy dependencies of applications into an AppDir that was created using the methods described in the :ref:`previous section <ref-make-install-workflow>`, and shows how this AppDir can eventually be packaged as an AppImage.
 
@@ -149,7 +149,7 @@ Example:
    # run linuxdeploy and generate an AppDir
    > ./linuxdeploy-x86_64.AppImage --appdir AppDir
 
-You can bundle additional resources such as icon files, executable and desktop files using the respective flags described in the ``--help`` text or on linuxdeploy's `homepage <https://github.com/linuxdeploy/linuxdeploy>`_.
+You can bundle additional resources such as icon files, executable and desktop files using the respective flags described in the ``--help`` text or on linuxdeploy's `homepage <https://github.com/linuxdeploy/linuxdeploy>`__.
 
 .. note::
    Desktop file and icon are used for so-called :ref:`desktop integration <ref-desktop-integration>`. If your build system didn't install such files into the right location, you can have linuxdeploy put your own files into the right places. Please see :ref:`linuxdeploy-bundle-desktop-files-icons` for more information.
@@ -188,7 +188,7 @@ Please see :ref:`linuxdeploy-input-plugins` for more information.
 Build AppImages from AppDir using linuxdeploy
 ---------------------------------------------
 
-As mentioned previously, linuxdeploy uses plugins to create actual output files from AppDirs. For AppImages, there's `linuxdeploy-plugin-appimage <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`_.
+As mentioned previously, linuxdeploy uses plugins to create actual output files from AppDirs. For AppImages, there's `linuxdeploy-plugin-appimage <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`__.
 
 To create AppImages, just add ``--output appimage`` to your linuxdeploy call to enable the plugin. An AppImage will be created using :ref:`ref-appimagetool`.
 
@@ -207,7 +207,7 @@ As most plugins, linuxdeploy-plugin-appimage provides some environment variables
    Add update information to the AppImage, and generate a ``.zsync`` file.
 
 .. seealso::
-   More information on the environment variables can be found in the `README <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage/blob/master/README.md>`_, including a complete (and up to date) list of supported environment variables.
+   More information on the environment variables can be found in the `README <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage/blob/master/README.md>`__, including a complete (and up to date) list of supported environment variables.
 
 
 Examples
@@ -218,7 +218,7 @@ In this section, some examples how linuxdeploy can be used are shown.
 QtQuickApp
 ++++++++++
 
-This section contains a few example scripts that showcase how AppImages can be built for `QtQuickApp <https://github.com/linuxdeploy/QtQuickApp>`_, a basic demonstration app based on QtQuick, using some QML internally. It can be built using both CMake and qmake. We use it to show some example scripts how AppImages can be built for it, using the methods introduced in this guide.
+This section contains a few example scripts that showcase how AppImages can be built for `QtQuickApp <https://github.com/linuxdeploy/QtQuickApp>`__, a basic demonstration app based on QtQuick, using some QML internally. It can be built using both CMake and qmake. We use it to show some example scripts how AppImages can be built for it, using the methods introduced in this guide.
 
 
 Using qmake and ``make install``

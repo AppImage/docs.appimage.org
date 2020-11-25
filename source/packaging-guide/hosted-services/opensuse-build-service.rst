@@ -3,7 +3,7 @@
 Using the Open Build Service
 ============================
 
-`Open Build Service <https://openbuildservice.org/>`_ is a generic system to build and distribute packages from sources in an automatic, consistent and reproducible way. It allows you to build software for various package formats and distributions. Now it can also build AppImages that run on a variety of distributions.
+`Open Build Service <https://openbuildservice.org/>`__ is a generic system to build and distribute packages from sources in an automatic, consistent and reproducible way. It allows you to build software for various package formats and distributions. Now it can also build AppImages that run on a variety of distributions.
 
 The `openSUSE Build Service`_ is the public instance of the Open Build Service (OBS). This infrastructure can can be used for free by open source projects. However, you are not limited to it - you can set up your own Open Build Service instance if you like.
 
@@ -31,7 +31,7 @@ There are different ways to build AppImages. Why is using Open Build Service int
 The osc command line tool
 -------------------------
 
-While OBS can be used entirely through the web interface, it can be beneficial to use the `osc` command line tool. It is available as an AppImage from `OpenSUSE's download page <https://download.opensuse.org/repositories/openSUSE:/Tools/AppImage/>`_. Since this page is mainly geared toward beginners, it mainly describes the web interface. However, using the command line tool may offer a quicker route for more experienced OBS users.
+While OBS can be used entirely through the web interface, it can be beneficial to use the `osc` command line tool. It is available as an AppImage from `OpenSUSE's download page <https://download.opensuse.org/repositories/openSUSE:/Tools/AppImage/>`__. Since this page is mainly geared toward beginners, it mainly describes the web interface. However, using the command line tool may offer a quicker route for more experienced OBS users.
 
 
 Setting up an account and a project
@@ -121,7 +121,7 @@ The :code:`build:` section can be used to define resources which are required to
 
 The packages listed in the ingredients section do not get installed into the build environment but get extracted into the AppDir.
 
-URLs for the supported source control management systems (git, svn, cvs, hg, bzr) get handled via the appimage source service, which is a part of `obs-service-tar_scm <https://github.com/openSUSE/obs-service-tar_scm>`_. It is downloading the sources and provides them to the build system as directory structure.
+URLs for the supported source control management systems (git, svn, cvs, hg, bzr) get handled via the appimage source service, which is a part of `obs-service-tar_scm <https://github.com/openSUSE/obs-service-tar_scm>`__. It is downloading the sources and provides them to the build system as directory structure.
 
 .. todo::
 

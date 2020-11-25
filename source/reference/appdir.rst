@@ -54,7 +54,7 @@ Conventions
 In contrary to the rules in the previous section, the ones introduced in this section are no basic requirement. However, this is the recommended structure to put applications into AppDirs. It's picking up ideas from well-known, widely spread Linux standards such as the `Filesystem Hierarchy Standard`_ (part of the `Linux Standards Base`_).
 
 .. seealso::
-   A very good summary of the FHS can be found on `Wikipedia <https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard>`_.
+   A very good summary of the FHS can be found on `Wikipedia <https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard>`__.
 
 .. _Filesystem Hierarchy Standard: https://wiki.linuxfoundation.org/lsb/fhs
 .. _Linux Standards Base: https://wiki.linuxfoundation.org/lsb/start

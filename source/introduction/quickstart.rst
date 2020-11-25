@@ -48,7 +48,7 @@ That's it! The AppImage should now be executed.
 Translated versions of this guide
 *********************************
 
-Translated versions are available in a `post in the AppImage forum <https://discourse.appimage.org/t/how-to-run-an-appimage/80>`_.
+Translated versions are available in a `post in the AppImage forum <https://discourse.appimage.org/t/how-to-run-an-appimage/80>`__.
 
 
 Getting help

@@ -19,7 +19,7 @@ AppImages are simple to understand. Every AppImage is a regular file, and every 
 .. _ref-opinion-reusable-frameworks:
 .. note::
 
-   On a regular basis, `users ask <https://github.com/AppImage/AppImageKit/issues/848>`_ about implementing support for some sort of "reusable/shared frameworks". These frameworks are supposed to contain bundles of libraries which are needed by more than one AppImage, and hence could save some disk space. For management, they suggest complex automagic systems that will automatically fetch the "frameworks" from the Internet if they're not available, or some complicated, mostly manual methods how to users could bundle frameworks together with the AppImages on portable disks like USB sticks.
+   On a regular basis, `users ask <https://github.com/AppImage/AppImageKit/issues/848>`__ about implementing support for some sort of "reusable/shared frameworks". These frameworks are supposed to contain bundles of libraries which are needed by more than one AppImage, and hence could save some disk space. For management, they suggest complex automagic systems that will automatically fetch the "frameworks" from the Internet if they're not available, or some complicated, mostly manual methods how to users could bundle frameworks together with the AppImages on portable disks like USB sticks.
 
    These may be good ideas for some people, and even if they worked perfectly fine, they'd break with our most important concept: :ref:`one app = one file <one-app-one-file-principle>`. AppImages are so simple to understand *because* every application is a single file. There's no complexity in this approach, even grandma could understand it. And after all, disk space is cheap nowadays, right?
 
@@ -35,7 +35,7 @@ The author of an AppImage needs to decide for which target systems (Linux distri
 
 To be able to run on any Linux distribution, an AppImage should bundle all the resources it needs at runtime that cannot be reasonably expected to be "there" in the default installation of all still-supported target systems (Linux distributions). The most common resources are the actual binaries, shared library dependencies, icons and other graphics and of course one or more desktop files for desktop integration.
 
-This doesn't mean an AppImage must not use resources provided by the system, like for example basic libraries that can be assumed to be part of every target system (e.g., the C standard library or graphics libraries), user interface themes or the like. See the  `excludelist <https://github.com/AppImage/pkg2appimage/blob/master/excludelist>`_ for a list of the libraries we consider to currently be part of each still-supported target system (distribution).
+This doesn't mean an AppImage must not use resources provided by the system, like for example basic libraries that can be assumed to be part of every target system (e.g., the C standard library or graphics libraries), user interface themes or the like. See the  `excludelist <https://github.com/AppImage/pkg2appimage/blob/master/excludelist>`__ for a list of the libraries we consider to currently be part of each still-supported target system (distribution).
 
 
 .. _build-on-old-systems:
@@ -49,7 +49,7 @@ Applications should be built on the oldest possible system, allowing them to run
 
 It may seem contradictory to :ref:`the previous section <no-external-dependencies>` to rely on distribution provided resources. This is a trade-off between trying to reduce redundancies while at the same time being as self-contained as possible.
 
-In some cases, including the libraries might even break the AppImage on the target system. Those libraries involve, among others, hardware dependent libraries such as graphics card drivers provided libraries (e.g., :code:`libGL.so.1`, (`source <https://github.com/AppImage/pkg2appimage/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\#L38-L41>`_)), or libraries that are build and linked differently on different distributions (e.g., :code:`libharfbuzz.so.0` and :code:`libfreetype.so.6` (`source <https://github.com/AppImage/pkg2appimage/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\#L98-L102>`_).
+In some cases, including the libraries might even break the AppImage on the target system. Those libraries involve, among others, hardware dependent libraries such as graphics card drivers provided libraries (e.g., :code:`libGL.so.1`, (`source <https://github.com/AppImage/pkg2appimage/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\#L38-L41>`__)), or libraries that are build and linked differently on different distributions (e.g., :code:`libharfbuzz.so.0` and :code:`libfreetype.so.6` (`source <https://github.com/AppImage/pkg2appimage/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\#L98-L102>`__).
 
 The list of libraries that can resp. have to be excluded, the so-called :ref:`excludelist <excludelist>`, is carefully curated by the AppImage team, and is regularly updated.
 

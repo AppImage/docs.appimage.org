@@ -14,7 +14,7 @@ Desktop files
 
 A central component of the Linux desktop, so-called *desktop entries* (or, colloquially, *desktop files*) are also relevant for AppImage desktop integration. Every AppImage ships with such a file in its :ref:`AppDir <ref-appdir>`.
 
-The FreeDesktop_ project maintains the so-called `Desktop Entry Specification`_. Desktop Entry files are `INI <https://en.wikipedia.org/wiki/INI_file>`_-style text documents containing key-value pairs, one per line. The file is structured in multiple sections, most notably the :code:`[Desktop Entry]`, where the main information goes into. There's a set of mandatory and optional keys to be set in these documents, and there may be additional sections.
+The FreeDesktop_ project maintains the so-called `Desktop Entry Specification`_. Desktop Entry files are `INI <https://en.wikipedia.org/wiki/INI_file>`__-style text documents containing key-value pairs, one per line. The file is structured in multiple sections, most notably the :code:`[Desktop Entry]`, where the main information goes into. There's a set of mandatory and optional keys to be set in these documents, and there may be additional sections.
 
 .. _FreeDesktop: https://www.freedesktop.org/
 .. _Desktop Entry Specification: https://specifications.freedesktop.org/desktop-entry-spec/latest/

@@ -20,7 +20,7 @@ AppImage project
 AppImageKit
 -----------
 
-`AppImageKit <https://github.com/AppImage/AppImageKit>`_ is the reference implementation of the :ref:`AppImage specification <appimage-specification>`. It is split up into several components, which are described in this subsection.
+`AppImageKit <https://github.com/AppImage/AppImageKit>`__ is the reference implementation of the :ref:`AppImage specification <appimage-specification>`. It is split up into several components, which are described in this subsection.
 
 
 .. _ref-runtime:
@@ -42,7 +42,7 @@ appimagetool is the easiest way to create AppImages from existing directories on
 
 appimagetool implements all optional features, like for instance :ref:`update information <update-information>`, :ref:`signing <signing>`, and some linting options to make sure the information in the AppImage is valid (for instance, it can validate :ref:`AppStream files <appstream-support>`).
 
-**Download:** You can get it as an AppImage from https://github.com/AppImage/AppImageKit/releases/continuous. 
+**Download:** You can get it as an AppImage from https://github.com/AppImage/AppImageKit/releases/continuous.
 
 
 AppRun
@@ -108,7 +108,7 @@ The project consists of two tools: :code:`appimageupdatetool`, a full-featured C
 appimaged
 ---------
 
-`appimaged <https://github.com/AppImage/appimaged>`_ is a daemon that monitors a predefined set of directories on the system, looking for AppImages. It automatically integrates all AppImages it can find during an initial search, and then live watches for new AppImage (or AppImages that were removed) and (de)integrates these immediately.
+`appimaged <https://github.com/AppImage/appimaged>`__ is a daemon that monitors a predefined set of directories on the system, looking for AppImages. It automatically integrates all AppImages it can find during an initial search, and then live watches for new AppImage (or AppImages that were removed) and (de)integrates these immediately.
 
 It is shipped in a few native distribution package formats as well as as AppImage.
 
@@ -142,7 +142,7 @@ linuxdeploy
 
 linuxdeploy_ is a simple yet flexible, plugins-based to use tool that can be used to create AppDirs and AppImages. It has been developed in 2018, and describes itself as an "AppDir creation and maintenance tool".
 
-linuxdeploy is planned to succeed of :ref:`linuxdeployqt`, and can be used in all projects that use :ref:`linuxdeployqt`. The list of plugins is continually growing, providing solutions for bundling frameworks such as `Qt <https://github.com/linuxdeploy/linuxdeploy-plugin-qt>`_ as well as complete environments for non-native programming languages such as `Python <https://github.com/linuxdeploy/linuxdeploy-plugin-conda>`_.
+linuxdeploy is planned to succeed of :ref:`linuxdeployqt`, and can be used in all projects that use :ref:`linuxdeployqt`. The list of plugins is continually growing, providing solutions for bundling frameworks such as `Qt <https://github.com/linuxdeploy/linuxdeploy-plugin-qt>`__ as well as complete environments for non-native programming languages such as `Python <https://github.com/linuxdeploy/linuxdeploy-plugin-conda>`__.
 
 .. _linuxdeploy: https://github.com/linuxdeploy/linuxdeploy
 

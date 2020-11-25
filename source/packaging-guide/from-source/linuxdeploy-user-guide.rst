@@ -11,7 +11,7 @@ This page illustrates how linuxdeploy can be used.
 
 linuxdeploy is capable of packaging dependencies of resources in an existing AppDir, or creating the AppDir from scratch, bundling resources into the right locations that the user passes to it.
 
-linuxdeploy describes itself as an `"AppDir maintenance tool" <https://github.com/linuxdeploy/linuxdeploy/blob/master/README.md>`_. Its primary focus is on AppDirs, and it uses plugins to create output formats such as AppImages.
+linuxdeploy describes itself as an `"AppDir maintenance tool" <https://github.com/linuxdeploy/linuxdeploy/blob/master/README.md>`__. Its primary focus is on AppDirs, and it uses plugins to create output formats such as AppImages.
 
 
 .. contents:: Contents
@@ -49,7 +49,7 @@ linuxdeploy provides different flags to bundle different kinds of resources. Onl
    Bundle a desktop file into the AppDir. These are required for desktop integration, and there must always be at least one of them in the AppDir. Please see :ref:`creating-desktop-file` for a guide how they can be created, and for best practices related to AppImages.
 
 ``--icon``/``-i``
-   Bundle icon file. Supported are all formats which the `Icon Theme Specification <https://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html>`_ lists. linuxdeploy will automatically calculate the right output path, which depends on file format and resolution. You can specify multiple icons for multiple resolutions in the form of ``<resolution>/<app_name>.<ext>``.
+   Bundle icon file. Supported are all formats which the `Icon Theme Specification <https://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html>`__ lists. linuxdeploy will automatically calculate the right output path, which depends on file format and resolution. You can specify multiple icons for multiple resolutions in the form of ``<resolution>/<app_name>.<ext>``.
 
 .. |rpath-comment| replace:: Set up everything so that other libraries, executables etc. use this one instead of a system one.
 

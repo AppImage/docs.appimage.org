@@ -101,7 +101,7 @@ AppImages are standalone bundles, and do not need to be *installed*. However, so
 appimaged
 *********
 
-`appimaged <https://github.com/AppImage/appimaged>`_ is a daemon that monitors the system and integrates AppImages. It monitors a predefined set of directories on the user's system searching for AppImages, and integrates them into the system using :ref:`libappimage`.
+`appimaged <https://github.com/AppImage/appimaged>`__ is a daemon that monitors the system and integrates AppImages. It monitors a predefined set of directories on the user's system searching for AppImages, and integrates them into the system using :ref:`libappimage`.
 
 .. seealso::
    More information on appimaged can be found in :ref:`appimaged`.

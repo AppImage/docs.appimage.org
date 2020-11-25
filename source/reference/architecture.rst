@@ -19,7 +19,7 @@ An AppImage consists of two parts: a *runtime* and a *file system image*. For th
 .. figure:: /_static/img/reference/architecture-overview.svg
    :align: center
 
-   AppImage file structure. Copyright © `@TheAssassin <https://github.com/TheAssassin>`_ 2019. Licensed under CC-By-SA Intl 4.0.
+   AppImage file structure. Copyright © `@TheAssassin <https://github.com/TheAssassin>`__ 2019. Licensed under CC-By-SA Intl 4.0.
 
 What happens when an AppImage is run is that the operating system runs the AppImage as an executable. The runtime, the executable part, tries to mount the file system image using :ref:`FUSE <ref-fuse>`. If that succeeds, the :ref:`AppDir <ref-appdir>` is available in a :ref:`temporary mountpoint <ref-temporary-mountpoint>`, and can be used like a read-only directory.
 

@@ -76,5 +76,5 @@ The type 2 AppImage runtime makes a few environment variables available for use 
 
    Scenarios where :code:`ARGV0` is really useful involve so-called multi-binary AppImages, where the filename
    in :code:`ARGV0` defines which program is called inside the AppImage. This concept is also known from
-   single-binary tools like `BusyBox <https://en.wikipedia.org/wiki/BusyBox>`_, and can be implemented in a custom
+   single-binary tools like `BusyBox <https://en.wikipedia.org/wiki/BusyBox>`__, and can be implemented in a custom
    :code:`AppRun` script (see :ref:`Architecture <ref-architecture>` for more information).
