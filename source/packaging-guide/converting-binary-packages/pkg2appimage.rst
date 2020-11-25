@@ -283,7 +283,7 @@ The :code:`script` section may contain arbitrary shell commands that are require
 
 
 The script section needs to copy ingredients into place
-######################################################
+#######################################################
 
 If :code:`.deb` packages, Debian repositories or PPAs have been specified in the :code:`ingredients` section, then their dependencies are resolved automatically (taking a blacklist of packages that are assumed to be present on all target systems in a recent enough version into account, such as glibc) and the packages are extracted into an AppDir. The shell commands contained in the :code:`script` section are executed inside the root directory of this AppDir. However, some packages place things in non-standard locations, i.e. the main executable is outside of :code:`usr/bin`. In these cases, the commands contained in the :code:`script` section should normalize the file system structure. Sometimes it is also necessary to edit further files to reflect the changed file location. The following example illustrates this:
 
