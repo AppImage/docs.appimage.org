@@ -1,13 +1,9 @@
 wheel
 sphinx>=3.3.0
-
-# need to wait for new release to be made after #897 has been merged
-# in the meantime, we can use the merge commit as a target
-#sphinx_rtd_theme
-
-git+https://github.com/readthedocs/sphinx_rtd_theme#1d85625
+sphinx_rtd_theme
 sphinx-autobuild
 sphinx_git
 #sphinx-reredirects
 sphinxext-rediraffe
+# will only work once a new release is made after sphinx-rtd-theme 0.5.0
 sphinx-last-updated-by-git
