@@ -3,11 +3,11 @@
 Packaging native binaries
 =========================
 
-The most easy packaging methods are available for *native binaries*, like e.g., produced when compiling C++ or C code. Native binaries have a well defined and reliable behavior to find their runtime dependencies, the so-called shared libraries. These are the primary dependencies you will have to ship with your application. Of course, some applications might require additional resources, e.g., icon files. Also, some applications try to load libraries dynamically during the runtime. But for now, let's assume we have a basic binary application (this is the most common type).
+The easiest packaging methods are available for *native binaries*, like e.g., produced when compiling C++ or C code. Native binaries have a well defined and reliable behavior to find their runtime dependencies, the so-called shared libraries. These are the primary dependencies you will have to ship with your application. Of course, some applications might require additional resources, e.g., icon files. Also, some applications try to load libraries dynamically during the runtime. But for now, let's assume we have a basic binary application (this is the most common type).
 
 The AppImage team provides tools that simplify the packaging process significantly. These tools are semi-automatic, and ship with various features needed to bundle said shared library dependencies correctly. The one we are going to use in this guide is linuxdeploy_.
 
-.. _linuxdeploy: https://github.com/linuxdeploy/linuxdeploy
+.. _linuxdeploy: https://github.com/linuxdeploy
 
 linuxdeploy is an AppDir maintenance tool. Its primary focus is on AppDirs, AppImage is just one possible output format. It features a plugin system for greater flexibility in use. Plugins can either bundle additional resources for e.g., frameworks such as `Qt <https://github.com/linuxdeploy/linuxdeploy-plugin-qt>`__, but are also used to provide output generators, e.g., for `AppImages <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`__.
 
@@ -152,7 +152,7 @@ Example:
 You can bundle additional resources such as icon files, executable and desktop files using the respective flags described in the ``--help`` text or on linuxdeploy's `homepage <https://github.com/linuxdeploy/linuxdeploy>`__.
 
 .. note::
-   Desktop file and icon are used for so-called :ref:`desktop integration <ref-desktop-integration>`. If your build system didn't install such files into the right location, you can have linuxdeploy put your own files into the right places. Please see :ref:`linuxdeploy-bundle-desktop-files-icons` for more information.
+   Desktop file and icon are used for so-called :ref:`desktop integration <ref-desktop-integration>`. If your build system didn't install such files into the right location, you can have linuxdeploy put your own files into the right places. Please see :ref:`ref-linuxdeploy-bundle-manually` for more information.
 
 
 .. _ref-package-existing-binaries:
@@ -183,7 +183,7 @@ As mentioned previously, linuxdeploy provides a plugin system. So-called "input"
 Please see :ref:`linuxdeploy-input-plugins` for more information.
 
 
-.. _linuxdeploy-plugin-appimage-user-guide:
+.. _ref-linuxdeploy-plugin-appimage-user-guide:
 
 Build AppImages from AppDir using linuxdeploy
 ---------------------------------------------

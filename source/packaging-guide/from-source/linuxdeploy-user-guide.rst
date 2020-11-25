@@ -23,14 +23,15 @@ linuxdeploy describes itself as an `"AppDir maintenance tool" <https://github.co
 Packaging dependencies of files in an existing AppDir
 +++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Sometimes, the build system can be used to :ref:`install resources into an AppDir-like structure`. If this so-called "install configuration" is feature complete, i.e., all the resources an AppImage needs (a binary, an icon and a desktop file), all linuxdeploy has to do is bundle the dependencies of these files.
+Sometimes, the build system can be used to install resources into an :ref:`AppDir <ref-appdir>`-like structure. If this so-called "install configuration" is feature complete, i.e., all the resources an AppImage needs (a binary, an icon and a desktop file), all linuxdeploy has to do is bundle the dependencies of these files.
 
 This workflow is described in :ref:`ref-make-install-workflow`.
 
 In case some of the required files described above are *not* installed by ``make install``, you can instruct linuxdeploy to bundle these resources manually. Please see the next section for more information.
 
 
-.. _linuxdeploy-package-manually:
+.. _ref-linuxdeploy-bundle-manually:
+.. _ref-linuxdeploy-package-manually:
 
 Packaging binaries and other resources manually
 ++++++++++++++++++++++++++++++++++++++++++++++++
@@ -58,7 +59,7 @@ The following example illustrates how an existing binary can be bundled into an 
 .. code::bash
 
 
-.. _linuxdeploy-plugin-system:
+.. _ref-linuxdeploy-plugin-system:
 
 Plugin system
 +++++++++++++
@@ -88,7 +89,7 @@ You can use the ``--list-plugins`` flag to see what plugins are visible to linux
 .. _plugin specification: https://github.com/linuxdeploy/linuxdeploy/wiki/Plugin-system
 
 
-.. _linuxdeploy-input-plugins:
+.. _ref-linuxdeploy-input-plugins:
 
 Using input plugins
 '''''''''''''''''''
@@ -108,7 +109,7 @@ This causes linuxdeploy to call a plugin called ``qt``, if available.
 .. _linuxdeploy wiki: https://github.com/linuxdeploy/linuxdeploy/wiki/
 
 
-.. _linuxdeploy-input-plugins-environment-variables:
+.. _ref-linuxdeploy-input-plugins-environment-variables:
 
 Using environment variables to change plugins' behavior
 *******************************************************
@@ -163,3 +164,14 @@ Users can use environment variables to :ref:`change input plugins' behavior <lin
 .. todo::
 
    Document environment variables of existing output plugins
+
+
+
+.. _ref-linuxdeploy-iterative-workflow:
+
+Iterative workflow
+++++++++++++++++++
+
+.. todo::
+
+   This section is missing. Please consider adding it by filing a pull request against our `repository <https://github.com/AppImage/docs.appimage.org>`__.

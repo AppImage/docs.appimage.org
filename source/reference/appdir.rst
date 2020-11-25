@@ -1,6 +1,6 @@
-.. _ref-appdir-specification:
-.. TODO: create page on AppDir concept and move label there
+.. TODO: create extra page on AppDir concept and move label there
 
+.. _ref-appdir-specification:
 .. _ref-appdir:
 
 AppDir specification
@@ -22,6 +22,9 @@ The AppDir format has first been described by `ROX Filer`_, and has since been e
 .. _ROX Filer: http://rox.sourceforge.net/desktop/AppDirs.html
 
 
+
+.. _ref-diricon:
+
 General description
 -------------------
 
@@ -29,8 +32,6 @@ As the name intends, AppDirs are normal directories with some special contents. 
 
 ``AppRun``
    A file (executable, script, etc.) or symlink, serving as the "entry point" for a specific application. It is located in the root directory that makes up an AppDir, so it can be used to calculate paths relative to the (later mounted) AppDir.
-
-.. _ref-diricon:
 
 ``.DirIcon``
    PNG icon located in the root directory. Can be used by e.g., thumbnailers, to display application icons rather than a generic filetype symbol. Should be in one of the standard image sizes, e.g., 128x128 or 256x256 pixels.

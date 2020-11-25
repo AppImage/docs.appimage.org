@@ -81,9 +81,9 @@ Note that the number `123456` is just an example here, you will likely see anoth
 Extract the contents of an AppImage
 ***********************************
 
-An alternative to mounting the AppImages is to extract their contents. This allows for modifying the contents. The resulting directory is a valid :ref:`AppDir`, and users can create AppImages from them again using :ref:`ref-appimagetool`.
+An alternative to mounting the AppImages is to extract their contents. This allows for modifying the contents. The resulting directory is a valid :ref:`AppDir <ref-appdir>`, and users can create AppImages from them again using :ref:`ref-appimagetool`.
 
-Analog to mounting AppImages, there is a simple commandline switch to extract the contents of type 2 AppImages without external tools. Just call the AppImage with the parameter :code:`--appimage-extract`. This will cause the :ref:`ref-runtime` to create a new directory called :code:`squashfs-root`, containing the contents of the AppImage's :ref:`ref-appdir`.
+Analog to mounting AppImages, there is a simple commandline switch to extract the contents of type 2 AppImages without external tools. Just call the AppImage with the parameter :code:`--appimage-extract`. This will cause the :ref:`ref-runtime` to create a new directory called :code:`squashfs-root`, containing the contents of the AppImage's :ref:`AppDir <ref-appdir>`.
 
 Type 1 AppImages require the deprecated tool AppImageExtract_ to extract the contents of an AppImage. It's very limited functionality wise, and requires a GUI to run. It creates a new directory in the user's desktop directory.
 
@@ -102,7 +102,7 @@ AppImages are standalone bundles, and do not need to be *installed*. However, so
 appimaged
 *********
 
-`appimaged <https://github.com/AppImage/appimaged>`__ is a daemon that monitors the system and integrates AppImages. It monitors a predefined set of directories on the user's system searching for AppImages, and integrates them into the system using :ref:`libappimage`.
+`appimaged <https://github.com/AppImage/appimaged>`__ is a daemon that monitors the system and integrates AppImages. It monitors a predefined set of directories on the user's system searching for AppImages, and integrates them into the system using :ref:`libappimage <ref-libappimage>`.
 
 .. seealso::
    More information on appimaged can be found in :ref:`appimaged`.

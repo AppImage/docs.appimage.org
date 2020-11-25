@@ -35,7 +35,7 @@ The author of an AppImage needs to decide for which target systems (Linux distri
 
 To be able to run on any Linux distribution, an AppImage should bundle all the resources it needs at runtime that cannot be reasonably expected to be "there" in the default installation of all still-supported target systems (Linux distributions). The most common resources are the actual binaries, shared library dependencies, icons and other graphics and of course one or more desktop files for desktop integration.
 
-This doesn't mean an AppImage must not use resources provided by the system, like for example basic libraries that can be assumed to be part of every target system (e.g., the C standard library or graphics libraries), user interface themes or the like. See the  `excludelist <https://github.com/AppImage/pkg2appimage/blob/master/excludelist>`__ for a list of the libraries we consider to currently be part of each still-supported target system (distribution).
+This doesn't mean an AppImage must not use resources provided by the system, like for example basic libraries that can be assumed to be part of every target system (e.g., the C standard library or graphics libraries), user interface themes or the like. See the `excludelist <https://github.com/AppImage/pkg2appimage/blob/master/excludelist>`__ for a list of the libraries we consider to currently be part of each still-supported target system (distribution).
 
 
 .. _build-on-old-systems:
@@ -51,7 +51,7 @@ It may seem contradictory to :ref:`the previous section <no-external-dependencie
 
 In some cases, including the libraries might even break the AppImage on the target system. Those libraries involve, among others, hardware dependent libraries such as graphics card drivers provided libraries (e.g., :code:`libGL.so.1`, (`source <https://github.com/AppImage/pkg2appimage/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\#L38-L41>`__)), or libraries that are build and linked differently on different distributions (e.g., :code:`libharfbuzz.so.0` and :code:`libfreetype.so.6` (`source <https://github.com/AppImage/pkg2appimage/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\#L98-L102>`__).
 
-The list of libraries that can resp. have to be excluded, the so-called :ref:`excludelist <excludelist>`, is carefully curated by the AppImage team, and is regularly updated.
+The list of libraries that can resp. have to be excluded, the so-called `excludelist <https://github.com/AppImage/pkg2appimage/blob/master/excludelist>`__, is carefully curated by the AppImage team, and is regularly updated.
 
 .. _zlib: https://zlib.net/
 .. _GLib: https://developer.gnome.org/glib/
@@ -70,6 +70,6 @@ Being designed as a standard with a reference implementation allows users to imp
 AppDirs
 -------
 
-The term *AppDir* refers to an application directory. These directories are the "source" of AppImages. When :ref:`appimagetool` builds an AppImage, it creates a read-only image of such a directory, prepends the :ref:`runtime`, and marks the file executable.
+The term *AppDir* refers to an application directory. These directories are the "source" of AppImages. When :ref:`ref-appimagetool` builds an AppImage, it creates a read-only image of such a directory, prepends the :ref:`ref-runtime`, and marks the file executable.
 
-The AppDir format is described in the :ref:`appdir-description`.
+The AppDir format is described in the :ref:`ref-appdir-specification`.

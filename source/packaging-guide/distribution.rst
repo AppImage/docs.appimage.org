@@ -30,13 +30,13 @@ We recommend that you put the AppImage for Linux on your project's download page
 For open source projects, if your project is located on GitHub, we recommend that you publish your AppImage in addition on `GitHub Releases`_.
 
 .. note::
-   For :ref:`AppImageUpdate` to work properly, it is required that the web server supports HTTP range requests. Most web hosts support this, as the same technology is used for navigating an MP3 files, for example.
+   For :ref:`AppImageUpdate <ref-appimageupdate>` to work properly, it is required that the web server supports HTTP range requests. Most web hosts support this, as the same technology is used for navigating an MP3 files, for example.
 
    Some hosted services are known not to support range requests right now. These involve:
 
       - `Gitlab releases <https://gitlab.com>`_
 
-   If you use such a service and wish to use :ref:`AppImageUpdate` with it, please ask the providers to enable range requests.
+   If you use such a service and wish to use :ref:`AppImageUpdate <ref-appimageupdate>` with it, please ask the providers to enable range requests.
 
 .. _GitHub Releases: https://help.github.com/en/articles/creating-releases/
 

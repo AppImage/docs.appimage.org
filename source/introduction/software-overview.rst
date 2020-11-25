@@ -38,9 +38,9 @@ The runtime provides the "executable header" of every AppImage. When executing a
 appimagetool
 ^^^^^^^^^^^^
 
-appimagetool is the easiest way to create AppImages from existing directories on the system, the so-called :ref:`AppDirs <AppDir>`. It creates the AppImage by embedding the runtime, and creating and appending the filesystem image.
+appimagetool is the easiest way to create AppImages from existing directories on the system, the so-called :ref:`AppDirs <ref-appdir>`. It creates the AppImage by embedding the :ref:`runtime <ref-runtime>`, and creating and appending the filesystem image.
 
-appimagetool implements all optional features, like for instance :ref:`update information <update-information>`, :ref:`signing <signing>`, and some linting options to make sure the information in the AppImage is valid (for instance, it can validate :ref:`AppStream files <appstream-support>`).
+appimagetool implements all optional features, like for instance `update information <https://github.com/AppImage/AppImageSpec/blob/master/draft.md#update-information>`__, :ref:`signing <ref-signing>`, and some linting options to make sure the information in the AppImage is valid (for instance, it can validate :ref:`AppStream files <appstream-support>`).
 
 **Download:** You can get it as an AppImage from https://github.com/AppImage/AppImageKit/releases/continuous.
 
@@ -48,16 +48,16 @@ appimagetool implements all optional features, like for instance :ref:`update in
 AppRun
 ^^^^^^
 
-Every AppImage's AppDir must contain a file called :code:`AppRun`, providing the "entry point". When running the AppImage, the :ref:`runtime` executes the :code:`AppRun` file within the :ref:`AppDir`.
+Every AppImage's AppDir must contain a file called :code:`AppRun`, providing the "entry point". When running the AppImage, the :ref:`runtime <ref-runtime>` executes the :code:`AppRun` file within the :ref:`AppDir <ref-appdir>`.
 
-:code:`AppRun` doesn't necessarily have to be a regular file. If the application is :ref:`relocatable <relocatable-apps>`, it can just be a symlink to the main binary. Tools like :ref:`linuxdeploy` can turn applications into relocatable applications, and therefore create such a symlink.
+:code:`AppRun` doesn't necessarily have to be a regular file. If the application is :ref:`relocatable <relocatable-apps>`, it can just be a symlink to the main binary. Tools like :ref:`ref-linuxdeploy` can turn applications into relocatable applications, and therefore create such a symlink.
 
-In some cases, though, when an existing application must not be altered (e.g., when the license prohibits any modifications) or tools like linuxdeploy cannot be used, AppImageKit's :code:`AppRun.c` can be used. :code:`AppRun.c` attempts to make programs load bundled shared libraries instead of system ones by manipulating environment variable. Furthermore, it attempts to prevent warnings users might encounter that are coming from the fact the :ref:`AppDir` is mounted read-only.
+In some cases, though, when an existing application must not be altered (e.g., when the license prohibits any modifications) or tools like linuxdeploy cannot be used, AppImageKit's :code:`AppRun.c` can be used. :code:`AppRun.c` attempts to make programs load bundled shared libraries instead of system ones by manipulating environment variable. Furthermore, it attempts to prevent warnings users might encounter that are coming from the fact the :ref:`AppDir <ref-appdir>` is mounted read-only.
 
-Using :code:`AppRun.c` is not a guarantee that an application will run, and the packager must provide all the resources an application could need manually (or by using external tools) before creating the AppImage with :ref:`appimagetool`. :code:`AppRun` force-changes the current working directory, and therefore applications can not detect where the AppImage was called originally. This may be especially annoying for CLI tools, but can also be a problem for GUI applications expecting paths via parameters.
+Using :code:`AppRun.c` is not a guarantee that an application will run, and the packager must provide all the resources an application could need manually (or by using external tools) before creating the AppImage with :ref:`appimagetool <ref-appimagetool>`. :code:`AppRun` force-changes the current working directory, and therefore applications can not detect where the AppImage was called originally. This may be especially annoying for CLI tools, but can also be a problem for GUI applications expecting paths via parameters.
 
 .. note::
-   :code:`AppRun.c`, the binary from AppImageKit, is legacy technology and should be avoided if possible. Tools like :ref:`linuxdeploy` deploy applications in a different way (they are smart enough so that a simple symlink called :code:`AppRun` to the main binary works just fine), and made using :code:`AppRun.c` obsolete in most cases.
+   :code:`AppRun.c`, the binary from AppImageKit, is legacy technology and should be avoided if possible. Tools like :ref:`linuxdeploy <ref-linuxdeploy>` deploy applications in a different way (they are smart enough so that a simple symlink called :code:`AppRun` to the main binary works just fine), and made using :code:`AppRun.c` obsolete in most cases.
 
    There are some edge cases where :code:`AppRun.c` is still in use, and there it might be useful. However, it suffers from many limitations and requires some workarounds (which require troublesome mechanisms, such as e.g., force-changing current working directory, as described in this section), which can cause a lot of trouble while trying to debug an AppImage. Please beware of these before thinking about using :code:`AppRun.c` in your AppImage.
 
@@ -123,12 +123,13 @@ Third-party tools
 
 This section showcases a couple of third-party tools that can be used to create and handle AppImage files.
 
+
+.. _ref-linuxdeployqt:
+
 linuxdeployqt
 -------------
 
-linuxdeployqt_ is a simple Qt-based command line tool that can be used to create AppDirs and AppImages. It is based on the similar macdeployqt tool that comes with Qt. It can be used to produce AppDirs and AppImages for C, C++, and Qt/QML applications, as well as applications written in other compiled languages.
-
-.. _linuxdeployqt: https://github.com/probonopd/linuxdeployqt
+`linuxdeployqt <https://github.com/probonopd/linuxdeployqt>`__ is a simple Qt-based command line tool that can be used to create AppDirs and AppImages. It is based on the similar macdeployqt tool that comes with Qt. It can be used to produce AppDirs and AppImages for C, C++, and Qt/QML applications, as well as applications written in other compiled languages.
 
 .. seealso::
 
@@ -142,7 +143,7 @@ linuxdeploy
 
 linuxdeploy_ is a simple yet flexible, plugins-based to use tool that can be used to create AppDirs and AppImages. It has been developed in 2018, and describes itself as an "AppDir creation and maintenance tool".
 
-linuxdeploy is planned to succeed of :ref:`linuxdeployqt`, and can be used in all projects that use :ref:`linuxdeployqt`. The list of plugins is continually growing, providing solutions for bundling frameworks such as `Qt <https://github.com/linuxdeploy/linuxdeploy-plugin-qt>`__ as well as complete environments for non-native programming languages such as `Python <https://github.com/linuxdeploy/linuxdeploy-plugin-conda>`__.
+linuxdeploy is planned to succeed of :ref:`linuxdeployqt <ref-linuxdeployqt>`, and can be used in all projects that use :ref:`linuxdeployqt <ref-linuxdeployqt>`. The list of plugins is continually growing, providing solutions for bundling frameworks such as `Qt <https://github.com/linuxdeploy/linuxdeploy-plugin-qt>`__ as well as complete environments for non-native programming languages such as `Python <https://github.com/linuxdeploy/linuxdeploy-plugin-conda>`__.
 
 .. _linuxdeploy: https://github.com/linuxdeploy/linuxdeploy
 
@@ -169,7 +170,7 @@ Quoting the README:
 
     -- https://github.com/TheAssassin/AppImageLauncher/blob/master/README.md
 
-AppImageLauncher doesn't provide any kind of "app store" software, but integrates into system-provided launchers' context menus. It provides tools for updating (based on :ref:`AppImageUpdate`) and removing AppImages.
+AppImageLauncher doesn't provide any kind of "app store" software, but integrates into system-provided launchers' context menus. It provides tools for updating (based on :ref:`AppImageUpdate <ref-appimageupdate>`) and removing AppImages.
 
 .. _AppImageLauncher: https://github.com/TheAssassin/AppImageLauncher
 

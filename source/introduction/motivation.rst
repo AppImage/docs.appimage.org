@@ -44,6 +44,6 @@ This can be accomplished using traditional tarballs that contain all the librari
 
 In order to improve the usability and reduce the maintenance effort, AppImage was created. AppImages are bundles of programs, their dependency libraries and all the resources they need during the runtime. They're single binaries, following the ":ref:`one app = one file <one-app-one-file-principle>`" core principle.
 
-Making AppImages is very simple for a developer. There's tools which generate an AppImage from a so-called :ref:`AppDir`. There's simple tools to create such an AppDir for an existing software, which are aware of potential cross distro incompatibilities, and try to avoid them. And once the AppImage has been built, it will "just run" on all major desktop distributions.
+Making AppImages is very simple for a developer. There's tools which generate an AppImage from a so-called :ref:`AppDir <ref-appdir>`. There's simple tools to create such an AppDir for an existing software, which are aware of potential cross distro incompatibilities, and try to avoid them. And once the AppImage has been built, it will "just run" on all major desktop distributions.
 
 Stop making binaries "for distributions" and start making binaries "for Linux" today!
