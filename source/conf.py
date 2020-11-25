@@ -46,6 +46,7 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.githubpages',
     'sphinxext.rediraffe',
+    'sphinx_last_updated_by_git',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
