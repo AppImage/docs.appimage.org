@@ -18,15 +18,15 @@ steps:
     - name: ws
       path: /ws
   commands:
-    - apk add --no-cache git make
+    - apk add --no-cache git make bash
     - cd /ws
     - git clone https://github.com/AppImage/docs.appimage.org.git .
     - pip install -r requirements.txt
     - make clean html epub
-    # TODO: insert link on front page
     - epub_filename=AppImage-documentation-git"$(date +%Y%m%d)"."$(git rev-parse --short HEAD)".epub
     - mkdir -p build/html/download
     - cp build/epub/AppImage.epub build/html/download/"$epub_filename"
+    - bash -xe ci/embed-epub-link.sh "$epub_filename"
 
 - name: Deploy
   image: drillster/drone-rsync
