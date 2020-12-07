@@ -89,7 +89,7 @@ If you run into errors like this::
 
 then the binary is compiled on a newer system than the one you are trying to run it on. You should use a binary that has been compiled on an older system. Unfortunately, the complication is that distributions usually compile the latest versions of applications only on the latest systems, which means that you will have a hard time finding binaries of bleeding-edge software that runs on older systems. A way around this is to compile dependencies yourself on a not too recent base system, and/or to use LibcWrapGenerator_ or glibc_version_header_ or bingcc_.
 
-When producing AppImages for the Subsurface project, I have had very good results by using **CentOS 6**. This distribution is not too recent (current major CentOS version minus 1) while there are still the most recent Qt and modern compilers for it in the EPEL_ and devtools-2_ (the community equivalent of the Red Hat Developer Toolset 2) repositories. When using it for compilation, I found the resulting binaries to run on a wide variety of systems, including **debian oldstable** (wheezy).
+When producing AppImages for the Subsurface project, we have had very good results by using **CentOS 7**, which is the oldest still-supported Linux distribution at the time of writing. This distribution is not too recent. However, there are still the most recent Qt and modern compilers available in the EPEL_ and devtools-2_ repositories (the community equivalent of the Red Hat Developer Toolset 2). Binaries built on this distribution run on nearly any distribution, including **Debian oldstable**.
 
 Be sure to check https://github.com/AppImage/pkg2appimage, this is how I build and host my AppImages and the build systems to produce them in the cloud using travis-ci, docker, docker-hub, and bintray. Especially check the recipes for Subsurface and Scribus.
 
@@ -115,4 +115,4 @@ libstdc++.so.6
 --------------
 
 .. note::
-	**As a general rule of thumb, please use no libstdc++.so.6 newer than the one that comes with the oldest distribution that you still want to support, i.e., the oldest still-supported LTS version** (at the time of this writing, Ubuntu 14.04).
+	**As a general rule of thumb, please use no libstdc++.so.6 newer than the one that comes with the oldest distribution that you still want to support, i.e., the oldest still-supported LTS version of Ubuntu** (at the time of writing, this is Ubuntu 16.04 (EOL in April 2021)).
