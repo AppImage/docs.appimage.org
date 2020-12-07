@@ -1,6 +1,10 @@
 AppImage docs
 =============
 
+.. image:: https://drone.assassinate-you.net/api/badges/AppImage/docs.appimage.org/status.svg
+   :alt: Build status
+   :target: https://drone.assassinate-you.net/AppImage/docs.appimage.org
+
 This repository is the home of the AppImage project's documentation.
 It is the central source of information for users of AppImage (both
 users and developers).
