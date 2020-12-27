@@ -13,7 +13,7 @@ help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 watch:
-	sphinx-autobuild "$(SOURCEDIR)" "$(BUILDDIR)" --ignore "*__jb*__*"
+	sphinx-autobuild "$(SOURCEDIR)" "$(BUILDDIR)"/autobuild --ignore "*__jb*__*"
 
 .PHONY: help Makefile watch
 
