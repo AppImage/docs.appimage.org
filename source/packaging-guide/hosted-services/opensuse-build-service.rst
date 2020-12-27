@@ -241,7 +241,7 @@ you can add multiple items in the sections.
 Inspecting the results
 ----------------------
 
-Be sure to download the resulting AppImage from OBS and test it on your target system(s). It is recommended to test at least on the oldest still-supported Ubuntu LTS, the recent Ubuntu, the oldest still-supported openSUSE Leap, possibly he latest openSUSE Tumbleweed, CentOS 7, and the latest Fedora release (although you may to choose to support different target systems).
+Be sure to download the resulting AppImage from OBS and test it on your target system(s). It is recommended to test at least on the oldest still-supported Ubuntu LTS, the recent Ubuntu, the oldest still-supported openSUSE Leap, possibly the latest openSUSE Tumbleweed, CentOS 7, and the latest Fedora release (although you may to choose to support different target systems).
 
 
 Working examples
@@ -257,6 +257,7 @@ Feel free to put yours here, too.
 * https://build.opensuse.org/package/view_file/home:pbek:QOwnNotes/desktop/appimage.yml?expand=1
 * https://build.opensuse.org/package/view_file/home:pbartfai/LDView/_service:extract_file:appimage.yml?expand=1
 * https://build.opensuse.org/package/view_file/home:lachs0r:taisei/taisei/appimage.yml?expand=1
+* https://github.com/orschiro/dslli/blob/master/show_state.yml
 
 
 Continuous builds with GitHub and OBS
