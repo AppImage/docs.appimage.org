@@ -258,6 +258,7 @@ Feel free to put yours here, too.
 * https://build.opensuse.org/package/view_file/home:pbartfai/LDView/_service:extract_file:appimage.yml?expand=1
 * https://build.opensuse.org/package/view_file/home:lachs0r:taisei/taisei/appimage.yml?expand=1
 * https://github.com/orschiro/dslli/blob/master/show_state.yml
+* https://build.opensuse.org/package/view_file/home:cecilios/lenmus-appimage/appimage.yml?expand=1
 
 
 Continuous builds with GitHub and OBS
