@@ -108,15 +108,15 @@ The project consists of two tools: :code:`appimageupdatetool`, a full-featured C
 appimaged
 ---------
 
-`appimaged <https://github.com/AppImage/appimaged>`__ is a daemon that monitors a predefined set of directories on the system, looking for AppImages. It automatically integrates all AppImages it can find during an initial search, and then live watches for new AppImage (or AppImages that were removed) and (de)integrates these immediately.
+`appimaged <https://github.com/probonopd/go-appimage/releases>`__ is a daemon that monitors a predefined set of directories on the system, looking for AppImages. It automatically integrates all AppImages it can find during an initial search, and then live watches for new AppImage (or AppImages that were removed) and (de)integrates these immediately.
 
-It is shipped in a few native distribution package formats as well as as AppImage.
+It is shipped as an AppImage.
 
 .. warning::
 
    One of the monitored directories is ``~/Downloads``. If the directory is very large, appimaged usually needs quite long to visit all files. It is likely to slow down the system (specifically, the filesystem).
 
-**Download:** You can get it as an AppImage from https://github.com/AppImage/appimaged/releases/continuous. 
+**Download:** You can get it as an AppImage from https://github.com/probonopd/go-appimage/releases. 
 
 Third-party tools
 *****************
