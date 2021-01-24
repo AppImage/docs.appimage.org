@@ -1,3 +1,5 @@
+.. _ref-convert-existing-binary-packages:
+
 Converting binary packages
 ==========================
 

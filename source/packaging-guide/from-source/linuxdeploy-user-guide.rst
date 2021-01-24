@@ -47,7 +47,7 @@ linuxdeploy provides different flags to bundle different kinds of resources. Onl
    Bundle a shared library (:code:`.so` file) into the AppDir. |rpath-comment|
 
 ``--desktop-file``/``-d``
-   Bundle a desktop file into the AppDir. These are required for desktop integration, and there must always be at least one of them in the AppDir. Please see :ref:`creating-desktop-file` for a guide how they can be created, and for best practices related to AppImages.
+   Bundle a desktop file into the AppDir. These are required for desktop integration, and there must always be at least one of them in the AppDir. Please see :ref:`ref-desktop-integration` for a guide how they can be created, and for best practices related to AppImages.
 
 ``--icon``/``-i``
    Bundle icon file. Supported are all formats which the `Icon Theme Specification <https://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html>`__ lists. linuxdeploy will automatically calculate the right output path, which depends on file format and resolution. You can specify multiple icons for multiple resolutions in the form of ``<resolution>/<app_name>.<ext>``.
@@ -144,13 +144,13 @@ Example:
 
    > ./linuxdeploy-x86_64.AppImage <...> --output appimage
 
-Most users are interested in generating AppImages, therefore the AppImage plugin is bundled in the official linuxdeploy AppImage. Please see the :ref:`plugin's user guide <linuxdeploy-plugin-appimage-user-guide>` for more information.
+Most users are interested in generating AppImages, therefore the AppImage plugin is bundled in the official linuxdeploy AppImage. Please see the :ref:`plugin's user guide <ref-linuxdeploy-plugin-appimage-user-guide>` for more information.
 
 
 Using environment variables to change plugins' behavior
 *******************************************************
 
-Users can use environment variables to :ref:`change input plugins' behavior <linuxdeploy-input-plugins-environment-variables>` or enable additional features. Output plugins use the same method to provide similar functionality. Just set an environment variable *before* calling linuxdeploy with the respective plugin enabled. For example:
+Users can use environment variables to :ref:`change input plugins' behavior <ref-linuxdeploy-input-plugins-environment-variables>` or enable additional features. Output plugins use the same method to provide similar functionality. Just set an environment variable *before* calling linuxdeploy with the respective plugin enabled. For example:
 
 .. code:: bash
 
