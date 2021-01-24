@@ -9,7 +9,7 @@ The AppImage team provides tools that simplify the packaging process significant
 
 .. _linuxdeploy: https://github.com/linuxdeploy
 
-linuxdeploy is an AppDir maintenance tool. Its primary focus is on AppDirs, AppImage is just one possible output format. It features a plugin system for greater flexibility in use. Plugins can either bundle additional resources for e.g., frameworks such as `Qt <https://github.com/linuxdeploy/linuxdeploy-plugin-qt>`__, but are also used to provide output generators, e.g., for `AppImages <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`__.
+linuxdeploy is an AppDir maintenance tool. Its primary focus is on AppDirs, AppImage is just one possible output format. It features a plugin system for greater flexibility in use. Plugins can either bundle additional resources for e.g., frameworks such as `Qt <https://github.com/linuxdeploy/linuxdeploy-plugin-qt>`__, toolkits such as `GTK <https://github.com/linuxdeploy/linuxdeploy-plugin-gtk>`__, but are also used to provide output generators, e.g., for `AppImages <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`__.
 
 
 .. contents:: Contents
@@ -270,4 +270,3 @@ The scripts introduced in the previous subsections will move the files back into
 .. seealso::
 
    Please see the :ref:`ref-travis-ci` section in the :ref:`ref-hosted-services` section for more information on Travis CI. It also contains a guide on :ref:`uploadtool <ref-uploadtool>`.
-
