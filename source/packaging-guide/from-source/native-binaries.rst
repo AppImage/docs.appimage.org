@@ -9,7 +9,7 @@ The AppImage team provides tools that simplify the packaging process significant
 
 .. _linuxdeploy: https://github.com/linuxdeploy
 
-linuxdeploy is an AppDir maintenance tool. Its primary focus is on AppDirs, AppImage is just one possible output format. It features a plugin system for greater flexibility in use. Plugins can either bundle additional resources for e.g., frameworks such as `Qt <https://github.com/linuxdeploy/linuxdeploy-plugin-qt>`__, but are also used to provide output generators, e.g., for `AppImages <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`__.
+linuxdeploy is an AppDir maintenance tool. Its primary focus is on AppDirs, AppImage is just one possible output format. It features a plugin system for greater flexibility in use. Plugins can either bundle additional resources for e.g., frameworks such as `Qt <https://github.com/linuxdeploy/linuxdeploy-plugin-qt>`__, toolkits such as `GTK <https://github.com/linuxdeploy/linuxdeploy-plugin-gtk>`__, but are also used to provide output generators, e.g., for `AppImages <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`__.
 
 
 .. contents:: Contents
@@ -162,7 +162,7 @@ Packaging existing binaries (or: manually packaging everything)
 
 Packaging existing binaries is very simple as well. As the existing binaries don't provide facilities to :ref:`create a basic AppDir with the build system <ref-make-install-workflow>`, you have to package everything into the right place manually.
 
-Luckily, linuxdeploy supports such a workflow as well. It provides functionalities to automatically put the most common resources an application might use (such as binaries, libraries, desktop files and icons) into the right places without having the user to create any sort of structure or know where to put files. This is described in :ref:`linuxdeploy-package-manually`.
+Luckily, linuxdeploy supports such a workflow as well. It provides functionalities to automatically put the most common resources an application might use (such as binaries, libraries, desktop files and icons) into the right places without having the user to create any sort of structure or know where to put files. This is described in :ref:`ref-linuxdeploy-package-manually`.
 
 .. note::
    Many applications require more resources during runtime than just the binaries and libraries. Often, they require graphics for drawing a UI, or other files that are normally in a "known good location" on the system. These resources should be bundled into the AppImage as well to make sure the AppImage is as standalone as possible. However, linuxdeploy cannot know which files to bundle.
@@ -180,7 +180,7 @@ Bundling additional resources using linuxdeploy plugins
 
 As mentioned previously, linuxdeploy provides a plugin system. So-called "input" plugins can be used to bundle additional resources, such as Qt plugins, translations, etc.
 
-Please see :ref:`linuxdeploy-input-plugins` for more information.
+Please see :ref:`ref-linuxdeploy-input-plugins` for more information.
 
 
 .. _ref-linuxdeploy-plugin-appimage-user-guide:
@@ -270,4 +270,3 @@ The scripts introduced in the previous subsections will move the files back into
 .. seealso::
 
    Please see the :ref:`ref-travis-ci` section in the :ref:`ref-hosted-services` section for more information on Travis CI. It also contains a guide on :ref:`uploadtool <ref-uploadtool>`.
-
