@@ -103,7 +103,7 @@ Input plugins can simply be switched on using the ``--plugin`` flag. For example
 This causes linuxdeploy to call a plugin called ``qt``, if available.
 
 .. note::
-   An list of plugins can be found in the `Awesome linuxdeploy README`_.
+   A list of plugins can be found in the `Awesome linuxdeploy README`_.
 
 .. _Awesome linuxdeploy README: https://github.com/linuxdeploy/awesome-linuxdeploy#linuxdeploy-plugins
 
