@@ -5,7 +5,7 @@ The AppImage ecosystem is built around the notion of "upstream packaging". With 
 
 AppimageKit is designed with “upstream packaging” in mind. This means that we want the original author of an application to be the person that packages it as an AppImage, distributes it to end users, and supports it.
 
-In this regard, if image is very similar to an :code:`.exe` file on Windows or a :code:`.dmg` file on the Mac. These files are normally prepared by the original application authors rather than by third parties. This ensures that the software works exactly the way the original application author has envisioned it to work. It also means that the application author does not have to follow arbitrary rules set by Linux distributions.
+In this regard, an AppImage is very similar to an :code:`.exe` file on Windows or a :code:`.dmg` file on the Mac. These files are normally prepared by the original application authors rather than by third parties. This ensures that the software works exactly the way the original application author has envisioned it to work. It also means that the application author does not have to follow arbitrary rules set by Linux distributions.
 
 .. note::
 
@@ -20,7 +20,7 @@ In this regard, if image is very similar to an :code:`.exe` file on Windows or a
 Advantages
 ----------
 
-Upstream packaging has a lot of advantages:  first and foremost, it allows the application author to control the entire user experience from how the user gets the application to how it works. it also allows the original author of an application to support the application since no unauthorised changes or made to it by third parties. For end-users, it is clear that the original application author is who is responsible for fixing bugs come out as there is no shared responsibility between the application author and the third party, e.g. a Linux distribution, that has distributed the application.
+Upstream packaging has a lot of advantages:  first and foremost, it allows the application author to control the entire user experience from how the user gets the application to how it works. It also allows the original author of an application to support the application since no unauthorised changes are made to it by third parties. For end-users, it is clear that the original application author is who is responsible for fixing bugs as there is no shared responsibility between the application author and the third party, e.g. a Linux distribution, that has distributed the application.
 
 
 Disadvantages
@@ -32,7 +32,7 @@ However, upstream packaging also has disadvantages:  most prominently, there is 
 If upstream packaging is not possible
 -------------------------------------
 
-In some cases, the original application author or application team may not be interested in providing an official AppImage. In this case you have the following options: For open source projects, you can often make and send a pull request, and for closed source applications you can create a yml recipe that can be used to convert the existing Linux binaries into an AppImage using :ref:`pkg2appimage <ref-pkg2appimage>`.
+In some cases, the original application author or application team may not be interested in providing an official AppImage. In this case you have the following options: for open source projects, you can often make and send a pull request, and for closed source applications you can create a yml recipe that can be used to convert the existing Linux binaries into an AppImage using :ref:`pkg2appimage <ref-pkg2appimage>`.
 
 
 Open source projects
@@ -46,6 +46,6 @@ Many open source projects already use continuous integration on systems such as 
 Closed source applications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For closed source applications you can create a yml recipe that can be used to convert the existing Linux binaries into an AppImage using :ref:`pkg2appimage <ref-pkg2appimage>`).
+For closed source applications you can create a yml recipe that can be used to convert the existing Linux binaries into an AppImage using :ref:`pkg2appimage <ref-pkg2appimage>`.
 
 Note that you may not be allowed to redistribute the AppImage of the application. In this case, you can distribute :code:`.yml` recipes that end users can use to produce their own AppImages of the application easily. This applies to applications such as Google Chrome, Spotify, Skype, and others.
