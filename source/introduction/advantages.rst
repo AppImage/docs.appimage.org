@@ -20,7 +20,7 @@ So-called "rolling release" distributions exist that provide latest versions of 
 
 The combination of a long-term stable base operating system with the latest applications delivered in AppImage format can provide an elegant solution to this dilemma. While the base operating system can stay stable and only change every few years, users can download and run the very latest applications whenever they appear.
 
-AppImage also makes it easy to try out new versions of applications. Since versions can exist alongside each other, the user can simply download a new version of an application and try it out. If the new version proves to be superior, the user that can then delete the old version and work with the new one. However, should the new version have bugs or be otherwise unusable, the user can simply delete the new version and continue using the old version. This is also very useful for testing nightly or continuous builds and for giving feedback to the application development team.
+AppImage also makes it easy to try out new versions of applications. Since versions can exist alongside each other, the user can simply download a new version of an application and try it out. If the new version proves to be superior, the user can then delete the old version and work with the new one. However, should the new version have bugs or be otherwise unusable, the user can simply delete the new version and continue using the old version. This is also very useful for testing nightly or continuous builds and for giving feedback to the application development team.
 
 
 Advantages for system administrators
