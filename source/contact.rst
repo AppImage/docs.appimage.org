@@ -11,7 +11,16 @@ This page outlines how you can contact the team behind AppImage, e.g., to get ad
 IRC
 ---
 
-If you have further questions, please feel free to contact the AppImage team. The easiest and fastest way is to join our `IRC channel #appimage <irc://chat.freenode.net/appimage>`__ on `Freenode <https://freenode.net>`__ (`webchat <https://webchat.freenode.net/?channels=appimage>`__).
+If you have further questions, please feel free to contact the AppImage team. The easiest and fastest way is to join our `IRC channel #appimage <ircs://irc.libera.chat/appimage>`__ on `Libera.Chat <https://libera.chat>`__.
+
+.. warning::
+
+   Due to `recent events <https://gist.github.com/joepie91/df80d8d36cd9d1bde46ba018af497409/>`__, AppImage's IRC channel has officially been moved from Freenode to Libera.Chat.
+   The old channel is going to be abandoned as soon as `Matrix <https://github.com/matrix-org/matrix-appservice-irc/wiki/Bridged-IRC-networks>`__ fully works on the new network.
+
+..
+   TODO: add new webchat link
+   (`webchat <https://webchat.libera.ch/?channels=appimage>`__).
 
 .. note::
 
