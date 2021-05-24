@@ -212,4 +212,4 @@ todo_include_todos = True
 
 # apply some subtle changes to the selected theme via custom CSS file
 def setup(app):
-    app.add_stylesheet("css/custom.css")
+    app.add_css_file("css/custom.css")

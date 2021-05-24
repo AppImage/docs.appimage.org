@@ -1,5 +1,5 @@
 wheel
-sphinx>=3.3.0
+sphinx>=3.5.0
 sphinx_rtd_theme
 sphinx-autobuild
 sphinx_git
