@@ -22,7 +22,7 @@ import os
 # -- Project information -----------------------------------------------------
 
 project = 'AppImage'
-copyright = '2018-2020, The AppImage project'
+copyright = '2018-2021, The AppImage project'
 author = 'The AppImage project and its contributors'
 
 # The short X.Y version
