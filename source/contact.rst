@@ -18,11 +18,7 @@ If you have further questions, please feel free to contact the AppImage team. Th
    Due to `recent events <https://gist.github.com/joepie91/df80d8d36cd9d1bde46ba018af497409/>`__, AppImage's IRC channel has officially been moved from Freenode to Libera.Chat.
    The old channel is going to be abandoned as soon as `Matrix <https://github.com/matrix-org/matrix-appservice-irc/wiki/Bridged-IRC-networks>`__ fully works on the new network.
 
-..
-   TODO: add new webchat link
-   (`webchat <https://webchat.libera.ch/?channels=appimage>`__).
-
-.. note::
+Webchat link: https://web.libera.chat/#AppImage
 
    Please beware that it might take a few minutes/hours until someone will check the chat and might be able to help you, so don't give up too quickly, and leave e.g., the tab open in the background if you can. You can also try at other times again. Please read `this article <https://workaround.org/getting-help-on-irc/>`__ before joining the IRC chat if you are new to IRC.
 
