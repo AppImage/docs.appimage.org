@@ -101,7 +101,7 @@ Now, add yourself to the related group in order to authorize yourself for using 
 Setting up FUSE on Clear Linux OS
 *********************************
 
-On Clear Linux OS, FUSE _should_ be enabled by default. However, if you see the error message mentioned before nevertheless, you can try the following trick:
+On Clear Linux OS, FUSE *should* be enabled by default. However, if you see the error message mentioned before nevertheless, you can try the following trick:
 
 .. code-block:: shell
 
