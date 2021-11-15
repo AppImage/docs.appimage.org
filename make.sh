@@ -18,8 +18,10 @@ source "$VENV"/bin/activate
 # this snippet should allow us to call pip install only if the requirements file has been touched
 if [ ! -f "$VENV"/requirements.txt ] || [ "$(sha256sum requirements.txt | cut -d' ' -f1)" != "$(sha256sum "$VENV"/requirements.txt | cut -d' ' -f1)" ]; then
     echo "$(tput bold)$(tput setaf 2)Requirements updated, reinstalling$(tput sgr0)"
+    pip install -U -r requirements.txt
+
+    # we want to make sure the installation works before copying the file
     cp requirements.txt "$VENV"/requirements.txt
-    pip install -U -r "$VENV"/requirements.txt
 fi
 
 make "$@"
