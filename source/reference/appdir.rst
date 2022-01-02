@@ -44,7 +44,7 @@ These two entries have been re-used from `ROX Filer`_'s specification. `ROX File
 .. _root-icon:
 
 ``myapp.<icon ext>`` (e.g., ``myapp.png``, ``myapp.svg``)
-   Application's icon in the best available quality, ideally a vector graphic. Can be a symlink to subdirectories such as ``usr/share/icons/hicolor/...``. In most cases, :ref:`ref-diricon` is a symlink to this file. The filename must be equal to what is set in the ``Icon=`` entry in the desktop file. It is recommended by AppImage and also the XDG icon specifications to use a lower-case filename which is equal to the desktop file's name.
+   Application's icon in the best available quality, ideally a vector graphic. Can be a symlink to subdirectories such as ``usr/share/icons/hicolor/...``. In most cases, :ref:`.DirIcon <ref-diricon>` is a symlink to this file. The filename must be equal to what is set in the ``Icon=`` entry in the desktop file. It is recommended by AppImage and also the XDG icon specifications to use a lower-case filename which is equal to the desktop file's name.
 
    .. note::
       The ``Icon=`` entry |should not| contain the file extension, the actual file's filename however |should| carry the extension.
