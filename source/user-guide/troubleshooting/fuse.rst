@@ -48,7 +48,7 @@ Setting up FUSE on Ubuntu, Debian and their derivatives
 
 Install the required package::
 
-  > sudo apt-get install fuse
+  > sudo apt-get install fuse libfuse2
 
 Now, FUSE should be working. On some older distributions, you will have to run some additional configuration steps:
 
