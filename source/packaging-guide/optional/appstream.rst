@@ -27,7 +27,10 @@ So if you would like your application to show a nice screenshot in app centers, 
 Using the AppStream generator
 -----------------------------
 
-An easy way to generate an AppStream metainfo file is to use the online generator at http://output.jsbin.com/qoqukof.
+An easy way to generate an AppStream metainfo file is to use our generator below.
+
+.. raw:: html
+   :file: appstream-generator.html
 
 
 Embedding the AppStream metadata
