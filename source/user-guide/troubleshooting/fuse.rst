@@ -35,7 +35,7 @@ In this case, FUSE is not properly set up on your system. You will have to :ref:
 How to install FUSE
 -------------------
 
-Most Linux distributions come with a functional FUSE setup. However, if it is not working for you, you may have to install and configure FUSE yourself.
+Most Linux distributions come with a functional FUSE 2.x setup. However, if it is not working for you, you may have to install and configure FUSE 2.y yourself.
 
 The process of installing FUSE highly differs from distribution to distribution. This section shows how to install FUSE on the most common distributions.
 
@@ -43,8 +43,8 @@ The process of installing FUSE highly differs from distribution to distribution.
    If your distribution is not listed, please ask the distribution developers for instructions.
 
 
-Setting up FUSE on Ubuntu, Debian and their derivatives
-*******************************************************
+Setting up FUSE 2.x on Ubuntu, Debian and their derivatives
+***********************************************************
 
 Install the required package::
 
