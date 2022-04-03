@@ -64,12 +64,12 @@ Then, add the required group (should be created by the install command, if this 
 .. include:: notes/user-group-modifications.rst
 
 
-Setting up FUSE on openSUSE
-***************************
+Setting up FUSE 2.x on openSUSE
+*******************************
 
 Install the required package::
 
-  > sudo zypper install fuse
+  > sudo zypper install fuse libfuse2
 
 FUSE should now be working.
 
