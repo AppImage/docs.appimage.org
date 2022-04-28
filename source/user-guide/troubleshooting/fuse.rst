@@ -47,11 +47,11 @@ Setting up FUSE 2.x on Ubuntu (pre-22.04), Debian and their derivatives
 ***********************************************************************
 
 .. warning::
-    This is valid only for distributions **not having** `fuse3` installed by default.  
+    This is valid only for distributions **not having** ``fuse3`` installed by default.  
     
-    To be sure, enter `dpkg -l|grep fuse3`  
+    To be sure, enter ``dpkg -l|grep fuse3``  
     
-    If you see a line starting with `ii  fuse3`, please refer to the next section.
+    If you see a line starting with ``ii  fuse3``, please refer to the next section.
 
 Install the required packages::
 
@@ -74,11 +74,11 @@ Setting up FUSE 2.x alongside of FUSE 3.x on recent Ubuntu (>=22.04), Debian and
 **************************************************************************************************
 
 .. warning::
-    This is valid only for recent distributions **having** `fuse3` installed by default.  
+    This is valid only for recent distributions **having** ``fuse3`` installed by default.  
     
-    To be sure, enter `dpkg -l|grep fuse3`  
+    To be sure, enter ``dpkg -l|grep fuse3``  
     
-    If you see a line starting with `ii  fuse3`, be sure **not to install** the `fuse` package which would remove packages very important for your system.  
+    If you see a line starting with ``ii  fuse3``, be sure **not to install** the ``fuse`` package which would remove packages very important for your system.  
 
 Install the required package::
 
