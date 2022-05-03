@@ -43,15 +43,16 @@ The process of installing FUSE highly differs from distribution to distribution.
    If your distribution is not listed, please ask the distribution developers for instructions.
 
 
+.. _ref-ug-troubleshooting-fuse-fuse2:
+
 Setting up FUSE 2.x on Ubuntu (pre-22.04), Debian and their derivatives
 ***********************************************************************
 
 .. warning::
-    This is valid only for distributions **not having** ``fuse3`` installed by default.  
-    
-    To be sure, enter ``dpkg -l|grep fuse3``  
-    
-    If you see a line starting with ``ii  fuse3``, please refer to the next section.
+
+   This is valid only for distributions *not* having ``fuse3`` installed by default. To be sure, check whether the :code:`fuse3` package is installed, e.g., by running :code:`dpkg -l | grep fuse3` in the terminal and checking for a line starting with :code:`ii  fuse3`.
+
+   If your distribution is using :code:`fuse3`, please refer to the :ref:`next section <ref-ug-troubleshooting-fuse-fuse3>`.
 
 Install the required packages::
 
@@ -70,15 +71,17 @@ Then, add the required group (should be created by the install command, if this 
 
 .. include:: notes/user-group-modifications.rst
 
+
+.. _ref-ug-troubleshooting-fuse-fuse3:
+
 Setting up FUSE 2.x alongside of FUSE 3.x on recent Ubuntu (>=22.04), Debian and their derivatives 
 **************************************************************************************************
 
 .. warning::
-    This is valid only for recent distributions **having** ``fuse3`` installed by default.  
-    
-    To be sure, enter ``dpkg -l|grep fuse3``  
-    
-    If you see a line starting with ``ii  fuse3``, be sure **not to install** the ``fuse`` package which would remove packages very important for your system.  
+
+   This is valid only for very recent (as of April 2022) distributions having :code:`fuse3` installed by default. To be sure, check whether the :code:`fuse3` package is installed, e.g., by running :code:`dpkg -l | grep fuse3` in the terminal and checking for a line starting with :code:`ii  fuse3` (if there is none, your distribution is not using :code:`fuse3`).
+
+   If your distribution is not using :code:`fuse3`, please refer to the :ref:`previous section <ref-ug-troubleshooting-fuse-fuse2>`.
 
 Install the required package::
 
