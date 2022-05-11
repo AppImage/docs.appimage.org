@@ -49,7 +49,7 @@ linuxdeploy provides different flags to bundle different kinds of resources. Onl
 ``--desktop-file``/``-d``
    Bundle a desktop file into the AppDir. These are required for desktop integration, and there must always be at least one of them in the AppDir. Please see :ref:`ref-desktop-integration` for a guide how they can be created, and for best practices related to AppImages.
 
-``--icon``/``-i``
+``--icon-file``/``-i``
    Bundle icon file. Supported are all formats which the `Icon Theme Specification <https://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html>`__ lists. linuxdeploy will automatically calculate the right output path, which depends on file format and resolution. You can specify multiple icons for multiple resolutions in the form of ``<resolution>/<app_name>.<ext>``.
 
 .. |rpath-comment| replace:: Set up everything so that other libraries, executables etc. use this one instead of a system one.
@@ -57,6 +57,8 @@ linuxdeploy provides different flags to bundle different kinds of resources. Onl
 The following example illustrates how an existing binary can be bundled into an AppDir:
 
 .. code::bash
+
+   > ./linuxdeploy-x86_64.AppImage --appdir AppDir --executable ./foobar <...> --output appimage
 
 
 .. _ref-linuxdeploy-plugin-system:
