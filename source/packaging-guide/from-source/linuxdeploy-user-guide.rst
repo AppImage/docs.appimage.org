@@ -56,7 +56,7 @@ linuxdeploy provides different flags to bundle different kinds of resources. Onl
 
 The following example illustrates how an existing binary can be bundled into an AppDir:
 
-.. code::bash
+.. code:: bash
 
    > ./linuxdeploy-x86_64.AppImage --appdir AppDir --executable ./foobar <...> --output appimage
 
