@@ -115,4 +115,4 @@ libstdc++.so.6
 --------------
 
 .. note::
-	**As a general rule of thumb, please use no libstdc++.so.6 newer than the one that comes with the oldest distribution that you still want to support, i.e., the oldest still-supported LTS version of Ubuntu** (at the time of writing, this is Ubuntu 16.04 (EOL in April 2021)).
+	**As a general rule of thumb, please use no libstdc++.so.6 newer than the one that comes with the oldest distribution that you still want to support, i.e., the oldest still-supported LTS version of Ubuntu**.
