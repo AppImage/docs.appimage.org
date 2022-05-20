@@ -26,7 +26,7 @@ Make it executable and double-click it.
 |question| How can I integrate AppImages with the system?
 ---------------------------------------------------------
 
-Using the optional appimaged daemon, you can easily integrate AppImages with the system. The daemon puts AppImages into the menus, registers MIME types, icons, all on the fly. You can download it from this repository. But it is entirely optional.
+Using the optional appimaged daemon, you can easily integrate AppImages with the system. The daemon puts AppImages into the menus, registers MIME types, icons, all on the fly. You can download it from `this <https://github.com/probonopd/go-appimage/releases/tag/continuous>`_ repository. But it is entirely optional.
 
 
 |question| Where can I download AppImages?
