@@ -7,7 +7,7 @@
 
 .. _home:
 
-Welcome to the AppImage documentation
+به مستندات فارسی اپ ایمیج خوش آمدید
 =====================================
 
 .. centered:: Willkommen • Welcome • 欢迎 • Bienvenue • Benvenuto • Bienvenido • ようこそ • Mabuhay • Välkommen • أهلا وسهلا • Добро пожаловать • Merhaba • Bonvenon • 歡迎光臨 • خوش آمدید
@@ -16,17 +16,17 @@ Welcome to the AppImage documentation
 
 .. seealso::
 
-   .. centered:: **First-time users, heads up!** Check out our :ref:`ref-quickstart` chapter!
+   .. centered:: **کاربر های تازه ورود ، توجه کنید!** از قسمت :ref:`ref-quickstart` ما هم سر بزنید!
 
-In this documentation, all aspects of the AppImage project shall be explained, to have a single unified source of information.
+در این مستندات, تمام جنبه های پروژه اپ ایمیج باید توضیح داده بشوند، تا یک منبع مشترک از اطلاعات داشته باشیم.
 
 .. note::
    .. centered::
-      **This documentation contains a lot of valuable information, but there's always something to add.** `Contributions welcome! <https://github.com/AppImage/docs.appimage.org>`_
+      **این مستندات حاوی اطلاعات ارزشمند زیادی است، اما همیشه چیزی برای اضافه کردن هست.** `پذیرای مشارکت شماییم! <https://github.com/AppImage/docs.appimage.org>`_
       
-If you are new to AppImage, please read the introduction. It describes the ideas behind AppImage, shows the motivation, explains why you as a user and/or developer should be interested in AppImages. Also, it explains the core concepts of AppImage's design.
+اگر شما تازه با اپ ایمیج آشنا شده اید، لطفا مقدمه را بخوانید. مقدمه ایده های پشت اپ ایمیج را شرح میدهد، انگیزه را نشان میدهد، توضیح میدهد چرا شما به  عنوان کاربر و/یا توسعه دهنده باید به اپ ایمیج علاقمند شوید. همچنین، مقدمه مفاهیم اصلی طراحی اپ ایمیج را توضیح میدهد.
 
-To learn more about *using* AppImages, please read the User Guide. If you are interested in building and distributing AppImages or building software that works with AppImages, please check the Packaging Guide.
+برای یادگیری در مورد *استفاده* اپ ایمیج ها, لطفا راهنمای کاربر را بخوانید. اگر شما علاقمند به ساخت و توزیع اپ ایمیج ها یا ساخت برنامه هایی که با اپ ایمیج کار میکنند هستید ، راهنمای ساخت بسته ها را بررسی کنید.
 
 .. toctree::
    introduction/index
