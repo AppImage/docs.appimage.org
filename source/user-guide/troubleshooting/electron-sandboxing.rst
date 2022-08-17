@@ -46,6 +46,11 @@ To permanently enable the feature, it is recommended to create a new file in ``/
 
    This command will take effect only on the next reboot. To change this on a running system, please refer to the :ref:`previous section <ref-electron-sandboxing-configure-temporarily>`.
 
+Allow Electron AppImages to run without unprivileged namespaces
+---------------------------------------------------------------
+
+@gergof made a tool that automatically applies the `--no-sandbox` flag when the `unprivileged_userns_clone` kernel feature is not enabled: https://www.npmjs.com/package/electron-builder-sandbox-fix
+
 
 
 More information on unprivileged namespaces
