@@ -76,7 +76,7 @@ To validate a signature of an an AppImage and to determine whether an AppImage h
     gpg: Good signature from "Testkey" [ultimate]
 
 
-Signature validation can also be integrated into higher level software such as the optional :code:`appimaged` demon and/or :code:`AppImageUpdate`. For example the :code:`appimaged` daemon may decide to run applications without a valid signature in a confined sandbox in the future, if the system is set up accordingly.
+Signature validation can also be integrated into higher level software such as the optional :code:`appimaged` daemon and/or :code:`AppImageUpdate`. For example the :code:`appimaged` daemon may decide to run applications without a valid signature in a confined sandbox in the future, if the system is set up accordingly.
 
 .. todo::
 
