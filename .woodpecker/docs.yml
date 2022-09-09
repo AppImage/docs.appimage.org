@@ -7,6 +7,7 @@ pipeline:
     commands:
       - apk add --no-cache git make bash
       - git clone https://github.com/AppImage/docs.appimage.org.git
+      - cd docs.appimage.org
       - pip install -r requirements.txt
       - make clean html epub
       - epub_filename=AppImage-documentation-git"$(date +%Y%m%d)"."$(git rev-parse --short HEAD)".epub
@@ -25,5 +26,5 @@ pipeline:
         from_secret: ssh_host
       port:
         from_secret: ssh_port
-      source: build/html/
+      source: docs.appimage.org/build/html/
       target: ~/www
