@@ -1,8 +1,12 @@
+# cloning is handled in the build commands
+skip_clone: true
+
 pipeline:
   build:
     image: python:3-alpine
     commands:
       - apk add --no-cache git make bash
+      - git clone https://github.com/AppImage/docs.appimage.org.git
       - pip install -r requirements.txt
       - make clean html epub
       - epub_filename=AppImage-documentation-git"$(date +%Y%m%d)"."$(git rev-parse --short HEAD)".epub
