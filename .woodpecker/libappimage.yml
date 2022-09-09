@@ -1,0 +1,26 @@
+# cloning is handled in the build commands
+skip_clone: true
+
+pipeline:
+  build:
+    image: python:3-alpine
+    commands:
+      - apk add --no-cache git make doxygen gcc musl-dev libxml2-dev libxslt-dev
+      - git clone https://github.com/AppImage/libappimage.git
+      - cd libappimage/docs
+      - pip install -r requirements.txt breathe exhale
+      - make clean html
+
+  deploy:
+    image: drillster/drone-rsync
+    settings:
+      key:
+        from_secret: ssh_key
+      user:
+        from_secret: ssh_user
+      hosts:
+        from_secret: ssh_host
+      port:
+        from_secret: ssh_port
+      source: libappimage/docs/_build/html
+      target: ~/www/api/libappimage/

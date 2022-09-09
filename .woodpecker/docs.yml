@@ -1,0 +1,25 @@
+pipeline:
+  build:
+    image: python:3-alpine
+    commands:
+      - apk add --no-cache git make bash
+      - pip install -r requirements.txt
+      - make clean html epub
+      - epub_filename=AppImage-documentation-git"$(date +%Y%m%d)"."$(git rev-parse --short HEAD)".epub
+      - mkdir -p build/html/download
+      - cp build/epub/AppImage.epub build/html/download/"$epub_filename"
+      - bash -xe ci/embed-epub-link.sh "$epub_filename"
+
+  deploy:
+    image: drillster/drone-rsync
+    settings:
+      key:
+        from_secret: ssh_key
+      user:
+        from_secret: ssh_user
+      hosts:
+        from_secret: ssh_host
+      port:
+        from_secret: ssh_port
+      source: build/html/
+      target: ~/www
