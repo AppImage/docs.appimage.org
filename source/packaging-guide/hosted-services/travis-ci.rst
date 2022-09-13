@@ -39,7 +39,7 @@ For general information on linuxdeploy, see :ref:`ref-linuxdeploy`.
 Uploading the generated AppImage
 --------------------------------
 
-Once an Appimage has been generated, you want to upload it to GitHub Releases. For this, you can use the :code:`upload.sh` script available in the `uploadtool repository on GitHub <https://github.com/probonopd/uploadtool>`__.
+Once an Appimage has been generated, you want to upload it to GitHub Releases. For this, you can use the :code:`upload.sh` script available in the `uploadtool repository`_.
 
 .. note::
 
@@ -52,9 +52,9 @@ Super simple uploading of continuous builds (each push) to GitHub Releases. If t
 Using ``upload.sh``
 ^^^^^^^^^^^^^^^^^^^
 
-The :code:`upload.sh` script in the `uploadtool repository <https://github.com/probonopd/uploadtool>`__ is designed to be called from Travis CI after a successful build. By default, this script will *delete* any pre-existing release tagged with :code:`continuous`, tag the current state with the name :code:`continuous`, create a new release with that name, and upload the specified binaries there. For pull requests, it will upload the binaries to transfer.sh instead and post the resulting download URL to the pull request page on GitHub.
+The :code:`upload.sh` script in the `uploadtool repository`_ is designed to be called from Travis CI after a successful build. By default, this script will *delete* any pre-existing release tagged with :code:`continuous`, tag the current state with the name :code:`continuous`, create a new release with that name, and upload the specified binaries there. For pull requests, it will upload the binaries to transfer.sh instead and post the resulting download URL to the pull request page on GitHub.
 
-.. _uploadtool-github: https://github.com/probonopd/uploadtool
+.. _uploadtool repository: https://github.com/probonopd/uploadtool
 
 - On https://github.com/settings/tokens, click on "Generate new token" and generate a token with at least the :code:`public_repo`, :code:`repo:status`, and :code:`repo_deployment` scopes
 - On Travis CI, go to the settings of your project at :code:`https://travis-ci.org/yourusername/yourrepository/settings`
