@@ -68,6 +68,11 @@ If packaged with electron-builder
 
 One way to inject the update information into the AppImage created with :code:`electron-builder` nevertheless is to extract the AppImage generated with :code:`electron-builder` to an AppDir using the --appimage-extract command line option of the AppImage, and then re-packing it as an AppImage by using :code:`appimagetool -u`.
 
+If packaged with appimage-builder
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Informations can be found on `the appimage-builder documentation <https://appimage-builder.readthedocs.io/en/latest/advanced/updates.html>`__
+
+
 
 Making AppImages self-updateable
 --------------------------------
