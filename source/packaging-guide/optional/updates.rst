@@ -15,8 +15,8 @@ AppImages can be updated:
    :depth: 2
 
 
-Making AppImages updateable via external tools
-----------------------------------------------
+Introduction
+------------
 
 To make an AppImage updateable, you need to embed information that describes where to check for updates and how into the AppImage. Unlike other Linux distribution methods, the information where to look for updates is not contained in separate repository description files such as :code:`sources.list` that need to be managed by the user, but is directly embedded inside the AppImage by the author of the respective AppImage. This has the advantage that the update information always travels alongside the application, so that the end user does not have to do anything special in order to be able to check for updates.
 
@@ -26,6 +26,8 @@ Currently, there is only one backend available to update AppImages : `ZSync2 <ht
 
 .. note:: zsync will not perform any kind of version checking, it will only download the AppImage mentionned in the update information. It doesn't require you to add versions to your AppImages for the updates to work (you should still do it for other purposes)
 
+Making AppImages updateable via external tools
+----------------------------------------------
 
 
 If packaged with appimagetool
