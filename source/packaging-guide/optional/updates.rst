@@ -22,7 +22,7 @@ To make an AppImage updateable, you need to embed information that describes whe
 
 Currently, there is only one backend available to update AppImages : `ZSync2 <https://travis-ci.org/TheAssassin/zsync2/>`__. The tool you use to package the AppImage will also generate a .zsync file if you gave it enough data to do so
 
-.. warning:: The .zsync file contains the filename of the AppImage. This mean that you **should not**, as a packager, rename the .AppImage file after it's creation. Else the update will fail because zsync will look for the original filename of the AppImage you host
+.. warning:: The .zsync file contains the filename of the AppImage. This mean that you **should not**, as a packager, rename the .AppImage file after it's creation. Else the update will fail because zsync will look for the original filename of the AppImage you host. If you want to rename the AppImage, you should use the options of the tool you use to create the AppImage.
 
 
 
