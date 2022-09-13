@@ -24,6 +24,8 @@ Currently, there is only one backend available to update AppImages : `ZSync2 <ht
 
 .. warning:: The .zsync file contains the filename of the AppImage. This mean that you **should not**, as a packager, rename the .AppImage file after it's creation. Else the update will fail because zsync will look for the original filename of the AppImage you host. If you want to rename the AppImage, you should use the options of the tool you use to create the AppImage.
 
+.. note:: zsync will not perform any kind of version checking, it will only download the AppImage mentionned in the update information. It doesn't require you to add versions to your AppImages for the updates to work (you should still do it for other purposes)
+
 
 
 If packaged with appimagetool
