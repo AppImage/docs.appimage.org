@@ -2,7 +2,7 @@
 #
 
 # You can set these variables from the command line.
-SPHINXOPTS    =
+SPHINXOPTS    = -D linkcheck_anchors=
 SPHINXBUILD   = sphinx-build
 SPHINXPROJ    = AppImage
 SOURCEDIR     = source
