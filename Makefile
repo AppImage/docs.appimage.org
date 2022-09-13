@@ -2,7 +2,7 @@
 #
 
 # You can set these variables from the command line.
-SPHINXOPTS    = -D linkcheck_anchors=
+SPHINXOPTS    = -D linkcheck_anchors= # disable anchor checking because sphinx have trouble doing it. See https://github.com/AppImage/docs.appimage.org/pull/83
 SPHINXBUILD   = sphinx-build
 SPHINXPROJ    = AppImage
 SOURCEDIR     = source
