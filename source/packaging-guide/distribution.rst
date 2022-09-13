@@ -86,7 +86,7 @@ You can use a "Download as an AppImage" button alongside other similar buttons:
 
 Link this button directly to the latest version of your AppImage, or to a download page containing the link to the latest version of your AppImage.
 
-Button by `Khushraj Rathod <https://github.com/KhushrajRathod/>`__ under the `CC0 license <https://creativecommons.org/share-your-work/public-domain/cc0/>`_
+Button by `Khushraj Rathod <https://github.com/Khushraj/>`__ under the `CC0 license <https://creativecommons.org/share-your-work/public-domain/cc0/>`_
 
 Social Media
 ''''''''''''
