@@ -27,7 +27,7 @@ Create an AppDir structure that looks (as a minimum) like this::
 	MyApp.AppDir/usr/bin/myapp
 	MyApp.AppDir/usr/lib/libfoo.so.0
 
-The :code:`AppRun` file can be a script or executable. It sets up required environment variables such as :code:`$PATH` and launches the payload application. You can write your own, but in most cases it is easiest (and most error-proof) to use a precompiled one from this repository.
+The :code:`AppRun` file can be a script or executable. It sets up required environment variables such as :code:`$PATH` and launches the payload application. You can write your own, but in most cases it is easiest (and most error-proof) to use a precompiled one from `this repository <https://github.com/AppImage/AppImageBuild>`__.
 
 Of course you can leave out the library if your app does not need one, or if all libraries your app needs are already contained in every base operating system you are targeting.
 
