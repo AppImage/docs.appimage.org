@@ -31,48 +31,7 @@ The :code:`AppRun` file can be a script or executable. It sets up required envir
 
 Of course you can leave out the library if your app does not need one, or if all libraries your app needs are already contained in every base operating system you are targeting.
 
-
-.. _ref-no-hard-coded-paths:
-
-No hard-coded paths
-^^^^^^^^^^^^^^^^^^^
-
-Your binary, myapp, must not contain any hardcoded paths that would prevent it from being relocateable. You can check this by running
-
-.. code-block:: shell
-
-	strings MyApp.AppDir/usr/bin/myapp | grep /usr
-
-Should this return something, then you need to modify your app programmatically (e.g., by using relative paths, using `binreloc <https://github.com/limbahq/binreloc>`__, or using :code:`QString QCoreApplication::applicationDirPath()`).
-
-If you prefer not to change the source code of your app and/or would not like to recompile your app, you can also patch the binary, for example using the command
-
-.. code-block:: shell
-
-    sed -i -e 's#/usr#././#g' MyApp.AppDir/usr/bin/myapp
-
-This usually works as long as the application is not doing a :code:`chdir()` which would break this workaround, because then :code:`././` would not be pointing to :code:`$APPDIR/usr` any more. You can run the following command to see whether the application is doing a :code:`chdir()` (99% of GUI applications don't)
-
-.. code-block:: shell
-
-	strace -echdir -f ./AppRun
-
-Also see:
-	https://www.gnu.org/software/gnulib/manual/html_node/Supporting-Relocation.html
-
-
-It has been a pain for many users of GNU packages for a long time that packages are not relocatable. The relocatable-prog module aims to ease the process of making a GNU program relocatable.
-
-.. note::
-	The same is true for any helper binaries and/or libraries that your app depends on. You check this and patch it with
-
-	.. code-block:: shell
-
-		cd MyApp.AppDir/usr/
-		find . -type f -exec sed -i -e 's#/usr#././#g' {} \;
-		cd -
-
-	which replaces all occurrences of :code:`/usr` with :code:`././`, which simply means "here".
+Important: see the section regarding :ref:`hard-coded absolute paths <ref-binaries-no-abs-paths>`.
 
 myapp.desktop should contain (as a minimum):
 
