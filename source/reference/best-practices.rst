@@ -52,7 +52,9 @@ You can check for hard-coded absolute paths:
 
 	strings MyApp.AppDir/usr/bin/myapp | grep /usr
 
-Should this return something, then you need to modify your app programmatically (e.g., by using relative paths, using `binreloc <https://github.com/limbahq/binreloc>`__, or using :code:`QString QCoreApplication::applicationDirPath()`).
+Should this return something, then you need to modify your app
+programmatically (e.g., by using relative paths, or using
+:code:`QString QCoreApplication::applicationDirPath()`).
 
 If you prefer not to change the source code of your app and/or would not like to recompile your app, you can also patch the binary, for example using the command
 
@@ -83,7 +85,10 @@ It has been a pain for many users of GNU packages for a long time that packages 
 
 	which replaces all occurrences of :code:`/usr` with :code:`././`, which simply means "here".
 
-There are libraries which make this easier, for example `BinReloc`_. Also see `Resourceful`_, a project to study of cross-platform techniques for building applications and libraries that use resource files (e.g. icons, configuration, data).
+There are libraries which make this easier. Also see `Resourceful`_, a
+project to study of cross-platform techniques for building
+applications and libraries that use resource files (e.g. icons,
+configuration, data).
 
 Some application frameworks such as Qt have this functionality built-in, for example in :code:`QString QCoreApplication::applicationDirPath()` (`see documentation`_), and construct a *relative* path to :code:`../share/kaidan/images/` from there.
 
@@ -97,15 +102,12 @@ Some application frameworks such as Qt have this functionality built-in, for exa
 
    According to the `Qt documentation`_, this resolves to :code:`~/.local/share/<APPNAME>`, :code:`/usr/local/share/<APPNAME>`, :code:`/usr/share/<APPNAME>`, but clearly :code:`/usr` is not where these things are located in an AppImage.
 
-..
-  I've added this. Should it be removed?
 
 If for some reason you're unable to get your appimage working with
 relatives paths, you may choose to use getenv() and read the
 :ref:`APPDIR environmental variable <ref-env_vars>` which is set at
 runtime.
 
-.. _BinReloc: https://github.com/limbahq/binreloc
 .. _Resourceful: https://github.com/drbenmorgan/Resourceful
 .. _Qt documentation: https://doc.qt.io/qt-5/qstandardpaths.html
 .. _see documentation: https://doc.qt.io/qt-5/qcoreapplication.html#applicationDirPath

@@ -95,7 +95,15 @@ Mandatory. Contains the name of the application. If the :code:`.yml` file uses i
 Keys that enable ability to relocate
 ####################################
 
-Optional. Either :code:`binpatch: true` or :code:`union: true`. These keys enable workarounds that make it possible to run applications from different, changing places in the file system (i.e., make them relocateable) that are not made for this. For example, some applications contain hardcoded paths to a compile-time :code:`$PREFIX` such as :code:`/usr`. This is generally discouraged, and application authors are asked to use paths relative to the main executable instead. Libraries like *binreloc* exist to make this easier. Since many applications are not relocateable yet, there are workarounds which can be used by one of these keys:
+Optional. Either :code:`binpatch: true` or :code:`union: true`. These
+keys enable workarounds that make it possible to run applications from
+different, changing places in the file system (i.e., make them
+relocateable) that are not made for this. For example, some
+applications contain hardcoded paths to a compile-time :code:`$PREFIX`
+such as :code:`/usr`. This is generally discouraged, and application
+authors are asked to use paths relative to the main executable
+instead. Since many applications are not relocatable yet, there are
+workarounds which can be used by one of these keys:
 
 * :code:`binpatch: true`  indicates that binaries in the AppImage should be patched to replace the string :code:`/usr` by the string :code:`././`,  an :code:`AppRun` file should be put inside the AppImage that does a :code:`chdir()` to the :code:`usr/` directory of inside AppDir before executing the payload application. The net effect is this that applications can find their resources in the  :code:`usr/` directory inside the AppImage as long as they do not internally use :code:`chdir()` operations themselves.
 * :code:`union: true` indicates that an :code:`AppRun` file should be put inside the AppImage that tries to create the impression of a union file system, effectively creating the impression to the payload application that the contents of the AppImage are overlayed over :code:`/`. This can be achieved, e.g., using :code:`LD_PRELOAD` and a library that redirects file system calls. This works as long as the payload application is a dynamically linked binary.
