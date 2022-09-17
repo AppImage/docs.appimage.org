@@ -102,7 +102,7 @@ Some application frameworks such as Qt have this functionality built-in, for exa
 
 If for some reason you're unable to get your appimage working with
 relatives paths, you may choose to use getenv() and read the
-:ref:`APPIMAGE environmental variable <ref-env_vars>` which is set at
+:ref:`APPDIR environmental variable <ref-env_vars>` which is set at
 runtime.
 
 .. _BinReloc: https://github.com/limbahq/binreloc
