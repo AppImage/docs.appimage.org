@@ -102,8 +102,10 @@ Some libraries can help to make relocatable packages:
 
 * `Supporting Relocation
   <https://www.gnu.org/software/gnulib/manual/html_node/Supporting-Relocation.html>`__
-  from the Gnulib manual (Note: The manual only provides instructions
-  for use with autotools or Makefiles)
+  from the Gnulib manual
+
+.. note::
+	The manual only provides instructions for use with automake files
 
 * `Resourceful`_, a project to study of cross-platform techniques for
   building applications and libraries that use resource files (e.g.
@@ -122,6 +124,8 @@ Some libraries can help to make relocatable packages:
 
 	which replaces all occurrences of :code:`/usr` with :code:`././`, which simply means "here".
 
+Other Alternatives
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 If for some reason you're unable to get your appimage working with
 relative paths, you may choose to use getenv() and read the
