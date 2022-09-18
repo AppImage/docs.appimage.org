@@ -68,11 +68,24 @@ If you prefer not to change the source code of your app and/or would not like to
 
     sed -i -e 's#/usr#././#g' MyApp.AppDir/usr/bin/myapp
 
+.. note::
+	:code:`././` simply means "here", and points to :code:`$APPDIR/usr`
+
 This usually works as long as the application is not doing a :code:`chdir()` which would break this workaround, because then :code:`././` would not be pointing to :code:`$APPDIR/usr` any more. You can run the following command to see whether the application is doing a :code:`chdir()` (99% of GUI applications don't)
 
 .. code-block:: shell
 
 	strace -echdir -f ./AppRun
+
+.. note::
+	Paths in helper binaries and/or libraries may also need changing. You check this and patch it with
+
+	.. code-block:: shell
+
+		cd MyApp.AppDir/usr/
+		find . -type f -exec sed -i -e 's#/usr#././#g' {} \;
+		cd -
+
 
 .. _ref-relocation-libraries:
 
@@ -111,18 +124,6 @@ Some libraries can help to make relocatable packages:
   building applications and libraries that use resource files (e.g.
   icons, configuration, data).
 
-
-
-.. note::
-	The same is true for any helper binaries and/or libraries that your app depends on. You check this and patch it with
-
-	.. code-block:: shell
-
-		cd MyApp.AppDir/usr/
-		find . -type f -exec sed -i -e 's#/usr#././#g' {} \;
-		cd -
-
-	which replaces all occurrences of :code:`/usr` with :code:`././`, which simply means "here".
 
 Other Alternatives
 ^^^^^^^^^^^^^^^^^^^^^^^^
