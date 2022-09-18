@@ -43,6 +43,10 @@ relocatable (or make the changes yourself). In some cases, there are
 flags you can specify when building from source to make applications
 relocatable.
 
+.. note::
+	Wherever possible you should change the cource code of the
+	application in order not to use absolute paths.
+
 The canonical way on Linux to construct a relative path is to first
 resolve ``proc/self/exe``, which provides the path to the main
 executable. As a result, it should work both in normal installations
