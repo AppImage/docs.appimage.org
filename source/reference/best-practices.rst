@@ -89,6 +89,17 @@ This usually works as long as the application is not doing a :code:`chdir()` whi
 
 .. _ref-relocation-libraries:
 
+
+Translations
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Often when a package includes translations, :code:`LOCALEDIR` is defined as an absolute path.
+
+.. warning::
+	When testing your appimage, everything may seem fine, but be
+	sure to also test by `changing the language in your environment <https://www.shellhacks.com/linux-define-locale-language-settings/>`__.
+
+
 Relocation Libraries
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
