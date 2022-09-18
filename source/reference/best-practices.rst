@@ -92,7 +92,7 @@ This usually works as long as the application is not doing a :code:`chdir()` whi
 Relocation Libraries
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Some libraries can help to make relocatable packages:
+Some libraries can help make relocatable packages:
 
 * Qt
   For example in :code:`QString
@@ -118,7 +118,8 @@ Some libraries can help to make relocatable packages:
   from the Gnulib manual
 
 .. note::
-	The manual only provides instructions for use with automake files
+	Instructions are for use with automake files and don't cover
+	other build systems
 
 * `Resourceful`_, a project to study of cross-platform techniques for
   building applications and libraries that use resource files (e.g.
