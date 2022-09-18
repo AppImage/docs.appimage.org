@@ -170,9 +170,7 @@ Luckily, linuxdeploy supports such a workflow as well. It provides functionaliti
    Please consult the applications' documentation (e.g., homepage or man pages) to see what kinds of resources must be put into the AppImage. This can involve some trial-and-error, as you need to :ref:`test your AppImages on different systems <ref-testing-appimages>` to find possible errors.
 
 .. warning::
-   In order to be packaged as AppImages, applications must load the resources relative to their main binary, and not from a hardcoded path (usually ``/usr/...``). This is called :ref:`relocatability <ref-relocatablility>`.
-
-   If your app doesn't load resources from the AppImage, but e.g., shows errors it couldn't find resources, it is most likely not relocatable. In this case, you must ask the author of the application to make it relocatable. Many modern frameworks such as Qt even provide functionality to implement this easily. In some cases, there's also flags you can specify when building from source to make applications relocatable.
+	Be sure to review the section regarding :ref:`hard-coded absolute paths <ref-binaries-no-abs-paths>`.
 
 
 Bundling additional resources using linuxdeploy plugins

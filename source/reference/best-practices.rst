@@ -36,8 +36,15 @@ executable. Unfortunately, many applications have absolute paths
 compiled in (:code:`$PREFIX`, most commonly :code:`/usr`) at compile
 time.
 
+If your app doesn't load resources from the AppImage, but e.g., shows
+errors it couldn't find resources, it is most likely not relocatable.
+In this case, you must ask the author of the application to make it
+relocatable (or make the changes yourself). In some cases, there are
+flags you can specify when building from source to make applications
+relocatable.
+
 The canonical way on Linux to construct a relative path is to first
-resolve ``proc/self/exe``. That provides the path to the main
+resolve ``proc/self/exe``, which provides the path to the main
 executable. As a result, it should work both in normal installations
 and in relocatable installations such as AppImages.
 

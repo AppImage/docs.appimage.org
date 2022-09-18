@@ -31,7 +31,8 @@ The :code:`AppRun` file can be a script or executable. It sets up required envir
 
 Of course you can leave out the library if your app does not need one, or if all libraries your app needs are already contained in every base operating system you are targeting.
 
-Important: see the section regarding :ref:`hard-coded absolute paths <ref-binaries-no-abs-paths>`.
+.. warning::
+	Be sure to review the section regarding :ref:`hard-coded absolute paths <ref-binaries-no-abs-paths>`.
 
 myapp.desktop should contain (as a minimum):
 
