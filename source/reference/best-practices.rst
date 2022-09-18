@@ -53,8 +53,7 @@ You can check for hard-coded absolute paths:
 	strings MyApp.AppDir/usr/bin/myapp | grep /usr
 
 Should this return something, then you need to modify your app
-programmatically (e.g., by using relative paths, or using
-:code:`QString QCoreApplication::applicationDirPath()`).
+programmatically (e.g., by using relative paths, or a :ref:`library <ref-relocation-libraries>`).
 
 If you prefer not to change the source code of your app and/or would not like to recompile your app, you can also patch the binary, for example using the command
 
@@ -68,11 +67,42 @@ This usually works as long as the application is not doing a :code:`chdir()` whi
 
 	strace -echdir -f ./AppRun
 
-Also see:
-	https://www.gnu.org/software/gnulib/manual/html_node/Supporting-Relocation.html
+.. _ref-relocation-libraries:
+
+Relocation Libraries
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Some libraries can help to make relocatable packages:
+
+* Qt
+  For example in :code:`QString
+  QCoreApplication::applicationDirPath()` (`see documentation`_), and
+  construct a *relative* path to :code:`../share/kaidan/images/` from
+  there.
+
+.. seealso::
+  https://github.com/KaidanIM/Kaidan/commit/da38011b55a1aa5d17764647ecd699deb4be437f
+
+.. warning::
+
+   :code:`QStandardPaths::standardLocations(QStandardPaths::AppDataLocation)` **does not work reliably.**
+
+   According to the `Qt documentation`_, this resolves to
+   :code:`~/.local/share/<APPNAME>`,
+   :code:`/usr/local/share/<APPNAME>`, :code:`/usr/share/<APPNAME>`,
+   but clearly :code:`/usr` is not where these things are located in
+   an AppImage.
+
+* `Supporting Relocation
+  <https://www.gnu.org/software/gnulib/manual/html_node/Supporting-Relocation.html>`__
+  from the Gnulib manual (Note: The manual only provides instructions
+  for use with autotools or Makefiles)
+
+* `Resourceful`_, a project to study of cross-platform techniques for
+  building applications and libraries that use resource files (e.g.
+  icons, configuration, data).
 
 
-It has been a pain for many users of GNU packages for a long time that packages are not relocatable. The relocatable-prog module aims to ease the process of making a GNU program relocatable.
 
 .. note::
 	The same is true for any helper binaries and/or libraries that your app depends on. You check this and patch it with
@@ -85,26 +115,9 @@ It has been a pain for many users of GNU packages for a long time that packages 
 
 	which replaces all occurrences of :code:`/usr` with :code:`././`, which simply means "here".
 
-There are libraries which make this easier. Also see `Resourceful`_, a
-project to study of cross-platform techniques for building
-applications and libraries that use resource files (e.g. icons,
-configuration, data).
-
-Some application frameworks such as Qt have this functionality built-in, for example in :code:`QString QCoreApplication::applicationDirPath()` (`see documentation`_), and construct a *relative* path to :code:`../share/kaidan/images/` from there.
-
-.. seealso::
-
-   For an example, see: https://github.com/KaidanIM/Kaidan/commit/da38011b55a1aa5d17764647ecd699deb4be437f
-
-.. warning::
-
-   :code:`QStandardPaths::standardLocations(QStandardPaths::AppDataLocation)` **does not work reliably.**
-
-   According to the `Qt documentation`_, this resolves to :code:`~/.local/share/<APPNAME>`, :code:`/usr/local/share/<APPNAME>`, :code:`/usr/share/<APPNAME>`, but clearly :code:`/usr` is not where these things are located in an AppImage.
-
 
 If for some reason you're unable to get your appimage working with
-relatives paths, you may choose to use getenv() and read the
+relative paths, you may choose to use getenv() and read the
 :ref:`APPDIR environmental variable <ref-env_vars>` which is set at
 runtime.
 
