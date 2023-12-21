@@ -96,7 +96,7 @@ Be sure to check https://github.com/AppImage/pkg2appimage, this is how I build a
 See https://github.com/AppImage/AppImageKit/wiki/Docker-Hub-Travis-CI-Workflow for a description on how to set up a workflow involving your GitHub repository, Docker Hub, and Travis CI for a fully automated continuous build workflow.
 
 You could also consider to link some exotic libraries statically. Yes, even Debian does that:
-https://lintian.debian.org/tags/embedded-library.html
+https://wiki.debian.org/Lintian
 
 .. _LibcWrapGenerator: https://github.com/AppImage/AppImageKit/tree/stable/v1.0/LibcWrapGenerator
 .. _bingcc: https://github.com/sulix/bingcc
