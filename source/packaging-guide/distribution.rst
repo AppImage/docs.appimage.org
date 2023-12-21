@@ -53,7 +53,7 @@ Even under open source licenses, distributing and/or using code in source or bin
 Do not put "Linux" into the Appimage file name
 ----------------------------------------------
 
-Please **DO NOT** put "linux" into the file name of an AppImage. It is abundantly clear that an :code:`.exe` is for Windows, a :code:`.dmg` is for the Mac and that :code:`.AppImage` is for Linux. No need to duplicate.
+Please **DO NOT** put "linux" into the file name of an AppImage. It is abundantly clear that an :code:`.exe` is for Windows, a :code:`.dmg` is for the Mac and that :code:`.AppImage` is for Linux (and compatible systems such as Windows with WSL2 and FreeBSD with the Linuxulator). No need to duplicate.
 
 .. _ref-no-appimages-in-archives:
 
