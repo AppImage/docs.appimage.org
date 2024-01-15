@@ -124,6 +124,11 @@ To provide a complete solution for managing AppImages on the system, AppImageLau
 .. seealso::
    More information about AppImageLauncher can be found in :ref:`ref-appimagelauncher`.
 
+GearLever
+****************
+GearLever_ is a utility to manage AppImages files, generate desktop entries and app metadata, update apps in-place or keep multiple versions side-by-side.
+
+.. _GearLever: https://flathub.org/it/apps/it.mijorus.gearlever
 
 Troubleshooting
 ---------------
