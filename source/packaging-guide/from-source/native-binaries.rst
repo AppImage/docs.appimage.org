@@ -243,7 +243,7 @@ The following script might be used to create AppImages for QtQuickApp, using qma
 Using CMake and ``make install``
 ''''''''''''''''''''''''''''''''
 
-The following script might be used to create AppImages for QtQuickApp, using qmake and ``make install`` strategy. It is effectively the same script as the ``qmake`` one, but uses CMake instead of qmake to build the binaries and install the data into the AppDir.
+The following script might be used to create AppImages for QtQuickApp, using CMake and ``make install`` strategy. It is effectively the same script as the ``qmake`` one, but uses CMake instead of qmake to build the binaries and install the data into the AppDir.
 
 .. literalinclude:: examples/bundle-qtquickapp-with-cmake.sh
    :name: bundle-qtquickapp-with-cmake
