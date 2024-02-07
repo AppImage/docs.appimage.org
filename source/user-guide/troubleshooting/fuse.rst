@@ -152,7 +152,13 @@ FUSE is not operational out of the box. However, starting with release 73, it's 
 Setting up FUSE on Arch Linux
 *****************************
 
-On Arch Linux, FUSE should work already. A common issue, however, is that the ``fusermount`` binary's permissions may be incorrect. Fortunately, there's an easy fix:
+Install the required package:
+
+.. code-block:: shell
+
+   sudo pacman -S fuse2
+
+A common issue, however, is that the ``fusermount`` binary's permissions may be incorrect. Fortunately, there's an easy fix:
 
 .. code-block:: shell
 
