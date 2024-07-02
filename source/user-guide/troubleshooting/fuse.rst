@@ -56,7 +56,10 @@ Setting up FUSE 2.x on Ubuntu (pre-22.04), Debian and their derivatives
 
 Install the required packages::
 
-  > sudo apt-get install fuse libfuse2
+  > sudo apt-get install libfuse2
+
+.. note::
+   In Ubuntu 24.04, the libfuse2 package was renamed to libfuse2t64.
 
 Now, FUSE should be working. On some older distributions, you will have to run some additional configuration steps:
 
