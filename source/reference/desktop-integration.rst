@@ -9,6 +9,8 @@ This section discusses how we integrate AppImages into the Linux desktops, what 
    :depth: 2
 
 
+.. _ref-desktop-files:
+
 Desktop files
 -------------
 

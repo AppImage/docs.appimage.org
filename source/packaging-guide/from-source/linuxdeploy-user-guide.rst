@@ -3,15 +3,13 @@
 linuxdeploy user guide
 ----------------------
 
-This page illustrates how linuxdeploy can be used.
+linuxdeploy is a tool that can be used to easily create an AppDir (and by extension an AppImage) from scratch and bundle the executable and other resources that are passed as command line arguments into the right locations, as well as packaging dependencies of resources in an existing AppDir.
 
-.. todo::
-   - Write introduction
-   - Add references to examples in packaging guide
+Its primary focus is on AppDirs, and it uses plugins to create other outputs such as AppImages.
 
-linuxdeploy is capable of packaging dependencies of resources in an existing AppDir, or creating the AppDir from scratch, bundling resources into the right locations that the user passes to it.
+There are two ways how linuxdeploy can be used: Either by using command line arguments to package the resources - this works with every project language and build system. Or by using linuxdeploy with `make <https://en.wikipedia.org/wiki/Make_(software)>`_ - this only works if you use Makefiles for building your project.
 
-linuxdeploy describes itself as an `"AppDir maintenance tool" <https://github.com/linuxdeploy/linuxdeploy/blob/master/README.md>`__. Its primary focus is on AppDirs, and it uses plugins to create output formats such as AppImages.
+The following sections explain both ways to use linuxdeploy.
 
 
 .. contents:: Contents
@@ -19,46 +17,80 @@ linuxdeploy describes itself as an `"AppDir maintenance tool" <https://github.co
    :depth: 1
 
 
-
-Packaging dependencies of files in an existing AppDir
-+++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Sometimes, the build system can be used to install resources into an :ref:`AppDir <ref-appdir>`-like structure. If this so-called "install configuration" is feature complete, i.e., all the resources an AppImage needs (a binary, an icon and a desktop file), all linuxdeploy has to do is bundle the dependencies of these files.
-
-This workflow is described in :ref:`ref-make-install-workflow`.
-
-In case some of the required files described above are *not* installed by ``make install``, you can instruct linuxdeploy to bundle these resources manually. Please see the next section for more information.
-
+..
+   TODO: Remove one of these two
 
 .. _ref-linuxdeploy-bundle-manually:
 .. _ref-linuxdeploy-package-manually:
 
-Packaging binaries and other resources manually
-++++++++++++++++++++++++++++++++++++++++++++++++
+Using linuxdeploy with command line arguments
++++++++++++++++++++++++++++++++++++++++++++++
 
-Unlike the old tools, linuxdeploy doesn't need any existing directory with files in the right positions, etc. Instead, it puts files specified via CLI parameters into the right positions. This makes bundling easier than ever before, as users don't need to know where to put files any more.
-
-linuxdeploy provides different flags to bundle different kinds of resources. Only resources whose destination can be calculated by linuxdeploy can be bundled this way. Additional resources applications need, which linuxdeploy can not know about, must be bundled by hand. However, the most common resources are covered by the parameters.
+linuxdeploy uses command line arguments to bundle files, like executables, libraries or icons. It creates the AppDir from scratch and puts all these files in the right positions. The user doesn't need to know the internal AppDir structure and where to put specific files.
+The following command line flags are most commonly used:
 
 ``--executable``/``-e``
-   Bundle a native binary executable. |rpath-comment|
+   Bundle a native binary executable. **This is used to bundle your main binary executable.**
+
+   This is also used to bundle executables that may be used by other libraries, executables, etc.
+
+   Set up everything so that other libraries, executables, etc. use this bundled executable instead of a system one (if applicable).
 
 ``--library``/``-l``
-   Bundle a shared library (:code:`.so` file) into the AppDir. |rpath-comment|
+   Bundle a shared library (:code:`.so` file) into the AppDir.
+
+   Set up everything so that other libraries, executables, etc. use this bundled library instead of a system one (if applicable).
 
 ``--desktop-file``/``-d``
-   Bundle a desktop file into the AppDir. These are required for desktop integration, and there must always be at least one of them in the AppDir. Please see :ref:`ref-desktop-integration` for a guide how they can be created, and for best practices related to AppImages.
+   Bundle a desktop file into the AppDir. These are required for desktop integration, and there must always be at least one of them in the AppDir. Please see :ref:`ref-desktop-files` for a guide how they can be created, and for best practices related to AppImages.
 
 ``--icon-file``/``-i``
-   Bundle icon file. Supported are all formats which the `Icon Theme Specification <https://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html>`__ lists. linuxdeploy will automatically calculate the right output path, which depends on file format and resolution. You can specify multiple icons for multiple resolutions in the form of ``<resolution>/<app_name>.<ext>``.
+   Bundle one or several icon files into the AppDir. Supported formats are ``png`` and ``svg``. (``xpm`` is also supported, but deprecated and shouldn't be used for new projects). The valid resolutions for raster icons are ``8x8``, ``16x16``, ``20x20``, ``22x22`,` ``24x24``, ``28x28``, ``32x32``, ``36x36``, ``42x42``, ``48x48``, ``64x64``, ``72x72``, ``96x96``, ``128x128``, ``160x160``, ``192x192``, ``256x256``, ``384x384``, ``480x480`` and ``512x512``.
 
-.. |rpath-comment| replace:: Set up everything so that other libraries, executables etc. use this one instead of a system one.
+   For more information see the `Icon Theme Specification <https://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html>`_.
+
+   linuxdeploy will automatically calculate the image resolution and the correct output path, which depends on file format and resolution.
+
+..
+   TODO: Rewrite section about desktop and icon files and provide more information
+   TODO: Fix desktop integration links (and improve section separation so that not two sections are both named / linked desktop integration)
+
+``--appstream-file``
+   Bundle an AppStream metadata file into the AppDir. For more information on AppStream files, see :ref:`ref-appstream`.
+
+``--appdir``/``-a``
+   The path to the AppDir. If this path does not exist, the AppDir is created from scratch.
+
+   This can be used to include additional resources specific applications might need. In that case, you can create a directory containing (only) such specific files in specific positions and then using its path as ``--appdir`` parameter. linuxdeploy then creates the AppDir and bundles all other files like usual.
+
+``--plugin``/``-p``
+   Uses an input plugin. Input plugins can be used to bundle additional data for a specific framework. They must be additionally downloaded.
+
+   For more information on plugins, see :ref:`ref-linuxdeploy-plugin-system`.
+
+``--output``/``-o``
+   Uses an output plugin. Output plugins can be used to output something different than the raw AppDir. **linuxdeploy always comes with the AppImage output plugin preinstalled.** Other output plugins have to be additionally downloaded.
+
+   For more information on plugins, see :ref:`ref-linuxdeploy-plugin-system`.
+
+This list is not exhaustive and only includes the most commonly used command line argument. To get a full overview of all arguments, use ``--help``.
 
 The following example illustrates how an existing binary can be bundled into an AppDir:
 
 .. code:: bash
 
-   > ./linuxdeploy-x86_64.AppImage --appdir AppDir --executable ./foobar <...> --output appimage
+   > ./linuxdeploy-x86_64.AppImage -e my_application -d my_application.desktop -i my_application.png -a AppDir --output appimage
+
+
+Using linuxdeploy with make
++++++++++++++++++++++++++++
+
+If Makefiles are used for building the project (common for C/C++-based projects), you can also use linuxdeploy with make.
+To do this, you first need to run ``make install DESTDIR=AppDir`` (depending on the build system, preparations for this are necessary, see :ref:`ref-make-install-workflow`). This will create a first basic :ref:`AppDir <ref-appdir>`-like structure with the main executable, libraries and so on.
+
+After that, you need to invoke linuxdeploy like explained in the previous section with the incomplete AppDir as ``--appdir`` argument to bundle the dependencies of these files.
+
+Depending on the install configuration, you might also have to use ``--desktop-file``, ``--icon-file``, ``--appstream-file``, etc. to explicitly bundle such missing items.
 
 
 .. _ref-linuxdeploy-plugin-system:
@@ -74,7 +106,7 @@ Plugins are automatically recognized by linuxdeploy. They are executable files (
   - next to the linuxdeploy binary
   - in any of the directories in ``$PATH``
 
-Therefore, when downloading additional plugins, just put them into one of these locations, and linuxdeploy can use them.
+Therefore, when downloading additional plugins, just put them into one of these locations, and linuxdeploy can use them. Plugins should be kept with their original name; otherwise linuxdeploy might not recognise them!
 
 Plugins are standalone executable files. This means they must be made executable by the user before they can be used by linuxdeploy. On the other hand, this also allows for calling plugins manually.
 
