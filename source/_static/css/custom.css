@@ -15,3 +15,32 @@
 .wy-table-responsive table td, .wy-table-responsive table th {
     white-space: normal;
 }
+
+.formatted-table tr:nth-child(1) td {
+    background-color: #006400 !important;
+    color: #000000 !important;
+}
+.formatted-table tr:nth-child(2) td {
+    background-color: #006400 !important;
+    color: #000000 !important;
+}
+.formatted-table tr:nth-child(3) td {
+    background-color: #FFFF00 !important;
+    color: #000000 !important;
+}
+.formatted-table tr:nth-child(4) td {
+    background-color: #FFFF00 !important;
+    color: #000000 !important;
+}
+.formatted-table tr:nth-child(5) td {
+    background-color: #FF8000 !important;
+    color: #000000 !important;
+}
+.formatted-table tr:nth-child(6) td {
+    background-color: #FF8000 !important;
+    color: #000000 !important;
+}
+.formatted-table tr:nth-child(7) td {
+    background-color: #FF0000 !important;
+    color: #000000 !important;
+}

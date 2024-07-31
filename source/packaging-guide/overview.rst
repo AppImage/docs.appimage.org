@@ -1,7 +1,76 @@
 Overview
 ========
 
-There are different ways to create AppImages. The following section gives you an overview of which ways are available, their advantages and disadvantages, and where to find more information.
+There are different ways to create AppDirs and the corresponding AppImages.
+
+The following table gives an overview of the different methods and their advantages, disadvantages and differences. For each of these methods, there is a corresponding section in this packaging guide, explaining how to use it.
+
+If you are unsure which one to use, linuxdeploy and go-appimagetool are the best options in most cases.
+
+..
+   NOTE: When changing the order of the rows, make sure that the rows are correctly formatted
+   See custom.css (the table rows are formatted depending on their index)
+
+.. list-table::
+   :widths: 25 75
+   :header-rows: 1
+   :class: formatted-table
+
+   * - AppImage creation method
+     - Description and notes
+   * - linuxdeploy
+     - | A tool that can be used by application authors to package their projects as AppImages.
+       | Creates the AppDir from scratch and doesn't require any existing AppDir structure or manual file placement.
+       | Doesn't include core system libraries like glibc. This results in a reduced AppImage size.
+       | Created AppImages should run on *almost* all modern linux distributions.
+       | AppImages should be built on the oldest supported LTS distribution versions when using it.
+       | More mature; supports additional options (e.g. not deploying specific libraries or copyright files) go-appimagetool doesn't support (yet).
+       | Repository link: https://github.com/linuxdeploy/linuxdeploy
+       | Packaging guide: TODO LINK!
+   * - go-appimagetool
+     - | A tool that can be used by application authors to package their projects as AppImages.
+       | Requires manual creation of the AppDir folder structure and file placement (if make isn't used).
+       | Allows for both including core system libraries like glibc and not including them.
+       | Doesn't require AppImages to be built on the oldest supported LTS distribution versions.
+       | Less mature; doesn't support some options linuxdeploy does.
+       | Repository link: https://github.com/probonopd/go-appimage
+       | Packaging guide: TODO LINK!
+   * - appimage-builder
+     - | A tool that can be used by both application authors to package their projects as AppImages and other people to turn existing Debian packages into AppImages if none are officially distributed.
+       | Requires manual creation of the AppDir folder structure and file placement (if make isn't used).
+       | Includes core system libraries like glibc. This results in an increased AppImage size (+ >30MB).
+       | Officially supports Debian, Ubuntu and Arch.
+       | Doesn't require AppImages to be built on the oldest supported LTS distribution versions.
+       | Should only be used if linuxdeploy can't be used (e.g. if the AppImage can't be built on the oldest supported LTS distribution version).
+       | Repository link: https://github.com/AppImageCrafters/appimage-builder
+       | Packaging guide: TODO LINK!
+   * - electron-builder
+     - | A tool that can be used by application authors to easily package their Electron projects not only as AppImages but also as other application formats for Linux (e.g. Flatpak or Snap), macOS (e.g. DMG) and Windows (e.g. Installer or Portable).
+       | Creates the AppDir from scratch and doesn't require any existing AppDir structure or manual file placement.
+       | Recommended solution if your app is Electron based, **otherwise not applicable**.
+       | Repository link: https://github.com/electron-userland/electron-builder
+       | Packaging guide: TODO LINK!
+   * - pkg2appimage
+     - | A tool that can be used by people other than the application authors to convert officially distributed binary packages (archives, .deb packages and PPAs) into AppImages if none are officially distributed.
+       | Requires manual creation of the AppDir folder structure and file placement (if make isn't used).
+       | **Do not use pkg2appimage if you are the application author. pkg2appimage should only be used if there is no officially distributed AppImage.** Upstream developers should use one of the other creation methods.
+       | pkg2appimage has a major `security issue <https://github.com/AppImageCommunity/pkg2appimage/issues/197>`_; therefore it's only recommended for personal use.
+       | Repository link: https://github.com/AppImageCommunity/pkg2appimage
+       | Packaging guide: TODO LINK!
+   * - Manual packaging
+     - | Manual packaging means manually creating the entire AppDir structure and copying all files to their correct places in the structure.
+       | While manually creating a directory structure and copying some files might be necessary depending on the used tool, manually packaging *everything* should only be used as a last resort if all other methods aren't applicable.
+       | Using one of the tools above like linuxdeploy or go-appimagetool is usually much more convenient.
+       | It is explained nevertheless, mainly to illustrate how things work under the hood.
+       | Packaging guide: TODO LINK!
+   * - linuxdeployqt
+     - | Deprecated. Succeeded by linuxdeploy and go-appimagetool.
+       | **Do not use linuxdeployqt to create new AppImages.**
+
+
+..
+   TODO: Create a section for each packaging method
+   TODO: Remove the rest of the overview and move it into the respective sections
 
 
 .. contents:: Contents
