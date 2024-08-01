@@ -1,11 +1,15 @@
 .. _ref-linuxdeploy:
 
-linuxdeploy user guide
-----------------------
+linuxdeploy
+===========
 
-linuxdeploy is a tool that can be used to easily create an AppDir (and by extension an AppImage) from scratch and bundle the executable and other resources that are passed as command line arguments into the right locations, as well as packaging dependencies of resources in an existing AppDir.
+linuxdeploy is a tool that can be used by application authors to easily create an AppDir (and by extension an AppImage) from scratch and bundle the executable and other resources that are passed as command line arguments into the right locations, as well as packaging dependencies of resources in an existing AppDir. However, it doesn't require any existing AppDir structure or manual file placement.
 
 Its primary focus is on AppDirs, and it uses plugins to create other outputs such as AppImages.
+
+linuxdeploy doesn't include core system libraries like glibc. This results in a reduced AppImage size. AppImages that are created with linuxdeploy should run on *almost* all modern linux distributions.
+
+When using linuxdeploy, AppImages should be built on the oldest supported LTS distribution version to make sure that the resulted AppImage works on all current (newer) distribution versions.
 
 There are two ways how linuxdeploy can be used: Either by using command line arguments to package the resources - this works with every project language and build system. Or by using linuxdeploy with `make <https://en.wikipedia.org/wiki/Make_(software)>`_ - this only works if you use Makefiles for building your project.
 
@@ -24,7 +28,7 @@ The following sections explain both ways to use linuxdeploy.
 .. _ref-linuxdeploy-package-manually:
 
 Using linuxdeploy with command line arguments
-+++++++++++++++++++++++++++++++++++++++++++++
+---------------------------------------------
 
 linuxdeploy uses command line arguments to bundle files, like executables, libraries or icons. It creates the AppDir from scratch and puts all these files in the right positions. The user doesn't need to know the internal AppDir structure and where to put specific files.
 The following command line flags are most commonly used:
@@ -83,7 +87,7 @@ The following example illustrates how an existing binary can be bundled into an 
 
 
 Using linuxdeploy with make
-+++++++++++++++++++++++++++
+---------------------------
 
 If Makefiles are used for building the project (common for C/C++-based projects), you can also use linuxdeploy with make.
 To do this, you first need to run ``make install DESTDIR=AppDir`` (depending on the build system, preparations for this are necessary, see :ref:`ref-make-install-workflow`). This will create a first basic :ref:`AppDir <ref-appdir>`-like structure with the main executable, libraries and so on.
@@ -96,7 +100,7 @@ Depending on the install configuration, you might also have to use ``--desktop-f
 .. _ref-linuxdeploy-plugin-system:
 
 Plugin system
-+++++++++++++
+-------------
 
 linuxdeploy provides a flexible packaging system for both bundling additional resources that cannot be discovered automatically by linuxdeploy (i.e., plugins loaded during runtime using ``dlopen()``, icon themes, etc.), and to convert the AppDir into an output format such as AppImage.
 
@@ -126,7 +130,7 @@ You can use the ``--list-plugins`` flag to see what plugins are visible to linux
 .. _ref-linuxdeploy-input-plugins:
 
 Using input plugins
-'''''''''''''''''''
++++++++++++++++++++
 
 Input plugins can simply be switched on using the ``--plugin`` flag. For example:
 
@@ -145,7 +149,7 @@ This causes linuxdeploy to call a plugin called ``qt``, if available.
 .. _ref-linuxdeploy-input-plugins-environment-variables:
 
 Using environment variables to change plugins' behavior
-*******************************************************
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 As mentioned previously, some plugins implement additional optional or mandatory parameters in the form of environment variables. These environment variables must be set *before* calling linuxdeploy.
 
@@ -167,7 +171,7 @@ Please refer to the plugins' documentation to find a list of supported environme
 
 
 Creating output files
-'''''''''''''''''''''
++++++++++++++++++++++
 
 Similar to the input plugins, output plugins are enabled through a command line parameter. To avoid any possible confusion, a second parameter is used: ``--output``.
 
@@ -181,7 +185,7 @@ Most users are interested in generating AppImages, therefore the AppImage plugin
 
 
 Using environment variables to change plugins' behavior
-*******************************************************
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Users can use environment variables to :ref:`change input plugins' behavior <ref-linuxdeploy-input-plugins-environment-variables>` or enable additional features. Output plugins use the same method to provide similar functionality. Just set an environment variable *before* calling linuxdeploy with the respective plugin enabled. For example:
 
@@ -203,7 +207,7 @@ Users can use environment variables to :ref:`change input plugins' behavior <ref
 .. _ref-linuxdeploy-iterative-workflow:
 
 Iterative workflow
-++++++++++++++++++
+------------------
 
 .. todo::
 

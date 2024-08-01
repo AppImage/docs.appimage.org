@@ -1,3 +1,5 @@
+.. _overview-appimage-creation-methods:
+
 Overview
 ========
 
@@ -6,6 +8,9 @@ There are different ways to create AppDirs and the corresponding AppImages.
 The following table gives an overview of the different methods and their advantages, disadvantages and differences. For each of these methods, there is a corresponding section in this packaging guide, explaining how to use it.
 
 If you are unsure which one to use, linuxdeploy and go-appimagetool are the best options in most cases.
+
+..
+   TODO: Improve all reference links and make them consistent
 
 ..
    NOTE: When changing the order of the rows, make sure that the rows are correctly formatted
@@ -26,7 +31,7 @@ If you are unsure which one to use, linuxdeploy and go-appimagetool are the best
        | AppImages should be built on the oldest supported LTS distribution versions when using it.
        | More mature; supports additional options (e.g. not deploying specific libraries or copyright files) go-appimagetool doesn't support (yet).
        | Repository link: https://github.com/linuxdeploy/linuxdeploy
-       | Packaging guide: TODO LINK!
+       | Packaging guide: :ref:`ref-linuxdeploy`
    * - go-appimagetool
      - | A tool that can be used by application authors to package their projects as AppImages.
        | Requires manual creation of the AppDir folder structure and file placement (if make isn't used).
@@ -34,7 +39,7 @@ If you are unsure which one to use, linuxdeploy and go-appimagetool are the best
        | Doesn't require AppImages to be built on the oldest supported LTS distribution versions.
        | Less mature; doesn't support some options linuxdeploy does.
        | Repository link: https://github.com/probonopd/go-appimage
-       | Packaging guide: TODO LINK!
+       | Packaging guide: :ref:`sec-go-appimagetool`
    * - appimage-builder
      - | A tool that can be used by both application authors to package their projects as AppImages and other people to turn existing Debian packages into AppImages if none are officially distributed.
        | Requires manual creation of the AppDir folder structure and file placement (if make isn't used).
@@ -43,20 +48,20 @@ If you are unsure which one to use, linuxdeploy and go-appimagetool are the best
        | Doesn't require AppImages to be built on the oldest supported LTS distribution versions.
        | Should only be used if linuxdeploy can't be used (e.g. if the AppImage can't be built on the oldest supported LTS distribution version).
        | Repository link: https://github.com/AppImageCrafters/appimage-builder
-       | Packaging guide: TODO LINK!
+       | Packaging guide: :ref:`sec-using-appimage-builder`
    * - electron-builder
      - | A tool that can be used by application authors to easily package their Electron projects not only as AppImages but also as other application formats for Linux (e.g. Flatpak or Snap), macOS (e.g. DMG) and Windows (e.g. Installer or Portable).
        | Creates the AppDir from scratch and doesn't require any existing AppDir structure or manual file placement.
        | Recommended solution if your app is Electron based, **otherwise not applicable**.
        | Repository link: https://github.com/electron-userland/electron-builder
-       | Packaging guide: TODO LINK!
+       | Packaging guide: :ref:`sec-electron-builder`
    * - pkg2appimage
      - | A tool that can be used by people other than the application authors to convert officially distributed binary packages (archives, .deb packages and PPAs) into AppImages if none are officially distributed.
-       | Requires manual creation of the AppDir folder structure and file placement (if make isn't used).
-       | **Do not use pkg2appimage if you are the application author. pkg2appimage should only be used if there is no officially distributed AppImage.** Upstream developers should use one of the other creation methods.
+       | Requires manual creation of the AppDir folder structure and file placement.
+       | **Do not use pkg2appimage if you are the application author. pkg2appimage should only be used if there is no officially distributed AppImage.** Application authors should use one of the other creation methods.
        | pkg2appimage has a major `security issue <https://github.com/AppImageCommunity/pkg2appimage/issues/197>`_; therefore it's only recommended for personal use.
        | Repository link: https://github.com/AppImageCommunity/pkg2appimage
-       | Packaging guide: TODO LINK!
+       | Packaging guide: :ref:`ref-pkg2appimage`
    * - Manual packaging
      - | Manual packaging means manually creating the entire AppDir structure and copying all files to their correct places in the structure.
        | While manually creating a directory structure and copying some files might be necessary depending on the used tool, manually packaging *everything* should only be used as a last resort if all other methods aren't applicable.
@@ -103,24 +108,6 @@ More information on using Travis CI for making AppImages can be found in :ref:`r
    There are a lot of examples on GitHub that can be found using the `GitHub search <https://github.com/search?utf8=%E2%9C%93&q=%22Package+the+binaries+built+on+Travis-CI+as+an+AppImage%22&type=Code&ref=searchresults>`__.
 
 
-.. _sec-electron-builder:
-
-Using electron-builder
-**********************
-
-For `Electron`_ based applications, a tool called electron-builder_ can be used to create AppImages.
-
-With electron-builder, making AppImages is as simple as defining ``AppImage`` as a target for Linux (default in the latest version of electron-builder). This should yield usable results for most applications.
-
-.. seealso::
-   More information can be found in the `documentation on AppImage <https://www.electron.build/configuration/appimage.html>`__ and `the documentation on distributable formats <https://www.electron.build/index.html#pack-only-in-a-distributable-format>`__ in the `electron-builder manual <https://www.electron.build>`__.
-
-   There are a lot of examples on GitHub that can be found using the `GitHub search <https://github.com/search?utf8=%E2%9C%93&q=electron-builder+linux+target+appimage&type=Code&ref=searchresults>`__.
-
-.. _Electron: https://electronjs.org/
-.. _electron-builder: https://www.electron.build/
-
-
 .. _sec-convert-packages:
 
 Converting existing binary packages
@@ -137,21 +124,6 @@ Using the Open Build Service
 This option is recommended for open source projects because it allows you to leverage the existing Open Build Service infrastructure, security and license compliance processes.
 
 More information on using OBS for making AppImages can be found in :ref:`ref-obs`.
-
-
-.. _sec-using-appimage-builder:
-
-Using appimage-builder
-----------------------
-
-appimage-builder is a novel tool for creating AppImages. It uses the system package manager to resolve the
-application dependencies and creates a complete bundle. It can be used to pack almost any kinds of applications
-including those made using: C/C++, Python, and Java.
-
-This tool removes the limitations of requiring an *old system* to compile the binaries. It can be used to
-pack an application from sources or to turn an existing Debian package into an AppImage.
-
-For more information about appimage-builder please visit: https://appimage-builder.readthedocs.io
 
 
 .. _sec-create-appdir-manually:

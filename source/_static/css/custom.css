@@ -44,3 +44,7 @@
     background-color: #FF0000 !important;
     color: #000000 !important;
 }
+
+.bold-link a {
+    font-weight: bold;
+}

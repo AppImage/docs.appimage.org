@@ -1,10 +1,19 @@
+.. include:: ../../substitutions.rst
+
 .. _ref-pkg2appimage:
 
 pkg2appimage
 ============
 
-If you already have existing binaries (either in archive or :code:`.deb` format or a ppa) then the recommended way to convert these to an AppImage is to write a `.yml description file <https://github.com/AppImage/pkg2appimage/tree/master/recipes>`__ and run it with `pkg2appimage`_.
+pkg2appimage is a tool that can be used by people other than the application authors to convert officially distributed binary packages (archives, .deb packages and PPAs) into AppImages if none are officially distributed. It doesn't require dependencies to be installed on your system; instead, they are downloaded during the packaging process from distribution repositories. To convert an existing package, you write a `.yml description file <https://github.com/AppImage/pkg2appimage/tree/master/recipes>`_ (called recipe) and run it with `pkg2appimage`_. As some (mostly proprietary) applications don't allow redistribution, you can distribute these recipes to allow other users to easily convert existing packages to AppImages.
 
+|appimage_preferred_source|
+
+.. cssclass:: bold-link
+
+**Do not use pkg2appimage if you are the application author. Application authors should use one of the other creation methods, see** :ref:`overview-appimage-creation-methods`\ **.**
+
+pkg2appimage requires a manual creation of the AppDir folder structure and file placement inside the recipe.
 
 .. contents:: Contents
    :local:

@@ -8,7 +8,6 @@ This section contains guides how AppImages can be created from source code. It s
 
 .. toctree::
    native-binaries
-   linuxdeploy-user-guide
    appimage-builder user guide <https://appimage-builder.readthedocs.io/>
    :caption: Contents
    :maxdepth: 2
