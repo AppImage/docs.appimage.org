@@ -1,3 +1,5 @@
+.. include:: ../substitutions.rst
+
 .. _overview-appimage-creation-methods:
 
 Overview
@@ -73,27 +75,24 @@ If you are unsure which one to use, linuxdeploy and go-appimagetool are the best
        | **Do not use linuxdeployqt to create new AppImages.**
 
 
+Packaging as application author vs converting existing packages
+---------------------------------------------------------------
+
+There are two ways to create AppImages:
+
+1. Packaging the AppImage as application author (also called packaging from source)
+2. Converting existing packages
+
+Ideally, upstream application authors should package the application and provide officially distributed AppImages. This is called packaging from source. The term packaging from source is actually a bit misleading as it's not actually depending on the source code: The project is still compiled like usual and then the resulting binaries are packaged as AppImage. However, the term is used as this method requires all dependencies for the project to be installed on the host system (which usually only applies to the system the source code is also compiled on). This method of packaging can and should be automated by using a CI system.
+
+Converting existing packages, on the other hand, doesn't require the dependencies to be installed on your system. Instead, they are downloaded during the packaging process from distribution repositories. To convert an existing package (ideally a PPA or .deb file), you write a so-called *recipe* that is then used to convert the package into an AppImage. As some (mostly proprietary) applications don't allow redistribution, you can distribute these recipes to allow other users to easily convert existing packages to AppImages.
+
+|appimage_preferred_source|
+
+
 ..
    TODO: Create a section for each packaging method
    TODO: Remove the rest of the overview and move it into the respective sections
-
-
-.. contents:: Contents
-   :local:
-   :depth: 1
-
-
-.. _sec-from-source:
-
-Packaging from source
----------------------
-
-The recommended approach is to package software from source. Ideally, upstream application authors take over maintenance of AppImages, and provide them on their release pages.
-
-To learn more about how packaging from source works, please refer to :ref:`ref-packaging-from-source`.
-
-The process of packaging from source can and should be automated. CI systems like Travis CI can help with that.
-
 
 .. _sec-travis-ci:
 
@@ -106,14 +105,6 @@ More information on using Travis CI for making AppImages can be found in :ref:`r
 
 .. seealso::
    There are a lot of examples on GitHub that can be found using the `GitHub search <https://github.com/search?utf8=%E2%9C%93&q=%22Package+the+binaries+built+on+Travis-CI+as+an+AppImage%22&type=Code&ref=searchresults>`__.
-
-
-.. _sec-convert-packages:
-
-Converting existing binary packages
------------------------------------
-
-This option might be the easiest if you already have up-to-date packages in place, ideally a PPA for the oldest still-supported Ubuntu LTS release (xenial as of 2019, see https://en.wikipedia.org/wiki/Ubuntu#Releases for up to date information) or earlier or a debian repository for oldstable. In this case, you can write a small :code:`.yml` recipe and in many cases are done with the package to AppImage conversion. See :ref:`ref-convert-existing-binary-packages` for more information.
 
 
 .. _sec-using-obs:

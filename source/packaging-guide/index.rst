@@ -13,8 +13,7 @@ This chapter shows application developers how to produce AppImages, how to make 
    Using appimage-builder <appimage-creation-methods/appimage-builder>
    Using electron-builder <appimage-creation-methods/electron-builder>
    Using pkg2appimage <appimage-creation-methods/pkg2appimage>
-   from-source/index
-   converting-binary-packages/index
+   To be replaced <from-source/native-binaries>
    optional/index
    hosted-services/index
    manual

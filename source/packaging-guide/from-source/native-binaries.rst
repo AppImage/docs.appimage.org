@@ -3,6 +3,13 @@
 Packaging native binaries
 =========================
 
+..
+   TODO:
+   - Move everything related to specific tools into their respective files
+   - Create new file with all general information about make and how to create the AppDir and package files
+
+Copied from former "Packaging from source" section: It shows a few tricks how functionality of widely used build tools like e.g., CMake, can be re-used to reduce the amount of code required for building AppImages.
+
 The easiest packaging methods are available for *native binaries*, like e.g., produced when compiling C++ or C code. Native binaries have a well defined and reliable behavior to find their runtime dependencies, the so-called shared libraries. These are the primary dependencies you will have to ship with your application. Of course, some applications might require additional resources, e.g., icon files. Also, some applications try to load libraries dynamically during the runtime. But for now, let's assume we have a basic binary application (this is the most common type).
 
 The AppImage team provides tools that simplify the packaging process significantly. These tools are semi-automatic, and ship with various features needed to bundle said shared library dependencies correctly. The one we are going to use in this guide is linuxdeploy_.
