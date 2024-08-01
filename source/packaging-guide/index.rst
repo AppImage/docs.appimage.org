@@ -15,7 +15,7 @@ This chapter shows application developers how to produce AppImages, how to make 
    Using pkg2appimage <appimage-creation-methods/pkg2appimage>
    To be replaced <from-source/native-binaries>
    optional/index
-   hosted-services/index
+   packaging-automation/index
    manual
    testing
    distribution

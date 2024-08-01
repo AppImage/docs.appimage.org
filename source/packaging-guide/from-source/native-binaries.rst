@@ -257,23 +257,3 @@ The following script might be used to create AppImages for QtQuickApp, using CMa
    :caption: :code:`travis/build-with-cmake.sh`
    :language: bash
    :linenos:
-
-
-Integrate build scripts into CI systems
-'''''''''''''''''''''''''''''''''''''''
-
-Travis CI
-*********
-
-The scripts introduced in the previous subsections will move the files back into the directory where they're called. Therefore, the :code:`.travis.yml` and especially the :code:`script` file can be kept delightfully short:
-
-.. literalinclude:: examples/.travis.yml
-   :name: bundle-qtquickapp
-   :caption: :code:`.travis.yml`
-   :language: yaml
-   :linenos:
-
-
-.. seealso::
-
-   Please see the :ref:`ref-travis-ci` section in the :ref:`ref-hosted-services` section for more information on Travis CI. It also contains a guide on :ref:`uploadtool <ref-uploadtool>`.

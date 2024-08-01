@@ -3,6 +3,10 @@
 Using the Open Build Service
 ============================
 
+.. todo::
+
+   Make sure everything on this page is still up to date.
+
 `Open Build Service <https://openbuildservice.org/>`__ is a generic system to build and distribute packages from sources in an automatic, consistent and reproducible way. It allows you to build software for various package formats and distributions. Now it can also build AppImages that run on a variety of distributions.
 
 The `openSUSE Build Service`_ is the public instance of the Open Build Service (OBS). This infrastructure can can be used for free by open source projects. However, you are not limited to it - you can set up your own Open Build Service instance if you like.
@@ -22,7 +26,7 @@ There are different ways to build AppImages. Why is using Open Build Service int
 
 * If you are already using Open Build Service, then *also* generating an AppImage should be straightforward
 * You can use the public `openSUSE Build Service`_ instance and use the existing infrastructure to build and distribute your AppImage (for open source projects only)
-* You can build AppImages in "automatic, consistent and reproducible way". This means that unlike when you build your AppImages on, e.g., Travis CI, where you can pull in arbitrarily changing build dependencies and AppImage ingredients from the net, your builds on Open Build Service can only use build dependencies and AppImage ingredients that have their source code in distribution repositories or on Open Build Service. While this may be a limitation in some cases (e.g., for agile/continuous builds), it means that the build result is much more reproducible
+* You can build AppImages in "automatic, consistent and reproducible way". This means that unlike when you build your AppImages on, e.g., GitHub Actions, where you can pull in arbitrarily changing build dependencies and AppImage ingredients from the net, your builds on Open Build Service can only use build dependencies and AppImage ingredients that have their source code in distribution repositories or on Open Build Service. While this may be a limitation in some cases (e.g., for agile/continuous builds), it means that the build result is much more reproducible
 * OBS helps you to keep the ingredients of your AppImage up-to-date all the time using proven distribution methodologies and tool, relieving the person or group providing AppImages from manual work as discussed `here <https://www.youtube.com/watch?v=BrWB2OZ9h2Y>`_
 * OBS automatically builds a new AppImage for you if one if its ingredients is updated on OBS
 * OBS automatically signs AppImages using the user's key on OBS
@@ -88,18 +92,23 @@ You need to tell OBS that for all source code packages in your home project you 
         <enable/>
         </publish>
       <repository name="AppImage.arm">
-        <path project="home:probono" repository="openSUSE_13.1"/>
+        <path project="openSUSE:Leap:15.6" repository="standard"/>
         <path project="OBS:AppImage" repository="AppImage.arm"/>
         <arch>armv7l</arch>
         <arch>aarch64</arch>
       </repository>
       <repository name="AppImage">
-        <path project="home:probono" repository="openSUSE_13.1"/>
+        <path project="openSUSE:Leap:15.6" repository="standard"/>
         <path project="OBS:AppImage" repository="AppImage"/>
         <arch>x86_64</arch>
         <arch>i586</arch>
       </repository>
     </project>
+
+
+.. todo::
+
+   This XML file might be outdated.
 
 
 .. note::
@@ -109,7 +118,7 @@ You need to tell OBS that for all source code packages in your home project you 
 
 Be sure to just insert the :code:`<repository>` tags into your existing file. For AppImage, we need to select one of the build targets that is built in your obs project. In the example above, please make sure to replace :code:`home:probono` with the actual name of the obs project where :code:`appimage.yml` should look for its resources - this can be the current project, and even RPMs created by the same package work as resources for AppImage.
 
-Also check if openSUSE_13.1 is still alive or use something slightly newer instead.
+Also check whether openSUSE:Leap:15.6 is still currently supported and update the version if necessary.
 
 
 Use native AppImage build support
@@ -137,12 +146,11 @@ Scripts can be executed in the form of the script hooks of the :code:`appimage.y
 
     .. note:: It is optional to either
 
+       * create the AppImage root via packages by using the ingredients section. This is useful especially for larger software, because it avoid the need of a recompilation and just repackages the content of binary packages.
 
-* create the AppImage root via packages by using the ingredients section. This is useful especially for larger software, because it avoid the need of a recompilation and just repackages the content of binary packages.
+       * create the AppImage root only from source using the scripts. This is useful when you want to avoid to build a binary package first.
 
-* create the AppImage root only from source using the scripts. This is useful when you want to avoid to build a binary package first.
-
-Both approaches can also get combined if wanted.
+       Both approaches can also get combined if wanted.
 
 
 `appimage.yml` file
@@ -241,7 +249,7 @@ you can add multiple items in the sections.
 Inspecting the results
 ----------------------
 
-Be sure to download the resulting AppImage from OBS and test it on your target system(s). It is recommended to test at least on the oldest still-supported Ubuntu LTS, the recent Ubuntu, the oldest still-supported openSUSE Leap, possibly the latest openSUSE Tumbleweed, CentOS 7, and the latest Fedora release (although you may to choose to support different target systems).
+Be sure to download the resulting AppImage from OBS and test it on your target system(s). For more information about AppImage testing, see :ref:`ref-testing-appimages`.
 
 
 Working examples
@@ -249,16 +257,10 @@ Working examples
 
 Feel free to put yours here, too.
 
-* https://build.opensuse.org/package/show/home:probono/QtQuickApp?repository=AppImage
-* https://build.opensuse.org/package/show/home:probono/DSRemote?repository=AppImage
-* https://build.opensuse.org/package/show/home:probono/Qactus?repository=AppImage
-* https://build.opensuse.org/package/show/home:probono/leafpad?repository=AppImage
 * https://github.com/olav-st/screencloud/blob/master/deploy/linux/appimage.yml
-* https://build.opensuse.org/package/view_file/home:pbek:QOwnNotes/desktop/appimage.yml?expand=1
-* https://build.opensuse.org/package/view_file/home:pbartfai/LDView/_service:extract_file:appimage.yml?expand=1
-* https://build.opensuse.org/package/view_file/home:lachs0r:taisei/taisei/appimage.yml?expand=1
+* https://build.opensuse.org/projects/home:pbek:QOwnNotes/packages/desktop/files/appimage.yml
+* https://build.opensuse.org/projects/home:pbartfai/packages/LDView/files/_service:extract_file:appimage.yml?expand=1
 * https://github.com/orschiro/dslli/blob/master/show_state.yml
-* https://build.opensuse.org/package/view_file/home:cecilios/lenmus-appimage/appimage.yml?expand=1
 
 
 Continuous builds with GitHub and OBS
@@ -281,8 +283,8 @@ If you have already generated a token in the past, you can show it with
     osc token
 
 
-On the GitHub project page, click on "Settings", then click on "Integrations & services", then click on "Add service", enter "Obs" and select it. For example, for the `QtQuickApp`_ project go to :code:`https://github.com/probonopd/QtQuickApp/settings/installations`, and corresponding to https://build.opensuse.org/package/show/home:probono/QtQuickApp entered :code:`home:probono` for the project and :code:`QtQuickApp` for in the Package field, as well as the token generated above in the "Token" field. Please note that you need to supply your own username and project name instead of the one in the example above.
+On the GitHub project page, click on "Settings", then click on "Integrations & services", then click on "Add service", enter "Obs" and select it. For example, for the `QtQuickApp`_ project go to :code:`https://github.com/probonopd/QtQuickApp/settings/installations`, and corresponding to https://build.opensuse.org/package/show/home:probono/QtQuickApp enter :code:`home:probono` for the project and :code:`QtQuickApp` in the Package field, as well as the token generated above in the "Token" field. Please note that you need to supply your own username and project name instead of the one in the example above.
 
-Now, whenever you do a :code:`git push` to my `QtQuickApp`_ project, OBS will build it for me.
+Now, whenever you do a :code:`git push` to your project, OBS will build it for you.
 
 .. _QtQuickApp: https://github.com/probonopd/QtQuickApp/
