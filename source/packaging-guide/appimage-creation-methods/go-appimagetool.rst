@@ -5,7 +5,7 @@ go-appimagetool
 
 go-appimagetool (the appimagetool part of the go-appimage project) is a tool that can be used by application authors to package their projects as AppImages.
 
-It requires a manual creation of the AppDir folder structure and file placement (if make isn't used). For more information on how to use make accordingly, or manually create the necessary structure, see TODO LINK.
+It requires a manual creation of the AppDir folder structure and file placement (if make isn't used). For more information on how to use make accordingly, or manually create the necessary structure, see :ref:`creating-appdir-structure`.
 
 It allows for both including core system libraries like glibc and not including them.
 
@@ -16,7 +16,7 @@ However, it is less mature than linuxdeploy and doesn't support some advanced op
 Usage
 -----
 
-To use go-appimagetool, you need to already have an AppDir folder with the main executable and the desktop, icon, etc. files. go-appimagetool will only deploy the dependency of the executables and libraries into this AppDir and create an AppImage out of it.
+To use go-appimagetool, you need to already have an AppDir with the main executable and the desktop, icon, etc. files. go-appimagetool will only deploy the dependency of the executables and libraries into this AppDir and create an AppImage out of it.
 
 To bundle the dependencies with go-appimagetool, use the :code:`deploy` command with the desktop file as parameter like this:
 

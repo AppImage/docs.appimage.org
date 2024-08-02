@@ -9,7 +9,7 @@ appimgage-builder is a tool that can be used by both application authors to pack
 
 It does this by using the system package manager to resolve the application dependencies (instead of relying on them being installed on the host system like most other tools do).
 
-It requires a manual creation of the AppDir folder structure and file placement (if make isn't used). For more information on how to use make accordingly, or manually create the necessary structure, see TODO LINK.
+It requires a manual creation of the AppDir folder structure and file placement (if make isn't used). For more information on how to use make accordingly, or manually create the necessary structure, see :ref:`creating-appdir-structure`.
 
 Using appimage-builder, you write a so-called *recipe* that is then used to create the AppImage or convert the package into an AppImage. As some (mostly proprietary) applications don't allow redistribution, you can distribute these recipes to allow other users to easily convert existing packages to AppImages.
 

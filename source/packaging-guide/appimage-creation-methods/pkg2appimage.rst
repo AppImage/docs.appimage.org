@@ -13,7 +13,7 @@ pkg2appimage is a tool that can be used by people other than the application aut
 
 **Do not use pkg2appimage if you are the application author. Application authors should use one of the other creation methods, see** :ref:`overview-appimage-creation-methods`\ **.**
 
-pkg2appimage requires a manual creation of the AppDir folder structure and file placement inside the recipe.
+pkg2appimage requires a manual creation of the AppDir folder structure and file placement inside the recipe, see :ref:`manually-creating-appdir-structure`.
 
 .. contents:: Contents
    :local:

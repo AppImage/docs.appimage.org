@@ -5,9 +5,18 @@
 Overview
 ========
 
-There are different ways to create AppDirs and the corresponding AppImages.
+There are different tools that help with creating AppDirs and the corresponding AppImages. They can help in several ways:
 
-The following table gives an overview of the different methods and their advantages, disadvantages and differences. For each of these methods, there is a corresponding section in this packaging guide, explaining how to use it.
+1. Some of them create the AppDir from scratch and don't require manual AppDir creation or file placement.
+2. They bundle the application dependencies (shared libraries) into the existing AppDir.
+3. They remove hardcoded paths in the executables and libraries.
+4. They create an AppImage out of the AppDir (usually by invoking `appimagetool <https://github.com/AppImage/AppImageKit>`_ underneath).
+
+Some tools require you to manually create the AppDir structure prior to invoking the tool. :ref:`creating-appdir-structure` explains the different ways to do this.
+
+Additionally, many applications require additional resources, e.g. asset files for drawing a GUI, which have to be included in the AppImage. In this case, a directory with (only) these required resources needs to be created and given to the AppImage creation tool, no matter which tool is used.
+
+The following table gives an overview of the different tools and their advantages, disadvantages and differences. For each of them, there is a corresponding section in this packaging guide, explaining how to use it.
 
 If you are unsure which one to use, linuxdeploy and go-appimagetool are the best options in most cases.
 
@@ -69,7 +78,7 @@ If you are unsure which one to use, linuxdeploy and go-appimagetool are the best
        | While manually creating a directory structure and copying some files might be necessary depending on the used tool, manually packaging *everything* should only be used as a last resort if all other methods aren't applicable.
        | Using one of the tools above like linuxdeploy or go-appimagetool is usually much more convenient.
        | It is explained nevertheless, mainly to illustrate how things work under the hood.
-       | Packaging guide: TODO LINK!
+       | Packaging guide: :ref:`manually-fully-creating-appdir-structure`
    * - linuxdeployqt
      - | Deprecated. Succeeded by linuxdeploy and go-appimagetool.
        | **Do not use linuxdeployqt to create new AppImages.**
