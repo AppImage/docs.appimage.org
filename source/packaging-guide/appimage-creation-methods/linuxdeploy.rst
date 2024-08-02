@@ -57,18 +57,12 @@ The following command line flags are most commonly used:
    Set up everything so that other libraries, executables, etc. use this bundled library instead of a system one (if applicable).
 
 ``--desktop-file``/``-d``
-   Bundle a desktop file into the AppDir. These are required for desktop integration, and there must always be at least one of them in the AppDir. Please see :ref:`ref-desktop-files` for a guide how they can be created, and for best practices related to AppImages.
+   Bundle a desktop file. Desktop files contain metadata and are required for desktop integration; there must be at least one of them in the AppDir / AppImage. Please see :ref:`desktop-entry-files` for a guide on how they can be created and what they should contain.
 
 ``--icon-file``/``-i``
-   Bundle one or several icon files into the AppDir. Supported formats are ``png`` and ``svg``. (``xpm`` is also supported, but deprecated and shouldn't be used for new projects). The valid resolutions for raster icons are ``8x8``, ``16x16``, ``20x20``, ``22x22`,` ``24x24``, ``28x28``, ``32x32``, ``36x36``, ``42x42``, ``48x48``, ``64x64``, ``72x72``, ``96x96``, ``128x128``, ``160x160``, ``192x192``, ``256x256``, ``384x384``, ``480x480`` and ``512x512``.
-
-   For more information see the `Icon Theme Specification <https://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html>`_.
+   Bundle one or several icon files. Please see :ref:`icon-files` for a guide on which formats, resolutions, etc. are supported.
 
    linuxdeploy will automatically calculate the image resolution and the correct output path, which depends on file format and resolution.
-
-..
-   TODO: Rewrite section about desktop and icon files and provide more information
-   TODO: Fix desktop integration links (and improve section separation so that not two sections are both named / linked desktop integration)
 
 ``--appstream-file``
    Bundle an AppStream metadata file into the AppDir. For more information on AppStream files, see :ref:`ref-appstream`.
