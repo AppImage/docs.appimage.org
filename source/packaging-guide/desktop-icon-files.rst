@@ -1,3 +1,5 @@
+.. include:: ../substitutions.rst
+
 .. _desktop-entry-files:
 
 Desktop entry & icon files
@@ -66,7 +68,7 @@ Icon files
 
 As a desktop entry file should link to an icon file, you should also create an icon file in one or several resolutions. This icon is used on the user's system to display your application.
 
-Supported icon formats are ``png`` and ``svg``. (``xpm`` is also supported, but deprecated and shouldn't be used for new packages). The valid resolutions for raster icons are ``8x8``, ``16x16``, ``20x20``, ``22x22``, ``24x24``, ``28x28``, ``32x32``, ``36x36``, ``42x42``, ``48x48``, ``64x64``, ``72x72``, ``96x96``, ``128x128``, ``160x160``, ``192x192``, ``256x256``, ``384x384``, ``480x480`` and ``512x512``.
+|supported_icon_formats|
 
 You only have to specify one icon (ideally in the resolution ``512x512``), but it might make sense to also create icon file versions that don't contain as many details in smaller resolutions. An advanced option would be to even include icon files adapted to well-known themes and include them (exchanging ``hicolor`` in the icon path with the theme name, see :ref:`manually-creating-appdir-structure`).
 

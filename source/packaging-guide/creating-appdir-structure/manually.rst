@@ -8,19 +8,15 @@ Manually creating the AppDir structure
 
    If you use a tool that doesn't require that, you don't have to do this.
 
-Create an AppDir structure that looks (at a minimum) like this::
+To prepare an AppDir structure for an :ref:`AppImage creation tool <appimage-creation-tools>`, create a structure that looks (at a minimum) like this::
 
 	MyApp.AppDir/
-	MyApp.AppDir/AppRun
-	MyApp.AppDir/.DirIcon
 	MyApp.AppDir/myapp.desktop
 	MyApp.AppDir/myapp.svg or -.png
 	MyApp.AppDir/usr/bin/myapp
 
 .. note::
-   A shared libraries named ``libfoo.so.0`` would be placed in the AppDir under ``MyApp.AppDir/usr/lib/libfoo.so.0``. However, shared libraries should not be manually copied into the AppDir. Using one of the :ref:`appimage-creation-tools` is usually much more convenient.
-
-The :code:`AppRun` file can be a script or executable. It sets up required environment variables such as :code:`$PATH` and launches the payload application. You can write your own, but in most cases it is easier (and more error-proof) to use the precompiled AppRun from `the latest release <https://github.com/AppImage/AppImageKit/releases/continuous>`_.
+   There are additional files (``AppRun``, ``.DirIcon`` and shared libraries) that have to be placed in every AppDir. However, they should not be manually copied into the AppDir, but are created by the used :ref:`AppImage creation tool <appimage-creation-tools>`.
 
 For a complete guide on and explanation of the AppDir content, including more advanced options such as to include icon files in multiple resolutions or adapted to other well-known themes to fit in better, see :ref:`the AppDir specification <ref-appdir-specification>`.
 

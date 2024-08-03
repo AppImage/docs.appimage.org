@@ -8,8 +8,8 @@ The following section contains reference documents like standards, etc.
 
 .. toctree::
    architecture
-   specification
+   appimage-specification
    best-practices
-   appdir
+   appdir-specification
    :maxdepth: 2
    :caption: Contents:

@@ -84,7 +84,7 @@ Comparison table
        | While manually creating a directory structure and copying some files might be necessary depending on the used tool, manually packaging *everything* should only be used as a last resort if all other methods aren't applicable.
        | Using one of the tools above like linuxdeploy or go-appimagetool is usually much more convenient.
        | It is explained nevertheless, mainly to illustrate how things work under the hood.
-       | Packaging guide: :ref:`manually-fully-creating-appdir-structure`
+       | Packaging guide: :ref:`manually-fully-creating-appdir`
    * - linuxdeployqt
      - | Deprecated. Succeeded by linuxdeploy and go-appimagetool.
        | **Do not use linuxdeployqt to create new AppImages.**

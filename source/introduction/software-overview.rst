@@ -45,25 +45,6 @@ appimagetool implements all optional features, like for instance `update informa
 **Download:** You can get it as an AppImage from https://github.com/AppImage/AppImageKit/releases/continuous.
 
 
-AppRun
-^^^^^^
-
-Every AppImage's AppDir must contain a file called :code:`AppRun`, providing the "entry point". When running the AppImage, the :ref:`runtime <ref-runtime>` executes the :code:`AppRun` file within the :ref:`AppDir <ref-appdir>`.
-
-:code:`AppRun` doesn't necessarily have to be a regular file. If the application is :ref:`relocatable <relocatable-apps>`, it can just be a symlink to the main binary. Tools like :ref:`ref-linuxdeploy` can turn applications into relocatable applications, and therefore create such a symlink.
-
-In some cases, though, when an existing application must not be altered (e.g., when the license prohibits any modifications) or tools like linuxdeploy cannot be used, AppImageKit's :code:`AppRun.c` can be used. :code:`AppRun.c` attempts to make programs load bundled shared libraries instead of system ones by manipulating environment variable. Furthermore, it attempts to prevent warnings users might encounter that are coming from the fact the :ref:`AppDir <ref-appdir>` is mounted read-only.
-
-Using :code:`AppRun.c` is not a guarantee that an application will run, and the packager must provide all the resources an application could need manually (or by using external tools) before creating the AppImage with :ref:`appimagetool <ref-appimagetool>`. :code:`AppRun` force-changes the current working directory, and therefore applications can not detect where the AppImage was called originally. This may be especially annoying for CLI tools, but can also be a problem for GUI applications expecting paths via parameters.
-
-.. note::
-   :code:`AppRun.c`, the binary from AppImageKit, is legacy technology and should be avoided if possible. Tools like :ref:`linuxdeploy <ref-linuxdeploy>` deploy applications in a different way (they are smart enough so that a simple symlink called :code:`AppRun` to the main binary works just fine), and made using :code:`AppRun.c` obsolete in most cases.
-
-   There are some edge cases where :code:`AppRun.c` is still in use, and there it might be useful. However, it suffers from many limitations and requires some workarounds (which require troublesome mechanisms, such as e.g., force-changing current working directory, as described in this section), which can cause a lot of trouble while trying to debug an AppImage. Please beware of these before thinking about using :code:`AppRun.c` in your AppImage.
-
-**Download:** There is usually no reason to download this manually, but if you still want to, you can get it from https://github.com/AppImage/AppImageKit/releases/continuous.
-
-
 Helpers
 ^^^^^^^
 
@@ -101,7 +82,7 @@ The project consists of two tools: :code:`appimageupdatetool`, a full-featured C
 .. _AppImageUpdate: https://github.com/AppImage/AppImageUpdate
 .. _update information: https://github.com/AppImage/AppImageSpec/blob/master/draft.md\#update-information
 
-**Download:** You can get it as an AppImage from https://github.com/AppImage/AppImageUpdate/releases/continuous. 
+**Download:** You can get it as an AppImage from https://github.com/AppImage/AppImageUpdate/releases/continuous.
 
 .. _appimaged:
 
@@ -116,7 +97,7 @@ It is shipped as an AppImage.
 
    One of the monitored directories is ``~/Downloads``. If the directory is very large, appimaged usually needs quite long to visit all files. It is likely to slow down the system (specifically, the filesystem).
 
-**Download:** You can get it as an AppImage from https://github.com/probonopd/go-appimage/releases. 
+**Download:** You can get it as an AppImage from https://github.com/probonopd/go-appimage/releases.
 
 Third-party tools
 *****************
@@ -135,7 +116,7 @@ linuxdeployqt
 
    There is a copy-and-paste example for how to use it on Travis CI at https://github.com/probonopd/linuxdeployqt#using-linuxdeployqt-with-travis-ci.
 
-**Download:** You can get it as an AppImage from https://github.com/probonopd/linuxdeployqt/releases/tag/continuous. 
+**Download:** You can get it as an AppImage from https://github.com/probonopd/linuxdeployqt/releases/tag/continuous.
 
 
 linuxdeploy
@@ -151,7 +132,7 @@ linuxdeploy is planned to succeed of :ref:`linuxdeployqt <ref-linuxdeployqt>`, a
 
    There's a guide on :ref:`native binary packaging <ref-packaging-native-binaries>` and a general :ref:`linuxdeploy user guide <ref-linuxdeploy>` in the :ref:`ref-packaging-guide`.
 
-**Download:** You can get it as an AppImage from https://github.com/linuxdeploy/linuxdeploy/releases/continuous. 
+**Download:** You can get it as an AppImage from https://github.com/linuxdeploy/linuxdeploy/releases/continuous.
 
 .. _ref-appimagelauncher:
 
@@ -174,7 +155,7 @@ AppImageLauncher doesn't provide any kind of "app store" software, but integrate
 
 .. _AppImageLauncher: https://github.com/TheAssassin/AppImageLauncher
 
-**Download:** You can get AppImageLauncher-Lite as an AppImage and the full version as a deb from https://github.com/TheAssassin/AppImageLauncher/releases/continuous. 
+**Download:** You can get AppImageLauncher-Lite as an AppImage and the full version as a deb from https://github.com/TheAssassin/AppImageLauncher/releases/continuous.
 
 
 NX Software Center
