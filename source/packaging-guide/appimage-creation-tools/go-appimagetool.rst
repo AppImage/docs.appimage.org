@@ -1,7 +1,7 @@
 .. _sec-go-appimagetool:
 
 go-appimagetool
-======================
+===============
 
 go-appimagetool (the appimagetool part of the go-appimage project) is a tool that can be used by application authors to package their projects as AppImages.
 

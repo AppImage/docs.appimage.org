@@ -8,12 +8,7 @@ This chapter shows application developers how to produce AppImages, how to make 
 .. toctree::
    introduction
    desktop-icon-files
-   overview
-   Using linuxdeploy <appimage-creation-methods/linuxdeploy>
-   Using go-appimagetool <appimage-creation-methods/go-appimagetool>
-   Using appimage-builder <appimage-creation-methods/appimage-builder>
-   Using electron-builder <appimage-creation-methods/electron-builder>
-   Using pkg2appimage <appimage-creation-methods/pkg2appimage>
+   appimage-creation-tools/index
    creating-appdir-structure/index
    optional/index
    packaging-automation/index

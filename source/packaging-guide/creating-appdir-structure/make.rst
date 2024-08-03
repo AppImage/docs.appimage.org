@@ -4,7 +4,7 @@ Using make to create the AppDir structure
 =========================================
 
 .. note::
-   This is only necessary if you use an :ref:`AppImage creation tool <overview-appimage-creation-methods>` that requires prior creation of the AppDir folder structure and file placement.
+   This is only necessary if you use an :ref:`AppImage creation tool <appimage-creation-tools>` that requires prior creation of the AppDir folder structure and file placement.
 
    If you use a tool that doesn't require this, you don't have to do this.
 

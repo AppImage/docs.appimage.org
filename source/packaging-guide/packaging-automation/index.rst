@@ -3,7 +3,7 @@
 Packaging automation
 ====================
 
-Packaging an Application is a repetitive effort. Once you packaged the application, you need to do the same for every new version you release. Depending on the `chosen AppImage creation method <overview-appimage-creation-methods>`_, this might be executing a list of several specific commands. Always manually entering them to build your AppImage is a bad idea: You might forget something or mix something up and produce a flawed AppImage, or even forget how to do it alltogether.
+Packaging an Application is a repetitive effort. Once you packaged the application, you need to do the same for every new version you release. Depending on the :ref:`chosen AppImage creation method <appimage-creation-tools>`, this might be executing a list of several specific commands. Always manually entering them to build your AppImage is a bad idea: You might forget something or mix something up and produce a flawed AppImage, or even forget how to do it alltogether.
 
 So, to avoid this, it's (obviously) better to write down the list of commands and create a (usually shell) script which builds the AppImage when executed. However, you still have to manually build your application and then execute the script for every new version, which is an (unnecessary) repetitive effort.
 

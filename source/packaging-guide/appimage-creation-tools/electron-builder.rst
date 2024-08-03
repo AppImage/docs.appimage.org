@@ -1,7 +1,7 @@
 .. _sec-electron-builder:
 
 electron-builder
-======================
+================
 
 electron-builder is a tool that can be used by application authors to easily package their `Electron <https://electronjs.org>`_ projects not only as AppImages but also as other application formats for Linux (e.g. Flatpak or Snap), macOS (e.g. DMG) and Windows (e.g. Installer or Portable).
 

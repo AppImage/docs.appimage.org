@@ -3,7 +3,7 @@
 .. _sec-using-appimage-builder:
 
 appimage-builder
-======================
+================
 
 appimgage-builder is a tool that can be used by both application authors to package their projects as AppImages and other people to turn existing Debian packages into AppImages if none are officially distributed.
 

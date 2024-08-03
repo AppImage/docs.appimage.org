@@ -11,7 +11,7 @@ pkg2appimage is a tool that can be used by people other than the application aut
 
 .. cssclass:: bold-link
 
-**Do not use pkg2appimage if you are the application author. Application authors should use one of the other creation methods, see** :ref:`overview-appimage-creation-methods`\ **.**
+**Do not use pkg2appimage if you are the application author. Application authors should use one of the other creation methods, see** :ref:`appimage-creation-tools`\ **.**
 
 pkg2appimage requires a manual creation of the AppDir folder structure and file placement inside the recipe, see :ref:`manually-creating-appdir-structure`.
 
@@ -39,7 +39,7 @@ To build an AppImage from a :code:`.yml` description file, simply run:
    pkg2appimage suffers from a few notable issues:
 
      - It is likely to add lots of bloat to the final AppImage. As it simply extracts the contents of packages, there is no check whether any of these resources are actually used by the application or not. You are recommended to check final AppImages, and add ``rm`` commands to your recipes to remove unused data.
-     - pkg2appimage uses distribution packages downloaded using the package managers, however, the packages are not authenticated, as most security functionality has been deactivated. This is a major security issue. pkg2appimage is therefore recommended for personal use only. Upstream authors should consider :ref:`other packaging methods <overview-appimage-creation-methods>`.
+     - pkg2appimage uses distribution packages downloaded using the package managers, however, the packages are not authenticated, as most security functionality has been deactivated. This is a major security issue. pkg2appimage is therefore recommended for personal use only. Upstream authors should consider :ref:`other packaging methods <appimage-creation-tools>`.
 
    .. seealso::
       See `this GitHub issue <https://github.com/AppImage/pkg2appimage/issues/197>`__ for more information on the security issue.

@@ -1,9 +1,9 @@
-.. include:: ../substitutions.rst
+.. include:: ../../substitutions.rst
 
-.. _overview-appimage-creation-methods:
+.. _appimage-creation-tools:
 
-Overview
-========
+AppImage creation tools
+=======================
 
 There are different tools that help with creating AppDirs and the corresponding AppImages. They can help in several ways:
 
@@ -16,9 +16,15 @@ Some tools require you to manually create the AppDir structure prior to invoking
 
 Additionally, many applications require additional resources, e.g. asset files for drawing a GUI, which have to be included in the AppImage. In this case, a directory with (only) these required resources needs to be created and given to the AppImage creation tool, no matter which tool is used.
 
-The following table gives an overview of the different tools and their advantages, disadvantages and differences. For each of them, there is a corresponding section in this packaging guide, explaining how to use it.
+This section gives an overview of the different tools and their advantages, disadvantages and differences. For each of them, there is a corresponding page, explaining how to use it.
 
 If you are unsure which one to use, linuxdeploy and go-appimagetool are the best options in most cases.
+
+
+.. _comparison-table:
+
+Comparison table
+----------------
 
 ..
    TODO: Improve all reference links and make them consistent
@@ -97,3 +103,13 @@ Ideally, upstream application authors should package the application and provide
 Converting existing packages, on the other hand, doesn't require the dependencies to be installed on your system. Instead, they are downloaded during the packaging process from distribution repositories. To convert an existing package (ideally a PPA or .deb file), you write a so-called *recipe* that is then used to convert the package into an AppImage. As some (mostly proprietary) applications don't allow redistribution, you can distribute these recipes to allow other users to easily convert existing packages to AppImages.
 
 |appimage_preferred_source|
+
+.. toctree::
+   linuxdeploy
+   go-appimagetool
+   appimage-builder
+   electron-builder
+   pkg2appimage
+   :caption: Contents:
+   :maxdepth: 1
+

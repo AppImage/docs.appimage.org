@@ -78,4 +78,4 @@ For more information, see the `Icon Theme Specification <https://specifications.
 Advanced options
 ----------------
 
-For advanced options of the desktop entry file, e.g. using localized strings to change the application name and description based on the user's system language, see the official `Desktop Entry Specification <https://specifications.freedesktop.org/desktop-entry-spec/latest/recognized-keys.html>`_.
+For advanced options of the desktop entry file, e.g. using localized strings to change the application name and description based on the user's system language or registering supported `MIME types <https://en.wikipedia.org/wiki/Media_type>`_, see the official `Desktop Entry Specification <https://specifications.freedesktop.org/desktop-entry-spec/latest/recognized-keys.html>`_.

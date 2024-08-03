@@ -6,14 +6,14 @@ Manually creating the entire AppDir structure
 .. warning::
    While manually creating a directory structure and copying some files might be necessary depending on the used tool, manually packaging *everything* should only be used as a last resort if all other methods aren't applicable.
 
-   Using one of the `AppImage creation tools <overview-appimage-creation-methods>`_ is usually much more convenient.
+   Using one of the :ref:`appimage-creation-tools` is usually much more convenient.
 
    The main reason it's explained nevertheless is to illustrate how things work under the hood.
 
    If you only want to manually create an AppDir structure as the chosen AppImage creation tool requires an existing AppDir structure, go to :ref:`manually-creating-appdir-structure`.
 
 
-If you want to manually create the entire AppDir structure and copy all files to their correct places in the structure without using any :ref:`AppImage creation tool <overview-appimage-creation-methods>`, you first have to follow the steps described in :ref:`manually-creating-appdir-structure`.
+If you want to manually create the entire AppDir structure and copy all files to their correct places in the structure without using any :ref:`AppImage creation tool <appimage-creation-tools>`, you first have to follow the steps described in :ref:`manually-creating-appdir-structure`.
 
 
 Adding shared libraries
