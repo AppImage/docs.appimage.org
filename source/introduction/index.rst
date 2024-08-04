@@ -12,7 +12,6 @@ The following section provides an overview of the AppImage idea, the motives beh
    motivation
    advantages
    concepts
-   software-overview
    upstream
    :caption: Contents:
    :maxdepth: 2
