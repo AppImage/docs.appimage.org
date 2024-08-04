@@ -1,3 +1,5 @@
+.. include:: ../../substitutions.rst
+
 .. _sec-go-appimagetool:
 
 go-appimagetool
@@ -7,9 +9,7 @@ go-appimagetool (the appimagetool part of the go-appimage project) is a tool tha
 
 It requires a manual creation of the AppDir folder structure and file placement (if make isn't used). For more information on how to use make accordingly, or manually create the necessary structure, see :ref:`creating-appdir-structure`.
 
-It allows for both including core system libraries like glibc and not including them.
-
-go-appimagetool doesn't require an *old system* (meaning the oldest supported LTS distribution version) to compile the binaries.
+It allows for both including core system libraries like glibc and not including them. If the core system libraries aren't included, |build_on_old_version|.
 
 However, it is less mature than linuxdeploy and doesn't support some advanced options (like not deploying specific libraries or copyright files).
 

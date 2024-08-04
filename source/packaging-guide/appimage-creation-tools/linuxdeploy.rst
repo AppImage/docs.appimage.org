@@ -1,3 +1,5 @@
+.. include:: ../../substitutions.rst
+
 .. _ref-linuxdeploy:
 
 linuxdeploy
@@ -7,9 +9,7 @@ linuxdeploy is a tool that can be used by application authors to easily create a
 
 Its primary focus is on AppDirs, and it uses plugins to create other outputs such as AppImages.
 
-linuxdeploy doesn't include core system libraries like glibc. This results in a reduced AppImage size. AppImages that are created with linuxdeploy should run on *almost* all modern linux distributions.
-
-When using linuxdeploy, AppImages should be built on the oldest supported LTS distribution version to make sure that the resulted AppImage works on all current (newer) distribution versions.
+linuxdeploy doesn't include core system libraries like glibc. This results in a reduced AppImage size. AppImages that are created with linuxdeploy should run on *almost* all modern linux distributions. However, when using it, |build_on_old_version|.
 
 The following sections explain how to use linuxdeploy.
 

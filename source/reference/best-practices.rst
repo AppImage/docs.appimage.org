@@ -47,9 +47,9 @@ Some application frameworks such as Qt have this functionality built-in, for exa
    For an example, see: https://github.com/KaidanIM/Kaidan/commit/da38011b55a1aa5d17764647ecd699deb4be437f
 
 .. warning::
-   
+
    :code:`QStandardPaths::standardLocations(QStandardPaths::AppDataLocation)` **does not work reliably.**
-   
+
    According to the `Qt documentation`_, this resolves to :code:`~/.local/share/<APPNAME>`, :code:`/usr/local/share/<APPNAME>`, :code:`/usr/share/<APPNAME>`, but clearly :code:`/usr` is not where these things are located in an AppImage.
 
 .. _BinReloc: https://github.com/limbahq/binreloc
@@ -79,6 +79,10 @@ This command is also available as part of the bash function collection at `AppIm
 Binaries compiled on old enough base system
 -------------------------------------------
 
+.. todo::
+
+   Merge most of this into the corresponding section in Concepts and link it
+
 The ingredients used in your AppImage should not be built on a more recent base system than the oldest base system your AppImage is intended to run on.
 
 Some core libraries, such as glibc, tend to break compatibility with older base systems quite frequently, which means that binaries will run on newer, but not on older base systems than the one the binaries were compiled on.
@@ -106,7 +110,7 @@ https://wiki.debian.org/Lintian
 
 .. seealso::
 
-   This concept is also described in :ref:`build-on-old-systems`.
+   This concept is also described in :ref:`exclude-expected-libraries`.
 
 
 .. _ref-libstdc++.so.6:

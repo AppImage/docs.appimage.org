@@ -7,6 +7,11 @@ pkg2appimage
 
 pkg2appimage is a tool that can be used by people other than the application authors to convert officially distributed binary packages (archives, .deb packages and PPAs) into AppImages if none are officially distributed. It doesn't require dependencies to be installed on your system; instead, they are downloaded during the packaging process from distribution repositories. To convert an existing package, you write a `.yml description file <https://github.com/AppImage/pkg2appimage/tree/master/recipes>`_ (called recipe) and run it with `pkg2appimage`_. As some (mostly proprietary) applications don't allow redistribution, you can distribute these recipes to allow other users to easily convert existing packages to AppImages.
 
+pkg2appimage doesn't include core system libraries like glibc. This results in a reduced AppImage size.
+
+..
+   TODO: Does the system version on which a recipe is invoked make a difference on the versions the AppImage will run on?
+
 |appimage_preferred_source|
 
 .. cssclass:: bold-link

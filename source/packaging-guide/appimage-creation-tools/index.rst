@@ -45,7 +45,6 @@ Comparison table
        | Creates the AppDir from scratch and doesn't require any existing AppDir structure or manual file placement.
        | Doesn't include core system libraries like glibc. This results in a reduced AppImage size.
        | Created AppImages should run on *almost* all modern linux distributions.
-       | AppImages should be built on the oldest supported LTS distribution versions when using it.
        | More mature; supports additional options (e.g. not deploying specific libraries or copyright files) go-appimagetool doesn't support (yet).
        | Repository link: https://github.com/linuxdeploy/linuxdeploy
        | Packaging guide: :ref:`ref-linuxdeploy`
@@ -53,7 +52,6 @@ Comparison table
      - | A tool that can be used by application authors to package their projects as AppImages.
        | Requires manual creation of the AppDir folder structure and file placement (if make isn't used).
        | Allows for both including core system libraries like glibc and not including them.
-       | Doesn't require AppImages to be built on the oldest supported LTS distribution versions.
        | Less mature; doesn't support some options linuxdeploy does.
        | Repository link: https://github.com/probonopd/go-appimage
        | Packaging guide: :ref:`sec-go-appimagetool`
@@ -62,7 +60,6 @@ Comparison table
        | Requires manual creation of the AppDir folder structure and file placement (if make isn't used).
        | Includes core system libraries like glibc. This results in an increased AppImage size (+ >30MB).
        | Officially supports Debian, Ubuntu and Arch.
-       | Doesn't require AppImages to be built on the oldest supported LTS distribution versions.
        | Should only be used if linuxdeploy can't be used (e.g. if the AppImage can't be built on the oldest supported LTS distribution version).
        | Repository link: https://github.com/AppImageCrafters/appimage-builder
        | Packaging guide: :ref:`sec-using-appimage-builder`
@@ -75,6 +72,7 @@ Comparison table
    * - pkg2appimage
      - | A tool that can be used by people other than the application authors to convert officially distributed binary packages (archives, .deb packages and PPAs) into AppImages if none are officially distributed.
        | Requires manual creation of the AppDir folder structure and file placement.
+       | Doesn't include core system libraries like glibc. This results in a reduced AppImage size.
        | **Do not use pkg2appimage if you are the application author. pkg2appimage should only be used if there is no officially distributed AppImage.** Application authors should use one of the other creation methods.
        | pkg2appimage has a major `security issue <https://github.com/AppImageCommunity/pkg2appimage/issues/197>`_; therefore it's only recommended for personal use.
        | Repository link: https://github.com/AppImageCommunity/pkg2appimage
@@ -103,6 +101,17 @@ Ideally, upstream application authors should package the application and provide
 Converting existing packages, on the other hand, doesn't require the dependencies to be installed on your system. Instead, they are downloaded during the packaging process from distribution repositories. To convert an existing package (ideally a PPA or .deb file), you write a so-called *recipe* that is then used to convert the package into an AppImage. As some (mostly proprietary) applications don't allow redistribution, you can distribute these recipes to allow other users to easily convert existing packages to AppImages.
 
 |appimage_preferred_source|
+
+
+Compiling the application on an old system
+------------------------------------------
+
+If the AppImage won't include core libraries like glibc (see the :ref:`comparison-table`), the AppImage usually has to be built on the oldest still-supported Linux distribution version that we can assume users to still use. |old_compile_version_reason|
+
+For more information about this, exceptions to this and alternatives if you can't build your application on the oldest still-supported Linux distribution, see :ref:`exclude-expected-libraries`.
+
+The so-called *excludelist* of all core libraries that aren't included by most AppImage creation tools is available `here <https://github.com/AppImage/pkg2appimage/blob/master/excludelist>`_
+
 
 .. toctree::
    linuxdeploy
