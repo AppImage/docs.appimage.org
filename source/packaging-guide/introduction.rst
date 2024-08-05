@@ -3,11 +3,8 @@ Introduction to Packaging
 
 So you decided to make an AppImage or two? Great! Or did you just come here to get some insights into how AppImages can be built? Let's have a look.
 
-There are many different approaches how to build AppImages. Often, packaging an AppImage correctly depends on the application that you're trying to put into one, the so-called *payload*. Different programming languages (or, rather, different application types (i.e., native binaries, scripts, bytecode, etc.)) require different methods.
+There are several tools that you can use to build AppImages. But don't worry, this guide goes through all of them and explains their advantages, disadvantages and differences.
 
-All application bundling attempts have one thing in common: the "input format" which is then turned into an AppImage using :ref:`appimagetool <ref-appimagetool>`. This input format is called AppDir, and is described in the :ref:`AppDir specification <ref-appdir-specification>`.
+All application bundling attempts have one thing in common: They initially create a specific nested directory structure called *AppDir* (which is described in the :ref:`AppDir specification <ref-appdir-specification>`) and then turn this AppDir into an AppImage. You can imagine the AppImage as a container (like a zip file) for the AppDir. If the AppDir is not build correctly, the AppImage won't work.
 
-In a nutshell: packaging AppImages is building an AppDir. This AppDir is then simply turned into an AppImage. But if your AppDir is not built correctly, the AppImage won't work.
-
-Of course, you're not left alone with this challenge. There are official as well as unofficial tools that allow you to create working AppDirs. These are described in the following sections. Just pick the one you think suits your needs, and start making AppImages.
-
+The following sections explain how to create an AppDir and the corresponding AppImage with the different tools, the necessary preparations for it, e.g. creating desktop entry and icon files, as well as optional features, such as adding more metadata and signing your AppImage.

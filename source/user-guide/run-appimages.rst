@@ -64,7 +64,7 @@ For type 2 AppImages::
     > sudo mount my.AppImage mountpoint/ -o offset=123456
     # you can now inspect the contents
     > sudo umount mountpoint/
-    
+
 Note that the number `123456` is just an example here, you will likely see another number.
 
 .. warning::
@@ -102,27 +102,31 @@ AppImages are standalone bundles, and do not need to be *installed*. However, so
 appimaged
 *********
 
-`appimaged <https://github.com/probonopd/go-appimage/releases>`__ is a daemon that monitors the system and integrates AppImages. It monitors a predefined set of directories on the user's system searching for AppImages, and integrates them into the system using :ref:`libappimage <ref-libappimage>`.
+`appimaged <https://github.com/probonopd/go-appimage/releases>`__ is a daemon that monitors a predefined set of directories on the system and integrates AppImages. It automatically integrates all AppImages it can find during an initial search, and then continues to watch for new and removed AppImages and (dis)integrates these immediately.
 
-.. seealso::
-   More information on appimaged can be found in :ref:`appimaged`.
+It is shipped as an AppImage.
+
+.. warning::
+
+   One of the monitored directories is ``~/Downloads``. If the directory is very large, appimaged usually needs quite some time to visit all files. It is likely to slow down the system (specifically, the filesystem).
+
+**Download:** You can get it as an AppImage from https://github.com/probonopd/go-appimage/releases/continuous.
 
 
 AppImageLauncher
 ****************
 
-AppImageLauncher_ is a helper application for Linux distributions serving as a kind of "entry point" for running and integrating AppImages. It makes a user's system AppImage-ready™.
+AppImageLauncher_ is a helper application for Linux distributions, serving as a kind of "entry point" for running and integrating AppImages.
 
-AppImageLauncher must be installed into the system to be able to integrate into the system properly. It uses technologies that are independent from any desktop environment features, and therefore should be able to run on most distributions.
+AppImageLauncher must be installed into the system to be able to integrate properly. It uses technologies that are independent from any desktop environment features, and therefore should be able to run on most distributions.
 
-After install AppImageLauncher, you can simply double-click AppImages in file managers, browsers etc. You will be prompted whether to integrate the AppImage, or run it just once. When you choose to integrate your AppImage, the file will be moved into the directory :code:`~/Applications`. This helps reducing the mess of AppImages on your file system and prevents you from having to search for the actual AppImage file if you want to e.g., remove it.
+After install AppImageLauncher, you can simply double-click AppImages in file managers, browsers etc. You will be prompted whether to integrate the AppImage, or run it just once. When you choose to integrate your AppImage, the file will be moved into the directory :code:`~/Applications`. This helps reducing the mess of AppImages on your file system and prevents you from having to search for the actual AppImage file if you want to, e.g., remove it.
 
-To provide a complete solution for managing AppImages on the system, AppImageLauncher furthermore provides solutions for updating and removing AppImages from the system. These functions can be found in the context menus of the entries in the desktop's launcher.
+To provide a complete solution for managing AppImages, AppImageLauncher furthermore allows to update and remove AppImages from the system. These functions can be found in the context menus of the entries in the desktop launcher.
+
+**Download:** You can get AppImageLauncher-Lite as an AppImage and the full version as a ``.deb`` or ``.rpm`` file, both from https://github.com/TheAssassin/AppImageLauncher/releases/continuous.
 
 .. _AppImageLauncher: https://github.com/TheAssassin/AppImageLauncher
-
-.. seealso::
-   More information about AppImageLauncher can be found in :ref:`ref-appimagelauncher`.
 
 
 Troubleshooting

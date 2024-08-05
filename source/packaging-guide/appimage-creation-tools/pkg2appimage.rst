@@ -1,10 +1,24 @@
+.. include:: ../../substitutions.rst
+
 .. _ref-pkg2appimage:
 
 pkg2appimage
 ============
 
-If you already have existing binaries (either in archive or :code:`.deb` format or a ppa) then the recommended way to convert these to an AppImage is to write a `.yml description file <https://github.com/AppImage/pkg2appimage/tree/master/recipes>`__ and run it with `pkg2appimage`_.
+pkg2appimage is a tool that can be used by people other than the application authors to convert officially distributed binary packages (archives, .deb packages and PPAs) into AppImages if none are officially distributed. It doesn't require dependencies to be installed on your system; instead, they are downloaded during the packaging process from distribution repositories. To convert an existing package, you write a `.yml description file <https://github.com/AppImage/pkg2appimage/tree/master/recipes>`_ (called recipe) and run it with `pkg2appimage`_. As some (mostly proprietary) applications don't allow redistribution, you can distribute these recipes to allow other users to easily convert existing packages to AppImages.
 
+pkg2appimage doesn't include core system libraries like glibc. This results in a reduced AppImage size.
+
+..
+   TODO: Does the system version on which a recipe is invoked make a difference on the versions the AppImage will run on?
+
+|appimage_preferred_source|
+
+.. cssclass:: bold-link
+
+**Do not use pkg2appimage if you are the application author. Application authors should use one of the other creation methods, see** :ref:`appimage-creation-tools`\ **.**
+
+pkg2appimage requires a manual creation of the AppDir folder structure and file placement inside the recipe, see :ref:`manually-creating-appdir-structure`.
 
 .. contents:: Contents
    :local:
@@ -30,7 +44,7 @@ To build an AppImage from a :code:`.yml` description file, simply run:
    pkg2appimage suffers from a few notable issues:
 
      - It is likely to add lots of bloat to the final AppImage. As it simply extracts the contents of packages, there is no check whether any of these resources are actually used by the application or not. You are recommended to check final AppImages, and add ``rm`` commands to your recipes to remove unused data.
-     - pkg2appimage uses distribution packages downloaded using the package managers, however, the packages are not authenticated, as most security functionality has been deactivated. This is a major security issue. pkg2appimage is therefore recommended for personal use only. Upstream authors should consider :ref:`packaging from source <ref-from-source>`.
+     - pkg2appimage uses distribution packages downloaded using the package managers, however, the packages are not authenticated, as most security functionality has been deactivated. This is a major security issue. pkg2appimage is therefore recommended for personal use only. Upstream authors should consider :ref:`other packaging methods <appimage-creation-tools>`.
 
    .. seealso::
       See `this GitHub issue <https://github.com/AppImage/pkg2appimage/issues/197>`__ for more information on the security issue.

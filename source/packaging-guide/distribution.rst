@@ -99,6 +99,10 @@ Also be sure to advertise your new AppImage on social media, for example on Twit
 AppImageHub
 '''''''''''
 
+.. todo::
+
+   Is https://appimage.github.io/apps and https://www.appimagehub.com the same project?
+
 You may want to add your AppImage to `AppImageHub <https://appimage.github.io/apps/>`__, a crowd-sourced directory of available, automatically tested AppImages with data that 3rd party app stores and software centers can use. Given an URL to an AppImage, it inspects the AppImage and puts it into a community-maintained catalog.
 
 App stores and software centers can consume the metadata collected by this project. See `AppImage ecosystem`_.

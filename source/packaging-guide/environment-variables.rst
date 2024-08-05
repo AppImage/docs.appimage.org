@@ -22,20 +22,17 @@ Type 1 AppImage runtime
    Type 1 is the deprecated/outdated AppImage type that is only in legacy support mode. It is not recommended to make
    new type 1 AppImages. We strongly recommend you to use :code:`appimagetool` to make type 2 AppImages.
 
-+------------------+--------------------------------------------------------------------------------------------------+
-| Variable name    | Contents                                                                                         |
-|                  |                                                                                                  |
-+==================+==================================================================================================+
-| :code:`APPIMAGE` | (Absolute) path to AppImage file (with symlinks resolved)                                        |
-|                  |                                                                                                  |
-+------------------+--------------------------------------------------------------------------------------------------+
-| :code:`APPDIR`   | Path of mountpoint of the ISO9660 image contained in the AppImage                                |
-|                  |                                                                                                  |
-+------------------+--------------------------------------------------------------------------------------------------+
-| :code:`OWD`      | Path to working directory at the time the AppImage is called                                     |
-|                  |                                                                                                  |
-+------------------+--------------------------------------------------------------------------------------------------+
+.. list-table::
+   :header-rows: 1
 
+   * - Variable name
+     - Contents
+   * - :code:`APPIMAGE`
+     - (Absolute) path to AppImage file (with symlinks resolved)
+   * - :code:`APPDIR`
+     - Path of mountpoint of the ISO9660 image contained in the AppImage
+   * - :code:`OWD`
+     - Path to working directory at the time the AppImage is called
 
 
 Type 2 AppImage runtime
@@ -43,25 +40,19 @@ Type 2 AppImage runtime
 
 The type 2 AppImage runtime makes a few environment variables available for use in e.g., ``AppRun`` scripts:
 
-+------------------+--------------------------------------------------------------------------------------------------+
-| Variable name    | Contents                                                                                         |
-|                  |                                                                                                  |
-+==================+==================================================================================================+
-| :code:`APPIMAGE` | (Absolute) path to AppImage file (with symlinks resolved)                                        |
-|                  |                                                                                                  |
-+------------------+--------------------------------------------------------------------------------------------------+
-| :code:`APPDIR`   | Path of mountpoint of the SquashFS image contained in the AppImage                               |
-|                  |                                                                                                  |
-+------------------+--------------------------------------------------------------------------------------------------+
-| :code:`OWD`      | Path to working directory at the time the AppImage is called                                     |
-|                  |                                                                                                  |
-+------------------+--------------------------------------------------------------------------------------------------+
-| :code:`ARGV0`    | Name/path used to execute the script. This corresponds to the value you'd normally receive via   |
-|                  | the :code:`argv` argument passed to your :code:`main` method.                                    |
-|                  | Usually contains the filename or path to the AppImage, relative to the current working           |
-|                  | directory.                                                                                       |
-|                  |                                                                                                  |
-+------------------+--------------------------------------------------------------------------------------------------+
+.. list-table::
+   :header-rows: 1
+
+   * - Variable name
+     - Contents
+   * - :code:`APPIMAGE`
+     - (Absolute) path to AppImage file (with symlinks resolved)
+   * - :code:`APPDIR`
+     - Path of mountpoint of the SquashFS image contained in the AppImage
+   * - :code:`OWD`
+     - Path to working directory at the time the AppImage is called
+   * - :code:`ARGV0`
+     - Name/path used to execute the script. This corresponds to the value you'd normally receive via the :code:`argv` argument passed to your :code:`main` method. Usually contains the filename or path to the AppImage, relative to the current working directory.
 
 .. note::
 

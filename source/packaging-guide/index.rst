@@ -7,12 +7,11 @@ This chapter shows application developers how to produce AppImages, how to make 
 
 .. toctree::
    introduction
-   overview
-   from-source/index
-   converting-binary-packages/index
+   desktop-icon-files
+   appimage-creation-tools/index
+   creating-appdir-structure/index
    optional/index
-   hosted-services/index
-   manual
+   packaging-automation/index
    testing
    distribution
    environment-variables

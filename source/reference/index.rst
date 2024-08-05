@@ -8,9 +8,9 @@ The following section contains reference documents like standards, etc.
 
 .. toctree::
    architecture
-   specification
+   appdir-specification
+   appimage-specification
+   software-overview
    best-practices
-   appdir
-   desktop-integration
    :maxdepth: 2
    :caption: Contents:

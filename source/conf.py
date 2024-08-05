@@ -124,6 +124,7 @@ html_favicon = "_static/favicon.ico"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+html_css_files = ["css/custom.css"]
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -208,8 +209,3 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
-
-
-# apply some subtle changes to the selected theme via custom CSS file
-def setup(app):
-    app.add_css_file("css/custom.css")

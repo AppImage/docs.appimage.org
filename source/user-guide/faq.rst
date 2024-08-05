@@ -32,7 +32,12 @@ Using the optional appimaged daemon, you can easily integrate AppImages with the
 |question| Where can I download AppImages?
 ------------------------------------------
 
-See the "repository" of upstream-generated AppImages.
+If you want to download a specific application, the easiest way to do so is to go to the application releases (e.g. on GitHub or the application website) and download the newest release as an AppImage.
+
+If you want to have a central catalog of available AppImages, e.g. to know what's available, check out AppImageHub. AppImageHub is a crowd-sourced directory of available AppImages. It doesn't provide the AppImages directly, but instead links to the original author's download URLs, so you can be sure to download the originally packaged applications. Its database can also be used by other third party app stores, which is done by e.g. the `Nitrux <https://nxos.org>`_ OS.
+
+..
+   TODO: Add links (see the TODO in the AppImageHub section)
 
 
 |question| Where do I store my AppImages?
