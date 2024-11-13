@@ -1,6 +1,10 @@
 AppImage advantages
 ===================
 
+.. todo::
+
+   The structure and purpose of this page is very similar to :ref:`motivation`. These two pages should be merged.
+
 This chapter compares AppImage with traditional application packaging formats on Linux and explains the advantages of the AppImage format. You can skip this chapter if you already know why AppImages are useful.
 
 Traditionally, applications have been installed on Linux systems by using the package manager that comes with the Linux distribution. However, this model does not scale well for long-tail applications, applications that are only used by a few users, or in cases where users want to use the very latest applications immediately after they are published by their developers. It also is very cumbersome for application developers that want to reach a large audience quickly.
@@ -48,7 +52,7 @@ Some applications require certain versions of dependencies in order to function 
 Advantages for software testers
 -------------------------------
 
-Successful application projects run a lot of tests. Whereas some tests may be automated, manual tests are always important to ensure both functionality and usability. In regression testing, different versions of an application are compared to each other concerning features and bugs. AppImage makes it easy to conduct application tests on local machines, since it allows to run various different versions of applications alongside each other. With portable mode, it is also possible to isolate the settings of each version of the application from each other, allowing for clean testing environments.
+Successful application projects run a lot of tests. Whereas some tests may be automated, manual tests are always important to ensure both functionality and usability. In regression testing, different versions of an application are compared to each other concerning features and bugs. AppImage makes it easy to conduct application tests on local machines, since it allows to run various different versions of applications alongside each other. With :ref:`portable mode <portable-mode>`, it is also possible to isolate the settings of each version of the application from each other, allowing for clean testing environments.
 
 The LibreOffice_ project, for example, uses AppImages to test new application versions.
 

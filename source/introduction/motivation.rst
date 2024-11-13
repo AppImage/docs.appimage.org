@@ -1,7 +1,9 @@
+.. _motivation:
+
 Motivation
 ==========
 
-There's two different points of view when looking at AppImages: the user's and the developer's. The following section explains both of them.
+There's two different points of view when looking at AppImages: The user's and the developer's. The following section explains both of them.
 
 
 .. contents:: Contents
@@ -28,13 +30,13 @@ As AppImage has been around for a while, a lot of useful, optional features have
 
 An important advantage is that AppImage is designed from ground to run without super user permissions. Almost all major distributions are compatible with AppImages, without requiring the user to make modifications to the base system. AppImages ship with their own runtime, and don't require external resources if packaged properly. Students in university labs for instance can simply put an AppImage on a USB disk and use it normally, on any machine.
 
-To sum up: AppImages provide a easy and unified user experience, have a large user base and eco system, and there's a lot of tools that improve the users' user experience.
+To sum up: AppImages provide an easy and unified user experience, have a large user base and ecosystem, and there's a lot of tools that improve the user experience.
 
 
 Why would I as a developer want to make and distribute AppImages?
 ----------------------------------------------------------------------------------------
 
-Many developers have found that they can deploy their apps to most operating systems with viable efforts. They can say, "I make binaries for Windows", or "I make binaries for macOS". However, when trying to do the same for Linux, they commonly face a situation where they cannot "make binaries for Linux", but they have to make them for Ubuntu, Debian, CentOS, openSUSE etc. Read: they have to make binaries for every distribution.
+Many developers have found that they can deploy their apps to most operating systems with viable efforts. They can say, "I make binaries for Windows", or "I make binaries for macOS". However, when trying to do the same for Linux, they commonly face a situation where they cannot "make binaries for Linux", but they have to make them for Ubuntu, Debian, Fedora, openSUSE etc. Read: they have to make binaries for every distribution.
 
 The problem with this is that Linux is just the kernel, but the operating systems users run are separate projects with separate goals and concerns. They all ship with different versions and combinations of certain libraries, and most of them require software to be shipped separately, linking to binaries in the distribution. Therefore, in order to be able to run a certain binary, that binary must be compiled *against* the distribution's set of libraries. As soon as another distribution's collection of libraries is not the same as the one the binary was built on, it will crash or even refuse to run.
 
@@ -44,6 +46,6 @@ This can be accomplished using traditional tarballs that contain all the librari
 
 In order to improve the usability and reduce the maintenance effort, AppImage was created. AppImages are bundles of programs, their dependency libraries and all the resources they need during the runtime. They're single binaries, following the ":ref:`one app = one file <one-app-one-file-principle>`" core principle.
 
-Making AppImages is very simple for a developer. There's tools which generate an AppImage from a so-called :ref:`AppDir <ref-appdir>`. There's simple tools to create such an AppDir for an existing software, which are aware of potential cross distro incompatibilities, and try to avoid them. And once the AppImage has been built, it will "just run" on all major desktop distributions.
+Making AppImages is very simple for a developer. There are different tools that help with generating AppImages and even creating AppImages from existing packages, which are aware of potential cross distro incompatibilities, and try to avoid them. And once the AppImage has been built, it will "just run" on all major desktop distributions.
 
 Stop making binaries "for distributions" and start making binaries "for Linux" today!

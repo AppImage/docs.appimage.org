@@ -25,7 +25,7 @@ Using the GUI
 #. Open your file manager and browse to the location of the AppImage
 #. Right-click on the AppImage and click the ‘Properties’ entry
 #. Switch to the Permissions tab and
-#. Click the ‘Allow executing file as program’ checkbox if you are using a Nautilus-based file manager (Files, Nemo, Caja), or click the ‘Is executable’ checkbox if you are using Dolphin, or change the ‘Execute’ drop down list to ‘Anyone’ if you are using PCManFM
+#. Click the ‘Allow executing file as program’ checkbox if you are using a Nautilus-based file manager (Files, Nemo, Caja), click the ‘Is executable’ checkbox if you are using Dolphin, or change the ‘Execute’ drop down list to ‘Anyone’ if you are using PCManFM
 #. Close the dialog
 #. Double-click on the AppImage file to run
 
