@@ -1,3 +1,5 @@
+.. _upstream-packaging:
+
 A word on upstream packaging
 ============================
 
