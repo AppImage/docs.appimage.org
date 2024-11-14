@@ -136,6 +136,9 @@ html_css_files = ["css/custom.css"]
 #
 # html_sidebars = {}
 
+# Don't automatically transform -- to a single dash
+smartquotes = False
+
 
 # -- Options for HTMLHelp output ---------------------------------------------
 

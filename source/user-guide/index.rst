@@ -5,7 +5,8 @@ This chapter shows users what AppImages are from a user perspective, how they ca
 
 .. toctree::
    faq
-   run-appimages
+   inspect-appimage-content
+   desktop-integration
    portable-mode
    mac
    troubleshooting/index
