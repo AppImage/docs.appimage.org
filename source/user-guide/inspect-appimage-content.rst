@@ -1,3 +1,7 @@
+.. include:: ../substitutions.rst
+
+.. _inspect_appimage_content:
+
 Inspect AppImage content
 ===========================
 
@@ -7,6 +11,7 @@ To inspect the content of any AppImage, it is possible to extract their content 
 
    Add a section in which the difference of the individual AppImage types are explained.
    See https://github.com/AppImage/AppImageKit/issues/830 for example.
+   Type 2 AppImages are built in 2017 or later
 
 .. contents:: Contents
    :local:
@@ -16,7 +21,7 @@ To inspect the content of any AppImage, it is possible to extract their content 
 Calling the AppImage with special parameters
 --------------------------------------------
 
-The most convenient way to inspect the content of an AppImage is to call it with the ``--appimage-extract`` or ``--appimage-mount`` option. This only works for type 2 AppImages, but every reasonably recent AppImage is type 2. If you have to inspect a type 1 AppImage, see the other options described on this page.
+The most convenient way to inspect the content of an AppImage is to call it with the ``--appimage-extract`` or ``--appimage-mount`` option. This only works for type 2 AppImages, |recent_type_2|. If you have to inspect a type 1 AppImage, see the other options described on this page.
 
 .. warning::
    You should only do this if you trust the AppImage (as the runtime could be altered to execute different code, even if you use these parameters). If you want to inspect the AppImage as you don't trust it, you should follow the instructions in the section :ref:`using-external-tools`.
@@ -59,7 +64,7 @@ You can also use ``--appimage-mount`` instead of ``--appimage-extract`` if you r
 Type 1 AppImages
 ++++++++++++++++
 
-Type 1 AppImages are legacy; however you still might want to inspect the content of an old AppImage. To do this safely, you can rename them to ``.iso`` instead of ``.AppImage`` and then extract them by using a tool like ``Iso7z`` that can handle ``zisofs``.
+Type 1 AppImages are legacy; however you still might want to inspect the content of an old AppImage. To do this safely, you can rename them to ``.iso`` instead of ``.AppImage`` and then extract them by using a tool like ``Iso7z`` or ``bsdtar`` that can handle ``zisofs``.
 
 
 Mounting with root permissions
@@ -72,7 +77,7 @@ The other options described on this page are usually preferred. This is primaril
 .. code-block:: bash
 
     > mkdir mountpoint
-    > sudo mount my.AppImage mountpoint/
+    > sudo mount -o loop my.AppImage mountpoint/
     # You can now inspect the AppImage content in mountpoint/
     > sudo umount mountpoint/
 

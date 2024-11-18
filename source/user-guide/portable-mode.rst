@@ -1,8 +1,11 @@
+.. include:: ../substitutions.rst
+
+.. _portable-mode:
+
 Using portable mode
 ===================
 
-This page describes a mode some newer AppImages (i.e., built in 2017 or later) provide, the *portable mode*. This mode allows for bundling an application's data next to the application's AppImage.
-
+This page describes the portable mode. It allows for bundling an application's data next to the application's AppImage. Only type 2 AppImages provide it, |recent_type_2|.
 
 .. contents:: Contents
    :local:
@@ -12,42 +15,43 @@ This page describes a mode some newer AppImages (i.e., built in 2017 or later) p
 Introduction
 ------------
 
-Sometimes it can be useful for data of an application to travel along with the application, for example to put the application on a USB stick that can be used with different computers. In the windows world, this concept is known as “portable applications”.
+Sometimes it can be useful for data of an application to travel along with the application, for example to put the application on a USB drive that can be used with different computers. In the Windows world, this concept is known as “portable applications”.
 
-Normally the application contained inside an AppImage will store its configuration files wherever it always stores them (most frequently somewhere inside :code:`$HOME`). In other words, the fact that an application is contained inside an AppImage normally does not change where the application stores its data.
+Normally, the application contained inside an AppImage will store its application data (e.g. configuration files) wherever it always stores them (most frequently somewhere inside :code:`$HOME`). In other words, the fact that an application is contained inside an AppImage normally does not change where the application stores its data.
 
-However, there is functionality in newer AppImages that can make the application's data travel along with the application, if certain directories are present *next to the AppImage file*.
+However, there is functionality in type 2 AppImages that can make the application's data travel along with the application. If you invoke a type 2 AppImage and have certain directories present *next to the AppImage file* (in the same directory), the AppImage will store its application data and configuration files alongside the AppImage. This can be useful for portable use cases, e.g., carrying an AppImage on a USB drive, along with its data.
 
-If you invoke an AppImage built with a recent version of AppImageKit and have one of these special directories in place, then the configuration files will be stored alongside the AppImage. This can be useful for portable use cases, e.g., carrying an AppImage on a USB stick, along with its data.
-
-- If there is a directory with the same name as the AppImage plus :code:`.home`, then :code:`$HOME` will automatically be set to it before executing the payload application
-- If there is a directory with the same name as the AppImage plus :code:`.config`, then :code:`$XDG_CONFIG_HOME` will automatically be set to it before executing the payload application
+- If there is a directory with the same name as the AppImage plus :code:`.home`, then :code:`$HOME` will automatically be set to it before executing the payload application. This means that all application data that the application would usually store in :code:`$HOME` will now be stored in the :code:`<AppImageName>.home` folder and can be moved across devices.
+- If there is a directory with the same name as the AppImage plus :code:`.config`, then :code:`$XDG_CONFIG_HOME` will automatically be set to it before executing the payload application. This means that all application data that the application would usually store in :code:`$XDG_CONFIG_HOME` will now be stored in the :code:`<AppImageName>.config` folder and can be moved across devices.
 
 
 Example
 -------
 
-Imagine you want to use the Leafpad text editor, but carry its settings around with the executable. You can do the following:
+Imagine you want to use Inkscape, but carry its settings around with the executable. You can do the following:
 
-.. Tell Pygments to use 'shell' syntax, otherwise it defaults to 'python'
-.. See http://www.sphinx-doc.org/en/1.4.9/markup/code.html#directive-code-block for more information
 .. code-block:: shell
 
-	# Download Leafpad AppImage and make it executable
-	$ wget -c "https://bintray.com/probono/AppImages/download_file?file_path=Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage" -O Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage
-	$ chmod a+x Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage
+	# Download the Inkscape AppImage and make it executable
+	# This is just an example code; you should use the up to date version of the program
+	$ wget https://inkscape.org/gallery/item/53678/Inkscape-e7c3feb-x86_64.AppImage -O Inkscape.AppImage
+	$ chmod +x Inkscape.AppImage
 
 	# Create a directory with the same name as the AppImage plus the ".config" extension
 	# in the same directory as the AppImage
-	$ mkdir Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage.config
+	$ mkdir Inkscape.AppImage.config
 
-	# Run Leafpad, change some setting (e.g., change the default font size) then close Leafpad
-	$ ./Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage
+	# Run Inkscape.AppImage, change some setting in the preferences panel (e.g. the interface
+	# language) and close it
+	$ ./Inkscape.AppImage.config
 
 	# Now, check where the settings were written:
-	$ find Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage.config
+	$ find Inkscape.AppImage.config
 	(...)
-	Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage.config/leafpad/leafpadrc
+	Inkscape.AppImage.config/Inkscape/preferences.xml
 
 
-Note that the file :code:`leafpadrc` was written in the directory we have created before.
+Note that the file :code:`preferences.xml` was written in the new directory next to the AppImage that can be carried around together with the AppImage itself.
+
+..
+   TODO: Unify the way shell blocks are written

@@ -16,12 +16,12 @@ The AppImage development follows a few easy-to-understand core principles and co
 One app = one file
 ------------------
 
-AppImages are simple to understand. Every AppImage is a regular file, and every AppImage contains exactly one app with all its dependencies. Once the AppImage is :ref:`made executable <ref-download-make-executable-run>`, a user can just run it, e.g. by double clicking it in their desktop environment's file manager or by running it from the console.
+AppImages are simple to understand. Every AppImage is a regular file, and every AppImage contains exactly one app with all its dependencies. Once the AppImage is :ref:`made executable <ref-how-to-run-appimage>`, a user can just run it, e.g. by double clicking it in their desktop environment's file manager or by running it from the console.
 
 .. _ref-opinion-reusable-frameworks:
 .. note::
 
-   On a regular basis, `users ask <https://github.com/AppImage/AppImageKit/issues/848>`__ about implementing support for some sort of "reusable/shared frameworks". These frameworks are supposed to contain bundles of libraries which are needed by more than one AppImage, and hence could save some disk space. For management, they suggest complex automagic systems that will automatically fetch the "frameworks" from the Internet if they're not available, or some complicated, mostly manual methods how users could bundle frameworks together with the AppImages on portable disks like USB sticks.
+   On a regular basis, `users ask <https://github.com/AppImage/AppImageKit/issues/848>`__ about implementing support for some sort of "reusable/shared frameworks". These frameworks are supposed to contain bundles of libraries which are needed by more than one AppImage, and hence could save some disk space. For management, they suggest complex automagic systems that will automatically fetch the "frameworks" from the Internet if they're not available, or some complicated, mostly manual methods how users could bundle frameworks together with the AppImages on portable disks like USB drives.
 
    These may be good ideas for some people, and even if they worked perfectly fine, they'd break with our most important concept: :ref:`one app = one file <one-app-one-file-principle>`. AppImages are so simple to understand *because* every application is a single file. There's no complexity in this approach, even grandma could understand it. And after all, disk space is cheap nowadays, right?
 

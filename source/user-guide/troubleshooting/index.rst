@@ -1,3 +1,5 @@
+.. include:: ../../substitutions.rst
+
 .. _ref-ug-troubleshooting:
 
 Troubleshooting
@@ -8,15 +10,15 @@ the most common issues you can have when using AppImages.
 
 .. note::
 
-   If you as a user think there are errors within this section or you would like to have some additional problems covered, please do not hesitate to `create an issue <https://github.com/AppImage/docs.appimage.org/issues/new>`__ on `GitHub <https://github.com/AppImage/docs.appimage.org>`__ (or ideally send a pull request right away). We're always open for feedback!
+   If you, as a user, think there are errors within this section or you would like to have some additional problems covered, please do not hesitate to `create an issue <https://github.com/AppImage/docs.appimage.org/issues/new>`__ on `GitHub <https://github.com/AppImage/docs.appimage.org>`__ (or ideally send a pull request right away). We're always open for feedback!
 
-This page is not considered to be exhaustive. For additional help, please see the :ref:`Contact page <ref-contact>`.
+This page is not considered to be exhaustive. |contact|
 
 
 .. seealso::
 
-   The basic operation of AppImages is shown on our :ref:`ref-quickstart` page. This section covers issues which you should only
-   encounter if there's actual issues with your system, its configuration or with the AppImages themselves.
+   The basic usage of AppImages is shown on our :ref:`ref-quickstart` page. This section covers issues which you should only
+   encounter if there are actual issues with your system, its configuration or with the AppImages themselves.
 
 
 .. toctree::

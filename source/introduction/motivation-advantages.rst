@@ -26,12 +26,12 @@ Consider the following user stories:
 All these use cases can be accomplished by using AppImages:
 
 | While the traditional way of using the distribution's package manager often locks the user into a set of applications that was recent at the point when the operating system was released, using AppImages allows the user to always download and run the latest applications whenever they appear.
-| And since AppImages are independent from each other and package all dependencies, the user can also try out several versions of an application in parallel, or use one as a portable application on a USB stick.
+| And since AppImages are independent from each other and package all dependencies, the user can also try out several versions of an application in parallel, or use one in :ref:`portable mode <portable-mode>` on a USB drive.
 | Additionally, AppImages are designed from the ground to run without super user permissions. Almost all major distributions are compatible with AppImages, without requiring the user to make any modifications to the base system. AppImages ship with their own runtime, and don't require external resources if packaged properly.
 
 Therefore, AppImages provide a simple user experience which guarantees that even less tech-savvy people can get started without any major issues. AppImage is primarily a user-focused way of bundling software.
 
-And as AppImage has been around for a while, a lot of useful, optional features have been developed, ranging from :ref:`efficient updates <ref-appimageupdate>` over so-called :ref:`desktop integration <ref-desktop-integration>` to :ref:`software catalogs <ref-appimagehub>`. None of these are required for the basic experience, though. AppImages are designed to :ref:`be run in three steps at most <ref-download-make-executable-run>`.
+And as AppImage has been around for a while, a lot of useful, optional features have been developed, ranging from :ref:`efficient updates <ref-appimageupdate>` over so-called :ref:`desktop integration <ref-desktop-integration>` to :ref:`software catalogs <ref-appimagehub>`. None of these are required for the basic experience, though. AppImages are designed to :ref:`be run in three steps at most <ref-how-to-run-appimage>`.
 
 
 Advantages for developers & application authors

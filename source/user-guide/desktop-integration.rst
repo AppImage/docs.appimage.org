@@ -1,11 +1,13 @@
+.. include:: ../substitutions.rst
+
 .. _ref-desktop-integration:
 
 Desktop integration
 ===================
 
-AppImages are standalone bundles, and do not need to be installed. After downloading an AppImage (and marking it as executable), you can simply double-click to run it.
+|appimage_standalone_bundles|
 
-However, users may want their AppImages to be integrated into the system so that they show up in menus with their icons, have their MIME types associated, can be launched from the desktop environment's launcher, etc. This concept is called *desktop integration*.
+|desktop_integration| This concept is called *desktop integration*.
 
 This page presents several tools that can be used for this purpose.
 

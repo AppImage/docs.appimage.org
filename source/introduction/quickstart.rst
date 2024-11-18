@@ -1,3 +1,5 @@
+.. include:: ../substitutions.rst
+
 .. _ref-quickstart:
 
 Quickstart
@@ -54,5 +56,5 @@ Translated versions are available in a `post in the AppImage forum <https://disc
 Getting help
 ------------
 
-If you're new to AppImage and have problems getting up and running, please don't hesitate to contact the AppImage team and their awesome community. They're happy to help! Please see the :ref:`Contact page <ref-contact>` for more information.
+|contact|
 
