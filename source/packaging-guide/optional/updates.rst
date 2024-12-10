@@ -60,15 +60,23 @@ Step 2: Making AppImages self-updateable
 
 To make the AppImage self-updateable, it needs to be updateable in the first place. Only if the AppImage already embeds the update information, you can additionally bundle everything that is required to update an AppImage in the AppImage itself, so that the user can get updates without needing anything besides the AppImage. (This is conceptually similar to how the `Sparkle Framework <https://sparkle-project.org/>`_ works on macOS.)
 
-By default, AppImageUpdate (which is used to achieve self-updateability) creates the updated AppImage file in the same directory as the current AppImage with the filename of the remote file, and doesn't overwrite the current AppImage file. This is done on purpose, as it might not be intended to overwrite previous versions of an AppImage to allow having different versions in parallel or testing the current version against the update that has just been downloaded. However, this behaviour can be overwritten.
+By default, `AppImageUpdate <https://github.com/AppImageCommunity/AppImageUpdate>`_ (which is used to achieve self-updateability) creates the updated AppImage file in the same directory as the current AppImage with the filename of the remote file, and doesn't overwrite the current AppImage file. This is done on purpose, as it might not be intended to overwrite previous versions of an AppImage to allow having different versions in parallel or testing the current version against the update that has just been downloaded. However, this behaviour can be overwritten.
 
 Via ``appimageupdatetool`` bundled in the AppImage
 ++++++++++++++++++++++++++++++++++++++++++++++++++
 
-You can bundle :code:`appimageupdatetool` inside the AppImage of your application. In order to have the bundled ``appimageupdatetool`` update your running AppImage after corresponding user interaction (e.g. clicking an update button), simply have your application invoke ``appimageupdatetool $APPIMAGE``. As ``appimageupdatetool`` is bundled inside the AppImage and ``$APPIMAGE`` is set in the runtime, this will call it with the correct parameter.
+You can bundle `appimageupdatetool <https://github.com/AppImageCommunity/AppImageUpdate/releases>`_ inside the AppImage of your application to achieve self-updateability. In that case, you have to invoke the bundled ``appimageupdatetool`` to update your running AppImage after corresponding user interaction (e.g. clicking an update button).
 
-.. todo::
-   Correct this and create a new page on how to bundle other executables
+To call another bundled executable, you need to know its path. Luckily, when running an AppImage, the :ref:`environment variable <ref-env_vars>` ``$APPDIR`` is set to the location of the mounted AppDir. As bundled executables are usually in ``./usr/lib``, its path should be something like ``$APPDIR/usr/lib/appimageupdatetool.AppImage``
+
+To update your AppImage with ``appimageupdatetool``, you need to give the path of your AppImage as parameter. This path is set as ``$APPIMAGE`` by the runtime. Therefore the whole call should look like ``$APPDIR/usr/lib/appimageupdatetool.AppImage $APPIMAGE``. The way how you can execute such a shell command depends on the programming language. For example, in Rust you can do this with ``Command::new("sh").arg("-c").arg("$APPDIR/usr/bin/appimageupdatetool.AppImage $APPIMAGE").output()``.
+
+.. note::
+   As of December 2024, appimageupdatetool requires FUSE 2 to run. If you aren't sure that your users have FUSE 2, you might want to check that before executing it. If a user doesn't have FUSE 2, you can still run appimageupdatetool with ``$APPDIR/usr/bin/appimageupdatetool.AppImage --appimage-extract-and-run $APPIMAGE``.
+
+.. warning::
+   As of December 2024, :ref:`ref-linuxdeploy` has a `bug <https://github.com/linuxdeploy/linuxdeploy/issues/301>`_ that causes it to corrupt AppImages when they're given as additional executables that should be bundled.
+   Therefore, when using it, other bundled AppImages have to manually be copied into the AppDir and ``appimagetool`` has to be used to create the AppImage.
 
 Via ``libappimageupdate``
 +++++++++++++++++++++++++
