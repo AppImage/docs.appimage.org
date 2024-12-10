@@ -207,6 +207,15 @@ As most plugins, linuxdeploy-plugin-appimage provides some environment variables
    Document environment variables of other existing output plugins
 
 
+.. _linuxdeploy-update-information:
+
+Embedding update information
+----------------------------
+:ref:`linuxdeploy's <ref-linuxdeploy>` `AppImage plugin <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`__ supports an environment variable ``$UPDATE_INFORMATION`` (or short ``$UPD_INFO``) that can be used to manually set the update information.
+
+Please see `the README <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage#optional-variables>`__ for details.
+
+
 Iterative workflow
 ------------------
 

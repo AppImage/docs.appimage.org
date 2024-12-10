@@ -3,334 +3,190 @@
 Making AppImages updateable
 ===========================
 
-AppImages can be updated:
+AppImages can embed information that allows for them to be updated (essentially storing where an update can be fetched from). This information can be used by external tools (e.g. ``AppImageUpdate`` or ``AppImageLauncher``) to update the AppImage, but also by an updater tool build into the AppImage itself (we call this a *self-updateable AppImage*).
 
-  * Via external tools (e.g., :code:`AppImageUpdate` or the :code:`appimageupdatetool` command line tool)
-  * Via an updater tool built into the AppImage itself
-  * By consuming :code:`libappimageupdate` functionality inside the payload application
+This not only makes it easier for users to update their AppImages, but also speeds up the process and saves bandwidth as not the full AppImage is downloaded, but only the update changes.
 
+This page shows how to create an updateable and self-updateable AppImage and what you should consider when making a self-updateable AppImage.
 
 .. contents:: Contents
    :local:
    :depth: 2
 
 
-Making AppImages updateable via external tools
-----------------------------------------------
+Embedded update information
+---------------------------
 
-To make an AppImage updateable, you need to embed information that describes where to check for updates and how into the AppImage. Unlike other Linux distribution methods, the information where to look for updates is not contained in separate repository description files such as :code:`sources.list` that need to be managed by the user, but is directly embedded inside the AppImage by the author of the respective AppImage. This has the advantage that the update information always travels alongside the application, so that the end user does not have to do anything special in order to be able to check for updates.
+In order for AppImages to be updateable, they need to embed something called update information. That information describes how and where to look for updates. Because this information is embedded in the AppImage itself and not contained in separate description files (like with other Linux distribution methods), the update information always travels alongside the application, so that the end user does not have to do anything special in order to be able to check for updates.
+
+There are two non-deprecated update information types: ``zsync`` (if you use an external server to store the update data) and ``gh-releases-zsync`` (if you upload the update data to Github releases). In both cases, you will store a ``.zsync`` file that contains the update data on a server. In the next section, you'll see how to generate such a file.
+
+| If you want to use an external server, the update information string looks like ``zsync|<update file link>``, e.g. ``zsync|https://server.domain/path/Application-latest_x86-64.AppImage.zsync``.
+| If you want to use Github releases, the update information string looks like ``gh-releases-zsync|<Github username>|<Repository name>|latest|<filename>``, e.g. ``gh-releases-zsync|MyAccount|MyProject|latest|MyProject-*_x86-64.AppImage.zsync`` (``*`` can be embedded as a wildcard).
+
+For more detailed information on update information strings and their formal specification, see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#update-information.
 
 
-Using appimagetool
-^^^^^^^^^^^^^^^^^^
+Step 1: Making AppImages updateable
+-----------------------------------
 
-Use :code:`appimagetool -u` to embed update information (as specified in the AppImageSpec) and generate the corresponding :code:`.zsync` file you can upload to the place mentioned in the update information.
+To make an AppImage updateable, you need to embed this update information into it. You can do this with one command that adds the update information to your AppImage and simultaneously creates the ``.zsync`` file you have to store online.
+
+If you use an :ref:`AppImage creation tool <appimage-creation-tools>`, you should use its built-in feature to add the update information and create the ``.zsync`` file. However, if your AppImage creation tool doesn't support adding update information, or if you create your AppImage manually, you can also use ``appimagetool`` directly to manually add the update information and create the ``.zsync`` file. After doing that, you should upload the ``.zsync`` file to the place mentioned in the update information string.
+
+Using an AppImage Creation tool
++++++++++++++++++++++++++++++++
+
+Most AppImage creation tools come with a built-in feature to add update information to the AppImage and create the ``.zsync`` file.
+
+| To see how to add update information with :ref:`ref-linuxdeploy`, see :ref:`this <linuxdeploy-update-information>` section of the linuxdeploy guide.
+| To see how to add update information with :ref:`sec-electron-builder`, see :ref:`this <electron-builder-update-information>` section of the electron-builder guide.
+
+.. todo::
+   Research whether a corresponding feature exists for all other AppImage creation tool and add an updating section to each guide.
+
+.. _using-appimagetool-directly:
+
+Using ``appimagetool`` directly
++++++++++++++++++++++++++++++++
+
+If you use an AppImage creation tool that doesn't support adding update information, you have to extract the created AppImage by calling it with the ``--appimage-extract`` option (for more information, see :ref:`inspect_appimage_content`) and then recreate the AppImage with the update information and create the ``.zsync`` file with ``appimagetool``.
+
+To (re)create an AppImage from the AppDir, embed update information in it and create the ``.zsync`` file, use the ``-u`` flag with the update information string. That command could for example look like this: ``appimagetool MyApplication.AppDir/usr/share/applications/MyApplication.desktop -u "zsync|https://server.domain/path/MyApplication-latest_x86-64.AppImage.zsync"``.
+
+
+Step 2: Making AppImages self-updateable
+----------------------------------------
+
+To make the AppImage self-updateable, it needs to be updateable in the first place. Only if the AppImage already embeds the update information, you can additionally bundle everything that is required to update an AppImage in the AppImage itself, so that the user can get updates without needing anything besides the AppImage. (This is conceptually similar to how the `Sparkle Framework <https://sparkle-project.org/>`_ works on macOS.)
+
+By default, AppImageUpdate (which is used to achieve self-updateability) creates the updated AppImage file in the same directory as the current AppImage with the filename of the remote file, and doesn't overwrite the current AppImage file. This is done on purpose, as it might not be intended to overwrite previous versions of an AppImage to allow having different versions in parallel or testing the current version against the update that has just been downloaded. However, this behaviour can be overwritten.
+
+Via ``appimageupdatetool`` bundled in the AppImage
+++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You can bundle :code:`appimageupdatetool` inside the AppImage of your application. In order to have the bundled ``appimageupdatetool`` update your running AppImage after corresponding user interaction (e.g. clicking an update button), simply have your application invoke ``appimageupdatetool $APPIMAGE``. As ``appimageupdatetool`` is bundled inside the AppImage and ``$APPIMAGE`` is set in the runtime, this will call it with the correct parameter.
+
+.. todo::
+   Correct this and create a new page on how to bundle other executables
+
+Via ``libappimageupdate``
++++++++++++++++++++++++++
+
+If bundling ``appimageupdatetool`` requires too much space, you can alternatively also bundle the library internally used, ``libappimageupdate``. This will result in a smaller size, but it's more manual work to do so.
+
+There is currently no precompiled version of this library. Therefore you have to manually compile `AppImageUpdate <https://github.com/AppImageCommunity/AppImageUpdate>`_ with the following commands (this requires you to install a lot of dependencies, see its `build tutorial <https://github.com/AppImageCommunity/AppImageUpdate/blob/main/BUILDING.md>`_):
 
 .. code-block:: shell
 
-    appimagetool videocapture.AppDir/usr/share/applications/*.desktop -u "zsync|https://lyrion.ch/opensource/repositories/videocapture/uv/videocapture.AppImage.zsync"
+   git clone --recursive https://github.com/AppImage/AppImageUpdate
+   cd AppImageUpdate
+   mkdir build
+   cd build
+   cmake -DBUILD_QT_UI=OFF -DCMAKE_INSTALL_PREFIX=/usr ..
+   make -j $(nproc)
+   sudo make install
+
+After you built it, the libraries will be in ``AppImageUpdate/build/src/updater``. These libraries are C++11 - libraries; sadly there is currently no C interface yet, which makes it more difficult to use in other programming languages. To use the library in a different programming language, you can use a C++ FFI if available in your programming language or create a C wrapper, e.g. with `SWIG <https://swig.org>`_ (and then use the C FFI in your programming language).
+
+libappimageupdate provides the class :code:`appimage::update::Updater` which is used to update the AppImage. Using it, you can check for updates (this is currently performed synchronously as it doesn't take long) and run updates in a separate thread. This means that you have to check for the state periodically, but allows for progress indication and status messages without any blocking.
+
+You have to create an ``Updater`` object and then use it to perform operations. All operations that might fail return a boolean that indicates whether it finished successfully (``true``) or an error occurred (``false``). The real result of the operation is given as a parameter which is set in case of success. To see what caused an operation to fail, you can (optionally) read the status message queue (onto which the updater and its systems write messages); this is implemented in ``logStatusMessages`` in the example code.
+
+The following example code (in C++) shows how to use the ``Updater`` class to check for an update, update if available, show the progress until the update is finished and check for an error after it has finished:
+
+.. code-block:: cpp
+
+   using namespace appimage::update;
+   using namespace std;
+
+   // Create an Updater object
+   Updater updater("MyApplication.AppImage");
+
+   bool updateAvailable;
+   if (!updater.checkForChanges(updateAvailable)) {
+      log("An error happened while searching for updates.");
+      logStatusMessages();
+      return 1;
+   }
+
+   if (updateAvailable) {
+      updater.start();
+
+      while (!updater.isDone()) {
+         // Sleep to prevent busy waiting
+         this_thread::sleep_for(chrono::milliseconds(100));
+
+         double progress;
+         if (!updater.progress(progress)) {
+            log("An error happened while updating.");
+            logStatusMessages();
+            return 1;
+         }
+
+         // Use the progress value (between 0 and 1), e.g. in a loading animation
+      }
+   }
+
+   if (updater.hasError()) {
+      log("The update could not be loaded correctly.");
+      logStatusMessages();
+      return 1;
+   }
+
+   delete updater;
 
 
-The string
-
-.. code-block:: text
-
-   zsync|https://lyrion.ch/opensource/repositories/videocapture/uv/videocapture.AppImage.zsync
-
-is called the *update information*.
-
-Please see https://github.com/AppImage/AppImageSpec/blob/master/draft.md#update-information for a description of allowable types of update information.
+   void logStatusMessages(Updater updater) {
+      string nextErrorMessage;
+      while (updater.nextStatusMessage(nextErrorMessage)) {
+         log(nextErrorMessage);
+      }
+   }
 
 
-Using linuxdeploy
-^^^^^^^^^^^^^^^^^
+As previously stated, this will create a new updated AppImage file with the remote file name and not overwrite the local file. To get the path of the new AppImage file, you simply use the following code snippet after the update has finished without any errors:
 
-:ref:`linuxdeploy's <ref-linuxdeploy>` `AppImage plugin <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`__ supports an environment variable ``$UPDATE_INFORMATION`` (or short ``$UPD_INFO``) that can be used to set the update information manually.
+.. code-block:: cpp
 
-Please see `the README <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage#optional-variables>`__ for details.
+   string updatedFilePath;
+   if !(updater.pathToNewFile(updatedFilePath)) {
+      log("The updated AppImage could not be located.");
+      logStatusMessages();
+      return 1;
+   }
 
+However, if you want to directly replace the local AppImage, this default behaviour can be overwritten by creating the updater with ``Updater updater("MyApplication.AppImage", true);`` instead of ``Updater updater("MyApplication.AppImage");``. This leads to the updater moving the new file to the original file location after successfully downloading and verifying the update. But due to how ZSync2 works, the old file is not deleted; instead, it's moved to ``<name>.zs-old`` and kept as a backup (see `this issue <https://github.com/AppImageCommunity/AppImageUpdate/issues/14>`_). If you don't want the old file hanging around after the update, you can remove ``<name>.zs-old`` after the update finished successfully.
 
-Using linuxdeployqt
-^^^^^^^^^^^^^^^^^^^
+Using an update GUI library
++++++++++++++++++++++++++++
 
-:code:`linuxdeployqt` uses :code:`appimagetool` internally. If it recognizes that it is running on Travis CI, then it automatically generates the matching update information.
+If you don't want to create your own GUI for updating (meaning an update button and optionally features like a progress bar), you can also use specific update GUI libraries that provide a pre-designed GUI managing all that.
 
+Currently, there only exists a GUI library for QT-based applications. We are interested in getting libraries for other popular GUI toolkits like Gtk/Libadwaita, so please contribute if you implement something like this.
 
-Using electron-builder
-^^^^^^^^^^^^^^^^^^^^^^
+libappimageupdate-qt
+####################
 
-:code:`electron-builder` promotes its own updater scheme rather than the update information described in this documentation, in order to have the same mechanism on Linux as is used on Windows. Unfortunately this means that AppImages generated by :code:`electron-builder` cannot be updated using the usual tools.
+Like with ``libappimageupdate``, there is currently no precompiled version of this library. Therefore you have to manually compile `AppImageUpdate <https://github.com/AppImageCommunity/AppImageUpdate>`_ (this requires you to install a lot of dependencies).
 
-One way to inject the update information into the AppImage created with :code:`electron-builder` nevertheless is to extract the AppImage generated with :code:`electron-builder` to an AppDir using the --appimage-extract command line option of the AppImage, and then re-packing it as an AppImage by using :code:`appimagetool -u`.
-
-
-Making AppImages self-updateable
---------------------------------
-
-Once you have made your AppImage updateable via external tools as described above, you may optionally go one step further and bundle everything that is required to update an AppImage inside the AppImage itself, so that the user can get updates without needing anything besides the AppImage itself. This is conceptually similar to how the `Sparkle Framework <https://sparkle-project.org/>`__ works on macOS.
-
-
-Via AppImageUpdate built into the AppImage
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You can bundle :code:`AppImageUpdate` itself inside the AppImage of your application. In order to have the bundled AppImageUpdate update your running AppImage when the user invokes some command in your application (e.g., an "Update..." menu) in your GUI, simply have your application invoke :code:`AppImageUpdate $APPIMAGE`. If :code:`AppImageUpdate` is bundled inside the AppImage and is on the :code:`$PATH`, this will work.
-
-
-By using `libappimageupdate`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. todo::
+   Add instructions on how to build ``libappimageupdate`` and how it can be used and integrated in an application.
 
 Recommended user experience
-###########################
-
-One advantage of the AppImage format is that it gives full control to application authors over the end user experience. Hence, using AppImage and AppImageUpdate, application authors can implement almost any of the schemes outlined above. In order to maintain a consistent and positive user experience with AppImages and AppImageUpdate, we recommend application authors to follow the following **Golden Rules**:
-
-* Never download updates without the user's explicit consent, be it in the form of per-update consent, or, optionally, opt-in consent for automatic updates. Thanks for not killing users' mobile data plans by downloading stuff without asking
-* Respect global flags for **"do not check for new versions"** and **"do not attempt to update"**. The user may be running a central updating daemon that manages updates for the whole system, in which case any and all attempts to update the application from within itself should be skipped. **We need to define those flags for 1) per-system and 2) per-user configuration and 3) ENV** (similar to how the old :code:`desktopintegration` script was set up not to interfere with :code:`appimaged`)
-* Do not bother the user with updates directly as the first thing when the application is launched. When opening an application for the first time, users should see something meaningful to give a positive impression and show immediately what the application is all about (after all, we are automatically taking a screenshot of what your application shows directly after it has been launched for AppImageHub)
-* Ask the user for permission before doing version checks. Many open source users value privacy highly and don't appreciate the "phone home" aspect of forced version checks, which effectively are a form of tracking
-
-.. Old image can be found here: https://github.com/AppImage/appimage.github.io/blob/ef13aae415fae3c8f52b1326585b4b5df1b94de8/database/SonicVisualiser/screenshot.png
-
-.. image:: /_static/img/packaging-guide/updates-realworld-example.png
-    :alt: SonicVisualiser GUI asking for network access permission
-    :width: 80%
-
-* The update should ideally be nicely integrated into the GUI of your application, using whatever GUI toolkit you are using. We are interested in getting libraries for popular GUI toolkits like Qt, Gkt+ 2 and 3, WxWidgets, etc. - so if you implement this, please share with the world
-* During the update process, your application should remain fully usable (this works because the original file is not changed by the update process; instead a new file with the new version is placed next to the original one)
-* Releases should always update to releases, nightlies always to nightlies, etc. ("channels")
-* Whenever the application encounters issues (e.g., a crash reporter comes up) it could ask the user to check for updates, and accept bug reports only if no newer version is available in the channel
-
-
-Building and linking libappimageupdate
-######################################
-
-.. note:: This guide assumes you are using Git and CMake to build your project.
-
-There's two options how to add libappimageupdate to your project: Either you use a Git submodule (the preferred way), or you use CMake's :code:`ExternalProject`. The latter is a more complex issue and has some implications, therefore this guide focuses on the former option.
-
-The guide assumes the following directory layout::
-
-    /                       # repository root
-        lib/                # external libraries
-            ...             # other libraries that might be used
-            CMakeLists.txt  # manages the dependencies for CMake
-        src/                # source files
-            CMakeLists.txt  # defines the binaries to build
-            main.cpp        # main application
-        CMakeLists.txt      # top level CMake configuration
-
-
-First of all, add the AppImageUpdate repository as a submodule.
-
-.. code-block:: shell
-
-    $ git submodule add https://github.com/AppImage/AppImageUpdate lib/AppImageUpdate
-
-
-You will have to initialize your submodule. AppImageUpdate pulls in some dependencies as well. Therefore, anyone using your repository will have to run the following command after cloning (unless they called :code:`git clone --recursive`):
-
-.. code-block:: shell
-
-    $ git submodule update --init --recursive
-
-
-Please refer to the `Git book <https://git-scm.com/book/en/v2/Git-Tools-Submodules>`__ for more information about submodules and how they work, how to update them etc.
-
-Next, instruct CMake that you want to use the library. Add :code:`add_subdirectory(AppImageUpdate)` to :code:`lib/CMakeLists.txt`.
-
-.. note::
-
-    You need to call :code:`add_subdirectory(lib)` within the top-level :code:`CMakeLists.txt` near the top before defining executables etc. to make this work. Furthermore, somewhere below, CMakeLists.txt needs to include the :code:`src` directory. Like with the :code:`lib` directory, there should be a :code:`add_subdirectory(src)` call.
-
-
-Now instruct CMake to link your libraries and/or executables to libappimageupdate. AppImageUpdate's CMake build infrastructure defines a target :code:`libappimageupdate`.
-
-Open :code:`src/CMakeLists.txt`, find your :code:`add_library/add_executable` call, and add the following snippet below:
-
-.. code-block:: cmake
-
-    target_link_libraries(mytarget PRIVATE libappimageupdate)
-
-
-Now everything should be up and running! Congratulations!
-
-
-Using libappimageupdate within app store like applications
-##########################################################
-
-Consider the following scenario:
-
-You have an app store app managing AppImages. As you know, AppImages don't require an installation. The only thing you have to do is download them and make them executable, and your users can run them. To remove them from the system, all that has to be done is removing a single file from the file system.
-
-So far, so good. But what about updates? Ideally, the upstream projects are actively developed, and publish releases regularly. However, with technologies like Electron becoming more and more popular, AppImage file sizes of several 10s of MiB are pretty common. Games even have a few 100 MiB, bundling all the data.
-
-To mitigate those problems, AppImageUpdate provides an efficient solution to these problems. It compares the local AppImage with the remote, up to date file, uses all usable data from the existing file, and downloads the remaining data only. This does not only save a lot of bandwidth, but also speeds up the update processes.
-
-libappimageupdate provides a class called :code:`appimage::update::Updater` capable of updating a single AppImage. It contains features like an update check, running updates in a separate thread, a status message system, progress indicator support and a lot more.
-
-Basic usage:
-
-.. code-block:: cpp
-
-    using namespace appimage::update;
-    using namespace std;
-
-    Updater updater("test.AppImage");
-
-
-Now, you can use the :code:`updater` object to perform operations. The API is built on the principle of *pervasive error handling*, i.e., all operations that might fail in any way provide error handling. In libappimageupdate, this is implemented by making such methods become boolean, and accept a reference to the result type which is set in case of success. The method returns either :code:`true`, which means the operation succeeded, or :code:`false` otherwise.
-
-See this easy example for an update check:
-
-.. code-block:: cpp
-
-    // check for update
-    bool updateAvailable;
-
-    if (!updater.checkForChanges(updateAvailable)) {
-        // return error state
-        return 1;
-    }
-
-    if (updateAvailable) {
-        // perform update ...
-
-
-This is faster and less verbose than an exception based workflow, however, you can't see what caused the update check to fail.
-
-This can be found out using the built in status message system. Every :code:`Updater` instance contains a message queue. All methods within the updater and the systems it uses (like e.g., `ZSync2 <https://travis-ci.org/TheAssassin/zsync2/>`__, which is one of the backends for the binary delta updates) add messages to this queue, which means that all kinds of status messages ever generated by any of the libraries will end up there.
-
-.. note::
-
-    Beware that this is a totally optional system, and it might not necessarily improve the user experience to show those messages. It is recommended to show them only in case of errors to help debugging. There is also no guarantee on the order of these messages.
-
-
-All messages are preserved, so if they are not fetched, they might stack up. However, that shouldn't be a problem really. Just make sure to clean up (:code:`delete`) your :code:`Updater` objects as soon as you don't need them any more.
-
-Let's rewrite the update check code from above, with advanced error handling:
-
-.. code-block:: cpp
-
-    // check for update
-    bool updateAvailable;
-
-    if (!updater.checkForChanges(updateAvailable)) {
-        // log status messages before exiting
-
-        // nextStatusMessage will return true as long as there are status messages
-        // by calling it in a loop as follows, all available messages will be fetched
-        string nextMessage;
-        while (updater.nextStatusMessage(nextMessage)) {
-            // imagine log() to do something meaningful
-            log(nextMessage);
-        }
-
-        // return error state
-        return 1;
-    }
-
-    if (updateAvailable) {
-        // perform update ...
-    }
-
-
-Now, in case the update check fails, the messages are logged.
-
-At the moment, the update check is performed synchronously as it won't take too long. This might be changed eventually, but now allows for running an update check without modifying the updater state.
-
-Talking about updater states, the state is modified by running an update. As mentioned previously, updates are performed in their own thread automatically, using C++11 threading functionality. This allows for displaying progress, status messages etc. in a UI without any blocking issues or the need to run your own thread.
-
-.. note::
-
-    **Important**: Before actually performing an upgrade, it is recommended to check for updates first. The update check only performs reading IO, but a pointless update will create an entirely new file, even if it copies all the data from its predecessor.
-
-
-Here's some code how to run an update, and log progress and status messages until the update has finished:
-
-.. code-block:: cpp
-
-    updater.start()
-
-    // isDone() returns true as soon as the update has finished
-    // error handling is performed later
-    while (!updater.isDone()) {
-        // sleep for e.g., 100ms, to prevent 100% CPU usage
-        this_thread::sleep_for(chrono::milliseconds(100));
-
-        double progress;
-        // as with all methods, check for error
-        if (!updater.progress(progress)) {
-            log("Call to progress() failed");
-            // return error state
-            return 1;
-        }
-
-        // progress() returns a double between 0 and 1
-        // you might have to scale its return value accordingly
-        // this assumes that the progress bar expects a percentage
-        updateProgressBar(progress * 100);
-
-        // fetch all status messages
-        // this is basically the same as before
-        string nextMessage;
-        while (updater.nextStatusMessage(nextMessage)) {
-            log(nextMessage);
-        }
-    }
-
-
-As you will have noticed, this code will just run until the update is done. However, there is no way to verify that the update actually worked. Therefore, you need to check for errors in the next step:
-
-.. code-block:: cpp
-
-    if (updater.hasError()) {
-        log("Error occurred. See previous messages for details.");
-        // return error state
-        return 1;
-    }
-
-
-As the background work has finished, and :code:`hasError()` itself doesn't log any messages, all messages from the status message queue are displayed already, hence the note about checking the previous messages. It was mentioned previously that logging all messages might not be good for the user experience, so you could as well move the little loop fetching the messages to this error handler, and show a modal dialog containing all the messages issued during the update process. But this is up to you.
-
-One last thing to notice is that AppImageUpdate by default takes the filename of the remote file for creating the updated AppImage file instead of overwriting the local file. This is done on purpose for several reasons. First, it might not be intended to overwrite previous versions of an AppImage, allowing to have different versions in parallel, or testing the current version versus the update that has just been downloaded.
-
-This behavior implies the need for a method to actually fetch the path to this new file from the updater. This can be done as follows:
-
-.. code-block:: cpp
-
-    ostringstream oss;
-
-    string pathToUpdatedFile;
-
-    // this method shouldn't fail at this point(1) any more
-    // but it's better to check for its return value to make sure everything's alright
-    // (1) when calling this before or while the update is running, the new path is not
-    // available, causing this method to return false, but we're past those points already
-    if (!updater.pathToNewFile(pathToUpdatedFile))
-
-    oss << "Path to updated AppImage: " << pathToUpdatedFile;
-    log(oss.str());
-
-
-.. note::
-
-    The updater takes care of putting the new file in the same directory as the previous one.
-
-
-As you might not be interested in this feature, and probably don't trust on remote filenames and choose your own ones when "installing" (well, downloading) AppImages to make it easier to find them again, you can override this feature. You can instantiate the :code:`Updater` object with an optional flag:
-
-.. code-block:: cpp
-
-    // constructor signature as of 2017/11/14:
-    // Updater::Updater(std::string path, bool overwrite = false);
-
-    Updater updater("my.AppImage", true);
-
-
-Now, the updater will perform the update and move the new file to the original file's location after successfully verifying the file integrity (and, as soon as it is implemented, validating the file's signature, see `the related issue on GitHub <https://github.com/AppImage/AppImageUpdate/issues/16>`__).
-
-.. note::
-
-    **Important**: The updater will never overwrite a file before all validation mechanisms report success.
-
-ZSync2 based methods will furthermore always keep the old file as a backup. If the :code:`overwrite` flag is :code:`true`, the current file will be moved to :code:`my.AppImage.zs-old`. If it is `false`, the old file will remain untouched. Furthermore, if there is a file with the new filename, that file will be backed up with the :code:`.zs-old` suffix. This behavior is not ideal, the standalone UI has error handling code specific to this problem. This behavior is going to be subject of a GitHub issue soon. It is recommended to watch the discussion before implementing any code dealing with backups. Thad said, it is probably safe to check whether a :code:`.zs-old` file is created when using :code:`overwrite = true`, and delete it.
++++++++++++++++++++++++++++
+
+One advantage of the AppImage format is that it gives full control to application authors over the end user experience. In order to maintain a consistent and positive user experience with AppImages and AppImageUpdate, we recommend application authors to follow the following **Golden Rules**:
+
+* Never download updates without the user's explicit consent, either in the form of per-update consent or opt-in consent for automatic updates. Thanks for not killing users' mobile data plans by downloading stuff without asking.
+* Don't bother the user with updates directly when the app is opened for the first time. Users should initially see something meaningful to give a positive impression and recognize immediately what the application is all about.
+* Ask the user for permission before doing version checks. Some open source users consider forced version checks as a form of tracking which violates their privacy.
+* The update UI should ideally be nicely integrated into the GUI of your application, using whatever GUI toolkit you are using.
+* During the update process, your application should remain fully usable.
+* Releases should always update to releases, nightlies always to nightlies, etc.
+* Whenever the application encounters issues (e.g., a crash reporter comes up), it could ask the user to check for updates.
+
+..
+   * Respect global flags for "do not check for new versions" and "do not attempt to update". The user may be running a central updating daemon that manages updates for the whole system, in which case any and all attempts to update the application from within itself should be skipped.
+   We need to define those flags for 1) per-system configuration, 2) per-user configuration and 3) ENV (similar to how the old :code:`desktopintegration` script was set up not to interfere with :code:`appimaged`).
+   TODO: Such a flag currently doesn't exist and isn't documented

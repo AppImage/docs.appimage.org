@@ -5,6 +5,7 @@ This chapter shows users what AppImages are from a user perspective, how they ca
 
 .. toctree::
    faq
+   downloading-updating
    inspect-appimage-content
    desktop-integration
    portable-mode
