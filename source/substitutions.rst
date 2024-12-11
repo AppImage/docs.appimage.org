@@ -9,3 +9,4 @@
 .. |group_user_add| replace:: After adding a user to a group, that user must logout and login again for the change to take effect!
 .. |fuse_docker| replace:: Most docker containers don't permit to use FUSE inside containers for security reasons. In that case, you will see this error:
 .. |recent_type_2| replace:: but every reasonably recent AppImage is type 2
+.. |linuxdeploy_bundle_appimages| replace:: As of December 2024, :ref:`ref-linuxdeploy` has a `bug <https://github.com/linuxdeploy/linuxdeploy/issues/301>`__ that causes it to corrupt AppImages when they're given as additional executables that should be bundled. Therefore, when using it, other bundled AppImages have to manually be copied into the AppDir and ``appimagetool`` has to be used to create the AppImage.

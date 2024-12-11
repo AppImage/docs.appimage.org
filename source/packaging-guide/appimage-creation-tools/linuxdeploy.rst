@@ -51,6 +51,9 @@ The following command line flags are most commonly used:
 
    Set up everything so that other libraries, executables, etc. use this bundled executable instead of a system one (if applicable).
 
+   .. warning::
+      |linuxdeploy_bundle_appimages|
+
 ``--library``/``-l``
    Bundle a shared library (:code:`.so` file) into the AppDir.
 
@@ -182,7 +185,7 @@ Analogous to the input plugins, output plugins usually implement additional opti
 .. code:: bash
 
    # Set environment variable to embed update information in an AppImage
-   > export UPDATE_INFORMATION="zsync|https://foo.bar/myappimage-latest.AppImage.zsync"
+   > export LDAI_UPDATE_INFORMATION="zsync|https://server.domain/path/MyApplication-latest_x86-64.AppImage.zsync"
 
    # Call linuxdeploy with the AppImage plugin enabled
    > ./linuxdeploy-x86_64.AppImage --appdir AppDir <...> --output appimage
@@ -193,17 +196,16 @@ linuxdeploy-plugin-appimage environment variables
 
 As most plugins, linuxdeploy-plugin-appimage provides some environment variables to enable additional functionality, such as:
 
-``SIGN=1``
-   Sign AppImage. See :ref:`ref-signing-appimages` for more information.
+``LDAI_SIGN=1``
+   Sign the AppImage. See :ref:`linuxdeploy-signing` for more information.
 
-``UPDATE_INFORMATION=zsync|...``
-   Add update information to the AppImage, and generate a ``.zsync`` file.
+``LDAI_UPDATE_INFORMATION="zsync|..."``
+   Add update information to the AppImage and generate the corresponding ``.zsync`` file. See :ref:`linuxdeploy-update-information` for more information.
 
 .. seealso::
    More information on the environment variables can be found in the `README <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage/blob/master/README.md>`__, including a complete (and up to date) list of supported environment variables.
 
 .. todo::
-
    Document environment variables of other existing output plugins
 
 
@@ -211,9 +213,31 @@ As most plugins, linuxdeploy-plugin-appimage provides some environment variables
 
 Embedding update information
 ----------------------------
-:ref:`linuxdeploy's <ref-linuxdeploy>` `AppImage plugin <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`__ supports an environment variable ``$UPDATE_INFORMATION`` (or short ``$UPD_INFO``) that can be used to manually set the update information.
 
-Please see `the README <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage#optional-variables>`__ for details.
+You can find the basic explanation on how the AppImage update system works, what update information is and how AppImages can be updated at :ref:`ref-updates`. If you already know that, this section explains on how to use linuxdeploy to embed update information.
+
+If you use the linuxdeploy `AppImage output plugin <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`_ to generate an AppImage from the AppDir, you can set the environment variable ``$LDAI_UPDATE_INFORMATION`` to the update information string to embed the update information in the AppImage and generate the corresponding ``.zsync`` file. This could look like the following:
+
+.. code-block:: shell
+
+   > export LDAI_UPDATE_INFORMATION="zsync|https://server.domain/path/Application-latest_x86-64.AppImage.zsync"
+   > ./linuxdeploy-x86_64.AppImage <...> --output appimage
+
+
+.. _linuxdeploy-signing:
+
+Signing the AppImage
+--------------------
+
+You can find the basic explanation on how the AppImage signatures works and how they can be validated at :ref:`signing-appimages`. If you already know that, this section explains on how to use linuxdeploy to sign the AppImage.
+
+If you use the linuxdeploy `AppImage output plugin <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`_ to generate an AppImage from the AppDir, you can set the environment variable ``$LDAI_SIGN`` to 1 and the environment variable ``$LDAI_SIGN_KEY`` to the key id of the gpg key you want to sign the AppImage with to sign the AppImage. This could look like the following:
+
+.. code-block:: shell
+
+   > export LDAI_SIGN=1
+   > export LDAI_SIGN_KEY="1234567890ABCDEF1234567890ABCDEF12345678"
+   > ./linuxdeploy-x86_64.AppImage <...> --output appimage
 
 
 Iterative workflow

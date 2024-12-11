@@ -1,3 +1,5 @@
+.. include:: ../../substitutions.rst
+
 .. _ref-updates:
 
 Making AppImages updateable
@@ -34,25 +36,26 @@ To make an AppImage updateable, you need to embed this update information into i
 
 If you use an :ref:`AppImage creation tool <appimage-creation-tools>`, you should use its built-in feature to add the update information and create the ``.zsync`` file. However, if your AppImage creation tool doesn't support adding update information, or if you create your AppImage manually, you can also use ``appimagetool`` directly to manually add the update information and create the ``.zsync`` file. After doing that, you should upload the ``.zsync`` file to the place mentioned in the update information string.
 
-Using an AppImage Creation tool
+Using an AppImage creation tool
 +++++++++++++++++++++++++++++++
 
 Most AppImage creation tools come with a built-in feature to add update information to the AppImage and create the ``.zsync`` file.
 
 | To see how to add update information with :ref:`ref-linuxdeploy`, see :ref:`this <linuxdeploy-update-information>` section of the linuxdeploy guide.
+| To see how to add update information with :ref:`sec-go-appimagetool`, see :ref:`this <go-appimage-signing>` section of the go-appimage guide.
 | To see how to add update information with :ref:`sec-electron-builder`, see :ref:`this <electron-builder-update-information>` section of the electron-builder guide.
 
 .. todo::
    Research whether a corresponding feature exists for all other AppImage creation tool and add an updating section to each guide.
 
-.. _using-appimagetool-directly:
+.. _updating-using-appimagetool:
 
 Using ``appimagetool`` directly
 +++++++++++++++++++++++++++++++
 
 If you use an AppImage creation tool that doesn't support adding update information, you have to extract the created AppImage by calling it with the ``--appimage-extract`` option (for more information, see :ref:`inspect_appimage_content`) and then recreate the AppImage with the update information and create the ``.zsync`` file with ``appimagetool``.
 
-To (re)create an AppImage from the AppDir, embed update information in it and create the ``.zsync`` file, use the ``-u`` flag with the update information string. That command could for example look like this: ``appimagetool MyApplication.AppDir/usr/share/applications/MyApplication.desktop -u "zsync|https://server.domain/path/MyApplication-latest_x86-64.AppImage.zsync"``.
+To (re)create an AppImage from the AppDir, embed update information in it and create the ``.zsync`` file, use the ``-u`` flag with the update information string. That command could for example look like this: ``appimagetool MyApplication.AppDir/usr/share/applications/MyApplication.desktop -u "zsync|https://server.domain/path/MyApplication-latest_x86-64.AppImage.zsync"``. Keep in mind that you also have to use the ``--sign`` parameter if you want to sign your AppImage, see :ref:`signing-using-appimagetool`.
 
 
 Step 2: Making AppImages self-updateable
@@ -75,8 +78,7 @@ To update your AppImage with ``appimageupdatetool``, you need to give the path o
    As of December 2024, appimageupdatetool requires FUSE 2 to run. If you aren't sure that your users have FUSE 2, you might want to check that before executing it. If a user doesn't have FUSE 2, you can still run appimageupdatetool with ``$APPDIR/usr/bin/appimageupdatetool.AppImage --appimage-extract-and-run $APPIMAGE``.
 
 .. warning::
-   As of December 2024, :ref:`ref-linuxdeploy` has a `bug <https://github.com/linuxdeploy/linuxdeploy/issues/301>`_ that causes it to corrupt AppImages when they're given as additional executables that should be bundled.
-   Therefore, when using it, other bundled AppImages have to manually be copied into the AppDir and ``appimagetool`` has to be used to create the AppImage.
+   |linuxdeploy_bundle_appimages|
 
 Via ``libappimageupdate``
 +++++++++++++++++++++++++
