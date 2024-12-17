@@ -10,7 +10,9 @@ This chapter shows application developers how to produce AppImages, how to make 
    desktop-icon-files
    appimage-creation-tools/index
    creating-appdir-structure/index
-   optional/index
+   updates
+   signatures
+   appstream
    packaging-automation/index
    testing
    distribution

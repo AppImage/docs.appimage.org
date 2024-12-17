@@ -240,6 +240,14 @@ If you use the linuxdeploy `AppImage output plugin <https://github.com/linuxdepl
    > ./linuxdeploy-x86_64.AppImage <...> --output appimage
 
 
+.. _linuxdeploy-appstream:
+
+Embedding an AppStream file
+---------------------------
+
+To embed an AppStream file in your AppDir (and by extension your AppImage), you have to pass it to linuxdeploy via the ``appstream-file`` parameter. For more information on AppStream files, see :ref:`ref-appstream`.
+
+
 Iterative workflow
 ------------------
 

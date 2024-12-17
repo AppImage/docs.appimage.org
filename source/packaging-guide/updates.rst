@@ -1,11 +1,11 @@
-.. include:: ../../substitutions.rst
+.. include:: ../substitutions.rst
 
 .. _ref-updates:
 
 Making AppImages updateable
 ===========================
 
-AppImages can embed information that allows for them to be updated (essentially storing where an update can be fetched from). This information can be used by external tools (e.g. ``AppImageUpdate`` or ``AppImageLauncher``) to update the AppImage, but also by an updater tool build into the AppImage itself (we call this a *self-updateable AppImage*).
+AppImages can optionally embed information that allows for them to be updated (essentially storing where an update can be fetched from). This information can be used by external tools (e.g. ``AppImageUpdate`` or ``AppImageLauncher``) to update the AppImage, but also by an updater tool build into the AppImage itself (we call this a *self-updateable AppImage*).
 
 This not only makes it easier for users to update their AppImages, but also speeds up the process and saves bandwidth as not the full AppImage is downloaded, but only the update changes.
 
