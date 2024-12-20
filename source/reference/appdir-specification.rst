@@ -45,7 +45,7 @@ However, if an existing application must not be altered, e.g. if the licence pro
 
 .. warning::
 
-   :code:`AppRun.c` (and its compiled binary in the AppImageKit releases) is legacy technology and should be avoided if possible. Using a modern :ref:`AppImage creation tool <appimage-creation-tools>` is strongly preferred; they made :code:`AppRun.c` obsolete in most cases.
+   |apprun_c_warning|
 
    There are some edge cases where :code:`AppRun.c` might be useful and is still in use. However, it suffers from many limitations and requires some workarounds which themselves require troublesome mechanisms. For example, :code:`AppRun` force-changes the current working directory, and therefore applications cannot detect where the AppImage was originally called. This may be especially annoying for CLI tools, but can also be a problem for GUI applications expecting paths via parameters. This and other workarounds & mechanisms can cause a lot of trouble while trying to debug an AppImage. Please beware of that before thinking about using :code:`AppRun.c` in your AppImage.
 

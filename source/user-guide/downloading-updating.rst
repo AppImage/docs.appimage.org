@@ -28,6 +28,8 @@ These stores link to or use the original download location, so that they still e
 You can browse the two most user friendly software catalogs under https://appimage.github.io/apps/ resp. https://www.appimagehub.com/browse?ord=alphabetical. For more specific information on other catalogs, see :ref:`this section <software-catalogs-dev>`.
 
 
+.. _updates-user:
+
 Update AppImages
 ----------------
 

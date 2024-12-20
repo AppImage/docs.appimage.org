@@ -10,7 +10,7 @@ The following section contains reference documents like standards, etc.
    architecture
    appdir-specification
    appimage-specification
-   software-overview
+   appimagekit
    best-practices
    :maxdepth: 2
    :caption: Contents:
