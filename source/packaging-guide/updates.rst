@@ -42,7 +42,7 @@ Using an AppImage creation tool
 Most AppImage creation tools come with a built-in feature to add update information to the AppImage and create the ``.zsync`` file.
 
 | To see how to add update information with :ref:`ref-linuxdeploy`, see :ref:`this <linuxdeploy-update-information>` section of the linuxdeploy guide.
-| To see how to add update information with :ref:`sec-go-appimagetool`, see :ref:`this <go-appimage-signing>` section of the go-appimage guide.
+| To see how to add update information with :ref:`sec-go-appimagetool`, see :ref:`this <go-appimagetool-update-information>` section of the go-appimagetool guide.
 | To see how to add update information with :ref:`sec-electron-builder`, see :ref:`this <electron-builder-update-information>` section of the electron-builder guide.
 
 .. todo::

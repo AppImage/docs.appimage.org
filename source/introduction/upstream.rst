@@ -1,3 +1,5 @@
+.. include:: ../substitutions.rst
+
 .. _upstream-packaging:
 
 A word on upstream packaging
@@ -7,7 +9,7 @@ The AppImage ecosystem is built around the notion of "upstream packaging". With 
 
 AppimageKit is designed with “upstream packaging” in mind. This means that we want the original author of an application to be the person that packages it as an AppImage, distributes it to end users, and supports it.
 
-In this regard, an AppImage is very similar to an :code:`.exe` file on Windows or a :code:`.dmg` file on the Mac. These files are normally prepared by the original application authors rather than by third parties. This ensures that the software works exactly the way the original application author has envisioned it to work. It also means that the application author does not have to follow arbitrary rules set by Linux distributions.
+In this regard, an AppImage is very similar to an :code:`.exe` file on Windows or a :code:`.dmg` file on macOS. These files are normally prepared by the original application authors rather than by third parties. |upstream_advantage| It also means that the application author does not have to follow arbitrary rules set by Linux distributions.
 
 .. note::
 

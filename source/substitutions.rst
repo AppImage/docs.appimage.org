@@ -10,3 +10,5 @@
 .. |fuse_docker| replace:: Most docker containers don't permit to use FUSE inside containers for security reasons. In that case, you will see this error:
 .. |recent_type_2| replace:: but every reasonably recent AppImage is type 2
 .. |linuxdeploy_bundle_appimages| replace:: As of December 2024, :ref:`ref-linuxdeploy` has a `bug <https://github.com/linuxdeploy/linuxdeploy/issues/301>`__ that causes it to corrupt AppImages when they're given as additional executables that should be bundled. Therefore, when using it, other bundled AppImages have to manually be copied into the AppDir and ``appimagetool`` has to be used to create the AppImage.
+.. |upstream_advantage| replace:: This ensures that the software works exactly the way the original application author has envisioned it to work.
+.. |software_catalogs_short| replace:: They basically work as app stores in which you can look through a list of all indexed AppImages, read their description and search for something specific or even filter by categories.

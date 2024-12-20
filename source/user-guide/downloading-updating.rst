@@ -1,3 +1,5 @@
+.. include:: ../substitutions.rst
+
 Downloading and updating AppImages
 ==================================
 
@@ -10,8 +12,21 @@ This page provides an overview on where to download and how to update AppImages.
 Download AppImages
 ------------------
 
-.. todo::
-   Add this section
+AppStreams are usually downloaded from the creator themself. The AppImage ecosystem is built around the notion of :ref:`upstream packaging <upstream-packaging>`. |upstream_advantage| However, there still are several ways to get them:
+
+The most common way is to download AppImages directly from the website on which the creator hosts them. This is usually either a project website or (for most open source projects) on GitHub releases (or both). This is intuitive: If you search for a specific application, you just go to its website and download the AppImage.
+
+.. _software-catalogs-user:
+
+Software catalogs
++++++++++++++++++
+
+However, there also is a second option: If you don't want to download a specific application, but rather just *an* application that does something you need, e.g. audio editing, it might be frustrating to search for something that fits your needs and is available in the format you want. That's why so-called *software catalogs* exist: |software_catalogs_short|
+
+These stores link to or use the original download location, so that they still embrace upstream packaging, and don't alter the AppImage in some way; they merely act as an index of available AppImages to find the applications you need more easily.
+
+You can browse the two most user friendly software catalogs under https://appimage.github.io/apps/ resp. https://www.appimagehub.com/browse?ord=alphabetical. For more specific information on other catalogs, see :ref:`this section <software-catalogs-dev>`.
+
 
 Update AppImages
 ----------------

@@ -38,11 +38,7 @@ Make it executable (using the GUI or via command line) and double-click it. See 
 
 If you want to download a specific application, the easiest way to do so is to go to the application releases (e.g. on GitHub or the application website) and download the newest release as an AppImage.
 
-If you want to have a central catalog of available AppImages, e.g. to know what's available, check out AppImageHub. AppImageHub is a crowd-sourced directory of available AppImages. It doesn't provide the AppImages directly, but instead links to the original author's download URLs, so you can be sure to download the originally packaged applications. Its database can also be used by other third party app stores, which is done by e.g. the `Nitrux <https://nxos.org>`_ OS.
-
-..
-   TODO: Add links (see the TODO in the AppImageHub section)
-   Improve this section when improving the AppImageHub section
+However, if you rather want to know what's available or search for *a* tool doing something specific like audio editing, there exist several :ref:`software catalogs <software-catalogs-user>`: |software_catalogs_short| They don't provide the AppImages directly, but instead link to the original download URLs, so that you can be sure to download the originally packaged applications. For more information on software catalogs, see :ref:`software-catalogs-user`.
 
 
 |question| Where do I store my AppImages?

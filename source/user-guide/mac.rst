@@ -27,7 +27,7 @@ This page compares the AppImage terms to its macOS equivalents. It should help m
      - `Sparkle appcast`_
    * - Optional ``appimaged`` daemon
      - `Launch Services`_ to register applications in the system (e.g. MIME types or icons)
-   * - AppImageHub_ central directory of available AppImages
+   * - :ref:`Software catalogs <software-catalogs-user>` of available AppImages
      - Mac App Store
    * - Optional signature in ELF section
      - Signatures in ``/Contents/_CodeSignature/``
@@ -38,7 +38,6 @@ This page compares the AppImage terms to its macOS equivalents. It should help m
    TODO: Link signatures page
 
 .. _AppImageUpdate: https://github.com/AppImage/AppImageUpdate
-.. _AppImageHub: https://github.com/appimage/appimage.github.io
 .. _Sparkle Framework: https://sparkle-project.org/
 .. _update information: https://github.com/AppImage/AppImageSpec/blob/master/draft.md#update-information
 .. _Sparkle appcast: https://sparkle-project.org/
