@@ -72,7 +72,7 @@ You can bundle `appimageupdatetool <https://github.com/AppImageCommunity/AppImag
 
 To call another bundled executable, you need to know its path. Luckily, when running an AppImage, the :ref:`environment variable <ref-env_vars>` ``$APPDIR`` is set to the location of the mounted AppDir. As bundled executables are usually in ``./usr/lib``, its path should be something like ``$APPDIR/usr/lib/appimageupdatetool.AppImage``
 
-To update your AppImage with ``appimageupdatetool``, you need to give the path of your AppImage as parameter. This path is set as ``$APPIMAGE`` by the runtime. Therefore the whole call should look like ``$APPDIR/usr/lib/appimageupdatetool.AppImage $APPIMAGE``. The way how you can execute such a shell command depends on the programming language. For example, in Rust you can do this with ``Command::new("sh").arg("-c").arg("$APPDIR/usr/bin/appimageupdatetool.AppImage $APPIMAGE").output()``.
+To update your AppImage with ``appimageupdatetool``, you need to give the path of your AppImage as parameter. This path is set as ``$APPIMAGE`` by the runtime. Therefore the whole call should look like ``$APPDIR/usr/lib/appimageupdatetool.AppImage $APPIMAGE``. |shell_command| ``Command::new("sh").arg("-c").arg("$APPDIR/usr/bin/appimageupdatetool.AppImage $APPIMAGE").output()``.
 
 .. note::
    As of December 2024, appimageupdatetool requires FUSE 2 to run. If you aren't sure that your users have FUSE 2, you might want to check that before executing it. If a user doesn't have FUSE 2, you can still run appimageupdatetool with ``$APPDIR/usr/bin/appimageupdatetool.AppImage --appimage-extract-and-run $APPIMAGE``.

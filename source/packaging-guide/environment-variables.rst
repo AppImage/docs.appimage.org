@@ -1,26 +1,23 @@
+.. include:: ../substitutions.rst
+
 .. _ref-env_vars:
 
 Environment variables
 =====================
 
-The AppImage runtimes make some environment variables available that can be used by applications bundled as AppImages
-during runtime, e.g., to recognize whether it's currently run from an AppImage, or to get some path information.
+The AppImage runtime sets some environment variables available to the applications bundled as AppImages, e.g. to get the path of the mounted AppDir (AppImage content). This can be necessary in some situations, e.g. to call other bundled executables.
 
-Depending on the type of the AppImage, the runtimes offer different feature sets.
-
+This section gives an overview over those environment variables.
 
 .. contents:: Contents
    :local:
    :depth: 1
 
 
-Type 1 AppImage runtime
------------------------
+Environment variables set in every AppImage
+-------------------------------------------
 
-.. note::
-
-   Type 1 is the deprecated/outdated AppImage type that is only in legacy support mode. It is not recommended to make
-   new type 1 AppImages. We strongly recommend you to use :code:`appimagetool` to make type 2 AppImages.
+The following environment variables are set in every AppImage.
 
 .. list-table::
    :header-rows: 1
@@ -28,44 +25,28 @@ Type 1 AppImage runtime
    * - Variable name
      - Contents
    * - :code:`APPIMAGE`
-     - (Absolute) path to AppImage file (with symlinks resolved)
+     - Absolute path of the AppImage (with symlinks resolved)
    * - :code:`APPDIR`
-     - Path of mountpoint of the ISO9660 image contained in the AppImage
+     - Path of the mounted AppDir (AppImage content)
    * - :code:`OWD`
-     - Path to working directory at the time the AppImage is called
+     - Path of the working directory at the time the AppImage is called
+
+For example, if you want to call another bundled executable from your AppImage, you can do that with ``$APPDIR/usr/lib/other_executable``. |shell_command| ``Command::new("sh").arg("-c").arg("$APPDIR/usr/lib/other_executable").output()``.
 
 
-Type 2 AppImage runtime
------------------------
+``ARGV0``
+---------
 
-The type 2 AppImage runtime makes a few environment variables available for use in e.g., ``AppRun`` scripts:
+Type 2 AppImages have another environment variable called ``ARGV0`` set (every reasonably recent AppImage is type 2 as all modern :ref:`appimage-creation-tools` and ``appimagetool`` create type 2 AppImages).
 
-.. list-table::
-   :header-rows: 1
-
-   * - Variable name
-     - Contents
-   * - :code:`APPIMAGE`
-     - (Absolute) path to AppImage file (with symlinks resolved)
-   * - :code:`APPDIR`
-     - Path of mountpoint of the SquashFS image contained in the AppImage
-   * - :code:`OWD`
-     - Path to working directory at the time the AppImage is called
-   * - :code:`ARGV0`
-     - Name/path used to execute the script. This corresponds to the value you'd normally receive via the :code:`argv` argument passed to your :code:`main` method. Usually contains the filename or path to the AppImage, relative to the current working directory.
+``ARGV0`` is the path used to execute the AppImage. This corresponds to the value you'd normally receive as the ``argv`` argument passed to your ``main`` method. This usually contains the path of the AppImage, relative to the current working directory.
 
 .. note::
 
    :code:`APPIMAGE` and :code:`ARGV0` have very different use cases.
 
-   :code:`APPIMAGE` shall be used every time the full path of the AppImage is needed, e.g., if you need to touch the
-   AppImage file, for example when you want to update it or read some meta information.
+   :code:`APPIMAGE` should be used every time the path of the AppImage is needed, e.g. if you need to touch the AppImage file to update it.
 
-   :code:`ARGV0` provides information how the AppImage was called. When you call an AppImage through a symlink for
-   instance, you can get the path to this symlink through :code:`ARGV0`, while :code:`APPIMAGE` would contain the
-   absolute path to the file behind that symlink.
+   :code:`ARGV0` provides information on how the AppImage was called. When you call an AppImage through a symlink for instance, you can get the path to this symlink through :code:`ARGV0`, while :code:`APPIMAGE` would contain the absolute path to the file behind that symlink.
 
-   Scenarios where :code:`ARGV0` is really useful involve so-called multi-binary AppImages, where the filename
-   in :code:`ARGV0` defines which program is called inside the AppImage. This concept is also known from
-   single-binary tools like `BusyBox <https://en.wikipedia.org/wiki/BusyBox>`__, and can be implemented in a custom
-   :code:`AppRun` script (see :ref:`Architecture <ref-architecture>` for more information).
+   Scenarios where :code:`ARGV0` is really useful involve so-called multi-binary AppImages, where the filename in :code:`ARGV0` defines which program is called inside the AppImage. This concept is also known from single-binary tools like `BusyBox <https://en.wikipedia.org/wiki/BusyBox>`__, and can be implemented in a custom :code:`AppRun` script (see :ref:`Architecture <ref-architecture>` for more information).
