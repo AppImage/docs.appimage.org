@@ -51,14 +51,18 @@ However, appimagetool shouldn't be directly used to create AppImages. Instead, u
 appimagetool should not be confused with the alternative `go implementation <https://github.com/probonopd/go-appimage>`_, which offers a :ref:`wider feature set <sec-go-appimagetool>`.
 
 
+.. _apprun.c:
+
 AppRun.c (Legacy)
 -----------------
 
-`AppRun.c` (also available as precompiled binary `here <https://github.com/AppImage/AppImageKit/releases/continuous>`_) is a program that attempts to make the application binary relocatable by manipulating environment variables.
+``AppRun.c`` (also available as precompiled binary `here <https://github.com/AppImage/AppImageKit/releases/continuous>`_) is a program that attempts to make the application relocatable without modifying it in any way. This can be necessary in some cases, e.g. if its licence prohibits any modifications. It does this by manipulating environment variables, so that the bundled shared libraries are used and related warnings are suppressed. However, using it doesn't guarantee the application to run correctly.
 
 .. warning::
 
    |apprun_c_warning|
+
+   There are some edge cases where :code:`AppRun.c` might be useful and is still in use. However, it suffers from many limitations and requires some workarounds which themselves require troublesome mechanisms. For example, :code:`AppRun` force-changes the current working directory, and therefore applications cannot detect where the AppImage was originally called. This may be especially annoying for CLI tools, but can also be a problem for GUI applications expecting paths via parameters. This and other workarounds & mechanisms can cause a lot of trouble while trying to debug an AppImage. Please beware of that before thinking about using :code:`AppRun.c` in your AppImage.
 
 
 Helpers

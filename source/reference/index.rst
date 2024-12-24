@@ -11,6 +11,5 @@ The following section contains reference documents like standards, etc.
    appdir-specification
    appimage-specification
    appimagekit
-   best-practices
    :maxdepth: 2
    :caption: Contents:

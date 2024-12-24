@@ -61,6 +61,8 @@ The list of libraries that should be excluded, the so-called `excludelist <https
 
 Some :ref:`appimage-creation-tools` can also include these expected core libraries. This considerably increases the AppImage size (by at least 30MB), but removes the limitation of requiring the oldest supported LTS distribution version to compile the binaries (since all referenced libraries are included, the used distribution version is irrelevant). This should only be done if there are issues with the exclusion of the core libraries, e.g. if the AppImage can't be built on the oldest supported LTS distribution version, as the inclusion of some core libraries can also lead to other issues. If a considerable base of your users uses a system configuration without some of these core libraries (e.g. a custom Gentoo configuration), it's also an option to provide both AppImage versions.
 
+There are also **experimental** tools that try to use an old version of ``glibc`` when compiling on a new system (`1 <https://github.com/AppImage/AppImageKit/tree/stable/v1.0/LibcWrapGenerator>`_, `2 <https://github.com/wheybags/glibc_version_header>`_, `3 <https://github.com/sulix/bingcc>`_), but they don't always work and as they only adapt ``glibc`` and not other expected core libraries, the application might still crash when referencing a different core library.
+
 
 .. _appimage-specification:
 

@@ -39,15 +39,13 @@ Every AppImage's AppDir must contain a file (executable, script, etc.) or symlin
 
 It is located in the root directory that makes up an AppDir, so it can be used to calculate paths relative to the (later mounted) AppDir.
 
-In modern AppImages (especially if modern :ref:`appimage-creation-tools` are used), :code:`AppRun` is usually a symlink to the main binary. This works if the binary has been made :ref:`relocatable <removing-hard-coded-paths>`, which modern AppImage creation tools do.
+In modern AppImages (especially if modern :ref:`appimage-creation-tools` are used), :code:`AppRun` is usually a symlink to the main binary. This works if the binary has been made relocatable (which is automatically done by modern AppImage creation tools, but can also be done :ref:`manually <removing-hard-coded-paths>`).
 
-However, if an existing application must not be altered, e.g. if the licence prohibits any modifications, AppImageKit's `AppRun.c binary <https://github.com/AppImage/AppImageKit/releases/continuous>`_ can be used. :code:`AppRun.c` attempts to make programs use bundled shared libraries instead of system ones by manipulating environment variables. Furthermore, it attempts to prevent warnings users might encounter, that are coming from the fact the :ref:`AppDir <ref-appdir>` is mounted read-only. But using :code:`AppRun.c` is not a guarantee that an application will run.
+There also exists a pre-written AppRun.c script / program, which can be used |why_apprun_c| as it attempts to make the application relocatable without modifying it. See :ref:`apprun.c` for more information on this.
 
 .. warning::
 
    |apprun_c_warning|
-
-   There are some edge cases where :code:`AppRun.c` might be useful and is still in use. However, it suffers from many limitations and requires some workarounds which themselves require troublesome mechanisms. For example, :code:`AppRun` force-changes the current working directory, and therefore applications cannot detect where the AppImage was originally called. This may be especially annoying for CLI tools, but can also be a problem for GUI applications expecting paths via parameters. This and other workarounds & mechanisms can cause a lot of trouble while trying to debug an AppImage. Please beware of that before thinking about using :code:`AppRun.c` in your AppImage.
 
 
 Other

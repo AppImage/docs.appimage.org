@@ -9,7 +9,7 @@ So, to avoid this, it's (obviously) better to write down the list of commands an
 
 The solution to this is packaging automation. This means connecting a system (a so-called CI pipeline) to your repository which then builds the AppImage on its own (e.g. for each tag, commit or at certain intervals). This also has the advantages of documenting exactly how your AppImages are built and making the process more transparent. Additionally, you can carry out tests on the pipeline to make sure the AppImage continues to work as expected.
 
-There are many systems you can use, for example GitHub CI, GitLab CI, Gitea CI, Travis CI, Jenkins, or the Open Build Service. This section explains how to use some of them.
+There are many systems you can use, for example GitHub Actions, GitLab CI, Gitea CI, Travis CI, Jenkins, or the Open Build Service. This section explains how to use some of them.
 
 
 GitHub Actions
@@ -79,6 +79,8 @@ The Open Build Service is another system that can be used to automate the packag
 For more specific information on how to use the Open Build Service, see :ref:`ref-obs`.
 
 
+.. _convenience-functions-script:
+
 Convenience functions
 ---------------------
 
@@ -86,7 +88,7 @@ There is a collection of convenience functions in https://github.com/AppImage/pk
 
 .. code:: bash
 
-   > wget -q https://github.com/AppImage/AppImages/raw/$PKG2AICOMMIT/functions.sh -O ./functions.sh
+   > wget -q https://github.com/AppImage/AppImages/raw/master/functions.sh -O ./functions.sh
    > . ./functions.sh
 
 .. todo::

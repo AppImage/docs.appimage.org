@@ -1,3 +1,5 @@
+.. include:: ../../substitutions.rst
+
 .. _manually-fully-creating-appdir:
 
 Manually creating the entire AppDir
@@ -28,9 +30,9 @@ Additionally to the AppDir content described there, your AppDir needs to contain
 AppRun
 ++++++
 
-In modern AppImages, :code:`AppRun` is usually a symlink to the main binary. This works if the binary has been made :ref:`relocatable <removing-hard-coded-paths>` (explained later on this page).
+In modern AppImages, :code:`AppRun` is usually a symlink to the main binary. This works if the binary has been made relocatable (which is automatically done by modern AppImage creation tools; it's explained :ref:`later on this page <removing-hard-coded-paths>` how to manually do that).
 
-However, if an existing application must not be altered, e.g. if the licence prohibits any modifications, alternatives may be used. For more information, see the :ref:`AppRun specification <apprun-specification>`.
+However, |why_apprun_c|, alternatives may be used. For more information, see :ref:`AppRun.c <apprun.c>`.
 
 .DirIcon
 ++++++++
@@ -63,15 +65,31 @@ You can check whether your app is relocatable by running
 
 	strings MyApp.AppDir/usr/bin/myapp | grep /usr
 
-Should this return something, then you need to modify your app programmatically (e.g., by using relative paths, using `binreloc <https://github.com/limbahq/binreloc>`__, or using the `GNU relocatable-prog module <https://www.gnu.org/software/gnulib/manual/html_node/Supporting-Relocation.html>`_). Many modern frameworks such as Qt even provide functionality (e.g. :code:`QString QCoreApplication::applicationDirPath()`) to implement this easily. In some cases, there are also flags you can specify when building from source to make applications relocatable.
+Should this return something, then you need to make your application relocatable, either by modifying the source code or by patching the executable.
 
-If you prefer not to change the source code of your app and/or would not like to recompile your app, you can also patch the binary, for example using the command
+Modifying the source code
++++++++++++++++++++++++++
+
+The best way is to modify the source code of the application in order to not use absolute paths. While there are several ways to do this, the canonical way on Linux is to resolve ``/proc/self/exe`` to get the path of the main executable and use a path relative to it. This should work both in normal installations and in relocatable installations such as AppImages. There are also libraries such as `BinReloc <https://github.com/limbahq/binreloc>`_ which make this easier.
+
+Some modern frameworks such as Qt have this functionality built-in, e.g. in ``QString QCoreApplication::applicationDirPath()`` so you don't have to resolve ``/proc/self/exe``. In some cases, there are also flags you can specify when building from source to make applications relocatable.
+
+Another way to make your application relocatable is to use the `GNU relocatable-prog module <https://www.gnu.org/software/gnulib/manual/html_node/Supporting-Relocation.html>`_.
+
+Patching the executable
++++++++++++++++++++++++
+
+If you don't want to or can't change the source code and recompile the application, you can also patch the binaries. This can be done with the following command (which needs to be executed inside the AppDir):
 
 .. code-block:: shell
 
-    sed -i -e 's#/usr#././#g' MyApp.AppDir/usr/bin/myapp
+   find usr/ -type f -executable -exec sed -i -e "s|/usr|././|g" {} \;
 
-which replaces all occurrences of :code:`/usr` with :code:`././`, which simply means "here".
+It replaces all occurrences of ``/usr`` in each binary with the same length string ``././``, which simply means "here". This command is also available in the :ref:`convenience functions script <convenience-functions-script>`.
+
+..
+   TODO: Is this still true? It hasn't been mentioned in this section originally.
+   > For the binary-patched application to work, you need to change to the :code:`usr/` directory inside the application directory before you launch the application.
 
 This usually works as long as the application is not calling :code:`chdir()` (changing the current working directory). Such a call would break this workaround as :code:`././` would then not be pointing to :code:`$APPDIR/usr` anymore. You can run the following command to see whether the application is calling :code:`chdir()` (99% of GUI applications don't):
 
@@ -79,19 +97,9 @@ This usually works as long as the application is not calling :code:`chdir()` (ch
 
 	strace -echdir -f ./AppRun
 
-The same applies to all other binaries (executables and libraries) in the AppDir that the application depends on. To patch all binaries in your AppDir, execute
-
-.. code-block:: shell
-
-	cd MyApp.AppDir/usr/
-	find . -type f -exec sed -i -e 's#/usr#././#g' {} \;
-	cd -
-
 .. note::
 
-   An alternative approach to making an application relocatable is to use a specific AppRun script, see :ref:`apprun-specification`. This can be used if an existing application must not be altered, e.g. if the licencing prohibits any modifications.
-
-   However, this approach is deprecated and should be avoided if possible.
+   An alternative approach to making an application relocatable is to use the AppRun.c script / program, see :ref:`apprun.c`. It can be used |why_apprun_c|. However, this approach is deprecated and should be avoided if possible.
 
 
 Creating an AppImage from the AppDir

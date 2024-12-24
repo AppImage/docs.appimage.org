@@ -110,7 +110,7 @@ If the AppImage won't include core libraries like glibc (see the :ref:`compariso
 
 For more information about this, exceptions to this and alternatives if you can't build your application on the oldest still-supported Linux distribution, see :ref:`exclude-expected-libraries`.
 
-The so-called *excludelist* of all core libraries that aren't included by most AppImage creation tools is available `here <https://github.com/AppImage/pkg2appimage/blob/master/excludelist>`_
+The so-called *excludelist* of all core libraries that aren't included by most AppImage creation tools is available `here <https://github.com/AppImage/pkg2appimage/blob/master/excludelist>`_.
 
 
 .. toctree::

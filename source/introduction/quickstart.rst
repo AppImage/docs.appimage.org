@@ -13,6 +13,14 @@ This page contains information for users new to AppImage, and want to get starte
    :depth: 1
 
 
+What is an AppImage?
+--------------------
+
+AppImage is a format for distributing applications. AppImage is not a build system or something that defines to compile applications in a specific way; it's rather like a ``.zip`` file, bundling all the required data necessary for an application to run on all modern Linux distribution versions.
+
+The binaries inside an AppImage should be compatible with a variety of target systems. Modern :ref:`appimage-creation-tools` help with an easy creation of AppImages.
+
+
 .. _ref-how-to-run-appimage:
 
 How to run an AppImage

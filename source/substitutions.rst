@@ -14,3 +14,4 @@
 .. |software_catalogs_short| replace:: They basically work as app stores in which you can look through a list of all indexed AppImages, read their description and search for something specific or even filter by categories.
 .. |shell_command| replace:: The way how you can execute such a shell command depends on the programming language. For example, in Rust you can do this with
 .. |apprun_c_warning| replace:: :code:`AppRun.c` (and its compiled binary in the AppImageKit releases) is legacy technology and should be avoided if possible. Using a modern :ref:`AppImage creation tool <appimage-creation-tools>` is strongly preferred; they made :code:`AppRun.c` obsolete in most cases.
+.. |why_apprun_c| replace:: if an existing application must not be altered (e.g. if the licence prohibits any modification)

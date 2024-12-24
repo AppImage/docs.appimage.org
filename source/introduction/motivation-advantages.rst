@@ -31,7 +31,7 @@ All these use cases can be accomplished by using AppImages:
 
 Therefore, AppImages provide a simple user experience which guarantees that even less tech-savvy people can get started without any major issues. AppImage is primarily a user-focused way of bundling software.
 
-And as AppImage has been around for a while, a lot of useful, optional features have been developed, ranging from :ref:`efficient updates <ref-appimageupdate>` over so-called :ref:`desktop integration <ref-desktop-integration>` to :ref:`software catalogs <software-catalogs-user>`. None of these are required for the basic experience, though. AppImages are designed to :ref:`be run in three steps at most <ref-how-to-run-appimage>`.
+And as AppImage has been around for a while, a lot of useful, optional features have been developed, ranging from :ref:`efficient updates <updates-user>` over so-called :ref:`desktop integration <ref-desktop-integration>` to :ref:`software catalogs <software-catalogs-user>`. None of these are required for the basic experience, though. AppImages are designed to :ref:`be run in three steps at most <ref-how-to-run-appimage>`.
 
 
 Advantages for developers & application authors
