@@ -1,5 +1,7 @@
 .. include:: ../../substitutions.rst
 
+.. _fuse-troubleshooting:
+
 I get some errors related to something called "FUSE"
 ====================================================
 

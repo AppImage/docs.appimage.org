@@ -21,9 +21,9 @@ An AppImage consists of two parts: a *runtime* and a *file system image*. For th
 
    AppImage file structure. Copyright © `@TheAssassin <https://github.com/TheAssassin>`__ 2019. Licensed under CC-By-SA Intl 4.0.
 
-What happens when an AppImage is run is that the operating system runs the AppImage as an executable. The runtime, the executable part, tries to mount the file system image using :ref:`FUSE <ref-fuse>`. If that succeeds, the :ref:`AppDir <ref-appdir>` is available in a :ref:`temporary mountpoint <ref-temporary-mountpoint>`, and can be used like a read-only directory.
+What happens when an AppImage is run is that the operating system runs the AppImage as an executable. The runtime, the executable part, tries to mount the file system image using :ref:`FUSE <fuse-troubleshooting>`. If that succeeds, the :ref:`AppDir <ref-appdir>` is available in a temporary mountpoint, and can be used like a read-only directory.
 
-The runtime continues by calling the AppDir's "entrypoint" :ref:`AppRun <ref-apprun>` using the operating system facilities. There are no checks performed by the runtime, the operating system is simply tasked with the execution of ``<AppDir mountpoint>/AppRun``. This provides a lot of flexibility, as AppRun can be an arbitrary executable, a script with a shebang_, or even a simple symlink to another executable within the AppDir. The file must be executable.
+The runtime continues by calling the AppDir's "entrypoint" :ref:`AppRun <apprun-specification>` using the operating system facilities. There are no checks performed by the runtime, the operating system is simply tasked with the execution of ``<AppDir mountpoint>/AppRun``. This provides a lot of flexibility, as AppRun can be an arbitrary executable, a script with a shebang_, or even a simple symlink to another executable within the AppDir. The file must be executable.
 
 .. _shebang: https://en.wikipedia.org/wiki/Shebang_(Unix)
 

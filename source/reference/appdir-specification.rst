@@ -112,7 +112,7 @@ The directory contains applications, (shared) libraries, desktop files, icons et
       Contains :ref:`desktop entry files <desktop-entry-files>` for applications in ``bin``. Normally, there's just one desktop file in this directory, which is symlinked in the root directory. For more information about desktop files, see :ref:`desktop-entry-files`.
 
    ``icons``
-      Directory containing so-called `icon themes <https://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html>`_. Contains at least one, but often a set of :ref:`icon files <icon_files>` for the main application. The icons are referred to by the root desktop file, which means the :ref:`same constraints <root-icon>` apply. The default theme is ``hicolor``, but icon files can also be adapted to other well-known themes to fit in better. Icon themes placed in this directory are copied to the system during so-called :ref:`desktop integration <ref-desktop-integration>`.
+      Directory containing so-called `icon themes <https://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html>`_. Contains at least one, but often a set of :ref:`icon files <icon-files>` for the main application. The icons are referred to by the root desktop file, which means the :ref:`same constraints <root-icon>` apply. The default theme is ``hicolor``, but icon files can also be adapted to other well-known themes to fit in better. Icon themes placed in this directory are copied to the system during so-called :ref:`desktop integration <ref-desktop-integration>`.
 
       Example path: ``<root>/usr/share/icons/<theme>/<resolution>/apps/myapp.<ext>``, e.g. ``<root>/usr/share/icons/hicolor/scalable/apps/myapp.svg`` or ``<root>/usr/share/icons/hicolor/512x512/apps/myapp.png``.
 
@@ -122,7 +122,7 @@ The directory contains applications, (shared) libraries, desktop files, icons et
 Summary
 '''''''
 
-The modern packaging tools such as :ref:`linuxdeploy <ref-linuxdeploy>` create these directories by default to standardize and harmonize AppDir creation. If you intend to :ref:`create AppDirs manually <ref-manual>`, you should follow these recommendations.
+Modern AppImage creation tools such as :ref:`linuxdeploy <ref-linuxdeploy>` create these directories by default to standardize and harmonize AppDir creation. If you intend to :ref:`create the entire AppDir manually <manually-fully-creating-appdir>`, you should follow these recommendations.
 
 
 .. |must| replace:: **MUST**
