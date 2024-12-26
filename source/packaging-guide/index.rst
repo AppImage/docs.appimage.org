@@ -1,9 +1,11 @@
+.. include:: ../substitutions.rst
+
 .. _ref-packaging-guide:
 
 Packaging Guide
 ===============
 
-This chapter shows application developers how to produce AppImages, how to make them updateable and how to digitally sign them.
+This chapter shows application developers how to create AppImages using modern AppImage creation tools, covers all requirements for that like desktop entry files, |packaging_optional|
 
 .. toctree::
    introduction

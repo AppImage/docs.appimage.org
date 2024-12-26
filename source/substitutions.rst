@@ -15,3 +15,7 @@
 .. |shell_command| replace:: The way how you can execute such a shell command depends on the programming language. For example, in Rust you can do this with
 .. |apprun_c_warning| replace:: :code:`AppRun.c` (and its compiled binary in the AppImageKit releases) is legacy technology and should be avoided if possible. Using a modern :ref:`AppImage creation tool <appimage-creation-tools>` is strongly preferred; they made :code:`AppRun.c` obsolete in most cases.
 .. |why_apprun_c| replace:: if an existing application must not be altered (e.g. if the licence prohibits any modification)
+.. |introduction_content| replace:: the ideas behind AppImage, its advantages and underlying core concepts
+.. |packaging_optional| replace:: and explains further optional features like making your AppImages updateable or adding additional metadata.
+.. |reference_content| replace:: the formal specification of AppImages and AppDirs, how they work under the hood, the reference implementation and the different types of AppImages
+.. |appimages_without_fuse| replace:: without FUSE by using the ``--appimage-extract-and-run`` parameter (like ``./MyApp.AppImage --appimage-extract-and-run``)

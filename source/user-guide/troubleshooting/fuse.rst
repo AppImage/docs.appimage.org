@@ -163,7 +163,7 @@ If you don't want to (or cannot) set up FUSE, there are fallback solutions. Depe
 Run type 2 AppImages without FUSE
 +++++++++++++++++++++++++++++++++
 
-Newer type 2 AppImages can easily be run without FUSE by using the ``--appimage-extract-and-run`` parameter (like ``./MyApp.AppImage --appimage-extract-and-run```. This will cause the runtime to automatically extract the AppImage, run its content, wait until the app closes, and then clean up the file again. For an end user, this essentially has the same effect as just running it, although the operations are more expensive.
+Newer type 2 AppImages can easily be run |appimages_without_fuse|. This will cause the runtime to automatically extract the AppImage, run its content, wait until the app closes, and then clean up the file again. For an end user, this essentially has the same effect as just running it, although the operations are more expensive.
 
 Alternatively, you could also use an environment variable (``export APPIMAGE_EXTRACT_AND_RUN=1``) (which is forwarded to child processes as well) instead of the parameter (although this has been introduced a while after the parameter, so it might not work for every AppImage).
 

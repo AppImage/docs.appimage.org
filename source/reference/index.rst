@@ -1,10 +1,12 @@
+.. include:: ../substitutions.rst
+
 .. _reference:
 .. _ref-reference:
 
 Reference
 =========
 
-The following section contains reference documents like standards, etc.
+This chapter explains |reference_content|.
 
 .. toctree::
    architecture
