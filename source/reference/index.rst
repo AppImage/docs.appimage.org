@@ -6,12 +6,10 @@
 Reference
 =========
 
-This chapter explains |reference_content|.
+This chapter goes over |reference_content|.
 
 .. toctree::
-   architecture
+   appimage/index
    appdir-specification
-   appimage-specification
-   appimagekit
    :maxdepth: 2
    :caption: Contents:

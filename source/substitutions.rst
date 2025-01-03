@@ -17,5 +17,11 @@
 .. |why_apprun_c| replace:: if an existing application must not be altered (e.g. if the licence prohibits any modification)
 .. |introduction_content| replace:: the ideas behind AppImage, its advantages and underlying core concepts
 .. |packaging_optional| replace:: and explains further optional features like making your AppImages updateable or adding additional metadata.
-.. |reference_content| replace:: the formal specification of AppImages and AppDirs, how they work under the hood, the reference implementation and the different types of AppImages
+.. |reference_content| replace:: the formal specification, reference implementation and history of AppImages as well as the AppDir specification
 .. |appimages_without_fuse| replace:: without FUSE by using the ``--appimage-extract-and-run`` parameter (like ``./MyApp.AppImage --appimage-extract-and-run``)
+.. |appimage_implementations_practice| replace:: basically all modern AppImage creation tools use one of only two implementations (the reference implementation and a related experimental implementation with new features)
+.. |appimage_history_link| replace:: have changed and might be changed in the future (e.g. to add new features), there might be some older AppImages that lack certain features. To learn more about the different types of AppImages and their history, see :ref:`appimage-types-history`. However, backwards compatibility is maintained
+.. |specification_advantage| replace:: Having a specification means that different tools can deal with AppImages and rely on them behaving consistently and fulfilling the defined requirements. It also helps maintaining compatibility between different tools and components.
+.. |new_type_2_features| replace:: from a user perspective are not due to specification changes but rather due to new features that have been added to the implementation while adapting it to the new specification
+.. |specification_broad| replace:: However, the specification is pretty broad, which means that there are some things the implementation can decide.
+
