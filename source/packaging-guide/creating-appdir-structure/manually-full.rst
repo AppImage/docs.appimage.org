@@ -105,12 +105,12 @@ This usually works as long as the application is not calling :code:`chdir()` (ch
 Creating an AppImage from the AppDir
 ------------------------------------
 
-To create an AppImage from the AppDir, you need :code:`appimagetool`. You can get it by downloading the `latest release <https://github.com/AppImage/AppImageKit/releases/latest>`_. After downloading the AppImage, you have to make it executable as usual:
+To create an AppImage from the AppDir, you need :code:`appimagetool`. You can get it by downloading the `latest release <https://github.com/AppImage/appimagetool/releases/latest>`_. After downloading the AppImage, you have to make it executable as usual:
 
 .. code-block:: bash
 
-   > wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
-   > chmod +x linuxdeploy-x86_64.AppImage
+   > wget https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
+   > chmod +x appimagetool-x86_64.AppImage
 
 After that, you can call it with the AppDir path as parameter in order to turn it into an AppImage:
 

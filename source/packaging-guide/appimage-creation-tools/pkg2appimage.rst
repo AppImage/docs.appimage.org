@@ -67,7 +67,7 @@ YAML's approach to describing data is to combine associative lists (known as :co
 
 The :code:`.yml` files are used by `pkg2appimage`_ which is used in the *AppImages* project to convert binary *ingredients* into AppImages for demonstration purposes. Their primary objective is to make it very simple to convert pre-existing binaries into the AppImage format. If you can build your software from source, you may generate AppImages directly as part of your build workflow; in this case you may not need a :code:`.yml` file (but a Travis CI :code:`.travis.yml` and/or a :code:`Makefile`, etc.).
 
-The :code:`.yml` file format is not part of the AppImage standard, which just describes the AppImage container format and is agnostic as to how the payload inside an AppImage gets generated. Neither it is part of AppImageKit, because AppImageKit is only concerned with taking a pre-existing *AppDir* and converting that into an AppImage. Such an AppDir is created from the instructions stored in the :code:`.yml` files, and converted to an AppImage using *AppImageKit*.
+The format of these :code:`.yml` files is not part of the AppImage :ref:`specification <ref-appimage-specification>` (which describes the AppImage container format) or :ref:`reference implementation <reference-implementation>` (which implements a conforming runtime and a tool to create conforming AppImages); instead it is its own project creating an AppDir that is converted into an AppImage using the reference implementation.
 
 
 General anatomy of ``.yml`` files

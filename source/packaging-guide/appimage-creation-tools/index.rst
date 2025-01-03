@@ -10,7 +10,7 @@ There are different tools that help with creating AppDirs and the corresponding 
 1. Some of them create the AppDir from scratch and don't require manual AppDir creation or file placement.
 2. They bundle the application dependencies (shared libraries) into the existing AppDir.
 3. They remove hardcoded paths in the executables and libraries.
-4. They create an AppImage out of the AppDir (usually by invoking `appimagetool <https://github.com/AppImage/AppImageKit>`_ underneath).
+4. They create an AppImage out of the AppDir (usually by invoking `appimagetool <https://github.com/AppImage/appimagetool>`_ underneath).
 
 Some tools require you to manually create the AppDir structure prior to invoking the tool. :ref:`creating-appdir-structure` explains the different ways to do this.
 

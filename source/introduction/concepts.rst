@@ -69,9 +69,9 @@ There are also **experimental** tools that try to use an old version of ``glibc`
 AppImage specification
 ----------------------
 
-The term *AppImage* does not refer to some software project, but is actually a standard specified in the :ref:`AppImage specification <ref-appimage-specification>`. Its reference implementation is called :ref:`ref-appimagekit`.
+The term *AppImage* does not refer to some software project, but is actually a standard specified in the :ref:`AppImage specification <ref-appimage-specification>`. There also is a :ref:`reference implementation <reference-implementation>` that confirms to the specification.
 
-Being designed as a standard with a reference implementation allows users to implement their own tools to build AppImages, and helps maintaining compatibility between different tools and components.
+|specification_advantage|
 
 
 AppDirs

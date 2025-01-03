@@ -9,9 +9,7 @@ To inspect the content of any AppImage, it is possible to extract their content 
 
 .. todo::
 
-   Add a section in which the difference of the individual AppImage types are explained.
-   See https://github.com/AppImage/AppImageKit/issues/830 for example.
-   Type 2 AppImages are built in 2017 or later
+   Link the section on the different AppImage versions and how to determine it here and everywhere where types are mentioned.
 
 .. contents:: Contents
    :local:
@@ -53,7 +51,7 @@ You can safely inspect the content of a type 2 AppImage with these commands (rep
 
 .. code-block:: bash
 
-   wget -c "https://github.com/AppImage/AppImageKit/releases/download/continuous/runtime-x86_64"
+   wget -c "https://github.com/AppImage/type2-runtime/releases/download/continuous/runtime-x86_64"
    chmod +x runtime-x86_64
    TARGET_APPIMAGE=path/to/AppImage ./runtime --appimage-extract ./runtime-x86_64
 
