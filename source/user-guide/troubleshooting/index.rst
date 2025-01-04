@@ -5,20 +5,17 @@
 Troubleshooting
 ===============
 
-You have issues with AppImages in some way? Well, good you found your way to this section. Here, we present solutions to
-the most common issues you can have when using AppImages.
+This section gives an overview on the most common issues when using AppImages and their solutions.
 
-.. note::
+.. cssclass:: bold
 
-   If you, as a user, think there are errors within this section or you would like to have some additional problems covered, please do not hesitate to `create an issue <https://github.com/AppImage/docs.appimage.org/issues/new>`__ on `GitHub <https://github.com/AppImage/docs.appimage.org>`__ (or ideally send a pull request right away). We're always open for feedback!
+|appimage_not_starting_1| |appimage_not_starting_2|
 
 This page is not considered to be exhaustive. |contact|
 
+.. note::
 
-.. seealso::
-
-   The basic usage of AppImages is shown on our :ref:`ref-quickstart` page. This section covers issues which you should only
-   encounter if there are actual issues with your system, its configuration or with the AppImages themselves.
+   If you'd like to have some additional problems covered, please do not hesitate to `create an issue <https://github.com/AppImage/docs.appimage.org/issues/new>`__ (or ideally send a pull request right away). We're always open for feedback!
 
 
 .. toctree::

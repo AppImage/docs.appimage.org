@@ -24,4 +24,5 @@
 .. |specification_advantage| replace:: Having a specification means that different tools can deal with AppImages and rely on them behaving consistently and fulfilling the defined requirements. It also helps maintaining compatibility between different tools and components.
 .. |new_type_2_features| replace:: from a user perspective are not due to specification changes but rather due to new features that have been added to the implementation while adapting it to the new specification
 .. |specification_broad| replace:: However, the specification is pretty broad, which means that there are some things the implementation can decide.
-
+.. |appimage_not_starting_1| replace:: If you double-click your AppImage and it doesn't start / nothing happens, you should open it with the terminal as it prints additional error information there if it crashes. This information can help to determine the issue with your AppImage.
+.. |appimage_not_starting_2| replace:: To do that, simply enter its full path in a terminal (command line) like this: ``~/Downloads/MyApplication.AppImage``.

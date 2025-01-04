@@ -64,9 +64,9 @@ Most docker containers don't permit something called :ref:`FUSE <fuse-troublesho
 The AppImage doesn't start / work
 ---------------------------------
 
-If you double-click your AppImage and it doesn't start / nothing happens, you should open it with the terminal as it prints additional error information there if it crashes. This information can help to determine the issue with your AppImage.
+|appimage_not_starting_1|
 
-To do that, simply enter its full path in a terminal (command line) like this: ``~/Downloads/MyApplication.AppImage``.
+|appimage_not_starting_2|
 
 If the error information includes “Fuse”, e.g. “AppImages require FUSE to run.”, :ref:`this page <fuse-troubleshooting>` can help you fixing this issue.
 
