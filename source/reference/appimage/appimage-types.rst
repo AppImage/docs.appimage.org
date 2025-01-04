@@ -11,6 +11,7 @@ In this documentation, you might have already come across things like “In type
    :local:
    :depth: 2
 
+
 Why are there different AppImage types?
 ---------------------------------------
 
@@ -47,7 +48,7 @@ The following are the main specification differences between type 1 and type 2 A
 - Type 1 AppImages contain the update information in the ISO 9660 Volume Descriptor field while type 2 AppImages contain it in the ELF section ``.upd_info``.
 - Type 2 AppImages can also contain a digital signature in the ELF section ``.sha256_sig``.
 
-However, many of the important changes |new_type_2_features|. For more information on those changes, see :ref:`new_type_2_features`.
+However, many of the important changes |new_type_2_features|. For more information on those changes, see :ref:`new-type-2-features`.
 
 Notable type 2 changes
 ++++++++++++++++++++++
@@ -62,7 +63,7 @@ For all specification changes, see the git history of the `specification reposit
 Implementation changes
 ----------------------
 
-.. _new_type_2_features:
+.. _new-type-2-features:
 
 New type 2 features
 +++++++++++++++++++
@@ -76,6 +77,8 @@ Many of the important changes between type 1 and type 2 AppImages |new_type_2_fe
 
 .. todo::
    Make sure all of these features are actually available for all type 2 AppImages and not new features that have been added to the implementation at some point.
+
+.. _new-generation-appimages:
 
 New Generation AppImages
 ++++++++++++++++++++++++

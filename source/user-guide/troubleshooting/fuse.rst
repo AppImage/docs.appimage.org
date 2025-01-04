@@ -5,17 +5,22 @@
 I get some errors related to something called "FUSE"
 ====================================================
 
-Most AppImages require the second version of a Linux technology called *Filesystem in Userspace*, or short *FUSE*. Many systems ship with a working FUSE 2 setup out of the box. However, if yours doesn't, your AppImage might write the following message to the console:
+:ref:`Older AppImages <new-generation-appimages>` that haven't been created with the new static runtime yet require FUSE 2, the second version of a Linux technology called *Filesystem in Userspace*, to be installed on the system. As many systems don't ship with FUSE 2 out of the box anymore, such AppImages might write the following or a similar message to the console:
 
 .. code-block:: text
 
-   AppImages require FUSE to run.
+   Cannot mount AppImage, please check your FUSE setup.
    You might still be able to extract the contents of this AppImage
    if you run it with the --appimage-extract option.
    See https://github.com/AppImage/AppImageKit/wiki/FUSE
    for more information
 
-In this case, you need to :ref:`install FUSE 2 <install-fuse>` manually or use a workaround to run AppImages without FUSE. This page explains on how to do this.
+In this case, you need to :ref:`install FUSE 2 <install-fuse>` manually or use a workaround to run AppImages without FUSE. This page explains how to do this.
+
+..
+   Add
+   You should also ask the application author to use a modern AppImage creation tool (which uses the new static runtime) so users don't have to manually install any dependencies anymore.
+   after the main AppImage creation tools (especially linuxdeploy) started using the new static runtime.
 
 |fuse_docker|
 
@@ -24,9 +29,8 @@ In this case, you need to :ref:`install FUSE 2 <install-fuse>` manually or use a
 
 .. code-block:: text
 
-      fuse: failed to open /dev/fuse: Operation not permitted
-      Could not mount AppImage
-      Please see https://github.com/probonopd/AppImageKit/wiki/FUSE
+   fuse: device not found, try 'modprobe fuse' first
+   open dir error: No such file or directory
 
 If you want to run an AppImage inside a docker container, follow the instructions at :ref:`fuse_docker` instead.
 
@@ -43,8 +47,6 @@ If you want to run an AppImage inside a docker container, follow the instruction
 
 How to install FUSE 2
 ---------------------
-
-Most Linux distributions come with a functional FUSE 2 setup. However, if it's not working for you, you may have to install FUSE 2 yourself.
 
 The process of installing FUSE 2 highly differs from distribution to distribution. This section shows how to install FUSE on the most common distributions.
 
@@ -163,7 +165,7 @@ If you don't want to (or cannot) set up FUSE, there are fallback solutions. Depe
 Run type 2 AppImages without FUSE
 +++++++++++++++++++++++++++++++++
 
-Newer type 2 AppImages can easily be run |appimages_without_fuse|. This will cause the runtime to automatically extract the AppImage, run its content, wait until the app closes, and then clean up the file again. For an end user, this essentially has the same effect as just running it, although the operations are more expensive.
+Type 2 AppImages can easily be run |appimages_without_fuse|. This will cause the runtime to automatically extract the AppImage, run its content, wait until the app closes, and then clean up the file again. For an end user, this essentially has the same effect as just running it, although the operations are more expensive.
 
 Alternatively, you could also use an environment variable (``export APPIMAGE_EXTRACT_AND_RUN=1``) (which is forwarded to child processes as well) instead of the parameter (although this has been introduced a while after the parameter, so it might not work for every AppImage).
 
@@ -190,13 +192,12 @@ FUSE and Docker
 
 .. code-block:: text
 
-      fuse: failed to open /dev/fuse: Operation not permitted
-      Could not mount AppImage
-      Please see https://github.com/probonopd/AppImageKit/wiki/FUSE
+   fuse: device not found, try 'modprobe fuse' first
+   open dir error: No such file or directory
 
 Instead, you can extract and run AppImages as described in the :ref:`previous section <fuse-fallback>`.
 
-If you want to decide whether to use the AppImage without FUSE or directly depending on whether you're in a container or not, for example in a build script, you can do that with some `detection code <https://stackoverflow.com/a/23575107>`_.
+If you want to decide whether to run the AppImage as usual or without FUSE, depending on whether you're in a container or not, for example in a build script, you can do that with `this detection code <https://stackoverflow.com/a/23575107>`_.
 
 .. warning::
 
