@@ -5,7 +5,7 @@
 pkg2appimage
 ============
 
-pkg2appimage is a tool that can be used by people other than the application authors to convert officially distributed binary packages (archives, .deb packages and PPAs) into AppImages if none are officially distributed. It doesn't require dependencies to be installed on your system; instead, they are downloaded during the packaging process from distribution repositories. To convert an existing package, you write a `.yml description file <https://github.com/AppImage/pkg2appimage/tree/master/recipes>`_ (called recipe) and run it with `pkg2appimage`_. As some (mostly proprietary) applications don't allow redistribution, you can distribute these recipes to allow other users to easily convert existing packages to AppImages.
+`pkg2appimage <https://github.com/AppImage/pkg2appimage>`_ is a tool that can be used by people other than the application authors to convert officially distributed binary packages (archives, .deb packages and PPAs) into AppImages if none are officially distributed. It doesn't require dependencies to be installed on your system; instead, they are downloaded during the packaging process from distribution repositories. To convert an existing package, you write a `.yml description file <https://github.com/AppImage/pkg2appimage/tree/master/recipes>`_ (called recipe) and run it with pkg2appimage. As some (mostly proprietary) applications don't allow redistribution, you can distribute these recipes to allow other users to easily convert existing packages to AppImages.
 
 pkg2appimage doesn't include core system libraries like glibc. This results in a reduced AppImage size.
 
@@ -25,20 +25,18 @@ pkg2appimage requires a manual creation of the AppDir folder structure and file 
    :depth: 1
 
 
+Using a recipe
+--------------
+
+To use a distributed recipe (a ``.yml`` description file), you first have to download pkg2appimage. You can get it as an AppImage from its from its `GitHub release page <https://github.com/AppImageCommunity/pkg2appimage/releases>`_.
+
+To then build an AppImage from the recipe, simply run pkg2appimage with the file as parameter: ``./pkg2appimage-*.AppImage Receipe.yml``.
+
+
 Introduction
 ------------
 
-
-To build an AppImage from a :code:`.yml` description file, simply run:
-
-.. code-block:: shell
-
-    bash -ex ./pkg2appimage recipes/XXX.yml
-
-
-:code:`.yml` description files tell pkg2appimage where to get the ingredients from, and how to convert them to an AppImage (besides the general steps already included in pkg2appimage). Study some `examples <https://github.com/AppImage/pkg2appimage/tree/master/recipes>`__ to see how it works.
-
-.. _pkg2appimage: https://github.com/AppImage/pkg2appimage/blob/master/pkg2appimage
+The so-called recipe files (which are :code:`.yml` description files) tell pkg2appimage where to get the ingredients from and how to convert them to an AppImage (besides the general steps that pkg2appimage always performs). Study some `examples <https://github.com/AppImage/pkg2appimage/tree/master/recipes>`__ to see how it works.
 
 .. warning::
    pkg2appimage suffers from a few notable issues:
@@ -50,24 +48,16 @@ To build an AppImage from a :code:`.yml` description file, simply run:
       See `this GitHub issue <https://github.com/AppImage/pkg2appimage/issues/197>`__ for more information on the security issue.
 
 
-``.yml`` files
---------------
+Recipe files
+------------
 
-The easiest way to build an AppImage is to write a :code:`.yml` file. We developed a rather simple format that allows developers to write a :code:`app.yml` file that describes how to build an AppImage for :code:`app`, being able to reuse pre-built binaries, e.g. from Debian packages, both to save time for creating and building an AppImage.
+To convert a binary package into an AppImage, you have to write a so-called recipe, a specific ``.yml`` description file. This format describes how to build an AppImage by re-using pre-built binaries, e.g. from Debian packages, to save time for both creating and building an AppImage.
 
-This document provides an introduction to the :code:`.yml` files' purpose, their structure and a few examples describing how to use all the advanced features.
+``.yml`` is an extension used for *YAML*, a format to describe data. Similarly to JSON, it combines associative lists (key-value pairs, also known as maps or dicts), lists and scalar values (like strings).
 
+The format of these :code:`.yml` files is not part of the AppImage :ref:`specification <ref-appimage-specification>` (which describes the AppImage container format) or :ref:`reference implementation <reference-implementation>` (which implements a conforming runtime and a tool to create conforming AppImages); it is just defined and used by the pkg2appimage project.
 
-Purpose of ``.yml`` files
--------------------------
-
-:code:`.yml` is the file extension commonly used for *YAML* (*Yet Another Markup Language*, nowadays also serves as an abbreviation for *YAML Ain’t Markup Language*).
-
-YAML's approach to describing data is to combine associative lists (known as :code:`dict` in Python or :code:`object literal` in JavaScript, for example), lists (arrays) and scalar values. This results in an easy to parse and also easy to read format.
-
-The :code:`.yml` files are used by `pkg2appimage`_ which is used in the *AppImages* project to convert binary *ingredients* into AppImages for demonstration purposes. Their primary objective is to make it very simple to convert pre-existing binaries into the AppImage format. If you can build your software from source, you may generate AppImages directly as part of your build workflow; in this case you may not need a :code:`.yml` file (but a Travis CI :code:`.travis.yml` and/or a :code:`Makefile`, etc.).
-
-The format of these :code:`.yml` files is not part of the AppImage :ref:`specification <ref-appimage-specification>` (which describes the AppImage container format) or :ref:`reference implementation <reference-implementation>` (which implements a conforming runtime and a tool to create conforming AppImages); instead it is its own project creating an AppDir that is converted into an AppImage using the reference implementation.
+This section provides an introduction to the recipe structure and a few examples describing how to use all the advanced features.
 
 
 General anatomy of ``.yml`` files
@@ -163,7 +153,7 @@ The :code:`dist` section inside the :code:`ingredients` section defines which De
 
 .. note::
 
-    In the future, other types of packages like :code:`.rpm` could also be included in the :code:`.yml` file definition. Proposals for this are welcome if the proposer also implements support for this in the `pkg2appimage`_ script.
+    In the future, other types of packages like :code:`.rpm` could also be included in the :code:`.yml` file definition. Proposals for this are welcome if the proposer also implements support for this in the `pkg2appimage script <https://github.com/AppImageCommunity/pkg2appimage/blob/master/pkg2appimage>`_.
 
 
 Using ingredients from an Ubuntu PPA
@@ -185,7 +175,7 @@ The :code:`ppas` section inside the :code:`ingredients` section lets you specify
 
 .. note::
 
-    In the future, similar shortcuts for other types of personal repositories, such as projects on openSUSE build service, could also be included in the :code:`.yml` file definition. Proposals for this are welcome if the proposer also implements support for this in the `pkg2appimage`_ script.
+    In the future, similar shortcuts for other types of personal repositories, such as projects on openSUSE build service, could also be included in the :code:`.yml` file definition. Proposals for this are welcome if the proposer also implements support for this in the `pkg2appimage script <https://github.com/AppImageCommunity/pkg2appimage/blob/master/pkg2appimage>`_.
 
 
 Using local deb files
@@ -220,7 +210,7 @@ And for all files in a directory (like local repository). Note that the end of t
 
 .. note::
 
-    this is for personal use, if you use your recipe it will NOT work on another computer if the debs files are not in the specified directory
+    This is for personal use only. If you use it, your recipe will NOT work on another computer if the debs files are not in the specified directory.
 
 
 Excluding certain packages
@@ -266,7 +256,7 @@ The dependency information in some packages may result in the package manager to
       - libcups2 1.7.2-0ubuntu1
 
 
-The assumption here is that every target system has at least the pretended version available, and that newer versions of the pretended package are able to run the application just as well as the pretended version itself *(if this is not the case, then the pretended package has broken downward compatibility and should be fixed)*.
+The assumption here is that every target system has at least the pretended version available, and that newer versions of the pretended package are able to run the application just as well as the pretended version itself. *(If this is not the case, then the pretended package has broken downward compatibility and should be fixed.)*
 
 
 Arbitrary scripts in the ingredients section
@@ -386,7 +376,7 @@ Unfortunately, many applications don't include a :code:`$ID.desktop` file. If it
 Converting Python applications packaged with pip
 ------------------------------------------------
 
-Let's say you have already packaged your Python application using :code:`pip`. in this case, you can use the :code:`pkg2appimage` tool to generate an AppImage. In the following example, we will convert a Python 3 application using :code:`pip3`.
+Let's say you have already packaged your Python application using :code:`pip`. in this case, you can use pkg2appimage to generate an AppImage. In the following example, we will convert a Python 3 application using :code:`pip3`.
 
 The following recipe will convert a Python 3 PyQt application using :code:`virtualenv` and :code:`pip3`:
 
