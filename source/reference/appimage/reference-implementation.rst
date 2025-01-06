@@ -37,6 +37,7 @@ The runtime (`source code <https://github.com/AppImage/type2-runtime>`_) provide
 - The runtime is statically linked, which means that there are no dependencies (like ``glibc``) required on the system.
 - The runtime doesn't check the AppRun file in any way before running it; it simply tasks the operating system to execute it.
 - After the AppRun file exited, the runtime unmounts the image and cleans up the temporary resources (such as the temporary mountpoint directory).
+- The specific error messages that are printed if an error occurs (e.g. if the file system can't be mounted).
 
 As both the AppImage specification and those implementation decisions |appimage_history_link|.
 

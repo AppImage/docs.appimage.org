@@ -103,6 +103,8 @@ Converting existing packages, on the other hand, doesn't require the dependencie
 |appimage_preferred_source|
 
 
+.. _compiling-on-old-system:
+
 Compiling the application on an old system
 ------------------------------------------
 

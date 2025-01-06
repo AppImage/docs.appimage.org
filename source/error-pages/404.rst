@@ -1,10 +1,13 @@
 :orphan:
 
-.. custom 404 error page -- must be set up to be shown for all 404 errors in the webserver's configuration
+..
+   Custom 404 error page
+   This must be set up to be shown for all 404 errors in the webserver's configuration
 
 .. image:: /_static/img/appimage-grayscale.svg
    :align: center
    :width: 200px
+
 
 404: Not found
 ==============
@@ -12,6 +15,6 @@
 The resource you requested could not be found.
 
 .. note::
-   As this documentation is still work in progress, the content might have been moved. Please use the search function or the table of contents to find its new location.
+   As this documentation is continuously being changed, the content might have been moved. Please use the search function or the table of contents to find its new location.
 
-:ref:`Back to home page <home>`
+:ref:`Back to the home page <home>`
