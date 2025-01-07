@@ -42,10 +42,10 @@ Using the file manager
 ++++++++++++++++++++++
 
 #. Open your file manager and browse to the location of the AppImage
-#. Right-click the AppImage and select “Properties”
-#. Switch to the “Permissions” tab
-#. Check the box to set executable permissions. Depending on your file manager, this might be called **“Allow executing file as program”** or **“Is executable”**.
-   In some file managers, you might not have such a checkbox, but instead have to change an “Execute” drop down list to “Anyone” or an “Access” drop down list to “Read, Write & Execute”.
+#. Right-click the AppImage and select "Properties"
+#. Switch to the "Permissions" tab
+#. Check the box to set executable permissions. Depending on your file manager, this might be called **"Allow executing file as program"** or **"Is executable"**.
+   In some file managers, you might not have such a checkbox, but instead have to change an "Execute" drop down list to "Anyone" or an "Access" drop down list to "Read, Write & Execute".
 #. Close the dialog and double-click the AppImage to run it
 
 The following video also shows how to do this: (This might look slightly different for you, depending on your file manager.)
@@ -68,7 +68,7 @@ The AppImage doesn't start / work
 
 |appimage_not_starting_2|
 
-If the error information includes “Fuse”, e.g. “AppImages require FUSE to run.”, :ref:`this page <fuse-troubleshooting>` can help you fixing this issue.
+If the error information includes "Fuse", e.g. "AppImages require FUSE to run.", :ref:`this page <fuse-troubleshooting>` can help you fixing this issue.
 
 Otherwise, report this issue with the printed error messages to the application author or :ref:`contact us <contact>` for further help.
 

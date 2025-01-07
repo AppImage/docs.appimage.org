@@ -5,7 +5,7 @@
 AppImage types and history
 =========================
 
-In this documentation, you might have already come across things like “In type 2 AppImages”. This page explains why such different types and versions of AppImages exist and goes over their differences. It also shows how to determine the type of a specific AppImage.
+In this documentation, you might have already come across things like "In type 2 AppImages". This page explains why such different types and versions of AppImages exist and goes over their differences. It also shows how to determine the type of a specific AppImage.
 
 .. contents:: Contents
    :local:
@@ -27,7 +27,7 @@ There are two main reasons for different AppImage types:
 
    The AppImage specification is relatively broad, which means there are some decisions the implementation (used to create AppImages) can decide, for example which parameters like ``--appimage-extract`` are available. In theory, different implementations can make different decisions, resulting in different AppImages having different features (like CLI flags).
 
-   In practice, however, |appimage_implementations_practice|. Therefore, their implementation details influence almost all AppImages and also change its “type / version”. (This is also why this documentation can assume AppImages to follow those implementations and have corresponding features (like CLI flags).)
+   In practice, however, |appimage_implementations_practice|. Therefore, their implementation details influence almost all AppImages and also change its "type / version". (This is also why this documentation can assume AppImages to follow those implementations and have corresponding features (like CLI flags).)
 
 ..
    TODO: When / if go-appimagetool becomes or uses the reference implementation, change this to
@@ -91,7 +91,7 @@ Therefore, the (runtime) reference implementation has been rewritten in order to
 
 This also has the additional benefit that the runtime has no dynamically linked dependencies (like ``glibc``) anymore, so that the new runtime can also work on non-glibc systems (like Alpine Linux, FreeBSD or NixOS) without having to manually install libraries.
 
-While it's not an official name, these new AppImages with a statically linked runtime are also known as “New Generation” AppImages.
+While it's not an official name, these new AppImages with a statically linked runtime are also known as "New Generation" AppImages.
 
 Adaption problems & history
 ###########################
@@ -100,7 +100,7 @@ When distributions started dropping FUSE 2 support in 2022, the AppImage team st
 This version has been embedded in go-appimagetool, an experimental alternative to the reference implementation.
 There were still discussions about potential other solutions in 2022 and early 2023 until it became clear in February of 2023 that this static version would become the future reference implementation.
 
-After testing the runtime for a while, it was supposed to “be made official” (replace the old reference implementation) in April of 2023. But that didn't happen due to multiple issues:
+After testing the runtime for a while, it was supposed to "be made official" (replace the old reference implementation) in April of 2023. But that didn't happen due to multiple issues:
 
 - Some software that worked with AppImages (mainly the AppImageLauncher) were not compatible with this new runtime. This also resulted in bad error messages.
 - There were aspirations to officially create a new specification type that's adapted to the new runtime and helps other tools to have full compatibility.

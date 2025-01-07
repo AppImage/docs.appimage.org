@@ -15,7 +15,7 @@ This page describes the portable mode. It allows for bundling an application's d
 Introduction
 ------------
 
-Sometimes it can be useful for data of an application to travel along with the application, for example to put the application on a USB drive that can be used with different computers. In the Windows world, this concept is known as “portable applications”.
+Sometimes it can be useful for data of an application to travel along with the application, for example to put the application on a USB drive that can be used with different computers. In the Windows world, this concept is known as "portable applications".
 
 Normally, the application contained inside an AppImage will store its application data (e.g. configuration files) wherever it always stores them (most frequently somewhere inside :code:`$HOME`). In other words, the fact that an application is contained inside an AppImage normally does not change where the application stores its data.
 

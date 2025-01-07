@@ -26,7 +26,7 @@ An AppImage consists of two parts: a *runtime* and a *file system image*. For cu
 
 When launching an AppImage, the operating system initially runs the executable runtime part. The runtime then tries to mount the file system image part. If that succeeds, the :ref:`AppDir <appdir-specification>` is available at a temporary mountpoint, and can be used like a read-only directory.
 
-The runtime then calls the AppDir's “entrypoint” :ref:`AppRun <apprun-specification>` using the operating system facilities. While the AppRun of a modern AppImage is often a symlink to the main executable, this provides a lot of flexibility, as the AppRun can be an arbitrary executable, e.g. a script with a `shebang <https://en.wikipedia.org/wiki/Shebang_(Unix)>`_. However, it must be executable.
+The runtime then calls the AppDir's "entrypoint" :ref:`AppRun <apprun-specification>` using the operating system facilities. While the AppRun of a modern AppImage is often a symlink to the main executable, this provides a lot of flexibility, as the AppRun can be an arbitrary executable, e.g. a script with a `shebang <https://en.wikipedia.org/wiki/Shebang_(Unix)>`_. However, it must be executable.
 
 The content of an AppDir is completely user-specified, although tools that help with packaging are usually used. For more information, see the :ref:`packaging guide <packaging-guide>`.
 

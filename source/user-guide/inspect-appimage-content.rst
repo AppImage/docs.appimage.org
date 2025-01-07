@@ -24,13 +24,13 @@ The most convenient way to inspect the content of an AppImage is to call it with
 .. warning::
    You should only do this if you trust the AppImage (as the runtime could be altered to execute different code, even if you use these parameters). If you want to inspect the AppImage as you don't trust it, you should follow the instructions in the section :ref:`inspect-using-external-tools`.
 
---appimage-extract
-++++++++++++++++++
+\-\-appimage-extract
+++++++++++++++++++++
 
 To extract the content of a type 2 AppImage without an external tool, call the AppImage with the parameter ``--appimage-extract``. This will cause the :ref:`runtime` to create a new directory called :code:`squashfs-root` in the current working directory, containing the content of the AppImage's :ref:`AppDir <appdir-specification>`.
 
---appimage-mount
-++++++++++++++++
+\-\-appimage-mount
+++++++++++++++++++
 
 To mount the content of a type 2 AppImage without an external tool, call the AppImage with the parameter ``--appimage-mount``. This will cause the :ref:`runtime` to mount the AppImage content with read-only access and return the directory it is mounted on, which can then be inspected with a file manager or another terminal window.
 

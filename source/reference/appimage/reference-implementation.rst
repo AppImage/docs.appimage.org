@@ -28,7 +28,7 @@ For desktop integration tools that can be used by end users to improve the AppIm
 runtime
 -------
 
-The runtime (`source code <https://github.com/AppImage/type2-runtime>`_) provides the “executable header” of every AppImage. The general way the runtime works is described in the :ref:`specification section <architecture>`.
+The runtime (`source code <https://github.com/AppImage/type2-runtime>`_) provides the "executable header" of every AppImage. The general way the runtime works is described in the :ref:`specification section <architecture>`.
 
 |specification_broad| The following are some of the decisions the runtime reference implementation made:
 
