@@ -1,4 +1,4 @@
-.. _ref-appstream:
+.. _appstream:
 
 AppStream metadata
 ==================
@@ -43,6 +43,6 @@ Embedding an AppStream file
 ---------------------------
 If your :ref:`AppImage creation tool <appimage-creation-tools>` automatically creates the AppDir from CLI arguments, look at the guide for the respective tool:
 
-* To see how to embed an AppStream file with :ref:`ref-linuxdeploy`, see :ref:`this <linuxdeploy-appstream>` section of the linuxdeploy guide.
+* To see how to embed an AppStream file with :ref:`linuxdeploy`, see :ref:`this <linuxdeploy-appstream>` section of the linuxdeploy guide.
 
 If your AppImage creation tool requires you to manually create an AppDir structure, you have to place the AppStream file under ``AppDir/usr/share/metainfo/myapp.metainfo.xml`` (preferred) or ``AppDir/usr/share/metainfo/myapp.appdata.xml``. After that, you can just generate the AppImage from the AppDir like usual.

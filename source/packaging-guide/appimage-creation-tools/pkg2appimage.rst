@@ -1,6 +1,6 @@
 .. include:: ../../substitutions.rst
 
-.. _ref-pkg2appimage:
+.. _pkg2appimage:
 
 pkg2appimage
 ============
@@ -52,7 +52,7 @@ To convert a binary package into an AppImage, you have to write a so-called reci
 
 ``.yml`` is an extension used for *YAML*, a format to describe data. Similarly to JSON, it combines associative lists (key-value pairs, also known as maps or dicts), lists and scalar values (like strings).
 
-The format of these :code:`.yml` files is not part of the AppImage :ref:`specification <ref-appimage-specification>` (which describes the AppImage container format) or :ref:`reference implementation <reference-implementation>` (which implements a conforming runtime and a tool to create conforming AppImages); it is just defined and used by the pkg2appimage project.
+The format of these :code:`.yml` files is not part of the AppImage :ref:`specification <appimage-specification>` (which describes the AppImage container format) or :ref:`reference implementation <reference-implementation>` (which implements a conforming runtime and a tool to create conforming AppImages); it is just defined and used by the pkg2appimage project.
 
 This section provides an introduction to the recipe structure and a few examples describing how to use all the advanced features.
 

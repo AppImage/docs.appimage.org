@@ -1,14 +1,13 @@
-.. TODO: create extra page on AppDir concept and move label there
-
 .. include:: ../substitutions.rst
 
-.. _ref-appdir-specification:
-.. _ref-appdir:
+.. _appdir-specification:
 
 AppDir specification
 ====================
 
 This page describes the *AppDir* format. AppDirs are the "source" of AppImages. When building an AppImage, a file system image is built from such a directory, to which a runtime is prepended.
+
+An AppDir contains |appimage_content|.
 
 
 .. contents:: Contents
@@ -35,7 +34,7 @@ As the name intends, AppDirs are normal directories with some special content. A
 AppRun
 ++++++
 
-Every AppImage's AppDir must contain a file (executable, script, etc.) or symlink called :code:`AppRun`, providing the "entry point" of the application. When running the AppImage, the :ref:`runtime <ref-runtime>` executes the :code:`AppRun` file within the :ref:`AppDir <ref-appdir>`.
+Every AppImage's AppDir must contain a file (executable, script, etc.) or symlink called :code:`AppRun`, providing the "entry point" of the application. When running the AppImage, the :ref:`runtime <runtime>` executes the :code:`AppRun` file within the :ref:`AppDir <appdir-specification>`.
 
 It is located in the root directory that makes up an AppDir, so it can be used to calculate paths relative to the (later mounted) AppDir.
 
@@ -51,7 +50,7 @@ There also exists a pre-written AppRun.c script / program, which can be used |wh
 Other
 +++++
 
-.. _ref-diricon:
+.. _dir-icon:
 
 ``.DirIcon``
    The main application icon in the best resolution as PNG file. This is used, e.g. by thumbnailers, to display the application.
@@ -70,7 +69,7 @@ These two entries have been re-used from `ROX Filer`_'s specification. `ROX File
 ``myapp.<icon ext>`` (e.g., ``myapp.svg``, ``myapp.png``)
    The :ref:`application icon <icon-files>` in the best available quality, ideally a vector graphic. |supported_icon_formats|
 
-   Can be a symlink to subdirectories such as ``usr/share/icons/hicolor/...``. In most cases, :ref:`.DirIcon <ref-diricon>` is a symlink to this file. The filename must be equal to what is set as ``Icon`` value in the desktop file.
+   Can be a symlink to subdirectories such as ``usr/share/icons/hicolor/...``. In most cases, :ref:`.DirIcon <dir-icon>` is a symlink to this file. The filename must be equal to what is set as ``Icon`` value in the desktop file.
 
    .. note::
       The ``Icon`` value |should not| contain the file extension, the actual file's filename however |should| carry the extension.
@@ -93,7 +92,7 @@ In contrary to the rules in the previous section, the ones introduced in this se
 ``usr`` subdirectory
 ''''''''''''''''''''
 
-Analog to the FHS, most AppDirs, especially the ones created by the official tools such as :ref:`linuxdeploy <ref-linuxdeploy>`, contain a ``usr`` directory.
+Analog to the FHS, most AppDirs, especially the ones created by the official tools such as :ref:`linuxdeploy <linuxdeploy>`, contain a ``usr`` directory.
 
 ``usr`` originally abbreviated *unix system resources*. According to the FHS, it contains shared, read-only data, which perfectly suits AppImage's needs, as AppImages are read-only, too.
 
@@ -112,7 +111,7 @@ The directory contains applications, (shared) libraries, desktop files, icons et
       Contains :ref:`desktop entry files <desktop-entry-files>` for applications in ``bin``. Normally, there's just one desktop file in this directory, which is symlinked in the root directory. For more information about desktop files, see :ref:`desktop-entry-files`.
 
    ``icons``
-      Directory containing so-called `icon themes <https://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html>`_. Contains at least one, but often a set of :ref:`icon files <icon-files>` for the main application. The icons are referred to by the root desktop file, which means the :ref:`same constraints <root-icon>` apply. The default theme is ``hicolor``, but icon files can also be adapted to other well-known themes to fit in better. Icon themes placed in this directory are copied to the system during so-called :ref:`desktop integration <ref-desktop-integration>`.
+      Directory containing so-called `icon themes <https://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html>`_. Contains at least one, but often a set of :ref:`icon files <icon-files>` for the main application. The icons are referred to by the root desktop file, which means the :ref:`same constraints <root-icon>` apply. The default theme is ``hicolor``, but icon files can also be adapted to other well-known themes to fit in better. Icon themes placed in this directory are copied to the system during so-called :ref:`desktop integration <desktop-integration>`.
 
       Example path: ``<root>/usr/share/icons/<theme>/<resolution>/apps/myapp.<ext>``, e.g. ``<root>/usr/share/icons/hicolor/scalable/apps/myapp.svg`` or ``<root>/usr/share/icons/hicolor/512x512/apps/myapp.png``.
 
@@ -122,7 +121,7 @@ The directory contains applications, (shared) libraries, desktop files, icons et
 Summary
 '''''''
 
-Modern AppImage creation tools such as :ref:`linuxdeploy <ref-linuxdeploy>` create these directories by default to standardize and harmonize AppDir creation. If you intend to :ref:`create the entire AppDir manually <manually-fully-creating-appdir>`, you should follow these recommendations.
+Modern AppImage creation tools such as :ref:`linuxdeploy <linuxdeploy>` create these directories by default to standardize and harmonize AppDir creation. If you intend to :ref:`create the entire AppDir manually <manually-fully-creating-appdir>`, you should follow these recommendations.
 
 
 .. |must| replace:: **MUST**

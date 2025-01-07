@@ -5,7 +5,7 @@
 Inspect AppImage content
 ===========================
 
-To inspect the content of any AppImage, it is possible to extract their content to a directory or to temporarily mount them	on the system for read-only access. The resulting directory is a valid :ref:`AppDir <ref-appdir>`, and users can create AppImages from it again using an :ref:`AppImage creation tool <appimage-creation-tools>`. This page describes the different ways to inspect the content of an AppImage, their advantages and disadvantages.
+To inspect the content of any AppImage, it is possible to extract their content to a directory or to temporarily mount them	on the system for read-only access. The resulting directory is a valid :ref:`AppDir <appdir-specification>`, and users can create AppImages from it again using an :ref:`AppImage creation tool <appimage-creation-tools>`. This page describes the different ways to inspect the content of an AppImage, their advantages and disadvantages.
 
 .. todo::
 
@@ -22,21 +22,21 @@ Calling the AppImage with special parameters
 The most convenient way to inspect the content of an AppImage is to call it with the ``--appimage-extract`` or ``--appimage-mount`` option. This only works for type 2 AppImages, |recent_type_2|. If you have to inspect a type 1 AppImage, see the other options described on this page.
 
 .. warning::
-   You should only do this if you trust the AppImage (as the runtime could be altered to execute different code, even if you use these parameters). If you want to inspect the AppImage as you don't trust it, you should follow the instructions in the section :ref:`using-external-tools`.
+   You should only do this if you trust the AppImage (as the runtime could be altered to execute different code, even if you use these parameters). If you want to inspect the AppImage as you don't trust it, you should follow the instructions in the section :ref:`inspect-using-external-tools`.
 
 --appimage-extract
 ++++++++++++++++++
 
-To extract the content of a type 2 AppImage without an external tool, call the AppImage with the parameter ``--appimage-extract``. This will cause the :ref:`ref-runtime` to create a new directory called :code:`squashfs-root` in the current working directory, containing the content of the AppImage's :ref:`AppDir <ref-appdir>`.
+To extract the content of a type 2 AppImage without an external tool, call the AppImage with the parameter ``--appimage-extract``. This will cause the :ref:`runtime` to create a new directory called :code:`squashfs-root` in the current working directory, containing the content of the AppImage's :ref:`AppDir <appdir-specification>`.
 
 --appimage-mount
 ++++++++++++++++
 
-To mount the content of a type 2 AppImage without an external tool, call the AppImage with the parameter ``--appimage-mount``. This will cause the :ref:`ref-runtime` to mount the AppImage content with read-only access and return the directory it is mounted on, which can then be inspected with a file manager or another terminal window.
+To mount the content of a type 2 AppImage without an external tool, call the AppImage with the parameter ``--appimage-mount``. This will cause the :ref:`runtime` to mount the AppImage content with read-only access and return the directory it is mounted on, which can then be inspected with a file manager or another terminal window.
 
 The AppImage is unmounted when the application called in the example is interrupted (e.g. by pressing :kbd:`Ctrl+C` or closing the terminal window).
 
-.. _using-external-tools:
+.. _inspect-using-external-tools:
 
 
 Using external tools

@@ -23,11 +23,11 @@ We recommend that you put the AppImage for Linux on your project's download page
 If your project is open source and located on GitHub, we recommend that you also publish your AppImage on `GitHub Releases <https://help.github.com/en/articles/creating-releases/>`_.
 
 .. note::
-   For :ref:`AppImageUpdate <ref-updates>` to work properly, it is required that the web server supports HTTP range requests. While most web hosts support this, some hosted services are known not to support range requests right now. These include
+   For :ref:`AppImageUpdate <appimage-updates>` to work properly, it is required that the web server supports HTTP range requests. While most web hosts support this, some hosted services are known not to support range requests right now. These include
 
       - `Gitlab releases <https://gitlab.com>`_
 
-   If you use such a service and wish to use :ref:`AppImageUpdate <ref-updates>` with it, please ask the providers to enable range requests.
+   If you use such a service and wish to use :ref:`AppImageUpdate <appimage-updates>` with it, please ask the providers to enable range requests.
 
 'Download as an AppImage' button
 ++++++++++++++++++++++++++++++++
@@ -49,7 +49,7 @@ Software catalogs
 
 Additionally to hosting your AppImage, you may want to add your AppImage to a software catalog. Those are crowd-sources lists of available AppImages with data that 3rd party app stores and software centers can use. This way, users can also find your AppImage when browsing through such catalogs and stores or searching for a specific tool.
 
-These software catalogs use the :ref:`AppStream metadata <ref-appstream>` inside the AppImage, therefore your AppImage will be presented consistently across them and you don't have to input information manually.
+These software catalogs use the :ref:`AppStream metadata <appstream>` inside the AppImage, therefore your AppImage will be presented consistently across them and you don't have to input information manually.
 
 The following software catalogs are known to us:
 

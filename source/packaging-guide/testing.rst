@@ -1,4 +1,4 @@
-.. _ref-testing-appimages:
+.. _testing-appimages:
 
 Testing your AppImage
 =====================

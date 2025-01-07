@@ -1,4 +1,4 @@
-.. _ref-obs:
+.. _open-build-service:
 
 Using the Open Build Service
 ============================
@@ -249,7 +249,7 @@ you can add multiple items in the sections.
 Inspecting the results
 ----------------------
 
-Be sure to download the resulting AppImage from OBS and test it on your target system(s). For more information about AppImage testing, see :ref:`ref-testing-appimages`.
+Be sure to download the resulting AppImage from OBS and test it on your target system(s). For more information about AppImage testing, see :ref:`testing-appimages`.
 
 
 Working examples

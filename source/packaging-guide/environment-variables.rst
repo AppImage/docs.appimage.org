@@ -1,6 +1,6 @@
 .. include:: ../substitutions.rst
 
-.. _ref-env_vars:
+.. _environment-variables:
 
 Environment variables
 =====================
@@ -49,4 +49,4 @@ Type 2 AppImages have another environment variable called ``ARGV0`` set (every r
 
    :code:`ARGV0` provides information on how the AppImage was called. When you call an AppImage through a symlink for instance, you can get the path to this symlink through :code:`ARGV0`, while :code:`APPIMAGE` would contain the absolute path to the file behind that symlink.
 
-   Scenarios where :code:`ARGV0` is really useful involve so-called multi-binary AppImages, where the filename in :code:`ARGV0` defines which program is called inside the AppImage. This concept is also known from single-binary tools like `BusyBox <https://en.wikipedia.org/wiki/BusyBox>`__, and can be implemented in a custom :code:`AppRun` script (see :ref:`Architecture <ref-architecture>` for more information).
+   Scenarios where :code:`ARGV0` is really useful involve so-called multi-binary AppImages, where the filename in :code:`ARGV0` defines which program is called inside the AppImage. This concept is also known from single-binary tools like `BusyBox <https://en.wikipedia.org/wiki/BusyBox>`__, and can be implemented in a custom :code:`AppRun` script (see :ref:`Architecture <architecture>` for more information).

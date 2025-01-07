@@ -1,6 +1,6 @@
 .. include:: ../substitutions.rst
 
-.. _ref-updates:
+.. _appimage-updates:
 
 Making AppImages updateable
 ===========================
@@ -41,9 +41,9 @@ Using an AppImage creation tool
 
 Most AppImage creation tools come with a built-in feature to add update information to the AppImage and create the ``.zsync`` file.
 
-| To see how to add update information with :ref:`ref-linuxdeploy`, see :ref:`this <linuxdeploy-update-information>` section of the linuxdeploy guide.
-| To see how to add update information with :ref:`sec-go-appimagetool`, see :ref:`this <go-appimagetool-update-information>` section of the go-appimagetool guide.
-| To see how to add update information with :ref:`sec-electron-builder`, see :ref:`this <electron-builder-update-information>` section of the electron-builder guide.
+| To see how to add update information with :ref:`linuxdeploy`, see :ref:`this <linuxdeploy-update-information>` section of the linuxdeploy guide.
+| To see how to add update information with :ref:`go-appimagetool`, see :ref:`this <go-appimagetool-update-information>` section of the go-appimagetool guide.
+| To see how to add update information with :ref:`electron-builder`, see :ref:`this <electron-builder-update-information>` section of the electron-builder guide.
 
 .. todo::
    Research whether a corresponding feature exists for all other AppImage creation tool and add an updating section to each guide.
@@ -70,7 +70,7 @@ Via ``appimageupdatetool`` bundled in the AppImage
 
 You can bundle `appimageupdatetool <https://github.com/AppImageCommunity/AppImageUpdate/releases>`_ inside the AppImage of your application to achieve self-updateability. In that case, you have to invoke the bundled ``appimageupdatetool`` to update your running AppImage after corresponding user interaction (e.g. clicking an update button).
 
-To call another bundled executable, you need to know its path. Luckily, when running an AppImage, the :ref:`environment variable <ref-env_vars>` ``$APPDIR`` is set to the location of the mounted AppDir. As bundled executables are usually in ``./usr/lib``, its path should be something like ``$APPDIR/usr/lib/appimageupdatetool.AppImage``
+To call another bundled executable, you need to know its path. Luckily, when running an AppImage, the :ref:`environment variable <environment-variables>` ``$APPDIR`` is set to the location of the mounted AppDir. As bundled executables are usually in ``./usr/lib``, its path should be something like ``$APPDIR/usr/lib/appimageupdatetool.AppImage``
 
 To update your AppImage with ``appimageupdatetool``, you need to give the path of your AppImage as parameter. This path is set as ``$APPIMAGE`` by the runtime. Therefore the whole call should look like ``$APPDIR/usr/lib/appimageupdatetool.AppImage $APPIMAGE``. |shell_command| ``Command::new("sh").arg("-c").arg("$APPDIR/usr/bin/appimageupdatetool.AppImage $APPIMAGE").output()``.
 

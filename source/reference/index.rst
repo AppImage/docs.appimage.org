@@ -1,7 +1,6 @@
 .. include:: ../substitutions.rst
 
 .. _reference:
-.. _ref-reference:
 
 Reference
 =========

@@ -16,9 +16,8 @@ The AppImage development follows a few easy-to-understand core principles and co
 One app = one file
 ------------------
 
-AppImages are simple to understand. Every AppImage is a regular file, and every AppImage contains exactly one app with all its dependencies. Once the AppImage is :ref:`made executable <ref-how-to-run-appimage>`, a user can just run it, e.g. by double clicking it in their desktop environment's file manager or by running it from the console.
+AppImages are simple to understand. Every AppImage is a regular file, and every AppImage contains exactly one app with all its dependencies. Once the AppImage is :ref:`made executable <how-to-run-appimage>`, a user can just run it, e.g. by double clicking it in their desktop environment's file manager or by running it from the console.
 
-.. _ref-opinion-reusable-frameworks:
 .. note::
 
    On a regular basis, `users ask <https://github.com/AppImage/AppImageKit/issues/848>`__ about implementing support for some sort of "reusable/shared frameworks". These frameworks are supposed to contain bundles of libraries which are needed by more than one AppImage, and hence could save some disk space. For management, they suggest complex automagic systems that will automatically fetch the "frameworks" from the Internet if they're not available, or some complicated, mostly manual methods how users could bundle frameworks together with the AppImages on portable disks like USB drives.
@@ -64,12 +63,10 @@ Some :ref:`appimage-creation-tools` can also include these expected core librari
 There are also **experimental** tools that try to use an old version of ``glibc`` when compiling on a new system (`1 <https://github.com/AppImage/AppImageKit/tree/stable/v1.0/LibcWrapGenerator>`_, `2 <https://github.com/wheybags/glibc_version_header>`_, `3 <https://github.com/sulix/bingcc>`_), but they don't always work and as they only adapt ``glibc`` and not other expected core libraries, the application might still crash when referencing a different core library.
 
 
-.. _appimage-specification:
-
 AppImage specification
 ----------------------
 
-The term *AppImage* does not refer to some software project, but is actually a standard specified in the :ref:`AppImage specification <ref-appimage-specification>`. There also is a :ref:`reference implementation <reference-implementation>` that confirms to the specification.
+The term *AppImage* does not refer to some software project, but is actually a standard specified in the :ref:`AppImage specification <appimage-specification>`. There also is a :ref:`reference implementation <reference-implementation>` that confirms to the specification.
 
 |specification_advantage|
 
@@ -77,6 +74,6 @@ The term *AppImage* does not refer to some software project, but is actually a s
 AppDirs
 -------
 
-The term *AppDir* refers to an application directory. These directories are the "source" of AppImages. When :ref:`ref-appimagetool` builds an AppImage, it creates a read-only image of such a directory, prepends the :ref:`ref-runtime`, and marks the file executable.
+The term *AppDir* refers to an application directory. These directories are the "source" of AppImages. When :ref:`appimagetool` builds an AppImage, it creates a read-only image of such a directory, prepends the :ref:`runtime`, and marks the file executable.
 
-The AppDir format is described in the :ref:`ref-appdir-specification`.
+The AppDir format is described in the :ref:`appdir-specification`.

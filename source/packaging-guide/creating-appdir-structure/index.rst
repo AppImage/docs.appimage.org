@@ -3,7 +3,7 @@
 Creating the AppDir structure
 =============================
 
-As seen in the :ref:`table comparing the different AppImage creation methods <comparison-table>`, some tools require you to create the AppDir structure and place files in it prior to invoking the tool. There are two ways to do this:
+As seen in the :ref:`table comparing the different AppImage creation methods <creation-comparison-table>`, some tools require you to create the AppDir structure and place files in it prior to invoking the tool. There are two ways to do this:
 
 1. Manually creating the AppDir structure and copying files to their correct places
 2. Using make (this only works if you use Makefiles to build the project)

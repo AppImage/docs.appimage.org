@@ -44,7 +44,7 @@ Open source projects
 
 For open source projects, you can often make and send a pull request (GitHub) or merge request (GitLab) that generates an AppImage as part of the project's build pipeline. Most open source projects will gladly accept such pull requests, especially if you indicate that you are willing to maintain the AppImage generation going forward.
 
-Many open source projects already use continuous integration on systems such as GitHub Actions, GitLab CI, Gitea CI, Travis CI, Jenkins, or the :ref:`Open Build Service <ref-obs>`. If a project already uses one of those services, it is most beneficial to generate the AppImage on that service.
+Many open source projects already use continuous integration on systems such as GitHub Actions, GitLab CI, Gitea CI, Travis CI, Jenkins, or the :ref:`Open Build Service <open-build-service>`. If a project already uses one of those services, it is most beneficial to generate the AppImage on that service.
 
 
 Closed source applications

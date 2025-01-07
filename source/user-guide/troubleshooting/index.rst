@@ -1,7 +1,5 @@
 .. include:: ../../substitutions.rst
 
-.. _ref-ug-troubleshooting:
-
 Troubleshooting
 ===============
 

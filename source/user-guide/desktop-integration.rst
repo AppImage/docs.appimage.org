@@ -1,6 +1,6 @@
 .. include:: ../substitutions.rst
 
-.. _ref-desktop-integration:
+.. _desktop-integration:
 
 Desktop integration
 ===================

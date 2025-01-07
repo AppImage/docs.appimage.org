@@ -13,7 +13,7 @@ These tools are low-level and should usually not be directly used by end users o
 
 For packaging software that should be used by application authors to create AppImages, see :ref:`appimage-creation-tools`.
 
-For desktop integration tools that can be used by end users to improve the AppImage user experience, see :ref:`ref-desktop-integration`.
+For desktop integration tools that can be used by end users to improve the AppImage user experience, see :ref:`desktop-integration`.
 
 .. seealso::
    The AppImage updating mechanism is implemented in `AppImageUpdate <https://github.com/AppImageCommunity/AppImageUpdate>`_. For more information on updating AppImages, see :ref:`updates-user`.
@@ -23,16 +23,16 @@ For desktop integration tools that can be used by end users to improve the AppIm
    :depth: 2
 
 
-.. _ref-runtime:
+.. _runtime:
 
 runtime
 -------
 
-The runtime (`source code <https://github.com/AppImage/type2-runtime>`_) provides the “executable header” of every AppImage. The general way the runtime works is described in the :ref:`specification section <ref-architecture>`.
+The runtime (`source code <https://github.com/AppImage/type2-runtime>`_) provides the “executable header” of every AppImage. The general way the runtime works is described in the :ref:`specification section <architecture>`.
 
 |specification_broad| The following are some of the decisions the runtime reference implementation made:
 
-- The runtime sets specific :ref:`environment variables <ref-env_vars>` that can be used in the application before invoking it.
+- The runtime sets specific :ref:`environment variables <environment-variables>` that can be used in the application before invoking it.
 - The file system is mounted with FUSE.
 - The runtime is statically linked, which means that there are no dependencies (like ``glibc``) required on the system.
 - The runtime doesn't check the AppRun file in any way before running it; it simply tasks the operating system to execute it.
@@ -44,25 +44,25 @@ As both the AppImage specification and those implementation decisions |appimage_
 Keep in mind that on its own it does nothing; it needs to be combined with a file system image to form a valid AppImage, which is what ``appimagetool`` does.
 
 
-.. _ref-appimagetool:
+.. _appimagetool:
 
 appimagetool
 ------------
 
-appimagetool (`source code <https://github.com/AppImage/appimagetool>`_) can be used to create AppImages from complete pre-existing :ref:`AppDirs <ref-appdir>`. It creates the AppImage by embedding the :ref:`reference implementation runtime <ref-runtime>`, and creating and appending the file system image.
+appimagetool (`source code <https://github.com/AppImage/appimagetool>`_) can be used to create AppImages from complete pre-existing :ref:`AppDirs <appdir-specification>`. It creates the AppImage by embedding the :ref:`reference implementation runtime <runtime>`, and creating and appending the file system image.
 
-appimagetool implements all specification features, like :ref:`embedding update information <ref-updates>` or :ref:`signing the AppImage<signing-appimages>`.
+appimagetool implements all specification features, like :ref:`embedding update information <appimage-updates>` or :ref:`signing the AppImage<signing-appimages>`.
 
 |specification_broad| The following are some of the decisions appimagetool made as reference implementation:
 
-- appimagetool checks some of the information in the AppDir to make sure it's valid (for example, it validates :ref:`AppStream files <ref-appstream>`)
+- appimagetool checks some of the information in the AppDir to make sure it's valid (for example, it validates :ref:`AppStream files <appstream>`)
 - appimagetool uses SquashFS as the file system for the file system image.
 
 As both the AppImage specification and those implementation decisions |appimage_history_link|.
 
 appimagetool shouldn't be directly used to create AppImages. Instead, using one of the modern :ref:`appimage-creation-tools` is strongly preferred as they're much more convenient and help with creating the AppDir. These tools usually use appimagetool under the hood.
 
-appimagetool should also not be confused with the alternative `go implementation <https://github.com/probonopd/go-appimage>`_, which offers a :ref:`wider feature set <sec-go-appimagetool>`.
+appimagetool should also not be confused with the alternative `go implementation <https://github.com/probonopd/go-appimage>`_, which offers a :ref:`wider feature set <go-appimagetool>`.
 
 .. todo::
    Add more information about the differences to the go implementation. Maybe even add an own Alternative implementation section.

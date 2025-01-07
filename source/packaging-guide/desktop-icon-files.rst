@@ -5,7 +5,7 @@
 Desktop entry & icon files
 ==========================
 
-To create an AppImage for your application, you first have to create a desktop entry file, colloquially also called desktop file. A desktop file contains metadata about the application, e.g. name or icon name, but also the executable name, which is used by the user's system to correctly display and execute the application. It's a central component of the Linux desktop and every AppImage must contain one in its :ref:`AppDir <ref-appdir>`.
+To create an AppImage for your application, you first have to create a desktop entry file, colloquially also called desktop file. A desktop file contains metadata about the application, e.g. name or icon name, but also the executable name, which is used by the user's system to correctly display and execute the application. It's a central component of the Linux desktop and every AppImage must contain one in its :ref:`AppDir <appdir-specification>`.
 
 A desktop entry file is an `INI-style <https://en.wikipedia.org/wiki/INI_file>`_ text document, which means that it contains (mandatory and optional) key-value pairs in the format ``Key=Value`` and group headers in the format ``[Header]``, most notably the ``[Desktop Entry]`` header for the main information. The official `Desktop Entry Specification <https://specifications.freedesktop.org/desktop-entry-spec/latest>`_ describes all possible ways to configure a desktop entry file in detail. An AppImage desktop entry file should at least contain these keys:
 
@@ -51,7 +51,7 @@ X-AppImage-Arch
 
     **Examples:** :code:`x86_64`, :code:`aarch64`, :code:`i386`
 
-:ref:`appimagetool <ref-appimagetool>` and libappimage currently make use mostly of :code:`X-AppImage-Version`.
+:ref:`appimagetool <appimagetool>` and libappimage currently make use mostly of :code:`X-AppImage-Version`.
 
 .. seealso::
 

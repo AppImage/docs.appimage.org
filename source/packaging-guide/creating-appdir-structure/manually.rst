@@ -18,7 +18,7 @@ To prepare an AppDir structure for an :ref:`AppImage creation tool <appimage-cre
 .. note::
    There are additional files (``AppRun``, ``.DirIcon`` and shared libraries) that have to be placed in every AppDir. However, they should not be manually copied into the AppDir, but are created by the used :ref:`AppImage creation tool <appimage-creation-tools>`.
 
-For a complete guide on and explanation of the AppDir content, including more advanced options such as to include icon files in multiple resolutions or adapted to other well-known themes to fit in better, see :ref:`the AppDir specification <ref-appdir-specification>`.
+For a complete guide on and explanation of the AppDir content, including more advanced options such as to include icon files in multiple resolutions or adapted to other well-known themes to fit in better, see :ref:`the AppDir specification <appdir-specification>`.
 
 This AppDir structure can then be used by the :ref:`appimage-creation-tools` to bundle the application dependencies (shared libraries) and create an AppImage out of the AppDir.
 

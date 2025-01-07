@@ -39,7 +39,7 @@ However, |why_apprun_c|, alternatives may be used. For more information, see :re
 
 ``.DirIcon`` is the actual icon being used as application icon. It is usually a symlink to an icon stored in root or ``usr/share/icons/hicolor/<resolution>/apps/myapp.png``. Notice that ``.DirIcon`` **must be a PNG file**.
 
-For more information on it, see the :ref:`.DirIcon specification <ref-diricon>`.
+For more information on it, see the :ref:`.DirIcon specification <dir-icon>`.
 
 
 Adding shared libraries

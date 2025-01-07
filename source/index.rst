@@ -13,14 +13,14 @@ Welcome to the AppImage documentation.
 
 .. cssclass:: bold-link
 
-**If you are a first time user and just want to know how to run an AppImage (on your system or in a docker container) or have issues with an AppImage, see the** :ref:`Quickstart page <ref-quickstart>`\ **!**
+**If you are a first time user and just want to know how to run an AppImage (on your system or in a docker container) or have issues with an AppImage, see the** :ref:`Quickstart page <quickstart>`\ **!**
 
 | If you are a user and want to know how to integrate AppImages into your desktop, update them, use them portably or inspect their content, read the :ref:`user guide <user-guide>`. It covers all these topics and more.
-| Its :ref:`Quickstart page <ref-quickstart>` covers all frequently asked questions and the most common problems.
+| Its :ref:`Quickstart page <quickstart>` covers all frequently asked questions and the most common problems.
 
 .. cssclass:: bold-link
 
-| **If you are a first time developer and want to know how to easily create an AppImage, look at the** :ref:`packaging guide <ref-packaging-guide>`\ **:**
+| **If you are a first time developer and want to know how to easily create an AppImage, look at the** :ref:`packaging guide <packaging-guide>`\ **:**
 | It covers all requirements like desktop entry files, shows how to create an AppImage using modern AppImage creation tools |packaging_optional|
 
 If you want to know about |introduction_content|, read the :ref:`introduction chapter <introduction>`.

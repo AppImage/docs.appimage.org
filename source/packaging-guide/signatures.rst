@@ -24,9 +24,9 @@ Using an AppImage creation tool
 
 Most AppImage creation tools come with a built-in feature to sign the AppImage at AppImage creation time.
 
-| To see how sign an AppImage with :ref:`ref-linuxdeploy`, see :ref:`this <linuxdeploy-signing>` section of the linuxdeploy guide.
-| To see how to sign an AppImage with :ref:`sec-go-appimagetool`, see :ref:`this <go-appimagetool-signing>` section of the go-appimagetool guide.
-| To see how to sign an AppImage with :ref:`sec-electron-builder`, see :ref:`this <electron-builder-signing>` section of the electron-builder guide.
+| To see how sign an AppImage with :ref:`linuxdeploy`, see :ref:`this <linuxdeploy-signing>` section of the linuxdeploy guide.
+| To see how to sign an AppImage with :ref:`go-appimagetool`, see :ref:`this <go-appimagetool-signing>` section of the go-appimagetool guide.
+| To see how to sign an AppImage with :ref:`electron-builder`, see :ref:`this <electron-builder-signing>` section of the electron-builder guide.
 
 .. todo::
    Research whether a corresponding feature exists for all other AppImage creation tool and add an updating section to each guide.

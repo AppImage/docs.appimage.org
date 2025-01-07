@@ -21,13 +21,10 @@ This section gives an overview of the different tools and their advantages, disa
 If you are unsure which one to use, linuxdeploy and go-appimagetool are the best options in most cases.
 
 
-.. _comparison-table:
+.. _creation-comparison-table:
 
 Comparison table
 ----------------
-
-..
-   TODO: Improve all reference links and make them consistent
 
 ..
    NOTE: When changing the order of the rows, make sure that the rows are correctly formatted
@@ -47,14 +44,14 @@ Comparison table
        | Created AppImages should run on *almost* all modern linux distributions.
        | More mature; supports additional options (e.g. not deploying specific libraries or copyright files) go-appimagetool doesn't support (yet).
        | Repository link: https://github.com/linuxdeploy/linuxdeploy
-       | Packaging guide: :ref:`ref-linuxdeploy`
+       | Packaging guide: :ref:`linuxdeploy`
    * - go-appimagetool
      - | A tool that can be used by application authors to package their projects as AppImages.
        | Requires manual creation of the AppDir folder structure and file placement (if make isn't used).
        | Allows for both including core system libraries like glibc and not including them.
        | Less mature; doesn't support some options linuxdeploy does.
        | Repository link: https://github.com/probonopd/go-appimage
-       | Packaging guide: :ref:`sec-go-appimagetool`
+       | Packaging guide: :ref:`go-appimagetool`
    * - appimage-builder
      - | A tool that can be used by both application authors to package their projects as AppImages and other people to turn existing Debian packages into AppImages if none are officially distributed.
        | Requires manual creation of the AppDir folder structure and file placement (if make isn't used).
@@ -62,13 +59,13 @@ Comparison table
        | Officially supports Debian, Ubuntu and Arch.
        | Should only be used if linuxdeploy can't be used (e.g. if the AppImage can't be built on the oldest supported LTS distribution version).
        | Repository link: https://github.com/AppImageCrafters/appimage-builder
-       | Packaging guide: :ref:`sec-using-appimage-builder`
+       | Packaging guide: :ref:`appimage-builder`
    * - electron-builder
      - | A tool that can be used by application authors to easily package their Electron projects not only as AppImages but also as other application formats for Linux (e.g. Flatpak or Snap), macOS (e.g. DMG) and Windows (e.g. Installer or Portable).
        | Creates the AppDir from scratch and doesn't require any existing AppDir structure or manual file placement.
        | Recommended solution if your app is Electron based, **otherwise not applicable**.
        | Repository link: https://github.com/electron-userland/electron-builder
-       | Packaging guide: :ref:`sec-electron-builder`
+       | Packaging guide: :ref:`electron-builder`
    * - pkg2appimage
      - | A tool that can be used by people other than the application authors to convert officially distributed binary packages (archives, .deb packages and PPAs) into AppImages if none are officially distributed.
        | Requires manual creation of the AppDir folder structure and file placement.
@@ -76,7 +73,7 @@ Comparison table
        | **Do not use pkg2appimage if you are the application author. pkg2appimage should only be used if there is no officially distributed AppImage.** Application authors should use one of the other creation methods.
        | pkg2appimage has a major `security issue <https://github.com/AppImageCommunity/pkg2appimage/issues/197>`_; therefore it's only recommended for personal use.
        | Repository link: https://github.com/AppImageCommunity/pkg2appimage
-       | Packaging guide: :ref:`ref-pkg2appimage`
+       | Packaging guide: :ref:`pkg2appimage`
    * - Manual packaging
      - | Manual packaging means manually creating the entire AppDir structure and copying all files to their correct places in the structure.
        | While manually creating a directory structure and copying some files might be necessary depending on the used tool, manually packaging *everything* should only be used as a last resort if all other methods aren't applicable.
@@ -108,7 +105,7 @@ Converting existing packages, on the other hand, doesn't require the dependencie
 Compiling the application on an old system
 ------------------------------------------
 
-If the AppImage won't include core libraries like glibc (see the :ref:`comparison-table`), the AppImage usually has to be built on the oldest still-supported Linux distribution version that we can assume users to still use. |old_compile_version_reason|
+If the AppImage won't include core libraries like glibc (see the :ref:`creation-comparison-table`), the AppImage usually has to be built on the oldest still-supported Linux distribution version that we can assume users to still use. |old_compile_version_reason|
 
 For more information about this, exceptions to this and alternatives if you can't build your application on the oldest still-supported Linux distribution, see :ref:`exclude-expected-libraries`.
 

@@ -70,7 +70,7 @@ New type 2 features
 
 Many of the important changes between type 1 and type 2 AppImages |new_type_2_features|. The following are some of those new features:
 
-- The runtime of type 2 AppImages sets an additional :ref:`environment variable <ref-env_vars>` called ``ARGV0``.
+- The runtime of type 2 AppImages sets an additional :ref:`environment variable <environment-variables>` called ``ARGV0``.
 - The runtime of type 2 AppImages uses SquashFS as file system.
 - Type 2 AppImages support the ``--appimage-extract`` and ``--appimage-mount`` :ref:`command line options <inspect_appimage_content>`.
 - Type 2 AppImages support the :ref:`portable mode <portable-mode>`.

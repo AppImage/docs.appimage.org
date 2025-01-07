@@ -1,6 +1,6 @@
 .. include:: ../substitutions.rst
 
-.. _ref-quickstart:
+.. _quickstart:
 
 Quickstart
 ==========
@@ -17,12 +17,12 @@ It also answers the most common questions to save you from having to read the en
 What is an AppImage?
 --------------------
 
-An AppImage is a downloadable file for Linux that contains an application and everything the application needs to run on all modern Linux distribution versions (e.g. libraries, icons and fonts).
+An AppImage is a downloadable file for Linux that contains |appimage_content|.
 
 The AppImage format is standardized. However, the specification doesn't define to compile applications in a specific way: It's not a build system, but rather like a ``.zip`` file, just that the application data is bundled in a specific way.
 
 
-.. _ref-how-to-run-appimage:
+.. _how-to-run-appimage:
 
 How to run an AppImage
 ----------------------
@@ -70,7 +70,7 @@ The AppImage doesn't start / work
 
 If the error information includes “Fuse”, e.g. “AppImages require FUSE to run.”, :ref:`this page <fuse-troubleshooting>` can help you fixing this issue.
 
-Otherwise, report this issue with the printed error messages to the application author or :ref:`contact us <ref-contact>` for further help.
+Otherwise, report this issue with the printed error messages to the application author or :ref:`contact us <contact>` for further help.
 
 
 How to integrate AppImages into the system
@@ -78,7 +78,7 @@ How to integrate AppImages into the system
 
 |appimage_standalone_bundles|
 
-|desktop_integration| This can easily be done with one of the desktop integration tools that are introduced in :ref:`ref-desktop-integration`.
+|desktop_integration| This can easily be done with one of the desktop integration tools that are introduced in :ref:`desktop-integration`.
 
 
 Where to store AppImages

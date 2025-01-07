@@ -1,6 +1,6 @@
 .. include:: ../substitutions.rst
 
-.. _ref-packaging-guide:
+.. _packaging-guide:
 
 Packaging Guide
 ===============

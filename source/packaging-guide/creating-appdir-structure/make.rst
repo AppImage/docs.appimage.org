@@ -1,5 +1,3 @@
-.. _make-creating-appdir-structure:
-
 Using make to create the AppDir structure
 =========================================
 

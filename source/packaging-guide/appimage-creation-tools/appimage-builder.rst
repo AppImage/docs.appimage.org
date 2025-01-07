@@ -1,6 +1,6 @@
 .. include:: ../../substitutions.rst
 
-.. _sec-using-appimage-builder:
+.. _appimage-builder:
 
 appimage-builder
 ================

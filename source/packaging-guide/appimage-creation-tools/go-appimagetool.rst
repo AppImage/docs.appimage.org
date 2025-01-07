@@ -1,6 +1,6 @@
 .. include:: ../../substitutions.rst
 
-.. _sec-go-appimagetool:
+.. _go-appimagetool:
 
 go-appimagetool
 ===============
@@ -12,6 +12,7 @@ It requires a manual creation of the AppDir folder structure and file placement 
 It allows for both including core system libraries like glibc and not including them. If the core system libraries aren't included, |build_on_old_version|.
 
 However, it is less mature than linuxdeploy and doesn't support some advanced options (like not deploying specific libraries or copyright files).
+
 
 Usage
 -----
@@ -43,7 +44,7 @@ For more information, see `the project's README file <https://github.com/probono
 Embedding update information
 ----------------------------
 
-You can find the basic explanation on how the AppImage update system works, what update information is and how AppImages can be updated at :ref:`ref-updates`.
+You can find the basic explanation on how the AppImage update system works, what update information is and how AppImages can be updated at :ref:`appimage-updates`.
 
 Sadly, as of December 2024, go-appimagetool doesn't yet support embedding updating information from a custom updating information string. Instead, it always embeds updating information dependent on the CI pipeline. See `this issue <https://github.com/probonopd/go-appimage/issues/318>`_ for more information.
 

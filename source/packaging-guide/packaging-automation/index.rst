@@ -1,5 +1,3 @@
-.. _ref-hosted-services:
-
 Packaging automation
 ====================
 
@@ -17,7 +15,7 @@ GitHub Actions
 
 GitHub Actions is now one of the most wildly used CI pipelines, mainly due to its very good integration with GitHub repositories and it being free to use (with a maximum number of minutes per month for private repositories). Therefore, it's the recommended CI pipeline. To start using GitHub Actions, read the `official guide <https://docs.github.com/en/actions/writing-workflows/quickstart>`_.
 
-Often, it's easier to learn from examples and adapt them. To help starting with GitHub Actions, we provide an example on how to build an AppImage using GitHub Actions and :ref:`ref-linuxdeploy`, which serves as a good starting point:
+Often, it's easier to learn from examples and adapt them. To help starting with GitHub Actions, we provide an example on how to build an AppImage using GitHub Actions and :ref:`linuxdeploy`, which serves as a good starting point:
 
 .. code-block:: yaml
 
@@ -76,7 +74,7 @@ Open Build Service
 
 The Open Build Service is another system that can be used to automate the packaging. It allows you to leverage the existing Open Build Service infrastructure, security and licence compliance processes. If you're already using the Open Build Service to build other packages, it makes most sense to use it for AppImages as well.
 
-For more specific information on how to use the Open Build Service, see :ref:`ref-obs`.
+For more specific information on how to use the Open Build Service, see :ref:`open-build-service`.
 
 
 .. _convenience-functions-script:

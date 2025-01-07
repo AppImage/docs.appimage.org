@@ -1,6 +1,6 @@
 .. include:: ../../substitutions.rst
 
-.. _ref-linuxdeploy:
+.. _linuxdeploy:
 
 linuxdeploy
 ===========
@@ -32,12 +32,6 @@ Start by downloading linuxdeploy. The recommended way to get it is to use the la
 After that, you can use linuxdeploy.
 
 
-..
-   TODO: Remove one of these two
-
-.. _ref-linuxdeploy-bundle-manually:
-.. _ref-linuxdeploy-package-manually:
-
 Using linuxdeploy with command line arguments
 ---------------------------------------------
 
@@ -68,7 +62,7 @@ The following command line flags are most commonly used:
    linuxdeploy will automatically calculate the image resolution and the correct output path, which depends on file format and resolution.
 
 ``--appstream-file``
-   Bundle an AppStream metadata file into the AppDir. For more information on AppStream files, see :ref:`ref-appstream`.
+   Bundle an AppStream metadata file into the AppDir. For more information on AppStream files, see :ref:`appstream`.
 
 ``--appdir``/``-a``
    The path to the AppDir. If this path does not exist, the AppDir is created from scratch.
@@ -80,14 +74,14 @@ The following command line flags are most commonly used:
 ``--plugin``/``-p``
    Uses an input plugin. Input plugins can be used to bundle additional resources, such as Qt plugins or translations. They must be additionally downloaded.
 
-   For more information on plugins, see :ref:`ref-linuxdeploy-plugin-system`.
+   For more information on plugins, see :ref:`linuxdeploy-plugin-system`.
 
 ``--output``/``-o``
    .. cssclass:: bold-link
 
    Uses an output plugin. Output plugins can be used to output something different than the raw AppDir. **linuxdeploy always comes with the** `AppImage output plugin <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`_ **preinstalled.** You can use it with ``--output appimage``. Other output plugins have to be additionally downloaded.
 
-   For more information on plugins, see :ref:`ref-linuxdeploy-plugin-system`.
+   For more information on plugins, see :ref:`linuxdeploy-plugin-system`.
 
 This list is not exhaustive and only includes the most commonly used command line argument. To get a full overview of all arguments, use ``--help``.
 
@@ -98,7 +92,7 @@ The following example illustrates how an existing binary can be bundled into an 
    > ./linuxdeploy-x86_64.AppImage -e my_application -d my_application.desktop -i my_application.png -a AppDir --output appimage
 
 
-.. _ref-linuxdeploy-plugin-system:
+.. _linuxdeploy-plugin-system:
 
 Plugin system
 -------------
@@ -214,7 +208,7 @@ As most plugins, linuxdeploy-plugin-appimage provides some environment variables
 Embedding update information
 ----------------------------
 
-You can find the basic explanation on how the AppImage update system works, what update information is and how AppImages can be updated at :ref:`ref-updates`. If you already know that, this section explains on how to use linuxdeploy to embed update information.
+You can find the basic explanation on how the AppImage update system works, what update information is and how AppImages can be updated at :ref:`appimage-updates`. If you already know that, this section explains on how to use linuxdeploy to embed update information.
 
 If you use the linuxdeploy `AppImage output plugin <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`_ to generate an AppImage from the AppDir, you can set the environment variable ``$LDAI_UPDATE_INFORMATION`` to the update information string to embed the update information in the AppImage and generate the corresponding ``.zsync`` file. This could look like the following:
 
@@ -245,7 +239,7 @@ If you use the linuxdeploy `AppImage output plugin <https://github.com/linuxdepl
 Embedding an AppStream file
 ---------------------------
 
-To embed an AppStream file in your AppDir (and by extension your AppImage), you have to pass it to linuxdeploy via the ``appstream-file`` parameter. For more information on AppStream files, see :ref:`ref-appstream`.
+To embed an AppStream file in your AppDir (and by extension your AppImage), you have to pass it to linuxdeploy via the ``appstream-file`` parameter. For more information on AppStream files, see :ref:`appstream`.
 
 
 Iterative workflow

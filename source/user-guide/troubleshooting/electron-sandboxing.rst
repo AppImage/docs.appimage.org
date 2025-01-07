@@ -1,5 +1,3 @@
-.. _ref-troubleshooting-electron:
-
 I have issues with Electron-based AppImages and their sandboxing
 ================================================================
 
@@ -31,7 +29,7 @@ A ``1`` means that the unprivileged namespaces are already enabled, and you do n
 A ``0`` indicates that the feature is available, but not enabled at the moment. Please see the following sections on how to enable it.
 
 
-.. _ref-electron-sandboxing-configure-temporarily:
+.. _electron-configure-sandboxing:
 
 Configure unprivileged sandboxes
 --------------------------------
@@ -49,7 +47,7 @@ To permanently enable the feature, you should create a new file with this settin
 
 .. note::
 
-   This command will take effect after the next reboot. To change this on a running system, please refer to the :ref:`previous section <ref-electron-sandboxing-configure-temporarily>`.
+   This command will take effect after the next reboot. To change this on a running system, please refer to the :ref:`previous section <electron-configure-sandboxing>`.
 
 
 .. _electron_without_sandboxing:
