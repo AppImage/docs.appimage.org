@@ -136,7 +136,7 @@ This causes linuxdeploy to call a plugin called ``qt``, if available.
 
 
 Using environment variables to change plugins' behavior
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''
+#######################################################
 
 As mentioned previously, some plugins implement additional optional or mandatory parameters in the form of environment variables. These environment variables must be set *before* calling linuxdeploy.
 
@@ -153,7 +153,6 @@ For example:
 Please refer to the plugins' documentation to find a list of supported environment variables. If you can't find any, there's probably none.
 
 .. todo::
-
    Document existing input plugins' environment variables
 
 
@@ -172,7 +171,7 @@ Most users are interested in generating AppImages, therefore the AppImage plugin
 
 
 Using environment variables to change plugins' behavior
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''
+#######################################################
 
 Analogous to the input plugins, output plugins usually implement additional optional or mandatory parameters in the form of environment variables. These environment variables must be set *before* calling linuxdeploy. For example:
 

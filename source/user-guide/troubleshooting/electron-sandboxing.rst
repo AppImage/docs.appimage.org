@@ -6,7 +6,6 @@ AppImages based on `Electron <https://www.electron.build/>`__ require the kernel
 This page explains how to check your kernel configuration and change it for Electron AppImages to work on your system. If an AppImage suffers from this issues, you should ask the developers to implement the workaround described in :ref:`this section <electron_without_sandboxing>` so this won't be a problem for other users in the future anymore.
 
 .. warning::
-
    Please note that the AppImage team does not provide any guarantees that enabling this kernel feature is secure and safe. If in doubt, you should contact your distribution first. If they enable it securely by default, all users can benefit from this feature.
 
 .. contents:: Contents
@@ -46,7 +45,6 @@ To permanently enable the feature, you should create a new file with this settin
    echo "kernel.unprivileged_userns_clone = 1" > /etc/sysctl.d/enable-unprivileged-namespaces.conf
 
 .. note::
-
    This command will take effect after the next reboot. To change this on a running system, please refer to the :ref:`previous section <electron-configure-sandboxing>`.
 
 

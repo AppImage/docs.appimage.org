@@ -19,7 +19,6 @@ One app = one file
 AppImages are simple to understand. Every AppImage is a regular file, and every AppImage contains exactly one app with all its dependencies. Once the AppImage is :ref:`made executable <how-to-run-appimage>`, a user can just run it, e.g. by double clicking it in their desktop environment's file manager or by running it from the console.
 
 .. note::
-
    On a regular basis, `users ask <https://github.com/AppImage/AppImageKit/issues/848>`__ about implementing support for some sort of "reusable/shared frameworks". These frameworks are supposed to contain bundles of libraries which are needed by more than one AppImage, and hence could save some disk space. For management, they suggest complex automagic systems that will automatically fetch the "frameworks" from the Internet if they're not available, or some complicated, mostly manual methods how users could bundle frameworks together with the AppImages on portable disks like USB drives.
 
    These may be good ideas for some people, and even if they worked perfectly fine, they'd break with our most important concept: :ref:`one app = one file <one-app-one-file-principle>`. AppImages are so simple to understand *because* every application is a single file. There's no complexity in this approach, even grandma could understand it. And after all, disk space is cheap nowadays, right?
@@ -53,7 +52,6 @@ The list of libraries that should be excluded, the so-called `excludelist <https
 **However, excluding these core libraries requires you to compile the application on the oldest still-supported Linux distribution version that we can assume users to still use.** For example, the oldest still-supported LTS release of Ubuntu is a good choice to build applications on. |old_compile_version_reason|
 
 .. note::
-
    If you don't use any dynamic linking, and your application does not reference any of these core libraries, you don't have to build the application on an old system.
 
    However, even when using a programming language that usually links everything statically like Rust or Go, some libraries might still be dynamically linked, e.g. by including C code or dependencies that do so. You should test whether your application references any shared libraries with ``ldd`` before building and packaging on a newer system, and it's usually still better to build the application on an old system (to be safe in case of future changes).

@@ -12,7 +12,6 @@ AppImage and its reference implementation are designed with "upstream packaging"
 In this regard, an AppImage is very similar to an :code:`.exe` file on Windows or a :code:`.dmg` file on macOS. These files are normally prepared by the original application authors rather than by third parties. |upstream_advantage| It also means that the application author does not have to follow arbitrary rules set by Linux distributions.
 
 .. note::
-
     Before you package an application as an AppImage, ask yourself whether you are either the application author or a member of the application team. If not, it is most likely better to ask the original author of the application or the application team to provide an official AppImage.
 
 
@@ -40,7 +39,7 @@ In some cases, the original application author or application team may not be in
 
 
 Open source projects
-^^^^^^^^^^^^^^^^^^^^
+++++++++++++++++++++
 
 For open source projects, you can often make and send a pull request (GitHub) or merge request (GitLab) that generates an AppImage as part of the project's build pipeline. Most open source projects will gladly accept such pull requests, especially if you indicate that you are willing to maintain the AppImage generation going forward.
 
@@ -48,7 +47,7 @@ Many open source projects already use continuous integration on systems such as 
 
 
 Closed source applications
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+++++++++++++++++++++++++++
 
 For closed source applications, you can use :ref:`appimage-creation-tools` to create a yml recipe that can be used to convert the existing Linux binaries into an AppImage.
 

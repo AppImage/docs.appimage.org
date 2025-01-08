@@ -54,7 +54,6 @@ X-AppImage-Arch
 :ref:`appimagetool <appimagetool>` and libappimage currently make use mostly of :code:`X-AppImage-Version`.
 
 .. seealso::
-
    The following discussions in issue trackers contain some background information:
 
      * `AppImageKit#59 <https://github.com/AppImage/AppImageKit/issues/59>`_

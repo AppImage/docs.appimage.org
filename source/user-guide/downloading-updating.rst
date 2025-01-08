@@ -9,12 +9,14 @@ This page provides an overview on where to download and how to update AppImages.
    :local:
    :depth: 2
 
+
 Download AppImages
 ------------------
 
 AppStreams are usually downloaded from the creator themself. The AppImage ecosystem is built around the notion of :ref:`upstream packaging <upstream-packaging>`. |upstream_advantage| However, there still are several ways to get them:
 
 The most common way is to download AppImages directly from the website on which the creator hosts them. This is usually either a project website or GitHub releases (or both). This is intuitive: If you search for a specific application, you just go to its website and download the AppImage of the latest release.
+
 
 .. _software-catalogs-user:
 

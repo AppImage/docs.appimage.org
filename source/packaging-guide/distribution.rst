@@ -29,6 +29,7 @@ If your project is open source and located on GitHub, we recommend that you also
 
    If you use such a service and wish to use :ref:`AppImageUpdate <appimage-updates>` with it, please ask the providers to enable range requests.
 
+
 'Download as an AppImage' button
 ++++++++++++++++++++++++++++++++
 
@@ -127,6 +128,7 @@ Don't put "Linux" into the Appimage file name
 ++++++++++++++++++++++++++++++++++++++++++++++
 
 You shouldn't put "linux" into the file name of an AppImage. It is clear that an :code:`.exe` is for Windows, an :code:`.app` is for macOS and that an :code:`.AppImage` is for Linux (and compatible systems such as Windows with WSL2 and FreeBSD with the Linuxulator). Especially as this is the file your users will always have on their system, you shouldn't put redundant information in its name.
+
 
 Make your AppImage discoverable
 +++++++++++++++++++++++++++++++

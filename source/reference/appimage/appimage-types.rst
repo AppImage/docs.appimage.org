@@ -50,6 +50,7 @@ The following are the main specification differences between type 1 and type 2 A
 
 However, many of the important changes |new_type_2_features|. For more information on those changes, see :ref:`new-type-2-features`.
 
+
 Notable type 2 changes
 ++++++++++++++++++++++
 
@@ -78,6 +79,7 @@ Many of the important changes between type 1 and type 2 AppImages |new_type_2_fe
 .. todo::
    Make sure all of these features are actually available for all type 2 AppImages and not new features that have been added to the implementation at some point.
 
+
 .. _new-generation-appimages:
 
 New Generation AppImages
@@ -92,6 +94,7 @@ Therefore, the (runtime) reference implementation has been rewritten in order to
 This also has the additional benefit that the runtime has no dynamically linked dependencies (like ``glibc``) anymore, so that the new runtime can also work on non-glibc systems (like Alpine Linux, FreeBSD or NixOS) without having to manually install libraries.
 
 While it's not an official name, these new AppImages with a statically linked runtime are also known as "New Generation" AppImages.
+
 
 Adaption problems & history
 ###########################
@@ -111,10 +114,12 @@ In `December 2024 <https://github.com/AppImage/AppImageKit/issues/877#issuecomme
 
 For more detailed information on the exact history, see the related issues (`1 <https://github.com/AppImage/AppImageKit/issues/1120>`_, `2 <https://github.com/AppImage/AppImageKit/issues/877>`_, `3 <https://github.com/AppImage/AppImageSpec/issues/34>`_, `4 <https://github.com/AppImage/AppImageSpec/issues/38>`_).
 
+
 Repository change
 #################
 
 This partial recode of the reference implementation has been taken as an opportunity to change the repository structure: While prior to it, there has only been one repository containing all parts of the reference implementation, called `AppImageKit <https://github.com/AppImage/AppImageKit>`_, with the change to the new statically linked runtime, it has been replaced with new repositories for the individual components of the reference implementation (see :ref:`reference-implementation`).
+
 
 Other implementation changes
 ++++++++++++++++++++++++++++
@@ -133,6 +138,7 @@ How to determine the type of an AppImage
 
 This section shows how you can determine the type / version of a specific AppImage:
 
+
 Type 1 or type 2
 ++++++++++++++++
 
@@ -143,6 +149,7 @@ This returns a bunch of numbers and should look like ``00000000: 7f45 4c46 0201 
 - If you see ``4149 02`` in there, the AppImage is type 2.
 - If you see ``4149 01`` in there, the AppImage is type 1.
 - If you don't see either there, the AppImage is *most likely* type 1.
+
 
 Dynamic runtime (old) or static runtime (new generation)
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++

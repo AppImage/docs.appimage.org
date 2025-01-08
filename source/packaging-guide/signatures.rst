@@ -19,6 +19,7 @@ To embed a signature, you have to have ``gpg`` (GnuPG 2) installed.
 
 You first need to prepare a key for signing. If the machine on which the AppImage is generated doesn't have a valid signing key, you can generate a new one using ``gpg --full-gen-key`` (see the gpg documentation for more information about this). You should also make sure to backup your private and public keys in a secure location.
 
+
 Using an AppImage creation tool
 +++++++++++++++++++++++++++++++
 
@@ -30,6 +31,7 @@ Most AppImage creation tools come with a built-in feature to sign the AppImage a
 
 .. todo::
    Research whether a corresponding feature exists for all other AppImage creation tool and add an updating section to each guide.
+
 
 .. _signing-using-appimagetool:
 
@@ -80,5 +82,4 @@ You can display the digital signature that is embedded in an AppImage by running
 
 
 .. note::
-
     Please note that while this displays the signature, it does not validate the signature. This means that it doesn't tell you whether the signature is valid or whether the file has been tampered with. To validate the signature, see the previous section.

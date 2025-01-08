@@ -20,8 +20,6 @@ History
 
 The AppDir format has first been described by `ROX Filer`_, and has since been extended and modified by the AppImage project to suit their needs.
 
-.. _ROX Filer: http://rox.sourceforge.net/desktop/AppDirs.html
-
 
 Required content
 ----------------
@@ -43,7 +41,6 @@ In modern AppImages (especially if modern :ref:`appimage-creation-tools` are use
 There also exists a pre-written AppRun.c script / program, which can be used |why_apprun_c| as it attempts to make the application relocatable without modifying it. See :ref:`apprun.c` for more information on this.
 
 .. warning::
-
    |apprun_c_warning|
 
 
@@ -57,7 +54,7 @@ Other
 
    The valid resolutions are |valid_resolutions|.
 
-These two entries have been re-used from `ROX Filer`_'s specification. `ROX Filer`_ actually specifies additional (but optional) entries, however, AppImage doesn't use these. Instead, the following ones have been introduced:
+These two entries have been re-used from `ROX Filer`_'s specification. ROX Filer actually specifies additional (but optional) entries, however, AppImage doesn't use these. Instead, the following ones have been introduced:
 
 ``myapp.desktop``
    A :ref:`desktop entry file <desktop-entry-files>` located in the root directory, describing the payload application. As AppImage is following the principle :ref:`one app = one file <one-app-one-file-principle>`, one desktop file is enough to describe the entire AppImage. There |must not| be more than one desktop file in the root directory. The name of the file doesn't matter, as long as it carries the ``.desktop`` extension. The file can be a symlink to subdirectories such as ``usr/share/applications/...``
@@ -80,17 +77,14 @@ These two entries have been re-used from `ROX Filer`_'s specification. `ROX File
 Conventions
 -----------
 
-In contrary to the rules in the previous section, the ones introduced in this section are no strict requirement. However, this is the recommended structure to put applications into AppDirs. It's picking up ideas from well-known, widely spread Linux standards such as the `Filesystem Hierarchy Standard`_ (part of the `Linux Standards Base`_).
+In contrary to the rules in the previous section, the ones introduced in this section are no strict requirement. However, this is the recommended structure to put applications into AppDirs. It's picking up ideas from well-known, widely spread Linux standards such as the `Filesystem Hierarchy Standard <https://wiki.linuxfoundation.org/lsb/fhs>`_ (part of the `Linux Standards Base <https://wiki.linuxfoundation.org/lsb/start>`_).
 
 .. seealso::
    A very good summary of the FHS can be found on `Wikipedia <https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard>`__.
 
-.. _Filesystem Hierarchy Standard: https://wiki.linuxfoundation.org/lsb/fhs
-.. _Linux Standards Base: https://wiki.linuxfoundation.org/lsb/start
-
 
 ``usr`` subdirectory
-''''''''''''''''''''
+++++++++++++++++++++
 
 Analog to the FHS, most AppDirs, especially the ones created by the official tools such as :ref:`linuxdeploy <linuxdeploy>`, contain a ``usr`` directory.
 
@@ -119,7 +113,7 @@ The directory contains applications, (shared) libraries, desktop files, icons et
 
 
 Summary
-'''''''
++++++++
 
 Modern AppImage creation tools such as :ref:`linuxdeploy <linuxdeploy>` create these directories by default to standardize and harmonize AppDir creation. If you intend to :ref:`create the entire AppDir manually <manually-fully-creating-appdir>`, you should follow these recommendations.
 
@@ -129,3 +123,5 @@ Modern AppImage creation tools such as :ref:`linuxdeploy <linuxdeploy>` create t
 .. |should| replace:: **SHOULD**
 .. |should not| replace:: **SHOULD NOT**
 
+
+.. _ROX Filer: http://rox.sourceforge.net/desktop/AppDirs.html

@@ -21,12 +21,12 @@ This page compares the AppImage terms to its macOS equivalents. It should help m
      - ``Info.plist`` file (more elaborate version thereof)
    * - ``usr/`` inside the AppDir
      - ``Resources/`` inside ``.app/Contents``
-   * - `AppImageUpdate`_
-     - `Sparkle Framework`_
-   * - No direct equivalent, but `update information`_ in ELF section ``.upd_info``
-     - `Sparkle appcast`_
+   * - `AppImageUpdate <https://github.com/AppImage/AppImageUpdate>`_
+     - `Sparkle Framework <https://sparkle-project.org/>`_
+   * - No direct equivalent, but `update information <https://github.com/AppImage/AppImageSpec/blob/master/draft.md#update-information>`_ in ELF section ``.upd_info``
+     - `Sparkle appcast <https://sparkle-project.org/>`_
    * - Optional ``appimaged`` daemon
-     - `Launch Services`_ to register applications in the system (e.g. MIME types or icons)
+     - `Launch Services <https://developer.apple.com/documentation/coreservices/launch_services>`_ to register applications in the system (e.g. MIME types or icons)
    * - :ref:`Software catalogs <software-catalogs-user>` of available AppImages
      - Mac App Store
    * - Optional signature in ELF section
@@ -36,9 +36,3 @@ This page compares the AppImage terms to its macOS equivalents. It should help m
 
 ..
    TODO: Link signatures page
-
-.. _AppImageUpdate: https://github.com/AppImage/AppImageUpdate
-.. _Sparkle Framework: https://sparkle-project.org/
-.. _update information: https://github.com/AppImage/AppImageSpec/blob/master/draft.md#update-information
-.. _Sparkle appcast: https://sparkle-project.org/
-.. _Launch Services: https://developer.apple.com/documentation/coreservices/launch_services

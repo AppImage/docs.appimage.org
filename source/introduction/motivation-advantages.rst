@@ -71,7 +71,6 @@ All these issues are solved when using AppImages to package the application:
 | As the AppImage contains exactly the versions of dependencies that are required, no version mismatch issues occur when using it either.
 
 .. note::
-
    These issues can all be accomplished using tarballs that contain all libraries (except :ref:`lowest-level ones that usually shouldn't be shipped <exclude-expected-libraries>`), and maybe some sort of "run script" that makes sure only those libraries are used.
    However, this is not user-friendly as the user has to know how to actually run the software and manage it as a folder of dependencies on their hard-drive.
 

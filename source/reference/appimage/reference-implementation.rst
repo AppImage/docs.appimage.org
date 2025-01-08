@@ -73,6 +73,7 @@ Helpers
 
 There also are helper tools that can be used to verify and validate some AppImage features (mostly for debugging).
 
+
 .. _apprun.c:
 
 AppRun.c (Legacy)
@@ -81,7 +82,6 @@ AppRun.c (Legacy)
 ``AppRun.c`` is a deprecated program that attempts to make the application relocatable without modifying it in any way. This can be necessary in some cases, e.g. if its licence prohibits any modifications. It does this by manipulating environment variables, so that the bundled shared libraries are used and related warnings are suppressed. However, using it doesn't guarantee the application to run correctly. It is available as precompiled binary `here <https://github.com/AppImage/AppImageKit/releases/continuous>`_.
 
 .. warning::
-
    |apprun_c_warning|
 
    There are some edge cases where :code:`AppRun.c` might be useful and is still in use. However, it suffers from many limitations and requires some workarounds which themselves require troublesome mechanisms. For example, :code:`AppRun` force-changes the current working directory, and therefore applications cannot detect where the AppImage was originally called. This may be especially annoying for CLI tools, but can also be a problem for GUI applications expecting paths via parameters. This and other workarounds & mechanisms can cause a lot of trouble while trying to debug an AppImage. Please beware of that before thinking about using :code:`AppRun.c` in your AppImage.
@@ -89,10 +89,12 @@ AppRun.c (Legacy)
 ..
    TODO: Update this section when AppRun.c is moved into pkg2appimage
 
+
 digest-md5
 ++++++++++
 
 :code:`digest-md5` calculates the MD5 digest used for desktop integration purposes for a given AppImage. This digest depends on the path, not on the content. Its source code is available under https://github.com/AppImage/AppImageKit/blob/master/src/digest_md5.c. It currently needs to be built from source and is not available as a pre-compiled binary.
+
 
 validate
 ++++++++

@@ -4,15 +4,11 @@ Using the Open Build Service
 ============================
 
 .. todo::
-
    Make sure everything on this page is still up to date.
 
 `Open Build Service <https://openbuildservice.org/>`__ is a generic system to build and distribute packages from sources in an automatic, consistent and reproducible way. It allows you to build software for various package formats and distributions. Now it can also build AppImages that run on a variety of distributions.
 
 The `openSUSE Build Service`_ is the public instance of the Open Build Service (OBS). This infrastructure can can be used for free by open source projects. However, you are not limited to it - you can set up your own Open Build Service instance if you like.
-
-.. _openSUSE Build Service: https://build.opensuse.org/
-
 
 .. contents:: Contents
    :local:
@@ -32,6 +28,7 @@ There are different ways to build AppImages. Why is using Open Build Service int
 * OBS automatically signs AppImages using the user's key on OBS
 * OBS automatically embeds update information into AppImages to enable binary delta updates using AppImageUpdate. This means that if in a 100 MB AppImage only 1 MB changed between versions, then the user has to download only 1 MB rather than 100 MB
 
+
 The osc command line tool
 -------------------------
 
@@ -49,7 +46,7 @@ This page describes how to use the public `openSUSE Build Service`_ instance. If
 
 
 Hello world
-^^^^^^^^^^^
++++++++++++
 
 On the https://build.opensuse.org/ homepage, click on "New Image".
 
@@ -73,7 +70,7 @@ The following sections describe how to do the same manually.
 
 
 Setting up an AppImage target for the project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++++++++++++++++++++++++++
 
 You need to tell OBS that for all source code packages in your home project you want to generate AppImages. To enable a target for AppImage, you can either use the command line tool :code:`osc meta prj -e ...` or use the OBS web interface:
 
@@ -107,12 +104,10 @@ You need to tell OBS that for all source code packages in your home project you 
 
 
 .. todo::
-
    This XML file might be outdated.
 
 
 .. note::
-
     The :code:`AppImage.arm` repository is used for the ARM architectures for now. This will possibly change in the future.
 
 
@@ -122,7 +117,7 @@ Also check whether openSUSE:Leap:15.6 is still currently supported and update th
 
 
 Use native AppImage build support
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++++++++++++++
 
 In order to build an AppImage you need to provide a file called :code:`appimage.yml`. OBS needs to get all the required resources before building. This is needed in order to be able to track changes and to find out whether a rebuild is needed, and to provide the resources in a secured and reproducible environment without network access.
 
@@ -133,7 +128,6 @@ The packages listed in the ingredients section do not get installed into the bui
 URLs for the supported source control management systems (git, svn, cvs, hg, bzr) get handled via the appimage source service, which is a part of `obs-service-tar_scm <https://github.com/openSUSE/obs-service-tar_scm>`__. It is downloading the sources and provides them to the build system as directory structure.
 
 .. todo::
-
     **not yet implemented**
     URLs to files get handled via the download_files source service. It is handy to provide single files to the build.
 
@@ -141,7 +135,6 @@ URLs for the supported source control management systems (git, svn, cvs, hg, bzr
 Scripts can be executed in the form of the script hooks of the :code:`appimage.yml` file.
 
 .. note::
-
     :code:`Recipe` files are **not** supported, anything they can do can be done inside the :code:`script` sections of :code:`appimage.yml`.
 
     .. note:: It is optional to either
@@ -163,7 +156,7 @@ Please note that it uses the following environment variables which are provided 
 
 
 Most simple example
-^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++
 
 This :code:`APPIMAGE_NAME` application will get package into an :code:`.AppImage` file just by installing the :code:`RPM_PACKAGE_NAME`. The binary can get patched automatically when using the :code:`binpatch: true` option
 
@@ -190,7 +183,7 @@ This :code:`APPIMAGE_NAME` application will get package into an :code:`.AppImage
 
 
 Simple example building from source
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++++++++++++++++
 
 ::
 
@@ -283,8 +276,9 @@ If you have already generated a token in the past, you can show it with
     osc token
 
 
-On the GitHub project page, click on "Settings", then click on "Integrations & services", then click on "Add service", enter "Obs" and select it. For example, for the `QtQuickApp`_ project go to :code:`https://github.com/probonopd/QtQuickApp/settings/installations`, and corresponding to https://build.opensuse.org/package/show/home:probono/QtQuickApp enter :code:`home:probono` for the project and :code:`QtQuickApp` in the Package field, as well as the token generated above in the "Token" field. Please note that you need to supply your own username and project name instead of the one in the example above.
+On the GitHub project page, click on "Settings", then click on "Integrations & services", then click on "Add service", enter "Obs" and select it. For example, for the `QtQuickApp <https://github.com/probonopd/QtQuickApp/>`_ project go to :code:`https://github.com/probonopd/QtQuickApp/settings/installations`, and corresponding to https://build.opensuse.org/package/show/home:probono/QtQuickApp enter :code:`home:probono` for the project and :code:`QtQuickApp` in the Package field, as well as the token generated above in the "Token" field. Please note that you need to supply your own username and project name instead of the one in the example above.
 
 Now, whenever you do a :code:`git push` to your project, OBS will build it for you.
 
-.. _QtQuickApp: https://github.com/probonopd/QtQuickApp/
+
+.. _openSUSE Build Service: https://build.opensuse.org/

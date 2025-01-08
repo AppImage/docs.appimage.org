@@ -34,7 +34,6 @@ appimaged
 Using appimaged, AppImages still need to be marked as executables and moved into the user's application directory manually; only the integration works automatically.
 
 .. warning::
-
    As of January 2025, the directories monitored by appimaged are not configurable, but hardcoded. Therefore, it might not be suitable for every use case.
 
    One of the monitored directories is ``~/Downloads``. If this directory is very large, appimaged usually needs quite some time to visit all files. It is likely to slow down the system (specifically, the filesystem).
@@ -46,7 +45,6 @@ AppImageLauncher
 ----------------
 
 .. warning::
-
    As of January 2025, AppImageLauncher doesn't support AppImages created with the current :ref:`reference implementation <reference-implementation>` (after it has been changed to the new static runtime).
 
 `AppImageLauncher <https://github.com/TheAssassin/AppImageLauncher>`_ contains a daemon internally, appimagelauncherd, that works similarly to appimaged, automatically integrating and disintegrating all new and removed AppImages. But unlike appimaged, the list of monitored directories in which AppImages are stored, is configurable.

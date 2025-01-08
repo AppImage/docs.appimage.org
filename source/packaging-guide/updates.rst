@@ -36,6 +36,7 @@ To make an AppImage updateable, you need to embed this update information into i
 
 If you use an :ref:`AppImage creation tool <appimage-creation-tools>`, you should use its built-in feature to add the update information and create the ``.zsync`` file. However, if your AppImage creation tool doesn't support adding update information, or if you create your AppImage manually, you can also use ``appimagetool`` directly to manually add the update information and create the ``.zsync`` file. After doing that, you should upload the ``.zsync`` file to the place mentioned in the update information string.
 
+
 Using an AppImage creation tool
 +++++++++++++++++++++++++++++++
 
@@ -47,6 +48,7 @@ Most AppImage creation tools come with a built-in feature to add update informat
 
 .. todo::
    Research whether a corresponding feature exists for all other AppImage creation tool and add an updating section to each guide.
+
 
 .. _updating-using-appimagetool:
 
@@ -65,6 +67,7 @@ To make the AppImage self-updateable, it needs to be updateable in the first pla
 
 By default, `AppImageUpdate <https://github.com/AppImageCommunity/AppImageUpdate>`_ (which is used to achieve self-updateability) creates the updated AppImage file in the same directory as the current AppImage with the filename of the remote file, and doesn't overwrite the current AppImage file. This is done on purpose, as it might not be intended to overwrite previous versions of an AppImage to allow having different versions in parallel or testing the current version against the update that has just been downloaded. However, this behaviour can be overwritten.
 
+
 Via ``appimageupdatetool`` bundled in the AppImage
 ++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -79,6 +82,7 @@ To update your AppImage with ``appimageupdatetool``, you need to give the path o
 
 .. warning::
    |linuxdeploy_bundle_appimages|
+
 
 Via ``libappimageupdate``
 +++++++++++++++++++++++++
@@ -168,12 +172,14 @@ As previously stated, this will create a new updated AppImage file with the remo
 
 However, if you want to directly replace the local AppImage, this default behaviour can be overwritten by creating the updater with ``Updater updater("MyApplication.AppImage", true);`` instead of ``Updater updater("MyApplication.AppImage");``. This leads to the updater moving the new file to the original file location after successfully downloading and verifying the update. But due to how ZSync2 works, the old file is not deleted; instead, it's moved to ``<name>.zs-old`` and kept as a backup (see `this issue <https://github.com/AppImageCommunity/AppImageUpdate/issues/14>`_). If you don't want the old file hanging around after the update, you can remove ``<name>.zs-old`` after the update finished successfully.
 
+
 Using an update GUI library
 +++++++++++++++++++++++++++
 
 If you don't want to create your own GUI for updating (meaning an update button and optionally features like a progress bar), you can also use specific update GUI libraries that provide a pre-designed GUI managing all that.
 
 Currently, there only exists a GUI library for QT-based applications. We are interested in getting libraries for other popular GUI toolkits like Gtk/Libadwaita, so please contribute if you implement something like this.
+
 
 libappimageupdate-qt
 ####################
@@ -182,6 +188,7 @@ Like with ``libappimageupdate``, there is currently no precompiled version of th
 
 .. todo::
    Add instructions on how to build ``libappimageupdate`` and how it can be used and integrated in an application.
+
 
 Recommended user experience
 +++++++++++++++++++++++++++

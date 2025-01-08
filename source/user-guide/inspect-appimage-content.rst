@@ -8,7 +8,6 @@ Inspect AppImage content
 To inspect the content of any AppImage, it is possible to extract their content to a directory or to temporarily mount them	on the system for read-only access. The resulting directory is a valid :ref:`AppDir <appdir-specification>`, and users can create AppImages from it again using an :ref:`AppImage creation tool <appimage-creation-tools>`. This page describes the different ways to inspect the content of an AppImage, their advantages and disadvantages.
 
 .. todo::
-
    Link the section on the different AppImage versions and how to determine it here and everywhere where types are mentioned.
 
 .. contents:: Contents
@@ -24,10 +23,12 @@ The most convenient way to inspect the content of an AppImage is to call it with
 .. warning::
    You should only do this if you trust the AppImage (as the runtime could be altered to execute different code, even if you use these parameters). If you want to inspect the AppImage as you don't trust it, you should follow the instructions in the section :ref:`inspect-using-external-tools`.
 
+
 \-\-appimage-extract
 ++++++++++++++++++++
 
 To extract the content of a type 2 AppImage without an external tool, call the AppImage with the parameter ``--appimage-extract``. This will cause the :ref:`runtime` to create a new directory called :code:`squashfs-root` in the current working directory, containing the content of the AppImage's :ref:`AppDir <appdir-specification>`.
+
 
 \-\-appimage-mount
 ++++++++++++++++++
@@ -44,6 +45,7 @@ Using external tools
 
 This is the safest way to inspect the content of an AppImage. You should use this way if you don't trust the AppImage and don't want to call it.
 
+
 Type 2 AppImages
 ++++++++++++++++
 
@@ -58,6 +60,7 @@ You can safely inspect the content of a type 2 AppImage with these commands (rep
 This will call ``--appimage-extract`` on the downloaded AppImage runtime to extract your AppImage without having to rely on the (possibly tampered) runtime of your AppImage.
 
 You can also use ``--appimage-mount`` instead of ``--appimage-extract`` if you rather want to temporarily mount the AppImage content.
+
 
 Type 1 AppImages
 ++++++++++++++++

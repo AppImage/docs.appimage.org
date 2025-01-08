@@ -21,10 +21,7 @@ Manually creating the entire AppDir structure
 
 If you want to manually create the entire AppDir structure and copy all files to their correct places in it without using any :ref:`AppImage creation tool <appimage-creation-tools>`, you first have to follow the steps described in :ref:`manually-creating-appdir-structure`.
 
-Additionally to the AppDir content described there, your AppDir needs to contain the following files::
-
-   	MyApp.AppDir/AppRun
-   	MyApp.AppDir/.DirIcon
+Additionally to the AppDir content described there, your AppDir needs to contain ``MyApp.AppDir/AppRun`` and ``MyApp.AppDir/.DirIcon``.
 
 
 AppRun
@@ -33,6 +30,7 @@ AppRun
 In modern AppImages, :code:`AppRun` is usually a symlink to the main binary. This works if the binary has been made relocatable (which is automatically done by modern AppImage creation tools; it's explained :ref:`later on this page <removing-hard-coded-paths>` how to manually do that).
 
 However, |why_apprun_c|, alternatives may be used. For more information, see :ref:`AppRun.c <apprun.c>`.
+
 
 .DirIcon
 ++++++++
@@ -56,7 +54,6 @@ Removing hard-coded paths
 In order to be packaged as AppImages, applications must load the resources relative to their main binary, and not from a hardcoded path (usually ``/usr/...``). This is called relocatability.
 
 .. note::
-
    If your app doesn't load resources from the AppImage, but e.g., shows errors it couldn't find resources, it is most likely not relocatable.
 
 You can check whether your app is relocatable by running
@@ -67,6 +64,7 @@ You can check whether your app is relocatable by running
 
 Should this return something, then you need to make your application relocatable, either by modifying the source code or by patching the executable.
 
+
 Modifying the source code
 +++++++++++++++++++++++++
 
@@ -75,6 +73,7 @@ The best way is to modify the source code of the application in order to not use
 Some modern frameworks such as Qt have this functionality built-in, e.g. in ``QString QCoreApplication::applicationDirPath()`` so you don't have to resolve ``/proc/self/exe``. In some cases, there are also flags you can specify when building from source to make applications relocatable.
 
 Another way to make your application relocatable is to use the `GNU relocatable-prog module <https://www.gnu.org/software/gnulib/manual/html_node/Supporting-Relocation.html>`_.
+
 
 Patching the executable
 +++++++++++++++++++++++
@@ -98,7 +97,6 @@ This usually works as long as the application is not calling :code:`chdir()` (ch
 	strace -echdir -f ./AppRun
 
 .. note::
-
    An alternative approach to making an application relocatable is to use the AppRun.c script / program, see :ref:`apprun.c`. It can be used |why_apprun_c|. However, this approach is deprecated and should be avoided if possible.
 
 

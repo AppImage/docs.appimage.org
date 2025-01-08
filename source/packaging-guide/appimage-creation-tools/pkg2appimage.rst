@@ -85,7 +85,7 @@ Note that the sections may contain sub-sections. For example, the ingredients se
 
 
 Overall section
-^^^^^^^^^^^^^^^
++++++++++++++++
 
 ``app`` key
 ###########
@@ -103,12 +103,11 @@ Optional. Either :code:`binpatch: true` or :code:`union: true`. These keys enabl
 
 
 Ingredients section
-^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++
 
 Describes how to acquire the binary ingredients that go into the AppImage. Binary ingredients can be archives like :code:`.zip` files, packages like :code:`.deb` files or APT repositories like Debian package archives or PPAs.
 
 .. note::
-
     In the future, source ingredients could also be included in the :code:`.yml` file definition. Source ingredients could include tarballs and Git repositories. It would probably be advantageous if we could share the definition with other formats like snapcraft's :code:`.yaml` files. Proposals for this are welcome.
 
 
@@ -149,7 +148,6 @@ The following example ingredients section describes how to get the latest versio
 The :code:`dist` section inside the :code:`ingredients` section defines which Debian distribution should be used as a base. The :code:`sources` section inside the :code:`ingredients` section describes the repositories from which the package should be pulled. The entries are in the same format as lines in a debian :code:`sources.list` file. Note that the :code:`http://download.opensuse.org/repositories/isv:/KDAB/xUbuntu_16.04` repository needs the :code:`http://archive.ubuntu.com/ubuntu/` repository so that the dependencies can be resolved.
 
 .. note::
-
     In the future, other types of packages like :code:`.rpm` could also be included in the :code:`.yml` file definition. Proposals for this are welcome if the proposer also implements support for this in the `pkg2appimage script <https://github.com/AppImageCommunity/pkg2appimage/blob/master/pkg2appimage>`_.
 
 
@@ -171,7 +169,6 @@ This is a special case of a Debian repository. PPAs can be uniquely identified w
 The :code:`ppas` section inside the :code:`ingredients` section lets you specify one or more Ubuntu PPAs. This is equivalent to, but more elegant than, adding the corresponding :code:`sources.list` entries to the :code:`sources` section inside the :code:`ingredients` section.
 
 .. note::
-
     In the future, similar shortcuts for other types of personal repositories, such as projects on openSUSE build service, could also be included in the :code:`.yml` file definition. Proposals for this are welcome if the proposer also implements support for this in the `pkg2appimage script <https://github.com/AppImageCommunity/pkg2appimage/blob/master/pkg2appimage>`_.
 
 
@@ -206,7 +203,6 @@ And for all files in a directory (like local repository). Note that the end of t
 
 
 .. note::
-
     This is for personal use only. If you use it, your recipe will NOT work on another computer if the debs files are not in the specified directory.
 
 
@@ -278,7 +274,7 @@ Use :code:`post_script` instead of :code:`script` if you need this to run *after
 
 
 Script section
-^^^^^^^^^^^^^^
+++++++++++++++
 
 The :code:`script` section may contain arbitrary shell commands that are required to translate the binary ingredients to an :code:`AppDir` suitable for generating an AppImage.
 
@@ -356,7 +352,6 @@ Unfortunately, many applications don't include a :code:`$ID.desktop` file. If it
 
 
 .. note::
-
     The optional :code:`desktopintegration` script assumes that the name of the application specified in the :code:`app:` key matches the name of the :code:`$ID.desktop` file and the corresponding main executable (case-sensitive). For example, if :code:`app: myapp` is set, it expects :code:`usr/bin/myapp`and :code:`usr/share/applications/myapp.desktop`. For this reason, if you want to use the optional :code:`desktopintegration` script, you may rearrange the AppDir. The following example illustrates this:
 
     .. code-block:: yaml

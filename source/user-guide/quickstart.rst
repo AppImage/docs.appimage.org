@@ -31,12 +31,14 @@ It's very easy to run an AppImage. All you have to do is to download it, make it
 
 Making a file executable can both be done using the terminal or the file manager:
 
+
 Using the terminal
 ++++++++++++++++++
 
 #. Open a terminal (command line)
 #. Make the AppImage executable: ``chmod +x ~/Downloads/MyApplication.AppImage``
 #. Run the AppImage by entering its path: ``~/Downloads/MyApplication.AppImage``
+
 
 Using the file manager
 ++++++++++++++++++++++
