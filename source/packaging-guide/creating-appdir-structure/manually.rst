@@ -8,7 +8,9 @@ Manually creating the AppDir structure
 
    If you use a tool that doesn't require that, you don't have to do this.
 
-To prepare an AppDir structure for an :ref:`AppImage creation tool <appimage-creation-tools>`, create a structure that looks (at a minimum) like this::
+To prepare an AppDir structure for an :ref:`AppImage creation tool <appimage-creation-tools>`, create a structure that looks (at a minimum) like this:
+
+.. code-block:: text
 
 	MyApp.AppDir/
 	MyApp.AppDir/myapp.desktop

@@ -26,32 +26,32 @@ The list of all keys can be found in the `Desktop Entry Specification (Recognize
 
 The desktop entry file should be named according to the `Reverse domain name notation <https://en.wikipedia.org/wiki/Reverse_domain_name_notation>`_ and have ``.desktop`` as file ending, for example ``org.AppImage.ExampleApp.desktop``.
 
-After creating your desktop file, make sure that it's valid using :code:`desktop-file-validate org.example.application.desktop`.
+After creating your desktop file, make sure that it's valid using ``desktop-file-validate org.example.application.desktop``.
 
 
 Custom keys introduced for AppImage purposes
 --------------------------------------------
 
-Aside from the standardized mandatory and optional keys, desktop entry files may contain additional, use case dependent keys. They're usually prepended with :code:`X-` to differentiate between standard and custom keys.
+Aside from the standardized mandatory and optional keys, desktop entry files may contain additional, use case dependent keys. They're usually prepended with ``X-`` to differentiate between standard and custom keys.
 
 The AppImage project defined a few custom keys with special meaning that provide information to enhance our desktop integration algorithm.
 
 X-AppImage-Name
     Name of the application. Used to relate two AppImages of the same application but different versions.
 
-    **Examples:** :code:`Krita`, :code:`Kdenlive`, :code:`Ultimaker Cura`
+    **Examples:** ``Krita``, ``Kdenlive``, ``Ultimaker Cura``
 
 X-AppImage-Version
     Version of the application bundled in the AppImage.
 
-    **Examples:** :code:`4.9.2`, :code:`1.0.0-beta-2`, :code:`2019.1.1`
+    **Examples:** ``4.9.2``, ``1.0.0-beta-2``, ``2019.1.1``
 
 X-AppImage-Arch
     Architecture of the AppImage.
 
-    **Examples:** :code:`x86_64`, :code:`aarch64`, :code:`i386`
+    **Examples:** ``x86_64``, ``aarch64``, ``i386``
 
-:ref:`appimagetool <appimagetool>` and libappimage currently make use mostly of :code:`X-AppImage-Version`.
+:ref:`appimagetool <appimagetool>` and libappimage currently make use mostly of ``X-AppImage-Version``.
 
 .. seealso::
    The following discussions in issue trackers contain some background information:

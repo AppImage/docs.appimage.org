@@ -90,7 +90,7 @@ There is a collection of convenience functions in https://github.com/AppImage/pk
    > . ./functions.sh
 
 .. todo::
-   Document the functions in :code:`functions.sh` that are for public consumption based on comments in the file.
+   Document the functions in ``functions.sh`` that are for public consumption based on comments in the file.
 
 
 .. toctree::

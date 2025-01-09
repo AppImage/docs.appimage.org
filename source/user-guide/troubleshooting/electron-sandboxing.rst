@@ -16,7 +16,9 @@ This page explains how to check your kernel configuration and change it for Elec
 Check if the kernel is configured correctly already
 ---------------------------------------------------
 
-To check if your distribution has unprivileged namespaces enabled, please run::
+To check if your distribution has unprivileged namespaces enabled, please run:
+
+.. code-block:: shell
 
    > sysctl kernel.unprivileged_userns_clone
    kernel.unprivileged_userns_clone = 1
@@ -33,16 +35,20 @@ A ``0`` indicates that the feature is available, but not enabled at the moment. 
 Configure unprivileged sandboxes
 --------------------------------
 
-To temporarily (until the system is rebooted) enable unprivileged namespaces, you can run this command::
+To temporarily (until the system is rebooted) enable unprivileged namespaces, you can run this command:
 
-   sudo sysctl -w kernel.unprivileged_userns_clone=1
+.. code-block:: shell
+
+   > sudo sysctl -w kernel.unprivileged_userns_clone=1
 
 You can run the same command, swapping the ``1`` for a ``0``, to disable it again.
 
 
-To permanently enable the feature, you should create a new file with this setting in ``/etc/sysctl.d/``. You can do that by using the following command::
+To permanently enable the feature, you should create a new file with this setting in ``/etc/sysctl.d/``. You can do that by using the following command:
 
-   echo "kernel.unprivileged_userns_clone = 1" > /etc/sysctl.d/enable-unprivileged-namespaces.conf
+.. code-block:: shell
+
+   > echo "kernel.unprivileged_userns_clone = 1" > /etc/sysctl.d/enable-unprivileged-namespaces.conf
 
 .. note::
    This command will take effect after the next reboot. To change this on a running system, please refer to the :ref:`previous section <electron-configure-sandboxing>`.

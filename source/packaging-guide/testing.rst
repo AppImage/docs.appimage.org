@@ -35,25 +35,25 @@ The following script can be used to run the given AppImage in the given distribu
 .. code-block:: shell
 
    # Take the given AppImage path and distribution container
-   appimage="MyApplication.AppImage"
-   distro="ubuntu:latest"
+   > appimage="MyApplication.AppImage"
+   > distro="ubuntu:latest"
 
    # Allow the docker container to connect to your host X11 server (required for GUI applications)
-   xhost + local:
+   > xhost + local:
 
    # Start the docker container and enter its shell
-   sudo docker run --rm -it -e DISPLAY=:0 -v /tmp/.X11-unix:/tmp/.X11-unix -v "$appimage":/AppImage -v "$HOME":/shared --cap-add=SYS_PTRACE --security-opt seccomp:unconfined ${distro} bash
+   > sudo docker run --rm -it -e DISPLAY=:0 -v /tmp/.X11-unix:/tmp/.X11-unix -v "$appimage":/AppImage -v "$HOME":/shared --cap-add=SYS_PTRACE --security-opt seccomp:unconfined ${distro} bash
 
    # Install system packages and default packages that are expected on any target OS (inside the docker container)
    # You can see the full excludelist of packages that may be expected at https://github.com/AppImage/pkg2appimage/blob/master/excludelist
    # Some examples of packages that could be installed are:
    # On Ubuntu:
-   apt update && apt install -y software-properties-common libx11-6 libgl1 libglx-mesa0 expat binutils fontconfig libsm6 libgomp1 dbus desktop-file-utils xorg libasound2t64
+   > apt update && apt install -y software-properties-common libx11-6 libgl1 libglx-mesa0 expat binutils fontconfig libsm6 libgomp1 dbus desktop-file-utils xorg libasound2t64
    # On Fedora:
-   dnf update -y && dnf install -y xorg-x11-server-Xorg fontconfig binutils findutils mesa-libEGL libSM dbus-tools mesa-dri-drivers
+   > dnf update -y && dnf install -y xorg-x11-server-Xorg fontconfig binutils findutils mesa-libEGL libSM dbus-tools mesa-dri-drivers
 
    # Run the AppImage (inside the docker container)
-   /AppImage --appimage-extract-and-run
+   > /AppImage --appimage-extract-and-run
 
 (Credits: `Original scripts <https://github.com/aferrero2707/appimage-testsuite>`_ by `aferrero2707 <https://github.com/aferrero2707>`_; improvements by `Korne127 <https://github.com/Korne127>`_.)
 

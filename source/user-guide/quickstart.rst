@@ -88,9 +88,9 @@ Where to store AppImages
 
 An important point about the AppImage format is that you can store AppImage files wherever you want. This includes your home directory, your downloads directory, a dedicated applications directory, a USB drive, or even a network file share. No matter where you keep your AppImages, you are still able to run them. This is very similar to how applications work on macOS. Unlike with traditional Linux packages, you do not need to install AppImages or put them into some special location in order for them to work.
 
-If you don't want to leave them in :code:`~/Downloads`, then :code:`~/Applications` is a good choice. Many third-party tools (e.g. the ones managing desktop integration) use this location, too.
+If you don't want to leave them in ``~/Downloads``, then ``~/Applications`` is a good choice. Many third-party tools (e.g. the ones managing desktop integration) use this location, too.
 
-For CLI tools, :code:`~/.local/bin` and :code:`~/bin` are also good places, as these are usually included in the path, meaning that you can simply type the application name into the terminal to start it.
+For CLI tools, ``~/.local/bin`` and ``~/bin`` are also good places, as these are usually included in the path, meaning that you can simply type the application name into the terminal to start it.
 
 
 Getting help

@@ -24,7 +24,7 @@ Downloading linuxdeploy
 
 Start by downloading linuxdeploy. The recommended way to get it is to use the latest continuous AppImage build provided on the `GitHub release page <https://github.com/linuxdeploy/linuxdeploy/releases>`_. After downloading the AppImage, you have to make it executable as usual:
 
-.. code-block:: bash
+.. code-block:: shell
 
    > wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
    > chmod +x linuxdeploy-x86_64.AppImage
@@ -49,7 +49,7 @@ The following command line flags are most commonly used:
       |linuxdeploy_bundle_appimages|
 
 ``--library``/``-l``
-   Bundle a shared library (:code:`.so` file) into the AppDir.
+   Bundle a shared library (``.so`` file) into the AppDir.
 
    Set up everything so that other libraries, executables, etc. use this bundled library instead of a system one (if applicable).
 

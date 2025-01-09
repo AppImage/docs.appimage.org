@@ -19,17 +19,17 @@ Usage
 
 To use go-appimagetool, you need to already have an AppDir with the main executable and the desktop, icon, etc. files. go-appimagetool will only deploy the dependency of the executables and libraries into this AppDir and create an AppImage out of it.
 
-To bundle the dependencies with go-appimagetool, use the :code:`deploy` command with the desktop file as parameter like this:
+To bundle the dependencies with go-appimagetool, use the ``deploy`` command with the desktop file as parameter like this:
 
-.. code-block:: bash
+.. code-block:: shell
 
    > ./appimagetool-*.AppImage deploy appdir/usr/share/applications/*.desktop
 
-You can use the :code:`-s` command line argument to bundle everything, including core system libraries like glibc. Otherwise, core system libraries are not included.
+You can use the ``-s`` command line argument to bundle everything, including core system libraries like glibc. Otherwise, core system libraries are not included.
 
 To then turn your complete AppDir into an AppImage, call go-appimagetool with the AppDir as parameter like this:
 
-.. code-block:: bash
+.. code-block:: shell
 
    > ./appimagetool-*.AppImage Some.AppDir
 

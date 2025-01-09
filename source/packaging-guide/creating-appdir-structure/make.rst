@@ -17,17 +17,17 @@ If you use a modern make-based meta build system such as CMake_ or qmake_, you c
 CMake
 -----
 
-CMake provides an additional parameter to configure where the files are installed when running ``make install`` called |destdir|. If |destdir| is specified, CMake will "install" the files into the given directory instead of the filesystem root (:code:`/`).
+CMake provides an additional parameter to configure where the files are installed when running ``make install`` called |destdir|. If |destdir| is specified, CMake will "install" the files into the given directory instead of the filesystem root (``/``).
 
 .. note::
-   By default, CMake sets an internal variable called |cmake-install-prefix| to a path other than ``/usr`` to prevent users calling e.g., :code:`sudo make install` from damaging their system. The variable must explicitly be set to ``/usr`` therefore.
+   By default, CMake sets an internal variable called |cmake-install-prefix| to a path other than ``/usr`` to prevent users calling e.g., ``sudo make install`` from damaging their system. The variable must explicitly be set to ``/usr`` therefore.
 
-.. |destdir| replace:: :code:`DESTDIR`
-.. |cmake-install-prefix| replace:: :code:`CMAKE_INSTALL_PREFIX`
+.. |destdir| replace:: ``DESTDIR``
+.. |cmake-install-prefix| replace:: ``CMAKE_INSTALL_PREFIX``
 
 Here's an example how to use this method:
 
-.. code-block:: bash
+.. code-block:: shell
 
    # Download project (you can use that project to test this method)
    > git clone https://github.com/linuxdeploy/QtQuickApp.git
@@ -50,11 +50,11 @@ Here's an example how to use this method:
 qmake
 -----
 
-Qt's qmake_ also provides a variable to change the "target" of :code:`make install` calls called :code:`INSTALL_ROOT`. The qmake-based method is very similar to the CMake one. There's just one major difference: qmake does install into ``/usr`` by default already.
+Qt's qmake_ also provides a variable to change the "target" of ``make install`` calls called ``INSTALL_ROOT``. The qmake-based method is very similar to the CMake one. There's just one major difference: qmake does install into ``/usr`` by default already.
 
 Preparing a basic application is very simple, as the following example illustrates:
 
-.. code-block:: bash
+.. code-block:: shell
 
    # Download project (you can use that project to test this method)
    > git clone https://github.com/linuxdeploy/QtQuickApp.git

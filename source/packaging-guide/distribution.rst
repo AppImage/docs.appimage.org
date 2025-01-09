@@ -127,7 +127,7 @@ Recommendations
 Don't put "Linux" into the Appimage file name
 ++++++++++++++++++++++++++++++++++++++++++++++
 
-You shouldn't put "linux" into the file name of an AppImage. It is clear that an :code:`.exe` is for Windows, an :code:`.app` is for macOS and that an :code:`.AppImage` is for Linux (and compatible systems such as Windows with WSL2 and FreeBSD with the Linuxulator). Especially as this is the file your users will always have on their system, you shouldn't put redundant information in its name.
+You shouldn't put "linux" into the file name of an AppImage. It is clear that an ``.exe`` is for Windows, an ``.app`` is for macOS and that an ``.AppImage`` is for Linux (and compatible systems such as Windows with WSL2 and FreeBSD with the Linuxulator). Especially as this is the file your users will always have on their system, you shouldn't put redundant information in its name.
 
 
 Make your AppImage discoverable

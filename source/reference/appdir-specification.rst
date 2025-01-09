@@ -32,11 +32,11 @@ As the name intends, AppDirs are normal directories with some special content. A
 AppRun
 ++++++
 
-Every AppImage's AppDir must contain a file (executable, script, etc.) or symlink called :code:`AppRun`, providing the "entry point" of the application. When running the AppImage, the :ref:`runtime <runtime>` executes the :code:`AppRun` file within the :ref:`AppDir <appdir-specification>`.
+Every AppImage's AppDir must contain a file (executable, script, etc.) or symlink called ``AppRun``, providing the "entry point" of the application. When running the AppImage, the :ref:`runtime <runtime>` executes the ``AppRun`` file within the :ref:`AppDir <appdir-specification>`.
 
 It is located in the root directory that makes up an AppDir, so it can be used to calculate paths relative to the (later mounted) AppDir.
 
-In modern AppImages (especially if modern :ref:`appimage-creation-tools` are used), :code:`AppRun` is usually a symlink to the main binary. This works if the binary has been made relocatable (which is automatically done by modern AppImage creation tools, but can also be done :ref:`manually <removing-hard-coded-paths>`).
+In modern AppImages (especially if modern :ref:`appimage-creation-tools` are used), ``AppRun`` is usually a symlink to the main binary. This works if the binary has been made relocatable (which is automatically done by modern AppImage creation tools, but can also be done :ref:`manually <removing-hard-coded-paths>`).
 
 There also exists a pre-written AppRun.c script / program, which can be used |why_apprun_c| as it attempts to make the application relocatable without modifying it. See :ref:`apprun.c` for more information on this.
 

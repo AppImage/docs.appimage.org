@@ -5,7 +5,7 @@ Signing AppImages
 
 AppImages can optionally be digitally signed by the person that has produced the AppImage. This ensures that the AppImage comes from the person who pretends to be the author, and ensures that the file has not been tampered with.
 
-The AppImages specification allows the AppImage file to carry a digital signature built into the AppImages. This means that the signature does not need to be an external file, but can be carried inside the AppImage itself, similar to how signatures work for traditional Linux packages (such as :code:`.deb` or :code:`.rpm` files).
+The AppImages specification allows the AppImage file to carry a digital signature built into the AppImages. This means that the signature does not need to be an external file, but can be carried inside the AppImage itself, similar to how signatures work for traditional Linux packages (such as ``.deb`` or ``.rpm`` files).
 
 .. contents:: Contents
    :local:
@@ -50,8 +50,8 @@ To validate the signature of an AppImage and make sure it hasn't been compromise
 
 .. code-block:: shell
 
-    $ chmod +x ./validate
-    $ ./validate ./XChat_IRC-x86_64.AppImage
+    > chmod +x ./validate
+    > ./validate ./XChat_IRC-x86_64.AppImage
 
     gpg: Signature made Sun 25 Sep 2016 10:41:24 PM CEST using RSA key ID 86C3DFDD
     gpg: Good signature from "Testkey" [ultimate]
@@ -62,11 +62,11 @@ Signature validation can also be integrated into higher level software. For exam
 Reading the signature
 ---------------------
 
-You can display the digital signature that is embedded in an AppImage by running the AppImage with the :code:`--appimage-signature` option like this:
+You can display the digital signature that is embedded in an AppImage by running the AppImage with the ``--appimage-signature`` option like this:
 
 .. code-block:: shell
 
-    $ ./XChat_IRC-x86_64.AppImage --appimage-signature
+    > ./XChat_IRC-x86_64.AppImage --appimage-signature
 
     -----BEGIN PGP SIGNATURE-----
     Version: GnuPG v2

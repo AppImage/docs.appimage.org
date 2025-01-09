@@ -9,7 +9,7 @@ The AppImage ecosystem is built around the notion of "upstream packaging". With 
 
 AppImage and its reference implementation are designed with "upstream packaging" in mind. This means that we want the original author of an application to be the person that packages it as an AppImage, distributes it to end users, and supports it.
 
-In this regard, an AppImage is very similar to an :code:`.exe` file on Windows or a :code:`.dmg` file on macOS. These files are normally prepared by the original application authors rather than by third parties. |upstream_advantage| It also means that the application author does not have to follow arbitrary rules set by Linux distributions.
+In this regard, an AppImage is very similar to an ``.exe`` file on Windows or a ``.dmg`` file on macOS. These files are normally prepared by the original application authors rather than by third parties. |upstream_advantage| It also means that the application author does not have to follow arbitrary rules set by Linux distributions.
 
 .. note::
     Before you package an application as an AppImage, ask yourself whether you are either the application author or a member of the application team. If not, it is most likely better to ask the original author of the application or the application team to provide an official AppImage.
@@ -51,4 +51,4 @@ Closed source applications
 
 For closed source applications, you can use :ref:`appimage-creation-tools` to create a yml recipe that can be used to convert the existing Linux binaries into an AppImage.
 
-Note that you may not be allowed to redistribute the AppImage of the application. In this case, you can distribute :code:`.yml` recipes that end users can use to produce their own AppImages of the application easily. This applies to applications such as Google Chrome, Spotify, Skype, and others.
+Note that you may not be allowed to redistribute the AppImage of the application. In this case, you can distribute ``.yml`` recipes that end users can use to produce their own AppImages of the application easily. This applies to applications such as Google Chrome, Spotify, Skype, and others.

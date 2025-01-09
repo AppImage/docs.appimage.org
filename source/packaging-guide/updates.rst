@@ -93,17 +93,17 @@ There is currently no precompiled version of this library. Therefore you have to
 
 .. code-block:: shell
 
-   git clone --recursive https://github.com/AppImage/AppImageUpdate
-   cd AppImageUpdate
-   mkdir build
-   cd build
-   cmake -DBUILD_QT_UI=OFF -DCMAKE_INSTALL_PREFIX=/usr ..
-   make -j $(nproc)
-   sudo make install
+   > git clone --recursive https://github.com/AppImage/AppImageUpdate
+   > cd AppImageUpdate
+   > mkdir build
+   > cd build
+   > cmake -DBUILD_QT_UI=OFF -DCMAKE_INSTALL_PREFIX=/usr ..
+   > make -j $(nproc)
+   > sudo make install
 
 After you built it, the libraries will be in ``AppImageUpdate/build/src/updater``. These libraries are C++11 - libraries; sadly there is currently no C interface yet, which makes it more difficult to use in other programming languages. To use the library in a different programming language, you can use a C++ FFI if available in your programming language or create a C wrapper, e.g. with `SWIG <https://swig.org>`_ (and then use the C FFI in your programming language).
 
-libappimageupdate provides the class :code:`appimage::update::Updater` which is used to update the AppImage. Using it, you can check for updates (this is currently performed synchronously as it doesn't take long) and run updates in a separate thread. This means that you have to check for the state periodically, but allows for progress indication and status messages without any blocking.
+libappimageupdate provides the class ``appimage::update::Updater`` which is used to update the AppImage. Using it, you can check for updates (this is currently performed synchronously as it doesn't take long) and run updates in a separate thread. This means that you have to check for the state periodically, but allows for progress indication and status messages without any blocking.
 
 You have to create an ``Updater`` object and then use it to perform operations. All operations that might fail return a boolean that indicates whether it finished successfully (``true``) or an error occurred (``false``). The real result of the operation is given as a parameter which is set in case of success. To see what caused an operation to fail, you can (optionally) read the status message queue (onto which the updater and its systems write messages); this is implemented in ``logStatusMessages`` in the example code.
 
@@ -205,5 +205,5 @@ One advantage of the AppImage format is that it gives full control to applicatio
 
 ..
    * Respect global flags for "do not check for new versions" and "do not attempt to update". The user may be running a central updating daemon that manages updates for the whole system, in which case any and all attempts to update the application from within itself should be skipped.
-   We need to define those flags for 1) per-system configuration, 2) per-user configuration and 3) ENV (similar to how the old :code:`desktopintegration` script was set up not to interfere with :code:`appimaged`).
+   We need to define those flags for 1) per-system configuration, 2) per-user configuration and 3) ENV (similar to how the old ``desktopintegration`` script was set up not to interfere with ``appimaged``).
    TODO: Such a flag currently doesn't exist and isn't documented

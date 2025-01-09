@@ -27,7 +27,7 @@ Additionally to the AppDir content described there, your AppDir needs to contain
 AppRun
 ++++++
 
-In modern AppImages, :code:`AppRun` is usually a symlink to the main binary. This works if the binary has been made relocatable (which is automatically done by modern AppImage creation tools; it's explained :ref:`later on this page <removing-hard-coded-paths>` how to manually do that).
+In modern AppImages, ``AppRun`` is usually a symlink to the main binary. This works if the binary has been made relocatable (which is automatically done by modern AppImage creation tools; it's explained :ref:`later on this page <removing-hard-coded-paths>` how to manually do that).
 
 However, |why_apprun_c|, alternatives may be used. For more information, see :ref:`AppRun.c <apprun.c>`.
 
@@ -60,7 +60,7 @@ You can check whether your app is relocatable by running
 
 .. code-block:: shell
 
-	strings MyApp.AppDir/usr/bin/myapp | grep /usr
+	> strings MyApp.AppDir/usr/bin/myapp | grep /usr
 
 Should this return something, then you need to make your application relocatable, either by modifying the source code or by patching the executable.
 
@@ -82,19 +82,19 @@ If you don't want to or can't change the source code and recompile the applicati
 
 .. code-block:: shell
 
-   find usr/ -type f -executable -exec sed -i -e "s|/usr|././|g" {} \;
+   > find usr/ -type f -executable -exec sed -i -e "s|/usr|././|g" {} \;
 
 It replaces all occurrences of ``/usr`` in each binary with the same length string ``././``, which simply means "here". This command is also available in the :ref:`convenience functions script <convenience-functions-script>`.
 
 ..
    TODO: Is this still true? It hasn't been mentioned in this section originally.
-   > For the binary-patched application to work, you need to change to the :code:`usr/` directory inside the application directory before you launch the application.
+   > For the binary-patched application to work, you need to change to the ``usr/`` directory inside the application directory before you launch the application.
 
-This usually works as long as the application is not calling :code:`chdir()` (changing the current working directory). Such a call would break this workaround as :code:`././` would then not be pointing to :code:`$APPDIR/usr` anymore. You can run the following command to see whether the application is calling :code:`chdir()` (99% of GUI applications don't):
+This usually works as long as the application is not calling ``chdir()`` (changing the current working directory). Such a call would break this workaround as ``././`` would then not be pointing to ``$APPDIR/usr`` anymore. You can run the following command to see whether the application is calling ``chdir()`` (99% of GUI applications don't):
 
 .. code-block:: shell
 
-	strace -echdir -f ./AppRun
+	> strace -echdir -f ./AppRun
 
 .. note::
    An alternative approach to making an application relocatable is to use the AppRun.c script / program, see :ref:`apprun.c`. It can be used |why_apprun_c|. However, this approach is deprecated and should be avoided if possible.
@@ -103,15 +103,15 @@ This usually works as long as the application is not calling :code:`chdir()` (ch
 Creating an AppImage from the AppDir
 ------------------------------------
 
-To create an AppImage from the AppDir, you need :code:`appimagetool`. You can get it by downloading the `latest release <https://github.com/AppImage/appimagetool/releases/latest>`_. After downloading the AppImage, you have to make it executable as usual:
+To create an AppImage from the AppDir, you need ``appimagetool``. You can get it by downloading the `latest release <https://github.com/AppImage/appimagetool/releases/latest>`_. After downloading the AppImage, you have to make it executable as usual:
 
-.. code-block:: bash
+.. code-block:: shell
 
    > wget https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
    > chmod +x appimagetool-x86_64.AppImage
 
 After that, you can call it with the AppDir path as parameter in order to turn it into an AppImage:
 
-.. code-block:: bash
+.. code-block:: shell
 
    > ./appimage-tool-x86_64.AppImage MyApp.AppDir

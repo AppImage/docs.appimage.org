@@ -27,7 +27,7 @@ The most convenient way to inspect the content of an AppImage is to call it with
 \-\-appimage-extract
 ++++++++++++++++++++
 
-To extract the content of a type 2 AppImage without an external tool, call the AppImage with the parameter ``--appimage-extract``. This will cause the :ref:`runtime` to create a new directory called :code:`squashfs-root` in the current working directory, containing the content of the AppImage's :ref:`AppDir <appdir-specification>`.
+To extract the content of a type 2 AppImage without an external tool, call the AppImage with the parameter ``--appimage-extract``. This will cause the :ref:`runtime` to create a new directory called ``squashfs-root`` in the current working directory, containing the content of the AppImage's :ref:`AppDir <appdir-specification>`.
 
 
 \-\-appimage-mount
@@ -51,11 +51,11 @@ Type 2 AppImages
 
 You can safely inspect the content of a type 2 AppImage with these commands (replace ``path/to/AppImage`` with the path of your AppImage):
 
-.. code-block:: bash
+.. code-block:: shell
 
-   wget -c "https://github.com/AppImage/type2-runtime/releases/download/continuous/runtime-x86_64"
-   chmod +x runtime-x86_64
-   TARGET_APPIMAGE=path/to/AppImage ./runtime --appimage-extract ./runtime-x86_64
+   > wget -c "https://github.com/AppImage/type2-runtime/releases/download/continuous/runtime-x86_64"
+   > chmod +x runtime-x86_64
+   > TARGET_APPIMAGE=path/to/AppImage ./runtime --appimage-extract ./runtime-x86_64
 
 This will call ``--appimage-extract`` on the downloaded AppImage runtime to extract your AppImage without having to rely on the (possibly tampered) runtime of your AppImage.
 
@@ -75,7 +75,7 @@ Another possible way to inspect the content of an AppImage is to use the normal 
 
 The other options described on this page are usually preferred. This is primarily useful if you have to inspect a type 1 AppImage without any external tools.
 
-.. code-block:: bash
+.. code-block:: shell
 
     > mkdir mountpoint
     > sudo mount -o loop my.AppImage mountpoint/

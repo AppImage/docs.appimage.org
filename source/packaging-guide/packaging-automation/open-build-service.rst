@@ -72,12 +72,12 @@ The following sections describe how to do the same manually.
 Setting up an AppImage target for the project
 +++++++++++++++++++++++++++++++++++++++++++++
 
-You need to tell OBS that for all source code packages in your home project you want to generate AppImages. To enable a target for AppImage, you can either use the command line tool :code:`osc meta prj -e ...` or use the OBS web interface:
+You need to tell OBS that for all source code packages in your home project you want to generate AppImages. To enable a target for AppImage, you can either use the command line tool ``osc meta prj -e ...`` or use the OBS web interface:
 
 * Go to your home project
 * Click on "Advanced"
 * Click on "Meta"
-* Copy and paste the :code:`<repository>` tags from the following:
+* Copy and paste the ``<repository>`` tags from the following:
 
 .. code-block:: xml
 
@@ -108,10 +108,10 @@ You need to tell OBS that for all source code packages in your home project you 
 
 
 .. note::
-    The :code:`AppImage.arm` repository is used for the ARM architectures for now. This will possibly change in the future.
+    The ``AppImage.arm`` repository is used for the ARM architectures for now. This will possibly change in the future.
 
 
-Be sure to just insert the :code:`<repository>` tags into your existing file. For AppImage, we need to select one of the build targets that is built in your obs project. In the example above, please make sure to replace :code:`home:probono` with the actual name of the obs project where :code:`appimage.yml` should look for its resources - this can be the current project, and even RPMs created by the same package work as resources for AppImage.
+Be sure to just insert the ``<repository>`` tags into your existing file. For AppImage, we need to select one of the build targets that is built in your obs project. In the example above, please make sure to replace ``home:probono`` with the actual name of the obs project where ``appimage.yml`` should look for its resources - this can be the current project, and even RPMs created by the same package work as resources for AppImage.
 
 Also check whether openSUSE:Leap:15.6 is still currently supported and update the version if necessary.
 
@@ -119,9 +119,9 @@ Also check whether openSUSE:Leap:15.6 is still currently supported and update th
 Use native AppImage build support
 +++++++++++++++++++++++++++++++++
 
-In order to build an AppImage you need to provide a file called :code:`appimage.yml`. OBS needs to get all the required resources before building. This is needed in order to be able to track changes and to find out whether a rebuild is needed, and to provide the resources in a secured and reproducible environment without network access.
+In order to build an AppImage you need to provide a file called ``appimage.yml``. OBS needs to get all the required resources before building. This is needed in order to be able to track changes and to find out whether a rebuild is needed, and to provide the resources in a secured and reproducible environment without network access.
 
-The :code:`build:` section can be used to define resources which are required to build. This can be binary packages (currently only rpm) or URLs to any other source control management systems or file. The binary packages listed in the build section get installed to the build  environment, but not extracted into the AppDir.
+The ``build:`` section can be used to define resources which are required to build. This can be binary packages (currently only rpm) or URLs to any other source control management systems or file. The binary packages listed in the build section get installed to the build  environment, but not extracted into the AppDir.
 
 The packages listed in the ingredients section do not get installed into the build environment but get extracted into the AppDir.
 
@@ -132,10 +132,10 @@ URLs for the supported source control management systems (git, svn, cvs, hg, bzr
     URLs to files get handled via the download_files source service. It is handy to provide single files to the build.
 
 
-Scripts can be executed in the form of the script hooks of the :code:`appimage.yml` file.
+Scripts can be executed in the form of the script hooks of the ``appimage.yml`` file.
 
 .. note::
-    :code:`Recipe` files are **not** supported, anything they can do can be done inside the :code:`script` sections of :code:`appimage.yml`.
+    ``Recipe`` files are **not** supported, anything they can do can be done inside the ``script`` sections of ``appimage.yml``.
 
     .. note:: It is optional to either
 
@@ -151,20 +151,20 @@ Scripts can be executed in the form of the script hooks of the :code:`appimage.y
 
 Please note that it uses the following environment variables which are provided by the build system:
 
-* :code:`BUILD_SOURCE_DIR`: The absolute directory name where all source files or directories are hosted
-* :code:`BUILD_APPDIR`: The directory which will get packaged as AppImage file
+* ``BUILD_SOURCE_DIR``: The absolute directory name where all source files or directories are hosted
+* ``BUILD_APPDIR``: The directory which will get packaged as AppImage file
 
 
 Most simple example
 +++++++++++++++++++
 
-This :code:`APPIMAGE_NAME` application will get package into an :code:`.AppImage` file just by installing the :code:`RPM_PACKAGE_NAME`. The binary can get patched automatically when using the :code:`binpatch: true` option
+This ``APPIMAGE_NAME`` application will get package into an ``.AppImage`` file just by installing the ``RPM_PACKAGE_NAME``. The binary can get patched automatically when using the ``binpatch: true`` option
 
 |question| From which repositories can rpms be installed? Only my own or those of all OBS users?
 
 |question| Can additional repositories be added?
 
-::
+.. code-block:: yaml
 
     app: APPIMAGE_NAME
     binpatch: true
@@ -185,7 +185,7 @@ This :code:`APPIMAGE_NAME` application will get package into an :code:`.AppImage
 Simple example building from source
 +++++++++++++++++++++++++++++++++++
 
-::
+.. code-block:: yaml
 
     app: QtQuickApp
 
@@ -205,7 +205,7 @@ Simple example building from source
       - linuxdeployqt $BUILD_APPDIR/usr/share/applications/*.desktop -qmldir=$BUILD_SOURCE_DIR/ -bundle-non-qt-libs -verbose=2
 
 
-We have to also upload a file called :code:`_service` containing
+We have to also upload a file called ``_service`` containing
 
 .. code-block:: xml
 
@@ -214,11 +214,13 @@ We have to also upload a file called :code:`_service` containing
     </services>
 
 
-When trying this on a private OBS instance, please make sure to have :code:`obs-service-appimage` installed. This can be done e.g. on a Leap 42.1 machine with::
+When trying this on a private OBS instance, please make sure to have ``obs-service-appimage`` installed. This can be done e.g. on a Leap 42.1 machine with:
 
-    zypper addrepo http://download.opensuse.org/repositories/openSUSE:Tools/openSUSE_42.1/openSUSE:Tools.repo
-    zypper ref
-    zypper in obs-service-appimage
+.. code-block:: shell
+
+    > zypper addrepo http://download.opensuse.org/repositories/openSUSE:Tools/openSUSE_42.1/openSUSE:Tools.repo
+    > zypper ref
+    > zypper in obs-service-appimage
 
 
 Options inside of the build section
@@ -226,7 +228,7 @@ Options inside of the build section
 
 you can add multiple items in the sections.
 
-::
+.. code-block:: yaml
 
     build:
       packages:
@@ -261,24 +263,14 @@ Continuous builds with GitHub and OBS
 
 If your source code lives on GitHub, then you can set up a mechanism that makes GitHub inform OBS about any changes to the source code, and trigger a rebuild automatically.
 
-A token needs to be generated, this can be done using the :code:`osc` OBS command line client:
+A token needs to be generated, this can be done using the ``osc`` OBS command line client with the command ``osc token --create``. You can install ``osc`` with your package manager.
 
-.. code-block:: shell
-
-    sudo apt update && sudo apt install osc # or your package manager's equivalent
-    osc token --create
+If you have already generated a token in the past, you can show it with ``osc token``.
 
 
-If you have already generated a token in the past, you can show it with
+On the GitHub project page, click on "Settings", then click on "Integrations & services", then click on "Add service", enter "Obs" and select it. For example, for the `QtQuickApp <https://github.com/probonopd/QtQuickApp/>`_ project go to ``https://github.com/probonopd/QtQuickApp/settings/installations``, and corresponding to https://build.opensuse.org/package/show/home:probono/QtQuickApp enter ``home:probono`` for the project and ``QtQuickApp`` in the Package field, as well as the token generated above in the "Token" field. Please note that you need to supply your own username and project name instead of the one in the example above.
 
-.. code-block:: shell
-
-    osc token
-
-
-On the GitHub project page, click on "Settings", then click on "Integrations & services", then click on "Add service", enter "Obs" and select it. For example, for the `QtQuickApp <https://github.com/probonopd/QtQuickApp/>`_ project go to :code:`https://github.com/probonopd/QtQuickApp/settings/installations`, and corresponding to https://build.opensuse.org/package/show/home:probono/QtQuickApp enter :code:`home:probono` for the project and :code:`QtQuickApp` in the Package field, as well as the token generated above in the "Token" field. Please note that you need to supply your own username and project name instead of the one in the example above.
-
-Now, whenever you do a :code:`git push` to your project, OBS will build it for you.
+Now, whenever you do a ``git push`` to your project, OBS will build it for you.
 
 
 .. _openSUSE Build Service: https://build.opensuse.org/

@@ -23,11 +23,11 @@ The easiest way to set up this project and build the documentation is to use the
 .. code-block:: shell
 
    # Clone the project
-   git clone https://github.com/AppImage/docs.appimage.org.git
-   cd docs.appimage.org
+   > git clone https://github.com/AppImage/docs.appimage.org.git
+   > cd docs.appimage.org
 
    # Set up and build the documentation
-   make.sh html
+   > make.sh html
 
 Calling make.sh will build the documentation after setting up the project and everything required to build the documentation (such as creating a Python virtual environment and installing the dependencies in it). It will only perform the preparation steps that haven't been done before, so you can simply call it each time you want to re-build the documentation.
 
@@ -41,19 +41,19 @@ If you want to set up the project and build the documentation manually, you can 
 .. code-block:: shell
 
    # Clone the project
-   git clone https://github.com/AppImage/docs.appimage.org.git
-   cd docs.appimage.org
+   > git clone https://github.com/AppImage/docs.appimage.org.git
+   > cd docs.appimage.org
 
    # Create and activate a Python virtual environment
-   mkdir venv
-   python3 -m venv venv
-   source venv/bin/activate
+   > mkdir venv
+   > python3 -m venv venv
+   > source venv/bin/activate
 
    # Install the required dependencies into the venv
-   pip3 install -r requirements.txt
+   > pip3 install -r requirements.txt
 
    # Build the documentation
-   make html
+   > make html
 
 After that, you can rebuild the documentation simply with ``make html`` (although you have to execute ``source venv/bin/activate`` before that in every new terminal session).
 

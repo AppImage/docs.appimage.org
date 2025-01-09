@@ -60,9 +60,9 @@ Setting up FUSE 2 alongside of FUSE 3 on recent Ubuntu (>=22.04), Debian and the
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. note::
-   This is valid only for recent distributions having :code:`fuse3` installed by default. To be sure, check whether the :code:`fuse3` package is installed, e.g. by running :code:`dpkg -l | grep fuse3` in the terminal and checking for a line starting with :code:`ii  fuse3` (if there is none, your distribution is not using :code:`fuse3`).
+   This is valid only for recent distributions having ``fuse3`` installed by default. To be sure, check whether the ``fuse3`` package is installed, e.g. by running ``dpkg -l | grep fuse3`` in the terminal and checking for a line starting with ``ii  fuse3`` (if there is none, your distribution is not using ``fuse3``).
 
-   If your distribution is not using :code:`fuse3`, please refer to the :ref:`next section <fuse_ubuntu_old>`.
+   If your distribution is not using ``fuse3``, please refer to the :ref:`next section <fuse_ubuntu_old>`.
 
 First, add the official repository with FUSE 2 with ``sudo add-apt-repository universe``. Then, install it with ``sudo apt install libfuse2t64`` for Ubuntu >= 24.04 or ``sudo apt install libfuse2`` for Ubuntu >= 22.04 and < 24.04 (the package has been renamed in Ubuntu 24.04). Now, FUSE 2 should be working alongside of FUSE 3.
 
@@ -78,9 +78,9 @@ Setting up FUSE 2 on old Ubuntu (pre-22.04), Debian and their derivatives
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. warning::
-   This is valid only for older distributions *not* having ``fuse3`` installed by default. To be sure, check whether the :code:`fuse3` package is installed, e.g. by running :code:`dpkg -l | grep fuse3` in the terminal and checking for a line starting with :code:`ii  fuse3`.
+   This is valid only for older distributions *not* having ``fuse3`` installed by default. To be sure, check whether the ``fuse3`` package is installed, e.g. by running ``dpkg -l | grep fuse3`` in the terminal and checking for a line starting with ``ii  fuse3``.
 
-   If your distribution is using :code:`fuse3`, please refer to the :ref:`previous section <fuse_ubuntu_new>`.
+   If your distribution is using ``fuse3``, please refer to the :ref:`previous section <fuse_ubuntu_new>`.
 
    Installing the ``fuse`` package with ``fuse3`` installed might break your system! If this happened to you, follow `these instructions <https://github.com/orgs/AppImage/discussions/1339>`_ to recover your system.
 
@@ -143,9 +143,9 @@ On Clear Linux OS, FUSE *should* be enabled by default. However, if you see the 
 
 .. code-block:: shell
 
-   sudo mkdir -p /etc/modules-load.d/
-   echo "fuse" > /etc/modules-load.d/fuse.conf
-   sudo reboot
+   > sudo mkdir -p /etc/modules-load.d/
+   > echo "fuse" > /etc/modules-load.d/fuse.conf
+   > sudo reboot
 
 .. seealso::
    This bug was also `reported on GitHub <https://github.com/clearlinux/distribution/issues/273>`_.

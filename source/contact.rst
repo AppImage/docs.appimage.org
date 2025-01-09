@@ -20,6 +20,6 @@ IRC
 An alternative way to contact is us to join our `IRC channel #appimage <ircs://irc.libera.chat/appimage>`__ on `Libera.Chat <https://libera.chat>`__ (`webchat <https://web.libera.chat/#AppImage>`__). While this may be faster, you have to stay online for some hours until someone checks the chat and can help you, so don't give up too quickly, and e.g. leave the tab open in the background if you can. Please read `this article <https://workaround.org/getting-help-on-irc/>`__ before joining the IRC chat if you are new to IRC.
 
 .. seealso::
-   The :code:`#appimage` channel on freenode has been abandoned and is not maintained by the AppImage project. The channel :code:`##appimage` (which was created after :code:`#appimage` was forcefully removed because it mentioned our move) has never been official and has never been maintained by us.
+   The ``#appimage`` channel on freenode has been abandoned and is not maintained by the AppImage project. The channel ``##appimage`` (which was created after ``#appimage`` was forcefully removed because it mentioned our move) has never been official and has never been maintained by us.
 
    Please see `this article <https://www.devever.net/~hl/freenode_abuse2>`__ for more information on what happened to our channel and why we planned to transition to a new network.

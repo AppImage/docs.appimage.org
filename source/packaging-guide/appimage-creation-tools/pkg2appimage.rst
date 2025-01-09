@@ -33,7 +33,7 @@ To then build an AppImage from the recipe, simply run pkg2appimage with the file
 Introduction
 ------------
 
-The so-called recipe files (which are :code:`.yml` description files) tell pkg2appimage where to get the ingredients from and how to convert them to an AppImage (besides the general steps that pkg2appimage always performs). Study some `examples <https://github.com/AppImage/pkg2appimage/tree/master/recipes>`__ to see how it works.
+The so-called recipe files (which are ``.yml`` description files) tell pkg2appimage where to get the ingredients from and how to convert them to an AppImage (besides the general steps that pkg2appimage always performs). Study some `examples <https://github.com/AppImage/pkg2appimage/tree/master/recipes>`__ to see how it works.
 
 .. warning::
    pkg2appimage suffers from a few notable issues:
@@ -52,7 +52,7 @@ To convert a binary package into an AppImage, you have to write a so-called reci
 
 ``.yml`` is an extension used for *YAML*, a format to describe data. Similarly to JSON, it combines associative lists (key-value pairs, also known as maps or dicts), lists and scalar values (like strings).
 
-The format of these :code:`.yml` files is not part of the AppImage :ref:`specification <appimage-specification>` (which describes the AppImage container format) or :ref:`reference implementation <reference-implementation>` (which implements a conforming runtime and a tool to create conforming AppImages); it is just defined and used by the pkg2appimage project.
+The format of these ``.yml`` files is not part of the AppImage :ref:`specification <appimage-specification>` (which describes the AppImage container format) or :ref:`reference implementation <reference-implementation>` (which implements a conforming runtime and a tool to create conforming AppImages); it is just defined and used by the pkg2appimage project.
 
 This section provides an introduction to the recipe structure and a few examples describing how to use all the advanced features.
 
@@ -60,7 +60,7 @@ This section provides an introduction to the recipe structure and a few examples
 General anatomy of ``.yml`` files
 ---------------------------------
 
-The general format of :code:`.yml` files is as follows:
+The general format of ``.yml`` files is as follows:
 
 .. code-block:: yaml
 
@@ -75,7 +75,7 @@ The general format of :code:`.yml` files is as follows:
     (instructions on how to convert these ingredients to an AppImage)
 
 
-As you can see, the :code:`.yml` file consists of three sections:
+As you can see, the ``.yml`` file consists of three sections:
 
 1. The **overall section** (containing the name of the application and optional flags)
 2. The **ingredients section** (describing from where to get the binary ingredients used for the AppImage)
@@ -90,28 +90,28 @@ Overall section
 ``app`` key
 ###########
 
-Mandatory. Contains the name of the application. If the :code:`.yml` file uses ingredients from packages (e.g., :code:`.deb`), then the name must match the package name of the main executable.
+Mandatory. Contains the name of the application. If the ``.yml`` file uses ingredients from packages (e.g., ``.deb``), then the name must match the package name of the main executable.
 
 
 Keys that enable ability to relocate
 ####################################
 
-Optional. Either :code:`binpatch: true` or :code:`union: true`. These keys enable workarounds that make it possible to run applications from different, changing places in the file system (i.e., make them relocateable) that are not made for this. For example, some applications contain hardcoded paths to a compile-time :code:`$PREFIX` such as :code:`/usr`. This is generally discouraged, and application authors are asked to use paths relative to the main executable instead. Libraries like *binreloc* exist to make this easier. Since many applications are not relocateable yet, there are workarounds which can be used by one of these keys:
+Optional. Either ``binpatch: true`` or ``union: true``. These keys enable workarounds that make it possible to run applications from different, changing places in the file system (i.e., make them relocateable) that are not made for this. For example, some applications contain hardcoded paths to a compile-time ``$PREFIX`` such as ``/usr``. This is generally discouraged, and application authors are asked to use paths relative to the main executable instead. Libraries like *binreloc* exist to make this easier. Since many applications are not relocateable yet, there are workarounds which can be used by one of these keys:
 
-* :code:`binpatch: true`  indicates that binaries in the AppImage should be patched to replace the string :code:`/usr` by the string :code:`././`,  an :code:`AppRun` file should be put inside the AppImage that does a :code:`chdir()` to the :code:`usr/` directory of inside AppDir before executing the payload application. The net effect is this that applications can find their resources in the  :code:`usr/` directory inside the AppImage as long as they do not internally use :code:`chdir()` operations themselves.
-* :code:`union: true` indicates that an :code:`AppRun` file should be put inside the AppImage that tries to create the impression of a union file system, effectively creating the impression to the payload application that the contents of the AppImage are overlayed over :code:`/`. This can be achieved, e.g., using :code:`LD_PRELOAD` and a library that redirects file system calls. This works as long as the payload application is a dynamically linked binary.
+* ``binpatch: true``  indicates that binaries in the AppImage should be patched to replace the string ``/usr`` by the string ``././``,  an ``AppRun`` file should be put inside the AppImage that does a ``chdir()`` to the ``usr/`` directory of inside AppDir before executing the payload application. The net effect is this that applications can find their resources in the  ``usr/`` directory inside the AppImage as long as they do not internally use ``chdir()`` operations themselves.
+* ``union: true`` indicates that an ``AppRun`` file should be put inside the AppImage that tries to create the impression of a union file system, effectively creating the impression to the payload application that the contents of the AppImage are overlayed over ``/``. This can be achieved, e.g., using ``LD_PRELOAD`` and a library that redirects file system calls. This works as long as the payload application is a dynamically linked binary.
 
 
 Ingredients section
 +++++++++++++++++++
 
-Describes how to acquire the binary ingredients that go into the AppImage. Binary ingredients can be archives like :code:`.zip` files, packages like :code:`.deb` files or APT repositories like Debian package archives or PPAs.
+Describes how to acquire the binary ingredients that go into the AppImage. Binary ingredients can be archives like ``.zip`` files, packages like ``.deb`` files or APT repositories like Debian package archives or PPAs.
 
 .. note::
-    In the future, source ingredients could also be included in the :code:`.yml` file definition. Source ingredients could include tarballs and Git repositories. It would probably be advantageous if we could share the definition with other formats like snapcraft's :code:`.yaml` files. Proposals for this are welcome.
+    In the future, source ingredients could also be included in the ``.yml`` file definition. Source ingredients could include tarballs and Git repositories. It would probably be advantageous if we could share the definition with other formats like snapcraft's ``.yaml`` files. Proposals for this are welcome.
 
 
-:code:`.yml` files are supposed not to hardcode version numbers, but determine the latest version at runtime. If the  :code:`.yml` files describes the released version, it should determine the latest released version at runtime. If the  :code:`.yml` files describes the development version, it might reference the latest nightly or continuous build instead.
+``.yml`` files are supposed not to hardcode version numbers, but determine the latest version at runtime. If the  ``.yml`` files describes the released version, it should determine the latest released version at runtime. If the  ``.yml`` files describes the development version, it might reference the latest nightly or continuous build instead.
 
 
 Using ingredients from a binary archive
@@ -128,7 +128,7 @@ The following example ingredients section describes how to get the latest versio
       - tar zxvf atom*tar.gz
 
 
-The :code:`script` section inside the :code:`ingredients` section determines its URL, downloads and extracts the binary archive.
+The ``script`` section inside the ``ingredients`` section determines its URL, downloads and extracts the binary archive.
 
 
 Using ingredients from a debian repository
@@ -145,16 +145,16 @@ The following example ingredients section describes how to get the latest versio
       - deb http://download.opensuse.org/repositories/isv:/KDAB/xUbuntu_16.04/ /
 
 
-The :code:`dist` section inside the :code:`ingredients` section defines which Debian distribution should be used as a base. The :code:`sources` section inside the :code:`ingredients` section describes the repositories from which the package should be pulled. The entries are in the same format as lines in a debian :code:`sources.list` file. Note that the :code:`http://download.opensuse.org/repositories/isv:/KDAB/xUbuntu_16.04` repository needs the :code:`http://archive.ubuntu.com/ubuntu/` repository so that the dependencies can be resolved.
+The ``dist`` section inside the ``ingredients`` section defines which Debian distribution should be used as a base. The ``sources`` section inside the ``ingredients`` section describes the repositories from which the package should be pulled. The entries are in the same format as lines in a debian ``sources.list`` file. Note that the ``http://download.opensuse.org/repositories/isv:/KDAB/xUbuntu_16.04`` repository needs the ``http://archive.ubuntu.com/ubuntu/`` repository so that the dependencies can be resolved.
 
 .. note::
-    In the future, other types of packages like :code:`.rpm` could also be included in the :code:`.yml` file definition. Proposals for this are welcome if the proposer also implements support for this in the `pkg2appimage script <https://github.com/AppImageCommunity/pkg2appimage/blob/master/pkg2appimage>`_.
+    In the future, other types of packages like ``.rpm`` could also be included in the ``.yml`` file definition. Proposals for this are welcome if the proposer also implements support for this in the `pkg2appimage script <https://github.com/AppImageCommunity/pkg2appimage/blob/master/pkg2appimage>`_.
 
 
 Using ingredients from an Ubuntu PPA
 ####################################
 
-This is a special case of a Debian repository. PPAs can be uniquely identified with the pattern :code:`owner/name` and can, for brevity, be specified like this:
+This is a special case of a Debian repository. PPAs can be uniquely identified with the pattern ``owner/name`` and can, for brevity, be specified like this:
 
 .. code-block:: yaml
 
@@ -166,10 +166,10 @@ This is a special case of a Debian repository. PPAs can be uniquely identified w
       - geany-dev/ppa
 
 
-The :code:`ppas` section inside the :code:`ingredients` section lets you specify one or more Ubuntu PPAs. This is equivalent to, but more elegant than, adding the corresponding :code:`sources.list` entries to the :code:`sources` section inside the :code:`ingredients` section.
+The ``ppas`` section inside the ``ingredients`` section lets you specify one or more Ubuntu PPAs. This is equivalent to, but more elegant than, adding the corresponding ``sources.list`` entries to the ``sources`` section inside the ``ingredients`` section.
 
 .. note::
-    In the future, similar shortcuts for other types of personal repositories, such as projects on openSUSE build service, could also be included in the :code:`.yml` file definition. Proposals for this are welcome if the proposer also implements support for this in the `pkg2appimage script <https://github.com/AppImageCommunity/pkg2appimage/blob/master/pkg2appimage>`_.
+    In the future, similar shortcuts for other types of personal repositories, such as projects on openSUSE build service, could also be included in the ``.yml`` file definition. Proposals for this are welcome if the proposer also implements support for this in the `pkg2appimage script <https://github.com/AppImageCommunity/pkg2appimage/blob/master/pkg2appimage>`_.
 
 
 Using local deb files
@@ -195,7 +195,7 @@ As you can see, for a single file, just use
   - /path/to/file.deb
 
 
-And for all files in a directory (like local repository). Note that the end of the path ends with :code:`/*`:
+And for all files in a directory (like local repository). Note that the end of the path ends with ``/*``:
 
 .. code-block:: yaml
 
@@ -209,7 +209,7 @@ And for all files in a directory (like local repository). Note that the end of t
 Excluding certain packages
 ##########################
 
-Some packages declare dependencies that are not necessarily required to run the software. The :code:`.yml` format allow overriding these by pretending that the packages are installed already. To exclude these dependencies (and any dependencies they would otherwise pull in), the packages have to be added to the :code:`exclude` key in the :code:`ingredients` section:
+Some packages declare dependencies that are not necessarily required to run the software. The ``.yml`` format allow overriding these by pretending that the packages are installed already. To exclude these dependencies (and any dependencies they would otherwise pull in), the packages have to be added to the ``exclude`` key in the ``ingredients`` section:
 
 .. code-block:: yaml
 
@@ -229,13 +229,13 @@ Some packages declare dependencies that are not necessarily required to run the 
       - dmsetup
 
 
-In this example, excluding :code:`qemu` means that the qemu package and all of its dependencies that it would normally pull into the AppImage will be excluded from the AppImage (unless something else in the AppImage pulls in some of those depdencies already).
+In this example, excluding ``qemu`` means that the qemu package and all of its dependencies that it would normally pull into the AppImage will be excluded from the AppImage (unless something else in the AppImage pulls in some of those depdencies already).
 
 
 Pretending certain versions of dependencies being installed
 ###########################################################
 
-The dependency information in some packages may result in the package manager to refuse the application to be installed if some **exact** versions of dependencies are not present in the system. In this case, it may be necessary pretend the **exact** version of a dependency to be installed on the target system by using the :code:`pretend` key in the :code:`ingredients` section:
+The dependency information in some packages may result in the package manager to refuse the application to be installed if some **exact** versions of dependencies are not present in the system. In this case, it may be necessary pretend the **exact** version of a dependency to be installed on the target system by using the ``pretend`` key in the ``ingredients`` section:
 
 .. code-block:: yaml
 
@@ -255,7 +255,7 @@ The assumption here is that every target system has at least the pretended versi
 Arbitrary scripts in the ingredients section
 ############################################
 
-You may add arbitrary shell commands to the :code:`script` section inside the :code:`ingredients` section in order to facilitate the retrieval of the binary ingredients. This allows building AppImages for complex situations as illustrated in the following example:
+You may add arbitrary shell commands to the ``script`` section inside the ``ingredients`` section in order to facilitate the retrieval of the binary ingredients. This allows building AppImages for complex situations as illustrated in the following example:
 
 .. code-block:: yaml
 
@@ -270,19 +270,19 @@ This downloads the payload application, JabRef, and the required JRE which requi
 
 The script could also be used to fetch pre-built Debian packages from a GitHub release page, or to override the version of a package.
 
-Use :code:`post_script` instead of :code:`script` if you need this to run *after* the other ingredient processing has taken place.
+Use ``post_script`` instead of ``script`` if you need this to run *after* the other ingredient processing has taken place.
 
 
 Script section
 ++++++++++++++
 
-The :code:`script` section may contain arbitrary shell commands that are required to translate the binary ingredients to an :code:`AppDir` suitable for generating an AppImage.
+The ``script`` section may contain arbitrary shell commands that are required to translate the binary ingredients to an ``AppDir`` suitable for generating an AppImage.
 
 
 The script section needs to copy ingredients into place
 #######################################################
 
-If :code:`.deb` packages, Debian repositories or PPAs have been specified in the :code:`ingredients` section, then their dependencies are resolved automatically (taking a blacklist of packages that are assumed to be present on all target systems in a recent enough version into account, such as glibc) and the packages are extracted into an AppDir. The shell commands contained in the :code:`script` section are executed inside the root directory of this AppDir. However, some packages place things in non-standard locations, i.e. the main executable is outside of :code:`usr/bin`. In these cases, the commands contained in the :code:`script` section should normalize the file system structure. Sometimes it is also necessary to edit further files to reflect the changed file location. The following example illustrates this:
+If ``.deb`` packages, Debian repositories or PPAs have been specified in the ``ingredients`` section, then their dependencies are resolved automatically (taking a blacklist of packages that are assumed to be present on all target systems in a recent enough version into account, such as glibc) and the packages are extracted into an AppDir. The shell commands contained in the ``script`` section are executed inside the root directory of this AppDir. However, some packages place things in non-standard locations, i.e. the main executable is outside of ``usr/bin``. In these cases, the commands contained in the ``script`` section should normalize the file system structure. Sometimes it is also necessary to edit further files to reflect the changed file location. The following example illustrates this:
 
 .. code-block:: yaml
 
@@ -300,9 +300,9 @@ If :code:`.deb` packages, Debian repositories or PPAs have been specified in the
     - sed -i -e 's|/opt/webtorrent-desktop/||g' webtorrent-desktop.desktop
 
 
-In the :code:`ingredients` section, a :code:`.deb` package is downloaded. Then, in the :code:`script` section, the main executable is moved to its standard location in the AppDir. Finally, the :code:`.desktop` file is updated to reflect this.
+In the ``ingredients`` section, a ``.deb`` package is downloaded. Then, in the ``script`` section, the main executable is moved to its standard location in the AppDir. Finally, the ``.desktop`` file is updated to reflect this.
 
-If other types of binary ingredients have been specified, then the shell commands contained in the :code:`script` section need to retrieve these by copying them into place. Note that since the commands contained in the :code:`script` section are executed inside the root directory of the AppDir, the ingredients downloaded in the `ingredients` sections are one directory level above, i.e., in :code:`../`. The following example illustrates this:
+If other types of binary ingredients have been specified, then the shell commands contained in the ``script`` section need to retrieve these by copying them into place. Note that since the commands contained in the ``script`` section are executed inside the root directory of the AppDir, the ingredients downloaded in the `ingredients` sections are one directory level above, i.e., in ``../``. The following example illustrates this:
 
 .. code-block:: yaml
 
@@ -315,15 +315,15 @@ If other types of binary ingredients have been specified, then the shell command
     - cp ../Telegram/Telegram ./usr/bin/telegram-desktop
 
 
-In the :code:`ingredients` section, an archive is downloaded and unpacked. Then, in the :code:`script` section, the main executable is copied into place inside the AppDir.
+In the ``ingredients`` section, an archive is downloaded and unpacked. Then, in the ``script`` section, the main executable is copied into place inside the AppDir.
 
 
 The script section needs to copy icon and `.desktop` file in place
 ##################################################################
 
-Since an AppImage may contain more than one executable binary (e.g. helper binaries launched by the main executable) and also may contain multiple :code:`.desktop` files, a clear entry point into the AppImage is required. For this reason, there is the convention that there should be exactly one :code:`$ID.desktop` file and corresponding icon file in the top-level directory of the AppDir.
+Since an AppImage may contain more than one executable binary (e.g. helper binaries launched by the main executable) and also may contain multiple ``.desktop`` files, a clear entry point into the AppImage is required. For this reason, there is the convention that there should be exactly one ``$ID.desktop`` file and corresponding icon file in the top-level directory of the AppDir.
 
-The script running the :code:`.yml` file tries to do this automatically, which works if the name of the application specified in the :code:`app:` key matches the name of the :code:`$ID.desktop` file and the corresponding icon file. For example, if :code:`app: myapp` is set, and there is :code:`usr/bin/myapp`, :code:`usr/share/applications/myapp.desktop`, and :code:`usr/share/icons/*/myapp.png`, then the :code:`myapp.desktop` and :code:`myapp.png` files are automatically copied into the top-level directory of the AppDir. Unfortunately, many packages are  in their naming. In that case, the shell commands contained in the :code:`script` section must copy exactly one :code:`$ID.desktop` file and the corresponding icon file into the top-level directory of the AppDir. The following example illustrates this:
+The script running the ``.yml`` file tries to do this automatically, which works if the name of the application specified in the ``app:`` key matches the name of the ``$ID.desktop`` file and the corresponding icon file. For example, if ``app: myapp` is set, and there is ``usr/bin/myapp``, ``usr/share/applications/myapp.desktop``, and ``usr/share/icons/*/myapp.png``, then the ``myapp.desktop`` and ``myapp.png`` files are automatically copied into the top-level directory of the AppDir. Unfortunately, many packages are  in their naming. In that case, the shell commands contained in the ``script`` section must copy exactly one ``$ID.desktop`` file and the corresponding icon file into the top-level directory of the AppDir. The following example illustrates this:
 
 .. code-block:: yaml
 
@@ -332,7 +332,7 @@ The script running the :code:`.yml` file tries to do this automatically, which w
     - mv usr/bin/fritzing.desktop .
 
 
-Unfortunately, many applications don't include a :code:`$ID.desktop` file. If it is missing, the shell commands contained in the :code:`script` section need to create it. The following (simplified) example illustrates this:
+Unfortunately, many applications don't include a ``$ID.desktop`` file. If it is missing, the shell commands contained in the ``script`` section need to create it. The following (simplified) example illustrates this:
 
 .. code-block:: yaml
 
@@ -352,7 +352,7 @@ Unfortunately, many applications don't include a :code:`$ID.desktop` file. If it
 
 
 .. note::
-    The optional :code:`desktopintegration` script assumes that the name of the application specified in the :code:`app:` key matches the name of the :code:`$ID.desktop` file and the corresponding main executable (case-sensitive). For example, if :code:`app: myapp` is set, it expects :code:`usr/bin/myapp`and :code:`usr/share/applications/myapp.desktop`. For this reason, if you want to use the optional :code:`desktopintegration` script, you may rearrange the AppDir. The following example illustrates this:
+    The optional ``desktopintegration`` script assumes that the name of the application specified in the ``app:`` key matches the name of the ``$ID.desktop`` file and the corresponding main executable (case-sensitive). For example, if ``app: myapp`` is set, it expects ``usr/bin/myapp``and ``usr/share/applications/myapp.desktop``. For this reason, if you want to use the optional ``desktopintegration`` script, you may rearrange the AppDir. The following example illustrates this:
 
     .. code-block:: yaml
 
@@ -368,9 +368,9 @@ Unfortunately, many applications don't include a :code:`$ID.desktop` file. If it
 Converting Python applications packaged with pip
 ------------------------------------------------
 
-Let's say you have already packaged your Python application using :code:`pip`. in this case, you can use pkg2appimage to generate an AppImage. In the following example, we will convert a Python 3 application using :code:`pip3`.
+Let's say you have already packaged your Python application using ``pip``. in this case, you can use pkg2appimage to generate an AppImage. In the following example, we will convert a Python 3 application using ``pip3``.
 
-The following recipe will convert a Python 3 PyQt application using :code:`virtualenv` and :code:`pip3`:
+The following recipe will convert a Python 3 PyQt application using ``virtualenv`` and ``pip3``:
 
 .. code-block:: yaml
 
