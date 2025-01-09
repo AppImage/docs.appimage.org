@@ -6,7 +6,7 @@ Using the Open Build Service
 .. todo::
    Make sure everything on this page is still up to date.
 
-`Open Build Service <https://openbuildservice.org/>`__ is a generic system to build and distribute packages from sources in an automatic, consistent and reproducible way. It allows you to build software for various package formats and distributions. Now it can also build AppImages that run on a variety of distributions.
+`Open Build Service <https://openbuildservice.org>`__ is a generic system to build and distribute packages from sources in an automatic, consistent and reproducible way. It allows you to build software for various package formats and distributions. Now it can also build AppImages that run on a variety of distributions.
 
 The `openSUSE Build Service`_ is the public instance of the Open Build Service (OBS). This infrastructure can can be used for free by open source projects. However, you are not limited to it - you can set up your own Open Build Service instance if you like.
 
@@ -23,7 +23,7 @@ There are different ways to build AppImages. Why is using Open Build Service int
 * If you are already using Open Build Service, then *also* generating an AppImage should be straightforward
 * You can use the public `openSUSE Build Service`_ instance and use the existing infrastructure to build and distribute your AppImage (for open source projects only)
 * You can build AppImages in "automatic, consistent and reproducible way". This means that unlike when you build your AppImages on, e.g., GitHub Actions, where you can pull in arbitrarily changing build dependencies and AppImage ingredients from the net, your builds on Open Build Service can only use build dependencies and AppImage ingredients that have their source code in distribution repositories or on Open Build Service. While this may be a limitation in some cases (e.g., for agile/continuous builds), it means that the build result is much more reproducible
-* OBS helps you to keep the ingredients of your AppImage up-to-date all the time using proven distribution methodologies and tool, relieving the person or group providing AppImages from manual work as discussed `here <https://www.youtube.com/watch?v=BrWB2OZ9h2Y>`_
+* OBS helps you to keep the ingredients of your AppImage up-to-date all the time using proven distribution methodologies and tool, relieving the person or group providing AppImages from manual work as discussed `here <https://www.youtube.com/watch?v=BrWB2OZ9h2Y>`__
 * OBS automatically builds a new AppImage for you if one if its ingredients is updated on OBS
 * OBS automatically signs AppImages using the user's key on OBS
 * OBS automatically embeds update information into AppImages to enable binary delta updates using AppImageUpdate. This means that if in a 100 MB AppImage only 1 MB changed between versions, then the user has to download only 1 MB rather than 100 MB
@@ -268,7 +268,7 @@ A token needs to be generated, this can be done using the ``osc`` OBS command li
 If you have already generated a token in the past, you can show it with ``osc token``.
 
 
-On the GitHub project page, click on "Settings", then click on "Integrations & services", then click on "Add service", enter "Obs" and select it. For example, for the `QtQuickApp <https://github.com/probonopd/QtQuickApp/>`_ project go to ``https://github.com/probonopd/QtQuickApp/settings/installations``, and corresponding to https://build.opensuse.org/package/show/home:probono/QtQuickApp enter ``home:probono`` for the project and ``QtQuickApp`` in the Package field, as well as the token generated above in the "Token" field. Please note that you need to supply your own username and project name instead of the one in the example above.
+On the GitHub project page, click on "Settings", then click on "Integrations & services", then click on "Add service", enter "Obs" and select it. For example, for the `QtQuickApp <https://github.com/probonopd/QtQuickApp>`__ project go to ``https://github.com/probonopd/QtQuickApp/settings/installations``, and corresponding to https://build.opensuse.org/package/show/home:probono/QtQuickApp enter ``home:probono`` for the project and ``QtQuickApp`` in the Package field, as well as the token generated above in the "Token" field. Please note that you need to supply your own username and project name instead of the one in the example above.
 
 Now, whenever you do a ``git push`` to your project, OBS will build it for you.
 

@@ -33,7 +33,7 @@ Bundle all required dependencies
 
 To be able to run on any Linux distribution, an AppImage has to bundle all resources it needs at runtime that cannot reasonably be expected to come with every still-supported target system (Linux distribution) in its default installation in a recent enough version. The most common resources that have to be bundled are the actual binaries, shared library dependencies, icons and other graphics and of course a :ref:`desktop file <desktop-entry-files>` for desktop integration.
 
-This doesn't mean an AppImage must not use resources provided by the system, like for example basic libraries that can be assumed to be part of every target system (e.g., the C standard library or graphics libraries), user interface themes or the like. See the `excludelist <https://github.com/AppImage/pkg2appimage/blob/master/excludelist>`_ for a list of the libraries we consider to currently be part of every still-supported target system.
+This doesn't mean an AppImage must not use resources provided by the system, like for example basic libraries that can be assumed to be part of every target system (e.g., the C standard library or graphics libraries), user interface themes or the like. See the `excludelist <https://github.com/AppImage/pkg2appimage/blob/master/excludelist>`__ for a list of the libraries we consider to currently be part of every still-supported target system.
 
 
 .. _exclude-expected-libraries:
@@ -41,13 +41,13 @@ This doesn't mean an AppImage must not use resources provided by the system, lik
 Exclude expected core libraries (Recommended, but optional)
 -----------------------------------------------------------
 
-AppImages should usually exclude certain "core libraries", which can be expected to be present on all major desktop Linux distributions, reducing the overhead of :ref:`one app = one file <one-app-one-file-principle>`. These dependencies are mostly shared libraries and involve low level libraries like ``libc.so.6`` (the GNU C library, the C language standard library the majority of all Linux distributions use), but also common libraries like `zlib <https://zlib.net/>`_ that are normally present.
+AppImages should usually exclude certain "core libraries", which can be expected to be present on all major desktop Linux distributions, reducing the overhead of :ref:`one app = one file <one-app-one-file-principle>`. These dependencies are mostly shared libraries and involve low level libraries like ``libc.so.6`` (the GNU C library, the C language standard library the majority of all Linux distributions use), but also common libraries like `zlib <https://zlib.net/>`__ that are normally present.
 
 It may seem contradictory to :ref:`the previous section <no-external-dependencies>` to rely on distribution provided resources. This is a trade-off between trying to reduce redundancies while at the same time being as self-contained as possible.
 
-In some cases, including the libraries might even break the AppImage on the target system. Those libraries involve, among others, hardware dependent libraries such as graphics card drivers provided libraries (e.g., ``libGL.so.1``, (`source <https://github.com/AppImage/pkg2appimage/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\#L38-L41>`_)), or libraries that are built and linked differently on different distributions (e.g., ``libharfbuzz.so.0`` and ``libfreetype.so.6`` (`source <https://github.com/AppImage/pkg2appimage/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\#L98-L102>`_)).
+In some cases, including the libraries might even break the AppImage on the target system. Those libraries involve, among others, hardware dependent libraries such as graphics card drivers provided libraries (e.g., ``libGL.so.1``, (`source <https://github.com/AppImage/pkg2appimage/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\#L38-L41>`__)), or libraries that are built and linked differently on different distributions (e.g., ``libharfbuzz.so.0`` and ``libfreetype.so.6`` (`source <https://github.com/AppImage/pkg2appimage/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\#L98-L102>`__)).
 
-The list of libraries that should be excluded, the so-called `excludelist <https://github.com/AppImage/pkg2appimage/blob/master/excludelist>`_, is carefully curated by the AppImage team, and is regularly updated.
+The list of libraries that should be excluded, the so-called `excludelist <https://github.com/AppImage/pkg2appimage/blob/master/excludelist>`__, is carefully curated by the AppImage team, and is regularly updated.
 
 **However, excluding these core libraries requires you to compile the application on the oldest still-supported Linux distribution version that we can assume users to still use.** For example, the oldest still-supported LTS release of Ubuntu is a good choice to build applications on. |old_compile_version_reason|
 
@@ -58,7 +58,7 @@ The list of libraries that should be excluded, the so-called `excludelist <https
 
 Some :ref:`appimage-creation-tools` can also include these expected core libraries. This considerably increases the AppImage size (by at least 30MB), but removes the limitation of requiring the oldest supported LTS distribution version to compile the binaries (since all referenced libraries are included, the used distribution version is irrelevant). This should only be done if there are issues with the exclusion of the core libraries, e.g. if the AppImage can't be built on the oldest supported LTS distribution version, as the inclusion of some core libraries can also lead to other issues. If a considerable base of your users uses a system configuration without some of these core libraries (e.g. a custom Gentoo configuration), it's also an option to provide both AppImage versions.
 
-There are also **experimental** tools that try to use an old version of ``glibc`` when compiling on a new system (`1 <https://github.com/AppImage/AppImageKit/tree/stable/v1.0/LibcWrapGenerator>`_, `2 <https://github.com/wheybags/glibc_version_header>`_, `3 <https://github.com/sulix/bingcc>`_), but they don't always work and as they only adapt ``glibc`` and not other expected core libraries, the application might still crash when referencing a different core library.
+There are also **experimental** tools that try to use an old version of ``glibc`` when compiling on a new system (`1 <https://github.com/AppImage/AppImageKit/tree/stable/v1.0/LibcWrapGenerator>`__, `2 <https://github.com/wheybags/glibc_version_header>`__, `3 <https://github.com/sulix/bingcc>`__), but they don't always work and as they only adapt ``glibc`` and not other expected core libraries, the application might still crash when referencing a different core library.
 
 
 AppImage specification

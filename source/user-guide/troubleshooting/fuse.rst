@@ -82,7 +82,7 @@ Setting up FUSE 2 on old Ubuntu (pre-22.04), Debian and their derivatives
 
    If your distribution is using ``fuse3``, please refer to the :ref:`previous section <fuse_ubuntu_new>`.
 
-   Installing the ``fuse`` package with ``fuse3`` installed might break your system! If this happened to you, follow `these instructions <https://github.com/orgs/AppImage/discussions/1339>`_ to recover your system.
+   Installing the ``fuse`` package with ``fuse3`` installed might break your system! If this happened to you, follow `these instructions <https://github.com/orgs/AppImage/discussions/1339>`__ to recover your system.
 
 Install FUSE 2 with ``sudo apt install fuse libfuse2``. Now, it should be working. On some older distributions, you will have to run some additional configuration steps:
 
@@ -148,7 +148,7 @@ On Clear Linux OS, FUSE *should* be enabled by default. However, if you see the 
    > sudo reboot
 
 .. seealso::
-   This bug was also `reported on GitHub <https://github.com/clearlinux/distribution/issues/273>`_.
+   This bug was also `reported on GitHub <https://github.com/clearlinux/distribution/issues/273>`__.
 
 
 .. _fuse-fallback:
@@ -194,7 +194,7 @@ FUSE and Docker
 
 Instead, you can extract and run AppImages as described in the :ref:`previous section <fuse-fallback>`.
 
-If you want to decide whether to run the AppImage as usual or without FUSE, depending on whether you're in a container or not, for example in a build script, you can do that with `this detection code <https://stackoverflow.com/a/23575107>`_.
+If you want to decide whether to run the AppImage as usual or without FUSE, depending on whether you're in a container or not, for example in a build script, you can do that with `this detection code <https://stackoverflow.com/a/23575107>`__.
 
 .. warning::
    There's a lot of advice on the internet that follows the scheme "just add the arguments ``--cap-add SYS_ADMIN --cap-add MKNOD --device /dev/fuse:mrw`` and it will work". It is, however, insecure to do so. There's a reason why Docker doesn't support FUSE by default.

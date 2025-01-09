@@ -16,7 +16,7 @@ For packaging software that should be used by application authors to create AppI
 For desktop integration tools that can be used by end users to improve the AppImage user experience, see :ref:`desktop-integration`.
 
 .. seealso::
-   The AppImage updating mechanism is implemented in `AppImageUpdate <https://github.com/AppImageCommunity/AppImageUpdate>`_. For more information on updating AppImages, see :ref:`updates-user`.
+   The AppImage updating mechanism is implemented in `AppImageUpdate`_. For more information on updating AppImages, see :ref:`updates-user`.
 
 .. contents:: Contents
    :local:
@@ -28,7 +28,7 @@ For desktop integration tools that can be used by end users to improve the AppIm
 runtime
 -------
 
-The runtime (`source code <https://github.com/AppImage/type2-runtime>`_) provides the "executable header" of every AppImage. The general way the runtime works is described in the :ref:`specification section <architecture>`.
+The runtime (`source code <https://github.com/AppImage/type2-runtime>`__) provides the "executable header" of every AppImage. The general way the runtime works is described in the :ref:`specification section <architecture>`.
 
 |specification_broad| The following are some of the decisions the runtime reference implementation made:
 
@@ -49,7 +49,7 @@ Keep in mind that on its own it does nothing; it needs to be combined with a fil
 appimagetool
 ------------
 
-appimagetool (`source code <https://github.com/AppImage/appimagetool>`_) can be used to create AppImages from complete pre-existing :ref:`AppDirs <appdir-specification>`. It creates the AppImage by embedding the :ref:`reference implementation runtime <runtime>`, and creating and appending the file system image.
+appimagetool (`source code <https://github.com/AppImage/appimagetool>`__) can be used to create AppImages from complete pre-existing :ref:`AppDirs <appdir-specification>`. It creates the AppImage by embedding the :ref:`reference implementation runtime <runtime>`, and creating and appending the file system image.
 
 appimagetool implements all specification features, like :ref:`embedding update information <appimage-updates>` or :ref:`signing the AppImage<signing-appimages>`.
 
@@ -62,7 +62,7 @@ As both the AppImage specification and those implementation decisions |appimage_
 
 appimagetool shouldn't be directly used to create AppImages. Instead, using one of the modern :ref:`appimage-creation-tools` is strongly preferred as they're much more convenient and help with creating the AppDir. These tools usually use appimagetool under the hood.
 
-appimagetool should also not be confused with the alternative `go implementation <https://github.com/probonopd/go-appimage>`_, which offers a :ref:`wider feature set <go-appimagetool>`.
+appimagetool should also not be confused with the alternative `go implementation <https://github.com/probonopd/go-appimage>`__, which offers a :ref:`wider feature set <go-appimagetool>`.
 
 .. todo::
    Add more information about the differences to the go implementation. Maybe even add an own Alternative implementation section.
@@ -79,7 +79,7 @@ There also are helper tools that can be used to verify and validate some AppImag
 AppRun.c (Legacy)
 +++++++++++++++++
 
-``AppRun.c`` is a deprecated program that attempts to make the application relocatable without modifying it in any way. This can be necessary in some cases, e.g. if its licence prohibits any modifications. It does this by manipulating environment variables, so that the bundled shared libraries are used and related warnings are suppressed. However, using it doesn't guarantee the application to run correctly. It is available as precompiled binary `here <https://github.com/AppImage/AppImageKit/releases/continuous>`_.
+``AppRun.c`` is a deprecated program that attempts to make the application relocatable without modifying it in any way. This can be necessary in some cases, e.g. if its licence prohibits any modifications. It does this by manipulating environment variables, so that the bundled shared libraries are used and related warnings are suppressed. However, using it doesn't guarantee the application to run correctly. It is available as precompiled binary `here <https://github.com/AppImage/AppImageKit/releases/continuous>`__.
 
 .. warning::
    |apprun_c_warning|

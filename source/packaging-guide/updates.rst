@@ -63,15 +63,15 @@ To (re)create an AppImage from the AppDir, embed update information in it and cr
 Step 2: Making AppImages self-updateable
 ----------------------------------------
 
-To make the AppImage self-updateable, it needs to be updateable in the first place. Only if the AppImage already embeds the update information, you can additionally bundle everything that is required to update an AppImage in the AppImage itself, so that the user can get updates without needing anything besides the AppImage. (This is conceptually similar to how the `Sparkle Framework <https://sparkle-project.org/>`_ works on macOS.)
+To make the AppImage self-updateable, it needs to be updateable in the first place. Only if the AppImage already embeds the update information, you can additionally bundle everything that is required to update an AppImage in the AppImage itself, so that the user can get updates without needing anything besides the AppImage. (This is conceptually similar to how the `Sparkle Framework <https://sparkle-project.org>`__ works on macOS.)
 
-By default, `AppImageUpdate <https://github.com/AppImageCommunity/AppImageUpdate>`_ (which is used to achieve self-updateability) creates the updated AppImage file in the same directory as the current AppImage with the filename of the remote file, and doesn't overwrite the current AppImage file. This is done on purpose, as it might not be intended to overwrite previous versions of an AppImage to allow having different versions in parallel or testing the current version against the update that has just been downloaded. However, this behaviour can be overwritten.
+By default, `AppImageUpdate`_ (which is used to achieve self-updateability) creates the updated AppImage file in the same directory as the current AppImage with the filename of the remote file, and doesn't overwrite the current AppImage file. This is done on purpose, as it might not be intended to overwrite previous versions of an AppImage to allow having different versions in parallel or testing the current version against the update that has just been downloaded. However, this behaviour can be overwritten.
 
 
 Via ``appimageupdatetool`` bundled in the AppImage
 ++++++++++++++++++++++++++++++++++++++++++++++++++
 
-You can bundle `appimageupdatetool <https://github.com/AppImageCommunity/AppImageUpdate/releases>`_ inside the AppImage of your application to achieve self-updateability. In that case, you have to invoke the bundled ``appimageupdatetool`` to update your running AppImage after corresponding user interaction (e.g. clicking an update button).
+You can bundle `appimageupdatetool <https://github.com/AppImageCommunity/AppImageUpdate/releases>`__ inside the AppImage of your application to achieve self-updateability. In that case, you have to invoke the bundled ``appimageupdatetool`` to update your running AppImage after corresponding user interaction (e.g. clicking an update button).
 
 To call another bundled executable, you need to know its path. Luckily, when running an AppImage, the :ref:`environment variable <environment-variables>` ``$APPDIR`` is set to the location of the mounted AppDir. As bundled executables are usually in ``./usr/lib``, its path should be something like ``$APPDIR/usr/lib/appimageupdatetool.AppImage``
 
@@ -89,7 +89,7 @@ Via ``libappimageupdate``
 
 If bundling ``appimageupdatetool`` requires too much space, you can alternatively also bundle the library internally used, ``libappimageupdate``. This will result in a smaller size, but it's more manual work to do so.
 
-There is currently no precompiled version of this library. Therefore you have to manually compile `AppImageUpdate <https://github.com/AppImageCommunity/AppImageUpdate>`_ with the following commands (this requires you to install a lot of dependencies, see its `build tutorial <https://github.com/AppImageCommunity/AppImageUpdate/blob/main/BUILDING.md>`_):
+There is currently no precompiled version of this library. Therefore you have to manually compile `AppImageUpdate`_ with the following commands (this requires you to install a lot of dependencies, see its `build tutorial <https://github.com/AppImageCommunity/AppImageUpdate/blob/main/BUILDING.md>`__):
 
 .. code-block:: shell
 
@@ -101,7 +101,7 @@ There is currently no precompiled version of this library. Therefore you have to
    > make -j $(nproc)
    > sudo make install
 
-After you built it, the libraries will be in ``AppImageUpdate/build/src/updater``. These libraries are C++11 - libraries; sadly there is currently no C interface yet, which makes it more difficult to use in other programming languages. To use the library in a different programming language, you can use a C++ FFI if available in your programming language or create a C wrapper, e.g. with `SWIG <https://swig.org>`_ (and then use the C FFI in your programming language).
+After you built it, the libraries will be in ``AppImageUpdate/build/src/updater``. These libraries are C++11 - libraries; sadly there is currently no C interface yet, which makes it more difficult to use in other programming languages. To use the library in a different programming language, you can use a C++ FFI if available in your programming language or create a C wrapper, e.g. with `SWIG <https://swig.org>`__ (and then use the C FFI in your programming language).
 
 libappimageupdate provides the class ``appimage::update::Updater`` which is used to update the AppImage. Using it, you can check for updates (this is currently performed synchronously as it doesn't take long) and run updates in a separate thread. This means that you have to check for the state periodically, but allows for progress indication and status messages without any blocking.
 
@@ -170,7 +170,7 @@ As previously stated, this will create a new updated AppImage file with the remo
       return 1;
    }
 
-However, if you want to directly replace the local AppImage, this default behaviour can be overwritten by creating the updater with ``Updater updater("MyApplication.AppImage", true);`` instead of ``Updater updater("MyApplication.AppImage");``. This leads to the updater moving the new file to the original file location after successfully downloading and verifying the update. But due to how ZSync2 works, the old file is not deleted; instead, it's moved to ``<name>.zs-old`` and kept as a backup (see `this issue <https://github.com/AppImageCommunity/AppImageUpdate/issues/14>`_). If you don't want the old file hanging around after the update, you can remove ``<name>.zs-old`` after the update finished successfully.
+However, if you want to directly replace the local AppImage, this default behaviour can be overwritten by creating the updater with ``Updater updater("MyApplication.AppImage", true);`` instead of ``Updater updater("MyApplication.AppImage");``. This leads to the updater moving the new file to the original file location after successfully downloading and verifying the update. But due to how ZSync2 works, the old file is not deleted; instead, it's moved to ``<name>.zs-old`` and kept as a backup (see `this issue <https://github.com/AppImageCommunity/AppImageUpdate/issues/14>`__). If you don't want the old file hanging around after the update, you can remove ``<name>.zs-old`` after the update finished successfully.
 
 
 Using an update GUI library
@@ -184,7 +184,7 @@ Currently, there only exists a GUI library for QT-based applications. We are int
 libappimageupdate-qt
 ####################
 
-Like with ``libappimageupdate``, there is currently no precompiled version of this library. Therefore you have to manually compile `AppImageUpdate <https://github.com/AppImageCommunity/AppImageUpdate>`_ (this requires you to install a lot of dependencies).
+Like with ``libappimageupdate``, there is currently no precompiled version of this library. Therefore you have to manually compile `AppImageUpdate`_ (this requires you to install a lot of dependencies).
 
 .. todo::
    Add instructions on how to build ``libappimageupdate`` and how it can be used and integrated in an application.

@@ -33,7 +33,7 @@ As you can see, this documentation explains all aspects of the AppImage project 
 
 .. note::
    .. centered::
-      **This documentation contains a lot of valuable information, but there's always something to add.** `Contributions welcome! <https://github.com/AppImage/docs.appimage.org>`_
+      **This documentation contains a lot of valuable information, but there's always something to add.** `Contributions welcome! <https://github.com/AppImage/docs.appimage.org>`__
 
 .. toctree::
    introduction/index

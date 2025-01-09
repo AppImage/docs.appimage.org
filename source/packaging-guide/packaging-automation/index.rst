@@ -13,7 +13,7 @@ There are many systems you can use, for example GitHub Actions, GitLab CI, Gitea
 GitHub Actions
 --------------
 
-GitHub Actions is now one of the most wildly used CI pipelines, mainly due to its very good integration with GitHub repositories and it being free to use (with a maximum number of minutes per month for private repositories). Therefore, it's the recommended CI pipeline. To start using GitHub Actions, read the `official guide <https://docs.github.com/en/actions/writing-workflows/quickstart>`_.
+GitHub Actions is now one of the most wildly used CI pipelines, mainly due to its very good integration with GitHub repositories and it being free to use (with a maximum number of minutes per month for private repositories). Therefore, it's the recommended CI pipeline. To start using GitHub Actions, read the `official guide <https://docs.github.com/en/actions/writing-workflows/quickstart>`__.
 
 Often, it's easier to learn from examples and adapt them. To help starting with GitHub Actions, we provide an example on how to build an AppImage using GitHub Actions and :ref:`linuxdeploy`, which serves as a good starting point:
 
@@ -66,7 +66,7 @@ Often, it's easier to learn from examples and adapt them. To help starting with 
 Travis CI
 ---------
 
-Travis CI is a historically important CI pipeline. It gained popularity as it was the first CI pipeline that was free to use for open source projects. However, since an acquisition in 2019, it no longer is, and **it's recommended to not use it anymore as CI pipeline**. `Existing users should migrate off of it, e.g. to GitHub actions. <https://earthly.dev/blog/migrating-from-travis/>`_
+Travis CI is a historically important CI pipeline. It gained popularity as it was the first CI pipeline that was free to use for open source projects. However, since an acquisition in 2019, it no longer is, and **it's recommended to not use it anymore as CI pipeline**. `Existing users should migrate off of it, e.g. to GitHub actions. <https://earthly.dev/blog/migrating-from-travis/>`__
 
 
 Open Build Service

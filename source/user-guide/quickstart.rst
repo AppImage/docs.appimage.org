@@ -54,7 +54,7 @@ The following video also shows how to do this: (This might look slightly differe
 
 .. image:: /_static/img/make-executable.gif
 
-This guide is also available in other languages `here <https://discourse.appimage.org/t/how-to-run-an-appimage/80>`_.
+This guide is also available in other languages `here <https://discourse.appimage.org/t/how-to-run-an-appimage/80>`__.
 
 
 How to run an AppImage in a docker container

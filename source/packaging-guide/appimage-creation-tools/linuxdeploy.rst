@@ -22,7 +22,7 @@ The following sections explain how to use linuxdeploy.
 Downloading linuxdeploy
 -----------------------
 
-Start by downloading linuxdeploy. The recommended way to get it is to use the latest continuous AppImage build provided on the `GitHub release page <https://github.com/linuxdeploy/linuxdeploy/releases>`_. After downloading the AppImage, you have to make it executable as usual:
+Start by downloading linuxdeploy. The recommended way to get it is to use the latest continuous AppImage build provided on the `GitHub release page <https://github.com/linuxdeploy/linuxdeploy/releases>`__. After downloading the AppImage, you have to make it executable as usual:
 
 .. code-block:: shell
 
@@ -79,7 +79,7 @@ The following command line flags are most commonly used:
 ``--output``/``-o``
    .. cssclass:: bold-link
 
-   Uses an output plugin. Output plugins can be used to output something different than the raw AppDir. **linuxdeploy always comes with the** `AppImage output plugin <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`_ **preinstalled.** You can use it with ``--output appimage``. Other output plugins have to be additionally downloaded.
+   Uses an output plugin. Output plugins can be used to output something different than the raw AppDir. **linuxdeploy always comes with the** `AppImage output plugin`_ **preinstalled.** You can use it with ``--output appimage``. Other output plugins have to be additionally downloaded.
 
    For more information on plugins, see :ref:`linuxdeploy-plugin-system`.
 
@@ -117,10 +117,10 @@ You can use the ``--list-plugins`` flag to see what plugins are visible to linux
    Some plugins might be bundled in the linuxdeploy AppImage already for convenience. They're likely out of date, but should be stable. In case there are any issues or you need to use a newer version, please download the latest version of the respective plugin, and put it next to the linuxdeploy AppImage. linuxdeploy prefers plugins next to the AppImage over bundled ones.
 
 .. note::
-   More information on plugins can be found in the `plugin specification <https://github.com/linuxdeploy/linuxdeploy/wiki/Plugin-system>`_.
+   More information on plugins can be found in the `plugin specification <https://github.com/linuxdeploy/linuxdeploy/wiki/Plugin-system>`__.
 
 .. note::
-   A list of plugins can be found in the `Awesome linuxdeploy README <https://github.com/linuxdeploy/awesome-linuxdeploy#linuxdeploy-plugins>`_.
+   A list of plugins can be found in the `Awesome linuxdeploy README <https://github.com/linuxdeploy/awesome-linuxdeploy#linuxdeploy-plugins>`__.
 
 
 Using input plugins
@@ -209,7 +209,7 @@ Embedding update information
 
 You can find the basic explanation on how the AppImage update system works, what update information is and how AppImages can be updated at :ref:`appimage-updates`. If you already know that, this section explains on how to use linuxdeploy to embed update information.
 
-If you use the linuxdeploy `AppImage output plugin <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`_ to generate an AppImage from the AppDir, you can set the environment variable ``$LDAI_UPDATE_INFORMATION`` to the update information string to embed the update information in the AppImage and generate the corresponding ``.zsync`` file. This could look like the following:
+If you use the linuxdeploy `AppImage output plugin`_ to generate an AppImage from the AppDir, you can set the environment variable ``$LDAI_UPDATE_INFORMATION`` to the update information string to embed the update information in the AppImage and generate the corresponding ``.zsync`` file. This could look like the following:
 
 .. code-block:: shell
 
@@ -224,7 +224,7 @@ Signing the AppImage
 
 You can find the basic explanation on how the AppImage signatures works and how they can be validated at :ref:`signing-appimages`. If you already know that, this section explains on how to use linuxdeploy to sign the AppImage.
 
-If you use the linuxdeploy `AppImage output plugin <https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`_ to generate an AppImage from the AppDir, you can set the environment variable ``$LDAI_SIGN`` to 1 and the environment variable ``$LDAI_SIGN_KEY`` to the key id of the gpg key you want to sign the AppImage with to sign the AppImage. This could look like the following:
+If you use the linuxdeploy `AppImage output plugin`_ to generate an AppImage from the AppDir, you can set the environment variable ``$LDAI_SIGN`` to 1 and the environment variable ``$LDAI_SIGN_KEY`` to the key id of the gpg key you want to sign the AppImage with to sign the AppImage. This could look like the following:
 
 .. code-block:: shell
 
@@ -245,3 +245,6 @@ Iterative workflow
 ------------------
 
 linuxdeploy supports an iterative workflow, i.e., you run it, and it will start to bundle resources. If there is a problem, it will show a detailed error message, and exit with an error code. You can then fix the issue, and call it again to try again.
+
+
+.. _AppImage output plugin: https://github.com/linuxdeploy/linuxdeploy-plugin-appimage

@@ -17,7 +17,7 @@ cat >> source/index.rst <<\EOF
 Download this document
 ----------------------
 
-`Download as ePub <download/epub_filename>`_
+`Download as ePub <download/epub_filename>`__
 EOF
 
 sed -i "s|epub_filename|$epub_filename|" source/index.rst

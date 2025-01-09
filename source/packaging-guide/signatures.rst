@@ -46,7 +46,7 @@ To (re)create an AppImage from the AppDir and embed its signature in it, use the
 Validating the signature
 ------------------------
 
-To validate the signature of an AppImage and make sure it hasn't been compromised, you have to use an external tool. This can be done by ``validate``, which you can download from the `AppImage Update release page <https://github.com/AppImageCommunity/AppImageUpdate/releases>`_:
+To validate the signature of an AppImage and make sure it hasn't been compromised, you have to use an external tool. This can be done by ``validate``, which you can download from the `AppImage Update release page <https://github.com/AppImageCommunity/AppImageUpdate/releases>`__:
 
 .. code-block:: shell
 

@@ -84,7 +84,7 @@ Advantages for software testers
 
 Successful application projects run a lot of tests. Whereas some tests may be automated, manual tests are always important to ensure both functionality and usability. In regression testing, different versions of an application are compared to each other, concerning features and bugs. AppImage makes it easy to conduct application tests on local machines, since it allows to run various different versions of applications alongside each other. With :ref:`portable mode <portable-mode>`, it is also possible to isolate the settings of each version of the application from each other, allowing for clean testing environments.
 
-The `LibreOffice <https://www.libreoffice.org/download/appimage/>`_ project, for example, uses AppImages to test new application versions.
+The `LibreOffice <https://www.libreoffice.org/download/appimage>`__ project, for example, uses AppImages to test new application versions.
 
 
 Advantages for system administrators

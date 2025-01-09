@@ -30,7 +30,7 @@ Using Docker
 
 Alternatively to live images, you can use docker containers to test an AppImage on different Linux distributions.
 
-The following script can be used to run the given AppImage in the given distribution docker container. The distribution container must be either locally installed or available on `Docker Hub <https://hub.docker.com>`_. Your system must use X.Org for this to work with GUI AppImages.
+The following script can be used to run the given AppImage in the given distribution docker container. The distribution container must be either locally installed or available on `Docker Hub <https://hub.docker.com>`__. Your system must use X.Org for this to work with GUI AppImages.
 
 .. code-block:: shell
 
@@ -55,7 +55,7 @@ The following script can be used to run the given AppImage in the given distribu
    # Run the AppImage (inside the docker container)
    > /AppImage --appimage-extract-and-run
 
-(Credits: `Original scripts <https://github.com/aferrero2707/appimage-testsuite>`_ by `aferrero2707 <https://github.com/aferrero2707>`_; improvements by `Korne127 <https://github.com/Korne127>`_.)
+(Credits: `Original scripts <https://github.com/aferrero2707/appimage-testsuite>`__ by `aferrero2707 <https://github.com/aferrero2707>`__; improvements by `Korne127 <https://github.com/Korne127>`__.)
 
 .. todo::
    Update this script to also support Wayland.

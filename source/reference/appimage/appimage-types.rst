@@ -3,7 +3,7 @@
 .. _appimage-types-history:
 
 AppImage types and history
-=========================
+==========================
 
 In this documentation, you might have already come across things like "In type 2 AppImages". This page explains why such different types and versions of AppImages exist and goes over their differences. It also shows how to determine the type of a specific AppImage.
 
@@ -58,7 +58,7 @@ The following are notable changes that have been made to the type 2 specificatio
 
 - The type 2 specification originally didn't define how type 2 AppImages can contain a digital signature.
 
-For all specification changes, see the git history of the `specification repository <https://github.com/AppImage/AppImageSpec>`_.
+For all specification changes, see the git history of the `specification repository <https://github.com/AppImage/AppImageSpec>`__.
 
 
 Implementation changes
@@ -110,15 +110,15 @@ After testing the runtime for a while, it was supposed to "be made official" (re
 
 However, the efforts stalled in 2023. Because of the importance of this issue, many people switched to go-appimagetool as it already used the static runtime instead of the (old) reference implementation.
 
-In `December 2024 <https://github.com/AppImage/AppImageKit/issues/877#issuecomment-2563872416>`_, the new runtime has been made the official runtime reference implementation; the other :ref:`AppImage creation tools <appimage-creation-tools>` are in the process of being adapted to use it.
+In `December 2024 <https://github.com/AppImage/AppImageKit/issues/877#issuecomment-2563872416>`__, the new runtime has been made the official runtime reference implementation; the other :ref:`AppImage creation tools <appimage-creation-tools>` are in the process of being adapted to use it.
 
-For more detailed information on the exact history, see the related issues (`1 <https://github.com/AppImage/AppImageKit/issues/1120>`_, `2 <https://github.com/AppImage/AppImageKit/issues/877>`_, `3 <https://github.com/AppImage/AppImageSpec/issues/34>`_, `4 <https://github.com/AppImage/AppImageSpec/issues/38>`_).
+For more detailed information on the exact history, see the related issues (`1 <https://github.com/AppImage/AppImageKit/issues/1120>`__, `2 <https://github.com/AppImage/AppImageKit/issues/877>`__, `3 <https://github.com/AppImage/AppImageSpec/issues/34>`__, `4 <https://github.com/AppImage/AppImageSpec/issues/38>`__).
 
 
 Repository change
 #################
 
-This partial recode of the reference implementation has been taken as an opportunity to change the repository structure: While prior to it, there has only been one repository containing all parts of the reference implementation, called `AppImageKit <https://github.com/AppImage/AppImageKit>`_, with the change to the new statically linked runtime, it has been replaced with new repositories for the individual components of the reference implementation (see :ref:`reference-implementation`).
+This partial recode of the reference implementation has been taken as an opportunity to change the repository structure: While prior to it, there has only been one repository containing all parts of the reference implementation, called `AppImageKit <https://github.com/AppImage/AppImageKit>`__, with the change to the new statically linked runtime, it has been replaced with new repositories for the individual components of the reference implementation (see :ref:`reference-implementation`).
 
 
 Other implementation changes
@@ -130,7 +130,7 @@ As the reference implementation is being continously changed, there are also oth
 - The ``APPIMAGE_EXTRACT_AND_RUN`` environment variable that does the same has been introduced even later.
 
 .. todo::
-   Update this page (without removing information) if / after the `new versioning scheme <https://github.com/AppImage/AppImageSpec/issues/39>`_ has been implemented and if / after the specification has been majorly changed `due to the static runtime <https://github.com/AppImage/AppImageSpec/issues/34>`_.
+   Update this page (without removing information) if / after the `new versioning scheme <https://github.com/AppImage/AppImageSpec/issues/39>`__ has been implemented and if / after the specification has been majorly changed `due to the static runtime <https://github.com/AppImage/AppImageSpec/issues/34>`__.
 
 
 How to determine the type of an AppImage

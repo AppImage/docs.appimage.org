@@ -68,11 +68,11 @@ Should this return something, then you need to make your application relocatable
 Modifying the source code
 +++++++++++++++++++++++++
 
-The best way is to modify the source code of the application in order to not use absolute paths. While there are several ways to do this, the canonical way on Linux is to resolve ``/proc/self/exe`` to get the path of the main executable and use a path relative to it. This should work both in normal installations and in relocatable installations such as AppImages. There are also libraries such as `BinReloc <https://github.com/limbahq/binreloc>`_ which make this easier.
+The best way is to modify the source code of the application in order to not use absolute paths. While there are several ways to do this, the canonical way on Linux is to resolve ``/proc/self/exe`` to get the path of the main executable and use a path relative to it. This should work both in normal installations and in relocatable installations such as AppImages. There are also libraries such as `BinReloc <https://github.com/limbahq/binreloc>`__ which make this easier.
 
 Some modern frameworks such as Qt have this functionality built-in, e.g. in ``QString QCoreApplication::applicationDirPath()`` so you don't have to resolve ``/proc/self/exe``. In some cases, there are also flags you can specify when building from source to make applications relocatable.
 
-Another way to make your application relocatable is to use the `GNU relocatable-prog module <https://www.gnu.org/software/gnulib/manual/html_node/Supporting-Relocation.html>`_.
+Another way to make your application relocatable is to use the `GNU relocatable-prog module <https://www.gnu.org/software/gnulib/manual/html_node/Supporting-Relocation.html>`__.
 
 
 Patching the executable
@@ -103,7 +103,7 @@ This usually works as long as the application is not calling ``chdir()`` (changi
 Creating an AppImage from the AppDir
 ------------------------------------
 
-To create an AppImage from the AppDir, you need ``appimagetool``. You can get it by downloading the `latest release <https://github.com/AppImage/appimagetool/releases/latest>`_. After downloading the AppImage, you have to make it executable as usual:
+To create an AppImage from the AppDir, you need ``appimagetool``. You can get it by downloading the `latest release <https://github.com/AppImage/appimagetool/releases/latest>`__. After downloading the AppImage, you have to make it executable as usual:
 
 .. code-block:: shell
 

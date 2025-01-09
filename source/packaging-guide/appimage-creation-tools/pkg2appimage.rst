@@ -5,7 +5,7 @@
 pkg2appimage
 ============
 
-`pkg2appimage <https://github.com/AppImage/pkg2appimage>`_ is a tool that can be used by people other than the application authors to convert officially distributed binary packages (archives, .deb packages and PPAs) into AppImages if none are officially distributed. It doesn't require dependencies to be installed on your system; instead, they are downloaded during the packaging process from distribution repositories. To convert an existing package, you write a `.yml description file <https://github.com/AppImage/pkg2appimage/tree/master/recipes>`_ (called recipe) and run it with pkg2appimage. As some (mostly proprietary) applications don't allow redistribution, you can distribute these recipes to allow other users to easily convert existing packages to AppImages.
+`pkg2appimage <https://github.com/AppImage/pkg2appimage>`__ is a tool that can be used by people other than the application authors to convert officially distributed binary packages (archives, .deb packages and PPAs) into AppImages if none are officially distributed. It doesn't require dependencies to be installed on your system; instead, they are downloaded during the packaging process from distribution repositories. To convert an existing package, you write a `.yml description file <https://github.com/AppImage/pkg2appimage/tree/master/recipes>`__ (called recipe) and run it with pkg2appimage. As some (mostly proprietary) applications don't allow redistribution, you can distribute these recipes to allow other users to easily convert existing packages to AppImages.
 
 pkg2appimage doesn't include core system libraries like glibc. This results in a reduced AppImage size. However, as the recipes use binary packages that have already been built, invoking a recipe doesn't require using an old system (see :ref:`compiling-on-old-system`).
 
@@ -25,7 +25,7 @@ pkg2appimage requires a manual creation of the AppDir folder structure and file 
 Using a recipe
 --------------
 
-To use a distributed recipe (a ``.yml`` description file), you first have to download pkg2appimage. You can get it as an AppImage from its from its `GitHub release page <https://github.com/AppImageCommunity/pkg2appimage/releases>`_.
+To use a distributed recipe (a ``.yml`` description file), you first have to download pkg2appimage. You can get it as an AppImage from its from its `GitHub release page <https://github.com/AppImageCommunity/pkg2appimage/releases>`__.
 
 To then build an AppImage from the recipe, simply run pkg2appimage with the file as parameter: ``./pkg2appimage-*.AppImage Receipe.yml``.
 
@@ -148,7 +148,7 @@ The following example ingredients section describes how to get the latest versio
 The ``dist`` section inside the ``ingredients`` section defines which Debian distribution should be used as a base. The ``sources`` section inside the ``ingredients`` section describes the repositories from which the package should be pulled. The entries are in the same format as lines in a debian ``sources.list`` file. Note that the ``http://download.opensuse.org/repositories/isv:/KDAB/xUbuntu_16.04`` repository needs the ``http://archive.ubuntu.com/ubuntu/`` repository so that the dependencies can be resolved.
 
 .. note::
-    In the future, other types of packages like ``.rpm`` could also be included in the ``.yml`` file definition. Proposals for this are welcome if the proposer also implements support for this in the `pkg2appimage script <https://github.com/AppImageCommunity/pkg2appimage/blob/master/pkg2appimage>`_.
+    In the future, other types of packages like ``.rpm`` could also be included in the ``.yml`` file definition. Proposals for this are welcome if the proposer also implements support for this in the `pkg2appimage script`_.
 
 
 Using ingredients from an Ubuntu PPA
@@ -169,7 +169,7 @@ This is a special case of a Debian repository. PPAs can be uniquely identified w
 The ``ppas`` section inside the ``ingredients`` section lets you specify one or more Ubuntu PPAs. This is equivalent to, but more elegant than, adding the corresponding ``sources.list`` entries to the ``sources`` section inside the ``ingredients`` section.
 
 .. note::
-    In the future, similar shortcuts for other types of personal repositories, such as projects on openSUSE build service, could also be included in the ``.yml`` file definition. Proposals for this are welcome if the proposer also implements support for this in the `pkg2appimage script <https://github.com/AppImageCommunity/pkg2appimage/blob/master/pkg2appimage>`_.
+    In the future, similar shortcuts for other types of personal repositories, such as projects on openSUSE build service, could also be included in the ``.yml`` file definition. Proposals for this are welcome if the proposer also implements support for this in the `pkg2appimage script`_.
 
 
 Using local deb files
@@ -411,3 +411,6 @@ The following recipe will convert a Python 3 PyQt application using ``virtualenv
 
 Source:
 	https://github.com/AppImage/pkg2appimage/blob/9249a99e653272416c8ee8f42cecdde12573ba3e/recipes/Mu.yml
+
+
+.. _pkg2appimage script: https://github.com/AppImageCommunity/pkg2appimage/blob/master/pkg2appimage

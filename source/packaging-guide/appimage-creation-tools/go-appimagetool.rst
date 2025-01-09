@@ -36,7 +36,7 @@ To then turn your complete AppDir into an AppImage, call go-appimagetool with th
 .. todo::
    Include documentation on appimagetool environment variables like VERSION and how to add it to desktop files
 
-For more information, see `the project's README file <https://github.com/probonopd/go-appimage/blob/master/src/appimagetool/README.md>`_
+For more information, see `the project's README file <https://github.com/probonopd/go-appimage/blob/master/src/appimagetool/README.md>`__
 
 
 .. _go-appimagetool-update-information:
@@ -46,7 +46,7 @@ Embedding update information
 
 You can find the basic explanation on how the AppImage update system works, what update information is and how AppImages can be updated at :ref:`appimage-updates`.
 
-Sadly, as of December 2024, go-appimagetool doesn't yet support embedding updating information from a custom updating information string. Instead, it always embeds updating information dependent on the CI pipeline. See `this issue <https://github.com/probonopd/go-appimage/issues/318>`_ for more information.
+Sadly, as of December 2024, go-appimagetool doesn't yet support embedding updating information from a custom updating information string. Instead, it always embeds updating information dependent on the CI pipeline. See `this issue <https://github.com/probonopd/go-appimage/issues/318>`__ for more information.
 
 
 .. _go-appimagetool-signing:
@@ -56,7 +56,7 @@ Signing the AppImage
 
 You can find the basic explanation on how the AppImage signatures works and how they can be validated at :ref:`signing-appimages`. If you already know that, this section explains on how to use go-appimagetool to sign the AppImage.
 
-When creating an AppImage from an AppDir, go-appimagetool always tries to sign the resulting AppImage. However, in order to be able to do that, go-appimagetool (`as of December 2024 <https://github.com/probonopd/go-appimage/issues/318>`_) requires the public key to be stored in the root directory of the git repository as ``pubkey.asc``, the encrypted private key to be stored in the current working directory as ``privkey.asc.enc`` and the environment variables ``$super_secret_password`` to be set to the passphrase to encrypt the private key. This could look like the following:
+When creating an AppImage from an AppDir, go-appimagetool always tries to sign the resulting AppImage. However, in order to be able to do that, go-appimagetool (`as of December 2024 <https://github.com/probonopd/go-appimage/issues/318>`__) requires the public key to be stored in the root directory of the git repository as ``pubkey.asc``, the encrypted private key to be stored in the current working directory as ``privkey.asc.enc`` and the environment variables ``$super_secret_password`` to be set to the passphrase to encrypt the private key. This could look like the following:
 
 .. code-block:: shell
 

@@ -7,7 +7,7 @@ Desktop entry & icon files
 
 To create an AppImage for your application, you first have to create a desktop entry file, colloquially also called desktop file. A desktop file contains metadata about the application, e.g. name or icon name, but also the executable name, which is used by the user's system to correctly display and execute the application. It's a central component of the Linux desktop and every AppImage must contain one in its :ref:`AppDir <appdir-specification>`.
 
-A desktop entry file is an `INI-style <https://en.wikipedia.org/wiki/INI_file>`_ text document, which means that it contains (mandatory and optional) key-value pairs in the format ``Key=Value`` and group headers in the format ``[Header]``, most notably the ``[Desktop Entry]`` header for the main information. The official `Desktop Entry Specification <https://specifications.freedesktop.org/desktop-entry-spec/latest>`_ describes all possible ways to configure a desktop entry file in detail. An AppImage desktop entry file should at least contain these keys:
+A desktop entry file is an `INI-style <https://en.wikipedia.org/wiki/INI_file>`__ text document, which means that it contains (mandatory and optional) key-value pairs in the format ``Key=Value`` and group headers in the format ``[Header]``, most notably the ``[Desktop Entry]`` header for the main information. The official `Desktop Entry Specification`_ describes all possible ways to configure a desktop entry file in detail. An AppImage desktop entry file should at least contain these keys:
 
 .. code-block:: ini
 
@@ -20,11 +20,11 @@ A desktop entry file is an `INI-style <https://en.wikipedia.org/wiki/INI_file>`_
 	Terminal=false
 	Categories=Utility;TextEditor;
 
-The ``Categories`` value should be a list of all `specific registered categories <https://specifications.freedesktop.org/menu-spec/latest/category-registry.html>`_ that apply to your application.
+The ``Categories`` value should be a list of all `specific registered categories <https://specifications.freedesktop.org/menu-spec/latest/category-registry.html>`__ that apply to your application.
 
-The list of all keys can be found in the `Desktop Entry Specification (Recognized keys) <https://specifications.freedesktop.org/desktop-entry-spec/latest/recognized-keys.html>`_. Further keys that are recommended for AppImages are ``GenericName`` (the name of the application category, e.g. "Browser" for Firefox), ``Comment`` (an application description) and ``Version`` (not the application version, but the used version of the `Desktop Entry Specification <https://specifications.freedesktop.org/desktop-entry-spec/latest/recognized-keys.html>`_.
+The list of all keys can be found in the `Desktop Entry Specification (Recognized keys) <https://specifications.freedesktop.org/desktop-entry-spec/latest/recognized-keys.html>`__. Further keys that are recommended for AppImages are ``GenericName`` (the name of the application category, e.g. "Browser" for Firefox), ``Comment`` (an application description) and ``Version`` (not the application version, but the used version of the Desktop Entry Specification itself.
 
-The desktop entry file should be named according to the `Reverse domain name notation <https://en.wikipedia.org/wiki/Reverse_domain_name_notation>`_ and have ``.desktop`` as file ending, for example ``org.AppImage.ExampleApp.desktop``.
+The desktop entry file should be named according to the `Reverse domain name notation <https://en.wikipedia.org/wiki/Reverse_domain_name_notation>`__ and have ``.desktop`` as file ending, for example ``org.AppImage.ExampleApp.desktop``.
 
 After creating your desktop file, make sure that it's valid using ``desktop-file-validate org.example.application.desktop``.
 
@@ -56,8 +56,8 @@ X-AppImage-Arch
 .. seealso::
    The following discussions in issue trackers contain some background information:
 
-     * `AppImageKit#59 <https://github.com/AppImage/AppImageKit/issues/59>`_
-     * `AppImageKit#662 <https://github.com/AppImage/AppImageKit/issues/662>`_
+     * `AppImageKit#59 <https://github.com/AppImage/AppImageKit/issues/59>`__
+     * `AppImageKit#662 <https://github.com/AppImage/AppImageKit/issues/662>`__
 
 
 .. _icon-files:
@@ -73,10 +73,13 @@ You only have to specify one icon (ideally in the resolution ``512x512``), but i
 
 To include the icon in several resolutions or theme styles, each file must be named the same. If they're placed correctly in the AppDir and the icon name (without the file format) is included in the desktop file, the icon will be correctly used by the user's system.
 
-For more information, see the `Icon Theme Specification <https://specifications.freedesktop.org/icon-theme-spec/latest>`_.
+For more information, see the `Icon Theme Specification <https://specifications.freedesktop.org/icon-theme-spec/latest>`__.
 
 
 Advanced options
 ----------------
 
-For advanced options of the desktop entry file, e.g. using localized strings to change the application name and description based on the user's system language or registering supported `MIME types <https://en.wikipedia.org/wiki/Media_type>`_, see the official `Desktop Entry Specification <https://specifications.freedesktop.org/desktop-entry-spec/latest/recognized-keys.html>`_.
+For advanced options of the desktop entry file, e.g. using localized strings to change the application name and description based on the user's system language or registering supported `MIME types <https://en.wikipedia.org/wiki/Media_type>`__, see the official `Desktop Entry Specification`_.
+
+
+.. _Desktop Entry Specification: https://specifications.freedesktop.org/desktop-entry-spec/latest

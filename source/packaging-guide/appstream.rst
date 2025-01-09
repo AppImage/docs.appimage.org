@@ -38,7 +38,7 @@ An easy way to generate an AppStream file is to use our generator:
 Validating an AppStream file
 ----------------------------
 
-It is generally a good idea to check AppStream files for errors using the `appstreamcli <https://github.com/ximion/appstream>`_ (or ``appstream-util``) CLI tools. ``apppimagetool`` will automatically attempt to validate the AppStream file if one of these are available on the ``$PATH``.
+It is generally a good idea to check AppStream files for errors using the `appstreamcli <https://github.com/ximion/appstream>`__ (or ``appstream-util``) CLI tools. ``apppimagetool`` will automatically attempt to validate the AppStream file if one of these are available on the ``$PATH``.
 
 
 Embedding an AppStream file

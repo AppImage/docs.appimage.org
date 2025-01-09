@@ -6,7 +6,7 @@ Using make to create the AppDir structure
 
    If you use a tool that doesn't require this, you don't have to do this.
 
-Alternatively to :ref:`manually creating the AppDir structure <manually-creating-appdir-structure>`, you can use make `make <https://en.wikipedia.org/wiki/Make_(software)>`_ to create the AppDir structure. However, this only works if you use Makefiles to build your project (which is mostly done for C/C++-based projects).
+Alternatively to :ref:`manually creating the AppDir structure <manually-creating-appdir-structure>`, you can use make `make <https://en.wikipedia.org/wiki/Make_(software)>`__ to create the AppDir structure. However, this only works if you use Makefiles to build your project (which is mostly done for C/C++-based projects).
 
 If you use a modern make-based meta build system such as CMake_ or qmake_, you can use the provided `make install` command to create the AppDir structuer. To do this, you have to set up an install configuration in your build system. The configuration should install all binaries, libraries, resources, etc. as well as the desktop and icon files (TODO LINK).
 

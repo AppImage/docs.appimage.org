@@ -3,7 +3,7 @@
 Contact
 =======
 
-The AppImage project documentation is brought to you by `the AppImage team <https://github.com/AppImage>`__ and other `contributors <https://github.com/AppImage/docs.appimage.org/graphs/contributors>`_. The source code is available `on GitHub <https://github.com/AppImage/docs.appimage.org>`__.
+The AppImage project documentation is brought to you by `the AppImage team <https://github.com/AppImage>`__ and other `contributors <https://github.com/AppImage/docs.appimage.org/graphs/contributors>`__. The source code is available `on GitHub <https://github.com/AppImage/docs.appimage.org>`__.
 
 If you have further questions or need additional support, please feel free to contact the AppImage team:
 
@@ -11,7 +11,7 @@ If you have further questions or need additional support, please feel free to co
 GitHub discussions
 ------------------
 
-An easy way to contact us is to ask questions on the `AppImage GitHub discussions page <https://github.com/orgs/AppImage/discussions>`_. Questions are usually answered in one to two days, and you'll get notified as soon as someone answered you. Posts stay, so you can always keep track of the conversation. You can also browse through other posts to see if someone else had the same question or problem.
+An easy way to contact us is to ask questions on the `AppImage GitHub discussions page <https://github.com/orgs/AppImage/discussions>`__. Questions are usually answered in one to two days, and you'll get notified as soon as someone answered you. Posts stay, so you can always keep track of the conversation. You can also browse through other posts to see if someone else had the same question or problem.
 
 
 IRC

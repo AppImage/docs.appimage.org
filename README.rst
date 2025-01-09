@@ -13,7 +13,7 @@ You can view it at https://docs.appimage.org/.
 Build
 -----
 
-This is a `Sphinx <https://sphinx-doc.org>`_ project, and can be built like any other Sphinx project. If you have never used Sphinx before, this section explains how it can be set up and built.
+This is a `Sphinx <https://sphinx-doc.org>`__ project, and can be built like any other Sphinx project. If you have never used Sphinx before, this section explains how it can be set up and built.
 
 Convenience script
 ++++++++++++++++++
@@ -60,4 +60,4 @@ After that, you can rebuild the documentation simply with ``make html`` (althoug
 **Live reloading:** You can use ``make watch`` instead of ``make html`` |live_reloading|
 
 
-.. |live_reloading| replace:: to set up a live-reloading webserver that automatically rebuilds the documentation and reloads the page in the browser on any change. (This is powered by `sphinx-autobuild <https://github.com/GaretJax/sphinx-autobuild>`_.)
+.. |live_reloading| replace:: to set up a live-reloading webserver that automatically rebuilds the documentation and reloads the page in the browser on any change. (This is powered by `sphinx-autobuild <https://github.com/GaretJax/sphinx-autobuild>`__.)

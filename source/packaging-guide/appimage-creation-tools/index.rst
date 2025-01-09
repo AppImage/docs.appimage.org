@@ -10,7 +10,7 @@ There are different tools that help with creating AppDirs and the corresponding 
 1. Some of them create the AppDir from scratch and don't require manual AppDir creation or file placement.
 2. They bundle the application dependencies (shared libraries) into the existing AppDir.
 3. They remove hardcoded paths in the executables and libraries.
-4. They create an AppImage out of the AppDir (usually by invoking `appimagetool <https://github.com/AppImage/appimagetool>`_ underneath).
+4. They create an AppImage out of the AppDir (usually by invoking `appimagetool <https://github.com/AppImage/appimagetool>`__ underneath).
 
 Some tools require you to manually create the AppDir structure prior to invoking the tool. :ref:`creating-appdir-structure` explains the different ways to do this.
 
@@ -71,7 +71,7 @@ Comparison table
        | Requires manual creation of the AppDir folder structure and file placement.
        | Doesn't include core system libraries like glibc. This results in a reduced AppImage size.
        | **Do not use pkg2appimage if you are the application author. pkg2appimage should only be used if there is no officially distributed AppImage.** Application authors should use one of the other creation methods.
-       | pkg2appimage has a major `security issue <https://github.com/AppImageCommunity/pkg2appimage/issues/197>`_; therefore it's only recommended for personal use.
+       | pkg2appimage has a major `security issue <https://github.com/AppImageCommunity/pkg2appimage/issues/197>`__; therefore it's only recommended for personal use.
        | Repository link: https://github.com/AppImageCommunity/pkg2appimage
        | Packaging guide: :ref:`pkg2appimage`
    * - Manual packaging
@@ -109,7 +109,7 @@ If the AppImage won't include core libraries like glibc (see the :ref:`creation-
 
 For more information about this, exceptions to this and alternatives if you can't build your application on the oldest still-supported Linux distribution, see :ref:`exclude-expected-libraries`.
 
-The so-called *excludelist* of all core libraries that aren't included by most AppImage creation tools is available `here <https://github.com/AppImage/pkg2appimage/blob/master/excludelist>`_.
+The so-called *excludelist* of all core libraries that aren't included by most AppImage creation tools is available `here <https://github.com/AppImage/pkg2appimage/blob/master/excludelist>`__.
 
 
 .. toctree::

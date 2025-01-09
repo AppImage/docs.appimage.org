@@ -77,7 +77,7 @@ These two entries have been re-used from `ROX Filer`_'s specification. ROX Filer
 Conventions
 -----------
 
-In contrary to the rules in the previous section, the ones introduced in this section are no strict requirement. However, this is the recommended structure to put applications into AppDirs. It's picking up ideas from well-known, widely spread Linux standards such as the `Filesystem Hierarchy Standard <https://wiki.linuxfoundation.org/lsb/fhs>`_ (part of the `Linux Standards Base <https://wiki.linuxfoundation.org/lsb/start>`_).
+In contrary to the rules in the previous section, the ones introduced in this section are no strict requirement. However, this is the recommended structure to put applications into AppDirs. It's picking up ideas from well-known, widely spread Linux standards such as the `Filesystem Hierarchy Standard <https://wiki.linuxfoundation.org/lsb/fhs>`__ (part of the `Linux Standards Base <https://wiki.linuxfoundation.org/lsb/start>`__).
 
 .. seealso::
    A very good summary of the FHS can be found on `Wikipedia <https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard>`__.
@@ -105,7 +105,7 @@ The directory contains applications, (shared) libraries, desktop files, icons et
       Contains :ref:`desktop entry files <desktop-entry-files>` for applications in ``bin``. Normally, there's just one desktop file in this directory, which is symlinked in the root directory. For more information about desktop files, see :ref:`desktop-entry-files`.
 
    ``icons``
-      Directory containing so-called `icon themes <https://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html>`_. Contains at least one, but often a set of :ref:`icon files <icon-files>` for the main application. The icons are referred to by the root desktop file, which means the :ref:`same constraints <root-icon>` apply. The default theme is ``hicolor``, but icon files can also be adapted to other well-known themes to fit in better. Icon themes placed in this directory are copied to the system during so-called :ref:`desktop integration <desktop-integration>`.
+      Directory containing so-called `icon themes <https://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html>`__. Contains at least one, but often a set of :ref:`icon files <icon-files>` for the main application. The icons are referred to by the root desktop file, which means the :ref:`same constraints <root-icon>` apply. The default theme is ``hicolor``, but icon files can also be adapted to other well-known themes to fit in better. Icon themes placed in this directory are copied to the system during so-called :ref:`desktop integration <desktop-integration>`.
 
       Example path: ``<root>/usr/share/icons/<theme>/<resolution>/apps/myapp.<ext>``, e.g. ``<root>/usr/share/icons/hicolor/scalable/apps/myapp.svg`` or ``<root>/usr/share/icons/hicolor/512x512/apps/myapp.png``.
 
