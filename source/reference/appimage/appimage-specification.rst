@@ -17,7 +17,7 @@ Architecture
 
 AppImages follow a very simple architecture, which is explained in this section:
 
-An AppImage consists of two parts: a *runtime* and a *file system image*. For current type 2 AppImages, SquashFS is usually used as the file system (although that's not a strict specification requirement but rather a decision made in the :ref:`reference implementation <reference-implementation>`).
+An AppImage consists of two parts: a *runtime* and a *file system image*. For current :ref:`type 2 AppImages <differences-type-1-type-2>`, SquashFS is usually used as the file system (although that's not a strict specification requirement but rather a decision made in the :ref:`reference implementation <reference-implementation>`).
 
 .. figure:: /_static/img/reference/architecture-overview.svg
    :align: center
@@ -34,7 +34,7 @@ The content of an AppDir is completely user-specified, although tools that help 
 Specification development
 -------------------------
 
-The specification's repository contains a description of the current **type 2** format. You can find the `full text <https://github.com/AppImage/AppImageSpec/blob/master/draft.md>`__ in its `GitHub repository <https://github.com/AppImage/AppImageSpec>`__.
+The specification's repository contains a description of the current :ref:`type 2 <differences-type-1-type-2>` format. You can find the `full text <https://github.com/AppImage/AppImageSpec/blob/master/draft.md>`__ in its `GitHub repository <https://github.com/AppImage/AppImageSpec>`__.
 
 The documentation receives updates regularly, e.g. to fix bugs or document new features. For type 2, a decision was made to not release specific versions but work with continuous releases.
 

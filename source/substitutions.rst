@@ -9,6 +9,8 @@
 .. |group_user_add| replace:: After adding a user to a group, that user must logout and login again for the change to take effect!
 .. |fuse_docker| replace:: Most docker containers don't permit to use FUSE inside containers for security reasons. In that case, you will see this or a similar error:
 .. |recent_type_2| replace:: but every reasonably recent AppImage is type 2
+.. |different_types| replace:: For more information on the different AppImage types, see :ref:`appimage-types-history`.
+.. |depends_on_appimage_type| replace:: The way on how to do this depends on the AppImage type (every reasonably recent AppImage is type 2). |different_types|
 .. |linuxdeploy_bundle_appimages| replace:: As of December 2024, :ref:`linuxdeploy` has a `bug <https://github.com/linuxdeploy/linuxdeploy/issues/301>`__ that causes it to corrupt AppImages when they're given as additional executables that should be bundled. Therefore, when using it, other bundled AppImages have to manually be copied into the AppDir and ``appimagetool`` has to be used to create the AppImage.
 .. |upstream_advantage| replace:: This ensures that the software works exactly the way the original application author has envisioned it to work.
 .. |software_catalogs_short| replace:: They basically work as app stores in which you can look through a list of all indexed AppImages, read their description and search for something specific or even filter by categories.

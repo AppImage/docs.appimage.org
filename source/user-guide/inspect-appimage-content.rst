@@ -18,7 +18,7 @@ To inspect the content of any AppImage, it is possible to extract their content 
 Calling the AppImage with special parameters
 --------------------------------------------
 
-The most convenient way to inspect the content of an AppImage is to call it with the ``--appimage-extract`` or ``--appimage-mount`` option. This only works for type 2 AppImages, |recent_type_2|. If you have to inspect a type 1 AppImage, see the other options described on this page.
+The most convenient way to inspect the content of an AppImage is to call it with the ``--appimage-extract`` or ``--appimage-mount`` option. (This only works for type 2 AppImages, |recent_type_2|. If you have to inspect a type 1 AppImage, see the other options described on this page. |different_types|)
 
 .. warning::
    You should only do this if you trust the AppImage (as the runtime could be altered to execute different code, even if you use these parameters). If you want to inspect the AppImage as you don't trust it, you should follow the instructions in the section :ref:`inspect-using-external-tools`.
@@ -44,6 +44,8 @@ Using external tools
 --------------------
 
 This is the safest way to inspect the content of an AppImage. You should use this way if you don't trust the AppImage and don't want to call it.
+
+|depends_on_appimage_type|
 
 
 Type 2 AppImages

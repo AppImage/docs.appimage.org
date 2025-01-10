@@ -37,6 +37,8 @@ There are two main reasons for different AppImage types:
 Specification changes
 ---------------------
 
+.. _differences-type-1-type-2:
+
 Type 1 AppImages vs type 2 AppImages
 ++++++++++++++++++++++++++++++++++++
 

@@ -158,6 +158,8 @@ Fallback (if FUSE can't be made working)
 
 If you don't want to (or cannot) set up FUSE, there are fallback solutions. Depending on the AppImage type, you can either run it with a specific parameter (which will work for you like it would with FUSE) or manually extract or mount and then execute it. However, this is computationally more expensive, so it should usually only be done if you can't run it normally.
 
+|depends_on_appimage_type|
+
 
 Run type 2 AppImages without FUSE
 +++++++++++++++++++++++++++++++++

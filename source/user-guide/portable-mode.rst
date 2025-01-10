@@ -5,7 +5,7 @@
 Using portable mode
 ===================
 
-This page describes the portable mode. It allows for bundling an application's data next to the application's AppImage. Only type 2 AppImages provide it, |recent_type_2|.
+This page describes the portable mode. It allows for bundling an application's data next to the application's AppImage. Only type 2 AppImages provide it, |recent_type_2|. |different_types|
 
 .. contents:: Contents
    :local:
