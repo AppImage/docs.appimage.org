@@ -60,6 +60,8 @@ If you use an AppImage creation tool that doesn't support adding update informat
 To (re)create an AppImage from the AppDir, embed update information in it and create the ``.zsync`` file, use the ``-u`` flag with the update information string. That command could for example look like this: ``appimagetool MyApplication.AppDir/usr/share/applications/MyApplication.desktop -u "zsync|https://server.domain/path/MyApplication-latest_x86-64.AppImage.zsync"``. Keep in mind that you also have to use the ``--sign`` parameter if you want to sign your AppImage, see :ref:`signing-using-appimagetool`.
 
 
+.. _self-updateable-appimages:
+
 Step 2: Making AppImages self-updateable
 ----------------------------------------
 

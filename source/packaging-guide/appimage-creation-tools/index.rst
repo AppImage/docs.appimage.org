@@ -10,7 +10,7 @@ There are different tools that help with creating AppDirs and the corresponding 
 1. Some of them create the AppDir from scratch and don't require manual AppDir creation or file placement.
 2. They bundle the application dependencies (shared libraries) into the existing AppDir.
 3. They remove hardcoded paths in the executables and libraries.
-4. They create an AppImage out of the AppDir (usually by invoking `appimagetool <https://github.com/AppImage/appimagetool>`__ underneath).
+4. They create an AppImage out of the AppDir (usually by invoking `appimagetool <https://github.com/AppImage/appimagetool>`__ (the :ref:`reference implementation <reference-implementation>`) underneath).
 
 Some tools require you to manually create the AppDir structure prior to invoking the tool. :ref:`creating-appdir-structure` explains the different ways to do this.
 
@@ -18,7 +18,7 @@ Additionally, many applications require additional resources, e.g. asset files f
 
 This section gives an overview of the different tools and their advantages, disadvantages and differences. For each of them, there is a corresponding page, explaining how to use it.
 
-If you are unsure which one to use, linuxdeploy and go-appimagetool are the best options in most cases.
+If you are unsure which one to use, linuxdeploy and go-appimagetool are usually the best options.
 
 
 .. _creation-comparison-table:
@@ -41,7 +41,7 @@ Comparison table
      - | A tool that can be used by application authors to package their projects as AppImages.
        | Creates the AppDir from scratch and doesn't require any existing AppDir structure or manual file placement.
        | Doesn't include core system libraries like glibc. This results in a reduced AppImage size.
-       | Created AppImages should run on *almost* all modern linux distributions.
+       | Doesn't use the :ref:`new static runtime <new-generation-appimages>` as of January 2025.
        | More mature; supports additional options (e.g. not deploying specific libraries or copyright files) go-appimagetool doesn't support (yet).
        | Repository link: https://github.com/linuxdeploy/linuxdeploy
        | Packaging guide: :ref:`linuxdeploy`
@@ -49,14 +49,14 @@ Comparison table
      - | A tool that can be used by application authors to package their projects as AppImages.
        | Requires manual creation of the AppDir folder structure and file placement (if make isn't used).
        | Allows for both including core system libraries like glibc and not including them.
+       | Does not use the :ref:`reference implementation <reference-implementation>` (appimagetool) underneath, but creates the AppImages itself.
        | Less mature; doesn't support some options linuxdeploy does.
        | Repository link: https://github.com/probonopd/go-appimage
        | Packaging guide: :ref:`go-appimagetool`
    * - appimage-builder
      - | A tool that can be used by both application authors to package their projects as AppImages and other people to turn existing Debian packages into AppImages if none are officially distributed.
        | Requires manual creation of the AppDir folder structure and file placement (if make isn't used).
-       | Includes core system libraries like glibc. This results in an increased AppImage size (+ >30MB).
-       | Officially supports Debian, Ubuntu and Arch.
+       | Includes core system libraries like glibc. This results in an increased AppImage size.
        | Should only be used if linuxdeploy can't be used (e.g. if the AppImage can't be built on the oldest supported LTS distribution version).
        | Repository link: https://github.com/AppImageCrafters/appimage-builder
        | Packaging guide: :ref:`appimage-builder`

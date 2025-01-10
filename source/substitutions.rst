@@ -27,6 +27,7 @@
 .. |appimage_not_starting_1| replace:: If you double-click your AppImage and it doesn't start / nothing happens, you should open it with the terminal as it prints additional error information there if it crashes. This information can help to determine the issue with your AppImage.
 .. |appimage_not_starting_2| replace:: To do that, simply enter its full path in a terminal (command line) like this: ``~/Downloads/MyApplication.AppImage``.
 .. |appimage_content| replace:: an application and everything the application needs to run on all modern Linux distribution versions (e.g. libraries, icons and fonts)
+.. |increased_appimage_size| replace:: This increases the AppImage size (often by more than 10MB, although the amount depends on the linked libraries)
 
 
 .. _AppImageUpdate: https://github.com/AppImageCommunity/AppImageUpdate

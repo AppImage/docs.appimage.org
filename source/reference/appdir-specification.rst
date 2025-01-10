@@ -24,7 +24,7 @@ The AppDir format has first been described by `ROX Filer`_, and has since been e
 Required content
 ----------------
 
-As the name intends, AppDirs are normal directories with some special content. An AppImage |must| contain the following four types of entries in its root to conform to this specification:
+As the name intends, AppDirs are normal directories with some special content. An AppImage must contain the following four types of entries in its root to conform to this specification:
 
 
 .. _apprun-specification:
@@ -57,7 +57,7 @@ Other
 These two entries have been re-used from `ROX Filer`_'s specification. ROX Filer actually specifies additional (but optional) entries, however, AppImage doesn't use these. Instead, the following ones have been introduced:
 
 ``myapp.desktop``
-   A :ref:`desktop entry file <desktop-entry-files>` located in the root directory, describing the payload application. As AppImage is following the principle :ref:`one app = one file <one-app-one-file-principle>`, one desktop file is enough to describe the entire AppImage. There |must not| be more than one desktop file in the root directory. The name of the file doesn't matter, as long as it carries the ``.desktop`` extension. The file can be a symlink to subdirectories such as ``usr/share/applications/...``
+   A :ref:`desktop entry file <desktop-entry-files>` located in the root directory, describing the payload application. As AppImage is following the principle :ref:`one app = one file <one-app-one-file-principle>`, one desktop file is enough to describe the entire AppImage. There must not be more than one desktop file in the root directory. The name of the file doesn't matter, as long as it carries the ``.desktop`` extension. The file can be a symlink to subdirectories such as ``usr/share/applications/...``
 
    For more information about desktop files, see :ref:`desktop-entry-files`.
 
@@ -69,7 +69,7 @@ These two entries have been re-used from `ROX Filer`_'s specification. ROX Filer
    Can be a symlink to subdirectories such as ``usr/share/icons/hicolor/...``. In most cases, :ref:`.DirIcon <dir-icon>` is a symlink to this file. The filename must be equal to what is set as ``Icon`` value in the desktop file.
 
    .. note::
-      The ``Icon`` value |should not| contain the file extension, the actual file's filename however |should| carry the extension.
+      The ``Icon`` value should not contain the file extension, the actual file's filename however should carry the extension.
 
    For more information about icon files, see :ref:`icon-files`.
 
@@ -116,12 +116,6 @@ Summary
 +++++++
 
 Modern AppImage creation tools such as :ref:`linuxdeploy <linuxdeploy>` create these directories by default to standardize and harmonize AppDir creation. If you intend to :ref:`create the entire AppDir manually <manually-fully-creating-appdir>`, you should follow these recommendations.
-
-
-.. |must| replace:: **MUST**
-.. |must not| replace:: **MUST NOT**
-.. |should| replace:: **SHOULD**
-.. |should not| replace:: **SHOULD NOT**
 
 
 .. _ROX Filer: http://rox.sourceforge.net/desktop/AppDirs.html

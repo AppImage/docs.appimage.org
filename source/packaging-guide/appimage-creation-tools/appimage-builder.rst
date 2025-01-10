@@ -13,7 +13,7 @@ It requires a manual creation of the AppDir folder structure and file placement 
 
 Using appimage-builder, you write a so-called *recipe* that is then used to create the AppImage or convert the package into an AppImage. As some (mostly proprietary) applications don't allow redistribution, you can distribute these recipes to allow other users to easily convert existing packages to AppImages.
 
-appimage-builder creates a complete bundle. This means that it includes all dependencies, even core system libraries like glibc. This results in an increased AppImage size (at least 30MB more). On the other hand, this removes the limitation of requiring an *old system* (meaning the oldest supported LTS distribution version) to compile the binaries, see :ref:`compiling-on-old-system`. It should only be used if linuxdeploy can't be used, e.g. if the AppImage can't be built on the oldest supported LTS distribution version.
+appimage-builder creates a complete bundle. This means that it includes all dependencies, even core system libraries like glibc. |increased_appimage_size|. On the other hand, this removes the limitation of requiring an *old system* (meaning the oldest supported LTS distribution version) to compile the binaries, see :ref:`compiling-on-old-system`. It should only be used if linuxdeploy can't be used, e.g. if the AppImage can't be built on the oldest supported LTS distribution version.
 
 The officially supported distributions for AppImages created with appimage-builder are Debian, Ubuntu and Arch.
 
