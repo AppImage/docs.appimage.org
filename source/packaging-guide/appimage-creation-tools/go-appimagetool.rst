@@ -9,6 +9,13 @@ go-appimagetool (the appimagetool part of the go-appimage project) is a tool tha
 
 It requires a manual creation of the AppDir folder structure and file placement (if make isn't used). For more information on how to use make accordingly, or manually create the necessary structure, see :ref:`creating-appdir-structure`.
 
+.. note::
+   go-appimagetool is not using the :ref:`reference implementation <reference-implementation>` (called appimagetool) to create AppImages; instead, it creates them itself. This means that it might choose different :ref:`implementation decisions <appimagetool>` (e.g. CLI options like ``--appimage-extract`` the resulting AppImage supports), resulting in AppImages that behave differently to the usual ones (created with the reference implementation).
+
+   |alternative_implementation_decisions|
+
+   See :ref:`this <reference-implementation>` for more information on the implementations and their decisions.
+
 It allows for both including core system libraries like glibc and not including them. If the core system libraries aren't included, |build_on_old_version|.
 
 However, it is less mature than linuxdeploy and doesn't support some advanced options (like not deploying specific libraries or copyright files).

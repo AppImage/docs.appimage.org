@@ -75,7 +75,7 @@ Many of the important changes between type 1 and type 2 AppImages |new_type_2_fe
 
 - The runtime of type 2 AppImages sets an additional :ref:`environment variable <environment-variables>` called ``ARGV0``.
 - The runtime of type 2 AppImages uses SquashFS as file system.
-- Type 2 AppImages support the ``--appimage-extract`` and ``--appimage-mount`` :ref:`command line options <inspect_appimage_content>`.
+- Type 2 AppImages support the ``--appimage-extract`` and ``--appimage-mount`` :ref:`command line options <inspect-appimage-content>`.
 - Type 2 AppImages support the :ref:`portable mode <portable-mode>`.
 
 .. todo::
@@ -102,7 +102,7 @@ Adaption problems & history
 ###########################
 
 When distributions started dropping FUSE 2 support in 2022, the AppImage team started to develop a new static runtime, whose first experimental version was available in May of 2022.
-This version has been embedded in go-appimagetool, an experimental alternative to the reference implementation.
+This version has been embedded in :ref:`go-appimagetool <go-appimagetool>`, an experimental alternative to the reference implementation.
 There were still discussions about potential other solutions in 2022 and early 2023 until it became clear in February of 2023 that this static version would become the future reference implementation.
 
 After testing the runtime for a while, it was supposed to "be made official" (replace the old reference implementation) in April of 2023. But that didn't happen due to multiple issues:
@@ -128,7 +128,7 @@ Other implementation changes
 
 As the reference implementation is being continously changed, there are also other features that only AppImages built with a newer reference implementation version might support. The following are some of the features that have been added to the type 2 reference implementation:
 
-- Newer type 2 runtimes support the ``--appimage-extract-and-run`` :ref:`command line option <inspect_appimage_content>`.
+- Newer type 2 runtimes support the ``--appimage-extract-and-run`` :ref:`command line option <inspect-appimage-content>`.
 - The ``APPIMAGE_EXTRACT_AND_RUN`` environment variable that does the same has been introduced even later.
 
 .. todo::

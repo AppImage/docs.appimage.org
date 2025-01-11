@@ -103,7 +103,7 @@ This usually works as long as the application is not calling ``chdir()`` (changi
 Creating an AppImage from the AppDir
 ------------------------------------
 
-To create an AppImage from the AppDir, you need ``appimagetool``. You can get it by downloading the `latest release <https://github.com/AppImage/appimagetool/releases/latest>`__. After downloading the AppImage, you have to make it executable as usual:
+To create an AppImage from the AppDir, you need :ref:`appimagetool`. You can get it by downloading the `latest release <https://github.com/AppImage/appimagetool/releases/latest>`__. After downloading the AppImage, you have to make it executable as usual:
 
 .. code-block:: shell
 

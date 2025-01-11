@@ -1,6 +1,6 @@
 .. include:: ../substitutions.rst
 
-.. _inspect_appimage_content:
+.. _inspect-appimage-content:
 
 Inspect AppImage content
 ===========================

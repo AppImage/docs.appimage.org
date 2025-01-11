@@ -19,6 +19,7 @@ To embed a signature, you have to have ``gpg`` (GnuPG 2) installed.
 
 You first need to prepare a key for signing. If the machine on which the AppImage is generated doesn't have a valid signing key, you can generate a new one using ``gpg --full-gen-key`` (see the gpg documentation for more information about this). You should also make sure to backup your private and public keys in a secure location.
 
+If you use an :ref:`AppImage creation tool <appimage-creation-tools>`, you should use its built-in feature to sign the AppImage. However, if your AppImage creation tool doesn't support signing the AppImage, or if you create your AppImage manually, you can also use :ref:`appimagetool` directly to manually sign the AppImage.
 
 Using an AppImage creation tool
 +++++++++++++++++++++++++++++++
@@ -38,7 +39,7 @@ Most AppImage creation tools come with a built-in feature to sign the AppImage a
 Using ``appimagetool`` directly
 +++++++++++++++++++++++++++++++
 
-If you use an AppImage creation tool that doesn't support signing the AppImage, you have to extract the created AppImage by calling it with the ``--appimage-extract`` option (for more information, see :ref:`inspect_appimage_content`) and then recreate the AppImage with the embedded signature.
+If you use an AppImage creation tool that doesn't support signing the AppImage, you have to extract the created AppImage by calling it with the ``--appimage-extract`` option (for more information, see :ref:`inspect-appimage-content`) and then recreate the AppImage with the embedded signature.
 
 To (re)create an AppImage from the AppDir and embed its signature in it, use the ``--sign`` flag. That command could for example look like this: ``appimagetool MyApplication.AppDir --sign``. Keep in mind that you also have to use the ``-u`` parameter if you want to add updating information to your AppImage, see :ref:`updating-using-appimagetool`.
 

@@ -37,7 +37,7 @@ For example, if you want to call another bundled executable from your AppImage, 
 ``ARGV0``
 ---------
 
-Type 2 AppImages have another environment variable called ``ARGV0`` set. (Every reasonably recent AppImage is type 2 as all modern :ref:`appimage-creation-tools` and ``appimagetool`` create type 2 AppImages. |different_types|)
+Type 2 AppImages have another environment variable called ``ARGV0`` set. (Every reasonably recent AppImage is type 2 as all modern :ref:`appimage-creation-tools` and the reference implementation (:ref:`appimagetool`) create type 2 AppImages. |different_types|)
 
 ``ARGV0`` is the path used to execute the AppImage. This corresponds to the value you'd normally receive as the ``argv`` argument passed to your ``main`` method. This usually contains the path of the AppImage, relative to the current working directory.
 

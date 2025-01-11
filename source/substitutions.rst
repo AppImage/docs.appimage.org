@@ -11,7 +11,7 @@
 .. |recent_type_2| replace:: but every reasonably recent AppImage is type 2
 .. |different_types| replace:: For more information on the different AppImage types, see :ref:`appimage-types-history`.
 .. |depends_on_appimage_type| replace:: The way on how to do this depends on the AppImage type (every reasonably recent AppImage is type 2). |different_types|
-.. |linuxdeploy_bundle_appimages| replace:: As of December 2024, :ref:`linuxdeploy` has a `bug <https://github.com/linuxdeploy/linuxdeploy/issues/301>`__ that causes it to corrupt AppImages when they're given as additional executables that should be bundled. Therefore, when using it, other bundled AppImages have to manually be copied into the AppDir and ``appimagetool`` has to be used to create the AppImage.
+.. |linuxdeploy_bundle_appimages| replace:: As of December 2024, :ref:`linuxdeploy` has a `bug <https://github.com/linuxdeploy/linuxdeploy/issues/301>`__ that causes it to corrupt AppImages when they're given as additional executables that should be bundled. Therefore, when using it, other bundled AppImages have to manually be copied into the AppDir and :ref:`appimagetool` has to be used to create the AppImage.
 .. |upstream_advantage| replace:: This ensures that the software works exactly the way the original application author has envisioned it to work.
 .. |software_catalogs_short| replace:: They basically work as app stores in which you can look through a list of all indexed AppImages, read their description and search for something specific or even filter by categories.
 .. |shell_command| replace:: The way how you can execute such a shell command depends on the programming language. For example, in Rust you can do this with
@@ -30,6 +30,7 @@
 .. |appimage_not_starting_2| replace:: To do that, simply enter its full path in a terminal (command line) like this: ``~/Downloads/MyApplication.AppImage``.
 .. |appimage_content| replace:: an application and everything the application needs to run on all modern Linux distribution versions (e.g. libraries, icons and fonts)
 .. |increased_appimage_size| replace:: This increases the AppImage size (often by more than 10MB, although the amount depends on the linked libraries)
+.. |alternative_implementation_decisions| replace:: However, in the past, go-appimagetool usually made similar implementation decisions as the reference implementation so that the AppImages behave consistently. It sometimes includes newer more experimental features though (e.g. it already used the new static runtime for a longer time before the official reference implementation started to do so).
 
 
 .. _AppImageUpdate: https://github.com/AppImageCommunity/AppImageUpdate

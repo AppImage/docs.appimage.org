@@ -34,7 +34,7 @@ Step 1: Making AppImages updateable
 
 To make an AppImage updateable, you need to embed this update information into it. You can do this with one command that adds the update information to your AppImage and simultaneously creates the ``.zsync`` file you have to store online.
 
-If you use an :ref:`AppImage creation tool <appimage-creation-tools>`, you should use its built-in feature to add the update information and create the ``.zsync`` file. However, if your AppImage creation tool doesn't support adding update information, or if you create your AppImage manually, you can also use ``appimagetool`` directly to manually add the update information and create the ``.zsync`` file. After doing that, you should upload the ``.zsync`` file to the place mentioned in the update information string.
+If you use an :ref:`AppImage creation tool <appimage-creation-tools>`, you should use its built-in feature to add the update information and create the ``.zsync`` file. However, if your AppImage creation tool doesn't support adding update information, or if you create your AppImage manually, you can also use :ref:`appimagetool` directly to manually add the update information and create the ``.zsync`` file. After doing that, you should upload the ``.zsync`` file to the place mentioned in the update information string.
 
 
 Using an AppImage creation tool
@@ -55,7 +55,7 @@ Most AppImage creation tools come with a built-in feature to add update informat
 Using ``appimagetool`` directly
 +++++++++++++++++++++++++++++++
 
-If you use an AppImage creation tool that doesn't support adding update information, you have to extract the created AppImage by calling it with the ``--appimage-extract`` option (for more information, see :ref:`inspect_appimage_content`) and then recreate the AppImage with the update information and create the ``.zsync`` file with ``appimagetool``.
+If you use an AppImage creation tool that doesn't support adding update information, you have to extract the created AppImage by calling it with the ``--appimage-extract`` option (for more information, see :ref:`inspect-appimage-content`) and then recreate the AppImage with the update information and create the ``.zsync`` file with ``appimagetool``.
 
 To (re)create an AppImage from the AppDir, embed update information in it and create the ``.zsync`` file, use the ``-u`` flag with the update information string. That command could for example look like this: ``appimagetool MyApplication.AppDir/usr/share/applications/MyApplication.desktop -u "zsync|https://server.domain/path/MyApplication-latest_x86-64.AppImage.zsync"``. Keep in mind that you also have to use the ``--sign`` parameter if you want to sign your AppImage, see :ref:`signing-using-appimagetool`.
 

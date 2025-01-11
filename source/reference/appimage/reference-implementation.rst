@@ -37,7 +37,7 @@ The runtime (`source code <https://github.com/AppImage/type2-runtime>`__) provid
 - The runtime is statically linked, which means that there are no dependencies (like ``glibc``) required on the system.
 - The runtime doesn't check the AppRun file in any way before running it; it simply tasks the operating system to execute it.
 - After the AppRun file exited, the runtime unmounts the image and cleans up the temporary resources (such as the temporary mountpoint directory).
-- The specific error messages that are printed if an error occurs (e.g. if the file system can't be mounted).
+- The runtime defines the specific error messages that are printed if an error occurs (e.g. if the file system can't be mounted).
 
 As both the AppImage specification and those implementation decisions |appimage_history_link|.
 
@@ -57,15 +57,23 @@ appimagetool implements all specification features, like :ref:`embedding update 
 
 - appimagetool checks some of the information in the AppDir to make sure it's valid (for example, it validates :ref:`AppStream files <appstream>`)
 - appimagetool uses SquashFS as the file system for the file system image.
+- appimagetool defines the CLI flags and environment variables it supports (like ``--appimage-extract`` or ``APPIMAGE_EXTRACT_AND_RUN``) and their effects.
 
 As both the AppImage specification and those implementation decisions |appimage_history_link|.
 
 appimagetool shouldn't be directly used to create AppImages. Instead, using one of the modern :ref:`appimage-creation-tools` is strongly preferred as they're much more convenient and help with creating the AppDir. These tools usually use appimagetool under the hood.
 
-appimagetool should also not be confused with the alternative `go implementation <https://github.com/probonopd/go-appimage>`__, which offers a :ref:`wider feature set <go-appimagetool>`.
+appimagetool should also not be confused with the alternative go implementation, which is discussed in the next section.
 
-.. todo::
-   Add more information about the differences to the go implementation. Maybe even add an own Alternative implementation section.
+
+Alternative implementation
+--------------------------
+
+There also exists an alternative go implementation, called go-appimagetool. go-appimagetool offers a wider feature set, which makes it usable as AppImage creation tool; however, unlike other AppImage creation tools, it doesn't use the reference implementation (appimagetool) under the hood, but instead creates the AppImages itself. This means that it might choose different implementation decisions, resulting in AppImages that behave differently to the usual ones (created with the reference implementation).
+
+|alternative_implementation_decisions|
+
+More information on how to use go-appimagetool as an AppImage creation tool can be found :ref:`here <go-appimagetool>` and it's source code can be found `here <https://github.com/probonopd/go-appimage>`__.
 
 
 Helpers

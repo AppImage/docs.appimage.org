@@ -32,7 +32,7 @@ In this case, you need to :ref:`install FUSE 2 <install-fuse>` manually or use a
    fuse: device not found, try 'modprobe fuse' first
    open dir error: No such file or directory
 
-If you want to run an AppImage inside a docker container, follow the instructions at :ref:`fuse_docker` instead.
+If you want to run an AppImage inside a docker container, follow the instructions at :ref:`fuse-docker` instead.
 
 .. note::
    When trying to run an AppImages which wasn't built for your architecture (e.g. a 32-bit one), you might see this message as well, even if it doesn't occur while using AppImages built for your architecture. In that case, you have to install the FUSE 2 runtime library for the architecture the AppImage was built for.
@@ -54,7 +54,7 @@ The process of installing FUSE 2 highly differs from distribution to distributio
    If your distribution is not listed, please ask the distribution developers for instructions.
 
 
-.. _fuse_ubuntu_new:
+.. _fuse-ubuntu-new:
 
 Setting up FUSE 2 alongside of FUSE 3 on recent Ubuntu (>=22.04), Debian and their derivatives
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -62,7 +62,7 @@ Setting up FUSE 2 alongside of FUSE 3 on recent Ubuntu (>=22.04), Debian and the
 .. note::
    This is valid only for recent distributions having ``fuse3`` installed by default. To be sure, check whether the ``fuse3`` package is installed, e.g. by running ``dpkg -l | grep fuse3`` in the terminal and checking for a line starting with ``ii  fuse3`` (if there is none, your distribution is not using ``fuse3``).
 
-   If your distribution is not using ``fuse3``, please refer to the :ref:`next section <fuse_ubuntu_old>`.
+   If your distribution is not using ``fuse3``, please refer to the :ref:`next section <fuse-ubuntu-old>`.
 
 First, add the official repository with FUSE 2 with ``sudo add-apt-repository universe``. Then, install it with ``sudo apt install libfuse2t64`` for Ubuntu >= 24.04 or ``sudo apt install libfuse2`` for Ubuntu >= 22.04 and < 24.04 (the package has been renamed in Ubuntu 24.04). Now, FUSE 2 should be working alongside of FUSE 3.
 
@@ -72,7 +72,7 @@ To install the 32-bit version of FUSE 2, use ``sudo apt install libfuse2:i386`` 
    Add information on how to install the 32-bit version on newer versions after the rename.
 
 
-.. _fuse_ubuntu_old:
+.. _fuse-ubuntu-old:
 
 Setting up FUSE 2 on old Ubuntu (pre-22.04), Debian and their derivatives
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -80,7 +80,7 @@ Setting up FUSE 2 on old Ubuntu (pre-22.04), Debian and their derivatives
 .. warning::
    This is valid only for older distributions *not* having ``fuse3`` installed by default. To be sure, check whether the ``fuse3`` package is installed, e.g. by running ``dpkg -l | grep fuse3`` in the terminal and checking for a line starting with ``ii  fuse3``.
 
-   If your distribution is using ``fuse3``, please refer to the :ref:`previous section <fuse_ubuntu_new>`.
+   If your distribution is using ``fuse3``, please refer to the :ref:`previous section <fuse-ubuntu-new>`.
 
    Installing the ``fuse`` package with ``fuse3`` installed might break your system! If this happened to you, follow `these instructions <https://github.com/orgs/AppImage/discussions/1339>`__ to recover your system.
 
@@ -174,12 +174,12 @@ Optionally, you can also disable the cleanup, e.g. if you need to run the AppIma
 Manually extract and run AppImages
 ++++++++++++++++++++++++++++++++++
 
-Alternatively, you can manually extract or mount an AppImage in any way described in :ref:`inspect_appimage_content`. After that, you can run the ``AppRun`` entry point in the directory the AppImage has been extracted to or mounted on: ``appimage_directory/AppRun``.
+Alternatively, you can manually extract or mount an AppImage in any way described in :ref:`inspect-appimage-content`. After that, you can run the ``AppRun`` entry point in the directory the AppImage has been extracted to or mounted on: ``appimage_directory/AppRun``.
 
 This mostly makes sense if you have an older AppImage which doesn't support the ``--appimage-extract-and-run`` parameter.
 
 
-.. _fuse_docker:
+.. _fuse-docker:
 
 FUSE and Docker
 ---------------

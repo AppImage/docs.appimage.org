@@ -7,6 +7,9 @@ linuxdeploy
 
 linuxdeploy is a tool that can be used by application authors to easily create an AppDir (and by extension an AppImage) from scratch and bundle the executable and other resources that are passed as command line arguments into the right locations, as well as packaging dependencies of resources in an existing AppDir and making it relocatable. However, it doesn't require any existing AppDir structure or manual file placement.
 
+.. warning::
+   As of January 2025, linuxdeploy doesn't use the :ref:`new static runtime <new-generation-appimages>`. This means that all AppImages built with its native AppImage output plugin :ref:`require <fuse-troubleshooting>` FUSE 2 to be installed on every target system.
+
 Its primary focus is on AppDirs, and it uses plugins to create other outputs such as AppImages.
 
 linuxdeploy doesn't include core system libraries like glibc. This results in a reduced AppImage size. AppImages that are created with linuxdeploy should run on *almost* all modern linux distributions. However, when using it, |build_on_old_version|.
