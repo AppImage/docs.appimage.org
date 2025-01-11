@@ -156,5 +156,6 @@ This returns a bunch of numbers and should look like ``00000000: 7f45 4c46 0201 
 Dynamic runtime (old) or static runtime (new generation)
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-.. todo::
-   Add this section and explain how to determine whether the AppImage uses the dynamically linked or statically linked runtime.
+To determine whether your AppImage uses the new static runtime (and is a so-called :ref:`New Generation AppImage <new-generation-appimages>`) or uses the old dynamic runtime which :ref:`requires <fuse-troubleshooting>` FUSE 2 to be installed on every target system, you can use the ``file`` command: ``file YourApplication.AppImage``.
+
+If the output contains ``dynamically linked``, the AppImage uses the old dynamic runtime. If it contains ``statically linked``, the AppImage uses the new static runtime.

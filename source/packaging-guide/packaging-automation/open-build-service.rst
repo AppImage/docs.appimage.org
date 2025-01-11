@@ -128,7 +128,7 @@ The packages listed in the ingredients section do not get installed into the bui
 URLs for the supported source control management systems (git, svn, cvs, hg, bzr) get handled via the appimage source service, which is a part of `obs-service-tar_scm <https://github.com/openSUSE/obs-service-tar_scm>`__. It is downloading the sources and provides them to the build system as directory structure.
 
 .. todo::
-    **not yet implemented**
+    **Not yet implemented**
     URLs to files get handled via the download_files source service. It is handy to provide single files to the build.
 
 

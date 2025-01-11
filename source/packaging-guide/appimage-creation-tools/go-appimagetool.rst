@@ -34,7 +34,7 @@ To then turn your complete AppDir into an AppImage, call go-appimagetool with th
    > ./appimagetool-*.AppImage Some.AppDir
 
 .. todo::
-   Include documentation on appimagetool environment variables like VERSION and how to add it to desktop files
+   Include documentation on appimagetool environment variables like VERSION
 
 For more information, see `the project's README file <https://github.com/probonopd/go-appimage/blob/master/src/appimagetool/README.md>`__
 

@@ -52,6 +52,3 @@ Imagine you want to use Inkscape, but carry its settings around with the executa
 
 
 Note that the file ``preferences.xml`` was written in the new directory next to the AppImage that can be carried around together with the AppImage itself.
-
-..
-   TODO: Unify the way shell blocks are written

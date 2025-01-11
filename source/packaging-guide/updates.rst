@@ -189,7 +189,7 @@ libappimageupdate-qt
 Like with ``libappimageupdate``, there is currently no precompiled version of this library. Therefore you have to manually compile `AppImageUpdate`_ (this requires you to install a lot of dependencies).
 
 .. todo::
-   Add instructions on how to build ``libappimageupdate`` and how it can be used and integrated in an application.
+   Add instructions on how to build ``libappimageupdate-qt`` and how it can be used and integrated in an application.
 
 
 Recommended user experience

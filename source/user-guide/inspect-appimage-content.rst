@@ -7,9 +7,6 @@ Inspect AppImage content
 
 To inspect the content of any AppImage, it is possible to extract their content to a directory or to temporarily mount them	on the system for read-only access. The resulting directory is a valid :ref:`AppDir <appdir-specification>`, and users can create AppImages from it again using an :ref:`AppImage creation tool <appimage-creation-tools>`. This page describes the different ways to inspect the content of an AppImage, their advantages and disadvantages.
 
-.. todo::
-   Link the section on the different AppImage versions and how to determine it here and everywhere where types are mentioned.
-
 .. contents:: Contents
    :local:
    :depth: 1

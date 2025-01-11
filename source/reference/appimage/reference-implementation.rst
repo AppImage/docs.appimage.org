@@ -101,6 +101,3 @@ validate
 
 .. note::
    The ``validate`` tool has been moved into the ``AppImageUpdate`` project and is available as a pre-compiled binary there.
-
-.. todo::
-   Add other old helper tools such as testappimage, LibcWrapGenerator and the ones available in the AppImageKit repository (old master branch).
