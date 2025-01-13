@@ -23,7 +23,7 @@ This also allows your AppImage to be published in different app stores / catalog
 AppStream is a format that exists independently of AppImage and can be used in conjunction with other packaging formats as well. Many open source applications already come with AppStream files by default.
 
 .. seealso::
-    More information on AppStream can be found on the `FreeDesktop.org pages <https://www.freedesktop.org/software/appstream/docs/chap-Quickstart.html#sect-Quickstart-DesktopApps>`__.
+    More information on AppStream can be found in its `official documentation <https://www.freedesktop.org/software/appstream/docs/chap-Quickstart.html>`__.
 
 
 Generating an AppStream file
