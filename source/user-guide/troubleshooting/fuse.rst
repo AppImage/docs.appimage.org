@@ -1,275 +1,202 @@
-.. _ref-ug-troubleshooting-fuse:
+.. include:: ../../substitutions.rst
+
+.. _fuse-troubleshooting:
 
 I get some errors related to something called "FUSE"
 ====================================================
 
-AppImages require a Linux technology called *Filesystem in Userspace* (or short *FUSE*). The majority of systems ships with a working FUSE setup. However, sometimes, it doesn't quite work. This section explains a few solutions that fix the most frequently reported problems.
+:ref:`Older AppImages <new-generation-appimages>` that haven't been created with the new static runtime yet require FUSE 2, the second version of a Linux technology called *Filesystem in Userspace*, to be installed on the system. As many systems don't ship with FUSE 2 out of the box anymore, such AppImages might write the following or a similar message to the console:
+
+.. code-block:: text
+
+   Cannot mount AppImage, please check your FUSE setup.
+   You might still be able to extract the contents of this AppImage
+   if you run it with the --appimage-extract option.
+   See https://github.com/AppImage/AppImageKit/wiki/FUSE
+   for more information
+
+In this case, you need to :ref:`install FUSE 2 <install-fuse>` manually or use a workaround to run AppImages without FUSE. This page explains how to do this.
+
+..
+   Add
+   You should also ask the application author to use a modern AppImage creation tool (which uses the new static runtime) so users don't have to manually install any dependencies anymore.
+   after the main AppImage creation tools (especially linuxdeploy) started using the new static runtime.
+
+|fuse_docker|
+
+..
+   You can't include code blocks in substitutions; therefore this block is duplicated.
+
+.. code-block:: text
+
+   fuse: device not found, try 'modprobe fuse' first
+   open dir error: No such file or directory
+
+If you want to run an AppImage inside a docker container, follow the instructions at :ref:`fuse-docker` instead.
+
+.. note::
+   When trying to run an AppImages which wasn't built for your architecture (e.g. a 32-bit one), you might see this message as well, even if it doesn't occur while using AppImages built for your architecture. In that case, you have to install the FUSE 2 runtime library for the architecture the AppImage was built for.
+
 
 .. contents:: Contents
    :local:
    :depth: 2
 
 
-The AppImage tells me it needs FUSE to run
-------------------------------------------
+.. _install-fuse:
 
-Sometimes, an AppImage writes the following message to the console:
+How to install FUSE 2
+---------------------
 
-.. can not use :: syntax to highlight raw text blocks, as pygments usually recognizes some language even if there is no code
-.. code-block:: text
-
-   AppImages require FUSE to run.
-   You might still be able to extract the contents of this AppImage
-   if you run it with the --appimage-extract option.
-   See https://github.com/AppImage/AppImageKit/wiki/FUSE
-   for more information
-
-In this case, FUSE is not properly set up on your system. You will have to :ref:`install FUSE <ref-install-fuse>` in order to fix the problem.
-
-.. note::
-   When trying to run AppImages which weren't built specifically for your platform, you might see this message as well, even if it doesn't occur while using AppImages built for your platform. Please see :ref:`these instructions <ref-warning-fuse-cross-architecture>` on how to fix the issue.
-
-
-.. _ref-install-fuse:
-
-How to install FUSE
--------------------
-
-Most Linux distributions come with a functional FUSE 2.x setup. However, if it is not working for you, you may have to install and configure FUSE 2.y yourself.
-
-The process of installing FUSE highly differs from distribution to distribution. This section shows how to install FUSE on the most common distributions.
+The process of installing FUSE 2 highly differs from distribution to distribution. This section shows how to install FUSE on the most common distributions.
 
 .. note::
    If your distribution is not listed, please ask the distribution developers for instructions.
 
 
-.. _ref-ug-troubleshooting-fuse-fuse2:
+.. _fuse-ubuntu-new:
 
-Setting up FUSE 2.x on Ubuntu (pre-22.04), Debian and their derivatives
-***********************************************************************
-
-.. warning::
-
-   This is valid only for distributions *not* having ``fuse3`` installed by default. To be sure, check whether the :code:`fuse3` package is installed, e.g., by running :code:`dpkg -l | grep fuse3` in the terminal and checking for a line starting with :code:`ii  fuse3`.
-
-   If your distribution is using :code:`fuse3`, please refer to the :ref:`next section <ref-ug-troubleshooting-fuse-fuse3>`.
-
-Install the required packages::
-
-  > sudo apt-get install libfuse2
+Setting up FUSE 2 alongside of FUSE 3 on recent Ubuntu (>=22.04), Debian and their derivatives
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. note::
-   In Ubuntu 24.04, the libfuse2 package was renamed to libfuse2t64.
+   This is valid only for recent distributions having ``fuse3`` installed by default. To be sure, check whether the ``fuse3`` package is installed, e.g. by running ``dpkg -l | grep fuse3`` in the terminal and checking for a line starting with ``ii  fuse3`` (if there is none, your distribution is not using ``fuse3``).
 
-Now, FUSE should be working. On some older distributions, you will have to run some additional configuration steps:
+   If your distribution is not using ``fuse3``, please refer to the :ref:`next section <fuse-ubuntu-old>`.
 
-Make sure the FUSE kernel module is loaded::
+First, add the official repository with FUSE 2 with ``sudo add-apt-repository universe``. Then, install it with ``sudo apt install libfuse2t64`` for Ubuntu >= 24.04 or ``sudo apt install libfuse2`` for Ubuntu >= 22.04 and < 24.04 (the package has been renamed in Ubuntu 24.04). Now, FUSE 2 should be working alongside of FUSE 3.
 
-  > sudo modprobe -v fuse
+To install the 32-bit version of FUSE 2, use ``sudo apt install libfuse2:i386`` on ``x86_64`` or ``sudo apt install libfuse2:armhf`` on ``arm64``.
 
-Then, add the required group (should be created by the install command, if this is the case, this call *will* fail), and add your own user account to this group::
-
-  > sudo addgroup fuse
-  > sudo adduser $USER fuse
-
-.. include:: notes/user-group-modifications.rst
+.. todo::
+   Add information on how to install the 32-bit version on newer versions after the rename.
 
 
-.. _ref-ug-troubleshooting-fuse-fuse3:
+.. _fuse-ubuntu-old:
 
-Setting up FUSE 2.x alongside of FUSE 3.x on recent Ubuntu (>=22.04), Debian and their derivatives 
-**************************************************************************************************
+Setting up FUSE 2 on old Ubuntu (pre-22.04), Debian and their derivatives
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. warning::
+   This is valid only for older distributions *not* having ``fuse3`` installed by default. To be sure, check whether the ``fuse3`` package is installed, e.g. by running ``dpkg -l | grep fuse3`` in the terminal and checking for a line starting with ``ii  fuse3``.
 
-   This is valid only for very recent (as of April 2022) distributions having :code:`fuse3` installed by default. To be sure, check whether the :code:`fuse3` package is installed, e.g., by running :code:`dpkg -l | grep fuse3` in the terminal and checking for a line starting with :code:`ii  fuse3` (if there is none, your distribution is not using :code:`fuse3`).
+   If your distribution is using ``fuse3``, please refer to the :ref:`previous section <fuse-ubuntu-new>`.
 
-   If your distribution is not using :code:`fuse3`, please refer to the :ref:`previous section <ref-ug-troubleshooting-fuse-fuse2>`.
+   Installing the ``fuse`` package with ``fuse3`` installed might break your system! If this happened to you, follow `these instructions <https://github.com/orgs/AppImage/discussions/1339>`__ to recover your system.
 
-Install the required package::
-
-  > sudo apt install libfuse2
-
-Now, FUSE 2.x should be working alongside of FUSE 3.x without breaking your system.
-
-Setting up FUSE 2.x on openSUSE
-*******************************
-
-Install the required package::
-
-  > sudo zypper install fuse libfuse2
-
-FUSE should now be working.
-
-
-Setting up FUSE on CentOS and RHEL
-**********************************
-
-.. note::
-   The following instructions may be out of date. Contributions welcome!
-
-Install FUSE from EPEL::
-
-  > yum --enablerepo=epel install fuse-sshfs
-
-Now, add yourself to the related group in order to authorize yourself for using FUSE::
-
-  > usermod -a -G fuse $(whoami)
-
-.. include:: notes/user-group-modifications.rst
-
-.. _ref-warning-fuse-cross-architecture:
-.. warning::
-   If you are on a 64-bit system and want to run 32-bit AppImages (e.g., ``x86_64``/``amd64`` to ``i386``, or ``arm64`` to ``armhf``), you will have to install the FUSE runtime libraries for those architectures.::
-
-     > sudo apt-get install libfuse2:i386
-     > sudo apt-get install libfuse2:armhf
-
-
-Setting up FUSE on Clear Linux OS
-*********************************
-
-On Clear Linux OS, FUSE *should* be enabled by default. However, if you see the error message mentioned before nevertheless, you can try the following trick:
+Install FUSE 2 with ``sudo apt install fuse libfuse2``. Now, it should be working. On some older distributions, you will have to run some additional configuration steps:
 
 .. code-block:: shell
 
-   sudo mkdir -p /etc/modules-load.d/
-   echo "fuse" | sudo tee /etc/modules-load.d/fuse.conf
-   sudo reboot
+   # Make sure the FUSE kernel module is loaded
+   > sudo modprobe -v fuse
+   # Then add the required group and add your user account to the group
+   # This should usually be created by the install command; if this is the case this will fail
+   # Then, you don't have to do anything else
+   > sudo groupadd fuse
+   > sudo usermod -aG fuse "$(whoami)"
+
+|group_user_add|
+
+
+Setting up FUSE 2 on Fedora
++++++++++++++++++++++++++++
+
+Install FUSE 2 with ``dnf install fuse fuse-libs``.
+
+
+Setting up FUSE 2 on RHEL
++++++++++++++++++++++++++
+
+.. note::
+   The following instructions might be out of date. Contributions to update them are welcome!
+
+Install FUSE 2 from EPEL with ``yum --enablerepo=epel install fuse-sshfs``. Then, add yourself to the related group in order to authorize yourself for using FUSE with ``sudo usermod -aG fuse "$(whoami)"``. |group_user_add|
+
+
+Setting up FUSE 2 on Arch Linux
++++++++++++++++++++++++++++++++
+
+Install FUSE 2 with ``sudo pacman -S fuse2``.
+
+A common issue, however, is that the ``fusermount`` binary's permissions may be incorrect. In that case, you would see the error message "fusermount: mount failed: Operation not permitted". Fortunately, you can easily fix this with the command ``sudo chmod u+s "$(which fusermount)"``.
+
+
+Setting up FUSE 2 on openSUSE
++++++++++++++++++++++++++++++
+
+Install FUSE 2 with ``sudo zypper install fuse libfuse2``.
+
+In order to use ``fusermount`` on openSUSE with the "secure" file permission settings (see ``/etc/permissions.secure``), your user needs to be part of the trusted group. To add yourself, run ``sudo usermod -a -G trusted "$(whoami)"``. |group_user_add|
+
+
+Setting up FUSE 2 on Chromium OS, Chrome OS, Crostini or other derivatives
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Install FUSE 2 with ``sudo apt install fuse``.
+
+
+Setting up FUSE 2 on Clear Linux OS
++++++++++++++++++++++++++++++++++++
+
+On Clear Linux OS, FUSE *should* be enabled by default. However, if you see the error message mentioned before nevertheless, you can try the following:
+
+.. code-block:: shell
+
+   > sudo mkdir -p /etc/modules-load.d/
+   > echo "fuse" > /etc/modules-load.d/fuse.conf
+   > sudo reboot
 
 .. seealso::
-
-   This bug was also reported on `reported on GitHub <https://github.com/clearlinux/distribution/issues/273>`__.
-
-
-Setting up FUSE on Chromium OS, Chrome OS, Crostini or other derivatives
-************************************************************************
-
-FUSE is not operational out of the box. However, starting with release 73, it's fairly easy to install it:
-
-.. code-block:: shell
-
-   sudo apt install fuse
+   This bug was also `reported on GitHub <https://github.com/clearlinux/distribution/issues/273>`__.
 
 
-Setting up FUSE on Arch Linux
-*****************************
-
-Install the required package:
-
-.. code-block:: shell
-
-   sudo pacman -S fuse2
-
-A common issue, however, is that the ``fusermount`` binary's permissions may be incorrect. Fortunately, there's an easy fix:
-
-.. code-block:: shell
-
-   # bash, dash, bourne shell:
-   sudo chmod u+s "$(which fusermount)"
-
-   # fish shell:
-   sudo chmod u+s (which fusermount)
-
-
-.. _ref-fuse-fallback:
+.. _fuse-fallback:
 
 Fallback (if FUSE can't be made working)
 ----------------------------------------
 
-If you do not want to (or cannot) set up FUSE, there are fallback solutions. Depending on the AppImage type, you can either mount the AppImage, or extract it and run the contents.
+If you don't want to (or cannot) set up FUSE, there are fallback solutions. Depending on the AppImage type, you can either run it with a specific parameter (which will work for you like it would with FUSE) or manually extract or mount and then execute it. However, this is computationally more expensive, so it should usually only be done if you can't run it normally.
+
+|depends_on_appimage_type|
 
 
-.. _ref-extract-and-run-type-2:
+Run type 2 AppImages without FUSE
++++++++++++++++++++++++++++++++++
 
-Extract and run type 2 AppImages
-********************************
+Type 2 AppImages can easily be run |appimages_without_fuse|. This will cause the runtime to automatically extract the AppImage, run its content, wait until the app closes, and then clean up the file again. For an end user, this essentially has the same effect as just running it, although the operations are more expensive.
 
-Most AppImages nowadays are type 2 AppImages. The easiest way to run such an AppImage, if FUSE is not available, is to extract it and then run its contents.
+Alternatively, you could also use an environment variable (``export APPIMAGE_EXTRACT_AND_RUN=1``) (which is forwarded to child processes as well) instead of the parameter (although this has been introduced a while after the parameter, so it might not work for every AppImage).
 
-.. warning::
-   Extracting an AppImage to run its contents is pretty expensive. It should only be done if you have no other options left.
-
-
-The AppImage runtime has a built-in feature we call "extract-and-run". It extracts the AppImage, runs the contents, waits until the app closes, and then cleans up the files again:
-
-.. code-block:: shell
-
-   # using a parameter
-   ./my.AppImage --appimage-extract-and-run [...]
-
-   # using an environment variable (which is usually forwarded to AppImage child processes, too)
-   # note that this was implemented a while after we introduced the parameter
-   # for older AppImages, you might have to use the parameter nevertheless
-   export APPIMAGE_EXTRACT_AND_RUN=1
-   ./my.AppImage [...]
-
-   # optionally, you can disable the cleanup if you need to run the AppImage more than once
-   export APPIMAGE_EXTRACT_AND_RUN=1
-   env NO_CLEANUP=1 ./my.AppImage
-
-In case you have a very old AppImage (i.e., it uses a runtime from the time before "extract-and-run" was implemented), you can extract the AppImage manually:
-
-.. code-block:: shell
-
-   ./my.AppImage --appimage-extract
-   # the contents are extracted into the directory "squashfs-root" in the current working directory
-   # you can now run the "AppRun" entry point
-   squashfs-root/AppRun [...]
-   # optionally, you can clean up the directory again
-   rm -r squashfs-root/
+Optionally, you can also disable the cleanup, e.g. if you need to run the AppImage more than once, with an environmental variable: ``export NO_CLEANUP=1``.
 
 
-Mount or extract type 1 AppImages
-*********************************
+Manually extract and run AppImages
+++++++++++++++++++++++++++++++++++
 
-If the process described in the :ref:`previous section <ref-extract-and-run-type-2>` does not work, you likely have a type 1 AppImage.
+Alternatively, you can manually extract or mount an AppImage in any way described in :ref:`inspect-appimage-content`. After that, you can run the ``AppRun`` entry point in the directory the AppImage has been extracted to or mounted on: ``appimage_directory/AppRun``.
 
-Type 1 AppImages are regular ISO9660 files. They can therefore be *loop-mounted*. Note that you need ``root`` permissions to do so.
+This mostly makes sense if you have an older AppImage which doesn't support the ``--appimage-extract-and-run`` parameter.
 
-.. code-block:: shell
 
-   sudo mount -o loop my.AppImage /mnt
-   # now, you can run the contents
-   /mnt/AppRun
-   # when you're done, you can unmount the AppImage again
-   sudo unmount /mnt
-
-You can alternatively extract the AppImage, either using `AppImageExtract <https://github.com/AppImage/AppImageKit/releases/tag/6>`__ or using an extraction tool which supports ISO9660 images (e.g., ``bsdtar``):
-
-.. code-block:: shell
-
-   # install bsdtar
-   sudo apt install libarchive-tools
-   # create target directory
-   mkdir AppDir
-   # extract the contents into the new directory
-   cd AppDir
-   bsdtar xfp .../my.AppImage
-   # now, you can run the entry point
-   ./AppRun
-
+.. _fuse-docker:
 
 FUSE and Docker
 ---------------
 
-Most Docker installations do not permit the use FUSE inside containers for security reasons. Instead, you can extract and run AppImages as described in the :ref:`previous section <ref-fuse-fallback>`.
+|fuse_docker|
+
+..
+   You can't include code blocks in substitutions; therefore this block is duplicated.
+
+.. code-block:: text
+
+   fuse: device not found, try 'modprobe fuse' first
+   open dir error: No such file or directory
+
+Instead, you can extract and run AppImages as described in the :ref:`previous section <fuse-fallback>`.
+
+If you want to decide whether to run the AppImage as usual or without FUSE, depending on whether you're in a container or not, for example in a build script, you can do that with `this detection code <https://stackoverflow.com/a/23575107>`__.
 
 .. warning::
-
-   There's a lot of advice on the internet that follows the scheme, "just add the arguments ``--cap-add SYS_ADMIN --cap-add MKNOD --device /dev/fuse:mrw`` and it will work". It is, however, insecure to do so. There's a reason why Docker doesn't support FUSE by default.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   There's a lot of advice on the internet that follows the scheme "just add the arguments ``--cap-add SYS_ADMIN --cap-add MKNOD --device /dev/fuse:mrw`` and it will work". It is, however, insecure to do so. There's a reason why Docker doesn't support FUSE by default.

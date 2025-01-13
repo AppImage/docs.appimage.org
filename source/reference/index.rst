@@ -1,16 +1,14 @@
+.. include:: ../substitutions.rst
+
 .. _reference:
-.. _ref-reference:
 
 Reference
 =========
 
-The following section contains reference documents like standards, etc.
+This chapter goes over |reference_content|.
 
 .. toctree::
-   architecture
-   specification
-   best-practices
-   appdir
-   desktop-integration
+   appimage/index
+   appdir-specification
    :maxdepth: 2
    :caption: Contents:

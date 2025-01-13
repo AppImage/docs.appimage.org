@@ -13,7 +13,7 @@ pipeline:
       - epub_filename=AppImage-documentation-git"$(date +%Y%m%d)"."$(git rev-parse --short HEAD)".epub
       - mkdir -p build/html/download
       - cp build/epub/AppImage.epub build/html/download/"$epub_filename"
-      - bash -xe ci/embed-epub-link.sh "$epub_filename"
+      - bash -xe .woodpecker/embed-epub-link.sh "$epub_filename"
 
   deploy:
     image: drillster/drone-rsync

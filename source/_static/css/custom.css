@@ -11,3 +11,107 @@
     hyphenate-limit-last: always;
     hyphenate-limit-zone: 8%;
 }
+
+
+/* Fix to display tables properly */
+
+.wy-table-responsive table td, .wy-table-responsive table th {
+    white-space: normal;
+}
+
+
+/* For the formatted table in the AppImage creation tools page */
+
+.formatted-table tr:nth-child(1) td {
+    background-color: #006400 !important;
+    color: #000000 !important;
+}
+.formatted-table tr:nth-child(2) td {
+    background-color: #006400 !important;
+    color: #000000 !important;
+}
+.formatted-table tr:nth-child(3) td {
+    background-color: #FFFF00 !important;
+    color: #000000 !important;
+}
+.formatted-table tr:nth-child(4) td {
+    background-color: #FFFF00 !important;
+    color: #000000 !important;
+}
+.formatted-table tr:nth-child(5) td {
+    background-color: #FF8000 !important;
+    color: #000000 !important;
+}
+.formatted-table tr:nth-child(6) td {
+    background-color: #FF8000 !important;
+    color: #000000 !important;
+}
+.formatted-table tr:nth-child(7) td {
+    background-color: #FF0000 !important;
+    color: #000000 !important;
+}
+
+
+/* To allow bold hyperlinks and substitutions */
+
+.bold-link a {
+    font-weight: bold;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+
+/* For additional information in the AppStream generator */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: super;
+    font-size: smaller;
+    text-decoration: underline;
+    color: #007bff;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the element */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip .tooltip-text::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* Arrow points downward */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+
+/* For the AppStream generator */
+
+.full-width {
+    width: 100%;
+}
