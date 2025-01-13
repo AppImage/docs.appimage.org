@@ -33,7 +33,7 @@ Bundle all required dependencies
 
 To be able to run on any Linux distribution, an AppImage has to bundle all resources it needs at runtime that cannot reasonably be expected to come with every still-supported target system (Linux distribution) in its default installation in a recent enough version. The most common resources that have to be bundled are the actual binaries, shared library dependencies, icons and other graphics and of course a :ref:`desktop file <desktop-entry-files>` for desktop integration.
 
-This doesn't mean an AppImage must not use resources provided by the system, like for example basic libraries that can be assumed to be part of every target system (e.g., the C standard library or graphics libraries), user interface themes or the like. See the `excludelist <https://github.com/AppImage/pkg2appimage/blob/master/excludelist>`__ for a list of the libraries we consider to currently be part of every still-supported target system.
+This doesn't mean an AppImage must not use resources provided by the system, like for example basic libraries that can be assumed to be part of every target system (e.g., the C standard library or graphics libraries), user interface themes or the like. See the `excludelist <https://github.com/AppImageCommunity/pkg2appimage/blob/master/excludelist>`__ for a list of the libraries we consider to currently be part of every still-supported target system.
 
 
 .. _exclude-expected-libraries:
@@ -45,9 +45,9 @@ AppImages should usually exclude certain "core libraries", which can be expected
 
 It may seem contradictory to :ref:`the previous section <no-external-dependencies>` to rely on distribution provided resources. This is a trade-off between trying to reduce redundancies while at the same time being as self-contained as possible.
 
-In some cases, including the libraries might even break the AppImage on the target system. Those libraries involve, among others, hardware dependent libraries such as graphics card drivers provided libraries (e.g., ``libGL.so.1``, (`source <https://github.com/AppImage/pkg2appimage/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\#L38-L41>`__)), or libraries that are built and linked differently on different distributions (e.g., ``libharfbuzz.so.0`` and ``libfreetype.so.6`` (`source <https://github.com/AppImage/pkg2appimage/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\#L98-L102>`__)).
+In some cases, including the libraries might even break the AppImage on the target system. Those libraries involve, among others, hardware dependent libraries such as graphics card drivers provided libraries (e.g., ``libGL.so.1``, (`source <https://github.com/AppImageCommunity/pkg2appimage/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist#L38-L41>`__)), or libraries that are built and linked differently on different distributions (e.g., ``libharfbuzz.so.0`` and ``libfreetype.so.6`` (`source <https://github.com/AppImageCommunity/pkg2appimage/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist#L98-L102>`__)).
 
-The list of libraries that should be excluded, the so-called `excludelist <https://github.com/AppImage/pkg2appimage/blob/master/excludelist>`__, is carefully curated by the AppImage team, and is regularly updated.
+The list of libraries that should be excluded, the so-called `excludelist <https://github.com/AppImageCommunity/pkg2appimage/blob/master/excludelist>`__, is carefully curated by the AppImage team, and is regularly updated.
 
 **However, excluding these core libraries requires you to compile the application on the oldest still-supported Linux distribution version that we can assume users to still use.** For example, the oldest still-supported LTS release of Ubuntu is a good choice to build applications on. |old_compile_version_reason|
 

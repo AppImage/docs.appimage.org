@@ -5,7 +5,7 @@
 pkg2appimage
 ============
 
-`pkg2appimage <https://github.com/AppImage/pkg2appimage>`__ is a tool that can be used by people other than the application authors to convert officially distributed binary packages (archives, .deb packages and PPAs) into AppImages if none are officially distributed. It doesn't require dependencies to be installed on your system; instead, they are downloaded during the packaging process from distribution repositories. To convert an existing package, you write a `.yml description file <https://github.com/AppImage/pkg2appimage/tree/master/recipes>`__ (called recipe) and run it with pkg2appimage. As some (mostly proprietary) applications don't allow redistribution, you can distribute these recipes to allow other users to easily convert existing packages to AppImages.
+`pkg2appimage <https://github.com/AppImageCommunity/pkg2appimage>`__ is a tool that can be used by people other than the application authors to convert officially distributed binary packages (archives, .deb packages and PPAs) into AppImages if none are officially distributed. It doesn't require dependencies to be installed on your system; instead, they are downloaded during the packaging process from distribution repositories. To convert an existing package, you write a `.yml description file <https://github.com/AppImageCommunity/pkg2appimage/tree/master/recipes>`__ (called recipe) and run it with pkg2appimage. As some (mostly proprietary) applications don't allow redistribution, you can distribute these recipes to allow other users to easily convert existing packages to AppImages.
 
 pkg2appimage doesn't include core system libraries like glibc. This results in a reduced AppImage size. However, as the recipes use binary packages that have already been built, invoking a recipe doesn't require using an old system (see :ref:`compiling-on-old-system`).
 
@@ -33,7 +33,7 @@ To then build an AppImage from the recipe, simply run pkg2appimage with the file
 Introduction
 ------------
 
-The so-called recipe files (which are ``.yml`` description files) tell pkg2appimage where to get the ingredients from and how to convert them to an AppImage (besides the general steps that pkg2appimage always performs). Study some `examples <https://github.com/AppImage/pkg2appimage/tree/master/recipes>`__ to see how it works.
+The so-called recipe files (which are ``.yml`` description files) tell pkg2appimage where to get the ingredients from and how to convert them to an AppImage (besides the general steps that pkg2appimage always performs). Study some `examples <https://github.com/AppImageCommunity/pkg2appimage/tree/master/recipes>`__ to see how it works.
 
 .. warning::
    pkg2appimage suffers from a few notable issues:
@@ -42,7 +42,7 @@ The so-called recipe files (which are ``.yml`` description files) tell pkg2appim
      - pkg2appimage uses distribution packages downloaded using the package managers, however, the packages are not authenticated, as most security functionality has been deactivated. This is a major security issue. pkg2appimage is therefore recommended for personal use only. Upstream authors should consider :ref:`other packaging methods <appimage-creation-tools>`.
 
    .. seealso::
-      See `this GitHub issue <https://github.com/AppImage/pkg2appimage/issues/197>`__ for more information on the security issue.
+      See `this GitHub issue <https://github.com/AppImageCommunity/pkg2appimage/issues/197>`__ for more information on the security issue.
 
 
 Recipe files
@@ -410,7 +410,7 @@ The following recipe will convert a Python 3 PyQt application using ``virtualenv
 
 
 Source:
-	https://github.com/AppImage/pkg2appimage/blob/9249a99e653272416c8ee8f42cecdde12573ba3e/recipes/Mu.yml
+	https://github.com/AppImageCommunity/pkg2appimage/blob/9249a99e653272416c8ee8f42cecdde12573ba3e/recipes/Mu.yml
 
 
 .. _pkg2appimage script: https://github.com/AppImageCommunity/pkg2appimage/blob/master/pkg2appimage

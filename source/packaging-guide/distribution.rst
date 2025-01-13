@@ -22,12 +22,12 @@ We recommend that you put the AppImage for Linux on your project's download page
 	:align: center
 	:alt: Download page overview, showing Windows, MacOS, Linux and Source code downloads
 
-If your project is open source and located on GitHub, we recommend that you also publish your AppImage on `GitHub Releases <https://help.github.com/en/articles/creating-releases>`__.
+If your project is open source and located on GitHub, we recommend that you also publish your AppImage on `GitHub Releases <https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository>`__.
 
 .. note::
    For :ref:`AppImageUpdate <appimage-updates>` to work properly, it is required that the web server supports HTTP range requests. While most web hosts support this, some hosted services are known not to support range requests right now. These include
 
-      - `Gitlab releases <https://gitlab.com>`__
+      - `Gitlab releases <https://about.gitlab.com>`__
 
    If you use such a service and wish to use :ref:`AppImageUpdate <appimage-updates>` with it, please ask the providers to enable range requests.
 
@@ -42,7 +42,7 @@ You can use a "Download as an AppImage" button alongside other similar buttons:
 
 Link this button directly to the latest version of your AppImage or to a download page with the latest version of your AppImage.
 
-Button by `Khushraj Rathod <https://github.com/Khushraj>`__ under the `CC0 license <https://creativecommons.org/share-your-work/public-domain/cc0>`__ (Public Domain).
+Button by `Khushraj Rathod <https://github.com/Khushraj>`__ under the `CC0 license <https://creativecommons.org/public-domain/cc0>`__ (Public Domain).
 
 
 .. _software-catalogs-dev:

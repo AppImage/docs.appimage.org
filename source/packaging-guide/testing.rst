@@ -45,7 +45,7 @@ The following script can be used to run the given AppImage in the given distribu
    > sudo docker run --rm -it -e DISPLAY=:0 -v /tmp/.X11-unix:/tmp/.X11-unix -v "$appimage":/AppImage -v "$HOME":/shared --cap-add=SYS_PTRACE --security-opt seccomp:unconfined ${distro} bash
 
    # Install system packages and default packages that are expected on any target OS (inside the docker container)
-   # You can see the full excludelist of packages that may be expected at https://github.com/AppImage/pkg2appimage/blob/master/excludelist
+   # You can see the full excludelist of packages that may be expected at https://github.com/AppImageCommunity/pkg2appimage/blob/master/excludelist
    # Some examples of packages that could be installed are:
    # On Ubuntu:
    > apt update && apt install -y software-properties-common libx11-6 libgl1 libglx-mesa0 expat binutils fontconfig libsm6 libgomp1 dbus desktop-file-utils xorg libasound2t64

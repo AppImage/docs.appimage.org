@@ -82,7 +82,7 @@ For more specific information on how to use the Open Build Service, see :ref:`op
 Convenience functions
 ---------------------
 
-There is a collection of convenience functions in https://github.com/AppImage/pkg2appimage/blob/master/functions.sh. To use them in your own scripts, you need to source ``functions.sh`` like this:
+There is a collection of convenience functions in https://github.com/AppImageCommunity/pkg2appimage/blob/master/functions.sh. To use them in your own scripts, you need to source ``functions.sh`` like this:
 
 .. code:: bash
 

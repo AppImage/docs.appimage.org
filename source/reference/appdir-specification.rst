@@ -105,7 +105,7 @@ The directory contains applications, (shared) libraries, desktop files, icons et
       Contains :ref:`desktop entry files <desktop-entry-files>` for applications in ``bin``. Normally, there's just one desktop file in this directory, which is symlinked in the root directory. For more information about desktop files, see :ref:`desktop-entry-files`.
 
    ``icons``
-      Directory containing so-called `icon themes <https://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html>`__. Contains at least one, but often a set of :ref:`icon files <icon-files>` for the main application. The icons are referred to by the root desktop file, which means the :ref:`same constraints <root-icon>` apply. The default theme is ``hicolor``, but icon files can also be adapted to other well-known themes to fit in better. Icon themes placed in this directory are copied to the system during so-called :ref:`desktop integration <desktop-integration>`.
+      Directory containing so-called `icon themes <https://specifications.freedesktop.org/icon-theme-spec/latest/>`__. Contains at least one, but often a set of :ref:`icon files <icon-files>` for the main application. The icons are referred to by the root desktop file, which means the :ref:`same constraints <root-icon>` apply. The default theme is ``hicolor``, but icon files can also be adapted to other well-known themes to fit in better. Icon themes placed in this directory are copied to the system during so-called :ref:`desktop integration <desktop-integration>`.
 
       Example path: ``<root>/usr/share/icons/<theme>/<resolution>/apps/myapp.<ext>``, e.g. ``<root>/usr/share/icons/hicolor/scalable/apps/myapp.svg`` or ``<root>/usr/share/icons/hicolor/512x512/apps/myapp.png``.
 
@@ -118,4 +118,4 @@ Summary
 Modern AppImage creation tools such as :ref:`linuxdeploy <linuxdeploy>` create these directories by default to standardize and harmonize AppDir creation. If you intend to :ref:`create the entire AppDir manually <manually-fully-creating-appdir>`, you should follow these recommendations.
 
 
-.. _ROX Filer: http://rox.sourceforge.net/desktop/AppDirs.html
+.. _ROX Filer: https://rox.sourceforge.net/desktop/AppDirs.html

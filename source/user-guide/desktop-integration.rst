@@ -23,7 +23,7 @@ Gear Lever
 
 Gear Lever also contains other features that make it easier to use AppImages, such as allowing users to update one or all AppImages with it or optionally renaming CLI tools to their executable name to open them more easily with the terminal.
 
-**Download:** You can get it as a Flatpak from `Flathub <https://flathub.org/apps/details/it.mijorus.gearlever>`__ or as an unofficial AppImage `here <https://github.com/ivan-hc/Database-of-pkg2appimaged-packages/releases/tag/gearlever>`__.
+**Download:** You can get it as a Flatpak from `Flathub <https://flathub.org/apps/it.mijorus.gearlever>`__ or as an unofficial AppImage `here <https://github.com/ivan-hc/Database-of-pkg2appimaged-packages/releases/tag/gearlever>`__.
 
 
 appimaged

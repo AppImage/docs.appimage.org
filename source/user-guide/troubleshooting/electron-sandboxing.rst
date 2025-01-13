@@ -1,7 +1,7 @@
 I have issues with Electron-based AppImages and their sandboxing
 ================================================================
 
-AppImages based on `Electron <https://www.electron.build>`__ require the kernel to be configured in a certain way to allow for its sandboxing to work as intended (specifically, the kernel needs to be allowed to provide "unprivileged namespaces"). Many distributions come with this configured out of the box (like `Ubuntu <https://ubuntu.com>`__ prior to `24.04 <https://discourse.ubuntu.com/t/ubuntu-24-04-lts-noble-numbat-release-notes/39890#unprivileged-user-namespace-restrictions-15>`__), but some do not (for example `Debian <https://debian.org>`__).
+AppImages based on `Electron <https://www.electron.build>`__ require the kernel to be configured in a certain way to allow for its sandboxing to work as intended (specifically, the kernel needs to be allowed to provide "unprivileged namespaces"). Many distributions come with this configured out of the box (like `Ubuntu <https://ubuntu.com>`__ prior to `24.04 <https://discourse.ubuntu.com/t/ubuntu-24-04-lts-noble-numbat-release-notes/39890#unprivileged-user-namespace-restrictions-15>`__), but some do not (for example `Debian <https://www.debian.org>`__).
 
 This page explains how to check your kernel configuration and change it for Electron AppImages to work on your system. If an AppImage suffers from this issues, you should ask the developers to implement the workaround described in :ref:`this section <electron-without-sandboxing>` so this won't be a problem for other users in the future anymore.
 
