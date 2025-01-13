@@ -5,7 +5,7 @@
 AppImage creation tools
 =======================
 
-There are different tools that help with creating AppDirs and the corresponding AppImages. They can help in several ways:
+There are different tools that help with creating AppDirs and the corresponding AppImages (an AppImage is like a container which stores the AppDir with the actual application and everything required for it to run). They can help in several ways:
 
 1. Some of them create the AppDir from scratch and don't require manual AppDir creation or file placement.
 2. They bundle the application dependencies (shared libraries) into the existing AppDir.

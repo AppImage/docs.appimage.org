@@ -5,7 +5,7 @@
 go-appimagetool
 ===============
 
-go-appimagetool (the appimagetool part of the go-appimage project) is a tool that can be used by application authors to package their projects as AppImages.
+`go-appimagetool <https://github.com/probonopd/go-appimage>`__ (the appimagetool part of the go-appimage project) is a tool that can be used by application authors to package their projects as AppImages.
 
 It requires a manual creation of the AppDir folder structure and file placement (if make isn't used). For more information on how to use make accordingly, or manually create the necessary structure, see :ref:`creating-appdir-structure`.
 
@@ -19,6 +19,18 @@ It requires a manual creation of the AppDir folder structure and file placement 
 It allows for both including core system libraries like glibc and not including them. If the core system libraries aren't included, |build_on_old_version|.
 
 However, it is less mature than linuxdeploy and doesn't support some advanced options (like not deploying specific libraries or copyright files).
+
+
+Downloading go-appimagetool
+---------------------------
+
+Start by downloading go-appimagetool. The recommended way to get it is to use the latest continuous AppImage build provided on its `GitHub release page <https://github.com/probonopd/go-appimage/releases>`__. After downloading the AppImage, you have to make it executable as usual:
+
+.. code-block:: shell
+
+   > chmod +x appimagetool-*-x86_64.AppImage
+
+After that, you can use go-appimagetool.
 
 
 Usage

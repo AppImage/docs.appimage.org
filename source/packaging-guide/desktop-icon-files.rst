@@ -22,7 +22,7 @@ A desktop entry file is an `INI-style <https://en.wikipedia.org/wiki/INI_file>`_
 
 The ``Categories`` value should be a list of all `specific registered categories <https://specifications.freedesktop.org/menu-spec/latest/category-registry.html>`__ that apply to your application.
 
-The list of all keys can be found in the `Desktop Entry Specification (Recognized keys) <https://specifications.freedesktop.org/desktop-entry-spec/latest/recognized-keys.html>`__. Further keys that are recommended for AppImages are ``GenericName`` (the name of the application category, e.g. "Browser" for Firefox), ``Comment`` (an application description) and ``Version`` (not the application version, but the used version of the Desktop Entry Specification itself.
+The list of all keys can be found in the `Desktop Entry Specification (Recognized keys) <https://specifications.freedesktop.org/desktop-entry-spec/latest/recognized-keys.html>`__. Further keys that are recommended for AppImages are ``GenericName`` (the name of the application category, e.g. "Browser" for Firefox), ``Comment`` (an application description) and ``Version`` (not the application version, but the used version of the Desktop Entry Specification itself as well as the custom AppImage keys (see the next section).
 
 The desktop entry file should be named according to the `Reverse domain name notation <https://en.wikipedia.org/wiki/Reverse_domain_name_notation>`__ and have ``.desktop`` as file ending, for example ``org.AppImage.ExampleApp.desktop``.
 
@@ -34,7 +34,7 @@ Custom keys introduced for AppImage purposes
 
 Aside from the standardized mandatory and optional keys, desktop entry files may contain additional, use case dependent keys. They're usually prepended with ``X-`` to differentiate between standard and custom keys.
 
-The AppImage project defined a few custom keys with special meaning that provide information to enhance our desktop integration algorithm.
+The AppImage project defined a few custom keys with special meaning that provide information to enhance our desktop integration algorithm. These should also be included in your AppImage desktop entry file.
 
 X-AppImage-Name
     Name of the application. Used to relate two AppImages of the same application but different versions.

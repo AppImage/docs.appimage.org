@@ -5,10 +5,9 @@
 Packaging Guide
 ===============
 
-This chapter shows application developers how to create AppImages using modern AppImage creation tools, covers all requirements for that like desktop entry files, |packaging_optional|
+This chapter shows application developers how to create AppImages using modern AppImage creation tools (and explains the advantages, disadvantages and differences between the individual tools). It also covers all requirements for that, e.g. creating desktop entry and icon files, |packaging_optional|
 
 .. toctree::
-   introduction
    desktop-icon-files
    appimage-creation-tools/index
    creating-appdir-structure/index

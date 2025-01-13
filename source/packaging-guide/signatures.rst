@@ -39,7 +39,7 @@ Most AppImage creation tools come with a built-in feature to sign the AppImage a
 Using ``appimagetool`` directly
 +++++++++++++++++++++++++++++++
 
-If you use an AppImage creation tool that doesn't support signing the AppImage, you have to extract the created AppImage by calling it with the ``--appimage-extract`` option (for more information, see :ref:`inspect-appimage-content`) and then recreate the AppImage with the embedded signature.
+If you use an AppImage creation tool that doesn't support signing the AppImage, you have to extract the created AppImage by calling it with the ``--appimage-extract`` option (for more information, see :ref:`inspect-appimage-content`) and then recreate the AppImage with the embedded signature using :ref:`appimagetool`.
 
 To (re)create an AppImage from the AppDir and embed its signature in it, use the ``--sign`` flag. That command could for example look like this: ``appimagetool MyApplication.AppDir --sign``. Keep in mind that you also have to use the ``-u`` parameter if you want to add updating information to your AppImage, see :ref:`updating-using-appimagetool`.
 

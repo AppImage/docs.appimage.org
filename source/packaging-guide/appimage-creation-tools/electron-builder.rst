@@ -3,7 +3,7 @@
 electron-builder
 ================
 
-electron-builder is a tool that can be used by application authors to easily package their `Electron <https://electronjs.org>`__ projects not only as AppImages but also as other application formats for Linux (e.g. Flatpak or Snap), macOS (e.g. DMG) and Windows (e.g. Installer or Portable).
+`electron-builder <https://github.com/electron-userland/electron-builder>`__ is a tool that can be used by application authors to easily package their `Electron <https://electronjs.org>`__ projects not only as AppImages but also as other application formats for Linux (e.g. Flatpak or Snap), macOS (e.g. DMG) and Windows (e.g. Installer or Portable).
 
 With electron-builder, making AppImages is as simple as defining ``AppImage`` as a target for Linux (which is the default in the latest version of electron-builder). This should yield usable results for most applications.
 

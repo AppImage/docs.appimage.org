@@ -5,7 +5,7 @@
 linuxdeploy
 ===========
 
-linuxdeploy is a tool that can be used by application authors to easily create an AppDir (and by extension an AppImage) from scratch and bundle the executable and other resources that are passed as command line arguments into the right locations, as well as packaging dependencies of resources in an existing AppDir and making it relocatable. However, it doesn't require any existing AppDir structure or manual file placement.
+`linuxdeploy <https://github.com/linuxdeploy/linuxdeploy>`__ is a tool that can be used by application authors to easily create an AppDir (and by extension an AppImage) from scratch and bundle the executable and other resources that are passed as command line arguments into the right locations, as well as packaging dependencies of resources in an existing AppDir and making it relocatable. However, it doesn't require any existing AppDir structure or manual file placement.
 
 .. warning::
    As of January 2025, linuxdeploy doesn't use the :ref:`new static runtime <new-generation-appimages>`. This means that all AppImages built with its native AppImage output plugin :ref:`require <fuse-troubleshooting>` FUSE 2 to be installed on every target system.
@@ -25,7 +25,7 @@ The following sections explain how to use linuxdeploy.
 Downloading linuxdeploy
 -----------------------
 
-Start by downloading linuxdeploy. The recommended way to get it is to use the latest continuous AppImage build provided on the `GitHub release page <https://github.com/linuxdeploy/linuxdeploy/releases>`__. After downloading the AppImage, you have to make it executable as usual:
+Start by downloading linuxdeploy. The recommended way to get it is to use the latest continuous AppImage build provided on its `GitHub release page <https://github.com/linuxdeploy/linuxdeploy/releases>`__. After downloading the AppImage, you have to make it executable as usual:
 
 .. code-block:: shell
 

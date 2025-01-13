@@ -5,7 +5,7 @@
 appimage-builder
 ================
 
-appimgage-builder is a tool that can be used by both application authors to package their projects as AppImages and other people to turn existing Debian packages into AppImages if none are officially distributed.
+`appimage-builder <https://github.com/AppImageCrafters/appimage-builder>`__ is a tool that can be used by both application authors to package their projects as AppImages and other people to turn existing Debian packages into AppImages if none are officially distributed.
 
 It does this by using the system package manager to resolve the application dependencies (instead of relying on them being installed on the host system like most other tools do).
 

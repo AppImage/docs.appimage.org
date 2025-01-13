@@ -52,7 +52,7 @@ Software catalogs
 
 Additionally to hosting your AppImage, you may want to add your AppImage to a software catalog. Those are crowd-sources lists of available AppImages with data that 3rd party app stores and software centers can use. This way, users can also find your AppImage when browsing through such catalogs and stores or searching for a specific tool.
 
-These software catalogs use the :ref:`AppStream metadata <appstream>` inside the AppImage, therefore your AppImage will be presented consistently across them and you don't have to input information manually.
+Some software catalogs use the :ref:`AppStream metadata <appstream>` inside the AppImage, therefore your AppImage will be presented consistently across them and you don't have to input information manually.
 
 The following software catalogs are known to us:
 
