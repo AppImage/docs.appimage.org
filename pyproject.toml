@@ -11,7 +11,7 @@ package-mode = false
 
 [tool.poetry.dependencies]
 Python = "^3.12"
-sphinx = "^6"
+sphinx = "^8"
 sphinx-git = "^11"
 sphinxext-rediraffe = "^0.2.7"
 sphinx-last-updated-by-git = "^0.3.8"
