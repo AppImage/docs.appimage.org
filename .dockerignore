@@ -1,0 +1,9 @@
+*
+!.git/
+!docker/
+!source/
+!Makefile
+!pyproject.toml
+!poetry.lock
+!scripts/
+!ci/

@@ -5,3 +5,4 @@ venv*/
 virtualenv*/
 venv*/
 .idea/
+docker-compose.yml
