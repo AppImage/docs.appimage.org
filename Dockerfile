@@ -39,7 +39,7 @@ RUN git clone https://github.com/AppImage/libappimage.git && \
 # deployment container
 FROM nginx:1-alpine
 
-LABEL org.opencontainers.image.source="https://github.com/AppImage/AppImageKit"
+LABEL org.opencontainers.image.source="https://github.com/AppImage/docs.appimage.org"
 
 COPY docker/nginx.conf /etc/nginx/
 
