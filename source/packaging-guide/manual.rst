@@ -94,4 +94,4 @@ Creating an AppImage from the AppDir
 To create an AppImage, run :code:`appimagetool` on the AppDir in order to turn it into an AppImage. You can get it from this repository's `Releases`_ page (it comes as an AppImage itself; yes, we eat our own dogfood).
 
 .. _Registered Categories: https://standards.freedesktop.org/menu-spec/latest/apa.html
-.. _Releases: https://github.com/AppImage/AppImageKit/releases
+.. _Releases: https://github.com/AppImage/appimagetool/releases
