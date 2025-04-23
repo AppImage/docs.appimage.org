@@ -30,7 +30,7 @@ runtime
 
 The runtime provides the "executable header" of every AppImage. When executing an AppImage, the runtime within the AppImage is run, which mounts the embedded file system image read-only in a temporary location, and launches the payload application within there. After the payload application exited, the runtime unmounts the squashfs image and cleans up the temporary resources (such as, the temporary mountpoint directory).
 
-**Download:** There is usually no reason to download this manually, but if you still want to, you can get it from https://github.com/AppImage/AppImageKit/releases/continuous. Keep in mind that on its own it does nothing, it needs to be combined with a filesystem image to form a valid AppImage, usually by using appimagetool which comes with its own copy of the runtime.
+**Download:** There is usually no reason to download this manually, but if you still want to, you can get it from https://github.com/AppImage/type2-runtime/releases/continuous. Keep in mind that on its own it does nothing, it needs to be combined with a filesystem image to form a valid AppImage, usually by using appimagetool which comes with its own copy of the runtime.
 
 
 .. _ref-appimagetool:
@@ -42,7 +42,7 @@ appimagetool is the easiest way to create AppImages from existing directories on
 
 appimagetool implements all optional features, like for instance `update information <https://github.com/AppImage/AppImageSpec/blob/master/draft.md#update-information>`__, :ref:`signing <ref-signing>`, and some linting options to make sure the information in the AppImage is valid (for instance, it can validate :ref:`AppStream files <appstream-support>`).
 
-**Download:** You can get it as an AppImage from https://github.com/AppImage/AppImageKit/releases/continuous.
+**Download:** You can get it as an AppImage from https://github.com/AppImage/appimagetool/releases/continuous.
 
 
 AppRun
