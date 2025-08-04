@@ -253,7 +253,7 @@ You can alternatively extract the AppImage, either using `AppImageExtract <https
 FUSE and Docker
 ---------------
 
-Most Docker installations do not permit the use FUSE inside containers for security reasons. Instead, you can extract and run AppImages as described in the :ref:`previous section <ref-fuse-fallback>`.
+Most Docker installations do not permit the use of FUSE inside containers for security reasons. Instead, you can extract and run AppImages as described in the :ref:`previous section <ref-fuse-fallback>`.
 
 .. warning::
 
