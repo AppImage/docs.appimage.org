@@ -65,7 +65,9 @@ You can display the digital signature that is embedded in AppImage by running th
 Validating the signature
 ------------------------
 
-To validate a signature of an an AppImage and to determine whether an AppImage has been compromised, an external tool needs to be used. There is a very simple tool called :code:`validate` that can do this.
+To validate a signature of an an AppImage and to determine whether an AppImage has been compromised, an external tool needs to be used.
+There is a very simple tool called :code:`validate` that can do this.
+It can be found in the `AppImageUpdate <https://github.com/AppImageCommunity/AppImageUpdate>`_ project.
 
 .. code-block:: shell
 
@@ -80,4 +82,4 @@ Signature validation can also be integrated into higher level software such as t
 
 .. todo::
 
-    It may be desirable to integrate validate functionality into :code:`libappimage` and into tools like :code:`appimagetool`, the optional :code:`appimaged` demon and/or :code:`AppImageUpdate`.
+    It may be desirable to integrate validate functionality into :code:`libappimage` and into tools like :code:`appimagetool` and the :code:`appimaged` demon.
