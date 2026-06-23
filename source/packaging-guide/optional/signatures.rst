@@ -67,7 +67,7 @@ Validating the signature
 
 To validate a signature of an an AppImage and to determine whether an AppImage has been compromised, an external tool needs to be used.
 There is a very simple tool called :code:`validate` that can do this.
-It can be found in the [AppImageUpdate](https://github.com/AppImageCommunity/AppImageUpdate) project.
+It can be found in the `AppImageUpdate <https://github.com/AppImageCommunity/AppImageUpdate>`_ project.
 
 .. code-block:: shell
 
