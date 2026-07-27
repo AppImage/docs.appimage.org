@@ -40,17 +40,19 @@ appimagetool
 
 appimagetool is the easiest way to create AppImages from existing directories on the system, the so-called :ref:`AppDirs <ref-appdir>`. It creates the AppImage by embedding the :ref:`runtime <ref-runtime>`, and creating and appending the filesystem image.
 
-appimagetool implements all optional features, like for instance `update information <https://github.com/AppImage/AppImageSpec/blob/master/draft.md#update-information>`__, :ref:`signing <ref-signing>`, and some linting options to make sure the information in the AppImage is valid (for instance, it can validate :ref:`AppStream files <appstream-support>`).
+appimagetool implements all optional features, like for instance `update information <https://github.com/AppImage/AppImageSpec/blob/master/draft.md#update-information>`__, :ref:`signing <ref-signing>`, and some linting options to make sure the information in the AppImage is valid (for instance, it can validate :ref:`AppStream files <ref-appstream>`).
 
 **Download:** You can get it as an AppImage from https://github.com/AppImage/appimagetool/releases/continuous.
 
+
+.. _ref-apprun:
 
 AppRun
 ^^^^^^
 
 Every AppImage's AppDir must contain a file called :code:`AppRun`, providing the "entry point". When running the AppImage, the :ref:`runtime <ref-runtime>` executes the :code:`AppRun` file within the :ref:`AppDir <ref-appdir>`.
 
-:code:`AppRun` doesn't necessarily have to be a regular file. If the application is :ref:`relocatable <relocatable-apps>`, it can just be a symlink to the main binary. Tools like :ref:`ref-linuxdeploy` can turn applications into relocatable applications, and therefore create such a symlink.
+:code:`AppRun` doesn't necessarily have to be a regular file. If the application is :ref:`relocatable <ref-binaries-no-abs-paths>`, it can just be a symlink to the main binary. Tools like :ref:`ref-linuxdeploy` can turn applications into relocatable applications, and therefore create such a symlink.
 
 In some cases, though, when an existing application must not be altered (e.g., when the license prohibits any modifications) or tools like linuxdeploy cannot be used, AppImageKit's :code:`AppRun.c` can be used. :code:`AppRun.c` attempts to make programs load bundled shared libraries instead of system ones by manipulating environment variable. Furthermore, it attempts to prevent warnings users might encounter that are coming from the fact the :ref:`AppDir <ref-appdir>` is mounted read-only.
 

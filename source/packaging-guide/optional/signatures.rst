@@ -1,3 +1,5 @@
+.. _ref-signing:
+
 Signing AppImages
 =================
 
