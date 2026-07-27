@@ -1,3 +1,4 @@
+.. _ref-fuse:
 .. _ref-ug-troubleshooting-fuse:
 
 I get some errors related to something called "FUSE"
